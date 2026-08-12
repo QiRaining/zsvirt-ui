@@ -1,0 +1,93 @@
+@import "../../../theme.less";
+
+.detail-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed @neutral-300;
+
+  > span {
+    display: flex;
+    align-items: center;
+
+    > span {
+      font-size: 20px;
+      color: @neutral-800;
+      font-weight: 500;
+      flex: 1;
+    }
+  }
+}
+
+.detail-wrap {
+  max-width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  .detail-name {
+    span {
+      color: @color-600;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .mainNavColor {
+    color: @neutral-700;
+  }
+
+  .detail-header-resourcename {
+    color: @neutral-600;
+    font-size: 14px;
+  }
+
+  :global {
+    .ant-divider-horizontal {
+      margin: 20px 0;
+    }
+  }
+}
+
+.detail-ack {
+  border-bottom: 1px dashed @neutral-300;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.icon-bell {
+  width: 40px;
+  height: 40px;
+  background-color: @color-600;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :global {
+    .zstack-icon {
+      > svg {
+        color: white;
+        width: 20px;
+      }
+    }
+  }
+}
+
+.info {
+  :global {
+    .react-json-view {
+      word-break: break-word;
+      white-space: break-spaces;
+      background-color: @neutral-100 !important;
+      font-family:
+        "SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono",
+        "Ubuntu Mono", Menlo, Consolas, Courier, monospace !important;
+    }
+  }
+}
+
+.detailHeader {
+  margin-bottom: 9px;
+}

@@ -1,0 +1,155 @@
+@import "../../style/vars.less";
+
+.@{prefix}-table-list {
+  position: relative;
+
+  &-toolbar {
+    margin: 0 0 12px;
+
+    // 外层行：左右两栏，不换行
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 8px;
+    }
+
+    // 左侧：占满剩余空间，允许收缩
+    &-left {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    // 左侧容器：flex wrap，一行装不下自动换行
+    &-left-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+
+    // 右侧：不收缩
+    &-right {
+      flex: 0 0 auto;
+    }
+
+    &-refresh-btn.ant-btn {
+      flex-shrink: 0;
+
+      &:focus:not(:hover) {
+        background-color: @neutral-200;
+      }
+    }
+
+    // action 按钮容器内部不换行
+    .@{prefix}-action-btn-container {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: 4px;
+      vertical-align: -3px;
+    }
+
+    // 操作按钮不换行
+    .@{prefix}-action-btn,
+    .@{prefix}-action-dropdown-btn {
+      white-space: nowrap;
+    }
+
+    &-zsv& {
+      margin-bottom: 8px;
+    }
+
+    .ant-space-item:empty {
+      display: none;
+    }
+
+    .ant-btn {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-search {
+      margin-top: 12px;
+    }
+
+    &-handle-tooltip {
+      line-height: 22px !important;
+      font-size: 16px !important;
+      color: @neutral-400 !important;
+      cursor: pointer;
+      transition: color 0.3s;
+      vertical-align: -3px !important;
+
+      &:hover {
+        color: @color-600 !important;
+      }
+    }
+  }
+
+  &-column-empty {
+    font-size: 14px;
+    color: @neutral-500;
+  }
+
+  &-row-selected td {
+    background-color: @color-50 !important;
+  }
+
+  &-zsv {
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+    div {
+      &::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: @neutral-100;
+        border-top: 1px solid @neutral-300;
+      }
+    }
+    .ant-table-wrapper {
+      .ant-table-tbody {
+        .ant-table-cell {
+          padding: 6.5px 8px !important;
+
+          .@{prefix}-tag {
+            margin: 0 2px 0 0 !important;
+          }
+
+          > .@{prefix}-state {
+            display: flex;
+
+            .@{prefix}-state-name {
+              word-break: keep-all;
+              white-space: nowrap;
+              min-width: 0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          > span > .zstack-action-dropdown {
+            margin: -1px 0;
+          }
+        }
+      }
+      .ant-table-thead {
+        .ant-table-cell {
+          line-height: 20px;
+          padding: 8px 12px;
+
+          > div {
+            justify-content: flex-start;
+          }
+
+          .ant-table-column-title {
+            max-width: max-content !important;
+          }
+        }
+      }
+    }
+  }
+  .ant-dropdown-menu-title-content {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

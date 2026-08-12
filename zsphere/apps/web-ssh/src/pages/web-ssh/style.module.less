@@ -1,0 +1,220 @@
+// :global {
+//   #root {
+//     height: 100%;
+//   }
+// }
+
+.overflow {
+  max-width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ipMargin {
+  margin-left: -12px;
+}
+.errorTip {
+  background: #db2e43 !important;
+  border-radius: 2px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffffff !important;
+}
+.terminalWrap {
+  height: calc(100% - 64px);
+  position: relative;
+  .terminal {
+    position: relative;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+
+    // width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    z-index: 25;
+  }
+}
+
+:global {
+  .terminalHeaderMeasureDiv {
+    .menuItemFont();
+    display: inline-block;
+    white-space: nowrap;
+    visibility: hidden;
+    color: transparent;
+  }
+}
+
+.layout {
+  background: #000 !important;
+  height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+  // .content {
+  //   display: flex;
+  //   flex-direction: column;
+  //   background: #2b2e30;
+
+  //   .rfb {
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  // }
+}
+
+.menuItemFont {
+  font-size: 14px;
+  font-weight: 400;
+}
+.header {
+  flex-basis: 60px;
+  align-self: stretch;
+
+  height: 64px !important;
+  background: #4a4c4f !important;
+
+  .menuItemFont();
+  color: #ffffff !important;
+  line-height: 22px;
+
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  .menuItem {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+
+    .ellipsis {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    :global {
+      .zstack-icon {
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+:global {
+  #terminal {
+    width: 100%;
+    height: 100%;
+  }
+}
+//   .xterm {
+//     font-feature-settings: 'liga' 0;
+//     position: relative;
+//     user-select: none;
+//     -ms-user-select: none;
+//     -webkit-user-select: none;
+//   }
+//   .xterm.focus,
+//   .xterm:focus {
+//     outline: none;
+//   }
+//   .xterm .xterm-helpers {
+//     position: absolute;
+//     top: 0;
+//     z-index: 5;
+//   }
+//   .xterm .xterm-helper-textarea {
+//     position: absolute;
+//     opacity: 0;
+//     left: -9999em;
+//     top: 0;
+//     width: 0;
+//     height: 0;
+//     z-index: -5;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     resize: none;
+//   }
+//   .xterm .composition-view {
+//     background: #000;
+//     color: #fff;
+//     display: none;
+//     position: absolute;
+//     white-space: nowrap;
+//     z-index: 1;
+//   }
+//   .xterm .composition-view.active {
+//     display: block;
+//   }
+//   .xterm .xterm-viewport {
+//     background-color: #000;
+//     overflow-y: scroll;
+//     cursor: default;
+//     position: absolute;
+//     right: 0;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//   }
+//   .xterm .xterm-screen {
+//     position: relative;
+//   }
+//   .xterm .xterm-screen canvas {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//   }
+//   .xterm .xterm-scroll-area {
+//     visibility: hidden;
+//   }
+//   .xterm-char-measure-element {
+//     display: inline-block;
+//     visibility: hidden;
+//     position: absolute;
+//     top: 0;
+//     left: -9999em;
+//     line-height: normal;
+//   }
+//   .xterm {
+//     cursor: text;
+//   }
+//   .xterm.enable-mouse-events {
+//     cursor: default;
+//   }
+//   .xterm.xterm-cursor-pointer {
+//     cursor: pointer;
+//   }
+//   .xterm.column-select.focus {
+//     cursor: crosshair;
+//   }
+//   .xterm .xterm-accessibility,
+//   .xterm .xterm-message {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     z-index: 10;
+//     color: transparent;
+//   }
+//   .xterm .live-region {
+//     position: absolute;
+//     left: -9999px;
+//     width: 1px;
+//     height: 1px;
+//     overflow: hidden;
+//   }
+//   .xterm-dim {
+//     opacity: 0.5;
+//   }
+//   .xterm-underline {
+//     text-decoration: underline;
+//   }
+// }

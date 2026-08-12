@@ -1,0 +1,232 @@
+fragment SpecialTree on SpecialTree {
+  uuid
+  name
+  title
+  resourceType
+  status
+  state
+  extraAttrib {
+    type
+    value
+  }
+  isLeaf
+  key
+  children {
+    uuid
+    name
+    title
+    resourceType
+    status
+    state
+    iconType
+    extraAttrib {
+      type
+      value
+    }
+    isLeaf
+    key
+  }
+}
+
+query getClusterHostTree($orderBy: String, $orderDirection: String) {
+  clusterHostTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+
+        children {
+          ...SpecialTree
+        }
+      }
+    }
+  }
+}
+
+query getDirectoryTree($orderBy: String, $orderDirection: String) {
+  directoryTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+
+        children {
+          uuid
+          name
+          title
+          resourceType
+          status
+          state
+          key
+          extraAttrib {
+            type
+            value
+          }
+
+          children {
+            ...SpecialTree
+          }
+        }
+      }
+    }
+  }
+}
+
+query getNetworkTree($orderBy: String, $orderDirection: String) {
+  networkTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getDataStorageTreeList($orderBy: String, $orderDirection: String) {
+  dataStorageTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+
+        isLeaf
+        key
+      }
+    }
+  }
+}
+
+query getTemplateVMTreeList($orderBy: String, $orderDirection: String) {
+  templateVMTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getVMTemplateTreeList($orderBy: String, $orderDirection: String) {
+  vmTemplateTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getL2NetworkTree($orderBy: String, $orderDirection: String) {
+  l2NetworkTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+
+query getBareMetalTreeList($orderBy: String, $orderDirection: String) {
+  bareMetalTreeList(orderBy: $orderBy, orderDirection: $orderDirection) {
+   list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+        children {
+          ...SpecialTree
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+fragment backupStorageFields on BackupStorage {
+  name
+  description
+  type
+  hostname
+  url
+  sshPort
+  username
+  poolName
+  dataNetwork
+  syncImageNetwork
+  reservedCapacity
+  poolAvailableCapacity
+  poolUsedCapacity
+  poolReplicatedSize
+  zone {
+    name
+    uuid
+  }
+  mons {
+    hostname
+    monPort
+    createDate
+    lastOpDate
+    backupStorageUuid
+    monAddr
+    sshPort
+    status
+    sshUsername
+    sshPassword
+    monUuid
+  }
+}
+
+query backupStorageList(
+  $conditions: [Condition!]
+  $limit: Int
+  $start: Int
+  $extraConditions: [Condition!]
+  $type: BackupStorageQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  backupStorageList(
+    conditions: $conditions
+    limit: $limit
+    start: $start
+    replyWithCount: true
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      state
+      status
+      availableCapacity
+      totalCapacity
+      createDate
+      lastOpDate
+      systemTag
+      ...backupStorageFields
+    }
+  }
+}
+
+query backupStorageCount(
+  $conditions: [Condition!]
+  $limit: Int
+  $start: Int
+  $extraConditions: [Condition!]
+  $type: BackupStorageQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  backupStorageList(
+    conditions: $conditions
+    limit: $limit
+    start: $start
+    replyWithCount: true
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}
+
+query backupStorage($uuid: String!) {
+  backupStorage(uuid: $uuid) {
+    uuid
+    state
+    status
+    availableCapacity
+    totalCapacity
+    createDate
+    lastOpDate
+    dataNetwork
+    syncImageNetwork
+    systemTag
+    ...backupStorageFields
+  }
+}
+
+query getFreeHardDiskInfoList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getFreeHardDiskInfoList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      name
+      type
+      size
+      withPartition
+      physicalSector
+      logicalSector
+      partitionTable
+      multipathDeviceName
+    }
+  }
+}
+
+query backupStorageMetricDataList(
+  $uuid: String!
+  $namespace: String!
+  $metricName: String!
+  $period: Float!
+  $offsetAheadOfCurrentTime: Float!
+) {
+  backupStorageMetricDataList(
+    uuid: $uuid
+    namespace: $namespace
+    metricName: $metricName
+    period: $period
+    offsetAheadOfCurrentTime: $offsetAheadOfCurrentTime
+  ) {
+    time
+    value
+    labels {
+      BackupStorageUuid
+    }
+  }
+}
+
+query backupStorageSummary($conditions: [Condition!]) {
+  backupStorageSummary(conditions: $conditions) {
+    total
+    connected
+    disconnected
+    connecting
+  }
+}
+
+mutation checkHostnameRepeat($input: CheckHostnameRepeatParam!) {
+  checkHostnameRepeat(input: $input) {
+    repeat
+  }
+}
+
+
+ mutation updateAlarmLabel($input: UpdateAlarmLabelInput!) {
+    updateAlarmLabel(input: $input) {
+      actionId
+    }
+  }

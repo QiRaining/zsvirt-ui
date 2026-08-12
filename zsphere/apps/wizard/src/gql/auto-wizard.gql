@@ -1,0 +1,62 @@
+query getCubeEnv {
+  cubeEnv {
+    isCube
+    isSds
+    version
+  }
+}
+
+
+mutation createZone($input: CreateZoneInput!) {
+  createZone(input: $input) {
+    actionId
+  }
+}
+
+mutation createCluster($input: CreateClusterInput!) {
+  createCluster(input: $input) {
+    actionId
+  }
+}
+
+mutation addKvmHost($input: AddKVMHostInput!) {
+  addKvmHost(input: $input) {
+    actionId
+  }
+}
+
+mutation addCephBackupStorage($input: AddCephBackupStorageInput!) {
+  addCephBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation addImageStoreBackupStorage($input: AddImageStoreBackupStorageInput!) {
+  addImageStoreBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation createCephPrimaryStorage($input: CreateCephPrimaryStorageInput!) {
+  createCephPrimaryStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation addImage($input: AddImageInput!) {
+  addImage(input: $input) {
+    actionId
+  }
+}
+
+mutation createL2Network($input: CreateL2NetworkActionInput!) {
+  createL2Network(input: $input) {
+    actionId
+  }
+}
+
+mutation createL3Network($input: CreateL3NetworkInput!) {
+  createL3Network(input: $input) {
+    actionId
+  }
+}

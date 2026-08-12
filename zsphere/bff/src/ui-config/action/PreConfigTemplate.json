@@ -1,0 +1,241 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "distribution",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "distribution",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "type",
+          "distribution",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "distribution",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "distribution",
+            "defaultMessage": "Operating System"
+          },
+          "queryType": "",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "pre.config.template"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "pre.config.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "edit"
+        ],
+        "activeKeys": [
+          "donwload",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "donwload",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.preconfigurationTemplate",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "pre.config.template",
+        "authKey": "edit",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.preconfigurationTemplate",
+        "resource": "pre.config.template",
+        "authKey": "add.preconfigurationTemplate",
+        "i18nKey": "add.preConfigurationTemplate",
+        "name": "添加预配置模板",
+        "label": "添加预配置模板",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "pre.config.template",
+        "authKey": "start",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "pre.config.template",
+        "authKey": "stop",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "donwload",
+        "resource": "pre.config.template",
+        "authKey": "donwload",
+        "i18nKey": "download",
+        "name": "下载",
+        "label": "下载",
+        "icon": "",
+        "dividerKey": "donwload-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "pre.config.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

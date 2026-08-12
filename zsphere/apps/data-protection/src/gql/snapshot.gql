@@ -1,0 +1,325 @@
+fragment snapshotGroupByVolumeFields on SnapshotGroupByVolume {
+  volumeUuid
+  count
+  size
+  vm {
+    uuid
+    name
+    state
+    rootVolumeUuid
+    type
+    attachedShareableVolumeUuidList
+    haveScsiLun
+    zoneUuid
+    allVolumes {
+      uuid
+      name
+      primaryStorageUuid
+      size
+      actualSize
+      isShareable
+      type
+      installPath
+      primaryStorage {
+        type
+        uuid
+      }
+    }
+  }
+}
+
+query getZSVSnapshotGroupVMList($conditions: [Condition!], $sortBy: String) {
+  zsvSnapshotGroupList(conditions: $conditions, sortBy: $sortBy) {
+    total
+    list {
+      ...snapshotGroupByVolumeFields
+    }
+  }
+}
+
+query getZSVSnapshotTree($conditions: [Condition!]) {
+  zsvVolumeSnapshotTree(conditions: $conditions) {
+    list {
+      uuid
+      volumeUuid
+      tree
+      current
+      volume {
+        uuid
+        name
+        state
+        vmInstance {
+          uuid
+          name
+          state
+          type
+        }
+      }
+      primaryStorageUuid
+    }
+  }
+}
+
+query getSnapshotDeleteNeedSize($volumeUuid: String, $snapShotUuid: String) {
+  getSnapshotDeleteNeedSize(volumeUuid: $volumeUuid, snapShotUuid: $snapShotUuid) {
+    deleteNeedSize
+  }
+}
+
+fragment snapshotGroupFields on VolumeSnapshotGroup {
+  uuid
+  name
+  description
+  snapshotCount
+  totalSize
+  vmInstanceUuid
+  vmInstance {
+    uuid
+    name
+    state
+    type
+    rootVolumeUuid
+    attachedShareableVolumeUuidList
+    haveScsiLun
+    zoneUuid
+    allVolumes {
+      uuid
+      lastAttachDate
+      isShareable
+    }
+    primaryStorage {
+      type
+    }
+    host {
+      uuid
+      name
+      state
+      status
+      clusterUuid
+    }
+  }
+  volumeSnapshotRefs {
+    volumeName
+    volumeUuid
+    volumeType
+    volumeLastAttachDate
+    volumeSnapshotUuid
+  }
+  snapshotType
+  createDate
+  lastOpDate
+}
+
+fragment snapshotFields on VolumeSnapshot {
+  uuid
+  name
+  description
+  volumeUuid
+  volumeType
+  size
+  state
+  status
+  type
+  groupUuid
+  format
+  primaryStorageInstallPath
+  primaryStorageUuid
+  createDate
+  lastOpDate
+  latest
+  current
+  actualSize
+  primaryStorage {
+    type
+  }
+  volume {
+    uuid
+    size
+    name
+    rootImageUuid
+    diskOfferingUuid
+    primaryStorage {
+      uuid
+      type
+      name
+    }
+    vmInstanceUuid
+    isShareable
+    vmInstance {
+      uuid
+      name
+      state
+      type
+      zoneUuid
+    }
+  }
+  snapshotType
+  group {
+    ...snapshotGroupFields
+  }
+}
+
+query queryVolumeSnapshotList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  volumeSnapshotList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...snapshotFields
+    }
+  }
+}
+
+query getVMSnapshoCount($conditions: [Condition!]) {
+  volumeSnapshotList(conditions: $conditions) {
+    total
+  }
+}
+
+query queryVolumeSnapshotByUuid($uuid: String!) {
+  volumeSnapshot(uuid: $uuid) {
+    ...snapshotFields
+  }
+}
+
+query queryVolumeSnapshotGroup(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  volumeSnapshotGroupList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...snapshotGroupFields
+    }
+  }
+}
+
+query queryVolumeSnapshotGroupByUuid($uuid: String!) {
+  volumeSnapshotGroup(uuid: $uuid) {
+    ...snapshotGroupFields
+  }
+}
+
+mutation deleteVolumeSnapshot($input: DeleteVolumeSnapshotInput!) {
+  deleteVolumeSnapshot(input: $input) {
+    actionId
+  }
+}
+
+mutation createVMFromZSVSnapshot($input: CreateVMFromZSVSnapshotInput!) {
+  createVMFromZSVSnapshot(input: $input) {
+    actionId
+  }
+}
+
+query instanceBasicInfo(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      name
+      architecture
+      crashStrategy
+      cpuNum
+      memorySize
+      description
+      clusterUuid
+      rootVolumeUuid
+      platform
+      guestOsType
+      defaultL3NetworkUuid
+      imageUuid
+      lastHostUuid
+      hostUuid
+      backupStatus
+      backupTaskStatus
+      reservedMemorySize
+      defaultL3Network {
+        name
+        uuid
+        ipVersion
+        networkType
+      }
+      host {
+        uuid
+        name
+        state
+        status
+        managementIp
+        cpuNum
+        clusterUuid
+      }
+      systemTag {
+        cpuCores
+        cpuSockets
+        haStickStragedy
+        sshkey
+        bootOrder
+        bootOrderOnce
+        consolePassword
+        vmConsoleMode
+        vmPriority
+        GuestTools
+        bootMode
+        RDPEnable
+        usbRedirect
+        qemuga
+        antiSpoofing
+        VDIMonitorNumber
+        userdata
+        clockTrack
+        timeTrack
+        vmDriver
+        hostname
+        qxlMemory {
+          ram
+          vram
+          vgamem
+        }
+      }
+      vmHa {
+        haLevel
+      }
+      zoneUuid
+      group {
+        groupName
+        uuid
+      }
+    }
+  }
+}

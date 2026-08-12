@@ -1,0 +1,425 @@
+query clusterCount(
+  $start: Int
+  $limit: Int
+  $type: ClusterQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  clusterList(
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    total
+  }
+}
+
+fragment actionErrorFields on ActionError {
+  code
+  description
+  details
+}
+
+fragment actionSendRespFields on ActionSendResp {
+  success
+  error
+}
+
+fragment clusterFields on Cluster {
+  name
+  uuid
+  description
+  createDate
+  lastOpDate
+  architecture
+  clusterKVMCpuModel
+  checkCpuModel
+  checkCpuModelId
+  displayNetworkCidr
+  migrateNetworkCidr
+  type
+  state
+  vtepCidr
+  # ZSphere废弃
+  cpuMemoryCapacity {
+    physicalCpu
+    availableCpu
+    totalCpu
+    availableMemory
+    totalMemory
+    reservedMemory
+    overProvisioningTotalMemory
+    overProvisioningAvailableMemory
+  }
+  # 真实容量
+  realCpuMemoryCapacity {
+    CPUAllUsedUtilization
+    totalCpuGHz
+    MemoryUsedBytes
+    totalPhysicalMemory
+  }
+  hypervisorType
+  isShowDrsTab
+  isMaintenanceOfAllHost
+  isAttachL2network
+  isAttachPrimaryStorage
+  primaryStorageCount
+  isHugePageMemoryCanOpen
+  # l2NetworkCount
+  volumeCount
+  hostNum
+  hostList {
+    uuid
+    state
+    name
+  }
+  vmInstanceCount
+  virtualizationVmInstanceCount
+  # baremetalChassisNum
+  # isAttachBaremetalPxeServer
+
+  zoneUuid
+  zone {
+    name
+    uuid
+  }
+  networkHp
+  resourceConfigValue {
+    hostCpuOverProvisioningRatio
+    mevocoOverProvisioningMemory
+    kvmIgnoreMsrs
+    premiumClusterEnableZeroCopy
+    kvmReservedMemory
+    premiumClusterHugepageEnable
+    haVmHaLevel
+    vmVmHaAcrossClusters
+    vmEmulateHyperV
+    vmVideoType
+    kvmAutoSetVmNicMultiqueue
+    drsDrsMigrateVmConcurrent
+    drsDrsSchedulingInterval
+  }
+  # recommendQemuVersion
+}
+
+query cluster($uuid: String!) {
+  cluster(uuid: $uuid) {
+    drsSchedulingInterval
+    isSupported
+    clusterZWatchInfo {
+      cpuAllUsedUtilization
+      memoryUsedInPercent
+      memoryFreeBytes
+    }
+    l2NetworkCount
+    l3NetworkCount
+    primaryStorageList {
+      uuid
+      type
+      availablePhysicalCapacity
+      totalPhysicalCapacity
+    }
+    ...clusterFields
+  }
+}
+
+fragment clusterActionRespFields on ClusterActionResp {
+  inventory {
+    ...clusterFields
+  }
+  error {
+    ...actionErrorFields
+  }
+}
+
+fragment drsFields on DRS {
+  clusterUuid
+  lastAdviceGroupUuid
+  state
+  balancedState
+  automationLevel
+  thresholds {
+    thresholdName
+    thresholdValue
+    operator
+  }
+  thresholdDuration
+  description
+  createDate
+  lastOpDate
+  uuid
+  name
+}
+
+fragment DRSAdviceFields on DRSAdvice {
+  uuid
+  adviceUuid
+  adviceGropUuid
+  lastAdviceGroupUuid
+  drsUuid
+  createDate
+  status
+  vmUuid
+  vm {
+    uuid
+    name
+  }
+  vmSourceHostUuid
+  vmSourceHost {
+    uuid
+    name
+    managementIp
+  }
+  vmTargetHostUuid
+  vmTargetHost {
+    uuid
+    name
+    managementIp
+  }
+  reason
+}
+
+query queryClusterList(
+  $start: Int
+  $limit: Int
+  $type: ClusterQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  clusterList(
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...clusterFields
+      primaryStorageList {
+        uuid
+        type
+        availablePhysicalCapacity
+        totalPhysicalCapacity
+        primaryStorageCapacity {
+          primaryStorageUuids
+          availableCapacity
+          reservedCapacity
+          totalCapacity
+          overProvisioningPrimaryStorage
+          availablePhysicalCapacity
+          reservedPhysicalCapacity
+          totalPhysicalCapacity
+          systemUsedCapacity
+          volumeSnapshotSize
+          imageCacheSize
+          volumeSize
+          vmTemplateVolumeCacheSize
+          timestamp
+        }
+      }
+    }
+  }
+}
+
+query queryClusterForZSVCreateInstance(
+  $start: Int
+  $limit: Int
+  $type: ClusterQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  clusterList(
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    total
+    list {
+      name
+      uuid
+      architecture
+      clusterKVMCpuModel
+      type
+      state
+      hypervisorType
+      hostNum
+      zoneUuid
+
+      resourceConfigValue {
+        hostCpuOverProvisioningRatio
+        mevocoOverProvisioningMemory
+        kvmIgnoreMsrs
+        premiumClusterEnableZeroCopy
+        kvmReservedMemory
+        premiumClusterHugepageEnable
+        haVmHaLevel
+        vmVmHaAcrossClusters
+        vmEmulateHyperV
+        vmVideoType
+        kvmAutoSetVmNicMultiqueue
+      }
+    }
+  }
+}
+
+query queryClusterDRS($clusterUuid: String!) {
+  queryClusterDRS(clusterUuid: $clusterUuid) {
+    list {
+      ...drsFields
+    }
+  }
+}
+
+query queryDRSAdviceList(
+  $start: Int
+  $limit: Int
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  queryDRSAdviceList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...DRSAdviceFields
+    }
+  }
+}
+
+query queryDRSVmMigrationActivityList(
+  $start: Int
+  $limit: Int
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  queryDRSVmMigrationActivityList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    total
+    list {
+      uuid
+      vmUuid
+      vm {
+        name
+        uuid
+      }
+      cause
+      vmSourceHostUuid
+      sourceHost {
+        name
+        uuid
+      }
+      vmTargetHostUuid
+      targetHost {
+        name
+        uuid
+      }
+      clusterName
+      reason
+      drsUuid
+      createDate
+      endDate
+      status
+    }
+  }
+}
+
+query getClusterRelatedSummary($uuid: String!) {
+  getClusterRelatedSummary(uuid: $uuid) {
+    vm
+    host
+    primaryStorage
+    iscsiServer
+    l2Network
+    physicalNic
+    gpu
+    vGpu
+    usb
+    pci
+  }
+}
+
+query clusterSummary(
+  $start: Int
+  $limit: Int
+  $type: ClusterQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+) {
+  clusterSummary(
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+    extraConditions: $extraConditions
+    replyWithCount: true
+  ) {
+    clusterCount
+    baremetalCount
+    baremetal2Count
+  }
+}
+
+mutation deleteClusters($uuids: [String!]!) {
+  deleteClusters(uuids: $uuids) {
+    ...actionSendRespFields
+  }
+}
+
+mutation updateCluster($input: UpdateClusterInput!) {
+  updateCluster(input: $input) {
+    ...clusterActionRespFields
+  }
+}
+
+mutation attachL2NetworkToCluster($input: AttachOrDetachL2NetworksFromClusterActionInput!) {
+  attachL2NetworkToCluster(input: $input) {
+    actionId
+  }
+}
+
+mutation detachL2NetworkFromCluster($input: AttachOrDetachL2NetworksFromClusterActionInput!) {
+  detachL2NetworkFromCluster(input: $input) {
+    actionId
+  }
+}
+
+mutation createCluster($input: CreateClusterInput!) {
+  createCluster(input: $input) {
+    result {
+      name
+    }
+  }
+}

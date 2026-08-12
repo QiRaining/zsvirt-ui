@@ -1,0 +1,69 @@
+@import "../../../theme.module.less";
+
+.alarm-list-title {
+  margin: 0 0 12px 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a4c4f;
+  line-height: 22px;
+
+  display: flex;
+  flex-direction: row;
+
+  > span {
+    margin-right: 4px;
+  }
+}
+
+.buttonMargin {
+  :global {
+    .ant-space-item {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.couldPlatform {
+  //background: #f5f7fa;
+
+  .list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 2px;
+    border: 1px solid @neutral-300;
+  }
+}
+
+.tableList {
+  :global {
+    tr > th:nth-child(1) {
+      padding-right: 0px !important;
+    }
+
+    tr > th:nth-child(2) {
+      padding-left: 6px !important;
+    }
+
+    tr > td:nth-child(1) {
+      padding-right: 4px !important;
+    }
+
+    tr > td:nth-child(2) {
+      padding-left: 6px !important;
+    }
+  }
+}
+
+.tooltip {
+  line-height: 22px !important;
+  font-size: 16px !important;
+  color: @neutral-400 !important;
+  cursor: pointer;
+  transition: color 0.3s;
+  vertical-align: -3px !important;
+
+  &:hover {
+    color: @color-600 !important;
+  }
+}

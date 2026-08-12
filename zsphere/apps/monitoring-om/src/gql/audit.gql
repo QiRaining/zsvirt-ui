@@ -1,0 +1,53 @@
+fragment auditFields on Audit {
+  operator
+  requestUuid
+  responseUuid
+  apiName
+  clientIp
+  clientBrowser
+  operatorAccountUuid
+  operatorAccountName
+  error
+  isError
+  duration
+  resourceType
+  time
+  createTime
+  requestDump
+  responseDump
+  resourceUuid
+  isValid
+  resourceName
+  currentResourceName
+  alarmZhName
+}
+
+query queryAuditList(
+  $start: Int
+  $limit: Int
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: String
+) {
+  queryAuditList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+  ) {
+    total
+    list {
+      ...auditFields
+    }
+  }
+}
+
+query getCurrentTime {
+  getCurrentTime {
+    currentTime {
+      Seconds
+      MillionSeconds
+    }
+  }
+}

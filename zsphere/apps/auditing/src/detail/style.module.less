@@ -1,0 +1,57 @@
+@import "../theme.less";
+
+.detailContainer {
+  flex-direction: column;
+}
+
+.card {
+  margin-bottom: 12px !important;
+}
+
+.code-card {
+  margin-bottom: 12px !important;
+  :global {
+    .ant-card-body {
+      padding: 12px !important;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 12px;
+  margin-top: 20px;
+  color: @neutral-700;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.failedReason {
+  line-height: 22px;
+  color: @danger-600;
+  word-break: break-all;
+}
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.main {
+  padding: 24px;
+}
+
+.toolbar {
+  margin: 12px 0;
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}

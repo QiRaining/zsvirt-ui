@@ -1,0 +1,212 @@
+fragment diskFieldsForEditVM on Volume {
+  uuid
+  name
+  description
+  primaryStorageUuid
+  vmInstanceUuid
+  deviceId
+  installPath
+  type
+  format
+  size
+  actualSize
+  state
+  status
+  diskOfferingUuid
+  rootImageUuid
+  isHaveMemorySnapshot
+  createDate
+  isHaveSnapshot
+  lastOpDate
+  isShareable
+  volumeQos
+  backupTaskType
+  backupStatus
+  lastDetachDate
+  lastAttachDate(vmInstanceUuid: $vmInstanceUuid)
+  # cdpTaskStatus
+  backupTaskStatus
+  primaryStorage {
+    uuid
+    name
+    type
+    availableCapacity
+    storageCapacityForLocalStorage {
+      reservedPhysicalCapacity
+      totalPhysicalCapacity
+      availablePhysicalCapacity
+      imageCacheSize
+      systemUsedCapacity
+      volumeSize
+      volumeSnapshotSize
+      vmTemplateVolumeCacheSize
+      overProvisioningPrimaryStorage
+      reservedCapacity
+    }
+    primaryStorageCapacity {
+      totalPhysicalCapacity
+      availablePhysicalCapacity
+      overProvisioningPrimaryStorage
+      thresholdPrimaryStoragePhysicalCapacity
+      systemUsedCapacity
+      reservedCapacity
+      volumeSnapshotSize
+      imageCacheSize
+      volumeSize
+      vmTemplateVolumeCacheSize
+    }
+  }
+  rootImage {
+    name
+    uuid
+    size
+  }
+  vmInstance {
+    name
+    uuid
+    state
+    type
+    zoneUuid
+    hypervisorType
+    clusterUuid
+    # cdpTaskStatus
+  }
+  owner {
+    name
+    uuid
+    type
+    linkedAccountUuid
+  }
+  bandwidth {
+    volumeUuid
+    volumeBandwidth
+    volumeBandwidthRead
+    volumeBandwidthWrite
+    iopsTotal
+    iopsRead
+    iopsWrite
+    volumeBandwidthUpthreshold
+    volumeBandwidthReadUpthreshold
+    volumeBandwidthWriteUpthreshold
+  }
+  systemTag {
+    WWN
+    VirtioSCSI
+    notSupportActualSize
+    volumeAttributeUserConfig
+    VolumeProvisioningStrategy
+    capability
+    cephStoragePool
+  }
+  tag {
+    ownerUuid
+    name
+    uuid
+    color
+  }
+
+  relatedResource {
+    backupData
+  }
+  resourceConfig {
+    vmcacheMode
+    aionative
+  }
+}
+query volumeListForEditVM(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: VolumeQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $vmInstanceUuid: String
+) {
+  volumeList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...diskFieldsForEditVM
+    }
+  }
+}
+
+fragment diskFields on Disk {
+  uuid
+  slotNumber
+  diskType
+  diskUsage
+  size
+  readyState
+  ssdRemainingLife
+  temperature
+  locateStatus
+  driveType
+  model
+  rotateSpeed
+}
+
+query diskList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+) {
+  diskList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+  ) {
+    list {
+      ...diskFields
+    }
+    total
+  }
+}
+
+fragment hostBlockDevicesFields on HostBlockDevices {
+  name
+  smartPassed
+  model
+  mediaType
+  serialNumber
+  size
+  usedRatio
+  used
+  available
+  fsType
+  mountPoint
+}
+
+query hostBlockDevicesList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+) {
+  hostBlockDevicesList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+  ) {
+    list {
+      ...hostBlockDevicesFields
+    }
+    total
+  }
+}

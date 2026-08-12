@@ -1,0 +1,108 @@
+@import "../../../../../../theme.less";
+
+.drawer:global(.ant-drawer) {
+  :global {
+    .ant-drawer-header .ant-drawer-close {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+    }
+
+    .ant-drawer-body {
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.content {
+  height: 100%;
+  position: relative;
+  padding: 24px;
+  height: 100%;
+  overflow: auto;
+}
+
+.jobDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+
+  .jobDetailHeader {
+    display: flex;
+    justify-content: space-between;
+
+    .jobDetailTitle {
+      color: @neutral-800;
+    }
+
+    .jobDetailCount {
+      color: @neutral-600;
+    }
+  }
+
+  .taskDotWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 12px 20px;
+    border-radius: 2px;
+    border: 1px solid @neutral-300;
+    color: white;
+
+    > div {
+      transition: background-color 300ms;
+    }
+  }
+
+  .apiList {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.apiDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .failedReason {
+    line-height: 22px;
+    color: @danger-600;
+    word-break: break-all;
+  }
+
+  .json {
+    padding: 12px;
+  }
+}
+
+.resultFilter {
+  color: @neutral-600 !important;
+
+  :global {
+    .ant-select-selector {
+      padding: 0 !important;
+      height: 22px !important;
+    }
+
+    .ant-select-selection-item {
+      text-align: right;
+      margin-right: 16px;
+      padding-right: 4px !important;
+      line-height: 22px !important;
+    }
+
+    .ant-select-selection-search-input {
+      height: 22px !important;
+    }
+
+    .ant-select-arrow {
+      right: 0 !important;
+      color: inherit !important;
+    }
+  }
+}

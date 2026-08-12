@@ -1,0 +1,397 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "iqn.count",
+          "ip",
+          "port",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "select.cluster",
+        "keys": [
+          "name",
+          "ip",
+          "port",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.baremetal2Cluster",
+        "keys": [
+          "name",
+          "ip",
+          "port",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "name",
+          "ip",
+          "port",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "iqn.count",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "iqn.count",
+            "defaultMessage": "IQNs"
+          },
+          "queryType": "",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ip.address",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "port",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "iscsi.server"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "iscsi.server"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "attach.cluster",
+          "detach.cluster",
+          "refresh.iscsi.server",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "attach.cluster",
+          "detach.cluster",
+          "refresh.iscsi.server",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.iscsi.server",
+          "refresh.iscsi.server",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal2Cluster/toolbar",
+        "extraKeys": [
+          "baremetal2cluster.attach.iscsiStorage",
+          "baremetal2cluster.detach.iscsiStorage"
+        ]
+      },
+      {
+        "view": "sub.baremetal3Cluster/row",
+        "activeKeys": [
+          "baremetal2cluster.detach.iscsiStorage"
+        ]
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.detach.iscsiStorage"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "cluster.attach.iscsiStorage",
+          "cluster.detach.iscsiStorage"
+        ]
+      },
+      {
+        "view": "sub.virtualization.data.storage/header",
+        "extraKeys": [
+          "edit"
+        ],
+        "activeKeys": [
+          "refresh.iscsi.server",
+          "add.data.storage",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.add.iscsi.server"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "edit",
+          "attach.cluster",
+          "detach.cluster"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.iscsi.server",
+        "resource": "iscsi.server",
+        "authKey": "add.iscsi.server",
+        "i18nKey": "add.iscsi",
+        "name": "添加iSCSI存储",
+        "label": "添加iSCSI存储",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.iscsi.server",
+        "resource": "iscsi.server",
+        "authKey": "virtualization.add.iscsi.server",
+        "i18nKey": "add.iscsi",
+        "name": "添加iSCSI存储",
+        "label": "添加iSCSI存储",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "iscsi.server",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "iscsi.server",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "iscsi.server",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.cluster",
+        "resource": "iscsi.server",
+        "authKey": "attach.cluster",
+        "i18nKey": "attach.cluster",
+        "name": "加载集群",
+        "label": "加载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.cluster",
+        "resource": "iscsi.server",
+        "authKey": "detach.cluster",
+        "i18nKey": "detach.cluster",
+        "name": "卸载集群",
+        "label": "卸载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "refresh.iscsi.server",
+        "resource": "iscsi.server",
+        "authKey": "refresh.iscsi.server",
+        "i18nKey": "refresh.iscsi",
+        "name": "同步数据",
+        "label": "同步数据",
+        "icon": "",
+        "dividerKey": "refresh.iscsi.server-divider"
+      },
+      {
+        "key": "add.data.storage",
+        "resource": "iscsi.server",
+        "authKey": "add.data.storage",
+        "i18nKey": "add.data.storage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "iscsi.server",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.attach.iscsiStorage",
+        "resource": "iscsi.server",
+        "authKey": "cluster.attach.iscsiStorage",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.detach.iscsiStorage",
+        "resource": "iscsi.server",
+        "authKey": "cluster.detach.iscsiStorage",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "baremetal2cluster.attach.iscsiStorage",
+        "resource": "iscsi.server",
+        "authKey": "baremetal2cluster.attach.iscsiStorage",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "baremetal2cluster.detach.iscsiStorage",
+        "resource": "iscsi.server",
+        "authKey": "baremetal2cluster.detach.iscsiStorage",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

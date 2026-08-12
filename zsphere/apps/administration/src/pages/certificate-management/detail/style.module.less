@@ -1,0 +1,31 @@
+.spin {
+  min-height: 100%;
+}
+
+.toolbar {
+  margin-bottom: 12px;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  flex-grow: 1;
+}
+
+.empty:global(.ant-empty) {
+  margin: 0px !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  :global {
+    .ant-empty-footer {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+fragment SpecialTree on SpecialTree {
+  uuid
+  name
+  title
+  resourceType
+  status
+  state
+  extraAttrib {
+    type
+    value
+  }
+  isLeaf
+  key
+  children {
+    uuid
+    name
+    title
+    resourceType
+    status
+    state
+    iconType
+    extraAttrib {
+      type
+      value
+    }
+    isLeaf
+    key
+  }
+}
+
+query getClusterHostTree {
+  clusterHostTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+
+        children {
+          ...SpecialTree
+        }
+      }
+    }
+  }
+}
+
+query getDirectoryTree {
+  directoryTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+
+        children {
+          uuid
+          name
+          title
+          resourceType
+          status
+          state
+          key
+          extraAttrib {
+            type
+            value
+          }
+
+          children {
+            ...SpecialTree
+          }
+        }
+      }
+    }
+  }
+}
+
+query getNetworkTree {
+  networkTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getDataStorageTreeList {
+  dataStorageTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+
+        isLeaf
+        key
+      }
+    }
+  }
+}
+
+query getTemplateVMTreeList {
+  templateVMTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getVMTemplateTreeList {
+  vmTemplateTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+query getL2NetworkTree {
+  l2NetworkTreeList {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        ...SpecialTree
+      }
+    }
+  }
+}
+
+
+query getBareMetalTreeList {
+  bareMetalTreeList {
+   list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        key
+        children {
+          ...SpecialTree
+        }
+      }
+    }
+  }
+}

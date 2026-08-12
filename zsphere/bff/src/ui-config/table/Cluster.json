@@ -1,0 +1,906 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "architecture",
+          "hypervisorType",
+          "networkHp",
+          "hostNum",
+          "cpuUsedRate",
+          "memoryUsedRate",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "select.baremetalpxeservice.baremetal",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.iscsi.server.attach",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.l2.network.attach",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.primary.storage",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.storage.init.config.cluster",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.pxe.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vcenter.network",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.baremetal",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.normal",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage",
+        "keys": [
+          "name",
+          "architecture",
+          "hostNum",
+          "cpuUsedRate",
+          "memoryUsedRate",
+          "primaryStorageUsedRate",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "architecture",
+          "hostNum",
+          "cpuUsedRate",
+          "memoryUsedRate",
+          "primaryStorageUsedRate",
+          "drsState",
+          "haVmHaLevel",
+          "cross.cluster.ha",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "vtepCidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "vtepCidr",
+            "defaultMessage": "VTEP CIDR"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "networkHp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkHp",
+            "defaultMessage": "Network Acceleration Support"
+          },
+          "queryType": "multipleFilter",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "hostNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hostCount",
+            "defaultMessage": "Hosts"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "baremetalChassisNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "baremetalChassis.count",
+            "defaultMessage": "Bare Metal Chassis"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "cpuUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpuUtilization",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "memoryUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "memoryUtilization",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "primaryStorageUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "primaryStorage.useage",
+            "defaultMessage": "Data Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "drsState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "drs.state",
+            "defaultMessage": "DRS State"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "haVmHaLevel",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ha.vm.ha.level",
+            "defaultMessage": "VM HA"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "cross.cluster.ha",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cross.cluster.ha",
+            "defaultMessage": "Cross-Cluster HA"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "cluster"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server/row",
+        "activeKeys": [
+          "virtualization.iscsi.server.detach.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server/toolbar",
+        "extraKeys": [
+          "virtualization.iscsi.server.attach.cluster",
+          "virtualization.iscsi.server.detach.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.baremetal/row",
+        "activeKeys": [
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.baremetal/toolbar",
+        "extraKeys": [
+          "virtualization.attach.to.l2.network",
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.normal/row",
+        "activeKeys": [
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network.normal/toolbar",
+        "extraKeys": [
+          "virtualization.attach.to.l2.network",
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network/row",
+        "activeKeys": [
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2.network/toolbar",
+        "extraKeys": [
+          "virtualization.attach.to.l2.network",
+          "virtualization.detach.from.l2.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme/row",
+        "activeKeys": [
+          "virtualization.nvmeServer.detach.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme/toolbar",
+        "extraKeys": [
+          "virtualization.nvmeServer.attach.cluster",
+          "virtualization.nvmeServer.detach.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/row",
+        "activeKeys": [
+          "add.host",
+          "virtualization.create.instance",
+          "create.l3Network",
+          "edit",
+          "detach.in.virtualization.primary.storage",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/toolbar",
+        "extraKeys": [
+          "attach.in.virtualization.primary.storage",
+          "detach.in.virtualization.primary.storage"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "add.host",
+          "virtualization.create.instance",
+          "create.l3Network",
+          "add.dataStorage",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.create.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "add.host",
+          "virtualization.create.instance",
+          "create.l3Network",
+          "add.dataStorage",
+          "edit",
+          "virtualization.advanced.config",
+          "virtualization.modify.network.setting",
+          "virtualization.modify.resource.config",
+          "virtualization.modify.host.setting",
+          "virtualization.modify.vm.setting",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "add.host",
+          "virtualization.create.instance",
+          "create.l3Network",
+          "add.dataStorage",
+          "edit",
+          "virtualization.advanced.config",
+          "virtualization.modify.network.setting",
+          "virtualization.modify.resource.config",
+          "virtualization.modify.host.setting",
+          "virtualization.modify.vm.setting",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.host",
+        "resource": "cluster",
+        "authKey": "add.host",
+        "i18nKey": "add.host",
+        "name": "添加主机",
+        "label": "添加主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.instance",
+        "resource": "cluster",
+        "authKey": "virtualization.create.instance",
+        "i18nKey": "virtualization.create.instance.from.cluster",
+        "name": "创建虚拟机",
+        "label": "创建虚拟机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.l3Network",
+        "resource": "cluster",
+        "authKey": "create.l3Network",
+        "i18nKey": "virtualization.cluster.create.l3Network",
+        "name": "新建分布式交换机",
+        "label": "新建分布式交换机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dataStorage",
+        "resource": "cluster",
+        "authKey": "add.dataStorage",
+        "i18nKey": "add.dataStorage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": "add.dataStorage-divider"
+      },
+      {
+        "key": "virtualization.create.cluster",
+        "resource": "cluster",
+        "authKey": "virtualization.create.cluster",
+        "i18nKey": "create.cluster",
+        "name": "创建集群",
+        "label": "创建集群",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "cluster",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "cluster",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.advanced.config",
+        "resource": "cluster",
+        "authKey": "virtualization.advanced.config",
+        "i18nKey": "virtualization.advanced.config",
+        "name": "高级设置",
+        "label": "高级设置",
+        "icon": "",
+        "dividerKey": "virtualization.advanced.config-divider",
+        "hasChildren": 4,
+        "children": [
+          {
+            "key": "virtualization.modify.network.setting",
+            "resource": "cluster",
+            "authKey": "virtualization.modify.network.setting",
+            "i18nKey": "virtualization.modify.network.setting",
+            "name": "修改集群网络",
+            "label": "修改集群网络",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "virtualization.modify.resource.config",
+            "resource": "cluster",
+            "authKey": "virtualization.modify.resource.config",
+            "i18nKey": "virtualization.modify.resource.config",
+            "name": "修改集群超配",
+            "label": "修改集群超配",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "virtualization.modify.host.setting",
+            "resource": "cluster",
+            "authKey": "virtualization.modify.host.setting",
+            "i18nKey": "virtualization.modify.host.setting",
+            "name": "修改主机设置",
+            "label": "修改主机设置",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "virtualization.modify.vm.setting",
+            "resource": "cluster",
+            "authKey": "virtualization.modify.vm.setting",
+            "i18nKey": "virtualization.modify.vm.setting",
+            "name": "修改虚拟机设置",
+            "label": "修改虚拟机设置",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "enable",
+        "resource": "cluster",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "cluster",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "attach.in.virtualization.primary.storage",
+        "resource": "cluster",
+        "authKey": "attach.in.virtualization.primary.storage",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.virtualization.primary.storage",
+        "resource": "cluster",
+        "authKey": "detach.in.virtualization.primary.storage",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.attach.to.l2.network",
+        "resource": "cluster",
+        "authKey": "virtualization.attach.to.l2.network",
+        "i18nKey": "virtualization.attach.cluster",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.detach.from.l2.network",
+        "resource": "cluster",
+        "authKey": "virtualization.detach.from.l2.network",
+        "i18nKey": "virtualization.detach.cluster",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.iscsi.server.attach.cluster",
+        "resource": "cluster",
+        "authKey": "virtualization.iscsi.server.attach.cluster",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.iscsi.server.detach.cluster",
+        "resource": "cluster",
+        "authKey": "virtualization.iscsi.server.detach.cluster",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.attach.l2.network",
+        "resource": "cluster",
+        "authKey": "virtualization.attach.l2.network",
+        "i18nKey": "virtualization.attach.l2.network",
+        "name": "加载分布式交换机",
+        "label": "加载分布式交换机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.detach.l2.network",
+        "resource": "cluster",
+        "authKey": "virtualization.detach.l2.network",
+        "i18nKey": "virtualization.detach.l2.network",
+        "name": "卸载分布式交换机",
+        "label": "卸载分布式交换机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.attach.primaryStorage",
+        "resource": "cluster",
+        "authKey": "virtualization.attach.primaryStorage",
+        "i18nKey": "virtualization.attach.primaryStorage",
+        "name": "加载数据存储",
+        "label": "加载数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.detach.primaryStorage",
+        "resource": "cluster",
+        "authKey": "virtualization.detach.primaryStorage",
+        "i18nKey": "virtualization.detach.primaryStorage",
+        "name": "卸载数据存储",
+        "label": "卸载数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "cluster",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.nvmeServer.attach.cluster",
+        "resource": "cluster",
+        "authKey": "virtualization.nvmeServer.attach.cluster",
+        "i18nKey": "virtualization.attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.nvmeServer.detach.cluster",
+        "resource": "cluster",
+        "authKey": "virtualization.nvmeServer.detach.cluster",
+        "i18nKey": "virtualization.detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

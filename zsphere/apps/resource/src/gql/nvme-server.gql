@@ -1,0 +1,102 @@
+fragment NvmeServerFields on NvmeServer {
+  uuid
+  name
+  ip
+  port
+  state
+  transport
+  nvmeClusterRefs {
+    clusterUuid
+    nvmeServerUuid
+  }
+  nvmeTargets {
+    uuid
+    name
+    nqn
+    state
+    nvmeServerUuid
+    lastOpDate
+    createDate
+    nvmeLuns {
+      uuid
+      name
+      wwid
+      wwn
+      vendor
+      model
+      serial
+      type
+      path
+      state
+      source
+      size
+      nvmeTargetUuid
+      createDate
+      lastOpDate
+      nvmeLunHostRefs {
+        hostUuid
+      }
+    }
+  }
+  lunDeviceUsageInfo {
+    totalLunNum
+    usedLunNum
+    unusedLunNum
+  }
+  zones {
+    name
+    uuid
+  }
+  lastOpDate
+  createDate
+}
+
+query nvmeServerList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: NvmeServerQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeServerList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...NvmeServerFields
+    }
+  }
+}
+
+query nvmeServerCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: NvmeServerQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeServerList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}

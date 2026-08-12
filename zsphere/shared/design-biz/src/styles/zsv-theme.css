@@ -1,0 +1,601 @@
+/**
+ * ZSV Tailwind CSS 主题配置
+ * 基于 antd 4.24.16 设计规范，为 @zstack/design 组件提供 ZSV 风格样式
+ * 
+ * 设计 Token 来源：
+ * - packages/products/zsv/shared/utils/src/style/color.less
+ * - packages/products/zsv/shared/components/src/style/antd-overwrite.less
+ */
+
+/* ============================================
+   1. CSS 变量定义 - 继承自 ZSV 主题系统
+   ============================================ */
+
+@layer base {
+  :root {
+    /* === 主题色（动态，支持换肤）=== */
+    /* 这些变量由 ZSV 主题系统动态设置，默认为蓝色主题 */
+    --zsv-primary-50: var(--color-50, #f5f7fa);
+    --zsv-primary-100: var(--color-100, #ebeef2);
+    --zsv-primary-200: var(--color-200, #d8dce3);
+    --zsv-primary-300: var(--color-300, #c0c6d0);
+    --zsv-primary-400: var(--color-400, #a8b0bd);
+    --zsv-primary-500: var(--color-500, #8c96a5);
+    --zsv-primary-600: var(--color-600, #6f7a8c);
+    --zsv-primary-700: var(--color-700, #555f73);
+    --zsv-primary-800: var(--color-800, #3c4559);
+    --zsv-primary-900: var(--color-900, #242c40);
+
+    /* === 中性色 === */
+    --zsv-neutral-0: var(--neutral-0, #ffffff);
+    --zsv-neutral-100: var(--neutral-100, #f5f7fa);
+    --zsv-neutral-200: var(--neutral-200, #f0f2f5);
+    --zsv-neutral-300: var(--neutral-300, #dbdde0);
+    --zsv-neutral-400: var(--neutral-400, #c8cacd);
+    --zsv-neutral-500: var(--neutral-500, #96989b);
+    --zsv-neutral-600: var(--neutral-600, #707275);
+    --zsv-neutral-700: var(--neutral-700, #4a4c4f);
+    --zsv-neutral-800: var(--neutral-800, #181a1d);
+    --zsv-neutral-900: var(--neutral-900, #000000);
+
+    /* === 状态色 - 成功 (Positive) === */
+    --zsv-positive-50: var(--positive-50, #ecfedf);
+    --zsv-positive-100: var(--positive-100, #dffcc6);
+    --zsv-positive-200: var(--positive-200, #c9f7ae);
+    --zsv-positive-400: var(--positive-400, #8be374);
+    --zsv-positive-500: var(--positive-500, #57d344);
+    --zsv-positive-600: var(--positive-600, #3ab333);
+
+    /* === 状态色 - 信息 (Info) === */
+    --zsv-info-50: var(--info-50, #e6f6ff);
+    --zsv-info-100: var(--info-100, #ceefff);
+    --zsv-info-200: var(--info-200, #98d7fe);
+    --zsv-info-400: var(--info-400, #3ea1fa);
+    --zsv-info-500: var(--info-500, #0076f7);
+    --zsv-info-600: var(--info-600, #005bd4);
+
+    /* === 状态色 - 警告 (Alert) === */
+    --zsv-alert-50: var(--alert-50, #fff8e5);
+    --zsv-alert-100: var(--alert-100, #fff1cc);
+    --zsv-alert-200: var(--alert-200, #ffe199);
+    --zsv-alert-400: var(--alert-400, #ffb53f);
+    --zsv-alert-500: var(--alert-500, #ff9000);
+    --zsv-alert-600: var(--alert-600, #db7200);
+
+    /* === 状态色 - 危险 (Danger) === */
+    --zsv-danger-50: var(--danger-50, #fff2ea);
+    --zsv-danger-100: var(--danger-100, #ffe4d8);
+    --zsv-danger-200: var(--danger-200, #ffc3b2);
+    --zsv-danger-400: var(--danger-400, #ff766f);
+    --zsv-danger-500: var(--danger-500, #f93940);
+    --zsv-danger-600: var(--danger-600, #db2e43);
+
+    /* === 状态色 - 待处理 (Pending) === */
+    --zsv-pending-50: var(--pending-50, #f9ecfe);
+    --zsv-pending-100: var(--pending-100, #f4dafd);
+    --zsv-pending-200: var(--pending-200, #e6b5fc);
+    --zsv-pending-400: var(--pending-400, #bb71ee);
+    --zsv-pending-500: var(--pending-500, #9a45e4);
+    --zsv-pending-600: var(--pending-600, #7a35c3);
+
+    /* === 组件特定变量 === */
+    /* 按钮 */
+    --zsv-button-default-bg: var(--zsv-neutral-200);
+    --zsv-button-default-hover-bg: var(--zsv-neutral-300);
+    --zsv-button-default-text: var(--zsv-neutral-700);
+    --zsv-button-primary-bg: var(--zsv-primary-600);
+    --zsv-button-primary-hover-bg: var(--zsv-primary-700);
+    --zsv-button-primary-text: var(--zsv-neutral-0);
+
+    /* 输入框 */
+    --zsv-input-bg: var(--zsv-neutral-0);
+    --zsv-input-border: var(--zsv-neutral-400);
+    --zsv-input-focus-border: var(--zsv-primary-600);
+    --zsv-input-placeholder: var(--zsv-neutral-500);
+    --zsv-input-text: var(--zsv-neutral-700);
+
+    /* 表格 */
+    --zsv-table-header-bg: var(--zsv-neutral-100);
+    --zsv-table-header-text: var(--zsv-neutral-600);
+    --zsv-table-row-hover-bg: var(--zsv-neutral-100);
+    --zsv-table-border: var(--zsv-neutral-300);
+    --zsv-table-cell-padding: 11px 12px;
+
+    /* 选择器 */
+    --zsv-select-selected-bg: var(--zsv-primary-50);
+    --zsv-select-border: var(--zsv-neutral-400);
+
+    /* 阴影 */
+    --zsv-shadow-light: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    --zsv-shadow-medium: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    --zsv-shadow-deep: 0 12px 20px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* ============================================
+   2. Tailwind CSS v4 主题扩展
+   ============================================ */
+
+@theme {
+  /* === 颜色系统 === */
+  /* 主题色 - 映射到 theme-* */
+  --color-theme-50: var(--zsv-primary-50);
+  --color-theme-100: var(--zsv-primary-100);
+  --color-theme-200: var(--zsv-primary-200);
+  --color-theme-300: var(--zsv-primary-300);
+  --color-theme-400: var(--zsv-primary-400);
+  --color-theme-500: var(--zsv-primary-500);
+  --color-theme-600: var(--zsv-primary-600);
+  --color-theme-700: var(--zsv-primary-700);
+  --color-theme-800: var(--zsv-primary-800);
+  --color-theme-900: var(--zsv-primary-900);
+
+  /* 中性色 */
+  --color-zsv-neutral-0: var(--zsv-neutral-0);
+  --color-zsv-neutral-100: var(--zsv-neutral-100);
+  --color-zsv-neutral-200: var(--zsv-neutral-200);
+  --color-zsv-neutral-300: var(--zsv-neutral-300);
+  --color-zsv-neutral-400: var(--zsv-neutral-400);
+  --color-zsv-neutral-500: var(--zsv-neutral-500);
+  --color-zsv-neutral-600: var(--zsv-neutral-600);
+  --color-zsv-neutral-700: var(--zsv-neutral-700);
+  --color-zsv-neutral-800: var(--zsv-neutral-800);
+  --color-zsv-neutral-900: var(--zsv-neutral-900);
+
+  /* 状态色 */
+  --color-zsv-positive-50: var(--zsv-positive-50);
+  --color-zsv-positive-500: var(--zsv-positive-500);
+  --color-zsv-positive-600: var(--zsv-positive-600);
+
+  --color-zsv-info-50: var(--zsv-info-50);
+  --color-zsv-info-500: var(--zsv-info-500);
+  --color-zsv-info-600: var(--zsv-info-600);
+
+  --color-zsv-alert-50: var(--zsv-alert-50);
+  --color-zsv-alert-500: var(--zsv-alert-500);
+  --color-zsv-alert-600: var(--zsv-alert-600);
+
+  --color-zsv-danger-50: var(--zsv-danger-50);
+  --color-zsv-danger-500: var(--zsv-danger-500);
+  --color-zsv-danger-600: var(--zsv-danger-600);
+
+  --color-zsv-pending-50: var(--zsv-pending-50);
+  --color-zsv-pending-500: var(--zsv-pending-500);
+  --color-zsv-pending-600: var(--zsv-pending-600);
+
+  /* === 字体大小（与 antd 对齐）=== */
+  --font-size-xs: 12px;
+  --line-height-xs: 20px;
+  --font-size-sm: 14px;
+  --line-height-sm: 22px;
+  --font-size-base: 16px;
+  --line-height-base: 24px;
+  --font-size-lg: 20px;
+  --line-height-lg: 28px;
+  --font-size-xl: 24px;
+  --line-height-xl: 32px;
+  --font-size-2xl: 30px;
+  --line-height-2xl: 38px;
+  --font-size-3xl: 38px;
+  --line-height-3xl: 46px;
+
+  /* === 圆角（与 antd 对齐）=== */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  /* === 阴影 === */
+  --shadow-zsv-light: var(--zsv-shadow-light);
+  --shadow-zsv-medium: var(--zsv-shadow-medium);
+  --shadow-zsv-deep: var(--zsv-shadow-deep);
+
+  /*
+   * 间距系统：继承 @zstack/design 的 --spacing: 0.25rem 乘数机制
+   * Tailwind v4 会自动通过 calc(var(--spacing) * N) 生成所有间距工具类
+   * 如 p-4 = 16px, p-6 = 24px, m-8 = 32px 等
+   * 不要在这里覆盖 --spacing-N，否则会破坏乘数计算，导致未列出的值失效
+   */
+}
+
+/* ============================================
+   3. 组件样式覆盖
+   ============================================ */
+
+@layer components {
+  /* === 按钮样式 === */
+  .zsv-btn {
+    font-size: 14px;
+    line-height: 22px;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+  }
+
+  .zsv-btn-default {
+    background-color: var(--zsv-button-default-bg);
+    color: var(--zsv-button-default-text);
+    border: none;
+    box-shadow: none;
+  }
+
+  .zsv-btn-default:hover {
+    background-color: var(--zsv-button-default-hover-bg);
+  }
+
+  .zsv-btn-primary {
+    background-color: var(--zsv-button-primary-bg);
+    color: var(--zsv-button-primary-text);
+    border: none;
+  }
+
+  .zsv-btn-primary:hover {
+    background-color: var(--zsv-button-primary-hover-bg);
+  }
+
+  .zsv-btn-text {
+    background-color: transparent;
+    color: var(--zsv-neutral-700);
+    border: none;
+  }
+
+  .zsv-btn-text:hover {
+    background-color: var(--zsv-neutral-200);
+  }
+
+  .zsv-btn-link {
+    background-color: transparent;
+    color: var(--zsv-primary-600);
+    border: none;
+  }
+
+  .zsv-btn-link:hover {
+    color: var(--zsv-primary-500);
+  }
+
+  .zsv-btn-dashed {
+    background-color: transparent;
+    color: var(--zsv-neutral-700);
+    border: 1px dashed var(--zsv-neutral-300);
+  }
+
+  .zsv-btn-dashed:hover {
+    border-color: var(--zsv-primary-600);
+    color: var(--zsv-primary-600);
+  }
+
+  .zsv-btn:disabled,
+  .zsv-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* === 输入框样式 === */
+  .zsv-input {
+    background-color: var(--zsv-input-bg);
+    border: 1px solid var(--zsv-input-border);
+    border-radius: var(--radius-md);
+    color: var(--zsv-input-text);
+    font-size: 14px;
+    line-height: 22px;
+    padding: 4px 11px;
+    transition: border-color 0.2s ease;
+  }
+
+  .zsv-input::placeholder {
+    color: var(--zsv-input-placeholder);
+  }
+
+  .zsv-input:focus {
+    border-color: var(--zsv-input-focus-border);
+    outline: none;
+    box-shadow: none;
+  }
+
+  .zsv-input:hover:not(:focus) {
+    border-color: var(--zsv-primary-400);
+  }
+
+  .zsv-input-error {
+    border-color: var(--zsv-danger-500);
+  }
+
+  .zsv-input-error:focus {
+    border-color: var(--zsv-danger-500);
+  }
+
+  /* === 选择器样式 === */
+  .zsv-select-option-selected {
+    background-color: var(--zsv-select-selected-bg);
+    font-weight: 400;
+  }
+
+  /* === 表格样式 === */
+  .zsv-table-header {
+    background-color: var(--zsv-table-header-bg);
+    color: var(--zsv-table-header-text);
+  }
+
+  .zsv-table-row:hover {
+    background-color: var(--zsv-table-row-hover-bg);
+  }
+
+  .zsv-table-cell {
+    padding: var(--zsv-table-cell-padding);
+    border-bottom: 1px solid var(--zsv-table-border);
+  }
+
+  /* === 复选框样式 === */
+  .zsv-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--zsv-neutral-400);
+    border-radius: var(--radius-sm);
+  }
+
+  .zsv-checkbox-checked {
+    background-color: var(--zsv-primary-600);
+    border-color: var(--zsv-primary-600);
+  }
+
+  .zsv-checkbox-indeterminate::after {
+    width: 8px;
+    height: 8px;
+    background-color: var(--zsv-primary-600);
+    border-radius: var(--radius-xs);
+  }
+
+  /* === 单选框样式 === */
+  .zsv-radio-checked {
+    border-color: var(--zsv-primary-600);
+  }
+
+  .zsv-radio-checked::after {
+    background-color: var(--zsv-primary-600);
+  }
+
+  .zsv-radio:focus {
+    box-shadow: 0 0 0 3px var(--zsv-primary-100);
+  }
+
+  /* 修复 Radix UI RadioGroup 按钮重影
+   * preflight.css 对所有 button 设置了 appearance: button，
+   * 但 Radix RadioGroup.Item 渲染为 <button role="radio">，
+   * 导致原生按钮外观与自定义圆形边框叠加产生重影。
+   */
+  button[role="radio"] {
+    appearance: none;
+  }
+
+  /* === 开关样式 === */
+  .zsv-switch {
+    background-color: var(--zsv-neutral-400);
+  }
+
+  .zsv-switch-checked {
+    background-color: var(--zsv-primary-600);
+  }
+
+  .zsv-switch:disabled {
+    opacity: 0.5;
+  }
+
+  /* === Tabs 样式 === */
+  .zsv-tabs-tab {
+    color: var(--zsv-neutral-700);
+    padding: 8px 0;
+  }
+
+  .zsv-tabs-tab-active {
+    color: var(--zsv-primary-600);
+  }
+
+  .zsv-tabs-ink-bar {
+    background-color: var(--zsv-primary-600);
+  }
+
+  /* === Tooltip 样式 === */
+  .zsv-tooltip {
+    background-color: var(--zsv-neutral-700);
+    color: var(--zsv-neutral-100);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    max-width: 320px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /* === 下拉菜单样式 === */
+  .zsv-dropdown {
+    box-shadow: var(--zsv-shadow-medium);
+    border-radius: var(--radius-md);
+  }
+
+  /* === 卡片样式 === */
+  .zsv-card {
+    background-color: var(--zsv-neutral-0);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--zsv-shadow-light);
+  }
+
+  .zsv-card:hover {
+    box-shadow: var(--zsv-shadow-medium);
+  }
+
+  /* === 模态框样式 === */
+  .zsv-modal {
+    box-shadow: var(--zsv-shadow-deep);
+    border-radius: var(--radius-lg);
+  }
+
+  /* === 抽屉样式 === */
+  .zsv-drawer-header {
+    padding: 13px 24px;
+    border-bottom: 1px solid var(--zsv-neutral-300);
+  }
+
+  .zsv-drawer-footer {
+    padding: 14px 24px;
+    border-top: 1px solid var(--zsv-neutral-300);
+  }
+
+  /* === 菜单样式 === */
+  .zsv-menu-item {
+    padding: 8px 24px;
+    color: var(--zsv-neutral-700);
+  }
+
+  .zsv-menu-item:hover {
+    background-color: var(--zsv-neutral-100);
+  }
+
+  .zsv-menu-item-selected {
+    background-color: var(--zsv-primary-50);
+    color: var(--zsv-primary-600);
+  }
+
+  .zsv-menu-group-title {
+    padding: 12px 24px;
+    font-size: 12px;
+    color: var(--zsv-neutral-600);
+  }
+
+  /* === 状态颜色工具类 === */
+  .zsv-status-positive {
+    color: var(--zsv-positive-500);
+  }
+
+  .zsv-status-info {
+    color: var(--zsv-info-500);
+  }
+
+  .zsv-status-alert {
+    color: var(--zsv-alert-500);
+  }
+
+  .zsv-status-danger {
+    color: var(--zsv-danger-500);
+  }
+
+  .zsv-status-pending {
+    color: var(--zsv-pending-500);
+  }
+
+  /* === 背景色工具类 === */
+  .zsv-bg-positive {
+    background-color: var(--zsv-positive-50);
+  }
+
+  .zsv-bg-info {
+    background-color: var(--zsv-info-50);
+  }
+
+  .zsv-bg-alert {
+    background-color: var(--zsv-alert-50);
+  }
+
+  .zsv-bg-danger {
+    background-color: var(--zsv-danger-50);
+  }
+
+  .zsv-bg-pending {
+    background-color: var(--zsv-pending-50);
+  }
+}
+
+/* ============================================
+   4. 工具类
+   ============================================ */
+
+@layer utilities {
+  /* 文本省略 */
+  .zsv-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .zsv-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* 滚动条样式 */
+  .zsv-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .zsv-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--zsv-neutral-400);
+    border-radius: var(--radius-md);
+  }
+
+  .zsv-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  /* 禁用选择 */
+  .zsv-no-select {
+    user-select: none;
+  }
+
+  /* 点击效果 */
+  .zsv-clickable {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .zsv-clickable:active {
+    opacity: 0.8;
+  }
+}
+
+/* ============================================                   
+     5. Antd 兼容性修复（迁移到 @zstack/design 后可删除）           
+   ============================================ */
+
+@layer overrides {
+  /*
+   * fix(ZSV-11535): 修复输入框高度不一致
+   * preflight.css 的 `font: inherit` 位于 @layer base，优先级高于 @layer antd，
+   * 会覆盖 antd 的 line-height: 1.5715，导致输入框高度随父元素 line-height 变化。
+   * 在 @layer overrides 中显式恢复 line-height，确保所有输入框高度一致。
+   */
+  .ant-input,
+  .ant-input-number,
+  .ant-input-number-input,
+  .ant-input-affix-wrapper {
+    line-height: 1.5715;
+  }
+
+  /*
+   * fix: 修复 antd radio/checkbox 双层边框
+   * preflight.css 在 @layer base 对 input 设置 opacity: 1，
+   * 覆盖了 @layer antd 中 .ant-radio-input 的 opacity: 0，
+   * 导致原生 <input type="radio"> 和自定义 .ant-radio-inner 同时可见，
+   * 形成双层圆圈/描边效果。
+   */
+  .ant-radio-input,
+  .ant-checkbox-input {
+    opacity: 0;
+  }
+
+  /* 隐藏 antd radio 选中态的涟漪动画伪元素（在 CSS layers 下 visibility 控制失效） */
+  .ant-radio-checked::after {
+    display: none;
+  }
+
+  /*
+   * fix: 修复 pagination size changer 在 Form.Item error 状态下显示红色边框
+   * antd Select 通过 FormItemInputContext 继承外层 Form.Item 的 error status，
+   * 导致 Dialog 内 pagination 的 size changer Select 被标记为 ant-select-status-error。
+   * antd 原本用 :not(.ant-pagination-size-changer) 排除了样式，但 CSS Layers 下失效。
+   */
+  .ant-select-status-error.ant-pagination-size-changer:not(.ant-select-disabled)
+    .ant-select-selector {
+    border-color: var(--neutral-400, #c8cacd);
+  }
+}

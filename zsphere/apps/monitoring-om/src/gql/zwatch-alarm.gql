@@ -1,0 +1,102 @@
+fragment zwatchAlarmFields on ZWatchAlarmVO {
+  uuid
+  name
+  zhName
+  description
+  period
+  namespace
+  metricName
+  threshold
+  repeatCount
+  repeatInterval
+  enableRecovery
+  emergencyLevel
+  comparisonOperator
+  eventName
+  thirdpartyPlatformName
+  state
+  status
+  topicNum
+  createDate
+  lastOpDate
+  actions {
+    alarmUuid
+    subscriptionUuid
+    actionUuid
+    actionType
+  }
+  labels {
+    uuid
+    key
+    operator
+    value
+  }
+  userTag {
+    uuid
+    tag
+    type
+    resourceType
+    resourceUuid
+  }
+  owner {
+    uuid
+    name
+  }
+  platform {
+    uuid
+    name
+  }
+}
+
+query zwatchAlarmList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $start: Int
+  $limit: Int
+  $type: ZWatchAlarmQueryType
+) {
+  zwatchAlarmList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+  ) {
+    list {
+      ...zwatchAlarmFields
+    }
+    total
+  }
+}
+
+query zwatchAlarmDetail($uuid: String!) {
+  zwatchAlarmDetail(uuid: $uuid) {
+    ...zwatchAlarmFields
+   filteredAlarmResourceCount
+  }
+}
+
+
+mutation disableAlarms($input: DisableZWatchAlarmInput!) {
+  disableAlarms(input: $input) {
+    actionId
+  }
+}
+
+mutation enableAlarms($input: EnableZWatchAlarmInput!) {
+  enableAlarms(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteAlarms($input: DeleteZWatchAlarmInput!) {
+  deleteAlarms(input: $input) {
+    actionId
+  }
+}
+

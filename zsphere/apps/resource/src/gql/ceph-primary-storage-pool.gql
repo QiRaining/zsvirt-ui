@@ -1,0 +1,62 @@
+fragment CephPrimaryStoragePoolFields on CephPrimaryStoragePool {
+  uuid
+  name
+  aliasName
+  description
+  createDate
+  lastOpDate
+  availableCapacity
+  diskUtilization
+  securityPolicy
+  poolName
+  primaryStorageUuid
+  primaryStorage {
+    uuid
+    name
+  }
+  replicatedSize
+  totalCapacity
+  cephPrimaryStoragePoolCapacity {
+    volumeSnapshotSize
+    imageCacheSize
+    volumeSize
+    volumeActualSize
+    vmTemplateVolumeCacheSize
+    reservedCapacity
+  }
+  primaryStorageCapacity {
+    reservedCapacity
+    overProvisioningPrimaryStorage
+    thresholdPrimaryStoragePhysicalCapacity
+    totalPhysicalCapacity
+    availablePhysicalCapacity
+  }
+  type
+  usedCapacity
+}
+
+query cephPrimaryStoragePoolList(
+  $start: Int
+  $limit: Int
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: String
+) {
+  cephPrimaryStoragePoolList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...CephPrimaryStoragePoolFields
+    }
+  }
+}

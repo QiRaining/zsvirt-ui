@@ -1,0 +1,87 @@
+{
+  "DestinationHostUuid": {
+    "weight": "6",
+    "title": "destinationHost",
+    "inputType": "selectList",
+    "dbName": "host"
+  },
+  "SourceHostUuid": {
+    "weight": "5",
+    "title": "sourceHost",
+    "inputType": "selectList",
+    "dbName": "host"
+  },
+  "ResourceId": {
+    "weight": "5",
+    "title": "backupTask",
+    "inputType": "multiSelectList",
+    "dbName": "scheduler"
+  },
+  "OldState": {
+    "weight": "2",
+    "title": "oldState",
+    "inputType": "dropDown",
+    "values": {
+      "vm": [
+        "Created",
+        "Starting",
+        "Running",
+        "Stopping",
+        "Stopped",
+        "Rebooting",
+        "Destroying",
+        "Destroyed",
+        "Migrating",
+        "Pausing",
+        "Paused",
+        "Resuming",
+        "VolumeMigrating",
+        "Unknown"
+      ],
+      "host": ["Enabled", "Disabled", "PreMaintenance", "Maintenance"]
+    }
+  },
+  "NewState": {
+    "weight": "1",
+    "title": "newState",
+    "inputType": "dropDown",
+    "values": {
+      "vm": [
+        "Created",
+        "Starting",
+        "Running",
+        "Stopping",
+        "Stopped",
+        "Rebooting",
+        "Destroying",
+        "Destroyed",
+        "Migrating",
+        "Expunging",
+        "Pausing",
+        "Paused",
+        "Resuming",
+        "VolumeMigrating",
+        "Error",
+        "Unknown"
+      ],
+      "host": ["Enabled", "Disabled", "PreMaintenance", "Maintenance"]
+    }
+  },
+  "OldStatus": {
+    "weight": "4",
+    "title": "oldStatus",
+    "inputType": "dropDown",
+    "values": ["Connecting", "Connected", "Disconnected"]
+  },
+  "NewStatus": {
+    "weight": "3",
+    "title": "newStatus",
+    "inputType": "dropDown",
+    "values": ["Connecting", "Connected", "Disconnected"]
+  },
+  "Error": {
+    "weight": "7",
+    "title": "error",
+    "inputType": "none"
+  }
+}

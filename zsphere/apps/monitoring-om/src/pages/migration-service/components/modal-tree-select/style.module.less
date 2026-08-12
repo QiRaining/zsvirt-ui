@@ -1,0 +1,591 @@
+@import "../../../../theme.module.less";
+
+.ant-form-item-has-error {
+  .zstack-virtualization-modal-select-select-input {
+    border-color: @danger-500;
+  }
+}
+
+.zstack-virtualization-modal-tree-select {
+  &-alert {
+    margin-bottom: 12px !important;
+  }
+
+  &-virtualization-modal-body {
+    height: 320px;
+    border: 1px solid @neutral-300;
+    // border: 1px solid @neutral-400;
+    // overflow-y: auto;
+  }
+
+  .ant-table-wrapper .ant-table-tbody .ant-table-cell {
+    padding: 7px 12px;
+  }
+
+  .ant-table-content {
+    border: 1px @neutral-400 solid;
+
+    .ant-table-thead > tr > th {
+      padding: 7px 12px;
+    }
+
+    th:not(:first-child) {
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        height: 12px;
+        background-color: @neutral-300;
+        transform: translateY(-50%);
+        transition: background-color 0.3s;
+        content: "";
+      }
+    }
+
+    .ant-table-tbody tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &-modal {
+    height: 624px;
+
+    :global(.ant-modal-footer) {
+      padding: 14px 16px !important;
+      border-top: none !important;
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items: center !important;
+    }
+  }
+
+  &-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &-select-disabled-input {
+    background-color: @neutral-100 !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      border: 1px solid @neutral-400 !important;
+
+      .zstack-icon {
+        display: none !important;
+      }
+    }
+
+    .ant-btn {
+      background-color: @neutral-200 !important;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: @neutral-200 !important;
+      }
+    }
+  }
+
+  &-select-input {
+    border: 1px solid @neutral-400;
+    border-radius: 2px;
+    display: flex;
+    cursor: pointer;
+    height: 32px;
+
+    &:hover {
+      border-color: @color-600;
+    }
+    &:hover &-value {
+      :global(&-close-icon) {
+        display: inline-block !important;
+        &:hover {
+          color: @neutral-500 !important;
+          fill: @neutral-500 !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .ant-btn {
+      background-color: @neutral-200;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px;
+
+      &:hover {
+        background-color: @neutral-300;
+      }
+    }
+
+    &-spin {
+      position: relative;
+      height: 32px;
+      padding-top: 4px;
+      top: 0;
+    }
+
+    &-value {
+      flex: 1;
+      width: 0;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      line-height: 22px;
+      font-size: 14px;
+      color: @neutral-700;
+
+      &-title {
+        width: calc(90% - 16px) !important;
+        display: inline-block;
+      }
+
+      :global(&-close-icon) {
+        float: right;
+        display: none;
+        height: 20px;
+      }
+    }
+  }
+
+  &-table-list {
+    height: 300px;
+
+    .ant-table-content {
+      height: 320px !important;
+      overflow-y: auto !important;
+    }
+
+    :global {
+      .zstack-table {
+        height: 320px !important;
+      }
+
+      .ant-table-content {
+        height: 320px !important;
+      }
+    }
+  }
+
+  .icon() {
+    color: @neutral-600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @color-700;
+    }
+
+    .anticon {
+      vertical-align: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  &-add {
+    padding: 4px 0 !important;
+  }
+
+  &-input {
+    padding: 0px 0px 0px 11px !important;
+  }
+}
+
+.tree {
+  flex: 1 1;
+  height: 100%;
+  padding-top: 5px;
+
+  & > div {
+    height: 100%;
+  }
+
+  .empty {
+    margin-top: 35px !important;
+  }
+
+  .badgeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .titlePart {
+      max-width: 100%;
+      font-size: 14px;
+
+      display: flex;
+      align-content: flex-start;
+
+      .title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-left: 4px;
+        margin-right: unset;
+        overflow: hidden;
+        flex: 0 1 auto;
+
+        :hover {
+        }
+      }
+
+      .num {
+        margin-left: 4px;
+      }
+    }
+
+    &:hover {
+      background-color: unset;
+      background: unset;
+    }
+
+    &:hover .treeNodeAction {
+      //display: inline-block;
+      visibility: visible;
+    }
+
+    .treeNodeAction {
+      // display: none;
+      flex: none;
+      //display: inline-block;
+      visibility: hidden;
+      // width: 40px;
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+  }
+
+  :global {
+    .ant-tree {
+      height: 100%;
+
+      .ant-tree-list {
+        height: 100%;
+
+        .ant-tree-list-holder {
+          height: 100%;
+
+          // max-height: unset !important;
+          & > div {
+            height: 100%;
+            overflow-x: auto !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-node {
+      padding: 0 0 0 4px !important;
+    }
+
+    .ant-tree {
+      .ant-tree-switcher {
+        background-color: initial;
+        color: inherit !important;
+        margin: 8px 4px 8px 0px;
+        line-height: 16px;
+        width: 16px;
+      }
+
+      .ant-tree-list-holder-inner:not(:has(.ant-tree-indent-unit)) {
+        .ant-tree-switcher-noop {
+          display: none;
+        }
+      }
+
+      .ant-tree-treenode {
+        height: 32px;
+        padding: 0 12px 0 8px;
+        font-size: 14px;
+        border-left: 4px solid transparent;
+        color: @neutral-700;
+        transition: background-color 0.3s;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          background-color: @neutral-100;
+          background: @neutral-100;
+        }
+
+        //修改选中态
+        &-selected {
+          background-color: @color-50 !important;
+          border-left-color: @color-400;
+          color: @color-600;
+
+          &:hover::before,
+          &::before {
+            background-color: @color-50 !important;
+            background: @color-50 !important;
+          }
+
+          &::after {
+            width: max-content;
+          }
+        }
+
+        .ant-typography {
+          color: inherit !important;
+        }
+
+        .ant-tree-node-content-wrapper,
+        .ant-tree-node-content-wrapper-normal {
+          margin-top: 4px;
+          padding: 0px;
+          overflow: hidden;
+          color: inherit !important;
+
+          &:hover {
+            background-color: unset !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-title {
+      width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    //展开按钮
+    .ant-tree-switcher-noop {
+      // display: none;
+      // margin-left: 8px;
+
+      &::before {
+        right: 16px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .ant-tree-indent-unit::before {
+      height: 0px;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      bottom: -4px;
+      // border-right: 1px solid var(--neutral-300);
+      content: "";
+      display: unset;
+    }
+
+    .ant-tree-treenode {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -4px;
+          // border-right: 1px solid var(--neutral-300);
+          height: 32px;
+          content: "";
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-end:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-leaf-last {
+      .ant-tree-indent {
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 18px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:first-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-switcher-open {
+      .ant-tree-indent {
+        // .ant-tree-indent-unit:last-child {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            // border-right: 1px solid var(--neutral-300);
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode:last-child {
+      > .ant-tree-indent {
+        > .ant-tree-indent-unit::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -17px;
+          // border-right: 1px solid var(--neutral-300);
+          height: 17px;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.treeTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+
+  .titlePart {
+    max-width: 100%;
+    font-size: 14px;
+
+    display: flex;
+    align-content: flex-start;
+
+    .title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-left: 4px;
+      margin-right: unset;
+      overflow: hidden;
+      flex: 0 1 auto;
+      min-width: 120px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    > div:first-child:empty + .title {
+      margin-left: 0;
+    }
+
+    .spin {
+      margin-left: 4px;
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    background-color: unset;
+    background: unset;
+  }
+
+  &:hover .treeNodeAction {
+    visibility: visible;
+  }
+
+  .treeNodeAction {
+    flex: none;
+    visibility: hidden;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeRootAction {
+    flex: none;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeNodechecked {
+    margin-right: 0px;
+  }
+
+  .extraWrapper {
+    color: @neutral-600;
+    flex-shrink: 0;
+  }
+}

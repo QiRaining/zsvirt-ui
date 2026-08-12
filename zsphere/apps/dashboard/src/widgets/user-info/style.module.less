@@ -1,0 +1,44 @@
+@import "../../theme.less";
+
+.container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: none !important;
+  border: none !important;
+  .header {
+    height: 50px;
+    img {
+      max-width: 100%;
+      height: 60px;
+      &.imgLeft {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &.imgRight {
+        position: absolute;
+        width: calc(100% - 188px);
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+  .content {
+    height: calc(100% - 32px);
+    // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    border: 1px solid @neutral-300;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.spin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

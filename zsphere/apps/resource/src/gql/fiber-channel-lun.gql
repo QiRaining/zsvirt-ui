@@ -1,0 +1,56 @@
+fragment fiberChannelLunFields on FiberChannelLun {
+  uuid
+  name
+  wwid
+  wwn
+  vendor
+  model
+  serial
+  type
+  path
+  state
+  source
+  size
+  fiberChannelStorageUuid
+  createDate
+  lastOpDate
+  scsiLunHostRefs {
+    hostUuid
+  }
+  scsiLunVmInstanceRefs {
+    vmInstanceUuid
+  }
+}
+
+query fiberChannelLunList($conditions: [Condition!], $start: Int, $limit: Int, $extraConditions: [Condition!], $type: String, $sortBy: String, $sortDirection: SortDirectionValidValues) {
+  fiberChannelLunList(start: $start, limit: $limit, replyWithCount: true, conditions: $conditions, extraConditions: $extraConditions, type: $type, sortBy: $sortBy, sortDirection: $sortDirection) {
+    total
+    list {
+      ...fiberChannelLunFields
+    }
+  }
+}
+
+query fiberChannelLunCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  fiberChannelLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}

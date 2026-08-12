@@ -1,0 +1,200 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.vCenter",
+        "keys": [
+          "name",
+          "type",
+          "availableCapacity",
+          "totalCapacity",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "zone",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "zone",
+            "defaultMessage": "Data Center"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "url",
+            "defaultMessage": "URL"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "availableCapacity",
+            "defaultMessage": "Physical Available"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "totalCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "totalCapacity",
+            "defaultMessage": "Total Capacity"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "usedCapacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "capacityUtilization",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.backup.storage"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

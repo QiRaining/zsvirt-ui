@@ -1,0 +1,235 @@
+fragment basicEndpointFields on BasicEndPoint {
+  name
+  uuid
+  description
+  platformUuid
+  state
+  type
+  createDate
+  lastOpDate
+  topic {
+    uuid
+    name
+    state
+    createDate
+    locale
+  }
+  owner {
+    uuid
+    name
+    type
+  }
+}
+
+query querySNSApplicationEndpointList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  querySNSApplicationEndpointList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...basicEndpointFields
+      ... on HttpEndPoint {
+        url
+      }
+      ... on EmailEndPoint {
+        emailAddresses {
+          uuid
+          emailAddress
+          endpointUuid
+        }
+        platform {
+          uuid
+          name
+        }
+      }
+      ... on DingTalkEndPoint {
+        atAll
+        url
+        secret
+        atPersonList {
+          uuid
+          phoneNumber
+          remark
+        }
+      }
+      ... on FeiShuEndPoint {
+        atAll
+        url
+        secret
+        atPersonList {
+          uuid
+          userId
+          remark
+        }
+      }
+      ... on WeComEndPoint {
+        atAll
+        url
+        atPersonList {
+          uuid
+          userId
+          remark
+        }
+      }
+      ... on SmsEndPoint {
+        receivers {
+          uuid
+          type
+          phoneNumber
+          endpointUuid
+        }
+        accessKey {
+          akey
+        }
+      }
+      ... on MicrosoftTeamsEndPoint {
+        url
+      }
+      ... on SnmpTrapEndPoint {
+        platform {
+          uuid
+          name
+          snmpPort
+          snmpAddress
+          createDate
+          lastOpDate
+        }
+      }
+    }
+  }
+}
+
+query snsApplicationEndpoint($uuid: String!) {
+  snsApplicationEndpoint(uuid: $uuid) {
+    ...basicEndpointFields
+    ... on HttpEndPoint {
+      url
+    }
+    ... on EmailEndPoint {
+      emailAddresses {
+        uuid
+        emailAddress
+        endpointUuid
+      }
+      platform {
+        uuid
+        name
+      }
+    }
+    ... on DingTalkEndPoint {
+      atAll
+      url
+      secret
+      atPersonList {
+        uuid
+        phoneNumber
+        remark
+      }
+    }
+    ... on FeiShuEndPoint {
+      atAll
+      url
+      secret
+      atPersonList {
+        uuid
+        userId
+        remark
+      }
+    }
+    ... on WeComEndPoint {
+      atAll
+      url
+      atPersonList {
+        uuid
+        userId
+        remark
+      }
+    }
+    ... on SmsEndPoint {
+      receivers {
+        uuid
+        type
+        phoneNumber
+        endpointUuid
+      }
+      accessKey {
+        akey
+      }
+    }
+    ... on MicrosoftTeamsEndPoint {
+      url
+    }
+    ... on SnmpTrapEndPoint {
+      platform {
+        uuid
+        name
+        snmpPort
+        snmpAddress
+        createDate
+        lastOpDate
+      }
+    }
+  }
+}
+
+query queryEndpointEmailAddressList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryEndpointEmailAddressList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      emailAddress
+      endpointUuid
+      createDate
+      lastOpDate
+    }
+    total
+  }
+}
+
+query queryEndpointSmsAddressList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryEndpointSmsAddressList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      phoneNumber
+      endpointUuid
+      createDate
+      lastOpDate
+    }
+  }
+}

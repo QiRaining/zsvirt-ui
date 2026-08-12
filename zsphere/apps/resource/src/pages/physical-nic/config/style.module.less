@@ -1,0 +1,19 @@
+@import "../../../theme.less";
+
+.lightSwitch {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: @color-600;
+  cursor: pointer;
+  &.lightOn {
+    color: @color-500;
+  }
+  &.disabled {
+    color: @color-500;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

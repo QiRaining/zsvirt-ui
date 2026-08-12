@@ -1,0 +1,293 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "secretResourcePool",
+          "status",
+          "managementIp",
+          "port",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.secretResourcePool",
+        "keys": [
+          "name",
+          "state",
+          "secretResourcePool",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableStatus",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "secretResourcePool",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "secretResourcePool",
+            "defaultMessage": "HSM Pool"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "managementIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "managementIp",
+            "defaultMessage": "IP"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "port",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "lastOpDate",
+            "defaultMessage": "Last Operation Time"
+          },
+          "queryType": "",
+          "resource": "security.machine"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.securityMachine",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.secretResourcePool/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.secretResourcePool/toolbar",
+        "extraKeys": [
+          "add.securityMachine",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.securityMachine",
+        "resource": "security.machine",
+        "authKey": "add.securityMachine",
+        "i18nKey": "add.securityMachine",
+        "name": "添加密码机",
+        "label": "添加密码机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "security.machine",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "security.machine",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "security.machine",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "security.machine",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

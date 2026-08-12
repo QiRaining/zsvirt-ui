@@ -1,0 +1,248 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "cluster.name",
+          "state",
+          "dispatchMode",
+          "balanceState",
+          "monitorItem",
+          "triggerConditions",
+          "durationTime",
+          "drs.migrateVm.concurrent",
+          "drs.schedulingInterval"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "cluster.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cluster.name",
+            "defaultMessage": "Cluster Name"
+          },
+          "queryType": "input",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableStatus",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "dispatchMode",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "dispatchMode",
+            "defaultMessage": "DRS Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "balanceState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "balanceState",
+            "defaultMessage": "Balance Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "monitorItem",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "monitorItem",
+            "defaultMessage": "Monitoring Item"
+          },
+          "queryType": "multipleSelect",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "triggerConditions",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "triggerConditions",
+            "defaultMessage": "Trigger Condition"
+          },
+          "queryType": "",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "durationTime",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "durationTime",
+            "defaultMessage": "Duration"
+          },
+          "queryType": "",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "drs.migrateVm.concurrent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "drs.migrateVm.concurrent",
+            "defaultMessage": "Concurrency Degree of DRS Virtual Machine"
+          },
+          "queryType": "",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      },
+      {
+        "accessorKey": "drs.schedulingInterval",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "drs.schedulingInterval",
+            "defaultMessage": "Cluster Scanning Interval"
+          },
+          "queryType": "",
+          "resource": "dynamic.resource.ispatch.strategy"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.enabled",
+          "virtualization.closed",
+          "stateScan",
+          "change.strategy"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "stateScan"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.enabled",
+        "resource": "dynamic.resource.ispatch.strategy",
+        "authKey": "virtualization.enabled",
+        "i18nKey": "virtualization.open",
+        "name": "开启",
+        "label": "开启",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.closed",
+        "resource": "dynamic.resource.ispatch.strategy",
+        "authKey": "virtualization.closed",
+        "i18nKey": "virtualization.closed",
+        "name": "关闭",
+        "label": "关闭",
+        "icon": "",
+        "dividerKey": "virtualization.closed-divider"
+      },
+      {
+        "key": "close.dynamic.resource.ispatch",
+        "resource": "dynamic.resource.ispatch.strategy",
+        "authKey": "close.dynamic.resource.ispatch",
+        "i18nKey": "close.dynamic.resource.ispatch",
+        "name": "关闭动态资源调度",
+        "label": "关闭动态资源调度",
+        "icon": "",
+        "dividerKey": "close.dynamic.resource.ispatch-divider"
+      },
+      {
+        "key": "stateScan",
+        "resource": "dynamic.resource.ispatch.strategy",
+        "authKey": "stateScan",
+        "i18nKey": "stateScan",
+        "name": "状态扫描",
+        "label": "状态扫描",
+        "icon": "sync",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.strategy",
+        "resource": "dynamic.resource.ispatch.strategy",
+        "authKey": "change.strategy",
+        "i18nKey": "change.strategy",
+        "name": "修改策略",
+        "label": "修改策略",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

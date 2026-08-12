@@ -1,0 +1,234 @@
+query backupDatabaseList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  backupDatabaseList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      isRemoteSynced
+      isLocalSynced
+      canSyncToRemote
+      localBackupStorage {
+        name
+        uuid
+      }
+      remoteBackupStorage {
+        name
+        uuid
+      }
+      version
+      size
+      createDate
+      backupStorageRefs {
+        backupStorageUuid
+        exportUrl
+      }
+    }
+    total
+  }
+}
+
+query canScanDatabaseBackup {
+  canScanDatabaseBackup
+}
+
+mutation scanDatabaseBackups($input: ScanDatabaseBackupActionInput!) {
+  scanDatabaseBackups(input: $input) {
+    actionId
+  }
+}
+
+query backupDataList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: BackupResourceType
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  backupDataList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      size
+      backupDataSize
+      isIncludeDataVolume
+      backupType
+      metadataName
+      remoteBackupStorage {
+        name
+        uuid
+      }
+      localBackupStorage {
+        name
+        uuid
+      }
+      canSyncToRemote
+      isRemoteSynced
+      isLocalSynced
+      createDate
+      owner {
+        uuid
+        name
+        type
+      }
+      vmInstanceUuid
+      vmInstance {
+        name
+        uuid
+        state
+        rootVolumeUuid
+        zoneUuid
+        backupTaskType
+        platform
+        guestOsType
+        tpmList {
+          uuid
+          vmInstanceUuid
+        }
+      }
+      volumeUuid
+      dataVolumeUuids
+      attachedVmName
+      type
+      backupStorageRefs {
+        backupStorageUuid
+        status
+        createDate
+      }
+      groupUuid
+      dataVolumeBackup {
+        uuid
+        backupDataSize
+      }
+      isLocalLatest
+      isRemoteLatest
+    }
+    total
+  }
+}
+
+query backupDataTreeList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: BackupResourceType
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  # 虚拟机有备份数据
+  $resourceType: BackupResourceType
+  $resourceConditions: [Condition!]
+  $resourceSortBy: String
+  $resourceSortDirection: SortDirectionValidValues
+  # 虚拟机无备份数据但绑定备份计划
+  $vmConditions: [Condition!]
+) {
+  backupDataList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      groupUuid
+      attachedVmName
+      vmInstanceUuid
+    }
+    total
+  }
+  backupResourceDataList(
+    type: $resourceType
+    conditions: $resourceConditions
+    sortBy: $resourceSortBy
+    sortDirection: $resourceSortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      count
+      size
+      vmInstance {
+        uuid
+        name
+        state
+      }
+    }
+  }
+  vmInstanceList(conditions: $vmConditions, replyWithCount: true) {
+    list {
+      uuid
+      name
+      state
+    }
+    total
+  }
+}
+
+query getDatabaseBackupFromImageStore(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getDatabaseBackupFromImageStore(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      uuid
+      installPath
+      version
+      createdTime
+    }
+    total
+  }
+}
+
+query getVolumeBackupDataSize(
+  $conditions: [Condition!]
+  $type: VolumeBackupDataSummaryQueryType!
+  $resourceUuid: String!
+) {
+  getVolumeBackupDataSize(conditions: $conditions, type: $type, resourceUuid: $resourceUuid) {
+    resourceUuid
+    full
+    incremental
+    incrementalDependency
+  }
+}
+

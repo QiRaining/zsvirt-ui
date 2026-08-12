@@ -1,0 +1,140 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "device",
+          "model",
+          "multipath.device",
+          "logical.sector.size",
+          "physical.sector.size",
+          "capacity",
+          "partition"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "device",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device",
+            "defaultMessage": "Device"
+          },
+          "queryType": "input",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "multipath.device",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "multipath.device",
+            "defaultMessage": "Multipath Device"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "logical.sector.size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "logical.sector.size",
+            "defaultMessage": "Logical Sector Size"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "physical.sector.size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physical.sector.size",
+            "defaultMessage": "Physical Sector Size"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "capacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      },
+      {
+        "accessorKey": "partition",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "partition",
+            "defaultMessage": "Partition"
+          },
+          "queryType": "",
+          "resource": "free.hard.disk"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,123 @@
+fragment securityGroupField on SecurityGroup {
+  uuid
+  name
+  description
+  state
+  createDate
+  lastOpDate
+  attachedL3NetworkUuids
+  rules {
+    ...securityGroupRuleField
+  }
+  vmNicCount
+  owner {
+    uuid
+    name
+    type
+  }
+}
+
+fragment securityGroupRuleField on SecurityGroupRule {
+  uuid
+  description
+  priority
+  action
+  srcIpRange
+  dstIpRange
+  dstPortRange
+  securityGroupUuid
+  type
+  ipVersion
+  startPort
+  endPort
+  protocol
+  state
+  allowedCidr
+  remoteSecurityGroupUuid
+  remoteSecurityGroup {
+    uuid
+    name
+  }
+}
+
+query securityGroupList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: SecurityGroupQueryType
+  $extraConditions: [Condition!]
+) {
+  securityGroupList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    extraConditions: $extraConditions
+  ) {
+    list {
+      ...securityGroupField
+    }
+    total
+  }
+}
+
+query securityGroup($uuid: String!) {
+  securityGroup(uuid: $uuid) {
+    ...securityGroupField
+  }
+}
+
+query securityGroupRuleList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  securityGroupRuleList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...securityGroupRuleField
+    }
+    total
+  }
+}
+
+query securityGroupListForSelect(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: SecurityGroupQueryType
+  $extraConditions: [Condition!]
+) {
+  securityGroupList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+  ) {
+    list {
+      uuid
+      name
+      state
+      createDate
+      attachedL3NetworkUuids
+      owner {
+        uuid
+        name
+        type
+      }
+    }
+    total
+  }
+}

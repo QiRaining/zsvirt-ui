@@ -1,0 +1,25 @@
+@import "../style/vars.less";
+
+.@{prefix}-tooltip-wrapper {
+  display: inline-block;
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 20px;
+  }
+
+  .@{prefix}-radio-wrapper {
+    display: inline-block;
+
+    :global {
+      .ant-radio-wrapper {
+        margin-right: 0 !important;
+
+        span:nth-child(2) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

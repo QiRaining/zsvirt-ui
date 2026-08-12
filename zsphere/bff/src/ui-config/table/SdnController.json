@@ -1,0 +1,181 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "ip",
+          "vendorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "ip",
+          "vendorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "sdn.controller"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "sdn.controller"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ip",
+            "defaultMessage": "IP"
+          },
+          "queryType": "",
+          "resource": "sdn.controller"
+        }
+      },
+      {
+        "accessorKey": "vendorType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "sdn.controller"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "sdn.controller"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "delete"
+        ],
+        "activeKeys": [
+          "edit"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add",
+        "resource": "sdn.controller",
+        "authKey": "add",
+        "i18nKey": "add.sdnController",
+        "name": "添加SDN控制器",
+        "label": "添加SDN控制器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "sdn.controller",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "sdn.controller",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

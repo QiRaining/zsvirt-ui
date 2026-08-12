@@ -1,0 +1,20 @@
+.name {
+  &:hover {
+    color: var(--color-600) !important;
+  }
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+
+  .tag.tag.tag.tag:global(.ant-tag) {
+    margin: -2px 0 -2px 8px !important;
+    flex-shrink: 0;
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,60 @@
+@import "../../../theme.less";
+
+.addTrapBtn {
+  padding: 0 !important;
+}
+
+.table {
+  :global {
+    .ant-table-wrapper .ant-table-tbody .ant-table-cell {
+      padding: 6.5px 12px;
+      color: @neutral-700;
+    }
+
+    .ant-table-tbody > tr > td {
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+
+    .ant-table-content {
+      border: 1px @neutral-400 solid;
+      border-radius: 2px;
+
+      .ant-table-thead > tr > th {
+        padding: 6.5px 12px;
+      }
+
+      th:not(:first-child) {
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 2px;
+          height: 12px;
+          background-color: @neutral-300;
+          transform: translateY(-50%);
+          transition: background-color 0.3s;
+          content: "";
+        }
+      }
+
+      .ant-table-tbody tr:last-child {
+        td {
+          border-bottom: none;
+        }
+
+        .ant-table-cell {
+          padding: 7px 12px;
+        }
+      }
+    }
+  }
+}
+
+.action {
+  :global {
+    .zstack-icon {
+      cursor: pointer;
+    }
+  }
+}

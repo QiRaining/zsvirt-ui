@@ -1,0 +1,416 @@
+query getPrimaryStorageRelatedResourceCounts($uuid: String!) {
+  getPrimaryStorageRelatedResourceCounts(uuid: $uuid) {
+    vm
+    hardDisk
+    host
+    cluster
+  }
+}
+
+fragment primaryStorageFields on PrimaryStorageVO {
+  uuid
+  name
+  description
+  createDate
+  lastOpDate
+  attachedClusterUuids
+  reservedCapacity
+  reservedPhysicalCapacity
+  availableCapacity
+  availablePhysicalCapacity
+  fsid
+  defaultProtocol
+  mons {
+    hostname
+  }
+  mountPath
+  pools {
+    uuid
+    type
+    aliasName
+    poolName
+    availableCapacity
+  }
+  sharedBlockGroupType
+  sharedBlocks {
+    uuid
+    name
+  }
+  state
+  status
+  systemUsedCapacity
+  totalCapacity
+  totalPhysicalCapacity
+  type
+  url
+  volumeCount
+  vmInstanceCount
+  cbdMdsCount
+  systemTag {
+    nocephx
+    thinProvision
+    thinProvisionUuid
+    gatewayCidr
+    rootVolumePoolName
+    dataVolumePoolName
+    imageCachePoolName
+    nfsMountOptions
+    cephToken
+    cephVendor
+    coldMigrateNetwork
+  }
+  expired {
+    isExpired
+    dayDifference
+  }
+  zone {
+    uuid
+    name
+  }
+  clusters {
+    uuid
+    name
+  }
+  primaryStorageCapacity {
+    totalPhysicalCapacity
+    availablePhysicalCapacity
+    overProvisioningPrimaryStorage
+    thresholdPrimaryStoragePhysicalCapacity
+    systemUsedCapacity
+    reservedCapacity
+    volumeSnapshotSize
+    imageCacheSize
+    volumeSize
+    vmTemplateVolumeCacheSize
+  }
+  storageCapacityForLocalStorage {
+    reservedPhysicalCapacity
+    totalPhysicalCapacity
+    availablePhysicalCapacity
+    imageCacheSize
+    systemUsedCapacity
+    volumeSize
+    volumeSnapshotSize
+    vmTemplateVolumeCacheSize
+    overProvisioningPrimaryStorage
+    reservedCapacity
+  }
+  zoneUuid
+}
+
+# 只用于PS主列表
+query primaryStorageList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: PrimaryStorageQueryType
+  $extraConditions: [Condition!]
+) {
+  primaryStorageList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...primaryStorageFields
+    }
+  }
+}
+
+query primaryStorageForCreateResourceList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: PrimaryStorageQueryType
+  $extraConditions: [Condition!]
+) {
+  primaryStorageList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+  ) {
+    total
+    list {
+      uuid
+      name
+      description
+      createDate
+      lastOpDate
+      attachedClusterUuids
+      reservedCapacity
+      reservedPhysicalCapacity
+      availableCapacity
+      availablePhysicalCapacity
+      fsid
+      defaultProtocol
+      mons {
+        hostname
+      }
+      mountPath
+      pools {
+        uuid
+        type
+        aliasName
+        poolName
+        availableCapacity
+      }
+      sharedBlockGroupType
+      sharedBlocks {
+        uuid
+        name
+      }
+      state
+      status
+      systemUsedCapacity
+      totalCapacity
+      totalPhysicalCapacity
+      type
+      url
+      volumeCount
+      vmInstanceCount
+      cbdMdsCount
+      systemTag {
+        nocephx
+        thinProvision
+        thinProvisionUuid
+        gatewayCidr
+        rootVolumePoolName
+        dataVolumePoolName
+        imageCachePoolName
+        nfsMountOptions
+        cephToken
+        cephVendor
+        coldMigrateNetwork
+      }
+      expired {
+        isExpired
+        dayDifference
+      }
+      zone {
+        uuid
+        name
+      }
+      clusters {
+        uuid
+        name
+      }
+      primaryStorageCapacity {
+        systemUsedCapacity
+        totalPhysicalCapacity
+        availablePhysicalCapacity
+        overProvisioningPrimaryStorage
+        thresholdPrimaryStoragePhysicalCapacity
+        reservedCapacity
+        volumeSnapshotSize
+        imageCacheSize
+        volumeSize
+        vmTemplateVolumeCacheSize
+      }
+      zoneUuid
+      storageCapacityForLocalStorage {
+        reservedPhysicalCapacity
+        totalPhysicalCapacity
+        availablePhysicalCapacity
+        availableCapacity
+        imageCacheSize
+        systemUsedCapacity
+        volumeSize
+        volumeSnapshotSize
+        vmTemplateVolumeCacheSize
+        overProvisioningPrimaryStorage
+        reservedCapacity
+      }
+    }
+  }
+}
+
+query primaryStorageCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: PrimaryStorageQueryType
+  $extraConditions: [Condition!]
+) {
+  primaryStorageList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+    count: true
+  ) {
+    total
+  }
+}
+
+query getClusterAttachablePrimaryStorageTypes($clusterUuid: String!) {
+  getClusterAttachablePrimaryStorageTypes(clusterUuid: $clusterUuid) {
+    types
+  }
+}
+
+query primaryStorageMetricDataList(
+  $uuid: String!
+  $namespace: String!
+  $metricName: String!
+  $labels: [String!]
+  $period: Int!
+  $startTime: Float
+  $endTime: Float
+  $offsetAheadOfCurrentTime: Int
+) {
+  primaryStorageMetricDataList(
+    uuid: $uuid
+    namespace: $namespace
+    metricName: $metricName
+    labels: $labels
+    period: $period
+    startTime: $startTime
+    endTime: $endTime
+    offsetAheadOfCurrentTime: $offsetAheadOfCurrentTime
+  ) {
+    time
+    value
+    labels {
+      PrimaryStorageUuid
+    }
+  }
+}
+query getBlockDeviceInfo($uuid: String!) {
+  getBlockDeviceInfo(uuid: $uuid) {
+    ip
+    port
+    storagePool
+  }
+}
+
+query getPrimaryStorageRelatedSummary($uuid: String!) {
+  getPrimaryStorageRelatedSummary(uuid: $uuid) {
+    vmInstance
+    baremetal2Instance
+    volume
+    blockVolume
+    cluster
+    baremetal2Cluster
+    host
+    sharedBlock
+    vpcRouter
+  }
+}
+
+query primaryStorageSummary($conditions: [Condition!]) {
+  primaryStorageSummary(conditions: $conditions) {
+    total
+    connected
+    disconnected
+    connecting
+  }
+}
+
+query getBlockDeviceInfo($uuid: String!) {
+  getBlockDeviceInfo(uuid: $uuid) {
+    ip
+    port
+  }
+}
+
+query getBlockMetadata($vendorName: String!, $metadata: String!) {
+  getBlockMetadata(vendorName: $vendorName, metadata: $metadata) {
+    accessZones
+    storagePools
+  }
+}
+
+query getTrashOnPrimaryStorage($uuid: String!) {
+  getTrashOnPrimaryStorage(uuid: $uuid) {
+    list {
+      resourceUuid
+      resourceType
+      trashType
+    }
+  }
+}
+
+query sdsInfo($monitorNodeIp: String!) {
+  sdsInfo(monitorNodeIp: $monitorNodeIp) {
+    sdsVersion
+    isExpandPoolSupported
+  }
+}
+
+fragment primaryStoragePredictionCapacityFields on PrimaryStoragePredictionCapacityItem {
+  time
+  value
+  type
+}
+
+query primaryStoragePredictionCapacity(
+  $primaryStorageUuid: String!
+  $poolUuid: String
+  $startTime: Float!
+  $currentTime: Float!
+  $endTime: Float!
+) {
+  primaryStoragePredictionCapacity(
+    primaryStorageUuid: $primaryStorageUuid
+    poolUuid: $poolUuid
+    startTime: $startTime
+    currentTime: $currentTime
+    endTime: $endTime
+  ) {
+    usedPhysicalCapacitiesForecastList {
+      ...primaryStoragePredictionCapacityFields
+    }
+    usedPhysicalCapacitiesHistoryList {
+      ...primaryStoragePredictionCapacityFields
+    }
+    totalPhysicalCapacitiesHistoryList {
+      ...primaryStoragePredictionCapacityFields
+    }
+    physicalCapacitiesAlarmThresholdList {
+      ...primaryStoragePredictionCapacityFields
+    }
+    predictAlarmPoint {
+      ...primaryStoragePredictionCapacityFields
+    }
+    currentDayPoint {
+      ...primaryStoragePredictionCapacityFields
+    }
+  }
+}
+
+mutation attachPrimaryStorageToCluster(
+  $input: AttachPrimaryStorageToClusterInput!
+) {
+  attachPrimaryStorageToCluster(input: $input) {
+    actionId
+  }
+}
+
+mutation detachPrimaryStorageFromCluster(
+  $input: DetachPrimaryStorageFromClusterInput!
+) {
+  detachPrimaryStorageFromCluster(input: $input) {
+    actionId
+  }
+}

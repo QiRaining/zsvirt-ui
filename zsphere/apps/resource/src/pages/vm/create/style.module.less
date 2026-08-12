@@ -1,0 +1,47 @@
+@import url("../../../theme.less");
+
+.create-modal {
+  height: 678px;
+  // ZSV-11397: Fix transparent bottom when using fixed height with @zstack/design Dialog
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .overflow-auto {
+      flex: 1;
+      max-height: unset !important;
+    }
+  }
+}
+
+.create-vm-modal {
+  :global {
+    .ant-modal-content {
+      .ant-modal-header {
+        border-bottom-color: @neutral-300;
+
+        .ant-modal-title {
+          font-weight: unset !important;
+        }
+      }
+
+      .ant-modal-footer {
+        border-top-color: @neutral-300;
+      }
+    }
+  }
+}
+
+.form {
+  :global {
+    .ant-form-item {
+      margin-bottom: 10px;
+      //!important;
+    }
+  }
+}
+
+.baseFormItem {
+  width: 400px;
+  height: 32px;
+}

@@ -1,0 +1,85 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "UsedIPCount",
+          "AvailableIPCount",
+          "UsedIPInPercent"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "performance.l3"
+        }
+      },
+      {
+        "accessorKey": "UsedIPCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "number.of.used.ip(IPV4)",
+            "defaultMessage": "Used IPs (IPv4)"
+          },
+          "queryType": "",
+          "resource": "performance.l3"
+        }
+      },
+      {
+        "accessorKey": "AvailableIPCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "available.ip.number(IPV4)",
+            "defaultMessage": "Available IPs (IPv4)"
+          },
+          "queryType": "",
+          "resource": "performance.l3"
+        }
+      },
+      {
+        "accessorKey": "UsedIPInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "percentage.of.used.ip(IPV4)",
+            "defaultMessage": "IPv4 Percentage"
+          },
+          "queryType": "",
+          "resource": "performance.l3"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

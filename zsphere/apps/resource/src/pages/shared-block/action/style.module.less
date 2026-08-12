@@ -1,0 +1,49 @@
+@import "../../../theme.less";
+
+.addLunDeviceWrapper {
+  :global {
+    .ant-form-item {
+      justify-content: space-between;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .ant-form-item-control {
+      max-width: calc(100% - 168px);
+    }
+
+    .zstack-form-item-input-description-zsv {
+      top: -12px !important;
+    }
+  }
+
+  .description {
+    display: flex;
+
+    :global {
+      .anticon {
+        margin-top: 4px;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .lunDeviceSelect {
+    width: 320px !important;
+
+    :global {
+      .ant-list-item {
+        & > :first-child {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .anticon {
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}

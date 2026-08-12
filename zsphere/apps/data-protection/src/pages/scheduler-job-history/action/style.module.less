@@ -1,0 +1,29 @@
+@import "../../../theme.less";
+
+.json-content {
+  overflow: auto;
+  max-height: 320px;
+
+  :global {
+    .zstack-field-horizontal-value {
+      overflow: auto;
+    }
+  }
+
+  .error {
+    :global {
+      .react-json-view {
+        word-break: break-word;
+        background-color: #fff2ea !important;
+      }
+    }
+  }
+
+  .info {
+    :global {
+      .react-json-view {
+        background-color: @neutral-100 !important;
+      }
+    }
+  }
+}

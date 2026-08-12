@@ -1,0 +1,97 @@
+fragment fiberChannelStorageFields on FiberChannelStorage {
+  uuid
+  name
+  wwnn
+  state
+  fiberChannelLuns {
+    uuid
+    name
+    wwid
+    wwn
+    vendor
+    model
+    serial
+    type
+    path
+    state
+    source
+    size
+    createDate
+    lastOpDate
+    scsiLunHostRefs {
+      hostUuid
+    }
+    scsiLunVmInstanceRefs {
+      vmInstanceUuid
+    }
+    fiberChannelStorageUuid
+  }
+  lunDeviceUsageInfo {
+    totalLunNum
+    usedLunNum
+    unusedLunNum
+  }
+  zones {
+    name
+    uuid
+  }
+  createDate
+  lastOpDate
+}
+
+query fiberChannelStorageList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  fiberChannelStorageList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...fiberChannelStorageFields
+    }
+  }
+}
+
+query fiberChannelStorageCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  fiberChannelStorageList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+
+mutation refreshFiberChannelStorages($input: RefreshFiberChannelStorageInput!) {
+  refreshFiberChannelStorages(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@zstack/zsphere-mf-hub",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./mf-config": {
+      "types": "./dist/mf-config.d.ts",
+      "import": "./dist/mf-config.js",
+      "require": "./dist/mf-config.js"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

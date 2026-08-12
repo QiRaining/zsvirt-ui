@@ -1,0 +1,93 @@
+{
+  "$schema": "../../../../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import", "unicorn", "jest", "node", "promise"],
+  "env": {
+    "node": true,
+    "es2024": true
+  },
+  "ignorePatterns": [
+    "src/api/zstack/**/*",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "coverage-e2e/**",
+    "lint_report/**",
+    "jest_html_reporters.html"
+  ],
+  "rules": {
+    "curly": "warn",
+    "eqeqeq": "warn",
+    "import/no-cycle": "warn",
+    "import/no-self-import": "error",
+    "no-console": "off",
+    "no-debugger": "error",
+    "no-duplicate-imports": "warn",
+    "no-empty": "warn",
+    "no-eval": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "antd",
+            "message": "BFF 不应导入前端 UI 库。"
+          },
+          {
+            "name": "@zstack/components",
+            "message": "BFF 不应导入前端组件库。"
+          },
+          {
+            "name": "@zstack/design",
+            "message": "BFF 不应导入前端设计系统。"
+          },
+          {
+            "name": "@zstack/design-biz-cloud",
+            "message": "BFF 不应导入 Cloud 前端业务组件。"
+          }
+        ],
+        "patterns": [
+          {
+            "group": [
+              "@zstack/cloud-*",
+              "@zstack/zsphere-components",
+              "@zstack/zsphere-design-biz"
+            ],
+            "message": "BFF 不应导入前端产品组件包。"
+          }
+        ]
+      }
+    ],
+    "no-var": "error",
+    "node/handle-callback-err": "warn",
+    "node/no-new-require": "warn",
+    "node/no-path-concat": "warn",
+    "prefer-const": "warn",
+    "promise/no-callback-in-promise": "warn",
+    "promise/no-multiple-resolved": "error",
+    "promise/no-return-wrap": "warn",
+    "promise/valid-params": "warn",
+    "require-await": "warn",
+    "unicorn/no-new-buffer": "error",
+    "unicorn/prefer-node-protocol": "warn",
+    "no-shadow-restricted-names": "off",
+    "typescript/ban-ts-comment": "warn",
+    "typescript/consistent-type-imports": "off",
+    "typescript/no-explicit-any": "off",
+    "typescript/only-throw-error": "warn",
+    "typescript/prefer-promise-reject-errors": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.spec.ts", "**/__test__/**", "**/__tests__/**"],
+      "env": {
+        "jest": true,
+        "node": true
+      },
+      "rules": {
+        "no-console": "off",
+        "require-await": "off"
+      }
+    }
+  ]
+}

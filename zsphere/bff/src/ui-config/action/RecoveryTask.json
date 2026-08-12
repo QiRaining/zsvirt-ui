@@ -1,0 +1,216 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "vm",
+          "executeTime",
+          "recoveryPointTime",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "jobState",
+            "defaultMessage": "Job Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "vm",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "targetVM",
+            "defaultMessage": "Target VM"
+          },
+          "queryType": "",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "executeTime",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "timeConsuming",
+            "defaultMessage": "Time Consumed"
+          },
+          "queryType": "",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "recoveryPointTime",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "recoveryPointTime",
+            "defaultMessage": "Recovery Point Time"
+          },
+          "queryType": "",
+          "resource": "recovery.task"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "recovery.task"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "reExecute",
+          "cancelTask",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "reExecute",
+          "cancelTask",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.recoverTask",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.recoverTask",
+        "resource": "recovery.task",
+        "authKey": "create.recoverTask",
+        "i18nKey": "create.recoverTask",
+        "name": "创建恢复任务",
+        "label": "创建恢复任务",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "recovery.task",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "reExecute",
+        "resource": "recovery.task",
+        "authKey": "reExecute",
+        "i18nKey": "reExecute",
+        "name": "重新执行",
+        "label": "重新执行",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancelTask",
+        "resource": "recovery.task",
+        "authKey": "cancelTask",
+        "i18nKey": "cancelTask",
+        "name": "取消任务",
+        "label": "取消任务",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "recovery.task",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

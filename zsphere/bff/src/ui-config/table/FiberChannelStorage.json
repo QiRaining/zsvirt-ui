@@ -1,0 +1,172 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "wwnn",
+          "scsi-lun.count"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "wwnn",
+          "scsi-lun.count"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.host",
+        "keys": []
+      },
+      {
+        "view": "sub.vm-instance",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.storage"
+        }
+      },
+      {
+        "accessorKey": "wwnn",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwnn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.storage"
+        }
+      },
+      {
+        "accessorKey": "scsi-lun.count",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "scsi.lun.count",
+            "defaultMessage": "LUNs"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.storage"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.storage"
+        }
+      },
+      {
+        "accessorKey": "fiberChannelLun.uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "fc.lun.uuid",
+            "defaultMessage": "LUN UUID"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.storage"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "refresh.fiber.channel.storage"
+        ]
+      },
+      {
+        "view": "sub.virtualization.data.storage/header",
+        "activeKeys": [
+          "add.data.storage"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "refresh.fiber.channel.storage"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.data.storage",
+        "resource": "fiber.channel.storage",
+        "authKey": "add.data.storage",
+        "i18nKey": "add.data.storage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "refresh.fiber.channel.storage",
+        "resource": "fiber.channel.storage",
+        "authKey": "refresh.fiber.channel.storage",
+        "i18nKey": "synchronize.device.information",
+        "name": "同步设备信息",
+        "label": "同步设备信息",
+        "icon": "sync",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

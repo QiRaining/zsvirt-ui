@@ -1,0 +1,70 @@
+fragment nvmeLunFields on NVMeLun {
+  uuid
+  name
+  wwid
+  wwn
+  vendor
+  model
+  serial
+  type
+  path
+  state
+  source
+  size
+  nvmeTargetUuid
+  createDate
+  lastOpDate
+  nvmeLunHostRefs {
+    hostUuid
+  }
+}
+
+query nvmeLunList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: NVMeLunType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...nvmeLunFields
+    }
+  }
+}
+
+query nvmeLunCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: NVMeLunType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}

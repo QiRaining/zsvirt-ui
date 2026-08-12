@@ -1,0 +1,469 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "jobClassName",
+          "resourceName",
+          "state",
+          "schedulerTriggerState",
+          "schedulerTrigger",
+          "jobPolicy",
+          "jobStartDate",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "jobClassName",
+          "resourceName",
+          "state",
+          "schedulerTriggerState",
+          "schedulerTrigger",
+          "jobPolicy",
+          "jobStartDate",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "jobClassName",
+          "resourceName",
+          "state",
+          "schedulerTriggerState",
+          "schedulerTrigger",
+          "jobPolicy",
+          "jobStartDate",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.scheduler.completed",
+        "keys": [
+          "name",
+          "jobClassName",
+          "resourceName",
+          "state",
+          "schedulerTriggerState",
+          "schedulerTrigger",
+          "jobPolicy",
+          "jobStartDate",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.scheduler.running",
+        "keys": [
+          "name",
+          "jobClassName",
+          "resourceName",
+          "state",
+          "schedulerTriggerState",
+          "schedulerTrigger",
+          "jobPolicy",
+          "jobStartDate",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.volume",
+        "keys": [
+          "name",
+          "jobClassName",
+          "state",
+          "schedulerTriggerState",
+          "jobPolicy",
+          "jobStartDate",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "jobClassName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "taskType",
+            "defaultMessage": "Job Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "resourceName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "resourceName",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "schedulerTriggerState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "schedulerState",
+            "defaultMessage": "Scheduler State"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "schedulerTrigger",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "scheduler",
+            "defaultMessage": "Scheduler"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "jobPolicy",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "taskStrategy",
+            "defaultMessage": "Job Policy"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "jobStartDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "scheduled.job"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "attach.scheduler",
+          "detach.scheduler",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "attach.scheduler",
+          "detach.scheduler",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.scheduler.job",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "attach.scheduler",
+          "detach.scheduler",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.scheduler.completed/toolbar",
+        "activeKeys": [
+          "detach.scheduled.job",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.scheduler.running/toolbar",
+        "extraKeys": [
+          "create.scheduler.job"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "attach.scheduled.job",
+          "detach.scheduled.job",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.scheduler/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "detach.scheduler",
+          "attach.scheduled.job",
+          "detach.scheduled.job",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volume/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volume/toolbar",
+        "extraKeys": [
+          "create.scheduler.job"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.scheduler.job"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.scheduler.job",
+        "resource": "scheduled.job",
+        "authKey": "create.scheduler.job",
+        "i18nKey": "create.scheduledJob",
+        "name": "创建定时任务",
+        "label": "创建定时任务",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "scheduled.job",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "scheduled.job",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "scheduled.job",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.scheduler",
+        "resource": "scheduled.job",
+        "authKey": "attach.scheduler",
+        "i18nKey": "attach.scheduler",
+        "name": "加载定时器",
+        "label": "加载定时器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.scheduler",
+        "resource": "scheduled.job",
+        "authKey": "detach.scheduler",
+        "i18nKey": "detach.scheduler",
+        "name": "卸载定时器",
+        "label": "卸载定时器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.scheduled.job",
+        "resource": "scheduled.job",
+        "authKey": "attach.scheduled.job",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.scheduled.job",
+        "resource": "scheduled.job",
+        "authKey": "detach.scheduled.job",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "scheduled.job",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

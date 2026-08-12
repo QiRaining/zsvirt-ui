@@ -1,0 +1,55 @@
+@import "../../../../../../theme.less";
+
+.badgeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .titlePart {
+    max-width: 100%;
+    font-size: 14px;
+
+    display: flex;
+    align-content: flex-start;
+
+    .title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-left: 4px;
+      margin-right: unset;
+      overflow: hidden;
+      flex: 0 1 auto;
+    }
+
+    .num {
+      margin-left: 4px;
+    }
+  }
+
+  &:hover {
+    background-color: unset;
+    background: unset;
+  }
+
+  &:hover .treeNodeAction {
+    visibility: visible;
+  }
+
+  .treeNodeAction {
+    flex: none;
+    visibility: hidden;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeRootAction {
+    flex: none;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeNodechecked {
+    margin-right: 0px;
+  }
+}

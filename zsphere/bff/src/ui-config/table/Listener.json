@@ -1,0 +1,421 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "protocol",
+          "balancerAlgorithm",
+          "loadBalancerPort",
+          "backendPort",
+          "serverGroupCount",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "protocol",
+          "balancerAlgorithm",
+          "loadBalancerPort",
+          "backendPort",
+          "serverGroupCount",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "protocol",
+          "balancerAlgorithm",
+          "loadBalancerPort",
+          "backendPort",
+          "serverGroupCount",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "protocol",
+          "balancerAlgorithm",
+          "loadBalancerPort",
+          "backendPort",
+          "serverGroupCount",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.certificate",
+        "keys": [
+          "name",
+          "protocol",
+          "balancerAlgorithm",
+          "loadBalancerPort",
+          "backendPort",
+          "serverGroupCount",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "protocol",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "protocol",
+            "defaultMessage": "Protocol"
+          },
+          "queryType": "",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "balancerAlgorithm",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "balancerAlgorithm",
+            "defaultMessage": "Load Balancing Algorithm"
+          },
+          "queryType": "multipleFilter",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "loadBalancerPort",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "loadBalancerPort",
+            "defaultMessage": "Load Balancer Port"
+          },
+          "queryType": "",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "backendPort",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backendPort",
+            "defaultMessage": "Backend Server Port"
+          },
+          "queryType": "",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "serverGroupCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "serverGroupCount",
+            "defaultMessage": "Backend Server Groups"
+          },
+          "queryType": "",
+          "resource": "listener"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "listener"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "attach.certificate",
+          "detach.certifacate",
+          "sessionPersistence",
+          "listener.changeAdvance",
+          "attach.serverGroup",
+          "detach.serverGroup",
+          "add.acl",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "attach.certificate",
+          "detach.certifacate",
+          "sessionPersistence",
+          "listener.changeAdvance",
+          "attach.serverGroup",
+          "detach.serverGroup",
+          "add.acl",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.listener"
+        ],
+        "activeKeys": [
+          "attach.certificate",
+          "detach.certifacate",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "extraKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.certificate/row",
+        "extraKeys": [
+          "detach.listener"
+        ]
+      },
+      {
+        "view": "sub.certificate/toolbar",
+        "extraKeys": [
+          "detach.listener"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "edit",
+          "attach.certificate",
+          "detach.certifacate",
+          "sessionPersistence",
+          "listener.changeAdvance",
+          "attach.serverGroup",
+          "detach.serverGroup",
+          "add.acl",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.listener"
+        ],
+        "activeKeys": [
+          "attach.certificate",
+          "detach.certifacate",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "listener",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": "edit-divider"
+      },
+      {
+        "key": "create.listener",
+        "resource": "listener",
+        "authKey": "create.listener",
+        "i18nKey": "create.listener",
+        "name": "创建监听器",
+        "label": "创建监听器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.certificate",
+        "resource": "listener",
+        "authKey": "attach.certificate",
+        "i18nKey": "attach.certificate",
+        "name": "绑定证书",
+        "label": "绑定证书",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.certifacate",
+        "resource": "listener",
+        "authKey": "detach.certifacate",
+        "i18nKey": "detach.certifacate",
+        "name": "解绑证书",
+        "label": "解绑证书",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sessionPersistence",
+        "resource": "listener",
+        "authKey": "sessionPersistence",
+        "i18nKey": "set.basic.config",
+        "name": "修改基础配置",
+        "label": "修改基础配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "listener.changeAdvance",
+        "resource": "listener",
+        "authKey": "listener.changeAdvance",
+        "i18nKey": "listener.changeAdvance",
+        "name": "修改高级配置",
+        "label": "修改高级配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.serverGroup",
+        "resource": "listener",
+        "authKey": "attach.serverGroup",
+        "i18nKey": "attach.serverGroup",
+        "name": "绑定后端服务器组",
+        "label": "绑定后端服务器组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.serverGroup",
+        "resource": "listener",
+        "authKey": "detach.serverGroup",
+        "i18nKey": "detach.serverGroup",
+        "name": "解绑后端服务器组",
+        "label": "解绑后端服务器组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.acl",
+        "resource": "listener",
+        "authKey": "add.acl",
+        "i18nKey": "add.acl",
+        "name": "配置转发规则",
+        "label": "配置转发规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "listener",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": "delete-divider"
+      },
+      {
+        "key": "detach.listener",
+        "resource": "listener",
+        "authKey": "detach.listener",
+        "i18nKey": "detach",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "listener",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "listener",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

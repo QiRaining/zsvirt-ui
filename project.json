@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "name": "zsphere-io",
+  "root": ".",
+  "projectType": "application",
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p tsconfig.json --noEmit"
+      }
+    }
+  }
+}

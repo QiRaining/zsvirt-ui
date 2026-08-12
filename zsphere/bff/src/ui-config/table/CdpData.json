@@ -1,0 +1,128 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "timeRange",
+          "dataSize",
+          "dataPointNumber"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "timeRange",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Time Period"
+          },
+          "queryType": "",
+          "resource": "cdp.data"
+        }
+      },
+      {
+        "accessorKey": "dataSize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Data Amount"
+          },
+          "queryType": "",
+          "resource": "cdp.data"
+        }
+      },
+      {
+        "accessorKey": "dataPointNumber",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Number of Data Points"
+          },
+          "queryType": "",
+          "resource": "cdp.data"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "detail/header"
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "enable.cdp.task",
+          "disable.cdp.task",
+          "clear.cdp.data"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "recover.cdp.data",
+          "clear.cdp.data"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable.cdp.task",
+        "resource": "cdp.data",
+        "authKey": "enable.cdp.task",
+        "i18nKey": "enable.cdptask",
+        "name": "启用CDP任务",
+        "label": "启用CDP任务",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable.cdp.task",
+        "resource": "cdp.data",
+        "authKey": "disable.cdp.task",
+        "i18nKey": "disable.cdptask",
+        "name": "停用CDP任务",
+        "label": "停用CDP任务",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover.cdp.data",
+        "resource": "cdp.data",
+        "authKey": "recover.cdp.data",
+        "i18nKey": "recover.cdp.data",
+        "name": "恢复数据",
+        "label": "恢复数据",
+        "icon": "refresh",
+        "dividerKey": 0
+      },
+      {
+        "key": "clear.cdp.data",
+        "resource": "cdp.data",
+        "authKey": "clear.cdp.data",
+        "i18nKey": "clearData",
+        "name": "清空数据",
+        "label": "清空数据",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

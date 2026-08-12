@@ -1,0 +1,218 @@
+fragment vmNicFields on VmNic {
+  internalName
+  vmInstanceUuid
+  uuid
+  type
+  driverType
+  mac
+  ip
+  deviceId
+  l3NetworkUuid
+  state
+  nicBandWidth {
+    inboundBandwidth
+    outboundBandwidth
+  }
+  isBindPortMirrorSession
+  resourceConfig {
+    nicMultiQueueNum
+  }
+  usedIps {
+    uuid
+    gateway
+    ip
+    netmask
+    ipVersion
+    vmNicUuid
+    l3NetworkUuid
+    l3Network {
+      name
+      uuid
+      networkTypeName
+      enableIPAM
+      ipRanges {
+        uuid
+        ipVersion
+        networkCidr
+        addressMode
+      }
+      ipCapacity {
+        ipv4AvailableCapacity
+        ipv4TotalCapacity
+      }
+    }
+  }
+  vmInstance {
+    name
+    uuid
+    defaultL3NetworkUuid
+    state
+    # owner {
+    #   uuid
+    #   type
+    #   name
+    # }
+  }
+  templatedVmInstance {
+    uuid
+    name
+  }
+  eip {
+    name
+    uuid
+    vipIp
+  }
+  createDate
+}
+
+query queryVmNicList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmNicQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmNicList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...vmNicFields
+      l3Network {
+        ... on L3Network {
+          enableIPAM
+          networkType
+          name
+          uuid
+          networkTypeName
+          hypervisorType
+          mtu
+          dns
+          ipRanges {
+            uuid
+            startIp
+            endIp
+            ipVersion
+            ipRangeType
+            networkCidr
+            netmask
+            prefixLen
+            gateway
+          }
+          ipCapacity {
+            ipv4AvailableCapacity
+            ipv4TotalCapacity
+          }
+          l2Network {
+            uuid
+            vSwitchType
+          }
+          networkServices {
+            networkServiceType
+          }
+        }
+      }
+      securityGroup {
+        uuid
+        name
+        attachedL3NetworkUuids
+        priority
+        owner {
+          uuid
+          name
+          type
+        }
+      }
+      securityPolicy {
+        ingressPolicy
+        egressPolicy
+      }
+      physicalNic {
+        uuid
+        interfaceName
+        # interfaceType
+      }
+    }
+    total
+  }
+}
+
+query getVmNicCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmNicQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getVmNicCount(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}
+
+query getVmAttachableL3Network($vmInstanceUuid: String!) {
+  getVmAttachableL3Network(vmInstanceUuid: $vmInstanceUuid) {
+    uuid
+  }
+}
+
+mutation checkMacAvailability($input: CheckMacAvailabilityParam!) {
+  checkMacAvailability(input: $input) {
+    available
+  }
+}
+
+mutation checkVNicIpAvailability($input: CheckVNicIpAvailabilityParam!) {
+  checkVNicIpAvailability(input: $input) {
+    available
+    duplicateIps
+    l3Network {
+      uuid
+      name
+    }
+  }
+}
+
+query queryVNicIpAvailability($input: CheckVNicIpAvailabilityParam!) {
+  queryVNicIpAvailability(input: $input) {
+    available
+    duplicateIps
+    l3Network {
+      uuid
+      name
+    }
+  }
+}
+
+query getNicMetricData($metricParam: MetricParam!) {
+  getNicMetricData(metricParam: $metricParam) {
+    in {
+      max
+      total
+      percent95
+      average
+    }
+    out {
+      max
+      total
+      percent95
+      average
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@import "../../../../../theme.less";
+
+.storage-container {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+
+  .storage-progress-container {
+    display: flex;
+    position: relative;
+    max-width: 240px;
+    min-width: 80px;
+
+    .storage-progress {
+      display: flex;
+      width: 100%;
+      flex: 1;
+      border-radius: 6px;
+      overflow: hidden;
+
+      .storage-progress-item {
+        display: inline-block;
+        cursor: pointer;
+        height: 100%;
+        min-width: 6px;
+
+        &:not(:last-child) {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+}
+
+.vmContainer {
+  display: flex;
+  height: 100%;
+}
+
+.vmRightContainer {
+  flex: 1;
+  overflow: auto;
+  border-left: 2px solid @neutral-300;
+}
+
+.alert:global(.ant-alert) {
+  margin-bottom: 12px;
+
+  .progressLabel {
+    word-break: keep-all;
+  }
+
+  :global {
+    .ant-alert-message {
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .ant-alert-description {
+      font-size: 12px;
+      color: @neutral-500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .ant-progress {
+        width: auto;
+        display: flex;
+        align-items: center;
+
+        .ant-progress-outer {
+          display: flex;
+          align-items: center;
+
+          .ant-progress-inner {
+            width: 80px;
+            height: 6px;
+            background-color: @neutral-300;
+
+            .ant-progress-bg {
+              height: 6px !important;
+              border-radius: 0;
+              background-color: @color-500;
+            }
+          }
+        }
+
+        .ant-progress-text {
+          font-size: 12px;
+          color: @neutral-600;
+        }
+      }
+    }
+  }
+}
+
+.listWrap {
+  border-radius: 4px;
+  padding: 0 24px;
+  height: 300px;
+  white-space: pre-line;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.formWrap {
+  .formItem {
+    margin-top: 24px;
+  }
+}
+
+.modalDb {
+  :global {
+    .ant-modal-footer {
+      .ant-btn:first-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.syncRemoteOff:global(.ant-form-item) {
+  display: none;
+}
+
+.syncRemote:global(.ant-form-item.zstack-form-item.zstack-form-item-zsv):has(
+    + .syncRemoteOff:last-child
+  ) {
+  margin-bottom: 0;
+}
+
+.remoteBackupStorage {
+  display: flex;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+
+  .bar {
+    flex-shrink: 0;
+    width: 1px;
+    height: 12px;
+    margin: 0 8px;
+    background-color: @neutral-300;
+  }
+
+  .capacity {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: @neutral-600;
+  }
+}

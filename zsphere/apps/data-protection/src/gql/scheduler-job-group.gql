@@ -1,0 +1,86 @@
+fragment schedulerJobGroupFields on SchedulerJobGroup {
+  uuid
+  name
+  description
+  state
+  # status
+  jobType
+  jobData
+  triggersUuid
+  jobsUuid
+  owner {
+    name
+    uuid
+    type
+  }
+  localBackupStorage {
+    name
+    uuid
+  }
+  remoteBackupStorage {
+    name
+    uuid
+  }
+  schedulerTriggers {
+    uuid
+    name
+    description
+    jobsUuid
+    schedulerType
+    schedulerInterval
+    repeatCount
+    startTime
+    stopTime
+    state
+    cron
+  }
+  createDate
+  lastOpDate
+  zoneUuid
+  zone {
+    uuid
+    name
+  }
+  lastJobResult {
+    id
+    fireInstanceId
+    successCount
+    failCount
+    runningCount
+  }
+  jobs {
+    uuid
+    jobData
+    targetResourceUuid
+    schedulerJobGroupJobRefs {
+      schedulerJobGroupUuid
+      priority
+    }
+  }
+}
+
+query schedulerJobGroupList(
+  $type: SchedulerJobGroupQueryType
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  schedulerJobGroupList(
+    type: $type
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...schedulerJobGroupFields
+    }
+  }
+}

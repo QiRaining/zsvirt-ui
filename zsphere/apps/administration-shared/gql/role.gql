@@ -1,0 +1,72 @@
+fragment zsvRoleFields on ZsvRole {
+  uuid
+  name
+  type
+  policies
+  uiPrivilege
+  userCount
+  userGroupCount
+  description
+  createDate
+}
+
+query zsvRoleList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $type: ZsvRoleQueryType
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  zsvRoleList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...zsvRoleFields
+    }
+    total
+  }
+}
+
+# 新建角色
+mutation createRole($input: CreateRoleInput!) {
+  createRole(input: $input) {
+    actionId
+  }
+}
+
+# 修改配置
+mutation updateRoleConfig($input: UpdateRoleConfigInput!) {
+  updateRoleConfig(input: $input) {
+    actionId
+  }
+}
+
+# 修改配置
+mutation updateRoleApiConfig($input: UpdateRoleApiConfigInput!) {
+  updateRoleApiConfig(input: $input) {
+    actionId
+  }
+}
+
+# 删除角色
+mutation deleteRole($input: DeleteRoleInput!) {
+  deleteRole(input: $input) {
+    actionId
+  }
+}
+
+# 克隆角色
+mutation cloneRole($input: CloneRoleInput!) {
+  cloneRole(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "startVni",
+          "endVni",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vni"
+        }
+      },
+      {
+        "accessorKey": "startVni",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "start.vni",
+            "defaultMessage": "Start VNI"
+          },
+          "queryType": "",
+          "resource": "vni"
+        }
+      },
+      {
+        "accessorKey": "endVni",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "end.vni",
+            "defaultMessage": "End VNI"
+          },
+          "queryType": "",
+          "resource": "vni"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vni"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "vni.update",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "vni",
+        "authKey": "create",
+        "i18nKey": "create",
+        "name": "创建",
+        "label": "创建",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vni.update",
+        "resource": "vni",
+        "authKey": "vni.update",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vni",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

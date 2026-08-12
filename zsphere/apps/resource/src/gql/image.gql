@@ -1,0 +1,315 @@
+fragment imageFields on Image {
+  uuid
+  name
+  createDate
+  lastOpDate
+  description
+  architecture
+  state
+  status
+  size
+  actualSize
+  md5Sum
+  url
+  mediaType
+  guestOsType
+  type
+  platform
+  format
+  system
+  bootMode
+  baremetal2Image
+  toPublic
+  shareType
+  useFor
+  guestOsType
+  virtio
+  isZmigrateImage
+  backupStorageRefs {
+    imageUuid
+    backupStorageUuid
+    installPath
+    status
+    exportMd5Sum
+    exportUrl
+    createDate
+    lastOpDate
+  }
+  backupStorage {
+    name
+    uuid
+    type
+    zone {
+      uuid
+      name
+    }
+
+  }
+  availableUserVm
+  owner {
+    name
+    uuid
+    type
+  }
+}
+
+query imageList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ImageQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  imageList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...imageFields
+    }
+  }
+}
+
+query imageListForZSVCreateInstance(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ImageQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  imageList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      createDate
+      lastOpDate
+      architecture
+      state
+      status
+      size
+      actualSize
+      mediaType
+      guestOsType
+      type
+      format
+      system
+      shareType
+      owner {
+        name
+        uuid
+        type
+      }
+      availableUserVm
+      url
+    }
+  }
+}
+
+query imageSupportBootModeForBareMetal2Instance {
+  imageSupportBootModeForBareMetal2Instance
+}
+query getImageSummary($conditions: [Condition!]!) {
+  getImageSummary(conditions: $conditions) {
+    total
+    available
+    destroyed
+  }
+}
+
+mutation detachIsoFromVm($input: DetachIsoFromVmInstanceInput!) {
+  detachIsoFromVm(input: $input) {
+    error {
+      code
+      details
+      description
+    }
+  }
+}
+
+# mutation createVolumeTemplate($input: CreateVolumeTemplateInput!) {
+#   createVolumeTemplate(input: $input) {
+#     success
+#   }
+# }
+
+mutation addImage($input: AddImageInput!) {
+  addImage(input: $input) {
+    actionId
+  }
+}
+
+mutation changeImageState($input: ChangeImageStateInput!) {
+  changeImageState(input: $input) {
+    actionId
+  }
+}
+
+mutation exportImageFromBackupStorage($input: ExportImageFromBackupStorageInput!) {
+  exportImageFromBackupStorage(input: $input) {
+    jobId
+    success
+    error
+  }
+}
+
+mutation shareImageToPublic($input: ShareImageToPublicInput!) {
+  shareImageToPublic(input: $input) {
+    actionId
+  }
+}
+
+mutation revokeImageFromPublic($input: RevokeImageFromPublicInput!) {
+  revokeImageFromPublic(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteImage($input: DeleteImageInput!) {
+  deleteImage(input: $input) {
+    actionId
+  }
+}
+
+mutation updateImage($input: UpdateImageInput!) {
+  updateImage(input: $input) {
+    actionId
+  }
+}
+
+mutation recoverImage($input: RecoverImageInput!) {
+  recoverImage(input: $input) {
+    actionId
+  }
+}
+
+mutation exportImage($input: ExportImageInput!) {
+  exportImage(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteExportedImage($input: DeleteExportedImageInput!) {
+  deleteExportedImage(input: $input) {
+    actionId
+  }
+}
+
+mutation expungeImage($input: ExpungeImageInput!) {
+  expungeImage(input: $input) {
+    actionId
+  }
+}
+
+mutation setImageBootMode($input: SetImageBootModeInput!) {
+  setImageBootMode(input: $input) {
+    actionId
+  }
+}
+
+mutation syncImageSize($input: SyncImageSizeInput!) {
+  syncImageSize(input: $input) {
+    actionId
+  }
+}
+
+query guestOsTypeList {
+  guestOsTypeList {
+    list {
+      platform
+      children {
+        guestName
+        children {
+          uuid
+          platform
+          name
+          osRelease
+          version
+        }
+      }
+    }
+  }
+}
+
+query guestOsType($guestOs: String!) {
+  guestOsType(guestOs: $guestOs) {
+    uuid
+    platform
+    name
+    osRelease
+    version
+  }
+}
+
+query guestNameList {
+  guestNameList {
+    name
+  }
+}
+
+query imageCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ImageQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  imageList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}
+
+query guestOsCpuMemHotAddInfoList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  guestOsCpuMemHotAddInfoList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      name
+      bits
+      cpuMemHotAdd
+      guestOsType
+    }
+  }
+}

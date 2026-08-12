@@ -1,0 +1,72 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select.wizard",
+        "keys": [
+          "name",
+          "version",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "db.backup.data"
+        }
+      },
+      {
+        "accessorKey": "version",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.version",
+            "defaultMessage": "Version"
+          },
+          "queryType": "",
+          "resource": "db.backup.data"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "virtualization.createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "db.backup.data"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

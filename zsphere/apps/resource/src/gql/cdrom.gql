@@ -1,0 +1,59 @@
+fragment cdromFields on CdRom {
+  uuid
+  name
+  deviceId
+  createDate
+  vmInstanceUuid
+  isoUuid
+  occupant
+  isoInstallPath
+}
+
+query vmCdRoms($vmInstanceUuid: String!) {
+  vmCdRoms(vmInstanceUuid: $vmInstanceUuid) {
+    list {
+      isoName
+      ...cdromFields
+    }
+    total
+  }
+}
+
+query vmCdRomsConfig {
+  vmCdRomsConfig {
+    category
+    defaultValue
+    description
+    name
+    value
+  }
+}
+
+query cdromList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  cdromList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    replyWithCount: true
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      isoName
+      ...cdromFields
+    }
+  }
+}
+
+mutation createVmCdRom($input: CreateVmCdRomInput!) {
+  createVmCdRom(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,82 @@
+query accessKeyList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  accessKeyList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      AccessKeyID
+      AccessKeySecret
+      state
+      createDate
+      owner {
+        name
+        uuid
+        type
+      }
+    }
+    total
+  }
+}
+
+query queryThirdpartyList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryThirdpartyList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      name
+      akey
+      hybridAccountId
+      hybridUserName
+      description
+      createDate
+      lastOpDate
+      owner {
+        name
+        uuid
+        type
+      }
+    }
+    total
+  }
+}
+
+mutation createAccessKey {
+  createAccessKey {
+    error
+  }
+}
+
+mutation createThirdPart($input: AddHybridKeySecretInput!) {
+  createThirdPart(input: $input) {
+    error
+  }
+}
+
+mutation deleteThirdPart($input: [DeleteAccessKeyInput!]!) {
+  deleteThirdPart(input: $input) {
+    error
+  }
+}

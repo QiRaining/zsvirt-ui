@@ -1,0 +1,79 @@
+@import "../style/vars.less";
+
+.@{prefix}-detail-nav-layout {
+  display: flex;
+  height: 100%;
+
+  &-nav {
+    width: 240px;
+    flex-basis: 240px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-right: 1px solid @neutral-300;
+    padding: 12px;
+    overflow: auto;
+
+    &-item {
+      height: 32px;
+      padding: 0 12px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      color: @neutral-700;
+
+      &:hover {
+        background-color: @neutral-100;
+        cursor: pointer;
+      }
+
+      &-active {
+        background-color: @neutral-200;
+        color: @neutral-800;
+      }
+
+      &-option {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        &-title {
+          flex: 1;
+          white-space: nowrap; /* 防止内容换行 */
+          overflow: hidden; /* 隐藏溢出内容 */
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+
+  &-panel {
+    flex-grow: 1;
+    padding: 20px 24px;
+    overflow: hidden;
+
+    &-title-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      &-name {
+        font-size: 16px;
+        color: @neutral-700;
+      }
+
+      &-action {
+        > * {
+          margin-left: 12px;
+        }
+
+        cursor: pointer;
+        color: @neutral-600;
+
+        > span:hover {
+          color: @info-600;
+        }
+      }
+    }
+  }
+}

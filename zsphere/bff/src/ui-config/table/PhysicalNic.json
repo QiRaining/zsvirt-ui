@@ -1,0 +1,634 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "bond.physicalNic.select",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "bond",
+          "vswitch",
+          "ipv4.address",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "interfaceName",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "host",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "select.bond",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "ipv4.address"
+        ]
+      },
+      {
+        "view": "select.sriov.physicalNic",
+        "keys": [
+          "interfaceName",
+          "state",
+          "nicSpeed",
+          "vswitch",
+          "sr.iov.state",
+          "used.vf.total.vf"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.bond.physicalNic",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "bond",
+          "vswitch",
+          "ipv4.address",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "interfaceName",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "host",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "bond",
+          "ipv4.address",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "sub.host.hyperconverged",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "virtStatus",
+          "vfMark"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization",
+        "keys": [
+          "interfaceName",
+          "lightSwtich",
+          "state",
+          "interfaceModel",
+          "nicSpeed",
+          "vswitch",
+          "sr.iov.state",
+          "used.vf.total.vf",
+          "lLDPMode"
+        ]
+      },
+      {
+        "view": "sub.physicalNetwork",
+        "keys": [
+          "interfaceName",
+          "host"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "interfaceName",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "lightSwtich",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "lightOn",
+            "defaultMessage": "Light Up"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "interfaceFactory",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "interfaceModel",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "nicDriveType",
+            "defaultMessage": "NIC Model"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "nicSpeed",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "speed",
+            "defaultMessage": "Speed"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "bond",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "agg.port",
+            "defaultMessage": "Bond"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "vswitch",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.l2",
+            "defaultMessage": "Distributed Switch"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv4.address",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ipv4.address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "input",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "sr.iov.state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "sr.iov.state",
+            "defaultMessage": "SR-IOV Status"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "used.vf.total.vf",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "used.vf.total.vf",
+            "defaultMessage": "Used VF/Total VF"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "carrierActive",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "virtStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "virtualizationStatus",
+            "defaultMessage": "Virtualization Status"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "vfMark",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualNicAvailableCount/totalCount",
+            "defaultMessage": "Available vNICs/Total vNICs"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      },
+      {
+        "accessorKey": "lLDPMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "lldp.mode",
+            "defaultMessage": "LLDP Mode"
+          },
+          "queryType": "",
+          "resource": "physical.nic"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.bond.physicalNic/row",
+        "activeKeys": [
+          "edit.physicalNic",
+          "edit.ip.address",
+          "host.phynic.sriov.generate",
+          "host.phynic.sriov.ungenerate"
+        ]
+      },
+      {
+        "view": "sub.bond.physicalNic/toolbar",
+        "extraKeys": [
+          "add.physical.nic",
+          "remove.physical.nic"
+        ]
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.phynic.sriov.generate",
+          "cluster.phynic.sriov.ungenerate"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar"
+      },
+      {
+        "view": "sub.host.hyperconverged/row",
+        "activeKeys": [
+          "edit.physicalNic",
+          "edit.ip.address",
+          "host.phynic.sriov.generate",
+          "host.phynic.sriov.ungenerate"
+        ]
+      },
+      {
+        "view": "sub.host.hyperconverged/toolbar"
+      },
+      {
+        "view": "sub.host.lldp/header",
+        "extraKeys": [
+          "edit.lldpMode"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization/row",
+        "activeKeys": [
+          "edit.physicalNic",
+          "edit.ip.address",
+          "modify.lldpMode",
+          "config.sriov"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization/toolbar",
+        "extraKeys": [
+          "batche.modify.lldpMode"
+        ]
+      },
+      {
+        "view": "sub.host/header",
+        "extraKeys": [
+          "edit.physicalNic"
+        ],
+        "activeKeys": [
+          "edit.ip.address",
+          "config.sriov"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "edit.physicalNic",
+          "edit.ip.address",
+          "host.phynic.sriov.generate",
+          "host.phynic.sriov.ungenerate",
+          "set.physicalNetwork.type"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar"
+      },
+      {
+        "view": "sub.physicalNetwork/row"
+      },
+      {
+        "view": "sub.physicalNetwork/toolbar"
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit.physicalNic",
+        "resource": "host",
+        "authKey": "edit.physicalNic",
+        "i18nKey": "edit.description",
+        "name": "编辑简介",
+        "label": "编辑简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.ip.address",
+        "resource": "host",
+        "authKey": "edit.ip.address",
+        "i18nKey": "modify.ip.address",
+        "name": "修改IP地址",
+        "label": "修改IP地址",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.phynic.sriov.generate",
+        "resource": "cluster",
+        "authKey": "cluster.phynic.sriov.generate",
+        "i18nKey": "sriovGenerate",
+        "name": "SR-IOV切割",
+        "label": "SR-IOV切割",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.phynic.sriov.ungenerate",
+        "resource": "cluster",
+        "authKey": "cluster.phynic.sriov.ungenerate",
+        "i18nKey": "sriovUngenerate",
+        "name": "SR-IOV还原",
+        "label": "SR-IOV还原",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.phynic.sriov.generate",
+        "resource": "host",
+        "authKey": "host.phynic.sriov.generate",
+        "i18nKey": "sriovGenerate",
+        "name": "SR-IOV切割",
+        "label": "SR-IOV切割",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.phynic.sriov.ungenerate",
+        "resource": "host",
+        "authKey": "host.phynic.sriov.ungenerate",
+        "i18nKey": "sriovUngenerate",
+        "name": "SR-IOV还原",
+        "label": "SR-IOV还原",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.physicalNetwork.type",
+        "resource": "physical.nic",
+        "authKey": "set.physicalNetwork.type",
+        "i18nKey": "set.physicalNetwork.type",
+        "name": "设置物理网络类型",
+        "label": "设置物理网络类型",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.lldpMode",
+        "resource": "host",
+        "authKey": "edit.lldpMode",
+        "i18nKey": "edit.lldpMode",
+        "name": "修改",
+        "label": "修改",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "batche.modify.lldpMode",
+        "resource": "host",
+        "authKey": "batche.modify.lldpMode",
+        "i18nKey": "batche.modify.lldpMode",
+        "name": "批量修改LLDP模式",
+        "label": "批量修改LLDP模式",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.physical.nic",
+        "resource": "bond",
+        "authKey": "add.physical.nic",
+        "i18nKey": "add",
+        "name": "添加物理网口",
+        "label": "添加物理网口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.physical.nic",
+        "resource": "bond",
+        "authKey": "remove.physical.nic",
+        "i18nKey": "remove",
+        "name": "移除物理网口",
+        "label": "移除物理网口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.lldpMode",
+        "resource": "host",
+        "authKey": "modify.lldpMode",
+        "i18nKey": "modify.lldpMode",
+        "name": "修改网卡LLDP模式",
+        "label": "修改网卡LLDP模式",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "config.sriov",
+        "resource": "host",
+        "authKey": "config.sriov",
+        "i18nKey": "config.sriov",
+        "name": "配置SR-IOV",
+        "label": "配置SR-IOV",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

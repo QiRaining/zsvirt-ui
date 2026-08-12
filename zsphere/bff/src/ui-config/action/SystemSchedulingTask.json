@@ -1,0 +1,115 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "description",
+          "operatingResources",
+          "progress",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "description",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operation.description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "system.scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "operatingResources",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operating.resources",
+            "defaultMessage": "Operated Resource"
+          },
+          "queryType": "input",
+          "resource": "system.scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "progress",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "task.progress",
+            "defaultMessage": "Task Progress"
+          },
+          "queryType": "",
+          "resource": "system.scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "system.scheduling.task"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "extraKeys": [
+          "cancel.task"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "cancel.task"
+        ]
+      },
+      {
+        "view": "mian/row",
+        "extraKeys": [
+          "cancel.task"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "cancel.task",
+        "resource": "system.scheduling.task",
+        "authKey": "cancel.task",
+        "i18nKey": "cancel.task",
+        "name": "取消任务",
+        "label": "取消任务",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

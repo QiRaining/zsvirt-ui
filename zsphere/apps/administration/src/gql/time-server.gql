@@ -1,0 +1,88 @@
+query getTimeServers {
+  timeServers {
+    servers {
+      internal {
+        id
+        hostname
+        status
+      }
+      external {
+        id
+        hostname
+        status
+      }
+    }
+    relations {
+      source
+      target
+    }
+  }
+}
+
+query getInternalTimeServerCandidates {
+  internalTimeServerCandidates {
+    servers {
+      hostname
+      isManagementNode
+    }
+  }
+}
+
+query queryTimeServerReachable($internal: [String!], $external: [String!]!) {
+  timeServerReachable(internal: $internal, external: $external) {
+    servers {
+      hostname
+      reachable
+    }
+  }
+}
+
+query managementNodeList {
+  managementNodeList {
+    total
+    list {
+      mnStatus
+    }
+  }
+}
+
+query getCurrentTime {
+  getCurrentTime {
+    currentTime {
+      MillionSeconds
+    }
+    timezone
+    offset
+  }
+}
+
+# 用于时间服务器更新页面检查 Ceph 主存储状态
+query primaryStorageList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: PrimaryStorageQueryType
+  $extraConditions: [Condition!]
+) {
+  primaryStorageList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+  ) {
+    total
+    list {
+      uuid
+      name
+      type
+      state
+      status
+    }
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "specInfo",
+          "parent",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "specInfo",
+          "parent",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "specInfo",
+          "parent",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "name",
+          "specInfo",
+          "address",
+          "host",
+          "parent",
+          "state",
+          "status",
+          "vmInstance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "specInfo",
+          "address",
+          "parent",
+          "state",
+          "status",
+          "vmInstance",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "name",
+          "vendorId",
+          "specInfo",
+          "address",
+          "host",
+          "parent",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "vendorId",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "vendorId",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "specInfo",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "specInfo",
+            "defaultMessage": "Specification"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "address",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "deviceAddress",
+            "defaultMessage": "Device Address"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "parent",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "physicsGpu",
+            "defaultMessage": "Physical GPU"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabledState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "vmInstance",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vgpu.device"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vgpu.device"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.vgpu.enable",
+          "cluster.vgpu.disable",
+          "cluster.vgpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "cluster.vgpu.enable",
+          "cluster.vgpu.disable"
+        ],
+        "activeKeys": [
+          "cluster.vgpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "host.vgpu.enable",
+          "host.vgpu.disable",
+          "host.vgpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "host.vgpu.enable",
+          "host.vgpu.disable"
+        ],
+        "activeKeys": [
+          "host.vgpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.vm/row",
+        "activeKeys": [
+          "detach.vgpu.device"
+        ]
+      },
+      {
+        "view": "sub.vm/toolbar",
+        "extraKeys": [
+          "attach.vgpu.device",
+          "detach.vgpu.device"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "cluster.vgpu.enable",
+        "resource": "cluster",
+        "authKey": "cluster.vgpu.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.vgpu.disable",
+        "resource": "cluster",
+        "authKey": "cluster.vgpu.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.vgpu.set.share.type",
+        "resource": "cluster",
+        "authKey": "cluster.vgpu.set.share.type",
+        "i18nKey": "set.shareType",
+        "name": "设置共享",
+        "label": "设置共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.vgpu.enable",
+        "resource": "host",
+        "authKey": "host.vgpu.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.vgpu.disable",
+        "resource": "host",
+        "authKey": "host.vgpu.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.vgpu.set.share.type",
+        "resource": "host",
+        "authKey": "host.vgpu.set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.vgpu.device",
+        "resource": "vm",
+        "authKey": "attach.vgpu.device",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vgpu.device",
+        "resource": "vm",
+        "authKey": "detach.vgpu.device",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

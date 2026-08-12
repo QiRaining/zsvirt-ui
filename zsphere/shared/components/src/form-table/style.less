@@ -1,0 +1,205 @@
+@import "../style/vars.less";
+
+// 错误状态
+.ant-form-item-has-error {
+  .@{prefix}-virtualization-form-table-select-input {
+    border-color: @danger-500;
+  }
+}
+
+// 主组件样式
+.@{prefix}-virtualization-form-table {
+  // 标题样式
+  &-title {
+    font-weight: 400 !important;
+    width: 100%;
+    display: flex;
+
+    &-base-title {
+      white-space: nowrap;
+    }
+
+    &-resource-name {
+      display: flex;
+      flex-grow: 1;
+
+      .ant-divider-vertical {
+        height: unset !important;
+        top: unset;
+        margin-top: 5px;
+        margin-bottom: 3px;
+      }
+
+      &-text {
+        flex: 1;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 50% !important;
+
+        .ant-typography {
+          color: @neutral-600 !important;
+        }
+      }
+    }
+  }
+
+  // 警告提示样式
+  &-alert {
+    margin-bottom: 20px !important;
+  }
+
+  // 模态框内容样式
+  &-virtualization-modal-body {
+    min-height: 320px;
+  }
+
+  // 表格基础样式
+  .ant-table {
+    // 表格内容
+    &.ant-table .ant-table-content {
+      // min-height: 204px !important;
+      overflow: auto !important;
+      border: 1px solid @neutral-400;
+      border-radius: 2px;
+    }
+
+    // 表格主体
+    &.ant-table .ant-table-body {
+      height: 168px !important;
+      overflow-x: auto !important;
+      overflow-y: auto !important;
+    }
+
+    // 表格头部
+    .ant-table-thead > tr > th {
+      padding: 6.5px 12px !important;
+      height: 36px;
+    }
+
+    // 表格主体
+    .ant-table-tbody {
+      .ant-table-cell {
+        padding: 6.5px 12px;
+        color: @neutral-700;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      tr:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+
+    // 空状态
+    .ant-table-placeholder {
+      height: 168px !important;
+
+      .ant-table-cell {
+        height: 168px !important;
+      }
+    }
+  }
+
+  // 覆盖 min-row-heigth 的样式
+  :global {
+    .min-row-heigth .ant-table .ant-table-content,
+    .min-row-heigth .ant-table .ant-table-body {
+      height: 204px !important;
+      min-height: 204px !important;
+    }
+  }
+
+  // 操作图标样式
+  &-action-icon {
+    cursor: pointer;
+    color: @neutral-600 !important;
+
+    &-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  // 添加节点样式
+  &-add-node {
+    cursor: pointer;
+    color: @color-600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @color-700;
+    }
+  }
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: @neutral-100;
+
+    .circleIcon {
+      color: @neutral-300;
+      font-size: 32px !important;
+    }
+  }
+
+  .emptyRow {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    color: @neutral-500;
+    font-size: 12px;
+  }
+}
+
+// 模态框样式
+.@{prefix}-virtualization-form-table-modal {
+  .ant-modal-header {
+    padding: 13px 24px 12px 24px !important;
+
+    .ant-modal-title {
+      font-weight: 400;
+    }
+  }
+
+  .ant-modal-body {
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding-bottom: 40px !important;
+  }
+
+  .ant-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 14px 16px !important;
+    border-top: none !important;
+  }
+}
+
+// 辅助类
+.disabled-text-color {
+  color: @neutral-500 !important;
+}
+
+.@{prefix}-virtualization-form-table-table {
+  margin-left: -12px;
+}
+
+.@{prefix}-virtualization-form-table-button-content {
+  margin-left: -12px;
+}

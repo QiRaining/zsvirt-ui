@@ -1,0 +1,562 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.vpc",
+        "keys": [
+          "name",
+          "vpcVRouter",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.vpc.share",
+        "keys": [
+          "name",
+          "vpcVRouter",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vpc",
+        "keys": [
+          "name",
+          "vpcVRouter",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "ip.allocation.strategy",
+          "dhcp.service",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.ipsec.connection",
+        "keys": [
+          "cidr",
+          "vpc.network",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.l2-network",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.security-group",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "toPublic"
+        ]
+      },
+      {
+        "view": "sub.vpc",
+        "keys": [
+          "name",
+          "vpcVRouter",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "vpcVRouter",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vpc.vrouter",
+            "defaultMessage": "VPC vRouter"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "avaliableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4.address.usage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "vpc.network",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "vpc.network",
+            "defaultMessage": "VPC Network"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv5Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv7Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "ip.allocation.strategy",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ip.allocation.strategy",
+            "defaultMessage": "IP Allocation Policy"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "dhcp.service",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "dhcp.service",
+            "defaultMessage": "DHCP Service"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vpc.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.vpc.share/header"
+      },
+      {
+        "view": "main.vpc.share/row"
+      },
+      {
+        "view": "main.vpc.share/toolbar"
+      },
+      {
+        "view": "main.vpc/header",
+        "activeKeys": [
+          "edit",
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "set.share.mode",
+          "attach.vpc.router",
+          "detach.vpc.router",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vpc/row",
+        "activeKeys": [
+          "edit",
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "set.share.mode",
+          "attach.vpc.router",
+          "detach.vpc.router",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vpc/toolbar",
+        "extraKeys": [
+          "create.vpc.network"
+        ],
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network.vpc/row",
+        "activeKeys": [
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network.vpc/toolbar",
+        "activeKeys": [
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network/row",
+        "activeKeys": [
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network/toolbar",
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.security-group/row",
+        "activeKeys": [
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.security-group/toolbar",
+        "extraKeys": [
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.vpc.shared-resource/row"
+      },
+      {
+        "view": "sub.vpc.shared-resource/toolbar"
+      },
+      {
+        "view": "sub.vpc/row",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/toolbar",
+        "extraKeys": [
+          "create.vpc.network"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vpc.network",
+        "resource": "vpc.network",
+        "authKey": "create.vpc.network",
+        "i18nKey": "create.vpcNetwork",
+        "name": "创建VPC网络",
+        "label": "创建VPC网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vpc.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv4.range",
+        "resource": "vpc.network",
+        "authKey": "add.ipv4.range",
+        "i18nKey": "add.Ipv4NetworkRange",
+        "name": "添加IPv4网络段",
+        "label": "添加IPv4网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv6.range",
+        "resource": "vpc.network",
+        "authKey": "add.ipv6.range",
+        "i18nKey": "add.Ipv6NetworkRange",
+        "name": "添加IPv6网络段",
+        "label": "添加IPv6网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dns",
+        "resource": "vpc.network",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.mode",
+        "resource": "vpc.network",
+        "authKey": "set.share.mode",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "set.share.mode-divider"
+      },
+      {
+        "key": "attach.vpc.router",
+        "resource": "vpc.network",
+        "authKey": "attach.vpc.router",
+        "i18nKey": "attach.vpcRouter",
+        "name": "加载VPC路由器",
+        "label": "加载VPC路由器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vpc.router",
+        "resource": "vpc.network",
+        "authKey": "detach.vpc.router",
+        "i18nKey": "detach.vpcRouter",
+        "name": "卸载VPC路由器",
+        "label": "卸载VPC路由器",
+        "icon": "",
+        "dividerKey": "detach.vpc.router-divider"
+      },
+      {
+        "key": "set.default.network",
+        "resource": "vpc.network",
+        "authKey": "set.default.network",
+        "i18nKey": "set.defaultNetwork",
+        "name": "设为默认网络",
+        "label": "设为默认网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.security.gourp.to.l3.network",
+        "resource": "vpc.network",
+        "authKey": "attach.security.gourp.to.l3.network",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.security.gourp.to.l3.network",
+        "resource": "vpc.network",
+        "authKey": "detach.security.gourp.to.l3.network",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vpc.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vpc.network",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

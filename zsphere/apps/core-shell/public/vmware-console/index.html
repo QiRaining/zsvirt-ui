@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <title>VMware WMKS</title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="VMware, Inc." name="author">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    name="viewport">
+  <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="jquery-ui-1.13.0.min.js" type="text/javascript"></script>
+  <script src="wmks.min.js" type="text/javascript"></script>
+  <link rel="shortcut icon" type="images/x-icon" href="/public/theme/customer/zh-CN/favicon.ico">
+  <style>
+    .console-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .status-bar {
+      height: 32px;
+      background: black;
+      color: var(--neutral-0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+
+
+    .status-bar-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ca-status-bar {
+      background: #005BD4;
+      color: var(--neutral-0);
+      padding: 8px 15px;
+      display: 'flex';
+      align-items: center;
+      border: none;
+      border-radius: 0;
+      word-wrap: break-word;
+    }
+
+
+    .icon {
+      font-size: 16px;
+      color: #1890ff;
+      position: absolute;
+      margin-right: 8px;
+      margin-top: 4px;
+      display: inline-block;
+      font-style: normal;
+      line-height: 0;
+      text-align: center;
+      text-transform: none;
+      vertical-align: -0.125em;
+    }
+
+    .ca-status-bar-text {
+      font-size: 14px;
+      margin-left: 24px;
+    }
+
+    .buttons {
+      color: initial;
+      width: unset;
+      position: absolute;
+      right: 4px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .tools-list {
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      transition: 0.5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tools-list-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      list-style: none;
+      background: #0043b1;
+      color: white;
+      border-radius: 4px;
+      padding: 10px 0;
+    }
+
+    .open-close-btn {
+      width: 20px;
+      height: 60px;
+      background: #0043b1;
+      border-radius: 0px 4px 4px 0px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .list-btn {
+      width: 35px;
+      height: 35px;
+      vertical-align: 'center';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid #c8cacd;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .list-btn .tip {
+      display: none;
+      width: 60px;
+      background-color: #4a4c4f;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 12px;
+      border-radius: 4px;
+
+      /* 垂直居中 */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50px;
+      z-index: 1;
+    }
+
+    .listt-btn:hover .tip {
+      display: block;
+    }
+  </style>
+
+
+  <script>
+    const statusMap = {
+      connecting: '连接中',
+      connected: '已连接',
+      disconnected: '未连接'
+    }
+
+    let wmks = null;
+    let status = 'connecting';
+
+    const createWMKS = () => {
+      wmks = WMKS.createWMKS("wmksContainer", {});
+      registerEvents();
+
+      if (!wmks) {
+        console.log("Please createWMKS first!");
+        return;
+      }
+      let host = options.host;
+      let port = 443;
+      let ticket = options.token;
+      let url = "ws://" + host + ":" + port;
+      if (ticket) {
+        url = "wss://" + host + ":" + port + ticket;
+      }
+
+      try {
+
+        console.log(url)
+        wmks.connect(url);
+
+      } catch (err) {
+        console.log('connect failed: ' + err);
+
+
+      }
+    }
+
+
+    const registerEvents = () => {
+      if (!wmks) return;
+      let constEvent = WMKS.CONST.Events;
+      wmks.register(constEvent.CONNECTION_STATE_CHANGE, onConnectionStateChangeHandler)
+    }
+
+
+    const readQueryVariable = (name, defaultValue) => { //获取url参数
+      const re = new RegExp(`.*[?&]${name}=([^&#]*)`)
+      const match = document.location.href.match(re)
+      if (match) {
+        return decodeURIComponent(match[1])
+      }
+      return defaultValue
+    }
+
+
+    const [protocol, host, port, path, token] = [
+      window.location.protocol === 'https:' ? 'wss' : 'ws',
+      readQueryVariable('host', window.location.hostname),
+      readQueryVariable('port', window.location.port),
+      'websockify',
+      readQueryVariable('token', '')
+    ]
+
+    const options = {
+      viewOnly: readQueryVariable('view_only', false),
+      scaleViewport: readQueryVariable('scale', false),
+      desktopName: readQueryVariable('title', ''),
+      platform: readQueryVariable('platform', ''),
+      guestToolsInstalled: readQueryVariable('guestToolsInstalled', ''),
+      lowVersion: readQueryVariable('lowVersion', false),
+      clipViewport: true,
+      showDotCursor: true,
+      reconnect: true,
+      host,
+      port,
+      token,
+      protocol,
+      vmCdRoms: readQueryVariable('vmCdRoms', ''),
+      uuid: readQueryVariable('uuid', ''),
+      language: readQueryVariable('language', 'zh-CN')
+    }
+
+    console.log('options', options)
+
+
+    function updateSize() {
+      let winW = window.innerWidth,
+        winH = window.innerHeight;
+      $("#wmksContainer").width(winW);
+      $("#wmksContainer").height(winH - 32);
+      $("#wmksContainer").css("top", "32px");
+      const canvas = document.getElementById("mainCanvas");
+
+      if (canvas) {
+        canvas.style.transform = 'scale(1)';
+        if (document.fullscreenElement) {
+          canvas.style.marginTop = '0px';
+        } else {
+          canvas.style.marginTop = '32px';
+        }
+      }
+    }
+    //初始事件
+    $(function () {
+      $("#ca-status-bar").hide()
+      createWMKS()
+      let buttonText = options.language === 'zh-CN' ? '发送 Ctrl+Alt+Del' : 'Send Ctrl+Alt+Del'
+      let fullScreenButtonText = options.language === 'zh-CN' ? '全屏' : 'Full Screen'
+      let caAlertText = options.language === 'zh-CN' ? '控制台打开异常，请使用浏览器登录 vCenter 并在登录界面下载受信任的根 CA 证书后再试。' :
+        'Exception occurs. Log in to the vCenter by using your browser, download the trusted root CA certificate on the login page, and try again.'
+      document.getElementById("fullScreen").innerHTML = fullScreenButtonText.toString();
+      document.getElementById("cadBtn").innerHTML = buttonText.toString();
+      document.getElementById("ca-status").innerHTML = caAlertText.toString();
+      document.title = options.desktopName
+      updateSize()
+    });
+
+    $(window).on('resize', function (e) {
+      updateSize();
+      updateScreen();
+    });
+
+    $(window).on('close', function (e) {
+      destroy()
+    });
+
+    function destroy() {
+      try {
+        wmks.destroy();
+      } catch (err) {
+        console.log('destroy call failed: ' + err.description);
+        return;
+      }
+      console.log('destroy call returned successfully');
+    }
+
+    function updateScreen() {
+      if (!wmks) return;
+      wmks.updateScreen();
+    }
+
+    function canFullScreen() {
+      if (!wmks) return;
+      console.log("canFullScreen : " + wmks.canFullScreen());
+    }
+
+    function enterFullScreen() {
+      if (!wmks) return;
+      wmks.enterFullScreen();
+
+    }
+
+    function sendCAD() {
+      if (!wmks) return;
+      wmks.sendCAD();
+    }
+
+    function onConnectionStateChangeHandler(event, data) {
+      console.log('onConnectionStateChange - connectionState: ' + data.state);
+      let status = options.language === 'zh-CN' ? statusMap[data.state] + ':' + options.uuid : data.state + ':' +
+        options.uuid
+      document.getElementById("status").innerHTML = status.toString();
+
+
+      if (data.state == WMKS.CONST.ConnectionState.DISCONNECTED) {
+        $("#ca-status-bar").show()
+        console.log("reason is " + data.reason + ", code is" + data.code);
+
+      }
+    }
+
+    function sendInputString() {
+      if (!wmks) return;
+      let text = value("sendStringText");
+      wmks.sendInputString(text);
+    }
+  </script>
+</head>
+
+<body style='height: 100%;width: 100%;margin:0px'>
+  <div class="console-container">
+    <div class="status-bar">
+      <a id='status' style="color: white;"></a>
+      <div class='buttons'>
+        <button id='fullScreen' type="button" class='full-screen' style="margin-right: 8px;"
+          onclick="enterFullScreen()">
+          全屏
+        </button>
+        <button id='cadBtn' type="button" class='ctrl-alt-del-btn' onclick="sendCAD()">
+          发送 Ctrl+Alt+Del
+        </button>
+      </div>
+    </div>
+    <div id='ca-status-bar' class="ca-status-bar">
+      <span class='icon'> <img style='height: 16px; width:16px' alt="" src="./assets/icons/info.svg"></span>
+      <a id='ca-status' class="ca-status-bar-text" style="color: white;">控制台打开异常，请使用浏览器登录 vCenter 并在登录界面下载受信任的根 CA
+        证书后再试。<a>
+
+    </div>
+    <div id="wmksContainer" style="background: rgb(24, 26, 29);width:100%;height: 100%;">
+
+    </div>
+  </div>
+</body>
+
+</html>

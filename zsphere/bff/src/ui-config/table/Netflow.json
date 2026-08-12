@@ -1,0 +1,219 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "version",
+          "expireInterval",
+          "vRouterCount",
+          "ip",
+          "port",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "version",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "version",
+            "defaultMessage": "Version"
+          },
+          "queryType": "multipleFilter",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "expireInterval",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "expireInterval",
+            "defaultMessage": "Export Interval"
+          },
+          "queryType": "",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "vRouterCount",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vRouterCount",
+            "defaultMessage": "VPC vRouters"
+          },
+          "queryType": "",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ip",
+            "defaultMessage": "IP"
+          },
+          "queryType": "",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "port",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "",
+          "resource": "netflow"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "netflow"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.netflow",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.netflow",
+        "resource": "netflow",
+        "authKey": "create.netflow",
+        "i18nKey": "add.netflow",
+        "name": "添加Netflow",
+        "label": "添加Netflow",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "netflow",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "netflow",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

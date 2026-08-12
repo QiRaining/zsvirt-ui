@@ -1,0 +1,6 @@
+{
+  "cluster||block||network.hp": "hidden",
+  "cluster||block||networkHp": "hidden",
+  "l2.network||block||networkAccelerationMode": "hidden",
+  "network.hp||block||cluster": "hidden"
+}

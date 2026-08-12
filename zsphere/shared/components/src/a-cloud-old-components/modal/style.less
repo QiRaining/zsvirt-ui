@@ -1,0 +1,38 @@
+@import "../../style/vars.less";
+
+.@{prefix}-modal {
+  .ant-modal-header {
+    padding: 13px 24px 12px 24px !important;
+    border-radius: 4px 4px 0 0;
+    .ant-modal-title {
+      font-weight: normal;
+    }
+  }
+  .ant-modal-content {
+    border-radius: 4px;
+  }
+
+  .ant-modal-close-x {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .ant-modal-body {
+    padding: 0 !important;
+  }
+
+  .ant-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 13px 24px 14px 24px !important;
+  }
+
+  &-confirm {
+    .ant-modal-footer {
+      padding: 0 24px 20px 24px !important;
+    }
+  }
+}

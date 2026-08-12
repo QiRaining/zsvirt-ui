@@ -1,0 +1,139 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "alarm.rule.name",
+          "resourceType",
+          "emergencyLevel"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "alarm.rule.name",
+          "resourceType",
+          "emergencyLevel"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "alarm.rule.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "metricEntry",
+            "defaultMessage": "Metric Item"
+          },
+          "queryType": "",
+          "resource": "event.rule.template"
+        }
+      },
+      {
+        "accessorKey": "resourceType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceType",
+            "defaultMessage": "Resource Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "event.rule.template"
+        }
+      },
+      {
+        "accessorKey": "emergencyLevel",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "emergencyLevel",
+            "defaultMessage": "Severity"
+          },
+          "queryType": "multipleFilter",
+          "resource": "event.rule.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "modify",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "modify",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.event.rule.template"
+        ],
+        "activeKeys": [
+          "modify",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "modify",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.event.rule.template",
+        "resource": "event.rule.template",
+        "authKey": "add.event.rule.template",
+        "i18nKey": "add.eventAlarmRule",
+        "name": "添加事件报警规则",
+        "label": "添加事件报警规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify",
+        "resource": "event.rule.template",
+        "authKey": "modify",
+        "i18nKey": "modify",
+        "name": "修改",
+        "label": "修改",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "event.rule.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

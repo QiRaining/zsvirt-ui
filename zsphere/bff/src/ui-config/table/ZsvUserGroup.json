@@ -1,0 +1,310 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "group.user.count",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "group.user.count",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.select",
+        "keys": [
+          "name",
+          "group.user.count",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.role",
+        "keys": [
+          "name",
+          "group.user.count",
+          "role",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth",
+        "keys": [
+          "name",
+          "group.user.count",
+          "role",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.user",
+        "keys": [
+          "name",
+          "group.user.count",
+          "role",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zsv.user.group"
+        }
+      },
+      {
+        "accessorKey": "group.user.count",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "group.user.count",
+            "defaultMessage": "Users"
+          },
+          "queryType": "",
+          "resource": "zsv.user.group"
+        }
+      },
+      {
+        "accessorKey": "role",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "role",
+            "defaultMessage": "Role"
+          },
+          "queryType": "",
+          "resource": "zsv.user.group"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zsv.user.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zsv.user.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "modifyconfig.zsv",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "modifyconfig.zsv",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.user.group"
+        ],
+        "activeKeys": [
+          "add.user",
+          "bind.role",
+          "virtualization.sharedResource",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.role/row",
+        "activeKeys": [
+          "modifyconfig.zsv",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth/row",
+        "activeKeys": [
+          "recall",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth/toolbar",
+        "extraKeys": [
+          "share",
+          "recall"
+        ]
+      },
+      {
+        "view": "virtualization.sub.user/header"
+      },
+      {
+        "view": "virtualization.sub.user/row",
+        "activeKeys": [
+          "modifyconfig.zsv",
+          "remove.from.user.group",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.user/toolbar",
+        "extraKeys": [
+          "join.userGroup",
+          "remove.from.user.group"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.user.group",
+        "resource": "zsv.user.group",
+        "authKey": "create.user.group",
+        "i18nKey": "create.user.group",
+        "name": "新建用户组",
+        "label": "新建用户组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.user",
+        "resource": "zsv.user.group",
+        "authKey": "add.user",
+        "i18nKey": "add.user",
+        "name": "添加用户",
+        "label": "添加用户",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "bind.role",
+        "resource": "zsv.user.group",
+        "authKey": "bind.role",
+        "i18nKey": "bind.role",
+        "name": "绑定角色",
+        "label": "绑定角色",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.sharedResource",
+        "resource": "zsv.user.group",
+        "authKey": "virtualization.sharedResource",
+        "i18nKey": "virtualization.sharedResource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": "virtualization.sharedResource-divider"
+      },
+      {
+        "key": "modifyconfig.zsv",
+        "resource": "zsv.user.group",
+        "authKey": "modifyconfig.zsv",
+        "i18nKey": "modifyconfig.zsv",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": "modifyconfig.zsv-divider"
+      },
+      {
+        "key": "share",
+        "resource": "zsv.user.group",
+        "authKey": "share",
+        "i18nKey": "share",
+        "name": "共享",
+        "label": "共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recall",
+        "resource": "zsv.user.group",
+        "authKey": "recall",
+        "i18nKey": "recall",
+        "name": "召回",
+        "label": "召回",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "join.userGroup",
+        "resource": "zsv.user.group",
+        "authKey": "join.userGroup",
+        "i18nKey": "virtualization.join.user.group",
+        "name": "加入用户组",
+        "label": "加入用户组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.from.user.group",
+        "resource": "zsv.user.group",
+        "authKey": "remove.from.user.group",
+        "i18nKey": "remove.from.user.group",
+        "name": "从用户组移除",
+        "label": "从用户组移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "zsv.user.group",
+        "authKey": "virtualization.delete",
+        "i18nKey": "virtualization.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../../../theme.less";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  border-width: 1px;
+  border-color: @neutral-300;
+  margin-left: -12px;
+}
+
+// .table-container {
+
+// }
+
+.batch-table-form {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 2px;
+  border: 1px solid @neutral-300;
+  max-height: 322px;
+
+  .ant-table .ant-table-content {
+    height: 320px !important;
+    overflow: auto !important;
+  }
+
+  :global {
+    .zstack-table {
+      //height: 320px !important;
+    }
+
+    .ant-table-content {
+      // height: 320px !important;
+    }
+  }
+
+  :global {
+    .zstack-table {
+      max-height: 320px !important;
+    }
+
+    // .ant-table-cell {
+    //   height: 40px;
+    // }
+
+    .ant-table-content {
+      max-height: 320px !important;
+      overflow-y: auto !important;
+    }
+
+    .ant-table-tbody > tr {
+      &:last-child {
+        border-bottom: 0px;
+
+        > td {
+          border-bottom: 0px;
+        }
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      // padding-top: 3px !important;
+      // padding-bottom: 3px !important;
+      // height: 40px !important;
+    }
+  }
+
+  .ant-table {
+    .ant-table-content,
+    .ant-table-body {
+      max-height: 320px !important;
+    }
+  }
+}
+
+.trash {
+  color: @neutral-600;
+}

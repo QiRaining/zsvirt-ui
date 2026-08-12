@@ -1,0 +1,158 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "admin",
+          "vmNum",
+          "volumeNum"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "admin",
+          "vmNum",
+          "volumeNum"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "admin",
+          "vmNum",
+          "volumeNum"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "owner"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "owner"
+        }
+      },
+      {
+        "accessorKey": "admin",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "project.admin",
+            "defaultMessage": "Project Manager"
+          },
+          "queryType": "",
+          "resource": "owner"
+        }
+      },
+      {
+        "accessorKey": "vmNum",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vmNum",
+            "defaultMessage": "VMs"
+          },
+          "queryType": "",
+          "resource": "owner"
+        }
+      },
+      {
+        "accessorKey": "volumeNum",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "volumeNum",
+            "defaultMessage": "Disks"
+          },
+          "queryType": "",
+          "resource": "owner"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "share",
+          "revoke"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "share",
+        "resource": "owner",
+        "authKey": "share",
+        "i18nKey": "share",
+        "name": "共享",
+        "label": "共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "revoke",
+        "resource": "owner",
+        "authKey": "revoke",
+        "i18nKey": "revoke",
+        "name": "召回",
+        "label": "召回",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "owner",
+        "authKey": "set.share.type",
+        "i18nKey": "set.share.type",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

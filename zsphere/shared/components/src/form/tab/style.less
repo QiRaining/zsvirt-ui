@@ -1,0 +1,77 @@
+@import "../../style/vars.less";
+
+.card {
+  &:not(:first-child) {
+    margin-top: 7px;
+  }
+
+  .card-tab {
+    > .ant-tabs-nav {
+      position: relative;
+
+      &::before {
+        border: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 12px;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background: @color-400;
+      }
+
+      .ant-tabs-nav-wrap {
+        .ant-tabs-nav-list {
+          padding-left: 12px;
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+
+  .card-title-first {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 22px;
+
+    .card-title-first-text {
+      height: 22px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .card-title-first-icon {
+      height: 22px;
+      margin-left: 4px;
+      vertical-align: middle;
+      padding-top: 2px;
+    }
+  }
+
+  .card-title {
+    height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    // color: @neutral-700; //需要替换
+    line-height: 22px;
+  }
+
+  .card-icon {
+    height: 22px;
+    margin-left: 4px;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-top: 2px;
+
+    &:empty {
+      margin-left: 0;
+    }
+  }
+}

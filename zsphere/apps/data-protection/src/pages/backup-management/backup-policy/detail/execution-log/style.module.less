@@ -1,0 +1,53 @@
+.toolbar {
+  display: flex;
+  gap: 4px;
+}
+
+.list {
+  :global {
+    col:last-child {
+      width: 108px !important;
+      min-width: 108px !important;
+    }
+
+    th.ant-table-cell.ant-table-cell:last-child {
+      padding: 7.5px 12px !important;
+
+      > span {
+        display: inline-block;
+        width: 85px;
+      }
+
+      .ant-typography {
+        justify-content: flex-start !important;
+      }
+    }
+
+    td:last-child {
+      .ant-btn {
+        border: none !important;
+        padding: 0 !important;
+        height: auto !important;
+        color: var(--color-600);
+
+        &:focus {
+          background-color: transparent !important;
+        }
+      }
+
+      .ant-space {
+        margin: 0 !important;
+
+        .ant-space-item > div {
+          border: none !important;
+          margin: 0 !important;
+        }
+      }
+
+      .zstack-action-text-btn {
+        padding: 0;
+        background-color: transparent;
+      }
+    }
+  }
+}

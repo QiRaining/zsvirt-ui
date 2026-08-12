@@ -1,0 +1,694 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "custom",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "bm.chassis",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "bm.chassis",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.destroyed",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "bm.chassis",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetalInstance.tag",
+        "keys": [
+          "name",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetalInstance.tag",
+        "keys": [
+          "name",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.destroyed",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "port",
+          "owner",
+          "tag",
+          "bm.cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.tag",
+        "keys": [
+          "name",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabledState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "console",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "console",
+            "defaultMessage": "Console"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memorySize",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "defaultIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "defaultIp",
+            "defaultMessage": "Default IP"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "port",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "sshPort",
+            "defaultMessage": "SSH Port"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "tag",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "multipleSelect",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "bm.cluster",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bm.cluster",
+            "defaultMessage": "Bare Metal Cluster"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "bm.chassis",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "baremetalChassis",
+            "defaultMessage": "Bare Metal Chassis"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal.instance"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.destroyed/header",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main.destroyed/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main.destroyed/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "start",
+          "stop",
+          "rebort",
+          "open.console",
+          "edit",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "rebort",
+          "open.console",
+          "edit",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "creat.baremetal.instance",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "rebort",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "rebort",
+          "open.console",
+          "edit",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/toolbar",
+        "extraKeys": [
+          "creat.baremetal.instance",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "rebort",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetalInstance.tag/row"
+      },
+      {
+        "view": "sub.baremetalInstance.tag/toolbar"
+      },
+      {
+        "view": "sub.tag/row"
+      },
+      {
+        "view": "sub.tag/toolbar"
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "start",
+          "stop",
+          "rebort",
+          "open.console",
+          "edit",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "creat.baremetal.instance",
+        "resource": "baremetal.instance",
+        "authKey": "creat.baremetal.instance",
+        "i18nKey": "create.baremetalInstance",
+        "name": "创建裸金属主机",
+        "label": "创建裸金属主机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "baremetal.instance",
+        "authKey": "start",
+        "i18nKey": "start",
+        "name": "启动",
+        "label": "启动",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "baremetal.instance",
+        "authKey": "stop",
+        "i18nKey": "stop",
+        "name": "停止",
+        "label": "停止",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "rebort",
+        "resource": "baremetal.instance",
+        "authKey": "rebort",
+        "i18nKey": "rebort",
+        "name": "重启",
+        "label": "重启",
+        "icon": "",
+        "dividerKey": "rebort-divider"
+      },
+      {
+        "key": "open.console",
+        "resource": "baremetal.instance",
+        "authKey": "open.console",
+        "i18nKey": "open.console",
+        "name": "打开控制台",
+        "label": "打开控制台",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "baremetal.instance",
+        "authKey": "edit",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.tag.and.attribute",
+        "resource": "baremetal.instance",
+        "authKey": "virtualization.tag.and.attribute",
+        "i18nKey": "virtualization.tag.and.attribute",
+        "name": "标签与属性",
+        "label": "标签与属性",
+        "icon": "",
+        "dividerKey": "virtualization.tag.and.attribute-divider",
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "tag.management",
+            "resource": "baremetal.instance",
+            "authKey": "tag.management",
+            "i18nKey": "tag.management",
+            "name": "标签管理",
+            "label": "标签管理",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "virtualization.set.resource.attribute",
+            "resource": "baremetal.instance",
+            "authKey": "virtualization.set.resource.attribute",
+            "i18nKey": "set.resource.attribute",
+            "name": "设置自定义属性",
+            "label": "设置自定义属性",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "delete",
+        "resource": "baremetal.instance",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "baremetal.instance",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "baremetal.instance",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "baremetal.instance",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "baremetal.instance",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

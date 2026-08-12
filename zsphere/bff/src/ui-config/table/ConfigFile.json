@@ -1,0 +1,51 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "path"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vm.config.name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "config.file"
+        }
+      },
+      {
+        "accessorKey": "path",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "metadata.path",
+            "defaultMessage": "Path"
+          },
+          "queryType": "input",
+          "resource": "config.file"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

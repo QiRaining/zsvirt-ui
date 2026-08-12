@@ -1,0 +1,102 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "model",
+          "raidLevel",
+          "raidLevelState",
+          "relatedDisk"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "raid"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "raid"
+        }
+      },
+      {
+        "accessorKey": "raidLevel",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "raidLevel",
+            "defaultMessage": "RAID Level"
+          },
+          "queryType": "",
+          "resource": "raid"
+        }
+      },
+      {
+        "accessorKey": "raidLevelState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "raidLevelState",
+            "defaultMessage": "RAID Status"
+          },
+          "queryType": "",
+          "resource": "raid"
+        }
+      },
+      {
+        "accessorKey": "relatedDisk",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "relatedDisk",
+            "defaultMessage": "Associated Disk"
+          },
+          "queryType": "",
+          "resource": "raid"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

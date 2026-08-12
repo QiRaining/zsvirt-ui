@@ -1,0 +1,42 @@
+@import "../../theme.less";
+
+.container {
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  height: calc(100% - 73px);
+}
+
+.main {
+  padding: 20px 24px;
+  flex: 1;
+  overflow: auto;
+}
+
+.detail-card {
+  min-width: 460px;
+  height: 100%;
+
+  border-left: 2px solid @neutral-300;
+
+  .close {
+    margin-right: 16px;
+    cursor: pointer;
+  }
+}
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.text-link {
+  cursor: pointer;
+  color: var(--color-600) !important;
+
+  &:hover,
+  &:focus {
+    color: var(--color-500) !important;
+  }
+}

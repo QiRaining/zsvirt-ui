@@ -1,0 +1,135 @@
+@import "../../../theme.less";
+
+.autoComplete {
+  margin-right: 4px;
+  width: 160px;
+
+  .zstack-icon {
+    position: relative;
+    top: -4px;
+  }
+
+  :global {
+    .ant-select-selector {
+      .ant-select-selection-placeholder {
+        color: @neutral-400;
+      }
+    }
+  }
+}
+
+.ant-select-auto-complete {
+  transition: width 0.3s ease;
+}
+
+.autoCompleteTab {
+  height: 320px;
+  overflow-y: auto;
+
+  .search-value {
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding: 0 20px;
+
+    &:hover {
+      background-color: @neutral-100;
+    }
+  }
+
+  .searchNoMoreDataP {
+    color: @neutral-500;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .historyContainer {
+    padding: 0 20px;
+
+    .historyTitleContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      line-height: 20px;
+      color: @neutral-600;
+      margin-bottom: 8px;
+
+      :global {
+        .ant-btn-link {
+          font-size: 12px;
+          padding: 0;
+        }
+      }
+    }
+
+    .historyContentContainer {
+      display: flex;
+      flex-wrap: wrap;
+
+      .historyTag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 24px;
+        padding: 0 8px;
+        margin: 0 4px 4px 0;
+        background: @neutral-200;
+        color: @neutral-700;
+        border-radius: 2px;
+
+        &:hover {
+          background: @neutral-300;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.dropdownClassName {
+  padding: unset;
+
+  :global {
+    .ant-typography mark {
+      background-color: @color-50;
+    }
+  }
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.circleEmpty {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: @neutral-100;
+    }
+
+    .circleIcon {
+      color: @neutral-300;
+      font-size: 32px !important;
+    }
+  }
+
+  p {
+    color: @neutral-500;
+    font-size: 12px;
+    margin: 8px 0;
+  }
+}

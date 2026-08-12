@@ -1,0 +1,64 @@
+{
+  "targetLicense": "GPL-3.0-only",
+  "licenses": {
+    "(MIT OR GPL-3.0-or-later)": {
+      "status": "compatible",
+      "reason": "可选择 MIT 条款与 GPLv3 组合作品分发。"
+    },
+    "(WTFPL OR MIT)": {
+      "status": "compatible",
+      "reason": "可选择 MIT 条款与 GPLv3 组合作品分发。"
+    },
+    "AGPL-3.0": {
+      "status": "conditional",
+      "reason": "GPLv3 第 13 条允许组合，但 AGPLv3 的网络交互源码义务可能适用于组合；若仅作为独立程序聚合分发，仍须保留 AGPL 和对应源码。"
+    },
+    "Apache-2.0": {
+      "status": "compatible",
+      "reason": "Apache-2.0 与 GPLv3 兼容，须保留许可证、版权和 NOTICE 要求。"
+    },
+    "BSD-2-Clause": {
+      "status": "compatible",
+      "reason": "宽松许可证，与 GPLv3 兼容，须保留版权和许可证声明。"
+    },
+    "BSD-3-Clause": {
+      "status": "compatible",
+      "reason": "宽松许可证，与 GPLv3 兼容，须保留版权和许可证声明。"
+    },
+    "BUSL-1.1": {
+      "status": "incompatible",
+      "reason": "BUSL-1.1 在 Change Date 前限制生产使用，不是开源许可证，并与 GPL 的无额外使用限制原则不兼容。"
+    },
+    "ISC": {
+      "status": "compatible",
+      "reason": "宽松许可证，与 GPLv3 兼容，须保留版权和许可证声明。"
+    },
+    "LGPL-2.1-or-later": {
+      "status": "conditional",
+      "reason": "可与 GPLv3 项目组合，但必须履行 LGPL 的许可证、源码和可替换/重新链接要求。"
+    },
+    "MIT": {
+      "status": "compatible",
+      "reason": "宽松许可证，与 GPLv3 兼容，须保留版权和许可证声明。"
+    },
+    "MPL-2.0": {
+      "status": "conditional",
+      "reason": "MPL-2.0 可通过 Secondary License 机制与 GPLv3 组合；必须保留 MPL 文件级义务，并确认没有 Incompatible With Secondary Licenses 声明。"
+    }
+  },
+  "packageOverrides": {
+    "@novnc/novnc@1.3.0": {
+      "status": "conditional",
+      "reason": "核心代码为 MPL-2.0，未发现 Incompatible With Secondary Licenses 声明；HTML/CSS/字体/图片还包含 BSD、OFL 和 CC BY-SA 条款，发布时必须完整保留。"
+    },
+    "mariadb@3.5.3": {
+      "status": "conditional",
+      "reason": "LGPL-2.1-or-later 与 GPLv3 可组合；发布时保留 LGPL 文本、连接器源码及允许替换/重新链接所需材料。"
+    },
+    "rc-queue-anim@1.8.5": {
+      "effectiveLicense": "MIT",
+      "status": "compatible",
+      "reason": "package.json 未声明 license，但发布包内 LICENSE.md 是完整 MIT 文本。"
+    }
+  }
+}

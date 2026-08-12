@@ -1,0 +1,38 @@
+{
+  "name": "@zstack/zustand-pub",
+  "version": "1.1.0",
+  "description": "用于主子应用通信",
+  "author": "ZStack UI Team",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/zustand-pub.umd.cjs",
+  "module": "./dist/zustand-pub.js",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/zustand-pub.js",
+      "require": "./dist/zustand-pub.umd.cjs"
+    }
+  },
+  "scripts": {
+    "type-check": "pnpm tsgo --noEmit",
+    "build": "vite build",
+    "lint": "oxlint src/**",
+    "lint:json": "mkdir -p ./lint_report && oxlint src/** --format json > ./lint_report/oxlint.json"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "rollup-plugin-copy": "^3.5.0",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "zustand": "catalog:"
+  }
+}

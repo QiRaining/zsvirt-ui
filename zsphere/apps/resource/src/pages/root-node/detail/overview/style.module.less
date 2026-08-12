@@ -1,0 +1,42 @@
+@import url("../../../../theme.less");
+
+.container {
+  .headerAlert {
+    margin-bottom: 12px;
+  }
+}
+
+.action-link {
+  cursor: pointer;
+  text-align: right;
+  color: @info-600;
+  padding-left: 10px;
+}
+
+.ip-exception {
+  color: @neutral-300;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+:global(.anticon).capacityIcon {
+  display: flex;
+  align-items: center;
+}
+
+.capacityContainer {
+  :global {
+    .ant-space-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

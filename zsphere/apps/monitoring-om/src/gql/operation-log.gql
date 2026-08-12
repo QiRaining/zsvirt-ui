@@ -1,0 +1,103 @@
+query operationLogList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  operationLogList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      loginIp
+      actionId
+      name
+      status
+      createDate
+      lastOpDate
+      accountName
+      userName
+      isValid
+      progress
+      longjobs {
+        longJobUuid
+        clientJobUuid
+        jobName
+        resourceType
+        state
+        progress
+        data
+        createDate
+        lastOpDate
+      }
+      resourceNames
+      operationTasks {
+        actionId
+        taskId
+        status
+        createDate
+        lastOpDate
+        operationApis {
+          longjob {
+            longJobUuid
+            clientJobUuid
+            jobName
+            resourceType
+            state
+            progress
+            createDate
+            lastOpDate
+          }
+          resourceName
+          taskId
+          apiId
+          name
+          status
+          req
+          resp
+          createDate
+          lastOpDate
+        }
+      }
+    }
+  }
+}
+
+query operationLongjobList($conditions: [Condition!], $start: Int, $limit: Int) {
+  operationLongjobList(conditions: $conditions, start: $start, limit: $limit) {
+    total
+    list {
+      longJobUuid
+      clientJobUuid
+      jobName
+      resourceType
+      state
+      progress
+      taskProgressDetails {
+        taskName
+        content
+        type
+        arguments
+        opaque {
+          remain
+          remaining_migration_time
+          speed
+          total
+        }
+      }
+      createDate
+      lastOpDate
+    }
+  }
+}
+
+mutation cancelLongjob($input: CancelLongjobInput!) {
+  cancelLongjob(input: $input) {
+    actionId
+  }
+}

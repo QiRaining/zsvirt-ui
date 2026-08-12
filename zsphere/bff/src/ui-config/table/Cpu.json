@@ -1,0 +1,102 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "socketDesignation",
+          "version",
+          "currentSpeed",
+          "coreCount",
+          "threadCount"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "socketDesignation",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device",
+            "defaultMessage": "Device"
+          },
+          "queryType": "",
+          "resource": "cpu"
+        }
+      },
+      {
+        "accessorKey": "version",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "cpu"
+        }
+      },
+      {
+        "accessorKey": "currentSpeed",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "frequency",
+            "defaultMessage": "Clock Speed"
+          },
+          "queryType": "",
+          "resource": "cpu"
+        }
+      },
+      {
+        "accessorKey": "coreCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physical.core.count",
+            "defaultMessage": "Physical Cores"
+          },
+          "queryType": "",
+          "resource": "cpu"
+        }
+      },
+      {
+        "accessorKey": "threadCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "logic.kernel",
+            "defaultMessage": "Logical Cores"
+          },
+          "queryType": "",
+          "resource": "cpu"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

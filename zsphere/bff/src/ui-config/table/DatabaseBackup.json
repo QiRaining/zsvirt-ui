@@ -1,0 +1,255 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "jobType",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "jobType",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "database.backup"
+        }
+      },
+      {
+        "accessorKey": "jobType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.object",
+            "defaultMessage": "Backup Object"
+          },
+          "queryType": "",
+          "resource": "database.backup"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "database.backup"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "database.backup"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "database.backup"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "database.backup"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "trigger.now",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "trigger.now",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.backup.job",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.backup.job"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.backup.job",
+        "resource": "database.backup",
+        "authKey": "create.backup.job",
+        "i18nKey": "create.backupJob",
+        "name": "创建备份任务",
+        "label": "创建备份任务",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "database.backup",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "database.backup",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "database.backup",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "trigger.now",
+        "resource": "database.backup",
+        "authKey": "trigger.now",
+        "i18nKey": "trigger.now",
+        "name": "手动执行",
+        "label": "手动执行",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.owner",
+        "resource": "database.backup",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "database.backup",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

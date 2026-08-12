@@ -1,0 +1,73 @@
+@import "../../../../../theme.less";
+
+.modal {
+  .list-collect {
+    border: 1px solid @neutral-300;
+
+    .vCPU {
+      display: flex;
+      align-items: center;
+      width: 120px;
+      padding: 6px 0 6px 12px;
+      color: @neutral-500;
+
+      span {
+        display: inline-block;
+        width: 2px;
+        height: 14px;
+        line-height: 14px;
+        margin-left: 70px;
+        background-color: var(--neutral-300);
+      }
+    }
+
+    .pCPU {
+      display: flex;
+      align-items: center;
+      padding: 6px 0 6px 0px;
+      color: @neutral-500;
+    }
+
+    :global {
+      .zstack-list-collect {
+        max-height: 343px;
+        overflow-y: auto;
+
+        .zstack-list-collect-item-normal {
+          margin-bottom: 0;
+        }
+
+        & > div {
+          border-bottom: 1px solid @neutral-300;
+
+          &:first-child {
+            border-top: 1px solid @neutral-300;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+
+        .zstack-list-collect-item-left {
+          padding: 4px 10px 4px 0;
+          margin-right: 0;
+
+          &:hover {
+            background-color: @neutral-100;
+          }
+        }
+      }
+    }
+  }
+
+  .formItem {
+    margin-bottom: 0 !important;
+
+    :global {
+      .ant-typography {
+        color: @neutral-600;
+      }
+    }
+  }
+}

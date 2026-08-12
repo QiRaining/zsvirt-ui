@@ -1,0 +1,94 @@
+fragment NvmeTargetFields on NvmeTarget {
+  uuid
+  name
+  nqn
+  transport
+  state
+  lastOpDate
+  createDate
+  lunDeviceUsageInfo {
+    totalLunNum
+    usedLunNum
+    unusedLunNum
+  }
+  nvmeLuns {
+    uuid
+    name
+    wwid
+    wwn
+    vendor
+    model
+    serial
+    type
+    path
+    state
+    source
+    size
+    createDate
+    lastOpDate
+    nvmeLunHostRefs {
+      hostUuid
+    }
+    nvmeTargetUuid
+  }
+  zones {
+    name
+    uuid
+  }
+}
+
+query nvmeTargetList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeTargetList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...NvmeTargetFields
+    }
+  }
+}
+
+query nvmeTargetCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  nvmeTargetList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+mutation refreshNvmeTargets($input: RefreshNvmeTargetInput!) {
+  refreshNvmeTargets(input: $input) {
+    actionId
+  }
+}

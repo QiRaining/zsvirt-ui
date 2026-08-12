@@ -1,0 +1,121 @@
+fragment volumeFields on Volume {
+  uuid
+  name
+  description
+  primaryStorageUuid
+  vmInstanceUuid
+  deviceId
+  installPath
+  type
+  format
+  size
+  actualSize
+  state
+  status
+  diskOfferingUuid
+  rootImageUuid
+  isHaveMemorySnapshot
+  createDate
+  isHaveSnapshot
+  lastOpDate
+  isShareable
+  volumeQos
+  backupTaskType
+  backupStatus
+  lastDetachDate
+  lastAttachDate(vmInstanceUuid: $vmInstanceUuid)
+  # cdpTaskStatus
+  backupTaskStatus
+  lastVmInstanceUuid
+  primaryStorage {
+    uuid
+    name
+    type
+    availableCapacity
+    primaryStorageCapacity {
+      availablePhysicalCapacity
+      overProvisioningPrimaryStorage
+      thresholdPrimaryStoragePhysicalCapacity
+      reservedCapacity
+      volumeSnapshotSize
+      imageCacheSize
+      volumeSize
+      vmTemplateVolumeCacheSize
+    }
+    storageCapacityForLocalStorage {
+      totalPhysicalCapacity
+      availablePhysicalCapacity
+      reservedPhysicalCapacity
+      vmTemplateVolumeCacheSize
+      imageCacheSize
+      systemUsedCapacity
+      volumeSize
+      overProvisioningPrimaryStorage
+      volumeSnapshotSize
+      reservedCapacity
+    }
+    zone {
+      uuid
+      name
+    }
+  }
+  rootImage {
+    name
+    uuid
+    size
+  }
+  lastVmOrTemplate {
+    uuid
+  }
+  vmInstance {
+    name
+    uuid
+    state
+    type
+    zoneUuid
+    hypervisorType
+    clusterUuid
+    # cdpTaskStatus
+  }
+  owner {
+    name
+    uuid
+    type
+    linkedAccountUuid
+  }
+  bandwidth {
+    volumeUuid
+    volumeBandwidth
+    volumeBandwidthRead
+    volumeBandwidthWrite
+    iopsTotal
+    iopsRead
+    iopsWrite
+    volumeBandwidthUpthreshold
+    volumeBandwidthReadUpthreshold
+    volumeBandwidthWriteUpthreshold
+  }
+  systemTag {
+    WWN
+    VirtioSCSI
+    notSupportActualSize
+    volumeAttributeUserConfig
+    VolumeProvisioningStrategy
+    capability
+    cephStoragePool
+  }
+  tag {
+    ownerUuid
+    name
+    uuid
+    color
+  }
+
+  relatedResource {
+    backupData
+  }
+  resourceConfig {
+    vmcacheMode
+    aionative
+  }
+}

@@ -1,0 +1,112 @@
+query getAboutLicenseInfo {
+  getAboutLicenseInfo {
+    hostNum
+    availableHostNum
+    cpuNum
+    availableCpuNum
+    vmNum
+    availableVmNum
+    expired
+    expiredDate
+    issuedDate
+    licenseRequest
+    managementNodeUuid
+    user
+    uuid
+    version
+    licenseType
+    versionOnUI
+    prodInfo
+    usage {
+      available
+      quota
+      quotaType
+      used
+    }
+  }
+}
+
+query getAboutLicenseExtensionInfo {
+  getAboutLicenseExtensionInfo {
+    opensource
+    hostNameList
+    isDualManagementNode
+    dualManagementNodeInfo {
+      licenses {
+        managementNodeUuid
+        licenseRequest
+        hostNum
+        availableHostNum
+        cpuNum
+        availableCpuNum
+        vmNum
+        availableVmNum
+        expired
+        expiredDate
+        issuedDate
+        user
+        licenseType
+      }
+      addOns {
+        uuid
+        licenseType
+        name
+        modules
+        hostNum
+        availableHostNum
+        cpuNum
+        availableCpuNum
+        vmNum
+        availableVmNum
+        expiredDate
+        issuedDate
+        expired
+        managementNodeUuid
+      }
+    }
+    additions {
+      type
+      path
+      info
+      zmigrateKey
+    }
+    statusList
+  }
+}
+
+query getAboutLicenseAddOns {
+  getLicenseAddOns {
+    uuid
+    licenseType
+    name
+    modules
+    hostNum
+    availableHostNum
+    cpuNum
+    availableCpuNum
+    vmNum
+    availableVmNum
+    expiredDate
+    issuedDate
+    expired
+    managementNodeUuid
+    usage {
+      available
+      quota
+      quotaType
+      used
+    }
+  }
+}
+
+query getUSBKeyStatus {
+  getUSBKeyStatus {
+    managementNodeUuid
+    status
+    keyId
+  }
+}
+
+query isLicenseTypeEqualToCluster {
+  isLicenseTypeEqualToCluster
+}

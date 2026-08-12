@@ -1,0 +1,119 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "Description",
+          "Severity",
+          "resourceName",
+          "User",
+          "Target",
+          "Time"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "Description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vcenter.description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "vcenter.message"
+        }
+      },
+      {
+        "accessorKey": "Severity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.message"
+        }
+      },
+      {
+        "accessorKey": "resourceName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vcenter.resourcename",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "singleFilter",
+          "resource": "vcenter.message"
+        }
+      },
+      {
+        "accessorKey": "User",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "user",
+            "defaultMessage": "User"
+          },
+          "queryType": "",
+          "resource": "vcenter.message"
+        }
+      },
+      {
+        "accessorKey": "Target",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vcenter.target",
+            "defaultMessage": "Target"
+          },
+          "queryType": "",
+          "resource": "vcenter.message"
+        }
+      },
+      {
+        "accessorKey": "Time",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "date.time",
+            "defaultMessage": "Date and Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.message"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

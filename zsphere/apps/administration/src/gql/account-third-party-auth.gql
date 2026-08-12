@@ -1,0 +1,156 @@
+query accountThirdPartyAuthList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  accountThirdPartyAuthList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      description
+      accountUuid
+      authorizationUrl
+      clientId
+      clientSecret
+      type
+      usernameProperty
+      createDate
+      tokenUrl
+      casServerLoginUrl
+      casServerUrlPrefix
+      state
+      loginMNUrl
+      userinfoUrl
+      logoutUrl
+      redirectUrl
+      lastOpDate
+      redirectTemplateRef {
+        redirectTemplate
+        uuid
+      }
+      bindResourceref {
+        userCount
+      }
+    }
+    total
+  }
+}
+
+mutation addSSOThirdPartyAuth($input: AddSSOThirdPartyAuthInput!) {
+  addSSOThirdPartyAuth(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteAccountThirdPartyAuth($input: DeleteAccountThirdPartyAuthInput!) {
+  deleteAccountThirdPartyAuth(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAccountThirdPartyAuth($input: UpdateAccountThirdPartyAuthInput!) {
+  updateAccountThirdPartyAuth(input: $input) {
+    actionId
+  }
+}
+
+mutation editAccountThirdPartyAuthConfig($input: EditAccountThirdPartyAuthConfigInput!) {
+  editAccountThirdPartyAuthConfig(input: $input) {
+    actionId
+  }
+}
+
+query getOAuthClientSecret($uuid: String!) {
+  getOAuthClientSecret(uuid: $uuid) {
+    clientSecret
+  }
+}
+
+fragment thirdPartyAuthFields on ThirdPartyAuthVO {
+  uuid
+  name
+  description
+  encryption
+  url
+  username
+  base
+  serverType
+  filter
+  usernameProperty
+  createDate
+  lastOpDate
+}
+
+query thirdPartyAuthList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  thirdPartyAuthList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...thirdPartyAuthFields
+      bindResourceref {
+        userCount
+      }
+      relatedSystemTag {
+        standbyServerIP
+        standbyServerPort
+      }
+    }
+    total
+  }
+}
+
+mutation addThirdPartyAuth($input: AddThirdPartyAuthInput!) {
+  addThirdPartyAuth(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteThirdPartyAuths($input: DeleteThirdPartyAuthInput!) {
+  deleteThirdPartyAuths(input: $input) {
+    actionId
+  }
+}
+
+mutation updateThirdPartyAuth($input: UpdateThirdPartyAuthInput!) {
+  updateThirdPartyAuth(input: $input) {
+    actionId
+  }
+}
+
+mutation testConnectionThirdParty($input: TestConnectionThirdPartyAuthInput!) {
+  testConnectionThirdParty(input: $input) {
+    actionId
+  }
+}
+
+mutation syncAccountsFromLdapServer($input: SyncAccountsFromLdapServerInput!) {
+  syncAccountsFromLdapServer(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,148 @@
+@import "../style/vars.less";
+
+.@{prefix}-app-layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.@{prefix}-app-layout-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  // min-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: @neutral-0;
+  position: relative;
+
+  iframe {
+    width: 100%;
+    flex: 1;
+    border: none;
+  }
+}
+
+.@{prefix}-app-layout-left-nav {
+  background-color: @neutral-0;
+  height: 100%;
+  border-right: 2px solid @neutral-300;
+  width: 200px;
+
+  &-title {
+    height: 32px;
+    color: @neutral-600;
+    background-color: @neutral-100;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid @neutral-300;
+
+    &-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 160px;
+      /* 你想要的最大宽度 */
+    }
+  }
+
+  &-dragger {
+    width: 2px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    background: @neutral-400;
+    cursor: col-resize;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+    &&-active {
+      background: @color-500;
+      top: 0;
+      height: 100%;
+      transform: translateY(0);
+      cursor: grabbing;
+    }
+  }
+
+  .ant-menu-inline {
+    border-right: none;
+
+    .ant-menu-item {
+      padding: 0 0 0 8px;
+      margin-top: 0;
+      height: 32px;
+      line-height: 32px;
+      border-left: 4px solid transparent;
+      width: 100%;
+      fill: @neutral-700;
+      margin-bottom: 0;
+
+      &:hover {
+        background-color: @neutral-100;
+        color: @neutral-700;
+
+        a:hover {
+          color: @neutral-700;
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        border-right: none;
+      }
+
+      &.ant-menu-item-selected {
+        border-left: 4px solid @color-400;
+        background-color: @color-50;
+        color: @color-600;
+        fill: @color-600;
+
+        a {
+          font-weight: normal;
+
+          &:hover {
+            opacity: 1;
+            color: @color-600;
+          }
+        }
+      }
+    }
+
+    // 修复：分组容器样式
+    .ant-menu-item-group {
+      padding: 4px 0 !important;
+      border-top: 1px solid @neutral-300 !important;
+
+      &:first-child {
+        border-top: none !important;
+      }
+
+      // 分组标题样式
+      .ant-menu-item-group-title {
+        margin-top: 0;
+        display: flex;
+        height: 32px;
+        align-items: center;
+        padding: 0 12px;
+        line-height: 20px;
+        color: @neutral-600;
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      // 分组内的菜单项样式
+      .ant-menu-item {
+        padding-left: 12px;
+      }
+    }
+  }
+  .ant-menu-title-content {
+    margin-left: 0 !important;
+  }
+}

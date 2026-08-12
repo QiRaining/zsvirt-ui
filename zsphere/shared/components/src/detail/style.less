@@ -1,0 +1,84 @@
+@import "../style/vars.less";
+
+.@{prefix}-detail-drawer {
+  .ant-drawer-content-wrapper {
+    box-shadow: none !important;
+  }
+
+  .ant-drawer-content {
+    overflow-y: hidden;
+
+    .ant-drawer-wrapper-body {
+      box-shadow: none;
+      border-left: 2px solid @neutral-300;
+
+      .ant-drawer-body {
+        padding: 0;
+        overflow-y: hidden;
+      }
+
+      .ant-drawer-header {
+        display: contents;
+      }
+
+      .ant-drawer-header-title {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        display: block;
+      }
+
+      .ant-drawer-close {
+        color: rgba(0, 0, 0, 0.85);
+        margin: 0;
+        padding: 12px 24px;
+
+        &:hover {
+          color: @color-600;
+        }
+
+        svg {
+          display: block;
+        }
+      }
+    }
+
+    .ant-tabs {
+      height: 100%;
+
+      .ant-tabs-content {
+        padding: 0 !important;
+        height: 100%;
+        overflow: auto;
+        display: block;
+
+        .@{prefix}-detail-drawer-content {
+          width: 100%;
+          min-height: 100%;
+          display: flex;
+        }
+
+        .ant-tabs-tabpane {
+          padding: 20px 24px;
+        }
+      }
+    }
+  }
+}
+
+.@{prefix}-detail-drawer-singleTabPane {
+  .ant-tabs {
+    .ant-tabs-tab {
+      cursor: default;
+
+      .ant-tabs-tab-btn {
+        color: @neutral-700 !important;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      display: none;
+    }
+  }
+}

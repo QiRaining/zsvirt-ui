@@ -1,0 +1,191 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "nic",
+          "ipCapacity",
+          "cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "nic",
+          "ipCapacity",
+          "cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.elastic.baremetal.cluster.create",
+        "keys": [
+          "name",
+          "nic",
+          "ipCapacity",
+          "cidr",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "provision.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "provision.network"
+        }
+      },
+      {
+        "accessorKey": "nic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "provision.network"
+        }
+      },
+      {
+        "accessorKey": "ipCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ip.usage",
+            "defaultMessage": "IP Utilization"
+          },
+          "queryType": "",
+          "resource": "provision.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "provision.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "provision.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "provision.network",
+        "authKey": "create",
+        "i18nKey": "create.provisionNetwork",
+        "name": "创建部署网络",
+        "label": "创建部署网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "provision.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "provision.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

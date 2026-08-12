@@ -1,0 +1,57 @@
+{
+  "name": "@zstack/zsphere-utils",
+  "version": "0.0.23",
+  "description": "ZStack UI 工具函数库",
+  "license": "GPL-3.0-only",
+  "author": "ZStack UI Team",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "build:dev": "rslib build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@types/crypto-js": "^4.0.1",
+    "@types/uuid": "^9.0.8",
+    "@zstack/zsphere-config": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "antd": "catalog:",
+    "classnames": "^2.5.1",
+    "crypto-js": "^4.0.0",
+    "dayjs": "catalog:",
+    "gbk.js": "^0.3.0",
+    "graphql": "^16.10.0",
+    "ip-address": "10.4.0",
+    "lodash-es": "catalog:",
+    "md5": "^2.3.0",
+    "react-intl": "catalog:",
+    "uuid": "catalog:"
+  },
+  "devDependencies": {
+    "@rslib/core": "catalog:",
+    "@types/classnames": "^2.3.4",
+    "@vitest/coverage-v8": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

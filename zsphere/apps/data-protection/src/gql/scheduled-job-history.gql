@@ -1,0 +1,109 @@
+fragment schedulerJobHistoryFields on SchedulerJobHistory {
+  executeTime
+  fireInstanceId
+  id
+  jobType
+  requestDump
+  resultDump
+  schedulerJobUuid
+  startTime
+  success
+  targetResourceUuid
+  triggerUuid
+  endTime
+  vmInstance {
+    name
+    uuid
+  }
+  volume {
+    name
+    uuid
+    type
+  }
+  resourceInfo {
+    uuid
+    name
+  }
+  backupCapacity
+}
+query schedulerJobHistoryList(
+  $conditions: [Condition!]
+  $type: SchedulerJobHistoryQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $limit: Int
+  $start: Int
+  $groupBy: String
+) {
+  schedulerJobHistoryList(
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    limit: $limit
+    start: $start
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    groupBy: $groupBy
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...schedulerJobHistoryFields
+    }
+  }
+}
+
+query schedulerJobHistoryGroupByFireInstanceIdList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $limit: Int
+  $start: Int
+  $groupBy: String
+) {
+  schedulerJobHistoryGroupByFireInstanceIdList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    limit: $limit
+    start: $start
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    groupBy: $groupBy
+    replyWithCount: true
+  ) {
+    total
+    list {
+      executeTime
+      fireInstanceId
+      id
+      jobType
+      requestDump
+      resultDump
+      schedulerJobUuid
+      startExecutionTime
+      startTime
+      endTime
+      success
+      targetResourceUuid
+      triggerUuid
+      backupCapacityForSchedulerJobHistoryGroup
+      vmInstance {
+        name
+        uuid
+      }
+      volume {
+        name
+        uuid
+        type
+      }
+      resourceCount
+      mode
+      schedulerName
+      successCount
+      failCount
+      runningCount
+    }
+  }
+}

@@ -1,0 +1,131 @@
+query getUserBySessionId($sessionId: String!) {
+  getUserBySessionId(sessionId: $sessionId) {
+    sessionId
+    accountUuid
+    userUuid
+    currentIdentity
+  }
+}
+
+mutation getLoginProcedures($input: GetLoginProceduresInput!) {
+  getLoginProcedures(input: $input) {
+    procedures {
+      properties {
+        authentications
+        credentials
+        ukeyType
+      }
+    }
+    publicKey
+  }
+}
+
+mutation loginByAccount($input: LoginByAccountInput!) {
+  loginByAccount(input: $input) {
+    sessionId
+    accountUuid
+    userUuid
+    currentIdentity
+  }
+}
+
+mutation logIn($input: LogInInput!) {
+  logIn(input: $input) {
+    sessionId
+    accountUuid
+    userUuid
+    currentIdentity
+  }
+}
+
+mutation logOut($input: LogOutInput!) {
+  logOut(input: $input) {
+    sessionId
+  }
+}
+
+mutation getLoginCaptcha($input: GetLoginCaptchaPayload!) {
+  getLoginCaptcha(input: $input) {
+    captcha
+    captchaUuid
+  }
+}
+
+query getTwoFactorAuthenticationState {
+  getTwoFactorAuthenticationState {
+    state
+  }
+}
+
+mutation refreshLoginCaptcha($captchaUuid: String!) {
+  refreshCaptcha(captchaUuid: $captchaUuid) {
+    captcha
+    captchaUuid
+  }
+}
+
+mutation getTwoFactorAuthenticationSecret($input: GetTwoFactorAuthenticationSecretPayload!) {
+  getTwoFactorAuthenticationSecret(input: $input) {
+    uuid
+    secret
+    userUuid
+    userType
+    status
+    createDate
+    lastOpDate
+  }
+}
+
+query getCurrentTime {
+  getCurrentTime {
+    currentTime {
+      MillionSeconds
+      Seconds
+    }
+    timezone
+    offset
+  }
+}
+
+mutation updateAccount($input: UpdateAccountInput!) {
+  updateAccount(input: $input) {
+    actionId
+  }
+}
+
+mutation updateIAM2VirtualID($input: UpdateIAM2VirtualIDInput!) {
+  updateIAM2VirtualID(input: $input) {
+    actionId
+  }
+}
+
+query isDoubleManagementNode {
+  isDoubleManagementNode
+}
+
+query getCubeEnv {
+  cubeEnv {
+    isCube
+    storageType
+    version
+  }
+}
+mutation loginOAuth($input: LoginOAuthInput!) {
+  loginOAuth(input: $input) {
+    isLogined
+    accountUuid
+    userUuid
+    sessionId
+    currentIdentity
+  }
+}
+
+query managementNodeList {
+  managementNodeList {
+    list {
+      dbStatus
+      slaveIoRunning
+      slaveSqlRuning
+    }
+  }
+}

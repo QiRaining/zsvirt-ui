@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack",
+  "favicon": "/public/theme/default/fr-FR/favicon.ico",
+  "loginTitle": "Bienvenue à ZStack Cloud",
+  "loginLogo": "/public/theme/default/fr-FR/logo.svg",
+  "bannerLogo": "/public/theme/default/fr-FR/logo-bar.svg",
+  "bannerTitle": "ZStack Cloud",
+  "bannerFontSize": "14px",
+  "overviewTitle": "Moniteur en temps réel",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

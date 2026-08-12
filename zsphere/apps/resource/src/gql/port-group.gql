@@ -1,0 +1,192 @@
+fragment ipCapacityFields on IpCapacity {
+  totalCapacity
+  availableCapacity
+  ipv4AvailableCapacity
+  ipv6AvailableCapacity
+  ipv4TotalCapacity
+  ipv6TotalCapacity
+  ipv4UsedIpAddressNumber
+}
+
+fragment IpRangeFields on IpRange {
+  addressMode
+  createDate
+  endIp
+  gateway
+  shareType
+  ipCapacity {
+    ...ipCapacityFields
+  }
+  ipRangeType
+  ipVersion
+  l3NetworkUuid
+  name
+  netmask
+  networkCidr
+  prefixLen
+  startIp
+  uuid
+  linkResource {
+    vm
+    vrouter
+  }
+}
+
+fragment protGroupFields on L3Network {
+  name
+  portGroup {
+    uuid
+    vlanId
+  }
+
+  # category
+  createDate
+  # description
+  enableIPAM
+  # dhcpIp {
+  #   ipv4
+  #   ipv6
+  # }
+  dns
+  # enableSRIOV
+  # ipVersion
+  # hypervisorType
+  ipCapacity {
+    ...ipCapacityFields
+  }
+  ipRanges {
+    ...IpRangeFields
+  }
+  networkServices {
+    networkServiceType
+  }
+  uuid
+  shareType
+}
+
+fragment l3NetworkFieldsForPortGroup on L3Network {
+  category
+  createDate
+  description
+  enableIPAM
+  dhcpIp {
+    ipv4
+    ipv6
+  }
+  dns
+  enableSRIOV
+  ipVersion
+  hypervisorType
+  ipCapacity {
+    ...ipCapacityFields
+  }
+  ipRanges {
+    ...IpRangeFields
+  }
+  lastOpDate
+  l2NetworkUuid
+  ipAllocateStrategy
+  l2Network {
+    name
+    uuid
+    type
+    physicalInterface
+    virtualNetworkId
+    vSwitchType
+    enableSRIOV
+
+    attachedClusterUuids
+  }
+  vSwitchUuid
+  vSwitch {
+    name
+    uuid
+    type
+    physicalInterface
+    virtualNetworkId
+    vSwitchType
+    enableSRIOV
+
+    attachedClusterUuids
+  }
+  networkTypeName
+  networkType
+  networkServices {
+    networkServiceType
+  }
+  name
+  mtu
+  owner {
+    name
+    uuid
+    type
+    linkedAccountUuid
+  }
+  type
+  uuid
+  shareType
+  virtualRouterOffering {
+    uuid
+    name
+  }
+  # vpcVRouter {
+  #   name
+  #   uuid
+  # }
+  isDefault
+  hasDefaultKernel
+  portGroup {
+    uuid
+    vlanId
+  }
+}
+
+query queryL3NetworkListForCreateInstance(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: L3NetworkQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l3NetworkList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...protGroupFields
+    }
+    total
+  }
+}
+
+query queryL3NetworkList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: L3NetworkQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l3NetworkList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...l3NetworkFieldsForPortGroup
+    }
+    total
+  }
+}

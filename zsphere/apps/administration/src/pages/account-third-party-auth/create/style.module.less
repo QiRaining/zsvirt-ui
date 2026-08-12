@@ -1,0 +1,120 @@
+@import "../../../theme.less";
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-212 {
+  width: 212px !important;
+}
+
+.width-240 {
+  width: 240px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.steps-container {
+  color: @neutral-600;
+
+  :global {
+    .ant-steps {
+      padding: 8px 40px;
+      color: @color-600;
+      background-color: @neutral-100;
+    }
+  }
+
+  .content {
+    font-size: 14px;
+    padding: 24px 24px 20px 24px;
+    overflow: auto;
+    max-height: calc(80vh - 110px);
+
+    :global {
+      .zstack-form-item-with-border {
+        padding: 4px 12px !important;
+      }
+    }
+  }
+}
+
+.rect-title {
+  display: flex;
+  align-items: center;
+
+  :global {
+    .zstack-icon {
+      color: @neutral-400;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+  }
+}
+
+.split {
+  width: 8px;
+  line-height: 28px;
+  color: @neutral-700;
+}
+
+.listCollect {
+  :global {
+    .zstack-list-collect-item {
+      border-left: 1px solid @neutral-300;
+      border-right: 1px solid @neutral-300;
+      border-bottom: 1px solid @neutral-300;
+      margin-bottom: 0;
+    }
+  }
+
+  .listCollect-item {
+    display: flex;
+
+    :global {
+      .ant-form-item {
+        margin-bottom: 0 !important;
+        padding: 4px 0;
+      }
+
+      .ant-form-item:nth-child(1) {
+        margin-left: 12px;
+      }
+    }
+
+    .properties {
+      :global {
+        .ant-form-item-control {
+          width: 257px !important;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.config-container {
+  padding-left: 12px;
+  border-left: 1px solid @neutral-300;
+}
+
+.caption {
+  color: @neutral-500;
+  font-size: 12px;
+}
+
+.alert {
+  :global {
+    .ant-alert-content {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

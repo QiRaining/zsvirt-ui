@@ -1,0 +1,610 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "custom",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "type",
+          "vni",
+          "networkAccelerationMode",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.share",
+        "keys": [
+          "name",
+          "type",
+          "vni",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetal.cluster.attach",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.l3",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "type",
+          "vni",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "physicalInterface",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource",
+        "keys": [
+          "name",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource.by.userGroup",
+        "keys": [
+          "name",
+          "shareType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "vSwitchType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "l2network.vSwitchType",
+            "defaultMessage": "vSwitch Type"
+          },
+          "queryType": "",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "physicalInterface",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physical.interface",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "vni",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vni",
+            "defaultMessage": "VLAN ID/VNI"
+          },
+          "queryType": "input",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "isolated",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "l2network.isolated",
+            "defaultMessage": "Isolated VLAN"
+          },
+          "queryType": "multipleFilter",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "virtualization.vni",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.vlan",
+            "defaultMessage": "VLAN ID"
+          },
+          "queryType": "input",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "networkAccelerationMode",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkAccelerationMode",
+            "defaultMessage": "Network Acceleration Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "l2.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "l2.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.share/directory",
+        "activeKeys": [
+          "virtualization.create.l3network"
+        ]
+      },
+      {
+        "view": "main.share/header",
+        "extraKeys": [
+          "virtualization.create.l3network"
+        ]
+      },
+      {
+        "view": "main.share/row",
+        "activeKeys": [
+          "virtualization.create.l3network"
+        ]
+      },
+      {
+        "view": "main.share/toolbar"
+      },
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.baremetal.cluster/row",
+        "activeKeys": [
+          "detach.in.baremetal.cluster"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/toolbar",
+        "extraKeys": [
+          "virtualization.create.l2.network",
+          "attach.in.baremetal.cluster",
+          "detach.in.baremetal.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/row",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/toolbar",
+        "extraKeys": [
+          "virtualization.create.l2.network"
+        ],
+        "activeKeys": [
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.create.l2.network"
+        ],
+        "activeKeys": [
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource"
+      },
+      {
+        "view": "sub.zsv.shared.resource/row",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "cancel.share",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/toolbar",
+        "extraKeys": [
+          "share.resource",
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      },
+      {
+        "view": "virtualization.dir.network.resource/dir",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.network.resource/directory",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "virtualization.create.l3network",
+          "virtualization.edit.nameandDescription",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.attach.cluster",
+          "virtualization.detach.cluster",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create.l2.network",
+        "resource": "l2.network",
+        "authKey": "virtualization.create.l2.network",
+        "i18nKey": "virtualization.create.l2.network",
+        "name": "创建分布式交换机",
+        "label": "创建分布式交换机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.in.baremetal.cluster",
+        "resource": "l2.network",
+        "authKey": "attach.in.baremetal.cluster",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.baremetal.cluster",
+        "resource": "l2.network",
+        "authKey": "detach.in.baremetal.cluster",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.l3network",
+        "resource": "flat.network",
+        "authKey": "virtualization.create.l3network",
+        "i18nKey": "virtualization.create.l3network",
+        "name": "新建分布式端口组",
+        "label": "新建分布式端口组",
+        "icon": "",
+        "dividerKey": "virtualization.create.l3network-divider"
+      },
+      {
+        "key": "virtualization.edit.nameandDescription",
+        "resource": "l2.network",
+        "authKey": "virtualization.edit.nameandDescription",
+        "i18nKey": "edit.nameandDescription",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.set.resource.attribute",
+        "resource": "l2.network",
+        "authKey": "virtualization.set.resource.attribute",
+        "i18nKey": "set.resource.attribute",
+        "name": "设置自定义属性",
+        "label": "设置自定义属性",
+        "icon": "",
+        "dividerKey": "virtualization.set.resource.attribute-divider"
+      },
+      {
+        "key": "virtualization.set.shareType",
+        "resource": "l2.network",
+        "authKey": "virtualization.set.shareType",
+        "i18nKey": "set.shareType",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "share.resource",
+        "resource": "l2.network",
+        "authKey": "share.resource",
+        "i18nKey": "share.resource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "l2.network",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.attach.cluster",
+        "resource": "l2.network",
+        "authKey": "virtualization.attach.cluster",
+        "i18nKey": "add.cluster",
+        "name": "加载集群",
+        "label": "加载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.detach.cluster",
+        "resource": "l2.network",
+        "authKey": "virtualization.detach.cluster",
+        "i18nKey": "detach.cluster",
+        "name": "卸载集群",
+        "label": "卸载集群",
+        "icon": "",
+        "dividerKey": "virtualization.detach.cluster-divider"
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "l2.network",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

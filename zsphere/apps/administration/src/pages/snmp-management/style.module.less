@@ -1,0 +1,46 @@
+@import "../../theme.less";
+
+.empty-card {
+  position: relative;
+  top: 30%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tip {
+    color: @neutral-500;
+  }
+
+  .todo {
+    cursor: pointer;
+    color: @color-600;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--color-600) !important;
+    border-radius: 2px;
+    color: @neutral-0 !important;
+
+    &:hover {
+      background-color: var(--color-700) !important;
+    }
+  }
+}
+
+.mibNotificationContent {
+  :global(.zstack-react-markdown) ol {
+    list-style-position: inside !important;
+    margin: 4px 0 !important;
+  }
+}

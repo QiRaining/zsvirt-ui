@@ -1,0 +1,350 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "wwid",
+          "size",
+          "vendor",
+          "model",
+          "wwn",
+          "hctl",
+          "type",
+          "path"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "usedCapacity",
+          "diskUuid",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "lunSource",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "lun.source",
+            "defaultMessage": "Source"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "usedCapacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "capacityUtilization",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "diskUuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "lunDevice",
+            "defaultMessage": "LUN"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "wwid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwid",
+            "defaultMessage": "WWID"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "vendor",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendor",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "block.device.model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "wwn",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "wwn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "hctl",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hctl",
+            "defaultMessage": "HCTL"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      },
+      {
+        "accessorKey": "path",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "path",
+            "defaultMessage": "Path"
+          },
+          "queryType": "",
+          "resource": "shared.block"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "refresh"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.virtualization.sharedBlock.lun",
+          "refresh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.virtualization.sharedBlock.lun",
+        "resource": "shared.block",
+        "authKey": "add.virtualization.sharedBlock.lun",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "add",
+        "resource": "shared.block",
+        "authKey": "add",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "refresh",
+        "resource": "shared.block",
+        "authKey": "refresh",
+        "i18nKey": "refresh.capacity",
+        "name": "刷新容量",
+        "label": "刷新容量",
+        "icon": "refresh",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

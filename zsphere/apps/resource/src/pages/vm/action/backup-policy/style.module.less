@@ -1,0 +1,21 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.confirm {
+  :global {
+    .ant-alert {
+      .ant-alert-message {
+        font-size: 14px !important;
+        font-weight: 500;
+      }
+    }
+
+    .zstack-zsv-modal-confirm-body {
+      color: var(--neutral-700) !important;
+    }
+  }
+}

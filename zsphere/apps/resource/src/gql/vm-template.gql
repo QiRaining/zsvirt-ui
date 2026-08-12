@@ -1,0 +1,244 @@
+query vmTemplateList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmTemplateQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmTemplateList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      name
+      uuid
+      # originalType
+      vmInstanceUuid
+      shareType
+      cluster {
+        uuid
+        name
+      }
+      group {
+        groupName
+        uuid
+      }
+      vm {
+        uuid
+        guestOsType
+        name
+        cpuNum
+        architecture
+        memorySize
+        memorySize
+        platform
+        # allVolumes {
+        #   uuid
+        #   name
+        #   primaryStorageUuid
+        #   size
+        #   actualSize
+        #   isShareable
+        #   type
+        #   installPath
+        #   primaryStorage {
+        #     type
+        #     uuid
+        #   }
+        # }
+      }
+      systemTag {
+        cpuCores
+        cpuSockets
+        haStickStragedy
+        # sshkey
+        # bootOrder
+        # bootOrderOnce
+        # consolePassword
+        # vmConsoleMode
+        # vmPriority
+        # GuestTools
+        # bootMode
+        # RDPEnable
+        # usbRedirect
+        # qemuga
+        # antiSpoofing
+        # VDIMonitorNumber
+        # userdata
+        # clockTrack
+        # timeTrack
+        # isoList {
+        #   uuid
+        #   index
+        # }
+        # vmCpuPinningList {
+        #   vCPU
+        #   pCPU
+        # }
+        # staticIp {
+        #   l3NetworkUuid
+        #   ip
+        # }
+        # vmDriver
+        # hostname
+        # qxlMemory {
+        #   ram
+        #   vram
+        #   vgamem
+        # }
+        # vmNics {
+        #   type
+        #   uuid
+        #   mac
+        #   ip
+        #   usedIps {
+        #     uuid
+        #     ip
+        #     ipVersion
+        #     l3NetworkUuid
+        #   }
+        #   l3NetworkUuid
+        #   l3Network {
+        #     ... on L3Network {
+        #       name
+        #       uuid
+        #       l2NetworkUuid
+        #       l2Network {
+        #         uuid
+        #         vSwitchType
+        #       }
+        #     }
+        #   }
+        # }
+      }
+      vmHa {
+        haLevel
+      }
+      createDate
+      lastOpDate
+    }
+  }
+}
+query vmTemplateByUuid($uuid: String!) {
+  vmTemplateByUuid(uuid: $uuid) {
+    name
+    uuid
+    # originalType
+    vmInstanceUuid
+    shareType
+    cluster {
+      uuid
+      name
+    }
+    host {
+      uuid
+      name
+    }
+    vm {
+      uuid
+      name
+      cpuNum
+      zoneUuid
+      architecture
+      memorySize
+      # allVolumes {
+      #   uuid
+      #   name
+      #   primaryStorageUuid
+      #   size
+      #   actualSize
+      #   isShareable
+      #   type
+      #   installPath
+      #   primaryStorage {
+      #     type
+      #     uuid
+      #   }
+      # }
+      # vmNics {
+      #   type
+      #   uuid
+      #   mac
+      #   ip
+      #   usedIps {
+      #     uuid
+      #     ip
+      #     ipVersion
+      #     l3NetworkUuid
+      #   }
+      #   l3NetworkUuid
+      #   l3Network {
+      #     ... on L3Network {
+      #       name
+      #       uuid
+      #       l2NetworkUuid
+      #       l2Network {
+      #         uuid
+      #         vSwitchType
+      #       }
+      #     }
+      #   }
+      # }
+    }
+    createDate
+    lastOpDate
+  }
+}
+
+query vmTemplateByUuid($uuid: String!) {
+  vmTemplate(uuid: $uuid) {
+    name
+    uuid
+    # originalType
+    vmInstanceUuid
+
+    createDate
+    lastOpDate
+  }
+}
+
+mutation deleteVmTemplate($input: DeleteVmTemplateInput!) {
+  deleteVmTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation updateVmTemplate($input: UpdateVmTemplateInput!) {
+  updateVmTemplate(input: $input) {
+    actionId
+  }
+}
+
+query clusterAndHostsTreeListForTemplateConvertToVM($uuid: String!) {
+  clusterAndHostsTreeListForTemplateConvertToVM(uuid: $uuid) {
+    list {
+      uuid
+      name
+      title
+      resourceType
+      status
+      state
+      isLeaf
+      key
+      children {
+        uuid
+        name
+        title
+        resourceType
+        status
+        state
+        isLeaf
+        key
+      }
+    }
+  }
+}

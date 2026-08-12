@@ -1,0 +1,544 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "console",
+          "ipmiAddress",
+          "cpuNum",
+          "memorySize",
+          "macList",
+          "status",
+          "powerStatus",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "cpuNum",
+          "memorySize",
+          "cpuType",
+          "disk"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "ipmiAddress",
+          "cpuNum",
+          "memorySize",
+          "macList",
+          "status",
+          "powerStatus",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster",
+        "keys": [
+          "name",
+          "state",
+          "console",
+          "ipmiAddress",
+          "cpuNum",
+          "memorySize",
+          "macList",
+          "status",
+          "powerStatus",
+          "cluster",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "console",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "console",
+            "defaultMessage": "Console"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "ipmiAddress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipmi.address",
+            "defaultMessage": "IPMI Address"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.num",
+            "defaultMessage": "CPU Cores"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.size",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "macList",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "mac.list",
+            "defaultMessage": "NICs"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "deployment.status",
+            "defaultMessage": "Deployment Status"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "powerStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "power.status",
+            "defaultMessage": "Power Status"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "baremetalCluster",
+            "defaultMessage": "Bare Metal Cluster"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "cpuType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "cpu.type",
+            "defaultMessage": "CPU Type"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "disk",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk",
+            "defaultMessage": "Disk"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal.chassis"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "baremetal.chassis"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "add.baremetal.instance",
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "open.console",
+          "edit",
+          "get.hardware.info",
+          "update.bareMetalChassis.ipmiInfo",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "add.baremetal.instance",
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "open.console",
+          "edit",
+          "get.hardware.info",
+          "update.bareMetalChassis.ipmiInfo",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.baremetal.chassis",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/row",
+        "activeKeys": [
+          "add.baremetal.instance",
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "open.console",
+          "edit",
+          "get.hardware.info",
+          "update.bareMetalChassis.ipmiInfo",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/toolbar",
+        "extraKeys": [
+          "add.baremetal.chassis",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "open.console",
+          "update.bareMetalChassis.ipmiInfo",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "delete.baremetal.chassis"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "add.baremetal.instance",
+          "enable",
+          "disable",
+          "power.on.chassis",
+          "power.off.chassis",
+          "reboot.chassis",
+          "open.console",
+          "edit",
+          "get.hardware.info",
+          "update.bareMetalChassis.ipmiInfo",
+          "delete.baremetal.chassis"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.baremetal.chassis",
+        "resource": "baremetal.chassis",
+        "authKey": "add.baremetal.chassis",
+        "i18nKey": "add.baremetalChassis",
+        "name": "添加裸金属设备",
+        "label": "添加裸金属设备",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.baremetal.instance",
+        "resource": "baremetal.chassis",
+        "authKey": "add.baremetal.instance",
+        "i18nKey": "add.baremetal.instance",
+        "name": "新建裸金属主机",
+        "label": "新建裸金属主机",
+        "icon": "",
+        "dividerKey": "add.baremetal.instance-divider"
+      },
+      {
+        "key": "enable",
+        "resource": "baremetal.chassis",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "baremetal.chassis",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "powerSupply.management",
+        "resource": "baremetal.chassis",
+        "authKey": "powerSupply.management",
+        "i18nKey": "powerSupply.management",
+        "name": "电源管理",
+        "label": "电源管理",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 3,
+        "children": [
+          {
+            "key": "power.on.chassis",
+            "resource": "baremetal.chassis",
+            "authKey": "power.on.chassis",
+            "i18nKey": "powerOn",
+            "name": "开机",
+            "label": "开机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "power.off.chassis",
+            "resource": "baremetal.chassis",
+            "authKey": "power.off.chassis",
+            "i18nKey": "power.stop",
+            "name": "关机",
+            "label": "关机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "reboot.chassis",
+            "resource": "baremetal.chassis",
+            "authKey": "reboot.chassis",
+            "i18nKey": "restart",
+            "name": "重启",
+            "label": "重启",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "open.console",
+        "resource": "baremetal.chassis",
+        "authKey": "open.console",
+        "i18nKey": "open.console",
+        "name": "打开控制台",
+        "label": "打开控制台",
+        "icon": "",
+        "dividerKey": "open.console-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "baremetal.chassis",
+        "authKey": "edit",
+        "i18nKey": "edit.name.description",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "get.hardware.info",
+        "resource": "baremetal.chassis",
+        "authKey": "get.hardware.info",
+        "i18nKey": "get.hardwareInfo",
+        "name": "获取硬件信息",
+        "label": "获取硬件信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.bareMetalChassis.ipmiInfo",
+        "resource": "baremetal.chassis",
+        "authKey": "update.bareMetalChassis.ipmiInfo",
+        "i18nKey": "update.bareMetalChassis.ipmiInfo",
+        "name": " 更新IPMI信息",
+        "label": " 更新IPMI信息",
+        "icon": "",
+        "dividerKey": "update.bareMetalChassis.ipmiInfo-divider"
+      },
+      {
+        "key": "delete.baremetal.chassis",
+        "resource": "baremetal.chassis",
+        "authKey": "delete.baremetal.chassis",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

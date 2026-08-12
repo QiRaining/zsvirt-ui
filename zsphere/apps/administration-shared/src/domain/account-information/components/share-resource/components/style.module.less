@@ -1,0 +1,516 @@
+@import "../../../../../theme.less";
+
+.modal {
+  :global {
+    .ant-modal-footer {
+      & > button:first-child {
+        background: none;
+
+        &:hover {
+          color: var(--neutral-700);
+          background-color: var(--neutral-200);
+        }
+      }
+    }
+  }
+  .modalContainer {
+    padding: 24px 24px 40px;
+
+    .tree-body-container {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid @neutral-300;
+      max-height: 320px;
+      overflow-y: auto;
+      border-radius: 2px;
+
+      .spin {
+        top: 50%;
+      }
+
+      :global {
+        .ant-spin-nested-loading {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+
+          .ant-spin-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+          }
+        }
+      }
+
+      .noResultContainer {
+        margin-top: 8px;
+        padding-top: 80px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+
+        .noResultIcon {
+          width: 60px;
+          height: 60px;
+          border-radius: 999px;
+          background-color: @neutral-100;
+          color: @neutral-300;
+          display: grid;
+          place-content: center;
+        }
+
+        .noResultText {
+          color: @neutral-500;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.emptyForm {
+  margin-bottom: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  :global {
+    .ant-form-item-control {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 100%;
+      padding-left: 19px;
+    }
+  }
+}
+
+.resourceForm {
+  margin-bottom: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  :global {
+    div.zstack-form-item-input-description,
+    div.zstack-form-item-input-description-zsv,
+    .ant-form-item-extra {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      text-align: left !important;
+    }
+
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 100%;
+
+      .ant-row {
+        border: none;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px;
+      }
+    }
+
+    .ant-form-item-control-input,
+    .ant-form-item-control-input-content {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .ant-form-item-control-input-content {
+      max-height: 240px;
+      overflow: hidden auto;
+    }
+  }
+
+  .content {
+    color: @neutral-700;
+    border-top: 1px solid @neutral-300;
+    border-bottom: 1px solid @neutral-300;
+    padding: 6px 12px;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .action {
+    text-align: right;
+    span {
+      cursor: pointer;
+
+      &:first-child {
+        display: inline-block;
+        width: 16px;
+        color: @neutral-600;
+      }
+    }
+  }
+}
+
+.addBtnOutside {
+  padding: 0 !important;
+  margin: 8px 0 4px 0 !important;
+  color: var(--color-600) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+
+  span {
+    margin-left: 4px;
+  }
+}
+
+.addBtn {
+  padding: 0 !important;
+  margin: 8px 0 4px 0 !important;
+  color: var(--color-600) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+
+  span {
+    margin-left: 4px;
+  }
+}
+
+.tree {
+  & > div {
+    height: 100%;
+  }
+
+  :global {
+    .ant-tree {
+      .ant-tree-list {
+        .ant-tree-list-holder {
+          & > div {
+            overflow: hidden !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-list-scrollbar {
+      margin-right: 1px;
+
+      &.ant-tree-list-scrollbar-show {
+        display: block !important;
+
+        .ant-tree-list-scrollbar-thumb {
+          background: none !important;
+          background-color: @neutral-300 !important;
+        }
+      }
+    }
+
+    .ant-tree-node {
+      padding: 0 0 0 4px !important;
+    }
+
+    .ant-tree {
+      .ant-tree-switcher {
+        background-color: initial;
+        color: inherit !important;
+        margin: 8px 4px 8px 0px;
+        line-height: 16px;
+        width: 16px;
+      }
+
+      .ant-tree-checkbox {
+        margin: 8px 8px 0px 0px;
+      }
+
+      .ant-tree-treenode {
+        width: 100%;
+        height: 32px;
+        padding: 0px 12px 0 8px;
+        font-size: 14px;
+        border-left: 4px solid transparent;
+        color: @neutral-700;
+        transition: background-color 0.3s;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          background-color: @neutral-100;
+          background: @neutral-100;
+        }
+
+        //修改选中态
+        &-selected {
+          background-color: @neutral-100 !important;
+          border-left-color: @neutral-100;
+          color: @neutral-700;
+
+          &:hover::before,
+          &::before {
+            background-color: @neutral-100 !important;
+            background: @neutral-100 !important;
+          }
+
+          &::after {
+            width: max-content;
+          }
+        }
+
+        .ant-typography {
+          color: inherit !important;
+        }
+
+        .ant-tree-node-content-wrapper,
+        .ant-tree-node-content-wrapper-normal {
+          margin-top: 4px;
+          padding: 0px;
+          flex: 1;
+          overflow: hidden;
+          color: inherit !important;
+
+          &:hover {
+            background-color: unset !important;
+          }
+        }
+
+        .ant-tree-node-selected {
+          background-color: @neutral-100 !important;
+        }
+      }
+    }
+
+    .ant-tree-title {
+      width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    //展开按钮
+    .ant-tree-switcher-noop {
+      // display: none;
+      // margin-left: 8px;
+
+      &::before {
+        right: 16px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .ant-tree-indent-unit::before {
+      height: 0px;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      bottom: -4px;
+      // border-right: 1px solid var(--neutral-300);
+      content: "";
+      display: unset;
+    }
+
+    .ant-tree-treenode {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -4px;
+          // border-right: 1px solid var(--neutral-300);
+          height: 32px;
+          content: "";
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-end:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-leaf-last {
+      .ant-tree-indent {
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 18px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:first-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-switcher-open {
+      .ant-tree-indent {
+        // .ant-tree-indent-unit:last-child {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            // border-right: 1px solid var(--neutral-300);
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            // border-right: 1px solid var(--neutral-300);
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode:last-child {
+      > .ant-tree-indent {
+        > .ant-tree-indent-unit::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -17px;
+          // border-right: 1px solid var(--neutral-300);
+          height: 17px;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.treeTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: 100%;
+  gap: 16px; // 添加间距
+  .titlePart {
+    max-width: 100%;
+    min-width: 0;
+    font-size: 14px;
+    display: flex;
+    align-content: flex-start;
+    flex-grow: 1; // 宽度自适应
+
+    .title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-left: 4px;
+      margin-right: unset;
+      overflow: hidden;
+      flex: 1 1 auto;
+      min-width: 0;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    > div:first-child:empty + .title {
+      margin-left: 0;
+    }
+
+    .spin {
+      margin-left: 4px;
+      font-size: 20px;
+    }
+  }
+
+  &:hover {
+    background-color: unset;
+    background: unset;
+  }
+
+  &:hover {
+    visibility: visible;
+  }
+  .extraWrapper {
+    flex-shrink: 0; // 确保 extra 部分不会被压缩
+  }
+}
+
+.empty-contanier {
+  margin: 40px 8px !important;
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@zstack/form",
+  "version": "1.2.2",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/mock-intl.d.ts",
+      "import": "./dist/testing/mock-intl.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@zstack/design": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/utils": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "@zstack/zsphere-utils": "workspace:*",
+    "lodash-es": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-intl": "6.7.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-react": "catalog:",
+    "@rslib/core": "catalog:",
+    "@tailwindcss/postcss": "catalog:",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  }
+}

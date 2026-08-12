@@ -1,0 +1,267 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "description",
+          "vendorId",
+          "romVersion",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "description",
+          "vendorId",
+          "romVersion",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "description",
+          "vendorId",
+          "romVersion",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "shareType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "vendorId",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendorId",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "romVersion",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "romVersion",
+            "defaultMessage": "ROM Version"
+          },
+          "queryType": "",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabledState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "gpu.device.spec"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "setRom",
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "setRom",
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable",
+        "resource": "gpu.device.spec",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "gpu.device.spec",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "setRom",
+        "resource": "gpu.device.spec",
+        "authKey": "setRom",
+        "i18nKey": "set.rom",
+        "name": "设置ROM",
+        "label": "设置ROM",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "gpu.device.spec",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "gpu.device.spec",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

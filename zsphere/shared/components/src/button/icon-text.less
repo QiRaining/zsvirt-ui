@@ -1,0 +1,59 @@
+@import "../style/vars.less";
+
+.@{prefix}-icon-text {
+  // 基础布局 - icon和text水平对齐，整体垂直居中
+  display: flex;
+  align-items: center; // icon和text垂直居中对齐
+  justify-content: center; // 整体水平居中
+  gap: 4px; // 图标和文本之间4px间距
+  line-height: 1; // 确保基线对齐
+  cursor: default;
+  color: @color-600;
+  height: 100%; // 撑满父容器高度
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; // 防止图标被压缩
+    line-height: 1; // 确保图标基线对齐
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; // 防止文本被压缩
+    line-height: 1; // 确保文字基线对齐
+    white-space: nowrap; // 防止文字换行
+  }
+
+  // 可点击状态
+  &-clickable {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // 禁用状态
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  // 当只有图标时，移除间距
+  &:has(.@{prefix}-icon-text-icon:only-child) {
+    gap: 0;
+  }
+
+  // 当只有文本时，移除间距
+  &:has(.@{prefix}-icon-text-text:only-child) {
+    gap: 0;
+  }
+}

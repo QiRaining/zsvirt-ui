@@ -1,0 +1,54 @@
+@import "../../../../../../../../theme.less";
+
+.width-200 {
+  width: 200px !important;
+}
+
+.l3network {
+  :global {
+    .ant-table-content {
+      height: 320px;
+    }
+  }
+}
+
+.sortableList {
+  border: 1px @neutral-400 solid;
+  border-radius: 2px;
+
+  :global {
+    .sortable-item-container {
+      background: none !important;
+      margin-bottom: 0 !important;
+      border-bottom: 1px solid @neutral-400;
+    }
+
+    .sortable-item-container:last-child {
+      border-bottom: none;
+    }
+  }
+
+  + :global(.zstack-virtualization-modal-select-add) {
+    padding-bottom: 0 !important;
+    height: auto;
+  }
+}
+
+.card {
+  margin-bottom: 12px;
+
+  :global {
+    .zstack-form-item-label-container {
+      width: 147px !important;
+    }
+  }
+}
+
+.content {
+  :global {
+    .ant-input[disabled] {
+      color: inherit;
+      background-color: @neutral-100;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mutation attachL2NetworkToCluster($input: AttachOrDetachL2NetworksFromClusterActionInput!) {
+  attachL2NetworkToCluster(input: $input) {
+    actionId
+  }
+}
+
+mutation detachL2NetworkFromCluster($input: AttachOrDetachL2NetworksFromClusterActionInput!) {
+  detachL2NetworkFromCluster(input: $input) {
+    actionId
+  }
+}

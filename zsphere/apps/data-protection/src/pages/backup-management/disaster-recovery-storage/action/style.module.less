@@ -1,0 +1,304 @@
+@import "../../../../theme.less";
+
+.createBackupStorage {
+}
+
+.stepsWrapper {
+  padding-top: 6px;
+  height: 62px;
+  background-color: @neutral-100;
+
+  :global {
+    .zstack-horizontal-steps .ant-steps-item-container .ant-steps-item-icon {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.formWrapper {
+  padding: 24px 24px 40px 24px;
+}
+
+.create-way {
+  display: flex;
+  flex-direction: column;
+  // height: 234px;
+
+  .tip {
+    font-weight: 400;
+    color: @neutral-700;
+  }
+
+  .way {
+    .item-wrapper {
+      .item-title {
+        display: flex;
+        align-items: center;
+        position: relative;
+        color: @neutral-700;
+        margin: 20px 0 12px;
+        padding-left: 12px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 12px;
+          background-color: @color-400;
+          left: 0;
+        }
+
+        .item-info {
+          cursor: pointer;
+          color: @neutral-700;
+          margin-left: 4px;
+          display: flex;
+        }
+      }
+
+      .item-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 12px;
+
+        .item-not-selected {
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          padding: 16px;
+          border-radius: 2px;
+          flex: 0 0 calc((100% - 24px) / 3);
+          border: 1px solid @neutral-400;
+          background: #ffffff;
+          position: relative;
+          overflow: hidden;
+
+          .icon-check {
+            display: none;
+          }
+        }
+
+        .item-selected {
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          padding: 16px;
+          border-radius: 2px;
+          flex: 0 0 calc((100% - 24px) / 3);
+          background-color: @color-50;
+          border: 1px solid @color-600;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .selected-indicator {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .triangle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            color: @color-600;
+            fill: @color-600;
+          }
+
+          .checkmark {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            color: white;
+            z-index: 1;
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        .check-indicator {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .triangle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            color: @neutral-300;
+            fill: @neutral-300;
+          }
+
+          .checkmark {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            color: white;
+            z-index: 1;
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        .icon-title {
+          display: flex;
+          flex-direction: row;
+
+          .iconself {
+            display: flex;
+            background-color: @color-50;
+            border-radius: 4px;
+            height: 32px;
+            width: 32px;
+            position: relative;
+            color: @neutral-0;
+            justify-content: center;
+            align-items: center;
+            vertical-align: unset !important;
+          }
+
+          .icon {
+            color: @color-600;
+            vertical-align: unset !important;
+          }
+
+          .iconself-checked {
+            background-color: @color-600;
+            display: flex;
+            border-radius: 4px;
+            height: 32px;
+            width: 32px;
+            position: relative;
+            color: @neutral-0;
+            justify-content: center;
+            align-items: center;
+            vertical-align: unset !important;
+          }
+
+          .icon-checked {
+            vertical-align: unset !important;
+          }
+
+          .title {
+            margin-left: 8px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+          }
+        }
+
+        .description {
+          margin-top: 12px;
+          font-size: 12px;
+          font-weight: 400;
+          color: @neutral-600;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+.tag:global(.ant-tag) {
+  margin: -2px 0 -2px 8px !important;
+  flex-shrink: 0;
+  font-size: 12px !important;
+}
+
+.zoneName {
+  display: flex;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-240 {
+  width: 240px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.resultContent {
+  padding: 24px;
+  padding-bottom: 40px;
+
+  .resultTitle {
+    margin-bottom: 12px;
+    color: @neutral-700;
+  }
+
+  .resultTable {
+    border-radius: 2px;
+    border: 1px solid @neutral-300;
+    border-bottom: none;
+
+    .titleRow {
+      > div {
+        position: relative;
+        color: @neutral-600;
+      }
+    }
+
+    .end-line {
+      display: inline-block;
+      width: 2px;
+      height: 12px;
+      background-color: @neutral-300;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      bottom: 6px;
+    }
+
+    > div {
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      border-bottom: 1px solid @neutral-300;
+
+      > div {
+        flex: 1;
+        margin-left: 12px;
+        color: @neutral-700;
+      }
+    }
+  }
+}
+
+.backupWay:global(.ant-form-item) {
+  + :global(.zstack-form-item-input-description-zsv) {
+    top: -12px !important;
+  }
+}
+
+.error-field {
+  margin-top: -8px;
+  padding-left: 168px;
+}

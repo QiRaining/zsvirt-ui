@@ -1,0 +1,169 @@
+#import './volume-fragment.gql'
+
+query volumeList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: VolumeQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $vmInstanceUuid: String
+) {
+  volumeList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...volumeFields
+    }
+  }
+}
+
+query volume($uuid: String!, $vmInstanceUuid: String) {
+  volume(uuid: $uuid) {
+    vmInstance {
+      backupTaskType
+      allVolumes {
+        uuid
+        name
+        relatedResource {
+          backupData
+        }
+        backupTaskType
+      }
+    }
+    ...volumeFields
+  }
+}
+
+mutation createDataVolume($input: CreateDataVolumeInput!) {
+  createDataVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation createDataVolumeFromVolumeTemplate($input: CreateDataVolumeFromVolumeTemplateInput!) {
+  createDataVolumeFromVolumeTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation changeVolumeState($input: ChangeVolumeStateInput!) {
+  changeVolumeState(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteDataVolume($input: DeleteDataVolumeInput!) {
+  deleteDataVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation recoverDataVolume($input: RecoverDataVolumeInput!) {
+  recoverDataVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation expungeDataVolume($input: ExpungeDataVolumeInput!) {
+  expungeDataVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation setVolumeQos($input: SetVolumeQosInput!) {
+  setVolumeQos(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteVolumeQos($input: DeleteVolumeQosInput!) {
+  deleteVolumeQos(input: $input) {
+    actionId
+  }
+}
+
+mutation resizeDataVolume($input: ResizeDataVolumeInput!) {
+  resizeDataVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation primaryStorageMigrateVolume($input: PrimaryStorageMigrateVolumeInput!) {
+  primaryStorageMigrateVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation updateVolume($input: UpdateVolumeActionInput!) {
+  updateVolume(input: $input) {
+    actionId
+  }
+}
+
+query getVmAndBareMetal2InstanceSummary(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getVmAndBareMetal2InstanceSummary(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    vmTotal
+    bareMetal2InstanceTotal
+  }
+}
+
+query getFlattenVolumeOccupyCapacity($input: GetFlattenVolumeOccupyCapacityInput!) {
+  getFlattenVolumeOccupyCapacity(input: $input) {
+    list {
+      uuid
+      name
+      type
+      actualSize
+    }
+    error
+    success
+  }
+}
+
+query volumeCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: VolumeQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  volumeList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}

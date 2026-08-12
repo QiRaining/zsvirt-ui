@@ -1,0 +1,204 @@
+@import "../../style/vars.less";
+
+.@{prefix}-action {
+  &-dropdown {
+    .ant-dropdown-menu {
+      padding: 0;
+    }
+  }
+
+  &-dropdown-width-320 {
+    max-width: 320px;
+  }
+
+  &-text-btn {
+    background-color: @neutral-0;
+    padding: 4px 5px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  &-btn {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  &-dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: bottom;
+    column-gap: 4px;
+  }
+
+  &-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  &-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-icon-disabled {
+    color: @neutral-700;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &-description-icon {
+    margin-left: 4px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1;
+    vertical-align: middle;
+    color: @neutral-300;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @color-600;
+    }
+
+    .anticon.zstack-icon {
+      margin-right: 0 !important;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  &-divider {
+    margin: 0px !important;
+
+    background-color: @neutral-300 !important;
+  }
+
+  &-operation-divider {
+    margin: 0px !important;
+    margin-right: 8px !important;
+    margin-top: 6px !important;
+    background-color: @neutral-300 !important;
+  }
+
+  &-menu {
+    padding: 4px 0px !important;
+
+    // antd Menu 会注入className 到 expandIcon ，所以需要这么设置style
+    .anticon.zstack-icon.ant-dropdown-menu-submenu-expand-icon {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  &-sub-menu {
+    padding: 0 !important;
+
+    > .ant-dropdown-menu.ant-dropdown-menu-sub {
+      padding: 4px 0px !important;
+    }
+  }
+
+  &-menu-title-operation-mode {
+    display: inline-block;
+    margin-right: 8px !important;
+    white-space: nowrap;
+    /* 防止内容换行 */
+
+    // max-width: 40px;
+    .zstack-text-string-child {
+      color: @neutral-800 !important;
+    }
+  }
+
+  &-menu-title-operation-content {
+    // display: inline-block;
+    // // max-width: 80px;
+    height: 22px;
+    max-width: 320px;
+    flex-grow: 1;
+    /* 自适应宽度 */
+    white-space: nowrap;
+    /* 防止内容换行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .ant-typography {
+      color: @neutral-700;
+    }
+  }
+
+  &-menu-item {
+    .ant-dropdown-menu-submenu-title {
+      display: flex;
+      align-items: center;
+    }
+    &:hover {
+      background-color: @neutral-100 !important;
+    }
+
+    .ant-dropdown-menu-submenu-title {
+      padding-right: 32px;
+
+      &:hover {
+        background-color: @neutral-100 !important;
+      }
+    }
+
+    // 修复 Text 组件内 info icon 垂直对齐问题
+    .ant-dropdown-menu-title-content {
+      display: inline-flex !important;
+      align-items: center !important;
+
+      .zstack-text {
+        display: inline-flex !important;
+        align-items: center !important;
+      }
+
+      .ant-typography,
+      .ant-typography-ellipsis-single-line {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        // description-icon 外层的 stopPropagation span
+        > span {
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &-menu-item-title {
+    cursor: auto !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    .ant-dropdown-menu-submenu-title {
+      padding-right: 32px;
+
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+.@{prefix}-license-tooltip {
+  .ant-tooltip-arrow-content {
+    background-color: @neutral-700;
+  }
+}

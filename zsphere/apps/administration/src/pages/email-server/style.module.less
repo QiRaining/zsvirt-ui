@@ -1,0 +1,82 @@
+@import "../../theme.less";
+
+.container {
+  height: 100%;
+}
+
+.body {
+  height: calc(100% - 56px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .ant-tabs {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ant-tabs-content-holder {
+      flex: 1;
+      height: 0;
+    }
+
+    .ant-tabs-content {
+      height: 100%;
+    }
+
+    .ant-tabs-tabpane {
+      height: 100%;
+    }
+  }
+}
+
+.list-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .email-server-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+
+    .main {
+      flex: 1;
+      min-width: 0;
+      overflow: auto;
+      :global {
+        .active-row {
+          background-color: var(--neutral-100);
+          .ant-table-cell {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tableList {
+  overflow-x: auto;
+  padding: 20px 24px;
+  height: 100%;
+}
+
+.column-name {
+  cursor: pointer;
+  color: var(--color-600) !important;
+
+  &:hover,
+  &:focus {
+    color: var(--color-500);
+  }
+}
+
+.tabpane {
+  height: 100%;
+  // TabPane 的 padding 已经在 .tableList 中定义，这里不需要额外 padding
+}

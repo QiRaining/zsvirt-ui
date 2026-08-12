@@ -1,0 +1,1 @@
+export { useDefaultResourceAttributeConfig } from "./hook";

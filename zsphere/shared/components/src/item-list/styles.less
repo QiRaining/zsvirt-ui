@@ -1,0 +1,29 @@
+@import "../style/vars.less";
+
+.@{prefix}-zsv-item-list-show {
+  // 展开多行/多块内容时，不能用 width:0 的 flex 技巧，否则只露出第一项（见 ZSV-11870）
+  align-items: flex-start;
+
+  & > .ant-typography {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    overflow: visible;
+  }
+}
+
+.baseSecretText {
+  display: flex;
+  .toggleText {
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  & > .ant-typography {
+    width: 0;
+    flex: 1;
+  }
+  .toggleText {
+    color: @color-600;
+  }
+}

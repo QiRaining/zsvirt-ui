@@ -1,0 +1,94 @@
+{
+  "name": "@zstack/icon",
+  "version": "2.1.1",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/icon.es.js",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "default": "./dist/icon.es.js"
+      }
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icon.es.js"
+    },
+    "./app-icons": {
+      "types": "./dist/app-icons.d.ts",
+      "import": "./dist/icon.es.js"
+    },
+    "./illus-icons": {
+      "types": "./dist/illus-icons.d.ts",
+      "import": "./dist/icon.es.js"
+    },
+    "./assets/*": "./dist/assets/*",
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "type-check": "pnpm tsgo --noEmit",
+    "build": "vite build",
+    "test": "vitest run --config vitest.config.ts",
+    "gen": "bun ./generate-icons.ts",
+    "check": "pnpm check:exports && pnpm check:svg",
+    "check:exports": "node ./scripts/check-generated-exports.mjs",
+    "check:svg": "node ./scripts/check-svg-assets.mjs",
+    "lint:ox": "oxlint -c ../../.oxlintrc.json src",
+    "lint:ox:fix": "oxlint -c ../../.oxlintrc.json src --fix",
+    "lint": "pnpm run lint:ox",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../.oxlintrc.json src --format json > ./lint_report/oxlint.json",
+    "size": "vite build && size-limit"
+  },
+  "dependencies": {
+    "@zstack/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@size-limit/preset-big-lib": "^11.1.4",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@xmldom/xmldom": "^0.9.8",
+    "commander": "^13.1.0",
+    "less": "^4.2.0",
+    "prop-types": "^15.8.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "rollup-plugin-copy": "^3.5.0",
+    "size-limit": "^11.1.4",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "size-limit": [
+    {
+      "path": "dist/icon.js",
+      "limit": "399 KB"
+    },
+    {
+      "path": "dist/icon.umd.cjs",
+      "limit": "399 KB"
+    }
+  ]
+}

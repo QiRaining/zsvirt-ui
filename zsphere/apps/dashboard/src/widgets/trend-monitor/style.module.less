@@ -1,0 +1,102 @@
+@import "../../theme.less";
+
+.container {
+  overflow: hidden;
+  height: 100%;
+  background: @neutral-0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  :global {
+    span.ant-typography-ellipsis-single-line {
+      position: relative;
+      z-index: 11;
+      color: @neutral-800;
+    }
+  }
+  .title {
+    & > span {
+      color: @neutral-800;
+      margin-bottom: 10px;
+      display: inline-block;
+      width: calc(100% - 16px);
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .jumpToContainer {
+      display: inline-block;
+      cursor: pointer;
+      a {
+        color: @neutral-400;
+      }
+      &:hover {
+        a {
+          color: @neutral-700;
+        }
+      }
+    }
+  }
+}
+
+.chartContainer {
+  width: 100%;
+  height: 100px;
+}
+
+.legendContainer {
+  display: flex;
+  .legendItem {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    .legendDot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .legendName {
+      display: inline-block;
+      white-space: nowrap;
+      color: @neutral-600;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    .legendValue {
+      font-size: 20px;
+      color: @neutral-800;
+      font-weight: 500;
+      line-height: 28px;
+      height: 28px;
+      white-space: nowrap;
+      flex-shrink: 1;
+    }
+  }
+}
+
+.chartRoot {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+
+  :global {
+    .recharts-cartesian-axis-tick text {
+      fill: #8f95a3;
+    }
+
+    .recharts-cartesian-grid line {
+      stroke: #e5e6eb;
+      stroke-opacity: 0.8;
+    }
+
+    .recharts-curve.recharts-tooltip-cursor {
+      stroke: #e5e6eb;
+    }
+
+    .recharts-layer,
+    .recharts-surface {
+      outline: none;
+    }
+  }
+}

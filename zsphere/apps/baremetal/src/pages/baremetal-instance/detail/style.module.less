@@ -1,0 +1,27 @@
+@import url("../../../theme.less");
+
+.console-icon-container {
+  position: relative;
+  width: 120px;
+  cursor: pointer;
+
+  .console-icon-button {
+    color: @neutral-0;
+    background-color: @neutral-700;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .console-icon-button {
+      opacity: 0.5;
+    }
+  }
+}

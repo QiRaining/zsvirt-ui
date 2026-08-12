@@ -1,0 +1,314 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vipIp",
+          "guestIp",
+          "vmNic.vmInstance.name",
+          "owner",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "vipIp",
+          "owner",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "vipIp",
+          "guestIp",
+          "vmNic.vmInstance.name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpc",
+        "keys": [
+          "name",
+          "vipIp",
+          "guestIp",
+          "vmNic.vmInstance.name",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "vipIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vip.ip",
+            "defaultMessage": "Public IP"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "guestIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "guestIp",
+            "defaultMessage": "Private IP"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "vmNic.vmInstance.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "instance",
+            "defaultMessage": "Virtual Machine"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "eip"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "last.op.date",
+            "defaultMessage": "Last Operation Time"
+          },
+          "queryType": "",
+          "resource": "eip"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "attacth.eip",
+          "detach.eip",
+          "owner.eip.change",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "attacth.eip",
+          "detach.eip",
+          "owner.eip.change",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.eip"
+        ],
+        "activeKeys": [
+          "owner.eip.change",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/row",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.eip",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.eip",
+        "resource": "eip",
+        "authKey": "create.eip",
+        "i18nKey": "create.eip",
+        "name": "创建弹性IP",
+        "label": "创建弹性IP",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "eip",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "attacth.eip",
+        "resource": "eip",
+        "authKey": "attacth.eip",
+        "i18nKey": "bind.nic",
+        "name": "绑定网卡",
+        "label": "绑定网卡",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.eip",
+        "resource": "eip",
+        "authKey": "detach.eip",
+        "i18nKey": "unbind.nic",
+        "name": "解绑网卡",
+        "label": "解绑网卡",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "owner.eip.change",
+        "resource": "eip",
+        "authKey": "owner.eip.change",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "eip",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

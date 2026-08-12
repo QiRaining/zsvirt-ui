@@ -1,0 +1,332 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.iqn",
+        "keys": [
+          "name",
+          "wwid",
+          "vendor",
+          "model",
+          "wwn",
+          "hctl",
+          "type",
+          "size",
+          "path"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iqn",
+        "keys": [
+          "name",
+          "wwid",
+          "vendor",
+          "model",
+          "wwn",
+          "hctl",
+          "type",
+          "size",
+          "path"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "wwid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwid",
+            "defaultMessage": "WWID"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "vendor",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendor",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "wwn",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "input",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "hctl",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hctl",
+            "defaultMessage": "HCTL"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "vm-instance.count",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "mounted.vm.count",
+            "defaultMessage": "Attached VMs"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "source",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "source",
+            "defaultMessage": "Source"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      },
+      {
+        "accessorKey": "path",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "path",
+            "defaultMessage": "Path"
+          },
+          "queryType": "",
+          "resource": "iscsi.lun"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "iqn.iscsi.lun.attach.vm",
+          "iqn.iscsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.iqn/row",
+        "activeKeys": [
+          "iqn.iscsi.lun.attach.vm",
+          "iqn.iscsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "sub.iqn/toolbar",
+        "extraKeys": [
+          "iqn.iscsi.lun.attach.vm",
+          "iqn.iscsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iqn/header"
+      },
+      {
+        "view": "sub.virtualization.iqn/row"
+      },
+      {
+        "view": "sub.virtualization.iqn/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "iqn.iscsi.lun.attach.vm",
+          "iqn.iscsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "iqn.iscsi.lun.attach.vm",
+        "resource": "iscsi.lun",
+        "authKey": "iqn.iscsi.lun.attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "iqn.iscsi.lun.detach.vm",
+        "resource": "iscsi.lun",
+        "authKey": "iqn.iscsi.lun.detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.iqn.iscsi.lun.attach.vm",
+        "resource": "iscsi.lun",
+        "authKey": "virtualization.iqn.iscsi.lun.attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.iqn.iscsi.lun.detach.vm",
+        "resource": "iscsi.lun",
+        "authKey": "virtualization.iqn.iscsi.lun.detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

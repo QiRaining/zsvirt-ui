@@ -1,0 +1,31 @@
+@import "../../../../../../theme.less";
+
+.fixIcon {
+  margin-right: 4px;
+}
+
+.guestOsItem {
+  //margin-bottom: 0px !important;
+
+  :global {
+    .ant-form-item {
+      display: inline-block;
+      margin-bottom: 0px !important;
+
+      &:first-child {
+        margin-right: 4px;
+      }
+    }
+
+    .ant-select-selection-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+:global {
+  .rc-virtual-list-scrollbar-thumb {
+    background-color: @neutral-400!important;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../../theme.less";
+
+.card {
+  :global {
+    .zstack-virtualization-modal-select {
+      width: 320px;
+    }
+  }
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+  .vmList,
+  .hostList {
+    :global {
+      .ant-list {
+        max-height: 240px;
+        overflow-y: scroll;
+      }
+      .ant-list-item {
+        color: @neutral-700;
+      }
+    }
+  }
+}

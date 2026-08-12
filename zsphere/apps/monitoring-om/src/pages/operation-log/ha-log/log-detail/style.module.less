@@ -1,0 +1,290 @@
+@import "../../../../theme.module.less";
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  .headerIcon {
+    color: @neutral-0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: @color-600;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    :global {
+      .zstack-icon {
+        font-size: 20px !important;
+      }
+    }
+  }
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+    color: @neutral-800;
+    font-weight: 500;
+  }
+}
+
+.divider {
+  border-top-style: dashed !important;
+  margin: 20px 0 !important;
+}
+
+.width-160 {
+  width: 160px;
+}
+
+.subTaskTitle {
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  :global {
+    .zstack-field-horizontal-value {
+      flex: none;
+    }
+    .zstack-field-horizontal-left-label {
+      .ant-typography {
+        color: @neutral-800 !important;
+      }
+    }
+  }
+}
+
+.subTaskSelect {
+  :global {
+    .ant-select-selector {
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .ant-select-focused:not(.ant-select-disabled).ant-select-single:not(
+        .ant-select-customize-input
+      )
+      .ant-select-selector {
+      box-shadow: none;
+    }
+    .ant-select-selection-item {
+      text-align: right;
+      margin-right: 4px;
+    }
+  }
+}
+
+.taskContainer {
+  margin-bottom: 20px;
+  border: solid 1px @neutral-300;
+  border-radius: 2px;
+
+  .subTaskTip {
+    background-color: @neutral-100;
+    height: 32px;
+    border-radius: 1px 1px 0 0;
+    color: @neutral-600;
+    text-align: center;
+    line-height: 32px;
+  }
+  .taskDotContainer {
+    color: @neutral-0;
+    overflow-y: scroll;
+    padding: 12px 13px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 128px;
+    gap: 2px;
+  }
+}
+
+@keyframes beat {
+  50% {
+    border-color: @neutral-0;
+  }
+}
+
+.taskDotBasic {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+  :hover {
+    border-radius: 2px;
+  }
+}
+
+.taskDotSuccess {
+  background-color: @positive-400;
+  &:hover {
+    background-color: @positive-500;
+  }
+  &.checked {
+    background-color: @positive-600;
+  }
+}
+
+.taskDotRunning {
+  background-color: @info-400;
+  &:hover {
+    background-color: @info-500;
+  }
+  &.checked {
+    background-color: @info-600;
+  }
+}
+
+.taskDotFailed {
+  background-color: @danger-400;
+  &:hover {
+    background-color: @danger-500;
+  }
+  &.checked {
+    background-color: @danger-600;
+  }
+}
+
+.taskDotCanceled .taskDotCanceling {
+  background-color: @neutral-400;
+  &:hover {
+    background-color: @neutral-500;
+  }
+  &.checked {
+    background-color: @neutral-600;
+  }
+}
+
+.taskDotException {
+  background-color: @alert-400;
+  &:hover {
+    background-color: @alert-500;
+  }
+  &.checked {
+    background-color: @alert-600;
+  }
+}
+
+.api {
+  color: @info-600;
+  font-size: 14px;
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.icon {
+  color: @neutral-700;
+}
+
+.error {
+  :global {
+    .react-json-view {
+      word-break: break-word;
+      background-color: @danger-50 !important;
+      font-family:
+        "SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono",
+        "Ubuntu Mono", Menlo, Consolas, Courier, monospace !important;
+    }
+  }
+}
+
+.failedReason {
+  line-height: 22px;
+  color: @danger-600;
+  word-break: break-all;
+}
+
+.info {
+  :global {
+    .react-json-view {
+      word-break: break-word;
+      background-color: @neutral-100 !important;
+      font-family:
+        "SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono",
+        "Ubuntu Mono", Menlo, Consolas, Courier, monospace !important;
+    }
+  }
+}
+
+.apiTitle {
+  line-height: 22px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: @neutral-700;
+}
+
+.apiTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  .copyBtn {
+    color: @color-600 !important;
+    &:hover {
+      color: @color-500 !important;
+    }
+  }
+}
+
+.apiBodyContainer {
+  :global {
+    .react-json-view {
+      margin: 12px;
+    }
+  }
+}
+
+.operationDetail {
+  .progress {
+    width: 152px;
+    display: inline-block;
+    margin-right: 8px;
+    :global {
+      .ant-progress-line {
+        line-height: 11px;
+      }
+    }
+  }
+  .surplusDataSize {
+    display: inline-block;
+  }
+}
+
+.card {
+  margin-bottom: 12px;
+}
+
+.flex {
+  display: flex;
+  :global {
+    .zstack-progress {
+      width: 90%;
+      flex: 1;
+    }
+    .ant-progress {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      margin-left: 12px;
+    }
+    .ant-progress-text {
+      width: unset;
+    }
+  }
+}
+
+:global {
+  .react-json-view {
+    word-break: break-word;
+  }
+}
+
+.emptyWrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}

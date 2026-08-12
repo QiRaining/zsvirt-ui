@@ -1,0 +1,285 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "CPUAllUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteBytes",
+          "DiskAllUsedCapacityInBytes",
+          "NetworkAllInBytes",
+          "NetworkAllOutBytes"
+        ]
+      },
+      {
+        "view": "main.custom",
+        "keys": [
+          "name",
+          "CPUAllUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteBytes",
+          "DiskAllUsedCapacityInBytes",
+          "DiskAllReadOps",
+          "DiskAllWriteOps",
+          "DiskAllUsedCapacityInPercent",
+          "NetworkAllInBytes",
+          "NetworkAllOutBytes",
+          "NetworkAllInPackets",
+          "NetworkAllOutPackets",
+          "NetworkAllInErrors",
+          "NetworkAllOutErrors"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "CPUAllUsedUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "average.cpu.usage",
+            "defaultMessage": "CPU Utilization Average"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "MemoryUsedInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.usage",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllReadBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.read.speed",
+            "defaultMessage": "Disk Read Speed"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllWriteBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.write.speed",
+            "defaultMessage": "Disk Write Speed"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllUsedCapacityInBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.dosage",
+            "defaultMessage": "Disk Usage"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllReadOps",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.read.iops",
+            "defaultMessage": "Disk Read IOPS"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllWriteOps",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.write.iops",
+            "defaultMessage": "Disk Write IOPS"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "DiskAllUsedCapacityInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.used.percentage",
+            "defaultMessage": "Used Disk Storage Percentage"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic.in.speed",
+            "defaultMessage": "NIC In Speed"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic.output.speed",
+            "defaultMessage": "NIC Out Speed"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInPackets",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.in.packet.rate",
+            "defaultMessage": "NIC In Rate"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutPackets",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.out.packet.rate",
+            "defaultMessage": "NIC Out Rate"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInErrors",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.incoming.error.rate",
+            "defaultMessage": "NIC In Errors Rate"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutErrors",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.error.rate",
+            "defaultMessage": "NIC Out Errors Rate"
+          },
+          "queryType": "",
+          "resource": "performance.host"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

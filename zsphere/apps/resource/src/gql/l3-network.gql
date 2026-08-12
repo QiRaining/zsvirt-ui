@@ -1,0 +1,393 @@
+fragment ipCapacityFields on IpCapacity {
+  totalCapacity
+  availableCapacity
+  ipv4AvailableCapacity
+  ipv6AvailableCapacity
+  ipv4TotalCapacity
+  ipv6TotalCapacity
+  ipv4UsedIpAddressNumber
+}
+
+fragment IpRangeFields on IpRange {
+  addressMode
+  createDate
+  endIp
+  gateway
+  shareType
+  ipCapacity {
+    ...ipCapacityFields
+  }
+  ipRangeType
+  ipVersion
+  l3NetworkUuid
+  name
+  netmask
+  networkCidr
+  prefixLen
+  startIp
+  uuid
+  linkResource {
+    vm
+    vrouter
+  }
+}
+
+fragment l3NetworkFields on L3Network {
+  category
+  createDate
+  description
+  enableIPAM
+  dhcpIp {
+    ipv4
+    ipv6
+  }
+  dns
+  enableSRIOV
+  ipVersion
+  hypervisorType
+  ipCapacity {
+    ...ipCapacityFields
+  }
+  ipRanges {
+    ...IpRangeFields
+  }
+  lastOpDate
+  l2NetworkUuid
+  ipAllocateStrategy
+  l2Network {
+    name
+    uuid
+    type
+    physicalInterface
+    virtualNetworkId
+    vSwitchType
+    enableSRIOV
+
+    attachedClusterUuids
+  }
+  vSwitchUuid
+  vSwitch {
+    name
+    uuid
+    type
+    physicalInterface
+    virtualNetworkId
+    vSwitchType
+    enableSRIOV
+
+    attachedClusterUuids
+  }
+  networkTypeName
+  networkType
+  networkServices {
+    networkServiceType
+  }
+  name
+  mtu
+  owner {
+    name
+    uuid
+    type
+    linkedAccountUuid
+  }
+  type
+  uuid
+  shareType
+
+  # vpcVRouter {
+  #   name
+  #   uuid
+  # }
+  isDefault
+  hasDefaultKernel
+  portGroup {
+    uuid
+    vlanId
+  }
+}
+
+query queryL3NetworkList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: L3NetworkQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l3NetworkList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...l3NetworkFields
+    }
+    total
+  }
+}
+
+query l3NetworkCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: L3NetworkQueryType
+  $extraConditions: [Condition!]
+) {
+  getL3NetworkCount(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+  ) {
+    total
+  }
+}
+
+query l3Network($uuid: String!) {
+  l3Network(uuid: $uuid) {
+    ...l3NetworkFields
+    usedIpCount
+  }
+}
+
+query ipRangeList($conditions: [Condition!], $start: Int, $limit: Int) {
+  ipRangeList(conditions: $conditions, start: $start, limit: $limit) {
+    list {
+      ...IpRangeFields
+    }
+    total
+  }
+}
+
+query dnsList($conditions: [Condition!], $start: Int, $limit: Int) {
+  dnsList(conditions: $conditions, start: $start, limit: $limit) {
+    list {
+      dns
+      l3NetworkUuid
+    }
+    total
+  }
+}
+
+query ipStatistics(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  ipStatistics(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      vmInstanceName
+      vmInstanceUuid
+      vipName
+      vipUuid
+      ip
+      resourceTypes
+      vmInstanceType
+      applianceVmOwnerUuid
+      resourceOwnerUuid
+      hostKernelInterface {
+        uuid
+        name
+        hostUuid
+        host {
+          uuid
+          name
+        }
+      }
+      vmInstance {
+        uuid
+        name
+        vmNics {
+          ip
+          uuid
+          internalName
+          usedIps {
+            ip
+            uuid
+          }
+          mac
+        }
+      }
+      templatedVmInstance {
+        uuid
+        name
+        vmNics {
+          uuid
+          ip
+          mac
+          internalName
+          usedIps {
+            uuid
+            ip
+          }
+        }
+      }
+    }
+    total
+  }
+}
+
+query getFreeIp($input: GetFreeIpInput!) {
+  getFreeIp(input: $input) {
+    ipv4List
+    ipv6List
+  }
+}
+
+query getFreeIpOfL3Network($l3NetworkUuid: String!, $ipVersion: Int) {
+  getFreeIpOfL3Network(l3NetworkUuid: $l3NetworkUuid, ipVersion: $ipVersion) {
+    ipv4List
+    ipv6List
+  }
+}
+
+query getFreeIpOfIpRange($ipRangeUuid: String!, $ipVersion: Int) {
+  getFreeIpOfIpRange(ipRangeUuid: $ipRangeUuid, ipVersion: $ipVersion) {
+    ipv4List
+    ipv6List
+  }
+}
+
+mutation checkIpAvailability($input: CheckIpAvailabilityParam!) {
+  checkIpAvailability(input: $input) {
+    available
+  }
+}
+
+mutation createL3Network($input: CreateL3NetworkInput!) {
+  createL3Network(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteL3Network($input: DeleteL3NetworkInput!) {
+  deleteL3Network(input: $input) {
+    actionId
+  }
+}
+
+mutation addDnsToL3Network($input: AddDnsToL3NetworkInput!) {
+  addDnsToL3Network(input: $input) {
+    actionId
+  }
+}
+
+mutation addIpRange($input: AddIpRangeInput!) {
+  addIpRange(input: $input) {
+    actionId
+  }
+}
+
+mutation addIpRangeByCidr($input: AddIpRangeByCidrInput!) {
+  addIpRangeByCidr(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteIpRange($input: DeleteIpRangeInput!) {
+  deleteIpRange(input: $input) {
+    actionId
+  }
+}
+
+mutation removeDnsFromL3Network($input: RemoveDnsFromL3NetworkInput!) {
+  removeDnsFromL3Network(input: $input) {
+    actionId
+  }
+}
+
+mutation detachVirtualRouterOffering($input: DetachVirtualRouterOfferingInput!) {
+  detachVirtualRouterOffering(input: $input) {
+    actionId
+  }
+}
+
+mutation attachL3NetworkToVm($input: AttachL3NetworkToVmInput!) {
+  attachL3NetworkToVm(input: $input) {
+    actionId
+  }
+}
+
+mutation detachL3NetworkFromVm($input: DetachL3NetworkFromVmInput!) {
+  detachL3NetworkFromVm(input: $input) {
+    actionId
+  }
+}
+
+query getAttachableVpcL3NetworkList($uuid: String!) {
+  getAttachableVpcL3NetworkList(uuid: $uuid) {
+    total
+    list {
+      ...l3NetworkFields
+    }
+  }
+}
+
+query getMemorySnapByL3NetWorkList($l3NetworkUuids: [String!]!) {
+  getMemorySnapByL3NetWorkList(l3NetworkUuids: $l3NetworkUuids) {
+    snapNameList {
+      name
+    }
+    uuidList {
+      uuid
+    }
+  }
+}
+
+# query getL3NetworkMonitorDataList(
+#   $uuid: String!
+#   $metricName: String!
+#   $period: Float!
+#   $startTime: Float!
+#   $endTime: Float!
+# ) {
+#   l3NetworkMonitorDataList(
+#     uuid: $uuid
+#     metricName: $metricName
+#     period: $period
+#     startTime: $startTime
+#     endTime: $endTime
+#   ) {
+#     time
+#     value
+#     labels {
+#       VMUuid
+#     }
+#   }
+# }
+
+query l3NetworkCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: L3NetworkQueryType
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l3NetworkList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}

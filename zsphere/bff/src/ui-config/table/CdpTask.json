@@ -1,0 +1,253 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "vmInstance",
+          "cdpCapacityUtilization",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "vmInstance",
+          "cdpCapacityUtilization",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "cdpTaskStatus",
+            "defaultMessage": "Task Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "vmInstance",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm",
+            "defaultMessage": "Virtual Machine"
+          },
+          "queryType": "input",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "cdpCapacityUtilization",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cdpCapacityUtilization",
+            "defaultMessage": "CDP Capacity Utilization"
+          },
+          "queryType": "",
+          "resource": "cdp.task"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "cdp.task"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable.cdptask",
+          "disable.cdptask"
+        ],
+        "activeKeys": [
+          "edit.cdptask",
+          "modify.protection.policy",
+          "modify.running.policy",
+          "delete.cdptask"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit.cdptask",
+          "enable.cdptask",
+          "disable.cdptask",
+          "modify.protection.policy",
+          "modify.running.policy",
+          "delete.cdptask"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.cdptask",
+          "enable.cdptask",
+          "disable.cdptask"
+        ],
+        "activeKeys": [
+          "delete.cdptask"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.cdptask",
+        "resource": "cdp.task",
+        "authKey": "create.cdptask",
+        "i18nKey": "create.cdptask",
+        "name": "创建CDP任务",
+        "label": "创建CDP任务",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.cdptask",
+        "resource": "cdp.task",
+        "authKey": "edit.cdptask",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable.cdptask",
+        "resource": "cdp.task",
+        "authKey": "enable.cdptask",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable.cdptask",
+        "resource": "cdp.task",
+        "authKey": "disable.cdptask",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.protection.policy",
+        "resource": "cdp.task",
+        "authKey": "modify.protection.policy",
+        "i18nKey": "modify.protection.policy",
+        "name": "修改保护策略",
+        "label": "修改保护策略",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.running.policy",
+        "resource": "cdp.task",
+        "authKey": "modify.running.policy",
+        "i18nKey": "modify.running.policy",
+        "name": "修改任务运行策略",
+        "label": "修改任务运行策略",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.cdptask",
+        "resource": "cdp.task",
+        "authKey": "delete.cdptask",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

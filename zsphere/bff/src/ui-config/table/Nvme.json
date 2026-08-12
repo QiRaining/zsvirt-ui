@@ -1,0 +1,196 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "scsi-lun.count",
+          "nqn"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "nvme"
+        }
+      },
+      {
+        "accessorKey": "scsi-lun.count",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "scsi.lun.count",
+            "defaultMessage": "LUNs"
+          },
+          "queryType": "",
+          "resource": "nvme"
+        }
+      },
+      {
+        "accessorKey": "nqn",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "NQN",
+            "defaultMessage": "NQN"
+          },
+          "queryType": "",
+          "resource": "nvme"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "nvme"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main",
+        "extraKeys": [
+          "refresh"
+        ]
+      },
+      {
+        "view": "sub.virtualization.data.storage/header",
+        "activeKeys": [
+          "virtualization.add.data.storage"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/header",
+        "extraKeys": [
+          "virtualization.edit.name"
+        ],
+        "activeKeys": [
+          "virtualization.sync.data",
+          "virtualization.add.data.storage",
+          "virtualization.attach.cluster",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.add.nvmeStorage"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.data.storage",
+        "resource": "nvme",
+        "authKey": "add.data.storage",
+        "i18nKey": "add.data.storage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "refresh",
+        "resource": "nvme",
+        "authKey": "refresh",
+        "i18nKey": "refresh.fiber.channel.storage",
+        "name": "同步设备信息",
+        "label": "同步设备信息",
+        "icon": "sync",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.nvmeStorage",
+        "resource": "nvme",
+        "authKey": "virtualization.add.nvmeStorage",
+        "i18nKey": "virtualization.add.nvmeStorage",
+        "name": "添加NVMe存储",
+        "label": "添加NVMe存储",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.name",
+        "resource": "nvme",
+        "authKey": "virtualization.edit.name",
+        "i18nKey": "virtualization.edit.name",
+        "name": "编辑名称",
+        "label": "编辑名称",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.sync.data",
+        "resource": "nvme",
+        "authKey": "virtualization.sync.data",
+        "i18nKey": "virtualization.sync.data",
+        "name": "同步数据",
+        "label": "同步数据",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.data.storage",
+        "resource": "nvme",
+        "authKey": "virtualization.add.data.storage",
+        "i18nKey": "virtualization.add.data.storage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.attach.cluster",
+        "resource": "nvme",
+        "authKey": "virtualization.attach.cluster",
+        "i18nKey": "virtualization.attach.cluster",
+        "name": "加载集群",
+        "label": "加载集群",
+        "icon": "",
+        "dividerKey": "virtualization.attach.cluster-divider"
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "nvme",
+        "authKey": "virtualization.delete",
+        "i18nKey": "virtualization.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

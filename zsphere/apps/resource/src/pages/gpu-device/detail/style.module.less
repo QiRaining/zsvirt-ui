@@ -1,0 +1,28 @@
+@import "../../../theme.less";
+
+.container {
+  height: 100%;
+
+  .tabs {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .list-content {
+      padding: 24px;
+    }
+  }
+
+  :global {
+    .ant-tabs {
+      height: 100%;
+      .ant-tabs-content {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.alert-font {
+  color: @alert-600;
+}

@@ -1,0 +1,358 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.vcenter",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vcenter",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "toPublic"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "avaliableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "input",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      },
+      {
+        "accessorKey": "vpcVRouter",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vpc.vrouter",
+            "defaultMessage": "VPC vRouter"
+          },
+          "queryType": "",
+          "resource": "vcenter.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.vcenter/header",
+        "activeKeys": [
+          "edit",
+          "add.ip.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vcenter/row",
+        "activeKeys": [
+          "add.ip.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vcenter/toolbar",
+        "extraKeys": [
+          "create.network"
+        ],
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.network",
+        "resource": "vcenter.network",
+        "authKey": "create.network",
+        "i18nKey": "create.network",
+        "name": "创建网络",
+        "label": "创建网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vcenter.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ip.range",
+        "resource": "vcenter.network",
+        "authKey": "add.ip.range",
+        "i18nKey": "add.networkRange",
+        "name": "添加网络段",
+        "label": "添加网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dns",
+        "resource": "vcenter.network",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.mode",
+        "resource": "vcenter.network",
+        "authKey": "set.share.mode",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vcenter.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vcenter.network",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

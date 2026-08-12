@@ -1,0 +1,131 @@
+@import "../../../theme.less";
+
+.icondot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.icondot-danger {
+  .icondot;
+  background-color: @danger-500;
+}
+
+.icondot-normal {
+  .icondot;
+  background-color: @positive-500;
+}
+
+.console-enabled {
+  color: @color-600 !important;
+  cursor: pointer;
+
+  &:hover {
+    color: @color-500;
+  }
+}
+
+.console-disabled {
+  color: @neutral-500 !important;
+  cursor: not-allowed;
+}
+
+.empty {
+  color: @neutral-500;
+}
+
+.create-vm-btn {
+  .more {
+    margin: 0 auto;
+  }
+
+  :global {
+    .ant-btn-primary {
+      border-radius: 2px !important;
+    }
+
+    .ant-dropdown-trigger {
+      margin-left: 2px !important;
+      width: 40px;
+
+      &:hover,
+      &:focus {
+        color: @neutral-0;
+        background-color: @color-700;
+      }
+    }
+
+    .ant-dropdown-menu-vertical {
+      padding: 4px 0;
+    }
+
+    .ant-dropdown-menu-item {
+      min-width: 134px;
+      padding: 5px 12px;
+
+      &:hover {
+        background-color: @neutral-100;
+      }
+    }
+  }
+}
+
+.groupText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vm-tag {
+  margin-bottom: 0 !important;
+}
+
+.os-icon {
+  margin-left: 4px;
+}
+
+.progressBar {
+  padding-right: 20px;
+}
+
+.guestToolTooltip :global(.ant-tooltip-inner),
+.guestToolWrapper {
+  display: flex;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+
+  .guestToolAlertIcon {
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  :global {
+    .zstack-state {
+      display: contents;
+
+      .zstack-state-name {
+        margin-left: 0;
+      }
+
+      .zstack-icon {
+        margin-right: 4px;
+        vertical-align: -0.135em;
+      }
+    }
+  }
+}
+
+.guestToolTooltip {
+  :global {
+    .zstack-state {
+      .zstack-icon {
+        display: none;
+      }
+    }
+  }
+}

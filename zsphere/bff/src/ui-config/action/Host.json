@@ -1,0 +1,1324 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "web.terminal",
+          "state",
+          "status",
+          "managementIp",
+          "cluster",
+          "average.cpu.usage",
+          "memory.usage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.custom",
+        "keys": [
+          "name",
+          "uuid",
+          "web.terminal",
+          "state",
+          "status",
+          "ipmiPowerStatus",
+          "managementIp",
+          "__tagUuid__",
+          "architecture",
+          "cluster",
+          "hypervisorType",
+          "average.cpu.usage",
+          "memory.usage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "__tagUuid__",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.v2v.conversion.host",
+        "keys": [
+          "name",
+          "managementIp",
+          "cluster",
+          "hypervisorType"
+        ]
+      },
+      {
+        "view": "select.virtualization.hostKernelInterface",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vm.migration",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "cluster",
+          "hypervisorType",
+          "average.cpu.usage",
+          "memory.usage"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host-group",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster",
+        "keys": [
+          "name",
+          "web.terminal",
+          "state",
+          "status",
+          "managementIp",
+          "average.cpu.usage",
+          "memory.usage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-lun",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host-group",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.lun",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.not.in.vswitch",
+        "keys": [
+          "host.for.bond",
+          "bondingName",
+          "bond.compose",
+          "bond.mode",
+          "virtualization.hashPolicy"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvmelun",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.tag",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "managementIp",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "web.terminal",
+          "state",
+          "status",
+          "managementIp",
+          "cluster",
+          "average.cpu.usage",
+          "memory.usage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.custom",
+        "keys": [
+          "name",
+          "web.terminal",
+          "state",
+          "status",
+          "ipmiPowerStatus",
+          "managementIp",
+          "__tagUuid__",
+          "architecture",
+          "cluster",
+          "hypervisorType",
+          "cpuNum",
+          "memorySize",
+          "average.cpu.usage",
+          "memory.usage",
+          "runtime",
+          "ipmiAddress",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "web.terminal",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "web.terminal",
+            "defaultMessage": "Web Terminal"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "ipmiPowerStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "power.status",
+            "defaultMessage": "Power Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "virtualCapacityUtilization",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtual.capacity.utilization",
+            "defaultMessage": "Virtual Capacity Utilization"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "physicalCapacityUtilization",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physical.capacity.utilization",
+            "defaultMessage": "Physical Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "managementIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "host.ip",
+            "defaultMessage": "Host IP"
+          },
+          "queryType": "input",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "__tagUuid__",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "multipleSelect",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cluster",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisor.type",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "memorySize",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "average.cpu.usage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.allocation.rate",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "memory.usage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.allocation.rate",
+            "defaultMessage": "Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "qemuState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "qemuState",
+            "defaultMessage": "QEMU Version State"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "runtime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "runtime",
+            "defaultMessage": "Uptime"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "ipmiAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "host.ipmi.address",
+            "defaultMessage": "IPMI Address"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "host.for.bond",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "bondingName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bonding.name",
+            "defaultMessage": "Bond Name"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "bond.compose",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bond.compose",
+            "defaultMessage": "Bond Components"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "bond.mode",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bond.mode",
+            "defaultMessage": "Bond Mode"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      },
+      {
+        "accessorKey": "virtualization.hashPolicy",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.HashPolicy",
+            "defaultMessage": "Hash Policy"
+          },
+          "queryType": "",
+          "resource": "host"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "enter.web.terminal",
+          "edit",
+          "add.bond",
+          "update.ipmi.info",
+          "modify.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "enter.web.terminal",
+          "edit",
+          "add.bond",
+          "update.ipmi.info",
+          "modify.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "add.bond",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.host-group/row",
+        "activeKeys": [
+          "host.group.remove.host"
+        ]
+      },
+      {
+        "view": "sub.host-group/toolbar",
+        "extraKeys": [
+          "host.group.add.host",
+          "host.group.remove.host"
+        ]
+      },
+      {
+        "view": "sub.virtualization.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/row",
+        "activeKeys": [
+          "create.instance",
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "enter.web.terminal",
+          "edit",
+          "edit.config",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "update.ipmi.info",
+          "update.ssh.info",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/toolbar",
+        "extraKeys": [
+          "virtualization.add.host",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-lun/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-lun/toolbar"
+      },
+      {
+        "view": "sub.virtualization.host-group/row",
+        "activeKeys": [
+          "host.group.remove.host"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host-group/toolbar",
+        "extraKeys": [
+          "host.group.add.host",
+          "host.group.remove.host"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.lun/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.lun/toolbar"
+      },
+      {
+        "view": "sub.virtualization.not.in.vswitch/row",
+        "activeKeys": [
+          "attach.to.l2VSwitch"
+        ]
+      },
+      {
+        "view": "sub.virtualization.not.in.vswitch/toolbar"
+      },
+      {
+        "view": "sub.virtualization.nvmelun/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "enter.web.terminal",
+          "edit",
+          "edit.config",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "update.ipmi.info",
+          "update.ssh.info",
+          "modify.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.tag/row",
+        "activeKeys": [
+          "virtualization.tag.detach.tag"
+        ]
+      },
+      {
+        "view": "sub.virtualization.tag/toolbar",
+        "extraKeys": [
+          "virtualization.tag.attach.host",
+          "virtualization.tag.detach.tag"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "create.instance",
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "enter.web.terminal",
+          "edit",
+          "edit.config",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "update.ipmi.info",
+          "update.ssh.info",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.add.host",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "create.instance",
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "enter.web.terminal",
+          "edit",
+          "edit.config",
+          "virtualization.zskernel.create",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "update.ipmi.info",
+          "update.ssh.info",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "create.instance",
+          "enable",
+          "disable",
+          "reconnection",
+          "power.control",
+          "power.control.power.on",
+          "power.control.power.off",
+          "power.control.reboot",
+          "maintenance",
+          "exit.maintenanceMode",
+          "enter.web.terminal",
+          "edit",
+          "edit.config",
+          "virtualization.zskernel.create",
+          "virtualization.tag.and.attribute",
+          "tag.management",
+          "virtualization.set.resource.attribute",
+          "update.ipmi.info",
+          "update.ssh.info",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.instance",
+        "resource": "host",
+        "authKey": "create.instance",
+        "i18nKey": "create.instance",
+        "name": "新建虚拟机",
+        "label": "新建虚拟机",
+        "icon": "",
+        "dividerKey": "create.instance-divider"
+      },
+      {
+        "key": "virtualization.add.host",
+        "resource": "host",
+        "authKey": "virtualization.add.host",
+        "i18nKey": "virtualization.add.host",
+        "name": "添加主机",
+        "label": "添加主机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "host",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "host",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnection",
+        "resource": "host",
+        "authKey": "reconnection",
+        "i18nKey": "reconnect",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "power.control",
+        "resource": "host",
+        "authKey": "power.control",
+        "i18nKey": "power.control",
+        "name": "电源控制",
+        "label": "电源控制",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 3,
+        "children": [
+          {
+            "key": "power.control.power.on",
+            "resource": "host",
+            "authKey": "power.control.power.on",
+            "i18nKey": "power.on",
+            "name": "开机",
+            "label": "开机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "power.control.power.off",
+            "resource": "host",
+            "authKey": "power.control.power.off",
+            "i18nKey": "power.off",
+            "name": "关机",
+            "label": "关机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "power.control.reboot",
+            "resource": "host",
+            "authKey": "power.control.reboot",
+            "i18nKey": "reboot",
+            "name": "重启",
+            "label": "重启",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "maintenance",
+        "resource": "host",
+        "authKey": "maintenance",
+        "i18nKey": "enter.maintenanceMode",
+        "name": "进入维护模式",
+        "label": "进入维护模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "exit.maintenanceMode",
+        "resource": "host",
+        "authKey": "exit.maintenanceMode",
+        "i18nKey": "exit.maintenanceMode",
+        "name": "退出维护模式",
+        "label": "退出维护模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "enter.web.terminal",
+        "resource": "host",
+        "authKey": "enter.web.terminal",
+        "i18nKey": "enter.web.terminal",
+        "name": "进入Web终端",
+        "label": "进入Web终端",
+        "icon": "",
+        "dividerKey": "enter.web.terminal-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "host",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.config",
+        "resource": "host",
+        "authKey": "edit.config",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.zskernel.create",
+        "resource": "host",
+        "authKey": "virtualization.zskernel.create",
+        "i18nKey": "virtualization.zskernel.create",
+        "name": "新建Kernel适配器",
+        "label": "新建Kernel适配器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.tag.and.attribute",
+        "resource": "host",
+        "authKey": "virtualization.tag.and.attribute",
+        "i18nKey": "virtualization.tag.and.attribute",
+        "name": "标签与属性",
+        "label": "标签与属性",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "tag.management",
+            "resource": "host",
+            "authKey": "tag.management",
+            "i18nKey": "tag.management",
+            "name": "标签管理",
+            "label": "标签管理",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "virtualization.set.resource.attribute",
+            "resource": "host",
+            "authKey": "virtualization.set.resource.attribute",
+            "i18nKey": "set.resource.attribute",
+            "name": "设置自定义属性",
+            "label": "设置自定义属性",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "add.bond",
+        "resource": "host",
+        "authKey": "add.bond",
+        "i18nKey": "add.AggPort",
+        "name": "添加聚合口",
+        "label": "添加聚合口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.ipmi.info",
+        "resource": "host",
+        "authKey": "update.ipmi.info",
+        "i18nKey": "update.ipmi.info",
+        "name": "更新IPMI信息",
+        "label": "更新IPMI信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.ssh.info",
+        "resource": "host",
+        "authKey": "update.ssh.info",
+        "i18nKey": "update.ssh.info",
+        "name": "更新SSH信息",
+        "label": "更新SSH信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.password",
+        "resource": "host",
+        "authKey": "modify.password",
+        "i18nKey": "update.ssh.password",
+        "name": "更新SSH密码",
+        "label": "更新SSH密码",
+        "icon": "",
+        "dividerKey": "modify.password-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "host",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "host",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "host",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.group.add.host",
+        "resource": "host",
+        "authKey": "host.group.add.host",
+        "i18nKey": "host.group.add.host",
+        "name": "添加物理机",
+        "label": "添加物理机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.group.remove.host",
+        "resource": "host",
+        "authKey": "host.group.remove.host",
+        "i18nKey": "host.group.remove.host",
+        "name": "移除物理机",
+        "label": "移除物理机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.tag.attach.host",
+        "resource": "host",
+        "authKey": "virtualization.tag.attach.host",
+        "i18nKey": "virtualization.bind",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.tag.detach.tag",
+        "resource": "host",
+        "authKey": "virtualization.tag.detach.tag",
+        "i18nKey": "virtualization.unbind",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.to.l2VSwitch",
+        "resource": "host",
+        "authKey": "attach.to.l2VSwitch",
+        "i18nKey": "join.bond",
+        "name": "加入上行链路",
+        "label": "加入上行链路",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

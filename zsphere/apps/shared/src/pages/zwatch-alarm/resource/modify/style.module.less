@@ -1,0 +1,104 @@
+@import "../../../../theme.less";
+
+.formStep {
+  padding: 20px 24px 30px;
+  background-color: @neutral-0;
+}
+
+.formItem {
+  margin-bottom: 0 !important;
+}
+
+.split {
+  margin: 0 8px;
+  color: @neutral-700;
+}
+
+.noMarginBottom {
+  margin-bottom: 0 !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-400 {
+  width: 400px !important;
+}
+
+.marginLeft20 {
+  margin-left: 20px;
+}
+
+.caption {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+}
+
+.commonCard() {
+  margin-bottom: 12px;
+  border-radius: 2px;
+  background-color: @neutral-0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  .commonCard;
+  padding: 24px 24px 4px;
+}
+
+.tabsCard {
+  .commonCard;
+  margin-bottom: 12px;
+
+  :global {
+    .ant-tabs-content-holder {
+      padding: 24px 24px 4px;
+    }
+
+    .zstack-table-select-item-summary {
+      > span {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-right: 8px;
+          padding-right: 8px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 16px;
+            background-color: @neutral-300;
+          }
+        }
+      }
+    }
+  }
+}
+
+.trigger-rule {
+  flex-wrap: nowrap !important;
+  :global {
+    .zstack-form-item {
+      margin-bottom: 0;
+    }
+  }
+}

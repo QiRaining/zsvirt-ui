@@ -1,0 +1,250 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "se.name",
+          "se.vm",
+          "se.type",
+          "status",
+          "se.createdate",
+          "se.host"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "se.name",
+          "se.type",
+          "status",
+          "se.createdate",
+          "se.host"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "se.name",
+          "se.vm",
+          "se.type",
+          "status",
+          "se.createdate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "se.name",
+          "se.type",
+          "status",
+          "se.createdate",
+          "se.host"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "se.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "se"
+        }
+      },
+      {
+        "accessorKey": "se.vm",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm.instance",
+            "defaultMessage": "Virtual Machine"
+          },
+          "queryType": "",
+          "resource": "se"
+        }
+      },
+      {
+        "accessorKey": "se.type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "se"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "se"
+        }
+      },
+      {
+        "accessorKey": "se.createdate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createdate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "se"
+        }
+      },
+      {
+        "accessorKey": "se.host",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "se"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "se.attachvm",
+          "se.detachvm",
+          "se.delete"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "se.create"
+        ],
+        "activeKeys": [
+          "se.detachvm",
+          "se.delete"
+        ]
+      },
+      {
+        "view": "sub.vm/row",
+        "activeKeys": [
+          "se.detach"
+        ]
+      },
+      {
+        "view": "sub.vm/toolbar",
+        "extraKeys": [
+          "se.attach"
+        ],
+        "activeKeys": [
+          "se.detach"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "se.attachvm",
+        "resource": "se",
+        "authKey": "se.attachvm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "se.detachvm",
+        "resource": "se",
+        "authKey": "se.detachvm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "se.delete",
+        "resource": "se",
+        "authKey": "se.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "se.attach",
+        "resource": "se",
+        "authKey": "se.attach",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "se.detach",
+        "resource": "se",
+        "authKey": "se.detach",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "se.create",
+        "resource": "se",
+        "authKey": "se.create",
+        "i18nKey": "se.create",
+        "name": "创建SE设备",
+        "label": "创建SE设备",
+        "icon": "plus",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

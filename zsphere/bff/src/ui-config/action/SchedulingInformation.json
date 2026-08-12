@@ -1,0 +1,145 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "advice.migration.vm",
+          "current.host",
+          "advice.target.host",
+          "reason",
+          "executeStatus",
+          "adviceCreateTime"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "advice.migration.vm",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "advice.migration.vm",
+            "defaultMessage": "VM To Be Migrated"
+          },
+          "queryType": "input",
+          "resource": "scheduling.information"
+        }
+      },
+      {
+        "accessorKey": "current.host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "current.host",
+            "defaultMessage": "Current Host"
+          },
+          "queryType": "input",
+          "resource": "scheduling.information"
+        }
+      },
+      {
+        "accessorKey": "advice.target.host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "advice.target.host",
+            "defaultMessage": "Recommended Destination Host"
+          },
+          "queryType": "input",
+          "resource": "scheduling.information"
+        }
+      },
+      {
+        "accessorKey": "reason",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "reason",
+            "defaultMessage": "Reason"
+          },
+          "queryType": "",
+          "resource": "scheduling.information"
+        }
+      },
+      {
+        "accessorKey": "executeStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "executeStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "scheduling.information"
+        }
+      },
+      {
+        "accessorKey": "adviceCreateTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "adviceCreateTime",
+            "defaultMessage": "Recommended Creation Time"
+          },
+          "queryType": "",
+          "resource": "scheduling.information"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "execute.dispatch"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "execute.dispatch",
+        "resource": "scheduling.information",
+        "authKey": "execute.dispatch",
+        "i18nKey": "execute.dispatch",
+        "name": "执行调度",
+        "label": "执行调度",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

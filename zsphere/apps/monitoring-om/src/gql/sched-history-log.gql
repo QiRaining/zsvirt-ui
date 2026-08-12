@@ -1,0 +1,50 @@
+query schedHistoryLogList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  schedHistoryLogList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+    success
+    accountUuid
+    destHostUuid
+    vmInstanceUuid
+    lastHostUuid
+    owner{
+    uuid
+    name
+    type
+    }
+      createDate
+      lastOpDate
+      schedType
+      destHost{
+      name
+      uuid
+      }
+      preHost{
+      name
+      uuid
+      }
+      vmInstance{
+      name
+      uuid
+      type
+      }
+      # vpcVRouter{
+      # uuid
+      # virtualRouterVips
+      # } 
+      slbUuid
+    }
+  }
+}

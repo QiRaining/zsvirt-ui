@@ -1,0 +1,35 @@
+query licenseRecordsList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  licenseRecordsList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      expired
+      expiredDate
+      issuedDate
+      licenseType
+      managementNodeUuid
+      modules
+      uploadDate
+      user
+      name
+      hostNum
+      cpuNum
+      source
+      vmNum
+      uuid
+      uid
+      prodInfo
+      quotaType
+    }
+    total
+  }
+}

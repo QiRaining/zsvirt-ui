@@ -1,0 +1,545 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select.eip",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Cidr",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Cidr",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "select.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Capacity"
+        ]
+      },
+      {
+        "view": "select.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway"
+        ]
+      },
+      {
+        "view": "select.load.balancer",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "select.vip-network",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "netmask",
+          "gateway",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "select.vip-network.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "netmask",
+          "gateway",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "select.vip-network.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "sub.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "sub.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "sub.public.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "sub.public.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "sub.share.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "sub.share.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "sub.share.public.ipv4",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "sub.share.public.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "ipRangeType",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      },
+      {
+        "view": "virtualization.sub.l3network",
+        "keys": [
+          "startIp",
+          "endIp",
+          "netmask",
+          "gateway",
+          "ipv4Capacity",
+          "ipv4Cidr"
+        ]
+      },
+      {
+        "view": "virtualization.sub.l3network.ipv6",
+        "keys": [
+          "startIp",
+          "endIp",
+          "prefixLen",
+          "gateway",
+          "addressMode",
+          "ipv6Cidr"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "startIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "startIp",
+            "defaultMessage": "Start IP"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "endIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "endIp",
+            "defaultMessage": "End IP"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "ipRangeType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ipRangeType",
+            "defaultMessage": "Network Range Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "prefixLen",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "prefixLength",
+            "defaultMessage": "Prefix Length"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "netmask",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "netmask",
+            "defaultMessage": "Netmask"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "gateway",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "gateway",
+            "defaultMessage": "Gateway"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "ipv4Capacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "addressMode",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "addressMode",
+            "defaultMessage": "IP Assign Mode"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "ip.range"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ip.range"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.ipv4/row",
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.ipv4/toolbar",
+        "extraKeys": [
+          "add.ip.range"
+        ],
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.ipv6/row",
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.ipv6/toolbar",
+        "extraKeys": [
+          "add.ip.range"
+        ],
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.public.ipv4/row",
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.public.ipv4/toolbar",
+        "extraKeys": [
+          "add.ip.range"
+        ],
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.public.ipv6/row",
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.public.ipv6/toolbar",
+        "extraKeys": [
+          "add.ip.range"
+        ],
+        "activeKeys": [
+          "set.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.share.ipv4/row"
+      },
+      {
+        "view": "sub.share.ipv4/toolbar"
+      },
+      {
+        "view": "sub.share.public.ipv6/row"
+      },
+      {
+        "view": "sub.share.public.ipv6/toolbar"
+      },
+      {
+        "view": "virtualization.sub.l3network.ipv6/row",
+        "activeKeys": [
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.l3network.ipv6/toolbar",
+        "extraKeys": [
+          "virtualization.add.ipRange",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.l3network/row",
+        "activeKeys": [
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.l3network/toolbar",
+        "extraKeys": [
+          "virtualization.add.ipRange",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.ip.range",
+        "resource": "ip.range",
+        "authKey": "add.ip.range",
+        "i18nKey": "add.networkRange",
+        "name": "添加网络段",
+        "label": "添加网络段",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share",
+        "resource": "ip.range",
+        "authKey": "set.share",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "ip.range",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.ipRange",
+        "resource": "ip.range",
+        "authKey": "virtualization.add.ipRange",
+        "i18nKey": "add.ipRange",
+        "name": "添加网络段",
+        "label": "添加网络段",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "ip.range",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "model",
+          "type",
+          "identifier",
+          "speed",
+          "target",
+          "device"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "input",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "identifier",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.adapter.identifier",
+            "defaultMessage": "Identifier"
+          },
+          "queryType": "input",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "speed",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.adapter.speed",
+            "defaultMessage": "Speed"
+          },
+          "queryType": "",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "target",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.adapter.target",
+            "defaultMessage": "Target"
+          },
+          "queryType": "",
+          "resource": "storage.adapter"
+        }
+      },
+      {
+        "accessorKey": "device",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device",
+            "defaultMessage": "Device"
+          },
+          "queryType": "",
+          "resource": "storage.adapter"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "virtualization.edit"
+        ]
+      },
+      {
+        "view": "main/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.edit",
+        "resource": "host",
+        "authKey": "virtualization.edit",
+        "i18nKey": "editConfig",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "edit",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

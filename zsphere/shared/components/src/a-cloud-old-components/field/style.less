@@ -1,0 +1,170 @@
+@import "../../style/vars.less";
+
+.@{prefix}-field-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: @neutral-800;
+
+  &-top {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: @neutral-600;
+    font-weight: normal;
+
+    &-icon {
+      color: @neutral-400;
+      margin-right: 4px;
+      font-size: 16px;
+    }
+  }
+}
+
+.@{prefix}-field-horizontal {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 22px;
+  color: @neutral-700;
+
+  &:last-child:not(:first-child) {
+    margin-bottom: 0;
+  }
+
+  &-left {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    width: 120px;
+    margin-right: 8px;
+    color: @neutral-600;
+
+    &-label {
+      margin-right: 4px;
+      overflow: hidden;
+      // word-break: break-word;
+      &-text-wrapper {
+        .ant-typography {
+          color: @neutral-600;
+        }
+      }
+
+      &-colon {
+        display: inline-block;
+        position: relative;
+        top: -1px;
+        margin-left: 4px;
+      }
+
+      &-icon {
+        color: @neutral-400;
+        font-size: 16px;
+        margin-left: 4px;
+        color: @neutral-400;
+        cursor: pointer;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: @color-600;
+        }
+      }
+    }
+  }
+
+  &-value {
+    flex: 1;
+    overflow: hidden;
+    // text-overflow: ellipsis;
+
+    a.ant-typography {
+      color: @color-600;
+    }
+
+    &-hover-show-icon {
+      .anticon-edit,
+      .anticon-copy,
+      .@{prefix}-field-horizontal-icon {
+        font-size: 16px;
+        display: none !important;
+      }
+
+      &:hover {
+        .anticon-edit,
+        .anticon-copy,
+        .@{prefix}-field-horizontal-icon {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+
+  &-none {
+    color: @neutral-500;
+
+    &.ant-typography {
+      color: @neutral-500;
+    }
+  }
+
+  .ant-typography {
+    margin-bottom: 0;
+  }
+}
+
+.@{prefix}-field-group-vertical {
+  .@{prefix}-field-vertical {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+}
+
+.@{prefix}-field-group-horizontal {
+  padding: 4px 32px 4px 8px;
+  margin-bottom: 4px;
+  position: relative;
+  top: -4px;
+  left: -8px;
+  width: calc(100% + 16px);
+
+  &-edit {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    cursor: pointer;
+    color: @color-600;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-disabled-edit {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    color: @neutral-500;
+    cursor: not-allowed;
+  }
+
+  .@{prefix}-field-horizontal {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.@{prefix}-field-group-horizontal-hover {
+  &:hover {
+    background-color: @neutral-100 !important;
+  }
+}

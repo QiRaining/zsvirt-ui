@@ -1,0 +1,849 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "ipv4",
+          "ipv6",
+          "managementIp",
+          "manage.network.ip",
+          "cluster",
+          "state",
+          "status",
+          "qemuState",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.custom",
+        "keys": [
+          "name",
+          "uuid",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "ipv4",
+          "ipv6",
+          "managementIp",
+          "manage.network.ip",
+          "hypervisorType",
+          "cluster",
+          "state",
+          "status",
+          "qemuState",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "cluster",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec.up",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec.upgrade",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6"
+        ]
+      },
+      {
+        "view": "select.v-router-route-table",
+        "keys": [
+          "name",
+          "ipv4",
+          "cluster",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vpc.network",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "hypervisorType",
+          "cluster",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "cluster",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.account",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "ipv4",
+          "cluster",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "ipv4",
+          "ipv6",
+          "cluster",
+          "state",
+          "ownerHaGroup",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.primary.storage",
+        "keys": [
+          "name",
+          "console",
+          "cpuNum",
+          "memorySize",
+          "ipv4",
+          "ipv6",
+          "cluster",
+          "state",
+          "ownerHaGroup",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.project",
+        "keys": [
+          "name",
+          "ipv4",
+          "ipv6",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.v-router-route-table",
+        "keys": [
+          "name",
+          "ipv4",
+          "cluster",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "console",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "console",
+            "defaultMessage": "Console"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.size",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "ipv4",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv4.address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "ipv6",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv6.address",
+            "defaultMessage": "IPv6 Address"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "managementIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hostIp",
+            "defaultMessage": "Host IP"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "manage.network.ip",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "managementIp",
+            "defaultMessage": "Management IP"
+          },
+          "queryType": "input",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization",
+            "defaultMessage": "Virtualization"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "cluster",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "qemuState",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "qemuState",
+            "defaultMessage": "qemuState"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "ownerHaGroup",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "ha.group",
+            "defaultMessage": "HA Group"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vpc.vrouter"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "edit",
+          "open.console",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "change.host.and.primary.storage",
+          "setHaStickStragedy",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "open.console",
+          "start",
+          "stop",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "change.host.and.primary.storage",
+          "setHaStickStragedy",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vpc",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.account/row",
+        "activeKeys": [
+          "open.console",
+          "start",
+          "stop",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.account/toolbar",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "extraKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "edit",
+          "open.console",
+          "start",
+          "stop",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "change.host.and.primary.storage",
+          "setHaStickStragedy",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.node/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "migrate.host"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/row",
+        "activeKeys": [
+          "edit",
+          "open.console",
+          "start",
+          "stop",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "change.host.and.primary.storage",
+          "setHaStickStragedy",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/toolbar",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.project/row",
+        "activeKeys": [
+          "open.console",
+          "start",
+          "stop",
+          "reboot",
+          "reconnect",
+          "set.console.password",
+          "migrate.host",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.project/toolbar",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.v-router-route-table/row",
+        "activeKeys": [
+          "routeTable.detach"
+        ]
+      },
+      {
+        "view": "sub.v-router-route-table/toolbar",
+        "extraKeys": [
+          "routeTable.attach",
+          "routeTable.detach"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "vpc.vrouter",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.vpc",
+        "resource": "vpc.vrouter",
+        "authKey": "create.vpc",
+        "i18nKey": "create.vpcVrouter",
+        "name": "创建VPC路由器",
+        "label": "创建VPC路由器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "open.console",
+        "resource": "vpc.vrouter",
+        "authKey": "open.console",
+        "i18nKey": "open.console",
+        "name": "打开控制台",
+        "label": "打开控制台",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "vpc.vrouter",
+        "authKey": "start",
+        "i18nKey": "start",
+        "name": "启动",
+        "label": "启动",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "vpc.vrouter",
+        "authKey": "stop",
+        "i18nKey": "stop",
+        "name": "停止",
+        "label": "停止",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reboot",
+        "resource": "vpc.vrouter",
+        "authKey": "reboot",
+        "i18nKey": "reboot",
+        "name": "重启",
+        "label": "重启",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect",
+        "resource": "vpc.vrouter",
+        "authKey": "reconnect",
+        "i18nKey": "reconnect",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": "reconnect-divider"
+      },
+      {
+        "key": "set.console.password",
+        "resource": "vpc.vrouter",
+        "authKey": "set.console.password",
+        "i18nKey": "set.consolePassword",
+        "name": "设置控制台密码",
+        "label": "设置控制台密码",
+        "icon": "",
+        "dividerKey": "set.console.password-divider"
+      },
+      {
+        "key": "vpc.migrate",
+        "resource": "vpc.vrouter",
+        "authKey": "vpc.migrate",
+        "i18nKey": "migrate",
+        "name": "迁移",
+        "label": "迁移",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "migrate.host",
+            "resource": "vpc.vrouter",
+            "authKey": "migrate.host",
+            "i18nKey": "vpc.vrouter.migrate.change.host",
+            "name": "更改物理机",
+            "label": "更改物理机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "change.host.and.primary.storage",
+            "resource": "vpc.vrouter",
+            "authKey": "change.host.and.primary.storage",
+            "i18nKey": "vm.migrate.change.hostAndPrimaryStorage",
+            "name": "更改物理机和主存储",
+            "label": "更改物理机和主存储",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "setHaStickStragedy",
+        "resource": "vpc.vrouter",
+        "authKey": "setHaStickStragedy",
+        "i18nKey": "set.haStickStragedy",
+        "name": "设置跨集群高可用",
+        "label": "设置跨集群高可用",
+        "icon": "",
+        "dividerKey": "setHaStickStragedy-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "vpc.vrouter",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "routeTable.attach",
+        "resource": "vpc.vrouter",
+        "authKey": "routeTable.attach",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "routeTable.detach",
+        "resource": "vpc.vrouter",
+        "authKey": "routeTable.detach",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "vpc.vrouter",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "vpc.vrouter",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

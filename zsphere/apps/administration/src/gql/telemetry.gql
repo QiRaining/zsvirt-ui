@@ -1,0 +1,19 @@
+query GetTelemetryConsent {
+  getTelemetryConsent {
+    uuid
+    consentGrantedAt
+  }
+}
+
+query GetTelemetrySettings {
+  getTelemetrySettings {
+    descriptionKey
+    privacyPolicyUrl
+  }
+}
+
+mutation UpdateTelemetryConsent($input: UpdateTelemetryConsentInput!) {
+  updateTelemetryConsent(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "listenerCount",
+          "backendServerCount",
+          "unhealthyServerCount",
+          "aclCount",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "listenerCount",
+          "backendServerCount",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "listenerCount",
+          "backendServerCount",
+          "aclCount",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.listener",
+        "keys": [
+          "name",
+          "backendServerCount",
+          "unhealthyServerCount",
+          "aclCount",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "listenerCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "listenerCount",
+            "defaultMessage": "Listeners"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "backendServerCount",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backendServerCount",
+            "defaultMessage": "Backend Servers"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "unhealthyServerCount",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "unhealthyBackendServerCount",
+            "defaultMessage": "Unhealthy Backend Servers"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "aclCount",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "aclCount",
+            "defaultMessage": "Forwarding Rules"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "server.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.server.group",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.listener/row",
+        "activeKeys": [
+          "detach.listener"
+        ]
+      },
+      {
+        "view": "sub.listener/toolbar",
+        "extraKeys": [
+          "attach.listener",
+          "detach.listener"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.server.group",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "server.group",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.server.group",
+        "resource": "server.group",
+        "authKey": "create.server.group",
+        "i18nKey": "create.serverGroup",
+        "name": "创建后端服务器组",
+        "label": "创建后端服务器组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.listener",
+        "resource": "server.group",
+        "authKey": "attach.listener",
+        "i18nKey": "associate",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.listener",
+        "resource": "server.group",
+        "authKey": "detach.listener",
+        "i18nKey": "disassociate",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "server.group",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

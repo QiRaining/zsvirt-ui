@@ -1,0 +1,253 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "rules",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "rules",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "rules",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "rule.set"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "rule.set"
+        }
+      },
+      {
+        "accessorKey": "rules",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "rules",
+            "defaultMessage": "Rules"
+          },
+          "queryType": "",
+          "resource": "rule.set"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "rule.set"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "rule.set"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "sync.config"
+        ],
+        "activeKeys": [
+          "edit",
+          "attach",
+          "dettach",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "sync.config",
+          "add.rule",
+          "attach",
+          "dettach",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.rule.set",
+          "sync.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "dettach.ruleset"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "attach.ruleset",
+          "dettach.ruleset"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.rule.set",
+        "resource": "rule.set",
+        "authKey": "create.rule.set",
+        "i18nKey": "create.ruleSet",
+        "name": "创建规则集",
+        "label": "创建规则集",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "rule.set",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.config",
+        "resource": "rule.set",
+        "authKey": "sync.config",
+        "i18nKey": "sync.config",
+        "name": "同步配置",
+        "label": "同步配置",
+        "icon": "sync",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.rule",
+        "resource": "rule.set",
+        "authKey": "add.rule",
+        "i18nKey": "add.rule",
+        "name": "添加规则",
+        "label": "添加规则",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach",
+        "resource": "rule.set",
+        "authKey": "attach",
+        "i18nKey": "bind.network",
+        "name": "绑定网络",
+        "label": "绑定网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "dettach",
+        "resource": "rule.set",
+        "authKey": "dettach",
+        "i18nKey": "unbind.network",
+        "name": "解绑网络",
+        "label": "解绑网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.ruleset",
+        "resource": "rule.set",
+        "authKey": "attach.ruleset",
+        "i18nKey": "bind.ruleset",
+        "name": "绑定规则集",
+        "label": "绑定规则集",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "dettach.ruleset",
+        "resource": "rule.set",
+        "authKey": "dettach.ruleset",
+        "i18nKey": "unbind.ruleset",
+        "name": "解绑规则集",
+        "label": "解绑规则集",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "rule.set",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

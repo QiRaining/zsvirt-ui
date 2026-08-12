@@ -1,0 +1,255 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "ruleNumber",
+          "protocol",
+          "action",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.rule.create",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "ruleNumber",
+          "protocol",
+          "action",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "ruleNumber",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "priority",
+            "defaultMessage": "Priority"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "protocol",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "protocol",
+            "defaultMessage": "Protocol"
+          },
+          "queryType": "multipleFilter",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "action",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "action",
+            "defaultMessage": "Actions"
+          },
+          "queryType": "multipleFilter",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "sourceIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "sourceIpAddress",
+            "defaultMessage": "Source IP Address"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "destIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "destIpAddress",
+            "defaultMessage": "Destination IP Address"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "sourcePort",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sourcePort",
+            "defaultMessage": "Source Port"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "destPort",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "destPort",
+            "defaultMessage": "Destination Port"
+          },
+          "queryType": "input",
+          "resource": "rule.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "rule.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.rule.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.rule.template",
+        "resource": "rule.template",
+        "authKey": "create.rule.template",
+        "i18nKey": "create.ruleTemplate",
+        "name": "创建规则模板",
+        "label": "创建规则模板",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "rule.template",
+        "authKey": "edit",
+        "i18nKey": "edit.ruleTemplate",
+        "name": "修改规则模板",
+        "label": "修改规则模板",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "rule.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

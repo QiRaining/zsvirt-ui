@@ -1,0 +1,60 @@
+{
+  "name": "@zstack/zsphere-illustration",
+  "version": "0.0.1",
+  "description": "zsphere UI 插画资源库",
+  "author": "ZStack UI Team",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/illustration.es.js",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "default": "./dist/illustration.es.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@zstack/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react-swc": "catalog:",
+    "classnames": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "rollup-preserve-directives": "^1.1.3",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vite-plugin-svgr": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

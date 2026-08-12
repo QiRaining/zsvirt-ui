@@ -1,0 +1,176 @@
+fragment iscsiServerFields on IscsiServer {
+  uuid
+  name
+  ip
+  port
+  chapUserName
+  state
+  iscsiTargets {
+    iscsiServerUuid
+    uuid
+    iqn
+    state
+    iscsiLuns {
+      uuid
+      name
+      wwid
+      wwn
+      vendor
+      model
+      serial
+      type
+      path
+      state
+      source
+      size
+      iscsiTargetUuid
+      hctl
+      createDate
+      lastOpDate
+      scsiLunHostRefs {
+        hostUuid
+      }
+      scsiLunVmInstanceRefs {
+        vmInstanceUuid
+      }
+    }
+    createDate
+    lastOpDate
+  }
+  iscsiClusterRefs {
+    id
+    iscsiServerUuid
+    clusterUuid
+  }
+  zones {
+    name
+    uuid
+  }
+  lunDeviceUsageInfo {
+    totalLunNum
+    usedLunNum
+    unusedLunNum
+  }
+  createDate
+  lastOpDate
+}
+
+query iscsiServerList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: IscsiServerQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  iscsiServerList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...iscsiServerFields
+    }
+  }
+}
+
+query iscsiServerCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: IscsiServerQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  iscsiServerList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+query getIscsiServerSummary($uuids: [String!]!, $clusterUuids: [String!], $wwids: [String!]) {
+  getIscsiServerSummary(uuids: $uuids, clusterUuids: $clusterUuids, wwids: $wwids) {
+    vmInstanceCount
+    volumeCount
+    primaryStorageCount
+  }
+}
+
+query iscsiTargetList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  iscsiTargetList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      iqn
+      iscsiServerAddress
+    }
+    total
+  }
+}
+
+mutation addIscsiServer($input: AddIscsiServerInput!) {
+  addIscsiServer(input: $input) {
+    success
+    error
+  }
+}
+
+mutation updateIscsiServers($input: UpdateIscsiServerInput!) {
+  updateIscsiServers(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteIscsiServers($input: DeleteIscsiServerInput!) {
+  deleteIscsiServers(input: $input) {
+    actionId
+  }
+}
+
+mutation refreshIscsiServers($input: RefreshIscsiServerInput!) {
+  refreshIscsiServers(input: $input) {
+    actionId
+  }
+}
+
+mutation attachIscsiServerToClusters($input: AttachIscsiServerToClusterInput!) {
+  attachIscsiServerToClusters(input: $input) {
+    actionId
+  }
+}
+
+mutation detachIscsiServerFromClusters($input: DetachIscsiServerFromClusterInput!) {
+  detachIscsiServerFromClusters(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,65 @@
+@import "../../../../../theme.less";
+
+.icon,
+.title {
+  color: @color-600 !important;
+  cursor: pointer;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 142px;
+
+  .description {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 16px;
+
+    .description-icon {
+      color: @color-600;
+      margin-left: 4px;
+    }
+  }
+}
+
+.download {
+  cursor: pointer;
+  font-size: 14px;
+  float: right;
+  color: @color-600;
+}
+
+.zsvcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .description {
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 16px;
+
+    .description-icon {
+      color: @color-600;
+      margin-left: 4px;
+    }
+  }
+}
+
+.overlayClassName {
+  :global {
+    .ant-popover-inner-content {
+      padding: 10px;
+    }
+  }
+}

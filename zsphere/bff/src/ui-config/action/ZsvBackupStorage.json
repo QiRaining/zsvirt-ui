@@ -1,0 +1,329 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "image.server.capacity",
+          "type",
+          "hostname",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "image.server.capacity",
+          "type",
+          "hostname",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "image.server.capacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "backup.server.capacity",
+            "defaultMessage": "Backup Storage Capacity"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "hostname",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "backup.node.ip",
+            "defaultMessage": "Backup Storage IP"
+          },
+          "queryType": "input",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "url",
+            "defaultMessage": "URL"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.storage"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zsv.backup.storage"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnet",
+          "scan.backup.data",
+          "data.clear",
+          "edit.name.and.desc",
+          "modify.config",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnet",
+          "scan.backup.data",
+          "data.clear",
+          "edit.name.and.desc",
+          "modify.config",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.backup.storage"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnet",
+          "data.clear",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable",
+        "resource": "zsv.backup.storage",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "zsv.backup.storage",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnet",
+        "resource": "zsv.backup.storage",
+        "authKey": "reconnet",
+        "i18nKey": "reconnet",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": "reconnet-divider"
+      },
+      {
+        "key": "scan.backup.data",
+        "resource": "zsv.backup.storage",
+        "authKey": "scan.backup.data",
+        "i18nKey": "scan.backup.data",
+        "name": "扫描备份数据",
+        "label": "扫描备份数据",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "data.clear",
+        "resource": "zsv.backup.storage",
+        "authKey": "data.clear",
+        "i18nKey": "data.clear",
+        "name": "数据清理",
+        "label": "数据清理",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.name.and.desc",
+        "resource": "zsv.backup.storage",
+        "authKey": "edit.name.and.desc",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "zsv.backup.storage",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.password",
+        "resource": "zsv.backup.storage",
+        "authKey": "update.password",
+        "i18nKey": "update.password",
+        "name": "更新密码",
+        "label": "更新密码",
+        "icon": "",
+        "dividerKey": "update.password-divider"
+      },
+      {
+        "key": "create.backup.storage",
+        "resource": "zsv.backup.storage",
+        "authKey": "create.backup.storage",
+        "i18nKey": "create.backup.storage",
+        "name": "创建备份存储",
+        "label": "创建备份存储",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "zsv.backup.storage",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

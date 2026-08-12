@@ -1,0 +1,27 @@
+@import "../../theme.module.less";
+
+.main {
+  padding: 24px;
+  flex: 1;
+  overflow: auto;
+}
+
+.container {
+  :global {
+    .ant-tabs-content-holder {
+      scrollbar-gutter: stable;
+    }
+  }
+}
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.main-container {
+  max-width: 1024px;
+
+  .space {
+    width: 100%;
+  }
+}

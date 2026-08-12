@@ -1,0 +1,72 @@
+@import "../../style/vars.less";
+
+.@{prefix}-sortable-list {
+  .sortable-item-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 36px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    background-color: @neutral-100;
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+
+  &-is-sorting {
+    user-select: none;
+  }
+}
+
+.sortable-list-row-dragging {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  z-index: 1200;
+  height: 36px;
+  padding: 0 10px;
+  background-color: @neutral-100;
+}
+
+.sortable-item {
+  width: 100%;
+
+  .sortable-item-option {
+    display: flex;
+    width: 100%;
+
+    .sortable-item-option-content {
+      flex: 1;
+      overflow: auto;
+    }
+
+    .sortable-item-option-icon {
+      cursor: pointer;
+    }
+
+    // .zstack-icon {
+    //   color: @neutral-400;
+    // }
+  }
+}
+
+.sortable-item-move {
+  color: @neutral-700;
+  display: flex;
+  align-items: center;
+  .zstack-icon {
+    color: @neutral-700;
+    cursor: move;
+  }
+}
+
+.sortable-item-not-allowed {
+  color: @neutral-500;
+  display: flex;
+  align-items: center;
+  .zstack-icon {
+    cursor: not-allowed;
+  }
+}

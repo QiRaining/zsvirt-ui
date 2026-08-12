@@ -1,0 +1,238 @@
+@import "../../style/vars.less";
+
+.@{prefix}-alert {
+  font-size: 14px;
+  line-height: 22px;
+  .ant-alert-icon {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+  }
+  .ant-alert-close-icon {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+  }
+  &-closable {
+    .ant-alert-content {
+      // ant-alert-close-icon 会和内容重叠 （英文的时候）
+      padding-right: 32px;
+    }
+  }
+  &-message-wrapper {
+    flex: 1;
+  }
+  &-message {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 4px;
+    border-radius: 2px;
+    line-height: 22px;
+    padding: 1px 8px;
+    font-weight: 400;
+  }
+  //fix bug:
+  &.weak {
+    &-error,
+    &-info,
+    &-success,
+    &-warning {
+      background: none;
+      border: none;
+      padding: 4px 0px 0px 24px;
+      font-size: 12px;
+      line-height: 20px;
+      .ant-alert-message {
+        color: @neutral-500;
+      }
+      .@{prefix}-alert-message {
+        color: @color-600;
+      }
+      .ant-alert-icon {
+        left: 0;
+        top: 7px;
+      }
+    }
+  }
+  &.standard {
+    &-error,
+    &-info,
+    &-success,
+    &-warning {
+      min-height: 40px;
+      background: none;
+      padding-left: 36px;
+      .ant-alert-icon {
+        left: 12px;
+      }
+    }
+
+    &-error {
+      border: 1px solid @danger-400;
+      .@{prefix}-alert-message {
+        color: @danger-600;
+      }
+    }
+    &-info {
+      border: 1px solid @info-400;
+      .@{prefix}-alert-message {
+        color: @info-600;
+      }
+    }
+    &-success {
+      border: 1px solid @positive-400;
+      .@{prefix}-alert-message {
+        color: @positive-600;
+      }
+    }
+    &-warning {
+      border: 1px solid @alert-400;
+      .@{prefix}-alert-message {
+        color: @alert-600;
+      }
+    }
+  }
+  &.strong {
+    &-error,
+    &-info,
+    &-success,
+    &-warning {
+      min-height: 40px;
+      border: none;
+      padding-left: 48px;
+    }
+
+    &-error {
+      background-color: @danger-50;
+      .@{prefix}-alert-message {
+        color: @danger-600;
+      }
+    }
+    &-info {
+      background-color: @info-50;
+      .@{prefix}-alert-message {
+        color: @info-600;
+      }
+    }
+    &-success {
+      background-color: @positive-50;
+      .@{prefix}-alert-message {
+        color: @positive-600;
+      }
+    }
+    &-warning {
+      background-color: @alert-50;
+      .@{prefix}-alert-message {
+        color: @alert-600;
+      }
+    }
+  }
+  &.overall {
+    &-error,
+    &-info,
+    &-success,
+    &-warning {
+      min-height: 40px;
+      border: none;
+      padding-left: 48px;
+      .ant-alert-message {
+        color: @neutral-0;
+        font-weight: 500;
+      }
+      .@{prefix}-alert-message {
+        background-color: @neutral-0;
+      }
+    }
+
+    &-error {
+      background-color: @danger-500;
+      .@{prefix}-alert-message {
+        color: @danger-500;
+      }
+    }
+    &-info {
+      background-color: @info-500;
+      .@{prefix}-alert-message {
+        color: @info-500;
+      }
+    }
+    &-success {
+      background-color: @positive-500;
+      .@{prefix}-alert-message {
+        color: @positive-500;
+      }
+    }
+    &-warning {
+      background-color: @alert-200;
+      .@{prefix}-alert-message {
+        background-color: @alert-600;
+        color: @neutral-0;
+      }
+      .ant-alert-message {
+        color: @neutral-700;
+      }
+    }
+  }
+  &.blockStrong {
+    &-error,
+    &-info,
+    &-success,
+    &-warning {
+      min-height: 36px;
+      border: none;
+      padding: 6px 12px 6px 36px;
+      border-radius: 2px;
+
+      .ant-alert-icon {
+        left: 12px;
+        top: 9px;
+      }
+
+      .ant-alert-message {
+        color: @neutral-700;
+      }
+
+      .ant-alert-close-icon {
+        right: 12px;
+        top: 9px;
+      }
+    }
+
+    &-error {
+      background-color: @danger-50;
+      border: 1px solid @danger-200;
+      .@{prefix}-alert-message {
+        color: @danger-600;
+      }
+    }
+    &-info {
+      background-color: @info-50;
+      border: 1px solid @info-200;
+      .@{prefix}-alert-message {
+        color: @info-600;
+      }
+    }
+    &-success {
+      background-color: @positive-50;
+      border: 1px solid @positive-200;
+      .@{prefix}-alert-message {
+        color: @positive-600;
+      }
+    }
+    &-warning {
+      background-color: @alert-50;
+      border: 1px solid @alert-200;
+      .@{prefix}-alert-message {
+        color: @alert-600;
+      }
+    }
+  }
+  .@{prefix}-react-markdown {
+    font-size: 14px;
+    line-height: 22px;
+    ul,
+    ol {
+      padding-inline-start: 20px;
+    }
+  }
+}

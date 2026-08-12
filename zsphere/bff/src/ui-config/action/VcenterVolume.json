@@ -1,0 +1,708 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "isShareable",
+          "primary-storage",
+          "vCenter",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.notinstantiated",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "status",
+          "vm-instance",
+          "isShareable",
+          "vCenter",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "recycle",
+        "keys": [
+          "name",
+          "type",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "isShareable",
+          "primary-storage",
+          "vCenter",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "isShareable",
+          "primary-storage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "type",
+          "actualSize",
+          "size",
+          "state",
+          "status",
+          "isShareable",
+          "primary-storage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.account",
+        "keys": [
+          "name",
+          "type",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "primary-storage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.primary-storage",
+        "keys": [
+          "name",
+          "type",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "isShareable",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.project",
+        "keys": [
+          "name",
+          "type",
+          "size",
+          "state",
+          "status",
+          "vm-instance",
+          "primary-storage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.tag",
+        "keys": [
+          "name",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vCenter",
+        "keys": [
+          "name",
+          "type",
+          "actualSize",
+          "size",
+          "state",
+          "status",
+          "isShareable",
+          "primary-storage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm-instance",
+        "keys": [
+          "name",
+          "type",
+          "actualSize",
+          "size",
+          "state",
+          "status",
+          "isShareable",
+          "primary-storage",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "mineTags",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "current.user.tags",
+            "defaultMessage": "Current User Tag"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "othersTags",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "other.user.tags",
+            "defaultMessage": "Other User Tags"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "actualSize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "actual.size",
+            "defaultMessage": "Actual Size"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "vm-instance",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vmInstance",
+            "defaultMessage": "Virtual Machine"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "isShareable",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "is.shareable",
+            "defaultMessage": "Shared Disk"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "primary-storage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "primaryStorage",
+            "defaultMessage": "Data Storage"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "multipleSelect",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "vcenter.volume"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.volume"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.notinstantiated/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "vm.attach.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.notinstantiated/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "vm.attach.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.notinstantiated/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "vm.attach.volume",
+          "vm.detach.volume",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "vm.attach.volume",
+          "vm.detach.volume",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.volume",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "recycle/header",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.primary-storage/toolbar",
+        "activeKeys": [
+          "create.volume",
+          "enable",
+          "disable",
+          "vm.attach.volume",
+          "vm.detach.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vCenter/row",
+        "activeKeys": [
+          "create.volume",
+          "vm.detach.volume",
+          "volume.attach.to.vm",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vm-instance/row",
+        "activeKeys": [
+          "volume.detach.from.vm",
+          "delete.volume.from.vm"
+        ]
+      },
+      {
+        "view": "sub.vm-instance/toolbar",
+        "extraKeys": [
+          "create.volume.from.vm"
+        ],
+        "activeKeys": [
+          "volume.attach.to.vm",
+          "volume.detach.from.vm",
+          "delete.volume.from.vm"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "extraKeys": [
+          "create.volume"
+        ],
+        "activeKeys": [
+          "vm.attach.volume",
+          "vm.detach.volume"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "vcenter.volume",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.volume",
+        "resource": "vcenter.volume",
+        "authKey": "create.volume",
+        "i18nKey": "create.volume",
+        "name": "创建云盘",
+        "label": "创建云盘",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.volume.from.vm",
+        "resource": "vcenter.volume",
+        "authKey": "create.volume.from.vm",
+        "i18nKey": "create.volume",
+        "name": "创建云盘",
+        "label": "创建云盘",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "vcenter.volume",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "vcenter.volume",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.attach.volume",
+        "resource": "vcenter.volume",
+        "authKey": "vm.attach.volume",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.detach.volume",
+        "resource": "vcenter.volume",
+        "authKey": "vm.detach.volume",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": "vm.detach.volume-divider"
+      },
+      {
+        "key": "volume.attach.to.vm",
+        "resource": "vcenter.volume",
+        "authKey": "volume.attach.to.vm",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "volume.detach.from.vm",
+        "resource": "vcenter.volume",
+        "authKey": "volume.detach.from.vm",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.owner",
+        "resource": "vcenter.volume",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": "change.owner-divider"
+      },
+      {
+        "key": "delete.volume.from.vm",
+        "resource": "vcenter.volume",
+        "authKey": "delete.volume.from.vm",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vcenter.volume",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "vcenter.volume",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "undo",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "vcenter.volume",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.resource",
+        "resource": "vcenter.volume",
+        "authKey": "detach.resource",
+        "i18nKey": "detach.resource",
+        "name": "解绑资源",
+        "label": "解绑资源",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.login",
+        "keys": [
+          "apiName",
+          "operatorAccountNameForLogin",
+          "duration",
+          "clientIp",
+          "clientBrowser",
+          "isError",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "main.resource",
+        "keys": [
+          "apiName",
+          "resourceType",
+          "duration",
+          "isError",
+          "operatorAccountName",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "apiName",
+          "resourceType",
+          "duration",
+          "isError",
+          "operatorAccountName",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "sub.longjob",
+        "keys": [
+          "apiName",
+          "resourceType",
+          "duration",
+          "isError",
+          "operatorAccountName",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "virtualization.main.login",
+        "keys": [
+          "apiName",
+          "operatorAccountNameForLogin",
+          "duration",
+          "clientIp",
+          "clientBrowser",
+          "isError",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "virtualization.main.resource",
+        "keys": [
+          "apiName",
+          "resourceName",
+          "resourceType",
+          "duration",
+          "isError",
+          "operatorAccountName",
+          "clientIpForResource",
+          "createTime",
+          "time"
+        ]
+      },
+      {
+        "view": "virtualization.sub",
+        "keys": [
+          "apiName",
+          "resourceName",
+          "resourceType",
+          "duration",
+          "isError",
+          "operatorAccountName",
+          "clientIpForResource",
+          "createTime",
+          "time"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "apiName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "apiName",
+            "defaultMessage": "API Name"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "operatorAccountNameForLogin",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "operator",
+            "defaultMessage": "Operator"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "resourceUuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "resourceUuid",
+            "defaultMessage": "Resource UUID"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "resourceName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceName",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "resourceType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceType",
+            "defaultMessage": "Resource Type"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "duration",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "consumingTime",
+            "defaultMessage": "Time Consumed"
+          },
+          "queryType": "",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "clientIp",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "loginIP",
+            "defaultMessage": "Login IP"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "clientBrowser",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "browser",
+            "defaultMessage": "Browser"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "isError",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "taskResult",
+            "defaultMessage": "Task Result"
+          },
+          "queryType": "multipleFilter",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "operatorAccountName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "operator",
+            "defaultMessage": "Operator"
+          },
+          "queryType": "",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "clientIpForResource",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "operator.ip",
+            "defaultMessage": "Operator IP"
+          },
+          "queryType": "input",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "createTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "auditing"
+        }
+      },
+      {
+        "accessorKey": "time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "overTime",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "auditing"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

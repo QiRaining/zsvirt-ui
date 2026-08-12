@@ -1,0 +1,63 @@
+@import "../../../theme.less";
+
+.operationName {
+  cursor: pointer;
+  color: @color-600 !important;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.detailLink {
+  margin-top: 8px;
+  text-decoration: underline;
+}
+
+.progress-wrapper {
+  display: flex;
+  width: 94%;
+  align-items: center;
+  :global {
+    .zstack-state-name {
+      white-space: nowrap;
+    }
+    .zstack-progress-bar {
+      flex: 1;
+      margin-left: 8px;
+      .ant-progress {
+        display: flex;
+        align-items: center;
+        .ant-progress-outer {
+          position: relative;
+          bottom: 2px;
+        }
+        .ant-progress-text {
+          width: unset;
+        }
+      }
+    }
+  }
+}
+
+.stateProgress {
+  position: relative;
+
+  .hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: -1;
+    clip-path: circle(0);
+  }
+
+  .hideText {
+    :global {
+      .zstack-state-name {
+        display: none;
+      }
+    }
+  }
+}

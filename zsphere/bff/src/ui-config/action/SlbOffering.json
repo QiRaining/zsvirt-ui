@@ -1,0 +1,285 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "image",
+          "managenment.network",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "cpuNum",
+          "memorySize",
+          "image",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "cpuNum",
+          "memorySize",
+          "image",
+          "managenment.network",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "image",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "image",
+            "defaultMessage": "Image"
+          },
+          "queryType": "",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "managenment.network",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "managementNetwork",
+            "defaultMessage": "Management Network"
+          },
+          "queryType": "",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "slb.offering"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "slb.offering"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "slb.offering",
+        "authKey": "create",
+        "i18nKey": "create.slbOffering",
+        "name": "创建高性能实例规格",
+        "label": "创建高性能实例规格",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "slb.offering",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "slb.offering",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "slb.offering",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "slb.offering",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "slb.offering",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

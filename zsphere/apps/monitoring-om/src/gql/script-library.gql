@@ -1,0 +1,155 @@
+fragment scriptFields on Script {
+  uuid
+  name
+  description
+  scriptContent
+  renderParams
+  platform
+  scriptType
+  encodingType
+  scriptTimeout
+  createDate
+  lastOpDate
+}
+
+query scriptList(
+  $conditions: [Condition!],
+  $limit: Int,
+  $start: Int,
+  $extraConditions: [Condition!],
+  $type: String,
+  $sortBy: String,
+  $sortDirection: SortDirectionValidValues
+) {
+  scriptList(
+    conditions: $conditions,
+    limit: $limit,
+    start: $start,
+    replyWithCount: true,
+    extraConditions: $extraConditions,
+    type: $type,
+    sortBy: $sortBy,
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...scriptFields
+    }
+  }
+}
+
+fragment scriptExecuteRecordFields on ScriptExecuteRecord {
+  uuid
+  recordName
+  executionCount
+  executor
+  scriptUuid
+  scriptContent
+  renderParams
+  status
+  encodingType
+  startTime
+  endTime
+  relatedScript {
+    uuid
+    name
+    description
+    scriptType
+    platform
+  }
+}
+
+query scriptExecuteRecordList(
+  $conditions: [Condition!],
+  $limit: Int,
+  $start: Int,
+  $extraConditions: [Condition!],
+  $type: String,
+  $sortBy: String,
+  $sortDirection: SortDirectionValidValues
+) {
+  scriptExecuteRecordList(
+    conditions: $conditions,
+    limit: $limit,
+    start: $start,
+    replyWithCount: true,
+    extraConditions: $extraConditions,
+    type: $type,
+    sortBy: $sortBy,
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...scriptExecuteRecordFields
+    }
+  }
+}
+
+fragment scriptExecuteRecordDetailFields on ScriptExecuteRecordDetail {
+  recordUuid
+  vmInstanceUuid
+  vmName
+  status
+  exitCode
+  stdout
+  errCause
+  stderr
+  startTime
+  endTime
+  vmInstance {
+    uuid
+    name
+    state
+  }
+}
+
+query scriptExecuteRecordDetailList(
+  $conditions: [Condition!],
+  $limit: Int,
+  $start: Int,
+  $extraConditions: [Condition!],
+  $type: String,
+  $sortBy: String,
+  $sortDirection: SortDirectionValidValues
+) {
+  scriptExecuteRecordDetailList(
+    conditions: $conditions,
+    limit: $limit,
+    start: $start,
+    replyWithCount: true,
+    extraConditions: $extraConditions,
+    type: $type,
+    sortBy: $sortBy,
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...scriptExecuteRecordDetailFields
+    }
+  }
+}
+
+mutation createScript($input: CreateScriptInput!) {
+  createScript(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteScript($input: DeleteScriptInput!) {
+  deleteScript(input: $input) {
+    actionId
+  }
+}
+
+mutation updateScript($input: UpdateScriptInput!) {
+  updateScript(input: $input) {
+    actionId
+  }
+}
+
+mutation executeScript($input: ExecuteScriptInput!) {
+  executeScript(input: $input) {
+    actionId
+  }
+}
+

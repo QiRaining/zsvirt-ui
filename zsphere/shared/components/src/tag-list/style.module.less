@@ -1,0 +1,82 @@
+.tagList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .ghostWrapper {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    clip-path: circle(0px);
+  }
+
+  .tagListWrapper {
+    display: flex;
+    overflow: hidden;
+    flex-grow: 1;
+    min-width: 0;
+    position: relative;
+    row-gap: 4px;
+
+    .tagListExpand& {
+      flex-wrap: wrap;
+
+      > * {
+        min-width: 0;
+      }
+    }
+
+    &::after {
+      --bg-color: 255, 255, 255;
+      :global(.ant-table-row):hover &,
+      :global(.ant-table-row-selected) & {
+        --bg-color: var(--rgb-neutral-100);
+      }
+      :global(.zstack-table-list-row-selected) & {
+        --bg-color: var(--rgb-color-50);
+      }
+
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 40px;
+      max-width: 100%;
+      background-image: linear-gradient(
+        to left,
+        rgba(var(--bg-color), 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+
+      .tagListNonOverflow&,
+      .tagListExpand& {
+        display: none;
+      }
+    }
+  }
+
+  .tagListBtn {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    flex-shrink: 0;
+
+    .tagListNonOverflow& {
+      display: none;
+    }
+
+    .tagListExpand& {
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  :global {
+    .ant-tag.ant-tag.ant-tag.ant-tag.ant-tag {
+      margin: 0 4px 0 0 !important;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../../theme.less";
+
+.add-preconfiguration-template-coninter {
+  .top,
+  .middle,
+  .bottom {
+    width: 100%;
+    background-color: @neutral-0;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+  }
+
+  .top {
+    padding: 24px 24px 4px 24px;
+    margin-bottom: 6px;
+  }
+
+  .middle {
+    padding: 24px 24px 4px 24px;
+    margin: 6px 0;
+  }
+
+  .bottom {
+    margin-top: 6px;
+  }
+
+  .width-320 {
+    width: 320px !important;
+  }
+
+  .upload-drag-icon {
+    color: @color-600;
+    font-size: 24px;
+  }
+
+  .upload-tip {
+    font-size: 12px;
+  }
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.typeRadio:last-child {
+  margin-right: 0 !important;
+}
+
+.upload {
+  :global {
+    .zstack-upload-dragger-file-item {
+      display: flex;
+      align-items: center;
+      margin-top: 8px !important;
+
+      .zstack-upload-dragger-file-item-line {
+        flex-grow: 1;
+      }
+    }
+
+    .zstack-upload-dragger-single {
+      flex-direction: column !important;
+    }
+
+    .zstack-upload-dragger-single-file-item {
+      margin-right: 0 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .zstack-upload-dragger-single-file-item {
+      width: auto !important;
+    }
+
+    .zstack-upload-dragger-single-file-item-line {
+      width: auto !important;
+    }
+  }
+}

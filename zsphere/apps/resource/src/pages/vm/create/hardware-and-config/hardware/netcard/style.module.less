@@ -1,0 +1,91 @@
+@import "../../../../../../theme.less";
+
+.width-200 {
+  width: 200px !important;
+}
+
+.l3network {
+  :global {
+    .ant-table-content {
+      height: 320px;
+    }
+  }
+}
+
+.sortableList {
+  border: 1px @neutral-400 solid;
+  border-radius: 2px;
+  max-height: 240px;
+  overflow-y: auto;
+
+  :global {
+    .sortable-item-container {
+      background: none !important;
+      margin-bottom: 0 !important;
+      border-bottom: 1px solid @neutral-400;
+    }
+
+    .sortable-item-container:last-child {
+      border-bottom: none;
+    }
+  }
+
+  + :global(.zstack-virtualization-modal-select-add) {
+    padding-bottom: 0 !important;
+    height: auto;
+  }
+}
+
+.card {
+  margin-bottom: 12px;
+
+  :global {
+    .zstack-form-item-label-container {
+      width: 147px !important;
+    }
+  }
+}
+
+.content {
+  :global {
+    .ant-input[disabled] {
+      color: inherit;
+      background-color: @neutral-100;
+    }
+  }
+}
+
+.addDnsBtn {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  line-height: 22px !important;
+  height: 22px !important;
+  transition: none !important;
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.dnsInput {
+  display: flex;
+  margin-bottom: 8px;
+
+  &.dnsDisabled:last-child {
+    margin-bottom: 0;
+  }
+
+  .trashIcon {
+    display: grid;
+    place-content: center;
+    height: 32px;
+    color: @neutral-600;
+    margin-left: 8px;
+  }
+}
+
+.portGroupModalSelectWrapper {
+  display: flex;
+  align-items: center;
+}

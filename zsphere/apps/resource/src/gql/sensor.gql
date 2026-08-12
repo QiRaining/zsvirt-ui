@@ -1,0 +1,25 @@
+query sensorList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+) {
+  sensorList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+  ) {
+    list {
+      name
+      status
+      type
+      classification
+      value
+      lastUpdateTime
+    }
+    total
+  }
+}

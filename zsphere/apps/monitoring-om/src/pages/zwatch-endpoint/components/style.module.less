@@ -1,0 +1,163 @@
+@import "../../../theme.module.less";
+
+.sms-count {
+  color: #96989b;
+  font-size: 12px;
+  margin-left: 188px;
+}
+
+.addSmsAreaCode,
+.addSmsPhoneNumber {
+  display: inline-block !important;
+  margin-bottom: 0 !important;
+}
+
+.addSmsAreaCode {
+  :global {
+    .ant-input-affix-wrapper {
+      width: 80px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.addSmsPhoneNumber {
+  :global {
+    .ant-input {
+      width: 295px;
+    }
+  }
+}
+
+.topRadioGroup:global(.ant-radio-group) {
+  margin-bottom: 8px;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-400 {
+  width: 400px !important;
+}
+.width-240 {
+  width: 240px !important;
+}
+
+.testConnectModal {
+  :global {
+    .ant-modal-confirm-body > .anticon,
+    .ant-modal-confirm-body > .anticon {
+      color: @alert-500 !important;
+      font-size: 16px;
+      margin-right: 4px;
+    }
+
+    .ant-modal-confirm-body
+      > .anticon
+      + .ant-modal-confirm-title
+      + .ant-modal-confirm-content {
+      margin-left: 20px;
+    }
+
+    .ant-modal-body {
+      padding: 20px !important;
+    }
+
+    .ant-modal-confirm-body .ant-modal-confirm-content {
+      color: @neutral-600;
+    }
+
+    .ant-modal-confirm-btns {
+      margin-top: 20px !important;
+    }
+  }
+}
+
+.atPersonInfoItem {
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .addSmsPhoneNumber {
+    :global {
+      .ant-input {
+        width: 156px;
+      }
+    }
+  }
+}
+
+.tableSelect {
+  width: 578px;
+  .trash {
+    padding: 0 5px;
+    color: var(--neutral-600);
+    line-height: 32px;
+    :global {
+      .zstack-icon {
+        color: @neutral-600;
+        &:hover {
+          color: @neutral-700;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  :global {
+    .zstack-table {
+      border: solid 1px @neutral-300;
+      border-radius: 2px;
+
+      .ant-table-tbody {
+        .ant-table-cell {
+          vertical-align: top;
+        }
+
+        & > tr:last-child > td {
+          border-bottom: 0;
+        }
+        & > tr > td {
+          padding-top: 4px !important;
+          padding-bottom: 4px !important;
+          height: 40px !important;
+        }
+      }
+
+      .ant-table-thead {
+        .zstack-form-item.ant-form-item.zstack-form-item-zsv {
+          height: 22px;
+        }
+        .zstack-form-item-label-container {
+          min-height: auto;
+        }
+      }
+      .ant-table {
+        color: var(--neutral-700);
+        background-color: transparent;
+      }
+    }
+    .zstack-form-item.ant-form-item.zstack-form-item-zsv {
+      margin-bottom: 0;
+    }
+  }
+  .add {
+    display: inline-flex;
+    align-items: center;
+    line-height: 32px;
+    cursor: pointer;
+    color: @color-600;
+    padding-top: 4px;
+    &:hover {
+      color: @color-700;
+    }
+  }
+  .disabledAdd {
+    color: @neutral-500;
+    &:hover {
+      color: @neutral-400;
+      cursor: not-allowed;
+    }
+  }
+}

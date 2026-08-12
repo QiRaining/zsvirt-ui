@@ -1,0 +1,548 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "useFor",
+          "mediaType",
+          "backupStorage",
+          "format",
+          "state",
+          "status",
+          "size",
+          "architecture",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.exported",
+        "keys": [
+          "name",
+          "useFor",
+          "mediaType",
+          "format",
+          "size",
+          "architecture",
+          "createDate"
+        ]
+      },
+      {
+        "view": "recycle",
+        "keys": [
+          "name",
+          "useFor",
+          "mediaType",
+          "backupStorage",
+          "format",
+          "state",
+          "status",
+          "size",
+          "architecture",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "mediaType",
+          "backupStorage",
+          "size",
+          "architecture",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.load.balancer",
+        "keys": [
+          "name",
+          "mediaType",
+          "backupStorage",
+          "size",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "useFor",
+          "mediaType",
+          "backupStorage",
+          "format",
+          "state",
+          "status",
+          "size",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.backup.storage",
+        "keys": [
+          "name",
+          "useFor",
+          "mediaType",
+          "format",
+          "state",
+          "status",
+          "size",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "useFor",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageFunction",
+            "defaultMessage": "Image Usage"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "mediaType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageType",
+            "defaultMessage": "Image Type"
+          },
+          "queryType": "",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "backupStorage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "backupStorage",
+            "defaultMessage": "Image Storage"
+          },
+          "queryType": "input",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "format",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageFormat",
+            "defaultMessage": "Image Format"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "virtual.router.image"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "virtual.router.image"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.backup.storage",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "export.virtual.router.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.exported/header",
+        "extraKeys": [
+          "download",
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "main.exported/row",
+        "activeKeys": [
+          "download",
+          "copy.url",
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "main.exported/toolbar",
+        "extraKeys": [
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "export.virtual.router.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "export.virtual.router.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.virtual.router.image",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "recycle/header",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.backup.storage/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "export.virtual.router.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.backup.storage/toolbar",
+        "extraKeys": [
+          "add.virtual.router.image"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "export.virtual.router.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "export.virtual.router.image",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.virtual.router.image",
+        "resource": "virtual.router.image",
+        "authKey": "add.virtual.router.image",
+        "i18nKey": "add.virtualRouterImage",
+        "name": "添加路由器镜像",
+        "label": "添加路由器镜像",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "virtual.router.image",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "virtual.router.image",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "virtual.router.image",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "export.virtual.router.image",
+        "resource": "virtual.router.image",
+        "authKey": "export.virtual.router.image",
+        "i18nKey": "export.virtualRouterImage",
+        "name": "导出",
+        "label": "导出",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "virtual.router.image",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "virtual.router.image",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "undo",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "virtual.router.image",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "download",
+        "resource": "virtual.router.image",
+        "authKey": "download",
+        "i18nKey": "download",
+        "name": "下载",
+        "label": "下载",
+        "icon": "download",
+        "dividerKey": 0
+      },
+      {
+        "key": "copy.url",
+        "resource": "virtual.router.image",
+        "authKey": "copy.url",
+        "i18nKey": "copy.url",
+        "name": "复制URL",
+        "label": "复制URL",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.exported",
+        "resource": "virtual.router.image",
+        "authKey": "delete.exported",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../../../theme.less";
+
+.clusterNameList {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: keep-all;
+
+  & > span {
+    width: 100% !important;
+
+    & > span {
+      & > span {
+        & > span {
+          width: auto !important;
+        }
+      }
+    }
+  }
+
+  & a {
+    display: inline-block !important;
+    width: auto !important;
+
+    & span {
+      display: inline-block !important;
+      width: auto !important;
+    }
+  }
+}
+
+.link {
+  color: inherit !important;
+}
+
+.resourceName {
+  width: auto !important;
+}

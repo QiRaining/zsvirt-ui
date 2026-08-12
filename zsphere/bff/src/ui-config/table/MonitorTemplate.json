@@ -1,0 +1,366 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "tag",
+          "sharedType",
+          "ruleTemplateNum",
+          "monitorGroupNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "tag",
+          "sharedType",
+          "ruleTemplateNum",
+          "monitorGroupNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.monitorTemplate.tag",
+        "keys": [
+          "name",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "tag",
+          "sharedType",
+          "ruleTemplateNum",
+          "monitorGroupNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.monitorTemplate.tag",
+        "keys": [
+          "name",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.tag",
+        "keys": [
+          "name",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "monitor.template"
+        }
+      },
+      {
+        "accessorKey": "tag",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "multipleSelect",
+          "resource": "monitor.template"
+        }
+      },
+      {
+        "accessorKey": "sharedType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shared.type",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "",
+          "resource": "monitor.template"
+        }
+      },
+      {
+        "accessorKey": "ruleTemplateNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "alarm.rule.num",
+            "defaultMessage": "Alarm Rules"
+          },
+          "queryType": "",
+          "resource": "monitor.template"
+        }
+      },
+      {
+        "accessorKey": "monitorGroupNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "monitorgroup.num",
+            "defaultMessage": "Resource Groups"
+          },
+          "queryType": "",
+          "resource": "monitor.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "monitor.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "clone",
+          "set.share.type",
+          "attach.tag",
+          "detach.tag",
+          "attach.monitor.group",
+          "detach.monitor.group",
+          "modify.alarmRule",
+          "sync.rule.to.group",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "clone",
+          "set.share.type",
+          "attach.tag",
+          "detach.tag",
+          "attach.monitor.group",
+          "detach.monitor.group",
+          "modify.alarmRule",
+          "sync.rule.to.group",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.monitor.template"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "attach.tag",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.monitorTemplate.tag/row",
+        "activeKeys": [
+          "detach"
+        ]
+      },
+      {
+        "view": "sub.monitorTemplate.tag/toolbar",
+        "extraKeys": [
+          "attach.resource.tag",
+          "detach"
+        ]
+      },
+      {
+        "view": "sub.tag/row",
+        "activeKeys": [
+          "detach"
+        ]
+      },
+      {
+        "view": "sub.tag/toolbar",
+        "extraKeys": [
+          "detach"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.monitor.template",
+        "resource": "monitor.template",
+        "authKey": "create.monitor.template",
+        "i18nKey": "create.monitorTemplate",
+        "name": "创建报警模板",
+        "label": "创建报警模板",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "monitor.template",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "clone",
+        "resource": "monitor.template",
+        "authKey": "clone",
+        "i18nKey": "clone",
+        "name": "克隆",
+        "label": "克隆",
+        "icon": "",
+        "dividerKey": "clone-divider"
+      },
+      {
+        "key": "set.share.type",
+        "resource": "monitor.template",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareType",
+        "name": "设置共享",
+        "label": "设置共享",
+        "icon": "",
+        "dividerKey": "set.share.type-divider"
+      },
+      {
+        "key": "attach.tag",
+        "resource": "monitor.template",
+        "authKey": "attach.tag",
+        "i18nKey": "attach.tag",
+        "name": "绑定标签",
+        "label": "绑定标签",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.tag",
+        "resource": "monitor.template",
+        "authKey": "detach.tag",
+        "i18nKey": "detach.tag",
+        "name": "解绑标签",
+        "label": "解绑标签",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.monitor.group",
+        "resource": "monitor.template",
+        "authKey": "attach.monitor.group",
+        "i18nKey": "associate.MonitorGroup",
+        "name": "绑定资源分组",
+        "label": "绑定资源分组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.monitor.group",
+        "resource": "monitor.template",
+        "authKey": "detach.monitor.group",
+        "i18nKey": "disassociate.monitorGroup",
+        "name": "解绑资源分组",
+        "label": "解绑资源分组",
+        "icon": "",
+        "dividerKey": "detach.monitor.group-divider"
+      },
+      {
+        "key": "modify.alarmRule",
+        "resource": "monitor.template",
+        "authKey": "modify.alarmRule",
+        "i18nKey": "modify.alarmRule",
+        "name": "修改报警规则",
+        "label": "修改报警规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.rule.to.group",
+        "resource": "monitor.template",
+        "authKey": "sync.rule.to.group",
+        "i18nKey": "sync.rule.to.group",
+        "name": "同步规则到分组",
+        "label": "同步规则到分组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "monitor.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.resource.tag",
+        "resource": "monitor.template",
+        "authKey": "attach.resource.tag",
+        "i18nKey": "bind",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach",
+        "resource": "monitor.template",
+        "authKey": "detach",
+        "i18nKey": "disassociate",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

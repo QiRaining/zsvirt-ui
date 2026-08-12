@@ -1,0 +1,178 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "deviceId",
+          "uuid",
+          "isoName",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "deviceId",
+          "uuid",
+          "isoName",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "deviceId",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "deviceId",
+            "defaultMessage": "Serial Number"
+          },
+          "queryType": "",
+          "resource": "cdrom"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "deviceUuid",
+            "defaultMessage": "Device UUID"
+          },
+          "queryType": "input",
+          "resource": "cdrom"
+        }
+      },
+      {
+        "accessorKey": "isoName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "iso",
+            "defaultMessage": "ISO"
+          },
+          "queryType": "",
+          "resource": "cdrom"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "cdrom"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "attachIso",
+          "detachIso",
+          "set.default",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.cdrom"
+        ],
+        "activeKeys": [
+          "detachIso",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.cdrom",
+        "resource": "cdrom",
+        "authKey": "create.cdrom",
+        "i18nKey": "create.cdrom",
+        "name": "创建光驱",
+        "label": "创建光驱",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attachIso",
+        "resource": "cdrom",
+        "authKey": "attachIso",
+        "i18nKey": "attach.iso",
+        "name": "加载ISO",
+        "label": "加载ISO",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detachIso",
+        "resource": "cdrom",
+        "authKey": "detachIso",
+        "i18nKey": "detach.iso",
+        "name": "卸载ISO",
+        "label": "卸载ISO",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default",
+        "resource": "cdrom",
+        "authKey": "set.default",
+        "i18nKey": "set.defaultCdrom",
+        "name": "设为默认光驱",
+        "label": "设为默认光驱",
+        "icon": "",
+        "dividerKey": "set.default-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "cdrom",
+        "authKey": "delete",
+        "i18nKey": "delete.cdrom",
+        "name": "删除光驱",
+        "label": "删除光驱",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "ZStack/VM": {
+    "CPU": [
+      "CPUUsedUtilization",
+      "CPUIdleUtilization",
+      "CPUAverageUsedUtilization",
+      "CPUAllUsedUtilization",
+      "CPUAllIdleUtilization",
+      "OperatingSystemCPUUsedUtilization"
+    ],
+    "Disk": [
+      "DiskReadOps",
+      "DiskAllReadOps",
+      "DiskWriteOps",
+      "DiskAllWriteOps",
+      "DiskReadBytes",
+      "DiskAllReadBytes",
+      "DiskWriteBytes",
+      "DiskAllWriteBytes",
+      "DiskAllFreeCapacityInBytes",
+      "DiskAllFreeCapacityInPercent",
+      "DiskAllUsedCapacityInBytes",
+      "DiskAllUsedCapacityInPercent",
+      "DiskUsedCapacityInBytes",
+      "DiskUsedCapacityInPercent",
+      "DiskFreeCapacityInPercent",
+      "DiskFreeCapacityInBytes"
+    ],
+    "Network": [
+      "NetworkInBytes",
+      "NetworkAllInBytes",
+      "NetworkInPackets",
+      "NetworkAllInPackets",
+      "NetworkInErrors",
+      "NetworkAllInErrors",
+      "NetworkOutBytes",
+      "NetworkAllOutBytes",
+      "NetworkOutPackets",
+      "NetworkAllOutPackets",
+      "NetworkOutErrors",
+      "NetworkAllOutErrors"
+    ],
+    "Memory": [
+      "MemoryFreeBytes",
+      "MemoryFreeInPercent",
+      "MemoryUsedBytes",
+      "MemoryUsedInPercent",
+      "OperatingSystemMemoryUsedPercent"
+    ],
+    "GPU": ["GpuUtilization", "GpuMemoryUtilization", "GpuTemperature"],
+    "vGPU": ["VGpuUtilization", "VGpuMemoryUtilization"],
+    "Other": [
+      "TotalVMCount",
+      "RunningVMCount",
+      "RunningVMInPercent",
+      "StoppedVMCount",
+      "StoppedVMInPercent",
+      "OtherStateVMCount",
+      "OtherStateVMInPercent"
+    ]
+  },
+  "ZStack/BaremetalVM": {
+    "CPU": ["OperatingSystemCPUUsedUtilization"],
+    "Disk": [
+      "DiskReadRequestPerSecond",
+      "DiskWriteRequestPerSecond",
+      "DiskReadBytesPerSecond",
+      "DiskWriteBytesPerSecond",
+      "DiskUsedCapacityInBytes",
+      "DiskUsedCapacityInPercent",
+      "DiskFreeCapacityInPercent",
+      "DiskFreeCapacityInBytes"
+    ],
+    "Network": [
+      "OperatingSystemNetworkInBytes",
+      "OperatingSystemNetworkInPackets",
+      "OperatingSystemNetworkInErrors",
+      "OperatingSystemNetworkOutBytes",
+      "OperatingSystemNetworkOutPackets",
+      "OperatingSystemNetworkOutErrors"
+    ],
+    "Memory": [
+      "OperatingSystemMemoryTotalBytes",
+      "OperatingSystemMemoryFreeBytes",
+      "OperatingSystemMemoryUsedBytes",
+      "OperatingSystemMemoryAvailableBytes",
+      "OperatingSystemMemoryFreePercent",
+      "OperatingSystemMemoryUsedPercent"
+    ]
+  },
+  "ZStack/Baremetal2VM": {
+    "CPU": [
+      "OperatingSystemCPUUsedUtilization",
+      "OperatingSystemCPUAverageUsedUtilization"
+    ],
+    "Disk": [
+      "DiskReadRequestPerSecond",
+      "DiskWriteRequestPerSecond",
+      "DiskReadBytesPerSecond",
+      "DiskWriteBytesPerSecond",
+      "DiskUsedCapacityInBytes",
+      "DiskUsedCapacityInPercent",
+      "DiskFreeCapacityInPercent",
+      "DiskFreeCapacityInBytes"
+    ],
+    "Network": [
+      "OperatingSystemNetworkInBytes",
+      "OperatingSystemNetworkInPackets",
+      "OperatingSystemNetworkInErrors",
+      "OperatingSystemNetworkOutBytes",
+      "OperatingSystemNetworkOutPackets",
+      "OperatingSystemNetworkOutErrors"
+    ],
+    "Memory": [
+      "OperatingSystemMemoryTotalBytes",
+      "OperatingSystemMemoryFreeBytes",
+      "OperatingSystemMemoryUsedBytes",
+      "OperatingSystemMemoryAvailableBytes",
+      "OperatingSystemMemoryFreePercent",
+      "OperatingSystemMemoryUsedPercent"
+    ]
+  },
+  "ZStack/VRouter": {
+    "CPU": [
+      "CPUUsedUtilization",
+      "CPUIdleUtilization",
+      "CPUAllUsedUtilization",
+      "CPUAllIdleUtilization"
+    ],
+    "Disk": [
+      "DiskReadOps",
+      "DiskAllReadOps",
+      "DiskWriteOps",
+      "DiskAllWriteOps",
+      "DiskReadBytes",
+      "DiskAllReadBytes",
+      "DiskWriteBytes",
+      "DiskAllWriteBytes",
+      "DiskAllFreeCapacityInBytes",
+      "DiskAllFreeCapacityInPercent",
+      "DiskAllUsedCapacityInBytes",
+      "DiskAllUsedCapacityInPercent",
+      "DiskFreeCapacityInPercent",
+      "DiskUsedCapacityInBytes",
+      "DiskUsedCapacityInPercent",
+      "DiskFreeCapacityInBytes"
+    ],
+    "Network": [
+      "NetworkInBytes",
+      "NetworkAllInBytes",
+      "NetworkInPackets",
+      "NetworkAllInPackets",
+      "NetworkInErrors",
+      "NetworkAllInErrors",
+      "NetworkOutBytes",
+      "NetworkAllOutBytes",
+      "NetworkOutPackets",
+      "NetworkAllOutPackets",
+      "NetworkOutErrors",
+      "NetworkAllOutErrors"
+    ],
+    "Memory": [
+      "MemoryFreeBytes",
+      "MemoryFreeInPercent",
+      "MemoryUsedBytes",
+      "MemoryUsedInPercent"
+    ]
+  },
+  "ZStack/Host": {
+    "CPU": [
+      "CPUIdleUtilization",
+      "CPUAllIdleUtilization",
+      "CPUUsedUtilization",
+      "CPUAverageUsedUtilization",
+      "CPUAllUsedUtilization",
+      "CPUCapacityTotal",
+      "CPUUsedCapacityCount",
+      "CPULockedCapacityCount",
+      "CPUUsedCapacityInPercent",
+      "CPULockedCapacityInPercent",
+      "CPUAvailableCapacityCount",
+      "CPUAvailableCapacityInPercent",
+      "CPUUsedCapacityPerHostCount",
+      "CPUUsedCapacityPerHostInPercent",
+      "CPUAvailableCapacityPerHostCount",
+      "CPUAvailableCapacityPerHostInPercent",
+      "CpuTemperature"
+    ],
+    "Memory": [
+      "MemoryFreeBytes",
+      "MemoryFreeInPercent",
+      "MemoryUsedBytes",
+      "MemoryUsedInPercent",
+      "MemoryCapacityTotal",
+      "MemoryUsedCapacityInBytes",
+      "MemoryUsedCapacityInPercent",
+      "MemoryLockedCapacityInBytes",
+      "MemoryLockedCapacityInPercent",
+      "MemoryAvailableCapacityInBytes",
+      "MemoryAvailableCapacityInPercent",
+      "MemoryUsedCapacityPerHostInBytes",
+      "MemoryUsedCapacityPerHostInPercent",
+      "MemoryAvailableCapacityPerHostInBytes",
+      "MemoryAvailableCapacityPerHostInPercent"
+    ],
+    "Disk": [
+      "DiskReadOps",
+      "DiskAllReadOps",
+      "DiskWriteOps",
+      "DiskAllWriteOps",
+      "DiskReadBytes",
+      "DiskAllReadBytes",
+      "DiskWriteBytes",
+      "DiskAllWriteBytes",
+      "DiskAllFreeCapacityInBytes",
+      "DiskAllFreeCapacityInPercent",
+      "DiskAllUsedCapacityInBytes",
+      "DiskAllUsedCapacityInPercent",
+      "DiskCapacityInBytes",
+      "DiskFreeCapacityInPercent",
+      "DiskUsedCapacityInBytes",
+      "DiskUsedCapacityInPercent",
+      "DiskRootUsedCapacityInPercent",
+      "DiskRootUsedCapacityInBytes",
+      "DiskXfsFragInPercent",
+      "SSDLifeLeft",
+      "SSDTemperature"
+    ],
+    "Network": [
+      "NetworkInBytes",
+      "NetworkAllInBytes",
+      "NetworkInPackets",
+      "NetworkAllInPackets",
+      "NetworkInErrors",
+      "NetworkAllInErrors",
+      "NetworkOutBytes",
+      "NetworkAllOutBytes",
+      "NetworkOutPackets",
+      "NetworkAllOutPackets",
+      "NetworkOutErrors",
+      "NetworkAllOutErrors",
+      "NetworkConntrackCount",
+      "NetworkConntrackInPercent",
+      "NetworkInDropped",
+      "NetworkOutDropped",
+      "PhysicalNetworkInterface"
+    ],
+    "Raid": ["RaidState"],
+    "GPU": ["GpuUtilization", "GpuMemoryUtilization", "GpuTemperature"],
+    "StorageAdapter": ["FcHbaLinkFailureTotal", "FcHbaLossOfSignalTotal"],
+    "Other": [
+      "HostTotal",
+      "ConnectedHostCount",
+      "ConnectedHostInPercent",
+      "DisconnectedHostCount",
+      "DisconnectedHostInPercent",
+      "PowerSupply"
+    ]
+  },
+  "ZStack/IAM2Project": {
+    "ComputingResource": [
+      "VmQuotaUsedInPercent",
+      "RunningVMInPercent",
+      "CPUQuotaUsedInPercent",
+      "MemoryQuotaUsedInPercent",
+      "GPUQuotaUsedInPercent",
+      "AffinityGroupQuotaUsedInPercent"
+    ],
+    "StorageResource": [
+      "VolumeSnapshotQuotaUsedInPercent",
+      "VolumeDataQuotaUsedInPercent",
+      "VolumeCapacityQuotaUsedInPercent",
+      "ImageQuotaUsedInPercent",
+      "ImageCapacityQuotaUsedInPercent",
+      "BackupStorageCapacityQuotaUsedInPercent",
+      "BackupStorageQuotaUsedInPercent"
+    ],
+    "NetworkResource": [
+      "VxlanNetworkQuotaUsedInPercent",
+      "L3NetworkQuotaUsedInPercent",
+      "SecurityGroupQuotaUsedInPercent",
+      "VipQuotaUsedInPercent",
+      "EipQuotaUsedInPercent",
+      "PortForwardQuotaUsedInPercent",
+      "LoadBalancerQuotaUsedInPercent",
+      "LoadBalancerListenerQuotaUsedInPercent"
+    ]
+  }
+}

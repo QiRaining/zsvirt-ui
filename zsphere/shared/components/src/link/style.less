@@ -1,0 +1,21 @@
+@import "../style/vars.less";
+
+.zstack-biz-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 22px;
+  color: @color-600;
+  text-decoration: none;
+  column-gap: 4px;
+  transition: color 0.2s ease-in-out;
+}
+
+.zstack-biz-link:hover {
+  color: #40a9ff;
+}
+
+.zstack-biz-link .zstack-icon,
+.zstack-biz-link svg {
+  color: inherit;
+  fill: currentColor;
+}

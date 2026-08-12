@@ -1,0 +1,510 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vCenter",
+          "mediaType",
+          "format",
+          "state",
+          "status",
+          "shareType",
+          "size",
+          "platform",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.mine",
+        "keys": [
+          "name",
+          "mediaType",
+          "format",
+          "state",
+          "status",
+          "size",
+          "platform",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.shared",
+        "keys": [
+          "name",
+          "mediaType",
+          "format",
+          "state",
+          "status",
+          "size",
+          "platform",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "recycle",
+        "keys": [
+          "name",
+          "vCenter",
+          "mediaType",
+          "format",
+          "state",
+          "shareType",
+          "size",
+          "platform",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "mediaType",
+          "size",
+          "backupStorage",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "shareType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vcenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "multipleSelect",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "mediaType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "imageType",
+            "defaultMessage": "Image Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "format",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageFormat",
+            "defaultMessage": "Image Format"
+          },
+          "queryType": "",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareMode",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "backupStorage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "backupStorage",
+            "defaultMessage": "Image Storage"
+          },
+          "queryType": "input",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "vcenter.image"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.image"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.mine/header",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ],
+        "activeKeys": [
+          "edit"
+        ]
+      },
+      {
+        "view": "main.mine/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.mine/toolbar",
+        "extraKeys": [
+          "add.image",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.shared/header"
+      },
+      {
+        "view": "main.shared/row"
+      },
+      {
+        "view": "main.shared/toolbar"
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.image",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "recycle/header",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.image",
+        "resource": "vcenter.image",
+        "authKey": "add.image",
+        "i18nKey": "add.image",
+        "name": "添加镜像",
+        "label": "添加镜像",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vcenter.image",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "vcenter.image",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "vcenter.image",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "vcenter.image",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.owner",
+        "resource": "vcenter.image",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vcenter.image",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "vcenter.image",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "undo",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "vcenter.image",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vcenter.image",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

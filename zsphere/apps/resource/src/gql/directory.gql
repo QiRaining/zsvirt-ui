@@ -1,0 +1,18 @@
+
+
+query getGroupDirTreeByUuid($conditions: [Condition!]) {
+  getGroupDirTreeByUuid(conditions: $conditions) {
+    list {
+      key
+      title
+      level
+      name
+      parentUuid
+      zoneUuid
+      uuid
+      groupName
+      vmCount
+      createDate
+    }
+  }
+}

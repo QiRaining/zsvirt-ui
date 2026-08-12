@@ -1,0 +1,1164 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "defaultL3Network",
+          "hostIp",
+          "cluster",
+          "vCenter",
+          "platform",
+          "owner",
+          "ha",
+          "createDate",
+          "group"
+        ]
+      },
+      {
+        "view": "main.custom",
+        "keys": [
+          "name",
+          "uuid",
+          "state",
+          "cpuNum",
+          "memorySize",
+          "actuallySize",
+          "defaultIp",
+          "defaultMac",
+          "defaultL3Network",
+          "defalutL3NetworkType",
+          "hostIp",
+          "cluster",
+          "platform",
+          "owner",
+          "ha",
+          "createDate",
+          "lastOpDate",
+          "group"
+        ]
+      },
+      {
+        "view": "recycle",
+        "keys": [
+          "name",
+          "state",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "vCenter",
+          "platform",
+          "owner",
+          "ha",
+          "createDate",
+          "group"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "owner",
+          "ha",
+          "createDate",
+          "group"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "cpuNum",
+          "memorySize",
+          "defaultIp",
+          "platform",
+          "owner",
+          "ha",
+          "createDate",
+          "group"
+        ]
+      },
+      {
+        "view": "sub.vcenter.network",
+        "keys": [
+          "name",
+          "currentIp",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "currentIp",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.network.used.ip",
+            "defaultMessage": "Used IP in Current Network"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "actuallySize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "actual.capacity",
+            "defaultMessage": "Actual Size"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "defaultIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "default.ip",
+            "defaultMessage": "Default IP"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "defaultMac",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "default.mac",
+            "defaultMessage": "Default MAC Address"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "defaultL3Network",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "default.network",
+            "defaultMessage": "Default Network"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "defalutL3NetworkType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "defalut.network.type",
+            "defaultMessage": "Default Network Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "hostIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "host.ip",
+            "defaultMessage": "Host IP"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "cluster",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vcenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "multipleSelect",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "instanceOffering",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "instance.offering",
+            "defaultMessage": "Instance Offering"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hypervisor.type",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "eip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "eip",
+            "defaultMessage": "EIP"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "securityGroup",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "security.group",
+            "defaultMessage": "Security Group"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "rootVolume",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "root.volume",
+            "defaultMessage": "Root Volume"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "image",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "image",
+            "defaultMessage": "Image"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "zone",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "zone",
+            "defaultMessage": "Data Center"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "volumeCount",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "volume.count",
+            "defaultMessage": "Disks"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "healthStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "health.state",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "metric",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "monitor.state",
+            "defaultMessage": "Monitoring State"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "portForwarding",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "port.forwarding",
+            "defaultMessage": "Port Forwarding"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "vmNicName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vm.nic.name",
+            "defaultMessage": "NIC Name"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "vmNics",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm.nic",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "tag",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "multipleSelect",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "ha",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ha",
+            "defaultMessage": "HA Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "primaryStorage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "primary.storage",
+            "defaultMessage": "Data Storage"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "lastHost",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "last.host",
+            "defaultMessage": "Last Host"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "gpuDeviceSpec",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "gpu.spec",
+            "defaultMessage": "GPU Specification"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "vmCdRoms",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cd.roms",
+            "defaultMessage": "cdRoms"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "resourcePriority",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resource.priority",
+            "defaultMessage": "Resource Priority"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "backup.status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.state",
+            "defaultMessage": "Backup State"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "last.op.date",
+            "defaultMessage": "Last Operation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.vm"
+        }
+      },
+      {
+        "accessorKey": "group",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "group.path",
+            "defaultMessage": "VM Group"
+          },
+          "queryType": "input",
+          "resource": "vcenter.vm"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "resume",
+          "pause",
+          "shutdown",
+          "console",
+          "clone",
+          "migrate",
+          "vm.migrate",
+          "system.config",
+          "modify.instance.offering",
+          "change.owner",
+          "set.ha",
+          "set.console.password",
+          "volume",
+          "attach.volume",
+          "detach.volume",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reboot",
+          "resume",
+          "pause",
+          "shutdown",
+          "console",
+          "clone",
+          "migrate",
+          "vm.migrate",
+          "move.to.directory",
+          "system.config",
+          "modify.instance.offering",
+          "change.owner",
+          "set.ha",
+          "set.console.password",
+          "volume",
+          "attach.volume",
+          "detach.volume",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vm",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reboot",
+          "resume",
+          "pause",
+          "shutdown",
+          "move.to.directory",
+          "change.owner",
+          "set.ha",
+          "remove"
+        ]
+      },
+      {
+        "view": "recycle/header",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/row",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reboot",
+          "resume",
+          "pause",
+          "shutdown",
+          "console",
+          "remove"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reboot",
+          "resume",
+          "pause",
+          "shutdown",
+          "remove"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vm",
+        "resource": "vcenter.vm",
+        "authKey": "create.vm",
+        "i18nKey": "create.vm",
+        "name": "创建云主机",
+        "label": "创建云主机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vcenter.vm",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "vcenter.vm",
+        "authKey": "start",
+        "i18nKey": "start",
+        "name": "启动",
+        "label": "启动",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "vcenter.vm",
+        "authKey": "stop",
+        "i18nKey": "stop",
+        "name": "停止",
+        "label": "停止",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reboot",
+        "resource": "vcenter.vm",
+        "authKey": "reboot",
+        "i18nKey": "reboot",
+        "name": "重启",
+        "label": "重启",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "resume",
+        "resource": "vcenter.vm",
+        "authKey": "resume",
+        "i18nKey": "resume",
+        "name": "恢复",
+        "label": "恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "pause",
+        "resource": "vcenter.vm",
+        "authKey": "pause",
+        "i18nKey": "pause",
+        "name": "暂停",
+        "label": "暂停",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "shutdown",
+        "resource": "vcenter.vm",
+        "authKey": "shutdown",
+        "i18nKey": "shutdown",
+        "name": "关闭电源",
+        "label": "关闭电源",
+        "icon": "",
+        "dividerKey": "shutdown-divider"
+      },
+      {
+        "key": "console",
+        "resource": "vcenter.vm",
+        "authKey": "console",
+        "i18nKey": "openConsole",
+        "name": "打开控制台",
+        "label": "打开控制台",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "clone",
+        "resource": "vcenter.vm",
+        "authKey": "clone",
+        "i18nKey": "clone",
+        "name": "克隆",
+        "label": "克隆",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "migrate",
+        "resource": "vcenter.vm",
+        "authKey": "migrate",
+        "i18nKey": "migrate",
+        "name": "迁移",
+        "label": "迁移",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 1,
+        "children": [
+          {
+            "key": "vm.migrate",
+            "resource": "vcenter.vm",
+            "authKey": "vm.migrate",
+            "i18nKey": "migrate.vm",
+            "name": "云主机迁移",
+            "label": "云主机迁移",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "move.to.directory",
+        "resource": "vcenter.vm",
+        "authKey": "move.to.directory",
+        "i18nKey": "move.to.directory",
+        "name": "移动至分组",
+        "label": "移动至分组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "system.config",
+        "resource": "vcenter.vm",
+        "authKey": "system.config",
+        "i18nKey": "systemConfig",
+        "name": "系统配置",
+        "label": "系统配置",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 4,
+        "children": [
+          {
+            "key": "modify.instance.offering",
+            "resource": "vcenter.vm",
+            "authKey": "modify.instance.offering",
+            "i18nKey": "modify.instanceOffering",
+            "name": "修改计算规格",
+            "label": "修改计算规格",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "change.owner",
+            "resource": "vcenter.vm",
+            "authKey": "change.owner",
+            "i18nKey": "change.owner",
+            "name": "更改所有者",
+            "label": "更改所有者",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "set.ha",
+            "resource": "vcenter.vm",
+            "authKey": "set.ha",
+            "i18nKey": "set.ha",
+            "name": "设置高可用",
+            "label": "设置高可用",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "set.console.password",
+            "resource": "vcenter.vm",
+            "authKey": "set.console.password",
+            "i18nKey": "set.consolePassword",
+            "name": "设置控制台密码",
+            "label": "设置控制台密码",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "volume",
+        "resource": "vcenter.vm",
+        "authKey": "volume",
+        "i18nKey": "volume",
+        "name": "云盘",
+        "label": "云盘",
+        "icon": "",
+        "dividerKey": "volume-divider",
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "attach.volume",
+            "resource": "vcenter.vm",
+            "authKey": "attach.volume",
+            "i18nKey": "attach.volume",
+            "name": "加载云盘",
+            "label": "加载云盘",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "detach.volume",
+            "resource": "vcenter.vm",
+            "authKey": "detach.volume",
+            "i18nKey": "detach.volume",
+            "name": "卸载云盘",
+            "label": "卸载云盘",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "remove",
+        "resource": "vcenter.vm",
+        "authKey": "remove",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "vcenter.vm",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "vcenter.vm",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "tag",
+          "vmNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "tag",
+          "vmNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.create",
+        "keys": [
+          "name",
+          "tag",
+          "vmNum",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "tag",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "multipleSelect",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "vmNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "number.of.bound.vm",
+            "defaultMessage": "Associated VMs"
+          },
+          "queryType": "",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "ssh.key.pair"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "ssh.key.pair"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "bind.vm",
+          "unbind.vm",
+          "attach.tag",
+          "detach.tag",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "bind.vm",
+          "unbind.vm",
+          "attach.tag",
+          "detach.tag",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.create/toolbar",
+        "extraKeys": [
+          "create"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "ssh.key.pair",
+        "authKey": "create",
+        "i18nKey": "create.sshKeyPair",
+        "name": "创建密钥",
+        "label": "创建密钥",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "ssh.key.pair",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "bind.vm",
+        "resource": "ssh.key.pair",
+        "authKey": "bind.vm",
+        "i18nKey": "bind.vm",
+        "name": "绑定云主机",
+        "label": "绑定云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "unbind.vm",
+        "resource": "ssh.key.pair",
+        "authKey": "unbind.vm",
+        "i18nKey": "unbind.vm",
+        "name": "解绑云主机",
+        "label": "解绑云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.tag",
+        "resource": "ssh.key.pair",
+        "authKey": "attach.tag",
+        "i18nKey": "attachTag",
+        "name": "绑定标签",
+        "label": "绑定标签",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.tag",
+        "resource": "ssh.key.pair",
+        "authKey": "detach.tag",
+        "i18nKey": "detachTag",
+        "name": "解绑标签",
+        "label": "解绑标签",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "ssh.key.pair",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

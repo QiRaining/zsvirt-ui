@@ -1,0 +1,38 @@
+@import "../../theme.module.less";
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.main {
+  padding: 20px 24px;
+}
+
+.toolbar {
+  margin: 12px 0;
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}
+
+.name {
+  cursor: pointer;
+  color: @color-600!important;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.unknown {
+  color: @neutral-500;
+}

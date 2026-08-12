@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack",
+  "favicon": "/public/theme/default/ko-KR/favicon.ico",
+  "loginTitle": "ZStack Cloud에 오신 것을 환영합니다",
+  "loginLogo": "/public/theme/default/ko-KR/logo.svg",
+  "bannerLogo": "/public/theme/default/ko-KR/logo-bar.svg",
+  "bannerTitle": "ZStack 클라우드",
+  "bannerFontSize": "14px",
+  "overviewTitle": "실시간 모니터",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

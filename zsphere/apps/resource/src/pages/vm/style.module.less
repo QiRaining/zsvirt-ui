@@ -1,0 +1,16 @@
+@import url("../../theme.less");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  > [class^="ant-tabs"] {
+    flex-grow: 1;
+    :global {
+      .ant-tabs-content {
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
+}

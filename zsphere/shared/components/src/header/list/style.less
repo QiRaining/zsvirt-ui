@@ -1,0 +1,35 @@
+@import "../../style/vars.less";
+
+.@{prefix}-header-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 24px;
+
+  &-title {
+    color: @neutral-800;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &-content {
+    margin-top: 4px;
+    color: @neutral-600;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &-more {
+    color: @color-600;
+    cursor: pointer;
+
+    &:hover {
+      color: @color-500;
+    }
+  }
+
+  &-extra {
+    display: flex;
+    margin-top: 10px;
+  }
+}

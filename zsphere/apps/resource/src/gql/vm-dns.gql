@@ -1,0 +1,25 @@
+query queryVmDns(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryVmDns(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      vmInstanceUuid
+      vmNicUuid
+      dns
+      ipVersion
+    }
+    total
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../../../../../theme.less";
+
+.caption {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+}
+
+.diskType {
+  display: flex !important;
+  align-items: center;
+
+  > * {
+    flex-shrink: 0;
+  }
+}
+
+.card {
+  border-left: 1px solid @neutral-300;
+
+  :global {
+    .zstack-form-item-label-container {
+      width: 147px !important;
+    }
+  }
+}

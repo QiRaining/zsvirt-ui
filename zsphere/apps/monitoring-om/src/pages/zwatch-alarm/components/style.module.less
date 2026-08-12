@@ -1,0 +1,63 @@
+@import "../../../theme.module.less";
+
+.tip {
+  font-size: 12px;
+  font-weight: 400;
+  color: @neutral-500;
+  line-height: 20px;
+}
+
+.alert {
+  white-space: pre;
+}
+
+.selection {
+  padding: 5px 12px;
+  justify-content: space-between;
+
+  &-name {
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-type {
+    width: 88px;
+    text-align: right;
+    color: @neutral-500;
+  }
+
+  :global {
+    .ant-checkbox-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .ant-checkbox {
+      margin-top: 2px;
+    }
+
+    .ant-checkbox + span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.selectionHeader {
+  padding: 5px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mt12 {
+  margin-top: 12px;
+}
+
+.dropdown {
+  max-height: 230px;
+  overflow-y: scroll;
+}

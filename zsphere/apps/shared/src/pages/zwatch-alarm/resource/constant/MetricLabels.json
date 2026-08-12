@@ -1,0 +1,113 @@
+{
+  "VMUuid": {
+    "weight": "1",
+    "title": "vm",
+    "inputType": "selectList"
+  },
+  "BaremetalVMUuid": {
+    "weight": "1",
+    "title": "baremetalVm",
+    "inputType": "selectList",
+    "dbName": "vm"
+  },
+  "ListenerUuid": {
+    "weight": "1",
+    "title": "loadBalancerListener",
+    "inputType": "selectList"
+  },
+  "CPUNum": {
+    "weight": "2",
+    "title": "cpuNum",
+    "inputType": "dropDown"
+  },
+  "DiskDeviceLetter": {
+    "weight": "3",
+    "title": "diskDevice",
+    "inputType": "dropDown"
+  },
+  "NetworkDeviceLetter": {
+    "weight": "3",
+    "title": "networkDevice",
+    "inputType": "dropDown"
+  },
+  "BackupStorageUuid": {
+    "weight": "1",
+    "title": "backupstorage",
+    "inputType": "selectList"
+  },
+  "BackupStorageType": {
+    "weight": "2",
+    "title": "backupStorageType",
+    "inputType": "dropDown",
+    "values": ["ImageStore", "Ceph", "Fusionstor"]
+  },
+  "ManagementNodeIP": {
+    "weight": "1",
+    "title": "managementNodeIP",
+    "inputType": "dropDown"
+  },
+  "DirPath": {
+    "weight": "2",
+    "title": "dirPath",
+    "inputType": "dropDown"
+  },
+  "HostUuid": {
+    "weight": "1",
+    "title": "host",
+    "inputType": "selectList"
+  },
+  "VolumeUuid": {
+    "weight": "1",
+    "title": "volume",
+    "inputType": "selectList"
+  },
+  "MountPoint": {
+    "weight": "3",
+    "title": "mountPoint",
+    "inputType": "dropDown"
+  },
+  "HypervisorType": {
+    "weight": "2",
+    "title": "hypervisorType",
+    "inputType": "dropDown",
+    "values": ["KVM", "ESX"]
+  },
+  "L3NetworkUuid": {
+    "weight": "1",
+    "title": "l3network",
+    "inputType": "selectList"
+  },
+  "L3NetworkType": {
+    "weight": "2",
+    "title": "l3NetworkType",
+    "inputType": "dropDown",
+    "values": ["L3BasicNetwork", "L3VpcNetwork"]
+  },
+  "VipUUID": {
+    "weight": "1",
+    "title": "vip",
+    "inputType": "selectList"
+  },
+  "PrimaryStorageUuid": {
+    "weight": "1",
+    "title": "primarystorage",
+    "inputType": "selectList"
+  },
+  "PrimaryStorageType": {
+    "weight": "2",
+    "title": "primaryStorageType",
+    "inputType": "dropDown",
+    "values": ["LocalStorage", "NFS", "SharedMountPoint", "Ceph", "Fusionstor"]
+  },
+  "projectUuid": {
+    "weight": "1",
+    "title": "projectResource",
+    "inputType": "selectList",
+    "dbName": "iam2project"
+  },
+  "InterfaceName": {
+    "weight": "1",
+    "title": "interfaceName",
+    "inputType": "selectList"
+  }
+}

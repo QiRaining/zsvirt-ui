@@ -1,0 +1,40 @@
+@import url("../../../../theme.less");
+
+.basicInfoList {
+  :global {
+    .zstack-field-horizontal {
+      align-items: center;
+    }
+  }
+  .nameField {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    > :first-child {
+      min-width: 0;
+    }
+    .defaultTag {
+      border: 1px solid @neutral-300 !important;
+      margin: 0 !important;
+    }
+  }
+  .serviceTagListWrapper {
+    :global {
+      .ant-tag {
+        margin: 0 2px 0 0 !important;
+      }
+    }
+    > :not([class$="item-list-show"]) {
+      align-items: center;
+      .serviceTagList {
+        > div {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.emptyText {
+  color: @neutral-500;
+}

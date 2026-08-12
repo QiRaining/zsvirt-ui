@@ -1,0 +1,217 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "status",
+          "console",
+          "cpu",
+          "memory",
+          "storage",
+          "defaultIPv4.address",
+          "create.date"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "console",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "console",
+            "defaultMessage": "Console"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "service.version",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "service.version",
+            "defaultMessage": "Service Version"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "cpu",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "memory",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "storage",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage",
+            "defaultMessage": "Storage"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "defaultIPv4.address",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "defaultIPv4.address",
+            "defaultMessage": "Default IPv4"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      },
+      {
+        "accessorKey": "create.date",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "gateway.vm"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enabled",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enabled",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "enabled",
+        "resource": "gateway.vm",
+        "authKey": "enabled",
+        "i18nKey": "enabled",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "gateway.vm",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "gateway.vm",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

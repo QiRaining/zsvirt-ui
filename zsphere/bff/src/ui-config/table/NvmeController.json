@@ -1,0 +1,85 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.storage.adapter",
+        "keys": [
+          "name",
+          "model",
+          "subsystem",
+          "transport"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "nvme.controller"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "nvme.controller"
+        }
+      },
+      {
+        "accessorKey": "subsystem",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nvme.subsystem",
+            "defaultMessage": "Subsystem"
+          },
+          "queryType": "",
+          "resource": "nvme.controller"
+        }
+      },
+      {
+        "accessorKey": "transport",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nvme.transport",
+            "defaultMessage": "Transmission Protocol"
+          },
+          "queryType": "",
+          "resource": "nvme.controller"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

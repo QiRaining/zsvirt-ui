@@ -1,0 +1,20 @@
+query fuzzyQuery(
+  $resourceType: String!
+  $resourceConditions: [Condition!]!
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: String
+) {
+  fuzzyQuery(
+    resourceType: $resourceType
+    resourceConditions: $resourceConditions
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+  ) {
+    conditionCount {
+      key
+      count
+    }
+  }
+}

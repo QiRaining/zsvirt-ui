@@ -1,0 +1,29 @@
+@import "../../theme.less";
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  .circle {
+    width: 60px;
+    height: 60px;
+    background: @neutral-100;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circleIcon {
+      color: @neutral-300;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  p {
+    color: @neutral-500;
+    font-size: 12px;
+    margin: 8px 0;
+  }
+}

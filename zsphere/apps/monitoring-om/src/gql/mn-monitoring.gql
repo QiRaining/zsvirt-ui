@@ -1,0 +1,18 @@
+query managementNodeList{
+  managementNodeList{
+    total
+    list{
+      dbStatus
+      vip
+      ip
+      gwReachable
+      mnStatus
+      ownsVip
+      peerReachable
+      slaveIoRunning
+      slaveSqlRuning
+      timeToSyncDB
+      vipReachable
+    }
+  }
+}

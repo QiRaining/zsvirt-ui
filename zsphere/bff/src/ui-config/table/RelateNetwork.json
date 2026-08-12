@@ -1,0 +1,93 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "packetsForwardType",
+          "vpcFirewallName"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "packetsForwardType",
+          "vpcFirewallName",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "relate.network"
+        }
+      },
+      {
+        "accessorKey": "packetsForwardType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "effectDirection",
+            "defaultMessage": "Effect Direction"
+          },
+          "queryType": "multipleFilter",
+          "resource": "relate.network"
+        }
+      },
+      {
+        "accessorKey": "vpcFirewallName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "belongFirewall",
+            "defaultMessage": "Associated Firewall"
+          },
+          "queryType": "",
+          "resource": "relate.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "relate.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

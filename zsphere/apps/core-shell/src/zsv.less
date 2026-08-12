@@ -1,0 +1,227 @@
+@import "@zstack/zsphere-components/dist/style/vars.less";
+
+.zsv-detail-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: @neutral-0;
+
+  > [class^="ant-tabs"] {
+    flex-grow: 1;
+
+    .ant-tabs-content {
+      height: 100%;
+
+      > .ant-tabs-tabpane {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 20px 24px;
+
+        &.no-padding {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .zstack-detail-nav-layout-panel-title-container-name {
+    font-size: 14px;
+    color: @neutral-800;
+    font-weight: 400;
+  }
+}
+
+.main-list-header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.zsv-list-padding {
+  position: relative;
+  padding: 20px 24px;
+}
+
+.zsv-capacity-container {
+  padding: 16px 20px;
+}
+
+.ant-row.row-with-divider > .ant-col:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background-color: @neutral-300;
+}
+
+.action-link {
+  color: @color-600;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: @color-500;
+  }
+}
+
+.info-icon {
+  color: @neutral-400;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: @color-600;
+  }
+}
+
+.action-icon {
+  color: @neutral-600;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: @color-600;
+  }
+}
+
+.main-list-header-tabs-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .ant-tabs {
+    flex-grow: 1;
+
+    .ant-tabs-content-holder {
+      flex-basis: 0;
+      flex-grow: 1;
+      min-height: 0;
+      overflow: auto;
+
+      .ant-tabs-content {
+        min-height: 100%;
+
+        .ant-tabs-tabpane {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .ant-tabs-tab {
+      padding: 9px 0;
+    }
+  }
+
+  .main-list-header + div:not(.ant-spin) {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  .zstack-header-list-extra {
+    margin-top: 0;
+  }
+
+  .zstack-header-list-title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  &.main-list-header-tabs-detail {
+    .ant-tabs-tabpane {
+      padding: 20px 24px;
+    }
+  }
+}
+
+.main-list-header-tabs {
+  padding: 20px 24px 8px;
+
+  .zstack-header-list-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &.zstack-header-list {
+    padding-bottom: 8px;
+  }
+}
+
+.ant-modal-title {
+  line-height: 24px;
+}
+
+.ant-table-wrapper.zsv-table {
+  .ant-table-content {
+    border: 1px @neutral-400 solid;
+    border-radius: 2px;
+
+    .ant-table-thead > tr > th {
+      padding: 6.5px 12px;
+
+      &:not(.ant-table-selection-column) + th::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: 2px;
+        height: 12px;
+        background-color: @neutral-300;
+      }
+    }
+
+    .ant-table-tbody > tr {
+      td {
+        padding: 6.5px 12px;
+        color: @neutral-700;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      &:last-child {
+        td {
+          border-bottom: none;
+          padding: 7px 12px;
+        }
+      }
+
+      td:has(.ant-select) {
+        padding: 4px 12px;
+      }
+    }
+  }
+
+  &.zsv-table-height-400 .ant-table-content {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  &.zsv-table-height-320 .ant-table-content {
+    max-height: 320px;
+    overflow: auto;
+  }
+
+  &.zsv-table-height-240 .ant-table-content {
+    max-height: 240px;
+    overflow: auto;
+  }
+}
+
+.ant-picker:not(:hover, .ant-picker-focused) {
+  border-color: @neutral-400 !important;
+}
+
+.ant-form-item-has-error .ant-picker {
+  border-color: #ff4d4f !important;
+}
+
+.list-height-240 {
+  max-height: 240px;
+  overflow: auto;
+}

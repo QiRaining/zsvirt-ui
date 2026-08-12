@@ -1,0 +1,330 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "resource",
+          "resourceCount",
+          "status",
+          "accountName",
+          "loginIp",
+          "createDate",
+          "lastOpDate",
+          "excuteTime"
+        ]
+      },
+      {
+        "view": "main.global",
+        "keys": [
+          "name",
+          "resource",
+          "resourceCount",
+          "status",
+          "log.detail",
+          "createDate",
+          "lastOpDate",
+          "excuteTime"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.current",
+        "keys": [
+          "name",
+          "createDate",
+          "taskProgress",
+          "remainTime"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "resource",
+          "resourceCount",
+          "status",
+          "log.detail",
+          "accountName",
+          "loginIp",
+          "createDate",
+          "lastOpDate",
+          "excuteTime"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operation.description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "input",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "resource",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operation.resource",
+            "defaultMessage": "Operated Resource"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "resourceCount",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "resource.count",
+            "defaultMessage": "Resources"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operation.result",
+            "defaultMessage": "Result"
+          },
+          "queryType": "multipleFilter",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "log.detail",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "log.specific.detail",
+            "defaultMessage": "Details"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "accountName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "account.name",
+            "defaultMessage": "Operator"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "loginIp",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "loginIp",
+            "defaultMessage": "Login IP"
+          },
+          "queryType": "input",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "finish.date",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "excuteTime",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "excuteTime",
+            "defaultMessage": "Execution Time"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "taskProgress",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "task.progress",
+            "defaultMessage": "Task Progress"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      },
+      {
+        "accessorKey": "remainTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "remain.time",
+            "defaultMessage": "Time Remained"
+          },
+          "queryType": "",
+          "resource": "operation.log"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.global/row",
+        "activeKeys": [
+          "cancelTask",
+          "suspend",
+          "goingOn"
+        ]
+      },
+      {
+        "view": "sub.current"
+      },
+      {
+        "view": "sub.current/row",
+        "activeKeys": [
+          "cancelTask",
+          "suspend",
+          "goingOn"
+        ]
+      },
+      {
+        "view": "sub.current/toolbar",
+        "activeKeys": [
+          "cancelTask",
+          "suspend",
+          "goingOn"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "cancelTask",
+          "suspend",
+          "goingOn"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "cancelTask",
+        "resource": "operation.log",
+        "authKey": "cancelTask",
+        "i18nKey": "cancel.task",
+        "name": "取消任务",
+        "label": "取消任务",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "suspend",
+        "resource": "operation.log",
+        "authKey": "suspend",
+        "i18nKey": "pause",
+        "name": "暂停",
+        "label": "暂停",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "goingOn",
+        "resource": "operation.log",
+        "authKey": "goingOn",
+        "i18nKey": "going.on",
+        "name": "继续",
+        "label": "继续",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

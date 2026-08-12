@@ -1,0 +1,41 @@
+@import "../../../../theme.less";
+
+.virtual-hardware {
+  //border-top: 1px solid @neutral-300;
+
+  :global {
+    .ant-tabs-nav-list {
+      margin-left: 0px !important;
+    }
+
+    .ant-tabs-nav {
+      &::before {
+        border-bottom: unset !important;
+      }
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.create-modal {
+  :global {
+    .ant-modal-content {
+      .ant-modal-header {
+        border-bottom-color: @neutral-300;
+
+        .ant-modal-title {
+          font-weight: unset !important;
+        }
+      }
+
+      .ant-modal-footer {
+        border-top-color: @neutral-300;
+      }
+    }
+  }
+}

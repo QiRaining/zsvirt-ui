@@ -1,0 +1,41 @@
+@import "../../style/vars.less";
+
+.card {
+  &.indented .card-content {
+    padding-left: 12px;
+  }
+
+  &.showLine {
+    border-left: 1px solid var(--neutral-300);
+  }
+
+  + .card {
+    margin-top: 20px;
+  }
+
+  .card-titleBar {
+    margin-bottom: 12px;
+
+    .card-titleBar-title {
+      font-size: 14px;
+      font-weight: 400;
+      font-family:
+        PingFangSC-Regular,
+        PingFang SC;
+      line-height: 22px;
+      color: @neutral-700;
+
+      .card-titleBar-title-rect {
+        width: 4px;
+        height: 12px;
+        background-color: @color-400;
+      }
+    }
+  }
+
+  :global {
+    .ant-form-item-explain-error {
+      margin-bottom: 12px;
+    }
+  }
+}

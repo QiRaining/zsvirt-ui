@@ -1,0 +1,69 @@
+query getGlobalConfigAndRcPool($input: GlobalConfigAndRcPoolInput!) {
+  getGlobalConfigAndRcPool(input: $input) {
+    state
+    secretResourcePool {
+      uuid
+      name
+      model
+      ukeyType
+      securityMachine {
+        uuid
+        name
+        state
+        status
+      }
+    }
+  }
+}
+
+query globalConfigAndSecretResourcePoolList($globalConfigs: [GlobalConfigInput!]!) {
+  globalConfigAndSecretResourcePoolList(globalConfigs: $globalConfigs) {
+    list {
+      category
+      name
+      value
+      secretResourcePool {
+        uuid
+        name
+        model
+        status
+        type
+        securityMachine {
+          uuid
+          name
+          state
+          status
+        }
+      }
+    }
+  }
+}
+
+query queryEnableCryptoComplianceProgress($input: QueryEnableCryptoComplianceProgressInput!) {
+  queryEnableCryptoComplianceProgress(input: $input) {
+    progressList {
+      percent
+      state
+      type
+      totalCount
+      signedCount
+      time
+    }
+    encryptMilliseconds
+  }
+}
+
+query getDataProtectionRelatedSummary($input: GetDataProtectionRelatedSummaryInput!) {
+  getDataProtectionRelatedSummary(input: $input) {
+    operationLogCount
+    auditsCount
+    importConfigCount
+    accessControlRuleCount
+    rolePolicyStatementCount
+    rolePrivilegesCount
+    imageCount
+    snapshotCount
+    passwordCount
+    sensitiveDataCount
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.local",
+        "keys": [
+          "name",
+          "backupDataSize",
+          "backupType",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.remote",
+        "keys": [
+          "name",
+          "backupDataSize",
+          "backupType",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.local",
+        "keys": [
+          "backup.name",
+          "disk.name",
+          "diskType",
+          "capacity",
+          "backup.complete.time"
+        ]
+      },
+      {
+        "view": "sub.remote",
+        "keys": [
+          "backup.name",
+          "disk.name",
+          "diskType",
+          "capacity",
+          "backup.complete.time"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "backupDataSize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backupDataSize",
+            "defaultMessage": "Backup Size"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "backupType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.type",
+            "defaultMessage": "Backup Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "backupStorage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.storage",
+            "defaultMessage": "Image Storage"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "backup.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.name",
+            "defaultMessage": "Backup Name"
+          },
+          "queryType": "input",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "disk.name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.name",
+            "defaultMessage": "Disk Name"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "diskType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.diskType",
+            "defaultMessage": "Disk Type"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "capacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      },
+      {
+        "accessorKey": "backup.complete.time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "backup.complete.time",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "zsv.backup.data"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.local/directory",
+        "activeKeys": [
+          "overwrite.recovery",
+          "create.vm",
+          "sync.to.remote.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.local/header",
+        "extraKeys": [
+          "overwrite.recovery",
+          "create.vm"
+        ],
+        "activeKeys": [
+          "sync.to.remote.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.local/row",
+        "activeKeys": [
+          "overwrite.recovery",
+          "create.vm",
+          "sync.to.remote.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.local/toolbar",
+        "extraKeys": [
+          "create.backup"
+        ],
+        "activeKeys": [
+          "sync.to.remote.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.remote/directory",
+        "activeKeys": [
+          "sync.to.local.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.remote/header",
+        "extraKeys": [
+          "sync.to.local.backup.storage"
+        ],
+        "activeKeys": [
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.remote/row",
+        "activeKeys": [
+          "sync.to.local.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.remote/toolbar",
+        "extraKeys": [
+          "create.backup"
+        ],
+        "activeKeys": [
+          "sync.to.local.backup.storage",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vm/header",
+        "extraKeys": [
+          "create.backup"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.backup",
+        "resource": "zsv.backup.data",
+        "authKey": "create.backup",
+        "i18nKey": "create.backup",
+        "name": "创建备份",
+        "label": "创建备份",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "overwrite.recovery",
+        "resource": "zsv.backup.data",
+        "authKey": "overwrite.recovery",
+        "i18nKey": "overwrite.recovery",
+        "name": "覆盖恢复",
+        "label": "覆盖恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.vm",
+        "resource": "zsv.backup.data",
+        "authKey": "create.vm",
+        "i18nKey": "create.vm",
+        "name": "新建虚拟机",
+        "label": "新建虚拟机",
+        "icon": "",
+        "dividerKey": "create.vm-divider"
+      },
+      {
+        "key": "sync.to.remote.backup.storage",
+        "resource": "zsv.backup.data",
+        "authKey": "sync.to.remote.backup.storage",
+        "i18nKey": "sync.to.remote.backup.storage",
+        "name": "同步到异地备份存储",
+        "label": "同步到异地备份存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.to.local.backup.storage",
+        "resource": "zsv.backup.data",
+        "authKey": "sync.to.local.backup.storage",
+        "i18nKey": "sync.to.local.backup.storage",
+        "name": "同步到本地备份存储",
+        "label": "同步到本地备份存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.owner",
+        "resource": "zsv.backup.data",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": "change.owner-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "zsv.backup.data",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

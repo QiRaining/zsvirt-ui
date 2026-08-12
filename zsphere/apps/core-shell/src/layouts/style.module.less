@@ -1,0 +1,112 @@
+@import "../theme.less";
+
+.mainLayout {
+  height: 100%;
+  flex-direction: column !important;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainContainer {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  // min-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: @neutral-0;
+  position: relative;
+}
+
+.iframe {
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  border: none;
+}
+
+.react-resizable {
+  position: relative;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=");
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
+
+.apiInspector {
+  .timelineItemContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .timelineItemTag {
+      flex: 0 0 80px;
+    }
+    .timelineItemContent {
+      flex-grow: 1;
+    }
+    .timelineItemAction {
+      flex: 0 0 60px;
+    }
+  }
+  :global {
+    .ant-timeline.ant-timeline-label {
+      .ant-timeline-item:last-child {
+        padding-bottom: 0 !important;
+      }
+      .ant-timeline-item-label {
+        width: 240px !important;
+      }
+      .ant-timeline-item-tail {
+        left: 252px !important;
+      }
+      .ant-timeline-item-head {
+        left: 252px !important;
+      }
+      .ant-timeline-item-content {
+        left: 240px !important;
+        width: calc(100% - 265px) !important;
+      }
+    }
+  }
+}
+
+.apiInspectorFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apiInspectorDragger {
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: @neutral-500;
+  cursor: row-resize;
+  text-align: center;
+  transform: translateX(-50%);
+}

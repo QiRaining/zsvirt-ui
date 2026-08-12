@@ -1,0 +1,34 @@
+@import url("../../../../theme.less");
+
+.advanced-config-contanier {
+  :global {
+    .zstack-detail-nav-layout-panel {
+      max-width: 1024px;
+    }
+  }
+
+  .action-disabled,
+  .action-normal {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .action-disabled {
+    cursor: not-allowed;
+    color: @neutral-500;
+
+    &:hover {
+      color: @neutral-500;
+    }
+  }
+
+  .action-name {
+    margin-left: 4px;
+  }
+
+  .action-normal {
+    &:hover {
+      color: @color-600;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+fragment xmlHookFields on XmlHook {
+  uuid
+  name
+  description
+  type
+  vmUuids
+  hookScript
+  createDate
+  lastOpDate
+}
+
+query xmlHookList(
+  $conditions: [Condition!],
+  $limit: Int,
+  $start: Int,
+  $extraConditions: [Condition!],
+  $type: String,
+  $sortBy: String,
+  $sortDirection: SortDirectionValidValues
+) {
+	xmlHookList(
+    conditions: $conditions, 
+    limit: $limit, 
+    start: $start, 
+    replyWithCount: true,
+    extraConditions: $extraConditions,
+    type: $type,
+    sortBy: $sortBy,
+    sortDirection: $sortDirection
+	) {
+		total
+		list {
+			...xmlHookFields
+		}
+	}
+}
+
+mutation createXmlHook($input: CreateXmlHookInput!) {
+  createXmlHook(input: $input) {
+    actionId
+  }
+}
+
+mutation updateXmlHook($input: UpdateXmlHookInput!) {
+  updateXmlHook(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteXmlHook($input: DeleteXmlHookInput!) {
+  deleteXmlHook(input: $input) {
+    actionId
+  }
+}
+
+mutation attachXmlHookToVm($input: AttachXmlHookToVmInput!) {
+  attachXmlHookToVm(input: $input) {
+    actionId
+  }
+}
+
+mutation detachXmlHookFromVm($input: DettachXmlHookFromVmInput!) {
+  detachXmlHookFromVm(input: $input) {
+    actionId
+  }
+}
+

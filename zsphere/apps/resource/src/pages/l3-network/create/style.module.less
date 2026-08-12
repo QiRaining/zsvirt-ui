@@ -1,0 +1,100 @@
+@import "../../../theme.less";
+
+.card {
+  padding: 0px 12px;
+
+  & + & {
+    margin-top: 12px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    margin-left: -12px;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: @neutral-700;
+    line-height: 22px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      margin: auto 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.baseFormItem {
+  width: 320px !important;
+}
+
+.ip-container {
+  padding-left: 12px;
+  border-left: 1px solid @neutral-300;
+  margin-bottom: 12px;
+
+  :global {
+    .zstack-form-item-label-container {
+      width: 147px !important;
+    }
+  }
+}
+
+.dhcpTooltip {
+  margin-left: 156px;
+  margin-top: -16px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: @neutral-500;
+
+  :global {
+    .zstack-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.l2NetworkTableSelectTab {
+  margin-bottom: 12px !important;
+}
+
+.icon-alert {
+  margin: 6px 0 4px;
+  display: flex;
+  align-items: flex-start;
+
+  .icon {
+    margin-right: 4px;
+    margin-top: 2px;
+  }
+}
+
+.ipAllocateStrategyTooltip {
+  margin-top: 4px;
+  color: @neutral-500;
+  font-size: 12px;
+}
+
+.dhcpIpField {
+  :global {
+    .ant-form-item-children-icon {
+      right: 48px !important;
+    }
+  }
+}

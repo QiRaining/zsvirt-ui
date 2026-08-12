@@ -1,0 +1,151 @@
+@import "../../../style/vars.less";
+
+.@{prefix}-modal-confirm {
+  .zstack-alert {
+    margin-left: 24px;
+    .zstack-icon {
+      font-size: 16px;
+    }
+
+    .ant-alert-message {
+      font-weight: bold;
+    }
+  }
+
+  .ant-modal-content {
+    max-height: 80vh;
+    min-height: 114px;
+
+    overflow: auto;
+  }
+
+  .ant-modal-footer {
+    border-top: unset;
+    padding: 0 24px 20px 24px !important;
+  }
+
+  &-not-cancelable .ant-modal-footer > button:first-child {
+    visibility: hidden;
+  }
+
+  &-body {
+    padding: 8px 24px 20px 48px;
+    line-height: 22px;
+
+    .zstack-react-markdown > p {
+      font-size: 14px !important;
+    }
+  }
+
+  &-container {
+    min-height: 61px; // 114 - 53(footer)
+  }
+
+  &-alert {
+    .ant-alert-message {
+      font-size: 14px;
+      line-height: 22px;
+      color: @neutral-700 !important;
+    }
+  }
+}
+
+.@{prefix}-zsv-modal-confirm {
+  .zstack-alert {
+    margin-left: 20px;
+
+    .zstack-icon {
+      font-size: 16px;
+    }
+
+    .ant-alert-message {
+      font-size: 14px;
+      color: @neutral-800;
+    }
+  }
+
+  .ant-modal-content {
+    max-height: 80vh;
+    min-height: 114px;
+    overflow: auto;
+    border-radius: 4px;
+
+    .ant-modal-footer {
+      border-top: unset;
+      padding: 0 20px 20px 20px !important;
+
+      .ant-btn-primary {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .ant-modal-footer {
+    border-top: unset;
+    padding: 0 20px 20px 20px !important;
+
+    .ant-btn-primary {
+      margin-left: 8px;
+    }
+  }
+
+  &-not-cancelable .ant-modal-footer > button:first-child {
+    visibility: hidden;
+  }
+
+  &-body {
+    padding: 8px 20px 20px 44px;
+    line-height: 22px;
+    color: @neutral-600 !important;
+    font-size: 14px;
+
+    .ant-checkbox-wrapper {
+      color: @neutral-700;
+    }
+  }
+
+  .ant-form-item-control-input {
+    min-height: auto;
+  }
+
+  &-container {
+    min-height: 61px; // 114 - 53(footer)
+    padding-top: 20px !important;
+  }
+
+  &-alert {
+    .ant-alert-message {
+      font-size: 16px !important;
+      line-height: 22px;
+      color: @neutral-800 !important;
+    }
+  }
+  .@{prefix}-react-markdown {
+    font-size: 14px !important;
+  }
+
+  &-danger-confirm {
+    .ant-btn-primary {
+      background-color: @danger-600 !important;
+    }
+  }
+  &-confirm-danger-action {
+    color: @neutral-600;
+    font-size: 14px;
+    margin-bottom: 4px;
+
+    span {
+      color: @danger-600;
+      font-weight: 500;
+    }
+  }
+  &-formItem {
+    margin-bottom: 0 !important;
+    input {
+      width: 200px;
+    }
+    .ant-checkbox-wrapper {
+      color: @neutral-600;
+    }
+  }
+}

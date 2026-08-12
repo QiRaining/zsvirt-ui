@@ -1,0 +1,793 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "main.custom",
+        "keys": []
+      },
+      {
+        "view": "vm.main",
+        "keys": [
+          "name",
+          "state",
+          "defaultIp",
+          "actuallySize",
+          "totalVolumeSize",
+          "CPUAverageUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteOps",
+          "NetworkAllInBytes",
+          "NetworkAllInPackets",
+          "NetworkAllInErrors",
+          "owner"
+        ]
+      },
+      {
+        "view": "vm.main.custom",
+        "keys": [
+          "name",
+          "state",
+          "defaultIp",
+          "actuallySize",
+          "totalVolumeSize",
+          "CPUAverageUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteBytes",
+          "DiskAllReadOps",
+          "DiskAllWriteOps",
+          "NetworkAllInBytes",
+          "NetworkAllOutBytes",
+          "NetworkAllInPackets",
+          "NetworkAllOutPackets",
+          "NetworkAllInErrors",
+          "NetworkAllOutErrors",
+          "owner"
+        ]
+      },
+      {
+        "view": "vmInner.main",
+        "keys": [
+          "name",
+          "state",
+          "plugInState",
+          "defaultIp",
+          "actuallySize",
+          "totalVolumeSize",
+          "OperatingSystemCPUAverageUsedUtilization",
+          "OperatingSystemMemoryUsedPercent",
+          "DiskAllUsedCapacityInPercent",
+          "owner"
+        ]
+      },
+      {
+        "view": "vmInner.main.custom",
+        "keys": [
+          "name",
+          "state",
+          "plugInState",
+          "defaultIp",
+          "actuallySize",
+          "totalVolumeSize",
+          "platform",
+          "OperatingSystemCPUAverageUsedUtilization",
+          "OperatingSystemCPUAverageSystemUtilization",
+          "OperatingSystemCPUAverageUserUtilization",
+          "OperatingSystemCPUAverageWaitUtilization",
+          "OperatingSystemCPUAverageIdleUtilization",
+          "OperatingSystemMemoryUsedPercent",
+          "OperatingSystemMemoryFreePercent",
+          "DiskAllUsedCapacityInPercent",
+          "DiskAllFreeCapacityInPercent",
+          "owner"
+        ]
+      },
+      {
+        "view": "vpcRouter.main",
+        "keys": [
+          "name",
+          "CPUAverageUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteOps",
+          "NetworkAllInBytes",
+          "NetworkAllInPackets",
+          "NetworkAllInErrors",
+          "owner"
+        ]
+      },
+      {
+        "view": "vpcRouter.main.custom",
+        "keys": [
+          "name",
+          "CPUAverageUsedUtilization",
+          "MemoryUsedInPercent",
+          "DiskAllReadBytes",
+          "DiskAllWriteBytes",
+          "DiskAllReadOps",
+          "DiskAllWriteOps",
+          "NetworkAllInBytes",
+          "NetworkAllOutBytes",
+          "NetworkAllInPackets",
+          "NetworkAllOutPackets",
+          "NetworkAllInErrors",
+          "NetworkAllOutErrors",
+          "owner"
+        ]
+      },
+      {
+        "view": "vpcRouterInner.main",
+        "keys": [
+          "name",
+          "VRouterCPUUsedUtilization",
+          "VRouterMemoryUsedPercent",
+          "VRouterDiskUsedCapacityInPercent",
+          "owner"
+        ]
+      },
+      {
+        "view": "vpcRouterInner.main.custom",
+        "keys": [
+          "name",
+          "defaultIp",
+          "VRouterCPUUsedUtilization",
+          "VRouterCPUAverageSystemUtilization",
+          "VRouterCPUAverageUserUtilization",
+          "VRouterCPUAverageWaitUtilization",
+          "VRouterCPUAverageIdleUtilization",
+          "VRouterMemoryUsedPercent",
+          "VRouterMemoryFreePercent",
+          "VRouterDiskUsedCapacityInPercent",
+          "VRouterDiskAllFreeCapacityInPercent",
+          "owner"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "plugInState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "plugin.status",
+            "defaultMessage": "Plugin Status"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "defaultIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "defaultIPv4.address",
+            "defaultMessage": "Default IPv4"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "actuallySize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "volume.actual.capacity",
+            "defaultMessage": "Volume Actual Size"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "totalVolumeSize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "totalVolumeSize",
+            "defaultMessage": "Total Disk Capacity"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "multipleFilter",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemCPUAverageUsedUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.usage",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemCPUAverageSystemUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.system.usage",
+            "defaultMessage": "CPU Occupancy Rate (System Process)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemCPUAverageUserUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.user.usage",
+            "defaultMessage": "CPU Occupancy Rate (User Process)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemCPUAverageWaitUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.wait.usage",
+            "defaultMessage": "CPU Occupancy Rate (Waiting)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemCPUAverageIdleUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.free.usage",
+            "defaultMessage": "CPU Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemMemoryUsedPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.usage",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "OperatingSystemMemoryFreePercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.free.usage",
+            "defaultMessage": "Memory Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllUsedCapacityInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.usage",
+            "defaultMessage": "Disk Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllFreeCapacityInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.free.usage",
+            "defaultMessage": "Disk Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterCPUUsedUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.usage",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterCPUAverageSystemUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.system.usage",
+            "defaultMessage": "CPU Occupancy Rate (System Process)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterCPUAverageUserUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.user.usage",
+            "defaultMessage": "CPU Occupancy Rate (User Process)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterCPUAverageWaitUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.wait.usage",
+            "defaultMessage": "CPU Occupancy Rate (Waiting)"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterCPUAverageIdleUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.free.usage",
+            "defaultMessage": "CPU Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterMemoryUsedPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.usage",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterMemoryFreePercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.free.usage",
+            "defaultMessage": "Memory Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterDiskUsedCapacityInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.usage",
+            "defaultMessage": "Disk Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "VRouterDiskAllFreeCapacityInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.free.usage",
+            "defaultMessage": "Disk Idle Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "CPUAverageUsedUtilization",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.usage",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "MemoryUsedInPercent",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.usage",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllReadBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.read.rate",
+            "defaultMessage": "Disk Read Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllWriteBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.write.rate",
+            "defaultMessage": "Disk Write Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllReadOps",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.read.iops",
+            "defaultMessage": "Disk Read IOPS"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "DiskAllWriteOps",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "disk.write.iops",
+            "defaultMessage": "Disk Write IOPS"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic.in.rate",
+            "defaultMessage": "NIC in Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic.out.rate",
+            "defaultMessage": "NIC Out Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInPackets",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.in.packets.count",
+            "defaultMessage": "NIC In Packets"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutPackets",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.out.packet.count",
+            "defaultMessage": "NIC Out Packets"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllInErrors",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.incoming.error.rate",
+            "defaultMessage": "NIC In Errors Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "NetworkAllOutErrors",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.card.error.rate",
+            "defaultMessage": "NIC Out Errors Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "performance.vminstance"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "performance.vm.stop"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "performance.vm.stop"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "performance.vm.stop",
+        "resource": "performance.vminstance",
+        "authKey": "performance.vm.stop",
+        "i18nKey": "stop.vmInstance",
+        "name": "停止云主机",
+        "label": "停止云主机",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

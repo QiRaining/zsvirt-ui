@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack AIOS",
+  "favicon": "/public/theme/default/zh-CN/favicon.ico",
+  "loginTitle": "欢迎使用 ZStack AI 智算平台",
+  "loginLogo": "/public/theme/default/zh-CN/logo.svg",
+  "bannerLogo": "/public/theme/default/zh-CN/logo-bar.svg",
+  "bannerTitle": "ZStack AI 智算平台",
+  "bannerFontSize": "14px",
+  "overviewTitle": "ZStack实时监控",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

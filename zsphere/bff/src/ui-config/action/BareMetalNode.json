@@ -1,0 +1,487 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "console",
+          "state",
+          "status",
+          "powerStatus",
+          "architecture",
+          "ipmiAddress",
+          "baremetal.cluster",
+          "provisionType",
+          "cpuNum",
+          "memorySize",
+          "nicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "architecture",
+          "ipmiAddress",
+          "baremetal.cluster",
+          "cpuNum",
+          "memorySize",
+          "nicNum"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.cluster",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "powerStatus",
+          "architecture",
+          "ipmiAddress",
+          "cpuNum",
+          "memorySize",
+          "nicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.offering",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "powerStatus",
+          "architecture",
+          "ipmiAddress",
+          "baremetal.cluster",
+          "cpuNum",
+          "memorySize",
+          "nicNum",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "console",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "console",
+            "defaultMessage": "Console"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "powerStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "powerStatus",
+            "defaultMessage": "Power Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "architecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "ipmiAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipmi.address",
+            "defaultMessage": "IPMI Address"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "baremetal.cluster",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "baremetal2Cluster",
+            "defaultMessage": "Elastic Baremetal Cluster"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "provisionType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "startSource",
+            "defaultMessage": "Start Method"
+          },
+          "queryType": "multipleFilter",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.number",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.size",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "nicNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic.num",
+            "defaultMessage": "NICs"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "bare.metal.node"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis"
+        ],
+        "activeKeys": [
+          "edit.bareMetalChassis",
+          "poweron.bareMetalChassis",
+          "poweroff.bareMetalChassis",
+          "restart.bareMetalChassis",
+          "find.bareMetalChassis",
+          "update.bareMetalChassis.ipmiInfo",
+          "open.bareMetalChassis.Console",
+          "delete.bareMetalChassis"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit.bareMetalChassis",
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis",
+          "poweron.bareMetalChassis",
+          "poweroff.bareMetalChassis",
+          "restart.bareMetalChassis",
+          "find.bareMetalChassis",
+          "update.bareMetalChassis.ipmiInfo",
+          "open.bareMetalChassis.Console",
+          "delete.bareMetalChassis"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.bareMetalChassis",
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis"
+        ],
+        "activeKeys": [
+          "poweroff.bareMetalChassis",
+          "restart.bareMetalChassis",
+          "find.bareMetalChassis",
+          "delete.bareMetalChassis"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.cluster/row",
+        "activeKeys": [
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis",
+          "poweron.bareMetalChassis",
+          "poweroff.bareMetalChassis",
+          "restart.bareMetalChassis",
+          "find.bareMetalChassis",
+          "open.bareMetalChassis.Console",
+          "delete.bareMetalChassis"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.cluster/toolbar",
+        "extraKeys": [
+          "add.bareMetalChassis"
+        ],
+        "activeKeys": [
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis",
+          "delete.bareMetalChassis"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.offering/toolbar",
+        "extraKeys": [
+          "enable.bareMetalChassis",
+          "disable.bareMetalChassis",
+          "delete.bareMetalChassis"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "edit.bareMetalChassis",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "add.bareMetalChassis",
+        "i18nKey": "add.bareMetalNode",
+        "name": "添加裸金属节点",
+        "label": "添加裸金属节点",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "enable.bareMetalChassis",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "disable.bareMetalChassis",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "poweron.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "poweron.bareMetalChassis",
+        "i18nKey": "power.on",
+        "name": "开机",
+        "label": "开机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "poweroff.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "poweroff.bareMetalChassis",
+        "i18nKey": "shutdown",
+        "name": "关闭电源",
+        "label": "关闭电源",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "restart.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "restart.bareMetalChassis",
+        "i18nKey": "restart",
+        "name": "重启",
+        "label": "重启",
+        "icon": "",
+        "dividerKey": "restart.bareMetalChassis-divider"
+      },
+      {
+        "key": "find.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "find.bareMetalChassis",
+        "i18nKey": "find.node",
+        "name": "获取硬件信息",
+        "label": "获取硬件信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.bareMetalChassis.ipmiInfo",
+        "resource": "bare.metal.node",
+        "authKey": "update.bareMetalChassis.ipmiInfo",
+        "i18nKey": "update.bareMetalChassis.ipmiInfo",
+        "name": "更新IPMI信息",
+        "label": "更新IPMI信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "open.bareMetalChassis.Console",
+        "resource": "bare.metal.node",
+        "authKey": "open.bareMetalChassis.Console",
+        "i18nKey": "open.console",
+        "name": "打开控制台",
+        "label": "打开控制台",
+        "icon": "",
+        "dividerKey": "open.bareMetalChassis.Console-divider"
+      },
+      {
+        "key": "delete.bareMetalChassis",
+        "resource": "bare.metal.node",
+        "authKey": "delete.bareMetalChassis",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

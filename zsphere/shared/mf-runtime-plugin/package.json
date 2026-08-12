@@ -1,0 +1,55 @@
+{
+  "name": "@zstack/zsphere-mf-runtime-plugin",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./shared-strategy": {
+      "types": "./dist/runtime-plugin/shared-strategy.d.ts",
+      "import": "./dist/runtime-plugin/shared-strategy.js"
+    },
+    "./fallback": {
+      "types": "./dist/runtime-plugin/fallback.d.ts",
+      "import": "./dist/runtime-plugin/fallback.js"
+    },
+    "./retry": {
+      "types": "./dist/runtime-plugin/retry.d.ts",
+      "import": "./dist/runtime-plugin/retry.js"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch"
+  },
+  "dependencies": {
+    "@module-federation/enhanced": "2.8.1",
+    "@module-federation/retry-plugin": "2.4.0",
+    "@zstack/zsphere-mf-hub": "workspace:*"
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-react": "catalog:",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
+    "react-intl": ">=6.0.0"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

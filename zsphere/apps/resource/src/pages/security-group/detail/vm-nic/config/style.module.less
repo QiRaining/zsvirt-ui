@@ -1,0 +1,40 @@
+@import "../../../../../theme.less";
+
+.link {
+  color: @color-600;
+  cursor: pointer;
+}
+
+.defaultNic {
+  :global {
+    .ant-badge-count {
+      display: inline-block;
+      color: @neutral-700;
+      background-color: transparent;
+      box-shadow: 0 0 0 1px @neutral-400 inset;
+      margin-left: 8px;
+    }
+  }
+}
+
+.none {
+  color: @neutral-500;
+}
+
+.links {
+  :global {
+    .ant-typography {
+      width: auto !important;
+      max-width: 100%;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.linksToolTip {
+  a {
+    text-decoration: underline;
+  }
+}

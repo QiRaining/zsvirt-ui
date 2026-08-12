@@ -1,0 +1,151 @@
+@import "../../style/vars.less";
+
+.@{prefix}-zsv-header-detail {
+  padding: 0 24px 8px;
+
+  &-icon-container {
+    background-color: @color-600;
+    border-radius: 4px;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .@{prefix}-icon,
+    .@{prefix}-icon-inner {
+      font-size: 24px !important;
+      width: 24px !important;
+      height: 24px !important;
+      color: @neutral-0 !important;
+
+      // 覆盖 UnoCSS 的 w-[16px] 和 h-[16px] 类
+      &[class*="w-"],
+      &[class*="h-"] {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      // 覆盖 SVG 元素的所有可能情况
+      svg,
+      svg[class*="fill-current"],
+      svg[class*="w-"],
+      svg[class*="h-"] {
+        width: 24px !important;
+        height: 24px !important;
+        color: @neutral-0 !important;
+        fill: @neutral-0 !important;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-basic-container {
+    margin-right: 32px;
+    flex-grow: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &-basic-container-no-action {
+    gap: 0px;
+  }
+
+  &-basic-info {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  &-edit {
+    color: @color-600 !important;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &-edit-icon {
+    color: @color-600 !important;
+    cursor: pointer;
+    display: none !important;
+  }
+
+  &-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+    overflow: hidden;
+
+    .ant-typography {
+      color: @neutral-800;
+    }
+  }
+
+  &-description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 8px;
+    width: calc(100% - 1px);
+    overflow: hidden;
+
+    .ant-typography {
+      color: @neutral-700;
+    }
+
+    &-disable {
+      color: @neutral-500;
+    }
+  }
+
+  &-icon {
+    display: flex;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+
+    .@{prefix}-icon {
+      color: @neutral-0;
+      width: 100%;
+      cursor: pointer;
+      // height: 20px;
+    }
+  }
+
+  &-fields {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 26px;
+
+    > div {
+      width: 33.33%;
+      padding: 0 20px;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+}

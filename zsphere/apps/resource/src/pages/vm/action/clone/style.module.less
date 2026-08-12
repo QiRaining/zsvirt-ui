@@ -1,0 +1,84 @@
+@import "../../../../theme.less";
+
+.alert {
+  margin: 24px 24px 0;
+  padding-left: 45px;
+
+  :global {
+    .ant-alert-icon {
+      left: 24px;
+    }
+  }
+}
+
+.form {
+  padding: 24px 24px 0;
+}
+
+.fieldWidth {
+  width: 320px !important;
+}
+
+.card {
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.cardTitle {
+  margin-bottom: 12px;
+  padding-left: 8px;
+  border-left: 4px solid @color-400;
+  color: @neutral-700;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.tabs {
+  :global {
+    .ant-tabs-nav::before {
+      border-bottom: 0;
+    }
+  }
+}
+
+.hardwareContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hardwareSection {
+  padding: 12px;
+  border: 1px solid @neutral-300;
+  border-radius: 2px;
+}
+
+.hardwareTitle {
+  margin-bottom: 12px;
+  color: @neutral-800;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.readonlyRow {
+  display: flex;
+  min-height: 32px;
+  gap: 8px;
+  color: @neutral-700;
+
+  span:first-child {
+    width: 160px;
+    color: @neutral-600;
+  }
+}
+
+.nicBlock {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid @neutral-200;
+}
+
+.nicTitle {
+  margin-bottom: 8px;
+  color: @neutral-700;
+}

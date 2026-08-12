@@ -1,0 +1,125 @@
+@import url("../../../theme.less");
+
+.width-400 {
+  width: 400px !important;
+}
+
+.width-200 {
+  width: 200px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.itemList {
+  margin-bottom: 0 !important;
+
+  div {
+    margin-top: 2px;
+    margin-bottom: 2px !important;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconInfo {
+  margin-left: 4px;
+  line-height: 22px;
+  vertical-align: top !important;
+  font-size: 16px !important;
+  color: var(--neutral-300) !important;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-600);
+  }
+}
+
+.networkDevice {
+  margin-bottom: 0 !important;
+
+  :global {
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+      max-width: 480px;
+      border-bottom: none;
+
+      .ant-row {
+        border-bottom: 1px solid @neutral-300;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      max-height: 240px;
+      overflow-y: auto;
+    }
+  }
+
+  .header {
+    color: @neutral-600;
+
+    :global {
+      .ant-col:not(:last-child) {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 12px;
+          background-color: @neutral-300;
+        }
+      }
+    }
+  }
+
+  .content {
+    .item {
+      color: @neutral-700;
+
+      :global {
+        .ant-row {
+          border-bottom: 1px solid @neutral-300;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          align-items: center;
+          padding: 0 6px;
+        }
+      }
+    }
+  }
+
+  .action {
+    display: flex;
+    gap: 12px;
+    color: @neutral-600;
+
+    span {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-600);
+      }
+    }
+  }
+}
+
+.addBtn {
+  margin: 14px 0 4px 0;
+  color: var(--color-600);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}

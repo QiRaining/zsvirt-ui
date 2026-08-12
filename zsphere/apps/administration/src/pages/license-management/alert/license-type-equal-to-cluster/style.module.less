@@ -1,0 +1,30 @@
+@import "../../../../theme.less";
+
+.globalAlert {
+  .globalAlertBold {
+    color: @neutral-800;
+    font-weight: 500;
+  }
+
+  .ant-alert-message {
+    color: @neutral-700;
+  }
+
+  ul {
+    list-style: inside !important;
+
+    li {
+      span.outer-span {
+        margin-left: -8px;
+      }
+    }
+  }
+}
+
+.danger {
+  color: @alert-600;
+}
+
+.danger:hover {
+  color: @alert-500;
+}

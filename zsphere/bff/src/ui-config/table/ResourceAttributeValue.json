@@ -1,0 +1,84 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "resourceName",
+          "resourceType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "resourceUuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "UUID",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "resource.attribute.value"
+        }
+      },
+      {
+        "accessorKey": "resourceName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "resourceName",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "resource.attribute.value"
+        }
+      },
+      {
+        "accessorKey": "resourceType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceType",
+            "defaultMessage": "Resource Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "resource.attribute.value"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "resource.attribute.value"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

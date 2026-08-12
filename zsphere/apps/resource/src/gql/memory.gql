@@ -1,0 +1,32 @@
+fragment memoryFields on Memory {
+  uuid
+  locator
+  size
+  speed
+  clockSpeed
+  manufacturer
+  type
+  state
+  serialNumber
+}
+
+query memoryList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+) {
+  memoryList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+  ) {
+    list {
+      ...memoryFields
+    }
+    total
+  }
+}

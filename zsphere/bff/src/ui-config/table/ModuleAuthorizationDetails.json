@@ -1,0 +1,102 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "authorization.type",
+          "authQuota",
+          "used.credit.limit",
+          "expire.time",
+          "authorization.permit"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "authorization.type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authorization.type",
+            "defaultMessage": "Authorization Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "module.authorization.details"
+        }
+      },
+      {
+        "accessorKey": "authQuota",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authQuota",
+            "defaultMessage": "Authorized Quota"
+          },
+          "queryType": "",
+          "resource": "module.authorization.details"
+        }
+      },
+      {
+        "accessorKey": "used.credit.limit",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "used.credit.limit",
+            "defaultMessage": "Used Quota"
+          },
+          "queryType": "",
+          "resource": "module.authorization.details"
+        }
+      },
+      {
+        "accessorKey": "expire.time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "expire.time",
+            "defaultMessage": "Expires on"
+          },
+          "queryType": "",
+          "resource": "module.authorization.details"
+        }
+      },
+      {
+        "accessorKey": "authorization.permit",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authorization.permit",
+            "defaultMessage": "License"
+          },
+          "queryType": "",
+          "resource": "module.authorization.details"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

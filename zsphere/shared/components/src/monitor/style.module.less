@@ -1,0 +1,160 @@
+@import "../style/vars.less";
+
+.vertical-bar {
+  width: 4px;
+  height: 12px;
+  background-color: @color-400;
+}
+
+// 修复按钮中图标垂直居中问题
+.monitor-refresh-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  .zstack-icon {
+    vertical-align: middle !important;
+  }
+}
+
+// 修复按钮中图标和文字的对齐问题
+.monitor-button-with-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+
+  .zstack-icon {
+    vertical-align: middle !important;
+  }
+}
+
+.card-container {
+  padding: 12px;
+}
+
+.smallSelect {
+  :global {
+    .ant-select-selector {
+      padding-right: 6px !important;
+      border: none !important;
+      box-shadow: none !important;
+      background-color: transparent !important;
+      text-align: right !important;
+      color: @neutral-600 !important;
+    }
+    .ant-select-arrow {
+      color: @neutral-600 !important;
+      top: 50% !important;
+      margin: 0 !important;
+      transform: translateY(-50%) !important;
+      right: 4px !important;
+    }
+  }
+}
+
+.chart-monitor-title {
+  .ant-dropdown-trigger {
+    cursor: pointer;
+  }
+  font-size: 14px;
+  color: @neutral-800;
+  .chart-monitor-title-icon {
+    font-size: 16px;
+    vertical-align: sub;
+    color: @neutral-400;
+    cursor: pointer;
+    transition: color 0.3s;
+    :hover {
+      color: @color-600;
+    }
+  }
+  .ant-select-single {
+    .ant-select-selector {
+      padding: 0 !important;
+    }
+    .ant-select-arrow {
+      right: 0 !important;
+    }
+  }
+}
+
+.chart-monitor-select {
+  .ant-dropdown-trigger {
+    cursor: pointer;
+  }
+}
+
+.chart-monitor {
+  min-height: 130px;
+
+  &-head {
+    margin-bottom: 4px;
+  }
+
+  + .chart-monitor {
+    margin-top: 12px;
+  }
+
+  .empty-table {
+    margin: 0 !important;
+  }
+
+  .tooltip {
+    font-size: 12px;
+    line-height: 20px;
+    min-width: 220px;
+    max-height: 130px;
+    overflow-y: auto;
+    pointer-events: auto;
+    padding: 12px;
+    border-radius: 2px;
+    background-color: @neutral-0;
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.12);
+    opacity: 0.95;
+
+    .tooltipTitle {
+      margin: 2px 0;
+      color: @neutral-500;
+    }
+
+    .tooltipListItem {
+      margin: 2px 0;
+    }
+
+    .tooltipMarker {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .tooltipName {
+      color: @neutral-600;
+    }
+
+    .tooltipValue {
+      color: @neutral-700;
+      float: right;
+      margin-left: 30px;
+    }
+  }
+
+  :global {
+    .ant-empty {
+      display: block !important;
+    }
+  }
+}
+
+.monitor-time {
+  :global {
+    .ant-picker-input > input {
+      color: @neutral-700 !important;
+    }
+    .ant-select {
+      color: @neutral-700 !important;
+    }
+  }
+}

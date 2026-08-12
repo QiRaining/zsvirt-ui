@@ -1,0 +1,102 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "FSType",
+          "mountPoint",
+          "size",
+          "usedRatio"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "partition",
+            "defaultMessage": "Partition"
+          },
+          "queryType": "",
+          "resource": "partition"
+        }
+      },
+      {
+        "accessorKey": "FSType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "filesystem.type",
+            "defaultMessage": "File System Type"
+          },
+          "queryType": "",
+          "resource": "partition"
+        }
+      },
+      {
+        "accessorKey": "mountPoint",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "mountPath",
+            "defaultMessage": "Mount Path"
+          },
+          "queryType": "",
+          "resource": "partition"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "partition"
+        }
+      },
+      {
+        "accessorKey": "usedRatio",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.utilization.rate",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "partition"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

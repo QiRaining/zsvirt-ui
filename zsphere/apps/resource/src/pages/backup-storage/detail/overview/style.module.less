@@ -1,0 +1,37 @@
+@import url("../../../../theme.less");
+
+.container {
+  .headerAlert {
+    margin-bottom: 12px;
+  }
+}
+
+.action-link {
+  cursor: pointer;
+  text-align: right;
+  color: @info-600;
+  padding-left: 10px;
+}
+
+.ceph-capacity {
+  :global {
+    .ant-col:last-child {
+      .capacity-legend-dot {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.fetch-time {
+  color: @neutral-600;
+  font-size: 12px;
+  margin-left: 8px;
+  position: relative;
+  top: -1px;
+}
+
+:global(.anticon).capacityIcon {
+  display: flex;
+  align-items: center;
+}

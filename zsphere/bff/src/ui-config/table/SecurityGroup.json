@@ -1,0 +1,301 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.iam2Project",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "security.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "security.group"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "security.group"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "security.group"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "security.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "import.secrurityGroup.rules",
+          "export.secrurityGroup.rules",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.security.group"
+        ]
+      },
+      {
+        "view": "sub.iam2Project/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.iam2Project/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/header",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "virtualization.edit.nameandDescription",
+          "import.secrurityGroup.rules",
+          "export.secrurityGroup.rules",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "virtualization.edit.nameandDescription",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "create.security.group",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.security.group",
+        "resource": "security.group",
+        "authKey": "create.security.group",
+        "i18nKey": "create.securityGroup",
+        "name": "创建安全组",
+        "label": "创建安全组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "security.group",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "security.group",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "security.group",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "virtualization.edit.nameandDescription",
+        "resource": "security.group",
+        "authKey": "virtualization.edit.nameandDescription",
+        "i18nKey": "edit.nameandDescription",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": "virtualization.edit.nameandDescription-divider"
+      },
+      {
+        "key": "import.secrurityGroup.rules",
+        "resource": "security.group",
+        "authKey": "import.secrurityGroup.rules",
+        "i18nKey": "import.secrurityGroup.rules",
+        "name": "导入规则",
+        "label": "导入规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "export.secrurityGroup.rules",
+        "resource": "security.group",
+        "authKey": "export.secrurityGroup.rules",
+        "i18nKey": "export.secrurityGroup.rules",
+        "name": "导出规则",
+        "label": "导出规则",
+        "icon": "",
+        "dividerKey": "export.secrurityGroup.rules-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "security.group",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

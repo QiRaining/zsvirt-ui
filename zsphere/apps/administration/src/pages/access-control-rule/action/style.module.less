@@ -1,0 +1,40 @@
+@import "../../../theme.less";
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.ipInputWrapper:global(.zstack-form-item.ant-form-item.zstack-form-item-zsv) {
+  margin-bottom: 8px;
+
+  .trash {
+    color: @neutral-600;
+    margin-left: 8px;
+  }
+}
+
+.addBtn:global(.ant-btn) {
+  height: 22px;
+  padding: 0;
+}
+
+.addModal:global(.ant-modal) {
+  :global {
+    .zstack-modal-form-body {
+      max-height: 610px;
+    }
+    .ant-modal-body {
+      max-height: none;
+    }
+  }
+}
+
+.description {
+  font-size: 12px;
+  color: @neutral-500;
+  margin-top: 4px;
+}

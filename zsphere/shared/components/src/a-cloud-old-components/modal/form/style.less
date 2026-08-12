@@ -1,0 +1,110 @@
+@import "../../../style/vars.less";
+
+.@{prefix}-modal-title-icon {
+  margin-left: 4px;
+  cursor: pointer;
+  vertical-align: bottom;
+  color: @neutral-300;
+
+  &:hover {
+    color: @color-600;
+  }
+}
+
+.@{prefix}-zsv-modal-form {
+  .ant-modal-content {
+    border-radius: 4px;
+  }
+
+  .modal-title {
+    font-weight: 400 !important;
+    width: 100%;
+    display: flex;
+
+    .action-title {
+      white-space: nowrap;
+    }
+
+    .resource-name {
+      display: flex;
+      flex-grow: 1;
+      min-width: 0 !important;
+
+      .ant-divider-vertical {
+        height: unset !important;
+        top: unset;
+        margin-top: 5px;
+        margin-bottom: 3px;
+      }
+
+      .text {
+        .ant-typography {
+          color: @neutral-600 !important;
+        }
+        flex: 1;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 100%;
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .@{prefix}-modal-form-body {
+    padding: 24px 24px 40px !important;
+
+    &-alert-container + .@{prefix}-modal-form-body {
+      padding-top: 20px !important;
+    }
+  }
+
+  &-formItem {
+    input {
+      width: 200px;
+    }
+  }
+
+  &-confirm-danger-action {
+    margin-top: 12px;
+    color: @neutral-600;
+    font-size: 14px;
+    margin-bottom: 4px;
+
+    span {
+      color: @danger-600;
+      font-weight: 500;
+    }
+  }
+
+  &-danger-confirm {
+    background-color: @danger-600 !important;
+  }
+}
+
+.@{prefix}-modal-form {
+  &-body {
+    padding: 24px 24px 20px 24px;
+    max-height: 60vh;
+    overflow-y: auto;
+
+    &-alert-container {
+      padding: 24px 24px 0 24px;
+    }
+  }
+
+  .ant-modal-body {
+    max-height: calc(80vh - 108px);
+    min-height: 92px; // 200 - 60 - 48
+    overflow: auto;
+  }
+
+  @media screen and (max-height: 600px) {
+    .ant-modal-body {
+      max-height: 372px; // 600 * 0.8 - 108px
+    }
+  }
+
+  .ant-form-item-control {
+    line-height: 32px;
+  }
+}

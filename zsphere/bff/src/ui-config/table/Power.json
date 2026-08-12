@@ -1,0 +1,162 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "model",
+          "manufacturer",
+          "ratedPower",
+          "currentPower"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "state",
+          "model",
+          "manufacturer",
+          "ratedPower",
+          "currentPower"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device",
+            "defaultMessage": "Device"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "manufacturer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "ratedPower",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "rated.power",
+            "defaultMessage": "Rated Power"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "currentInputPower",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.input.power",
+            "defaultMessage": "Current Input Power"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "currentPower",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.output.power",
+            "defaultMessage": "Current Output Power"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      },
+      {
+        "accessorKey": "currentTemperature",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.temperature",
+            "defaultMessage": "Current Temperature"
+          },
+          "queryType": "",
+          "resource": "power"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,193 @@
+@import "../../../../../../theme.less";
+
+.item {
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px solid @neutral-300;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 12px;
+  align-items: center;
+
+  .name {
+    width: 50%;
+    display: flex;
+
+    .icon {
+    }
+
+    .title {
+      margin-left: 10px;
+      color: @neutral-700;
+    }
+  }
+
+  .info {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    color: @neutral-700;
+
+    .moreIcon {
+      color: @neutral-600 !important;
+    }
+
+    .info-text {
+      color: @neutral-700;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: sub;
+    }
+
+    .info-text-none {
+      color: @neutral-500;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: sub;
+    }
+
+    .delete {
+      color: @neutral-600 !important;
+
+      margin-right: 0px;
+
+      :hover {
+        display: block;
+      }
+
+      &.disableRemove {
+        cursor: not-allowed;
+        color: @neutral-500 !important;
+
+        :hover {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  :hover {
+    .actions {
+      display: block;
+    }
+  }
+
+  :global {
+    .ant-dropdown-open {
+      display: block !important;
+    }
+
+    .ant-tabs-tab-active {
+      &::before {
+        width: 4px;
+        height: 36px;
+        left: 0;
+        color: red;
+      }
+    }
+  }
+
+  .actions {
+    margin-top: 3px;
+    margin-right: 0px !important;
+  }
+}
+
+.errorItem {
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px solid @neutral-300;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 12px;
+  background-color: @danger-50;
+  align-items: center;
+
+  .name {
+    width: 50%;
+    display: flex;
+
+    .icon {
+    }
+
+    .title {
+      margin-left: 10px;
+      color: @danger-500;
+    }
+  }
+
+  .info {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    color: @neutral-700;
+    .moreIcon {
+      color: @neutral-600 !important;
+    }
+    .info-text {
+      color: @neutral-700;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: sub;
+    }
+
+    .info-text-none {
+      color: @neutral-500;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: sub;
+    }
+
+    .delete {
+      color: @neutral-600 !important;
+
+      :global {
+        .ant-dropdown-open {
+          display: block !important;
+        }
+
+        .anticon {
+          margin-right: 0px !important;
+        }
+      }
+
+      :hover {
+        display: block;
+      }
+
+      &.disableRemove {
+        cursor: not-allowed;
+        color: @neutral-500 !important;
+
+        :hover {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  :hover {
+    .actions {
+      display: block;
+    }
+  }
+
+  :global {
+    .ant-dropdown-open {
+      display: block !important;
+    }
+
+    .anticon {
+      margin-right: 0px !important;
+    }
+  }
+
+  .actions {
+    margin-top: 3px;
+    margin-right: 0px !important;
+  }
+}

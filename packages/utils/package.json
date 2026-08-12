@@ -1,0 +1,53 @@
+{
+  "name": "@zstack/utils",
+  "version": "2.2.0",
+  "description": "ZStack UI 工具函数库",
+  "author": "ZStack UI Team",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "module": "./dist/utils.es.js",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/utils.es.js"
+    }
+  },
+  "scripts": {
+    "type-check": "pnpm tsgo --noEmit",
+    "build": "vite build",
+    "lint": "oxlint src/**",
+    "lint:json": "mkdir -p ./lint_report && oxlint src/** --format json > ./lint_report/oxlint.json",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "axios": "catalog:",
+    "clsx": "2.1.1",
+    "crypto-js": "^4.2.0",
+    "dayjs": "1.11.10",
+    "gbk.js": "^0.3.0",
+    "graphql": "16.10.0",
+    "ip-address": "10.4.0",
+    "lodash-es": "4.18.1",
+    "tailwind-merge": "^2.2.2",
+    "uuid": "11.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/crypto-js": "^4.2.2",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "rollup-plugin-copy": "^3.5.0",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "@apollo/client": "catalog:",
+    "react-intl": "catalog:"
+  }
+}

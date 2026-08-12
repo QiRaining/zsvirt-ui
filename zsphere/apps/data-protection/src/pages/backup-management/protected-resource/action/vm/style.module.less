@@ -1,0 +1,135 @@
+@import url("../../../../../theme.less");
+
+.alert {
+  padding-left: 45px;
+
+  :global {
+    .ant-alert-icon {
+      left: 24px;
+    }
+  }
+}
+
+.guestOsItem {
+  :global {
+    .zstack-form-item.ant-form-item {
+      display: inline-block;
+      margin-bottom: 0;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.width-160 {
+  width: 160px;
+}
+
+.width-180 {
+  width: 180px !important;
+}
+
+.width-200 {
+  width: 200px !important;
+}
+
+.width-240 {
+  width: 240px;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.warningText {
+  color: @danger-600;
+}
+
+.volumeSelectName {
+  color: @neutral-700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.volumeSelectSize {
+  color: @neutral-600;
+  font-size: 12px;
+}
+
+.ownerFormItem {
+  :global {
+    .ant-select {
+      width: 320px !important;
+    }
+  }
+}
+
+.resource-card {
+  display: flex;
+
+  .resource-icon {
+    display: flex;
+    margin: 10px 0px 10px 0px;
+    width: 66px;
+    align-items: center;
+
+    .arrow-icon {
+      margin: 0 auto;
+      width: 50px;
+      height: 16px;
+      color: @neutral-300;
+      background: #ffffff;
+      border-radius: 2px;
+    }
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .rect {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: 4px;
+    background-color: @info-500;
+  }
+
+  .item {
+    border: 1px solid @neutral-300;
+    border-top: none;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+    .item-title {
+      height: 40px;
+      line-height: 40px;
+      padding-left: 16px;
+      font-weight: 400;
+      color: @neutral-800;
+      background-color: @neutral-200;
+      margin-bottom: 16px;
+    }
+
+    :global {
+      .zstack-form-item-label-container {
+        width: 110px !important;
+        min-height: 32px !important;
+      }
+
+      .zstack-form-item.ant-form-item.zstack-form-item-zsv {
+        padding: 0 16px;
+        align-items: center;
+
+        &:last-child {
+          margin-bottom: 12px !important;
+        }
+      }
+    }
+  }
+
+  .target-bg-color {
+    background-color: @positive-500 !important;
+  }
+}

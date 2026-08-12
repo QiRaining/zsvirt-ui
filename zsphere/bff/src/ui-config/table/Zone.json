@@ -1,0 +1,428 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.remoteserver",
+        "keys": [
+          "name",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.rootNode",
+        "keys": [
+          "name",
+          "virtualization.host.num",
+          "virtualization.vm.num",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "virtualization.host.num",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Number of Hosts"
+          },
+          "queryType": "",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "virtualization.vm.num",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Number of VMs"
+          },
+          "queryType": "",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zone"
+        }
+      },
+      {
+        "accessorKey": "bw.test",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bw.test",
+            "defaultMessage": "bw.test"
+          },
+          "queryType": "",
+          "resource": "zone"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.zone",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.remoteserver/row",
+        "activeKeys": [
+          "uninstall"
+        ]
+      },
+      {
+        "view": "sub.remoteserver/toolbar",
+        "extraKeys": [
+          "load",
+          "uninstall"
+        ]
+      },
+      {
+        "view": "sub.rootNode/row",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.create.baremetal.clsuter",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.rootNode/toolbar",
+        "extraKeys": [
+          "create.zone"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.network.resource/dir",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.network.resource/directory",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.template.image/dir",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.template.image/directory",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.create.baremetal.clsuter",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/header",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "virtualization.create.cluster",
+          "virtualization.create.baremetal.clsuter",
+          "virtualization.add.dataStore",
+          "virtualization.add.imageStore",
+          "virtualization.create.l2network",
+          "virtualization.create.instance.group",
+          "edit",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create.cluster",
+        "resource": "zone",
+        "authKey": "virtualization.create.cluster",
+        "i18nKey": "virtualization.create.cluster",
+        "name": "新建集群",
+        "label": "新建集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.baremetal.clsuter",
+        "resource": "zone",
+        "authKey": "virtualization.create.baremetal.clsuter",
+        "i18nKey": "create.baremetal.clsuter",
+        "name": "新建裸金属集群",
+        "label": "新建裸金属集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.dataStore",
+        "resource": "zone",
+        "authKey": "virtualization.add.dataStore",
+        "i18nKey": "virtualization.add.dataStore",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.imageStore",
+        "resource": "zone",
+        "authKey": "virtualization.add.imageStore",
+        "i18nKey": "virtualization.add.imageStore",
+        "name": "添加镜像存储",
+        "label": "添加镜像存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.l2network",
+        "resource": "l2network",
+        "authKey": "virtualization.create.l2network",
+        "i18nKey": "virtualization.create.l2network",
+        "name": "新建分布式交换机",
+        "label": "新建分布式交换机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.instance.group",
+        "resource": "zone",
+        "authKey": "virtualization.create.instance.group",
+        "i18nKey": "virtualization.create.instance.group",
+        "name": "新建虚拟机分组",
+        "label": "新建虚拟机分组",
+        "icon": "",
+        "dividerKey": "virtualization.create.instance.group-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "zone",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": "edit-divider"
+      },
+      {
+        "key": "create.zone",
+        "resource": "zone",
+        "authKey": "create.zone",
+        "i18nKey": "create.zone",
+        "name": "创建区域",
+        "label": "创建区域",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "zone",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "load",
+        "resource": "zone",
+        "authKey": "load",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "uninstall",
+        "resource": "zone",
+        "authKey": "uninstall",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

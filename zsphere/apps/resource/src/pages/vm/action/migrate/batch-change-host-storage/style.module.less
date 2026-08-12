@@ -1,0 +1,39 @@
+@import "../../../../../theme.less";
+
+.table-form {
+  border: 1px solid @neutral-400;
+  max-height: 322px;
+
+  :global {
+    .zstack-table {
+      max-height: 320px !important;
+    }
+
+    .ant-table-content {
+      max-height: 320px !important;
+      overflow-y: auto !important;
+    }
+
+    .ant-table-tbody > tr > td {
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
+      height: 40px !important;
+    }
+  }
+
+  .ant-table {
+    .ant-table-content,
+    .ant-table-body {
+      max-height: 320px !important;
+    }
+  }
+}
+
+.trash {
+  color: @neutral-600;
+}
+
+.flex {
+  display: flex;
+  align-items: baseline;
+}

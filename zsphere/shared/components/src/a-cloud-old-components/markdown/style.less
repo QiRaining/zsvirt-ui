@@ -1,0 +1,32 @@
+@import "../../style/vars.less";
+
+// 仅在 antd Tooltip（深色背景）中将标题设为白色
+// InfoPopover 是白色背景，不需要此覆盖
+.ant-tooltip-inner .@{prefix}-react-markdown {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @neutral-0 !important;
+  }
+}
+
+.@{prefix}-react-markdown {
+  font-size: 12px;
+  line-height: 20px;
+  ol {
+    padding-inline-start: 10px;
+    list-style: decimal outside none !important;
+  }
+  ul {
+    padding-inline-start: 10px;
+    list-style: disc outside none !important;
+  }
+  p,
+  ol,
+  ul {
+    margin: 0;
+  }
+}

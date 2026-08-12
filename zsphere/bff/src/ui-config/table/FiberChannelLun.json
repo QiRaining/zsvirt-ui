@@ -1,0 +1,317 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "wwn",
+          "size",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "main.nvme",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "wwn",
+          "size",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.fiber-channel-storage",
+        "keys": [
+          "name",
+          "wwn",
+          "size",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "vendor",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendor",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "wwn",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "input",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "wwid",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwid",
+            "defaultMessage": "WWID"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "vm-instance.count",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "mounted.vm.count",
+            "defaultMessage": "Attached VMs"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      },
+      {
+        "accessorKey": "source",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "source",
+            "defaultMessage": "Source"
+          },
+          "queryType": "",
+          "resource": "fiber.channel.lun"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.nvme"
+      },
+      {
+        "view": "main.nvme/row"
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "attach.vm",
+          "detach.vm",
+          "sync.fclun.info",
+          "check.cluster.status"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "attach.vm",
+          "detach.vm",
+          "sync.fclun.info",
+          "check.cluster.status"
+        ]
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.cluster/toolbar"
+      },
+      {
+        "view": "sub.fiber-channel-storage/row"
+      },
+      {
+        "view": "sub.fiber-channel-storage/toolbar"
+      },
+      {
+        "view": "sub.host/toolbar"
+      },
+      {
+        "view": "sub.virtualization.data.storage/header"
+      },
+      {
+        "view": "sub.vm-instance/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "attach.vm",
+          "detach.vm"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "attach.vm",
+        "resource": "fiber.channel.lun",
+        "authKey": "attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vm",
+        "resource": "fiber.channel.lun",
+        "authKey": "detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.fclun.info",
+        "resource": "fiber.channel.lun",
+        "authKey": "sync.fclun.info",
+        "i18nKey": "sync.fclun.info",
+        "name": "同步块设备信息",
+        "label": "同步块设备信息",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "check.cluster.status",
+        "resource": "fiber.channel.lun",
+        "authKey": "check.cluster.status",
+        "i18nKey": "check.cluster.status",
+        "name": "检查集群状态",
+        "label": "检查集群状态",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

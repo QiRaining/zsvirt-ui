@@ -1,0 +1,1749 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "check.L2Network.nic.bond",
+        "keys": [
+          "l2NicName",
+          "result",
+          "hostIP",
+          "enableBond"
+        ]
+      },
+      {
+        "view": "check.backup.storage.physical.capacity.used",
+        "keys": [
+          "result",
+          "hostIP"
+        ]
+      },
+      {
+        "view": "check.backup.storage.reserve.capacity",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.backup.storage.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "type",
+          "readyStatus"
+        ]
+      },
+      {
+        "view": "check.backup.storage.use.physical.capacity",
+        "keys": [
+          "resourceName",
+          "result",
+          "type",
+          "usageRate",
+          "usageMount"
+        ]
+      },
+      {
+        "view": "check.blue.screen.configuration",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.blue.screen.crash",
+        "keys": [
+          "resourceName",
+          "result",
+          "IPV4Address",
+          "enableState"
+        ]
+      },
+      {
+        "view": "check.ceph.email",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.ceph.primary.storage.mons.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "monIP",
+          "nodeConnectState"
+        ]
+      },
+      {
+        "view": "check.ceph.primary.storage.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "state"
+        ]
+      },
+      {
+        "view": "check.databases.remote.backup",
+        "keys": [
+          "mnIP",
+          "result",
+          "isConfigured",
+          "backupIP",
+          "isValid"
+        ]
+      },
+      {
+        "view": "check.disaster.recovery",
+        "keys": [
+          "backupName",
+          "result",
+          "backupServerIP",
+          "backupServerMode",
+          "usageRate",
+          "availableCapacity"
+        ]
+      },
+      {
+        "view": "check.disk.root.capacity.used",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "usageRate",
+          "usageMount"
+        ]
+      },
+      {
+        "view": "check.host.cpu.load",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "usageRate"
+        ]
+      },
+      {
+        "view": "check.host.hdd",
+        "keys": [
+          "originName",
+          "result",
+          "hostIP",
+          "originMode",
+          "capacity",
+          "rpm",
+          "hddState",
+          "healthstate",
+          "ioUtilization"
+        ]
+      },
+      {
+        "view": "check.host.memory.load",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "memoryUsage",
+          "swapUsage",
+          "eccWarning"
+        ]
+      },
+      {
+        "view": "check.host.net.dev",
+        "keys": [
+          "originName",
+          "result",
+          "hostIP",
+          "netPlugged",
+          "nicState",
+          "packageLossRate",
+          "netMode",
+          "netSpeed",
+          "fullDuplexMode"
+        ]
+      },
+      {
+        "view": "check.host.raid.state",
+        "keys": [
+          "originName",
+          "result",
+          "hostIP",
+          "originMode",
+          "raidState",
+          "cacheMode"
+        ]
+      },
+      {
+        "view": "check.host.real.cpu.status",
+        "keys": [
+          "cpuName",
+          "result",
+          "hostIP",
+          "cpuMode",
+          "cpuReadyState",
+          "temperature"
+        ]
+      },
+      {
+        "view": "check.host.reserve.memory",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.host.reverse.memory",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.host.ssd",
+        "keys": [
+          "originName",
+          "result",
+          "hostIP",
+          "originMode",
+          "capacity",
+          "lifeLeft",
+          "healthstate",
+          "ioUtilization",
+          "temperature"
+        ]
+      },
+      {
+        "view": "check.host.ssd.life.left",
+        "keys": [
+          "diskName",
+          "hostName",
+          "result",
+          "hostIP",
+          "lifeLeft"
+        ]
+      },
+      {
+        "view": "check.host.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "readyStatus"
+        ]
+      },
+      {
+        "view": "check.host.temperature",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.host.zombie.process",
+        "keys": [
+          "hostName",
+          "result",
+          "hostIP",
+          "zombieProcessCount"
+        ]
+      },
+      {
+        "view": "check.long.stop.vm",
+        "keys": [
+          "resourceName",
+          "result",
+          "IPV4Address",
+          "shutDownDays"
+        ]
+      },
+      {
+        "view": "check.management.ip.conflict",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "whetherConflict"
+        ]
+      },
+      {
+        "view": "check.management.network.packet.loss",
+        "keys": [
+          "sourceIPAddress",
+          "targetIPAddress",
+          "result",
+          "lossRate"
+        ]
+      },
+      {
+        "view": "check.memory.over.provisioning",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.monitoring.data.capacity.utilization",
+        "keys": [
+          "mnIP",
+          "result",
+          "usageRate",
+          "usageMount"
+        ]
+      },
+      {
+        "view": "check.network.interface.status",
+        "keys": [
+          "nicName",
+          "result",
+          "bondName",
+          "hostIP",
+          "nicState"
+        ]
+      },
+      {
+        "view": "check.network.packet.loss",
+        "keys": [
+          "sourceIPAddress",
+          "targetIPAddress",
+          "result",
+          "lossRate"
+        ]
+      },
+      {
+        "view": "check.network.reachable",
+        "keys": [
+          "sourceIPAddress",
+          "targetIPAddress",
+          "result",
+          "connectState"
+        ]
+      },
+      {
+        "view": "check.ntp.consistency",
+        "keys": [
+          "licenseName",
+          "result",
+          "hostIP",
+          "timeSourceConsistency"
+        ]
+      },
+      {
+        "view": "check.password.length",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "isWeakPassword"
+        ]
+      },
+      {
+        "view": "check.primary.storage.heart.beat.network",
+        "keys": [
+          "resourceName",
+          "result",
+          "enableHeartBeatDetection"
+        ]
+      },
+      {
+        "view": "check.primary.storage.over.provisioning",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.primary.storage.physical.capacity.used",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.primary.storage.reserve.capacity",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.primary.storage.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "type",
+          "readyStatus"
+        ]
+      },
+      {
+        "view": "check.primary.storage.threshold",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.primary.storage.use.physical.capacity",
+        "keys": [
+          "resourceName",
+          "result",
+          "type",
+          "usageRate",
+          "usageMount"
+        ]
+      },
+      {
+        "view": "check.root.capacity.utilization",
+        "keys": [
+          "mnIP",
+          "result",
+          "usageRate"
+        ]
+      },
+      {
+        "view": "check.storage.ip.conflict",
+        "keys": [
+          "resourceName",
+          "result",
+          "storageIP",
+          "whetherConflict"
+        ]
+      },
+      {
+        "view": "check.storage.network.packet.loss",
+        "keys": [
+          "sourceIPAddress",
+          "targetIPAddress",
+          "result",
+          "lossRate"
+        ]
+      },
+      {
+        "view": "check.swap.status",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "enableSwap"
+        ]
+      },
+      {
+        "view": "check.time.source.configuration",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "baseTimeServer",
+          "currentTimeServer",
+          "timeSourceConsistency",
+          "timeSyncState"
+        ]
+      },
+      {
+        "view": "check.time.source.synchronous",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "baseTimeServer",
+          "currentTimeServer"
+        ]
+      },
+      {
+        "view": "check.vm.cpu.average.utilization",
+        "keys": [
+          "resourceName",
+          "result",
+          "IPV4Address",
+          "usageRate"
+        ]
+      },
+      {
+        "view": "check.vm.cpu.load",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.vm.disk.root.utilization",
+        "keys": [
+          "resourceName",
+          "result",
+          "IPV4Address",
+          "usageRate"
+        ]
+      },
+      {
+        "view": "check.vm.ha.strategy",
+        "keys": [
+          "entry",
+          "value",
+          "result"
+        ]
+      },
+      {
+        "view": "check.vm.not.running.number",
+        "keys": [
+          "resourceName",
+          "result",
+          "IPV4Address",
+          "enableState"
+        ]
+      },
+      {
+        "view": "check.vm.number.in.host",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "check.vm.volume.snapshot.number",
+        "keys": [
+          "resourceName",
+          "result",
+          "vmName",
+          "snapshotCount"
+        ]
+      },
+      {
+        "view": "check.zsha2.state",
+        "keys": [
+          "mnIP",
+          "result",
+          "enableHa",
+          "nodeState"
+        ]
+      },
+      {
+        "view": "check.zstack.license",
+        "keys": [
+          "licenseName",
+          "result",
+          "licenseStatus",
+          "expireTime"
+        ]
+      },
+      {
+        "view": "get.disk.io.info",
+        "keys": [
+          "result"
+        ]
+      },
+      {
+        "view": "get.running.vm.info",
+        "keys": [
+          "resourceName",
+          "result",
+          "hostIP",
+          "vmCount"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "resourceName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "licenseName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "nicName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "l2NicName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "originName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "backupName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "diskName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "disk.name",
+            "defaultMessage": "Disk Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "hostName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "mnIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "mn.ip",
+            "defaultMessage": "MN IP"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "sourceIPAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "source.ip.address",
+            "defaultMessage": "Source IP Address"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "targetIPAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "target.ip,address",
+            "defaultMessage": "Destination IP Address"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "entry",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "entry",
+            "defaultMessage": "Item"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "value",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "value",
+            "defaultMessage": "Value"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "cpuName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "result",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "resource.inspection.result",
+            "defaultMessage": "Resource Inspection Results"
+          },
+          "queryType": "multipleFilter",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "licenseStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "license.status",
+            "defaultMessage": "License Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "expireTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "expire.time",
+            "defaultMessage": "Expires on"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "bondName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bond.name",
+            "defaultMessage": "Bond Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "hostIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "hostIP",
+            "defaultMessage": "Host IP"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "cpuMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpu.model",
+            "defaultMessage": "CPU Model"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "storageIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "storage.ip",
+            "defaultMessage": "Storage Network IP Address"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "baseTimeServer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "base.time.server",
+            "defaultMessage": "Base Time Server"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "currentTimeServer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "current.time.server",
+            "defaultMessage": "Current Time Server"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "timeSourceConsistency",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "time.source.consistency",
+            "defaultMessage": "Consistent with Time Server"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "timeSyncState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "time.sync.state",
+            "defaultMessage": "Time Synced"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "IPV4Address",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "IPV4.address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "backupServerIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "backup.server.ip",
+            "defaultMessage": "Backup Storage IP"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "backupServerMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "usageRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "usage.rate",
+            "defaultMessage": " Utilization"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "usageMount",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "usage.mount",
+            "defaultMessage": "Usage"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "remote.backup.server.available.capacity",
+            "defaultMessage": "Available Capacity"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "lossRate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "loss.rate",
+            "defaultMessage": "Packet Loss Rate"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "netPlugged",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "net.plugged",
+            "defaultMessage": "Plugged"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "nicState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "nic.state",
+            "defaultMessage": "NIC Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "vmCount",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "vm.count",
+            "defaultMessage": "VMs"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "enableSwap",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.swap",
+            "defaultMessage": "SWAP Disabled"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "enableState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "whetherConflict",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "whether.conflict",
+            "defaultMessage": "Conflict Found"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "enableHeartBeatDetection",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.heart.beat.detection",
+            "defaultMessage": "Heartbeat Check Enabled"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "originMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "readyState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "readyStatus",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "cpuReadyState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "monIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "mon.ip",
+            "defaultMessage": "Mon IP"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "capacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "lifeLeft",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "life.left",
+            "defaultMessage": "Remaining Life Expectancy"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "raidState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "raid.state",
+            "defaultMessage": "RAID Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "vmName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "vm.name",
+            "defaultMessage": "VM Name"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "enableBond",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.bond",
+            "defaultMessage": "Bonded"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "enableHa",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.ha",
+            "defaultMessage": "HA Enabled"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "nodeState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "node.state",
+            "defaultMessage": "Node Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "snapshotCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "snapshot.count",
+            "defaultMessage": "Snapshots"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "isConfigured",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "is.configured",
+            "defaultMessage": "Backup Job Configured"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "backupIP",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "backup.ip",
+            "defaultMessage": "Backup Storage IP"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "isWeakPassword",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "is.weak.password",
+            "defaultMessage": "Password Strength"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "nodeConnectState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "node.connect.state",
+            "defaultMessage": "Connection Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "isValid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "is.valid",
+            "defaultMessage": "Effective"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "connectState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "connect,state",
+            "defaultMessage": "Connectivity"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "memoryUsage",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "memory.usage",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "swapUsage",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "swap.partition.usage",
+            "defaultMessage": "Zombie Utilization"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "eccWarning",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ecc.warning",
+            "defaultMessage": "ECC Warning"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "rpm",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "rotate.speed",
+            "defaultMessage": "Rotation Speed"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "hddState",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "exist.bad.disk",
+            "defaultMessage": "Bad Sector Found"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "healthstate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "health.state",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "ioUtilization",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "io.utilization",
+            "defaultMessage": "IO Utilization"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "temperature",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "temperature",
+            "defaultMessage": "Temperature"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "packageLossRate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "package.loss.rate",
+            "defaultMessage": "Packet Loss Rate"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "netMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "net.connection.mode",
+            "defaultMessage": "Port Connection Mode"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "netSpeed",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "net.speed",
+            "defaultMessage": "Port Speed"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "fullDuplexMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "full.duplex.mode",
+            "defaultMessage": "Full Duplex Mode"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "zombieProcessCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "zombie,process.count",
+            "defaultMessage": "Zombie Processes"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "shutDownDays",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "shut.down.days",
+            "defaultMessage": "Stopped Duration in Days"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      },
+      {
+        "accessorKey": "cacheMode",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cache.mode",
+            "defaultMessage": "Cache Mode"
+          },
+          "queryType": "",
+          "resource": "inspection"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,100 @@
+@import "../../style/vars.less";
+
+.@{prefix}-progress-bar {
+  width: 100%;
+
+  &-padding-right {
+    padding-right: 24px;
+  }
+
+  .status {
+    &-low {
+      .ant-progress-bg {
+        background-color: @info-500;
+      }
+    }
+
+    &-middle {
+      .ant-progress-bg {
+        background-color: @alert-500;
+      }
+    }
+
+    &-high {
+      .ant-progress-bg {
+        background-color: @danger-500;
+      }
+    }
+  }
+
+  .ant-progress-outer {
+    .ant-progress-inner {
+      background: #f0f2f5;
+
+      .ant-progress-bg {
+        border-radius: 4px 0px 0px 4px;
+      }
+    }
+  }
+
+  .ant-progress-text {
+    color: #181a1d !important;
+  }
+
+  &-small {
+    &-in-table {
+      .ant-progress-outer {
+        .ant-progress-inner {
+          height: 4px;
+          margin-top: 4px;
+          vertical-align: top !important;
+
+          .ant-progress-bg {
+            height: 4px !important;
+          }
+        }
+      }
+    }
+
+    .ant-progress-outer {
+      .ant-progress-inner {
+        height: 4px;
+
+        .ant-progress-bg {
+          height: 4px !important;
+        }
+      }
+    }
+  }
+
+  &-middle {
+    .ant-progress-outer {
+      .ant-progress-inner {
+        height: 6px;
+
+        .ant-progress-bg {
+          height: 6px !important;
+        }
+      }
+    }
+  }
+
+  &-dark {
+    .ant-progress-outer {
+      .ant-progress-inner {
+        background: #dbdde0;
+      }
+    }
+  }
+}
+
+.@{prefix}-progress-themeColor {
+  .ant-progress-outer {
+    .ant-progress-inner {
+      .ant-progress-bg {
+        background-color: #0076f7;
+        // background-color: @color-600;
+      }
+    }
+  }
+}

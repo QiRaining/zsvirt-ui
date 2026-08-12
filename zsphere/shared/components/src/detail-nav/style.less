@@ -1,0 +1,86 @@
+@import "../style/vars.less";
+
+.@{prefix}-detail-nav {
+  display: flex;
+  height: 100%;
+  &-menu {
+    width: 240px;
+    flex-basis: 240px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-right: 20px;
+    background-color: @neutral-100 !important;
+    min-height: 646px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 2px;
+
+    .ant-menu-item-group:first-child > .ant-menu-item-group-title {
+      margin-top: 6px;
+    }
+  }
+
+  &-item {
+    display: flex !important;
+    justify-content: space-between;
+    height: 32px !important;
+    line-height: 32px !important;
+    margin-bottom: 4px !important;
+    white-space: pre-wrap !important;
+  }
+  &-divider {
+    display: inline-block;
+    margin: 0 20px !important;
+    height: calc(100% - 40px) !important;
+  }
+  &-page {
+    flex-grow: 1;
+    overflow-x: hidden; // ZSTAC-36893
+    overflow-y: scroll;
+    // position: relative;  // ZSTAC-36014，导致action组件错位
+    .main-list-panel {
+      padding-right: 0px !important;
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+    color: @neutral-800;
+    font-weight: 500;
+    padding: 0px 24px 12px 24px;
+  }
+  &-link {
+    width: 152px;
+  }
+  &-count {
+    width: 40px;
+    text-align: right;
+  }
+  .ant-menu-item-group-title {
+    color: @neutral-600 !important;
+    padding: 6px 20px !important;
+    font-size: 12px !important;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .ant-menu-item {
+    color: @neutral-700 !important;
+    height: 32px !important;
+    line-height: 22px !important;
+    padding: 5px 20px !important;
+  }
+  .ant-menu-item-active {
+    background-color: fade(
+      #dbdde0,
+      50%
+    ) !important; // less function not support css var
+  }
+  .ant-menu-item-selected {
+    color: @neutral-800 !important;
+    background-color: fade(#dbdde0, 50%) !important;
+    font-weight: bold;
+  }
+  .ant-menu-item-group + .ant-menu-item-group {
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "VIPInBoundTrafficInBytes",
+          "VIPInBoundTrafficInPackages",
+          "VIPOutBoundTrafficInBytes",
+          "VIPOutBoundTrafficInPackages",
+          "owner"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      },
+      {
+        "accessorKey": "VIPInBoundTrafficInBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "downstream.network.traffic",
+            "defaultMessage": "Inbound Traffic"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      },
+      {
+        "accessorKey": "VIPInBoundTrafficInPackages",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "downstream.network.packet.rate",
+            "defaultMessage": "Inbound Packet Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      },
+      {
+        "accessorKey": "VIPOutBoundTrafficInBytes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "upstream.network.traffic",
+            "defaultMessage": "Upstream Traffic"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      },
+      {
+        "accessorKey": "VIPOutBoundTrafficInPackages",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "upstream.network.packet.rate",
+            "defaultMessage": "Outbound Packet Rate"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "performance.vip"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

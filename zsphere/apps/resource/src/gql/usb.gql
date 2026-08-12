@@ -1,0 +1,73 @@
+fragment usbFields on UsbDevice {
+  uuid
+  name
+  host {
+    uuid
+    name
+  }
+  hostUuid
+  attachType
+  iManufacturer
+  iProduct
+  state
+  usbVersion
+  createDate
+  vmInstanceUuid
+  vmInstance {
+    uuid
+    name
+  }
+  templatedVmInstance {
+    uuid
+    name
+  }
+}
+
+query usbsDeviceList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: UsbDeviceQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $start: Int
+  $limit: Int
+) {
+  usbsDeviceList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    start: $start
+    limit: $limit
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...usbFields
+    }
+  }
+}
+
+mutation attachUsbDeviceToVm($input: [AttachUsbDeviceToVmInput!]!) {
+  attachUsbDeviceToVm(input: $input) {
+    error {
+      code
+    }
+  }
+}
+
+mutation detachUsbDeviceFromVm($input: [DetachUsbDeviceFromVmInput!]!) {
+  detachUsbDeviceFromVm(input: $input) {
+    error {
+      code
+    }
+  }
+}
+
+mutation updateUsb($input: UpdateUsbInput!) {
+  updateUsb(input: $input) {
+    success
+    error
+  }
+}

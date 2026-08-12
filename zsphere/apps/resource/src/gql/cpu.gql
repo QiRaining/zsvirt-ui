@@ -1,0 +1,53 @@
+fragment CPUFields on CPU {
+  id
+  name
+  model
+  architecture
+  logicKernel
+  physicalCores
+  GHz
+  level1Cache
+  level2Cache
+  level3Cache
+  currentTemperature
+  state
+}
+
+query CPUList($hostUuid: String!) {
+  CPUList(hostUuid: $hostUuid) {
+    list {
+      ...CPUFields
+    }
+    total
+  }
+}
+
+query hostPhysicalCpuList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $conditions: [Condition!]
+) {
+  hostPhysicalCpuList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    conditions: $conditions
+  ) {
+    list {
+      coreCount
+      createDate
+      currentSpeed
+      hostUuid
+      lastOpDate
+      serialNumber
+      socketDesignation
+      threadCount
+      uuid
+      version
+    }
+    total
+  }
+}

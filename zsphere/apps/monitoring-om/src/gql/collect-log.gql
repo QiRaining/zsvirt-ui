@@ -1,0 +1,43 @@
+fragment LogCollectField on LogCollect {
+  uuid
+  name
+  type
+  state
+  url
+  startTime
+  endTime
+  createDate
+}
+
+query logCollectList {
+  logCollectList {
+    list {
+      ...LogCollectField
+    }
+    total
+  }
+}
+
+mutation createLogCollect($input: CreateLogCollectInput!) {
+  createLogCollect(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteLogCollect($input: DeleteLogCollectInput!) {
+  deleteLogCollect(input: $input) {
+    actionId
+  }
+}
+
+mutation reCreateLogCollect($input: ReCreateLogCollectInput!) {
+  reCreateLogCollect(input: $input) {
+    actionId
+  }
+}
+
+mutation cancelLogCollect($input: CancelLogCollectInput!) {
+  cancelLogCollect(input: $input) {
+    actionId
+  }
+}

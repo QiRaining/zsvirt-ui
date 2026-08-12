@@ -1,0 +1,129 @@
+@import "../../../theme.less";
+
+.createBmInstance {
+  height: 678px;
+  // ZSV-11397: Fix transparent bottom when using fixed height with @zstack/design Dialog
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .overflow-auto {
+      flex: 1;
+      max-height: unset !important;
+    }
+  }
+}
+
+.stepsWrapper {
+  padding: 12px 80px;
+  background-color: @neutral-100;
+}
+
+.formWrapper {
+  padding: 24px 24px 40px;
+  overflow: auto;
+}
+
+.tag {
+  margin-left: 8px !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-240 {
+  width: 240px !important;
+}
+
+.width-400 {
+  width: 400px !important;
+}
+
+.addBtn {
+  padding: 0 !important;
+  color: var(--color-600) !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.resourceForm {
+  margin-bottom: 0 !important;
+
+  :global {
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+      width: 400px !important;
+      max-width: 400px !important;
+      min-width: 400px !important;
+      margin-left: 0 !important;
+      flex: 0 0 400px !important;
+
+      .ant-row {
+        border: none;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      max-height: 240px;
+      overflow-y: auto;
+      width: 100%;
+    }
+    .ant-form-item-extra {
+      margin-left: 0 !important;
+      margin-top: 8px;
+      padding-left: 0;
+      width: 400px;
+      max-width: 400px;
+    }
+
+    .ant-form-item-explain {
+      margin-left: 0;
+    }
+  }
+
+  .content {
+    color: @neutral-700;
+    border-top: 1px solid @neutral-300;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .action {
+    text-align: right;
+    span {
+      cursor: pointer;
+
+      &:first-child {
+        display: inline-block;
+        width: 16px;
+        color: @neutral-600;
+      }
+    }
+  }
+}
+.countContainer {
+  display: flex;
+  align-items: center;
+}
+.count {
+  color: @color-600;
+  font-size: 14px;
+  margin-left: 4px;
+}

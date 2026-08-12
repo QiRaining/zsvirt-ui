@@ -1,0 +1,91 @@
+query monitorTemplateList($conditions: [Condition!], $start: Int, $limit: Int, $sortBy: String, $sortDirection: SortDirectionValidValues){
+  monitorTemplateList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true,
+    sortBy: $sortBy,
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      description
+      createDate
+      lastOpDate
+      shareType
+      monitorGroupNum
+      ruleTemplateNum
+      tag {
+        name
+        uuid
+        color
+        value
+        ownerUuid
+      }
+    }
+  }
+}
+
+query metricRuleTemplateList($conditions: [Condition!], $start: Int, $limit: Int){
+  metricRuleTemplateList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+  ) {
+    total
+    list{
+      uuid
+      name
+      period
+      namespace
+      repeatCount
+      repeatInterval
+      threshold
+      monitorTemplateUuid
+      metricName
+      enableRecovery
+      emergencyLevel
+      comparisonOperator
+    }
+  }
+}
+
+
+query eventRuleTemplateList($conditions: [Condition!], $start: Int, $limit: Int){
+  eventRuleTemplateList (
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+  ) {
+    total
+    list{
+      uuid
+      name
+      namespace
+      monitorTemplateUuid
+      eventName
+      emergencyLevel
+      labels {
+        key
+        op
+        value
+      }
+    }
+  }
+}
+
+mutation revokeMonitorTemplateFromMonitorGroup($input: RevokeMonitorTemplateFromMonitorGroupInput!) {
+  revokeMonitorTemplateFromMonitorGroup(input: $input) {
+    actionId
+  }
+}
+
+mutation applyMonitorTemplateToMonitorGroupInMonitorTemplate($input: ApplyMonitorTemplateToMonitorGroupInMonitorTemplateInput!) {
+  applyMonitorTemplateToMonitorGroupInMonitorTemplate(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,63 @@
+fragment SnmpAgentConfigFields on SnmpAgent {
+  uuid
+  port
+  version
+  readCommunity
+  userName
+  authAlgorithm
+  privacyAlgorithm
+  status
+}
+
+
+query getSnmpAgentConfig {
+  getSnmpAgentConfig {
+    result {
+      ...SnmpAgentConfigFields
+    }
+  }
+}
+
+query snmpTrapList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $type: SnmpTrapReceiverQueryType
+  $sortDirection: SortDirectionValidValues
+) {
+  snmpTrapList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      snmpAddress
+      snmpPort
+      createDate
+      lastOpDate
+    }
+  }
+}
+
+query getMibDeprecatedNotification {
+  zsKv(key: "notification.mib.deprecated") {
+    value
+  }
+}
+
+mutation disableMibDeprecatedNotification {
+  updateZsKv(key: "notification.mib.deprecated", value: "false") {
+    key
+    value
+  }
+}

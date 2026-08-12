@@ -1,0 +1,23 @@
+import { describe, expect, it, vi } from "vitest";
+
+vi.mock("@zstack/zsphere-utils", () => ({
+  isIP: (value: string) => value === "192.168.1.1",
+}));
+
+import { createMockIntl } from "@zstack/form/testing";
+
+import { createUpdateIscsiServerSchema } from "../schema";
+
+const intl = createMockIntl();
+
+describe("iscsi server action schemas", () => {
+  it("validates update name", () => {
+    const schema = createUpdateIscsiServerSchema(intl);
+
+    expect(() => schema.parse({ name: "" })).toThrow("输入内容不能为空");
+    expect(() => schema.parse({ name: " invalid " })).toThrow(
+      "输入内容只能包含中文汉字",
+    );
+    expect(schema.parse({ name: "iscsi-01" })).toEqual({ name: "iscsi-01" });
+  });
+});

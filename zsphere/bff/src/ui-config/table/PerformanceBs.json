@@ -1,0 +1,68 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "AvailableCapacityInBytes",
+          "UsedCapacityInPercent"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "performance.bs"
+        }
+      },
+      {
+        "accessorKey": "AvailableCapacityInBytes",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "local.backup.storage.available.quantity",
+            "defaultMessage": "Available"
+          },
+          "queryType": "",
+          "resource": "performance.bs"
+        }
+      },
+      {
+        "accessorKey": "UsedCapacityInPercent",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "percentage.of.mirrored.storage.used.capacity",
+            "defaultMessage": "Backup Storage Capacity Usage"
+          },
+          "queryType": "",
+          "resource": "performance.bs"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

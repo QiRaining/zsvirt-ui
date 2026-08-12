@@ -1,0 +1,339 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.share",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "owner",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "shareType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "stack.template"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "stack.template"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "singleFilter",
+          "resource": "stack.template"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "stack.template"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "singleFilter",
+          "resource": "stack.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "input",
+          "resource": "stack.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.share/header",
+        "activeKeys": [
+          "generate.resource.stack"
+        ]
+      },
+      {
+        "view": "main.share/row",
+        "activeKeys": [
+          "generate.resource.stack"
+        ]
+      },
+      {
+        "view": "main.share/toolbar",
+        "activeKeys": [
+          "generate.resource.stack"
+        ]
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "generate.resource.stack",
+          "modify",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "generate.resource.stack",
+          "modify",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.stack.template",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "generate.resource.stack",
+          "modify",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "generate.resource.stack",
+          "modify",
+          "set.share.type",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.stack.template",
+        "resource": "stack.template",
+        "authKey": "create.stack.template",
+        "i18nKey": "create.resourceStackTemplate",
+        "name": "创建资源栈模板",
+        "label": "创建资源栈模板",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "stack.template",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "stack.template",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "stack.template",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "generate.resource.stack",
+        "resource": "stack.template",
+        "authKey": "generate.resource.stack",
+        "i18nKey": "generate.resourceStack",
+        "name": "生成资源栈",
+        "label": "生成资源栈",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify",
+        "resource": "stack.template",
+        "authKey": "modify",
+        "i18nKey": "modify",
+        "name": "修改",
+        "label": "修改",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "stack.template",
+        "authKey": "set.share.type",
+        "i18nKey": "set.share",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "set.share.type-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "stack.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "stack.template",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

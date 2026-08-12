@@ -1,0 +1,364 @@
+@import "../style/vars.less";
+
+.ant-form-item-has-error {
+  .@{prefix}-virtualization-modal-select-select-input {
+    border-color: @danger-500;
+  }
+}
+
+.@{prefix}-virtualization-modal-select {
+  &-title {
+    font-weight: 400 !important;
+    width: 100%;
+    display: flex;
+
+    &-base-title {
+      white-space: nowrap;
+    }
+
+    &-resource-name {
+      display: flex;
+      flex-grow: 1;
+
+      .ant-divider-vertical {
+        height: unset !important;
+        top: unset;
+        margin-top: 5px;
+        margin-bottom: 3px;
+      }
+
+      &-text {
+        .ant-typography {
+          color: @neutral-600 !important;
+        }
+
+        flex: 1;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 50% !important;
+      }
+    }
+  }
+
+  &-alert {
+    margin-bottom: 20px !important;
+  }
+
+  &-virtualization-modal-body {
+    min-height: 320px;
+    // border: 1px solid @neutral-400;
+    // overflow-y: auto;
+  }
+
+  .ant-table-wrapper .ant-table-tbody .ant-table-cell {
+    padding: 6.5px 12px;
+    color: @neutral-700;
+  }
+
+  .ant-table-tbody > tr > td {
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .ant-table-content {
+    border: 1px @neutral-400 solid;
+    border-radius: 2px;
+
+    .ant-table-thead > tr > th {
+      padding: 6.5px 12px;
+    }
+
+    th:not(:first-child) {
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        height: 12px;
+        background-color: @neutral-300;
+        transform: translateY(-50%);
+        transition: background-color 0.3s;
+        content: "";
+      }
+    }
+
+    .ant-table-tbody tr:last-child {
+      td {
+        border-bottom: none;
+      }
+
+      .ant-table-cell {
+        padding: 7px 12px;
+      }
+    }
+  }
+
+  &-modal {
+    height: 624px;
+
+    .ant-modal-close-x {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+    }
+
+    // 修复在 @zstack/design Dialog 内 antd radio/checkbox focus 样式残留
+    .ant-radio-inner,
+    .ant-checkbox-inner {
+      box-shadow: none !important;
+      outline: none !important;
+    }
+
+    .ant-radio-inner::after {
+      box-shadow: none !important;
+    }
+  }
+
+  &-select-disabled-input {
+    background-color: @neutral-100 !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      border: 1px solid @neutral-400 !important;
+
+      .zstack-icon {
+        display: none !important;
+      }
+    }
+
+    &-value {
+      flex: 1;
+      width: 0;
+      padding: 5px 12px;
+      display: inline;
+      line-height: 22px;
+      font-size: 14px;
+      color: @neutral-500 !important;
+
+      background-color: @neutral-100 !important;
+    }
+
+    .ant-btn {
+      background-color: @neutral-200 !important;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: @neutral-200 !important;
+      }
+    }
+  }
+
+  &-select-input {
+    border: 1px solid @neutral-400;
+    border-radius: 2px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      border-color: @color-600;
+
+      .zstack-icon {
+        display: inline-block !important;
+      }
+
+      .@{prefix}-virtualization-modal-select-select-input-close-icon {
+        display: flex !important;
+      }
+    }
+
+    &-button {
+      background-color: @neutral-200;
+      border-top-left-radius: 0;
+      width: 40px;
+      border-bottom-left-radius: 0;
+      padding: 4px 12px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-svg {
+        color: @neutral-700;
+        font-size: 14px;
+        transition: color 0.3s;
+        margin-top: 4px;
+      }
+
+      &:hover &-svg {
+        color: @neutral-800;
+      }
+    }
+
+    &-value {
+      flex: 1;
+      width: 0;
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      line-height: 22px;
+      font-size: 14px;
+      position: relative;
+      // color: @neutral-700;
+      // background-color: white;
+
+      &-title {
+        flex: 1;
+        width: 0;
+        display: inline-block;
+        padding-right: 24px; // 为关闭图标留出空间
+      }
+
+      .zstack-icon {
+        float: right;
+        display: none;
+        line-height: 22px;
+        top: 2px;
+      }
+    }
+
+    &-close-icon {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: none;
+      z-index: 1;
+      padding: 2px;
+      border-radius: 50%;
+      transition: color 0.3s;
+
+      &-svg {
+        display: inline-block !important;
+        line-height: 1;
+        cursor: pointer;
+        color: @neutral-400;
+        transition: color 0.3s;
+        font-size: 14px;
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          color: @neutral-500;
+        }
+      }
+    }
+  }
+
+  &-table-list {
+    min-height: 300px;
+
+    .ant-table .ant-table-content {
+      height: 320px !important;
+      overflow: auto !important;
+    }
+
+    :global {
+      .zstack-table {
+        height: 320px !important;
+      }
+
+      .ant-table-content {
+        height: 320px !important;
+      }
+    }
+  }
+
+  .icon() {
+    color: @neutral-600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @color-700;
+    }
+
+    .anticon {
+      vertical-align: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  &-add {
+    padding: 4px 0 !important;
+    transition: color 0.3s !important;
+    display: inline-flex;
+    align-items: center !important;
+    gap: 4px;
+
+    .ant-btn {
+      padding: 0px !important;
+      height: 24px !important;
+      line-height: 24px !important;
+      transition: color 0.3s !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 4px !important;
+    }
+  }
+
+  &-input {
+    padding: 0px 0px 0px 11px !important;
+  }
+
+  &-action-icon {
+    cursor: pointer;
+    color: @neutral-600 !important;
+  }
+
+  &-action-icon-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .ant-list {
+    .ant-list-item {
+      padding: 6.5px 16px !important;
+
+      &:last-child {
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+}
+
+.@{prefix}-virtualization-modal-select-modal {
+  .ant-modal-header {
+    .ant-modal-title {
+      font-weight: 400;
+    }
+
+    padding: 13px 24px 12px 24px !important;
+  }
+
+  .ant-modal-body {
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding-bottom: 40px !important;
+  }
+
+  .ant-modal-footer {
+    padding: 14px 24px !important;
+    border-top: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+}
+
+.@{prefix}-virtualization-modal-select-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.disabled-text-color {
+  color: @neutral-500 !important;
+}
+
+.text-color {
+  color: @neutral-700;
+}

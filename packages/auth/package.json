@@ -1,0 +1,83 @@
+{
+  "name": "@zstack/auth",
+  "version": "2.2.2",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "module": "./dist/auth.es.js",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/auth.es.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "type-check": "pnpm tsgo --noEmit",
+    "build": "vite build",
+    "lint:ox": "oxlint -c ../../.oxlintrc.json src",
+    "lint:ox:fix": "oxlint -c ../../.oxlintrc.json src --fix",
+    "lint": "pnpm run lint:ox",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../.oxlintrc.json src --format json > ./lint_report/oxlint.json",
+    "size": "vite build && size-limit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@zstack/design": "workspace:*",
+    "@zstack/hooks": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/utils": "workspace:*",
+    "class-variance-authority": "0.7.0",
+    "react-intl": "6.7.0",
+    "react-router": "catalog:"
+  },
+  "devDependencies": {
+    "@size-limit/preset-big-lib": "^11.1.4",
+    "@tailwindcss/postcss": "catalog:",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "jsdom": "^25.0.1",
+    "less": "^4.2.0",
+    "postcss": "^8.5.6",
+    "prop-types": "^15.8.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "size-limit": "^11.1.4",
+    "tailwindcss": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "size-limit": [
+    {
+      "path": "dist/auth.es.js",
+      "limit": "399 KB"
+    }
+  ]
+}

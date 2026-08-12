@@ -1,0 +1,120 @@
+@import "../../theme.less";
+
+.container {
+  overflow: hidden;
+  height: 100%;
+  background: @neutral-0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+    align-items: center;
+    color: @neutral-800;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+
+    .extraLabel {
+      display: inline-flex !important;
+      height: 20px;
+      border-radius: 10px;
+      font-size: 12px;
+      padding: 0 6px;
+      justify-content: center;
+      align-items: center;
+      color: @neutral-700;
+      border: 1px solid @neutral-400;
+      margin-left: 8px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.topMonitorBarContainer {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 8px;
+      color: @neutral-700;
+    }
+  }
+
+  .name {
+    width: 180px;
+
+    a {
+      color: @neutral-700;
+    }
+
+    &:hover {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .barContainer {
+    flex-grow: 1;
+    margin: 0 8px;
+
+    :global {
+      .zstack-progress-bar {
+        max-width: none;
+        vertical-align: super;
+      }
+    }
+  }
+
+  .value {
+    white-space: nowrap;
+    margin-right: 40px;
+  }
+}
+
+.progressReverse {
+  :global {
+    .ant-progress-inner {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// Container Queries: widget 宽度 <320px 时简化布局
+@container (max-width: 320px) {
+  .container {
+    padding: 12px;
+
+    .title {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .topMonitorBarContainer {
+    .name {
+      width: 100px;
+    }
+
+    .value {
+      margin-right: 8px;
+      font-size: 12px;
+    }
+  }
+}

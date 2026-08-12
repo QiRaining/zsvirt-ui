@@ -1,0 +1,17 @@
+query searchResourceList($keyword: String!, $zoneUuid: String) {
+  searchResource(keyword: $keyword, zoneUuid: $zoneUuid) {
+    total
+    list {
+      uuid
+      resourceName
+      resourceZhName
+      resourceType
+    }
+  }
+}
+
+query searchResourceCount($keyword: String!, $zoneUuid: String) {
+  searchResource(keyword: $keyword, zoneUuid: $zoneUuid) {
+    total
+  }
+}

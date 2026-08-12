@@ -1,0 +1,504 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.public",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.public.share",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.public",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "ip.allocation.strategy",
+          "dhcp.service",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.l2-network",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.public",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.security-group",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "toPublic"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "avaliableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "ip.allocation.strategy",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ip.allocation.strategy",
+            "defaultMessage": "IP Allocation Policy"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "dhcp.service",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "dhcp.service",
+            "defaultMessage": "DHCP Service"
+          },
+          "queryType": "multipleFilter",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "public.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "public.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.public.share/header"
+      },
+      {
+        "view": "main.public.share/row"
+      },
+      {
+        "view": "main.public.share/toolbar"
+      },
+      {
+        "view": "main.public/header",
+        "activeKeys": [
+          "edit",
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.public/row",
+        "activeKeys": [
+          "edit",
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.public/toolbar",
+        "extraKeys": [
+          "create.public.network"
+        ],
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network/row",
+        "activeKeys": [
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network/toolbar",
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.public.shared-resource/row"
+      },
+      {
+        "view": "sub.public.shared-resource/toolbar",
+        "activeKeys": [
+          "set.share.mode"
+        ]
+      },
+      {
+        "view": "sub.public/row",
+        "extraKeys": [
+          "set.default.network"
+        ]
+      },
+      {
+        "view": "sub.public/toolbar"
+      },
+      {
+        "view": "sub.security-group/row",
+        "activeKeys": [
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.security-group/toolbar",
+        "extraKeys": [
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.network",
+        "resource": "public.network",
+        "authKey": "create.network",
+        "i18nKey": "create.network",
+        "name": "创建网络",
+        "label": "创建网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.public.network",
+        "resource": "public.network",
+        "authKey": "create.public.network",
+        "i18nKey": "create.publicNetwork",
+        "name": "创建公有网络",
+        "label": "创建公有网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "public.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv4.range",
+        "resource": "public.network",
+        "authKey": "add.ipv4.range",
+        "i18nKey": "add.Ipv4NetworkRange",
+        "name": "添加IPv4网络段",
+        "label": "添加IPv4网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv6.range",
+        "resource": "public.network",
+        "authKey": "add.ipv6.range",
+        "i18nKey": "add.Ipv6NetworkRange",
+        "name": "添加IPv6网络段",
+        "label": "添加IPv6网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dns",
+        "resource": "public.network",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.mode",
+        "resource": "public.network",
+        "authKey": "set.share.mode",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default.network",
+        "resource": "public.network",
+        "authKey": "set.default.network",
+        "i18nKey": "set.defaultNetwork",
+        "name": "设为默认网络",
+        "label": "设为默认网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.security.gourp.to.l3.network",
+        "resource": "public.network",
+        "authKey": "attach.security.gourp.to.l3.network",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.security.gourp.to.l3.network",
+        "resource": "public.network",
+        "authKey": "detach.security.gourp.to.l3.network",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "public.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "public.network",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

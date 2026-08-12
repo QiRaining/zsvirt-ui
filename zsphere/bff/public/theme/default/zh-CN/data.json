@@ -1,0 +1,15 @@
+{
+  "oem": false,
+  "oemKey": "test",
+  "themeMode": "light",
+  "themeColor": "blue",
+  "favicon": "/public/theme/default/zh-CN/favicon.ico",
+  "loginLogo": "/public/theme/default/zh-CN/logo.svg",
+  "bannerLogo": "/public/theme/default/zh-CN/logo-bar.svg",
+  "browserTitle": "ZStack ZSphere",
+  "loginTitle": "ZStack ZSphere 虚拟化平台",
+  "bannerTitle": "ZStack ZSphere 虚拟化平台",
+  "bannerFontSize": 14,
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

@@ -1,0 +1,58 @@
+query queryCertInfo {
+  queryCertInfo {
+    issueTime
+    duration
+    https
+    validating
+    expireTime
+    uploadTime
+    issueCN
+    O
+    OU
+    C
+    ST
+    L
+    emailAddress
+    subCN
+    subO
+    subOU
+    subC
+    subST
+    subL
+    subEmailAddress
+    signatureAlgorithm
+    version
+    keyAlgorithm
+    fingerprint
+    serial
+    bits
+  }
+}
+
+query getDoubleManagementNodeInfo {
+  getDoubleManagementNodeInfo {
+    hostNameList
+    isDualManagementNode
+    statusList
+    isManagementNodeLegal
+    hostListForGetLicenseInfo
+  }
+}
+
+mutation genNewCert($input: GenNewPemInput!) {
+  genNewCert(input: $input) {
+    actionId
+  }
+}
+
+mutation turnCert($input: CertUploadInfoInput!) {
+  turnCert(input: $input) {
+    actionId
+  }
+}
+
+mutation reset($input: CertResetInput!) {
+  reset(input: $input) {
+    actionId
+  }
+}

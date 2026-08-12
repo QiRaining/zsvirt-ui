@@ -1,0 +1,63 @@
+query resourceRelations($l2NetworkUuid: String) {
+  resourceRelations(l2NetworkUuid: $l2NetworkUuid) {
+    nodes {
+      id
+      resourceType
+      title
+      relations {
+        host
+        cluster
+        l2
+        l3
+        vm
+      }
+      detail {
+        uuid
+        name
+        clusterUuid
+        hypervisorType
+        managementIp
+        state
+        status
+        architecture
+        vlanId
+        bondingMode
+        xmitHashPolicy
+        physicalInterface
+        systemSerialNumber
+        hostNicList {
+          uuid
+          interfaceName
+          carrierActive
+        }
+        hostBondList {
+          bondingName
+          xmitHashPolicy
+          mode
+          hostUuid
+          allSlavesActive
+        }
+        vmNicList {
+          ip
+          mac
+          internalName
+          usedIps {
+            uuid
+            ip
+            ipVersion
+          }
+        }
+        hostCount
+        clusterCount
+        portGroupCount
+        vmCount
+        baremetalChassisCount
+      }
+    }
+    vmCount
+    hostCount
+    l2Count
+    l3Count
+    clusterCount
+  }
+}

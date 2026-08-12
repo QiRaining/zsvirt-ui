@@ -1,0 +1,87 @@
+@import "../../../theme.less";
+
+.container {
+  padding: 24px;
+}
+
+.toolbar {
+  margin: 12px 0;
+
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .selectContent {
+    margin-top: 12px;
+    padding: 0 24px;
+    line-height: 40px;
+    border-radius: 2px;
+    background-color: @color-50;
+
+    .icon {
+      font-size: 16px;
+      color: @color-500;
+      margin-right: 3px;
+      vertical-align: -2px;
+    }
+
+    .clear {
+      color: @color-600;
+      cursor: pointer;
+
+      &:hover {
+        color: @color-700;
+      }
+    }
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}
+
+.fiberChannelStorage {
+  padding-left: 52px;
+  padding-right: 52px;
+
+  :global {
+    .ant-table-expanded-row-fixed {
+      padding: 20px 40px 8px;
+    }
+
+    .zstack-icon {
+      cursor: pointer;
+    }
+  }
+
+  .text {
+    color: @neutral-600;
+  }
+
+  .title {
+    width: 100%;
+
+    .text;
+
+    .titletext {
+      color: @neutral-600;
+    }
+
+    margin-bottom: 12px;
+  }
+}
+
+.fiberChannelLuns {
+  :global {
+    .ant-table-thead > tr > th {
+      background: #ffffff;
+    }
+  }
+}

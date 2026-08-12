@@ -1,0 +1,206 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "snmpAddress",
+          "snmpPort",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.zwatchEndpoint",
+        "keys": [
+          "name",
+          "snmpAddress",
+          "snmpPort",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "snmpAddress",
+          "snmpPort",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "snmp.trap"
+        }
+      },
+      {
+        "accessorKey": "snmpAddress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "snmp.trap.ipAddress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "snmp.trap"
+        }
+      },
+      {
+        "accessorKey": "snmpPort",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "snmp.trap.port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "input",
+          "resource": "snmp.trap"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "snmp.trap"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "snmp.trap"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.snmp.trap",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "extraKeys": [
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "virtualization.add",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.snmp.trap",
+        "resource": "snmp.trap",
+        "authKey": "add.snmp.trap",
+        "i18nKey": "add.snmp.trap",
+        "name": "添加",
+        "label": "添加",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "snmp.trap",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add",
+        "resource": "snmp.trap",
+        "authKey": "virtualization.add",
+        "i18nKey": "virtualization.add.trap",
+        "name": "添加SNMP Trap接收器",
+        "label": "添加SNMP Trap接收器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "snmp.trap",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": "modify.config-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "snmp.trap",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

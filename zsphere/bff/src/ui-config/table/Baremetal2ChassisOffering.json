@@ -1,0 +1,305 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "cpuModelName",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "provisionType",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "cpuModelName",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "provisionType",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "cpuModelName",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "provisionType",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "provisionType",
+          "shareType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "cpuModelName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuModelName",
+            "defaultMessage": "CPU Model"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "architecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "provisionType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "startSource",
+            "defaultMessage": "Start Method"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal2.chassis.offering"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal2.chassis.offering"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "share"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "share"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "activeKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable",
+        "resource": "baremetal2.chassis.offering",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "baremetal2.chassis.offering",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "share",
+        "resource": "baremetal2.chassis.offering",
+        "authKey": "share",
+        "i18nKey": "set.share.mode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "share",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "baremetal2.chassis.offering",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+@import "../../../../../../theme.less";
+
+.noneText {
+  color: @neutral-500;
+}
+
+.trashIconWrapper {
+  display: flex;
+  justify-content: center;
+  color: @neutral-600;
+  cursor: pointer;
+}
+
+.vmNicTable {
+  width: 560px !important;
+
+  :global {
+    .ant-table-content {
+      max-height: 320px !important;
+      overflow-y: auto !important;
+    }
+  }
+}

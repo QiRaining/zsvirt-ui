@@ -1,0 +1,72 @@
+@import "../../../../theme.less";
+
+.dragger {
+  :global {
+    .zstack-upload-dragger {
+      width: 100%;
+    }
+  }
+}
+
+.space {
+  width: 100%;
+
+  :global {
+    .ant-space-item:nth-child(2) {
+      width: calc(100% - 20px);
+    }
+  }
+}
+
+.alert {
+  margin-top: 8px;
+
+  :global {
+    .ant-alert {
+      padding: 0 !important;
+    }
+
+    .ant-alert-message {
+      font-size: 14px !important;
+    }
+
+    .ant-alert-icon {
+      position: static !important;
+      margin-right: 4px !important;
+    }
+  }
+}
+
+.checkboxPartialImport {
+  margin-top: 8px;
+
+  :global {
+    .ant-checkbox-wrapper {
+      color: @neutral-700 !important;
+    }
+  }
+}
+
+.validationResultField {
+  :global {
+    .ant-form-item-control {
+      min-width: 0;
+    }
+    .ant-table-content {
+      overflow: auto !important;
+      max-height: 320px;
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+
+      &::-webkit-scrollbar-track {
+        background-color: @neutral-100;
+        border-top: 1px solid @neutral-300;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.uploadLink {
+  font-size: 12px !important;
+}

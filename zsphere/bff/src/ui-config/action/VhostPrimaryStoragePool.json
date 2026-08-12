@@ -1,0 +1,176 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "capacity.usage",
+          "securityPolicy",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "capacity.usage",
+          "securityPolicy",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vhost.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "aliasName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "aliasName",
+            "defaultMessage": "Display Name"
+          },
+          "queryType": "",
+          "resource": "vhost.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "virtualCapacityAllocationRatio",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualCapacityAllocationRatio",
+            "defaultMessage": "Virtual Capacity Allocation Rate"
+          },
+          "queryType": "",
+          "resource": "vhost.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "capacity.usage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.capacity.usage",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "vhost.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "securityPolicy",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "securityPolicy",
+            "defaultMessage": "Data Security Type"
+          },
+          "queryType": "",
+          "resource": "vhost.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vhost.primary.storage.pool"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "virtualization.set.displayName",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "virtualization.add.storagePool",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.add.storagePool",
+        "resource": "vhost.primary.storage.pool",
+        "authKey": "virtualization.add.storagePool",
+        "i18nKey": "virtualization.add.storagePool",
+        "name": "添加存储池",
+        "label": "添加存储池",
+        "icon": "plus",
+        "dividerKey": "virtualization.add.storagePool-divider"
+      },
+      {
+        "key": "virtualization.set.displayName",
+        "resource": "vhost.primary.storage.pool",
+        "authKey": "virtualization.set.displayName",
+        "i18nKey": "virtualization.set.displayName",
+        "name": "设置显示名",
+        "label": "设置显示名",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "vhost.primary.storage.pool",
+        "authKey": "virtualization.delete",
+        "i18nKey": "virtualization.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

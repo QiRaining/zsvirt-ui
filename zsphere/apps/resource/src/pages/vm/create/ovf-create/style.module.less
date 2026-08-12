@@ -1,0 +1,196 @@
+@import "../../../../theme.less";
+
+.create-modal {
+  height: 678px;
+  // ZSV-11397: Fix transparent bottom when using fixed height with @zstack/design Dialog
+  display: flex;
+  flex-direction: column;
+
+  :global {
+    .overflow-auto {
+      flex: 1;
+      max-height: unset !important;
+    }
+  }
+}
+
+.create-vm-modal {
+  :global {
+    .ant-modal-content {
+      .ant-modal-header {
+        border-bottom-color: @neutral-300;
+
+        //
+        .ant-modal-title {
+          font-weight: unset !important;
+        }
+      }
+
+      .ant-modal-body {
+        max-height: 60vh;
+        overflow-y: auto;
+      }
+
+      .ant-modal-footer {
+        border-top-color: @neutral-300;
+      }
+    }
+  }
+}
+
+.form {
+  :global {
+    .ant-form-item {
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+.baseFormItem {
+  width: 400px;
+  height: 32px;
+}
+
+.card {
+  .tab {
+    :global {
+      .ant-tabs-nav-list {
+        margin-left: 0px !important;
+      }
+
+      .ant-tabs-nav {
+        &::before {
+          border-bottom: unset !important;
+        }
+      }
+    }
+  }
+
+  .icon {
+    height: 22px;
+    margin-left: 4px;
+    vertical-align: middle;
+    padding-top: 2px;
+  }
+
+  .baseFormItem {
+    width: 400px;
+  }
+}
+
+.form {
+  .zstack-form-item-input-description {
+    top: -6px !important;
+  }
+}
+
+.content {
+  height: 320px;
+  width: 754px;
+  overflow: hidden;
+  border: 1px solid @neutral-300;
+  display: flex;
+  flex-direction: column;
+  //border-top: none;
+  margin-bottom: 24px;
+  border-radius: 2px;
+
+  .header {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: @neutral-100;
+    border-bottom: 1px solid @neutral-300;
+
+    .title {
+      color: @neutral-700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .left {
+      padding: 7px 11px;
+      width: 320px;
+      border-right: 1px solid @neutral-300;
+      // overflow-y: auto;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .right {
+      padding: 7px 11px;
+      width: 432px;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
+  }
+
+  .tab {
+    height: 284px;
+
+    :global {
+      .ant-tabs-nav {
+        width: 320px !important;
+        // height: 284px;
+        overflow-y: auto;
+        border-right: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-nav-list {
+        border-right: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-tab {
+        padding: 0px !important;
+        margin: 0px !important;
+      }
+
+      .ant-tabs-tab-btn {
+        width: 100% !important;
+      }
+
+      .ant-tabs-tab-active {
+        background-color: @color-50 !important;
+      }
+
+      .ant-tabs-nav-wrap {
+        overflow: unset;
+      }
+
+      .ant-tabs-nav-operations {
+        visibility: hidden !important;
+        height: 0px;
+      }
+
+      .ant-tabs-content-holder {
+        overflow-y: auto !important;
+      }
+
+      .ant-tabs-ink-bar {
+        left: 0 !important;
+        width: 4px;
+        color: @color-400 !important;
+        background: @color-400 !important;
+      }
+    }
+  }
+
+  .tabPane-hardware {
+    padding: 12px 2px 12px 12px !important;
+  }
+
+  .action {
+    color: @color-600 !important;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "weight",
+          "ipAddress",
+          "vmNic",
+          "instanceType",
+          "backendServerType",
+          "status",
+          "owner"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "weight",
+          "ipAddress",
+          "vmNic",
+          "instanceType",
+          "backendServerType",
+          "status",
+          "owner"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "weight",
+          "ipAddress",
+          "vmNic",
+          "vm.nic.state",
+          "instanceType",
+          "backendServerType",
+          "status",
+          "owner"
+        ]
+      },
+      {
+        "view": "sub.listener",
+        "keys": [
+          "name",
+          "ipAddress",
+          "vmNic",
+          "instanceType",
+          "status",
+          "healthStatus"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "weight",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "weight",
+            "defaultMessage": "Weighted Value"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "ipAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipAddress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "vmNic",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "vm.nic.state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "vm.nic.state",
+            "defaultMessage": "NIC Status"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "instanceType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "instanceType",
+            "defaultMessage": "Device Type"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "backendServerType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backendServertype",
+            "defaultMessage": "Backend Server Type"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backend.server.status",
+            "defaultMessage": "Backend Server Status"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "healthStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "healthStatus",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "backend.server"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.backend.server",
+          "set.weight",
+          "remove"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.backend.server",
+          "set.weight",
+          "remove"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "backend.server",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.backend.server",
+        "resource": "load.balancer",
+        "authKey": "add.backend.server",
+        "i18nKey": "add.backendServer",
+        "name": "添加后端服务器",
+        "label": "添加后端服务器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.weight",
+        "resource": "backend.server",
+        "authKey": "set.weight",
+        "i18nKey": "set.weight",
+        "name": "设置权重",
+        "label": "设置权重",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove",
+        "resource": "load.balancer",
+        "authKey": "remove",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

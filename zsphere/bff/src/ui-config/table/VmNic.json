@@ -1,0 +1,1309 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "mac",
+          "ipv4",
+          "ipv6",
+          "eip",
+          "driverType",
+          "type",
+          "outboundBandwidth",
+          "inboundBandwidth"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "nicName",
+          "name",
+          "mac",
+          "ipv4",
+          "ipv6",
+          "state",
+          "driverType",
+          "type",
+          "outboundBandwidth",
+          "inboundBandwidth"
+        ]
+      },
+      {
+        "view": "select.baremetal2.instance",
+        "keys": [
+          "mac",
+          "baremetal2.instance",
+          "ip.address"
+        ]
+      },
+      {
+        "view": "select.eip",
+        "keys": [
+          "nicName",
+          "mac",
+          "ipv4",
+          "state"
+        ]
+      },
+      {
+        "view": "select.port-forwarding",
+        "keys": [
+          "nicName",
+          "mac",
+          "state",
+          "ip.address"
+        ]
+      },
+      {
+        "view": "select.server-group",
+        "keys": [
+          "name",
+          "ipv4",
+          "state",
+          "vmName"
+        ]
+      },
+      {
+        "view": "select.sg",
+        "keys": [
+          "nicName",
+          "mac",
+          "ipv4",
+          "ipv6",
+          "state",
+          "portGroup",
+          "vmName"
+        ]
+      },
+      {
+        "view": "select.virtualization.vm",
+        "keys": [
+          "name",
+          "state",
+          "virtualization.ipv4.address",
+          "virtualization.ipv6.address",
+          "netmask",
+          "gateway",
+          "virtualization.mtu",
+          "virtualization.mac.address",
+          "virtualization.dns"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "mac",
+          "ipv4",
+          "ipv6",
+          "state",
+          "securityGroup",
+          "eip",
+          "driverType",
+          "type",
+          "outboundBandwidth",
+          "inboundBandwidth"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance",
+        "keys": [
+          "name.in.bm2",
+          "mac",
+          "type.in.bm2",
+          "network",
+          "ip.address",
+          "netmask",
+          "gateway"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance.arrangeNic",
+        "keys": [
+          "name.in.bm2",
+          "mac",
+          "type.in.bm2",
+          "network",
+          "ip.address"
+        ]
+      },
+      {
+        "view": "sub.node",
+        "keys": [
+          "name",
+          "mac",
+          "ipv4"
+        ]
+      },
+      {
+        "view": "sub.sg",
+        "keys": [
+          "nicName",
+          "ipv4",
+          "ipv6",
+          "state",
+          "portGroup",
+          "vmName"
+        ]
+      },
+      {
+        "view": "sub.vcenter",
+        "keys": [
+          "name",
+          "mac",
+          "ipv4",
+          "driverType",
+          "type"
+        ]
+      },
+      {
+        "view": "sub.vcenter.router",
+        "keys": [
+          "name.in.router",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "ipv4Capacity",
+          "outboundBandwidth.in.router",
+          "inboundBandwidth.in.router",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.manage",
+        "keys": [
+          "name.in.router",
+          "cidr",
+          "ipCapacity",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.public",
+        "keys": [
+          "name.in.router",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "ipv4Capacity",
+          "state.in.router",
+          "snat",
+          "outboundBandwidth.in.router",
+          "inboundBandwidth.in.router",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.vpc",
+        "keys": [
+          "name.in.router",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "ipv4Capacity",
+          "state.in.router",
+          "outboundBandwidth.in.router",
+          "inboundBandwidth.in.router",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "nicName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nic",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "name.in.router",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "name.in.bm2",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "mac",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "macAddress",
+            "defaultMessage": "MAC Address"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "type.in.bm2",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "deviceType",
+            "defaultMessage": "Device Type"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv4",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv4Address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv6",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv6Address",
+            "defaultMessage": "IPv6 Address"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "virtualization.ipv4.address",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv4.address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "virtualization.ipv6.address",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv6.address",
+            "defaultMessage": "IPv6 Address"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "securityGroup",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "security.group",
+            "defaultMessage": "Security Group"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "eip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "eip",
+            "defaultMessage": "EIP"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "driverType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nicDriveType",
+            "defaultMessage": "NIC Model"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "nicType",
+            "defaultMessage": "NIC Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "portGroup",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "portGroup",
+            "defaultMessage": "Distributed Port Group"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "vmName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipCapacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ipCapacity",
+            "defaultMessage": "Available IP"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ipv4Capacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ipv4Capacity",
+            "defaultMessage": "Available IPv4"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "state.in.router",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "snat",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "SNAT",
+            "defaultMessage": "SNAT"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "outboundBandwidth.in.router",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkInterfaceOutboundBandwidth",
+            "defaultMessage": "NIC Upstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "inboundBandwidth.in.router",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkInterfaceInboundBandwidth",
+            "defaultMessage": "NIC Downstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "isPxe",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "pxeStartNic",
+            "defaultMessage": "PXE Boot NIC"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "network",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "network",
+            "defaultMessage": "Network"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "baremetal2.instance",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "baremetal2.instance",
+            "defaultMessage": "Elastic Baremetal Instance"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "ip.address",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipAddress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "netmask",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "netmask",
+            "defaultMessage": "Netmask"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "gateway",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "gateway",
+            "defaultMessage": "Gateway"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "virtualization.mtu",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.mtu",
+            "defaultMessage": "MTU"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "outboundBandwidth",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "outboundBandwidth",
+            "defaultMessage": "Upstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "inboundBandwidth",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "inboundBandwidth",
+            "defaultMessage": "Downstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "virtualization.mac.address",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.mac.address",
+            "defaultMessage": "MAC Address"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      },
+      {
+        "accessorKey": "virtualization.dns",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.dns",
+            "defaultMessage": "DNS"
+          },
+          "queryType": "",
+          "resource": "vm.nic"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.baremetal2.instance.arrangeNic"
+      },
+      {
+        "view": "sub.baremetal2.instance.arrangeNic/row",
+        "activeKeys": [
+          "add.aggregated.nic",
+          "remove.aggregated.nic"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance/row",
+        "activeKeys": [
+          "detach.in.baremetal2.instance",
+          "set.default.nic"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance/toolbar",
+        "extraKeys": [
+          "attach.in.baremetal2.instance",
+          "detach.in.baremetal2.instance"
+        ]
+      },
+      {
+        "view": "sub.node/row",
+        "activeKeys": [
+          "detach.nic.in.load.balancer"
+        ]
+      },
+      {
+        "view": "sub.node/toolbar",
+        "extraKeys": [
+          "attach.nic.in.load.balancer",
+          "detach.nic.in.load.balancer"
+        ]
+      },
+      {
+        "view": "sub.sg/row",
+        "activeKeys": [
+          "unbind.nic"
+        ]
+      },
+      {
+        "view": "sub.sg/toolbar",
+        "extraKeys": [
+          "bind.nic",
+          "unbind.nic"
+        ]
+      },
+      {
+        "view": "sub.vcenter.router/row",
+        "extraKeys": [
+          "delete.vpc.network"
+        ]
+      },
+      {
+        "view": "sub.vcenter.router/toolbar",
+        "extraKeys": [
+          "delete.vpc.network"
+        ]
+      },
+      {
+        "view": "sub.vcenter/row",
+        "extraKeys": [
+          "detach.nic.vcenter.vm"
+        ]
+      },
+      {
+        "view": "sub.vcenter/toolbar",
+        "extraKeys": [
+          "attach.nic.in.vcenter.vm",
+          "detach.nic.vcenter.vm"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.manage/row"
+      },
+      {
+        "view": "sub.vpcrouter.manage/toolbar"
+      },
+      {
+        "view": "sub.vpcrouter.public/row",
+        "activeKeys": [
+          "set.default.network",
+          "vpcrouter.enable.nic",
+          "vpcrouter.disable.nic",
+          "detach.from.vpcrouter",
+          "set.qos.in.router",
+          "set.snat"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.public/toolbar",
+        "extraKeys": [
+          "attach.to.vpcrouter"
+        ],
+        "activeKeys": [
+          "detach.from.vpcrouter"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.vpc/row",
+        "activeKeys": [
+          "vpcrouter.enable.nic",
+          "vpcrouter.disable.nic",
+          "detach.from.vpcrouter",
+          "set.qos.in.router",
+          "delete.vpc.network"
+        ]
+      },
+      {
+        "view": "sub.vpcrouter.vpc/toolbar",
+        "extraKeys": [
+          "create.vpc.network",
+          "attach.to.vpcrouter"
+        ],
+        "activeKeys": [
+          "detach.from.vpcrouter",
+          "delete.vpc.network"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable.nic.in.vm",
+          "disable.nic.in.vm",
+          "set.default.network",
+          "set.nic.type",
+          "set.mac",
+          "set.ip",
+          "sync.config",
+          "set.nic.drive.type",
+          "set.qos",
+          "vmNic.set.securityGroup",
+          "detach.nic.in.vm",
+          "vm.nic.bind.eip",
+          "vm.nic.unbind.eip"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "attach.nic.in.vm",
+          "detach.nic.in.vm"
+        ],
+        "activeKeys": [
+          "enable.nic.in.vm",
+          "disable.nic.in.vm",
+          "sync.config"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable.nic.in.vm",
+        "resource": "vm",
+        "authKey": "enable.nic.in.vm",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable.nic.in.vm",
+        "resource": "vm",
+        "authKey": "disable.nic.in.vm",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": "disable.nic.in.vm-divider"
+      },
+      {
+        "key": "attach.nic.in.vm",
+        "resource": "vm",
+        "authKey": "attach.nic.in.vm",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.nic.in.load.balancer",
+        "resource": "load.balancer",
+        "authKey": "attach.nic.in.load.balancer",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.nic.in.vcenter.vm",
+        "resource": "vcenter.vm",
+        "authKey": "attach.nic.in.vcenter.vm",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.vpc.network",
+        "resource": "vpc.vrouter",
+        "authKey": "create.vpc.network",
+        "i18nKey": "create.vpcNetwork",
+        "name": "创建VPC网络",
+        "label": "创建VPC网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default.network",
+        "resource": "vm",
+        "authKey": "set.default.network",
+        "i18nKey": "set.defaultNetwork",
+        "name": "设置默认网络",
+        "label": "设置默认网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.nic.type",
+        "resource": "vm",
+        "authKey": "set.nic.type",
+        "i18nKey": "set.nicType",
+        "name": "设置网卡类型",
+        "label": "设置网卡类型",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.mac",
+        "resource": "vm",
+        "authKey": "set.mac",
+        "i18nKey": "set.mac",
+        "name": "设置MAC",
+        "label": "设置MAC",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.ip",
+        "resource": "vm",
+        "authKey": "set.ip",
+        "i18nKey": "set.network.and.ip.address",
+        "name": "设置网络和IP地址",
+        "label": "设置网络和IP地址",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.config",
+        "resource": "vm",
+        "authKey": "sync.config",
+        "i18nKey": "sync.config",
+        "name": "同步配置",
+        "label": "同步配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.nic.drive.type",
+        "resource": "vm",
+        "authKey": "set.nic.drive.type",
+        "i18nKey": "set.nicDriveType",
+        "name": "设置网卡型号",
+        "label": "设置网卡型号",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.qos",
+        "resource": "vm",
+        "authKey": "set.qos",
+        "i18nKey": "set.nicQos",
+        "name": "设置网卡QoS",
+        "label": "设置网卡QoS",
+        "icon": "",
+        "dividerKey": "set.qos-divider"
+      },
+      {
+        "key": "vmNic.set.securityGroup",
+        "resource": "vm",
+        "authKey": "vmNic.set.securityGroup",
+        "i18nKey": "vmNic.set.securityGroup",
+        "name": "设置安全组",
+        "label": "设置安全组",
+        "icon": "",
+        "dividerKey": "vmNic.set.securityGroup-divider"
+      },
+      {
+        "key": "detach.nic.in.vm",
+        "resource": "vm",
+        "authKey": "detach.nic.in.vm",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.nic.in.load.balancer",
+        "resource": "load.balancer",
+        "authKey": "detach.nic.in.load.balancer",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": "detach.nic.in.load.balancer-divider"
+      },
+      {
+        "key": "detach.nic.vcenter.vm",
+        "resource": "vcenter.vm",
+        "authKey": "detach.nic.vcenter.vm",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": "detach.nic.vcenter.vm-divider"
+      },
+      {
+        "key": "attach.in.baremetal2.instance",
+        "resource": "baremetal2.instance",
+        "authKey": "attach.in.baremetal2.instance",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.baremetal2.instance",
+        "resource": "baremetal2.instance",
+        "authKey": "detach.in.baremetal2.instance",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default.nic",
+        "resource": "baremetal2.instance",
+        "authKey": "set.default.nic",
+        "i18nKey": "set.defaultNic",
+        "name": "设为默认网卡",
+        "label": "设为默认网卡",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vpcrouter.enable.nic",
+        "resource": "vpc.vrouter",
+        "authKey": "vpcrouter.enable.nic",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vpcrouter.disable.nic",
+        "resource": "vpc.vrouter",
+        "authKey": "vpcrouter.disable.nic",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.to.vpcrouter",
+        "resource": "vpc.vrouter",
+        "authKey": "attach.to.vpcrouter",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.from.vpcrouter",
+        "resource": "vpc.vrouter",
+        "authKey": "detach.from.vpcrouter",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.qos.in.router",
+        "resource": "vpc.vrouter",
+        "authKey": "set.qos.in.router",
+        "i18nKey": "set.nicQos",
+        "name": "设置QoS",
+        "label": "设置QoS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.vpc.network",
+        "resource": "vpc.vrouter",
+        "authKey": "delete.vpc.network",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "bind.nic",
+        "resource": "security.group",
+        "authKey": "bind.nic",
+        "i18nKey": "bind",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "unbind.nic",
+        "resource": "security.group",
+        "authKey": "unbind.nic",
+        "i18nKey": "unbind",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.nic.bind.eip",
+        "resource": "vm",
+        "authKey": "vm.nic.bind.eip",
+        "i18nKey": "bind.eip",
+        "name": "绑定弹性IP",
+        "label": "绑定弹性IP",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.nic.unbind.eip",
+        "resource": "vm",
+        "authKey": "vm.nic.unbind.eip",
+        "i18nKey": "unbind.eip",
+        "name": "解绑弹性IP",
+        "label": "解绑弹性IP",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.snat",
+        "resource": "vpc.vrouter",
+        "authKey": "set.snat",
+        "i18nKey": "set.snat",
+        "name": "设置SNAT",
+        "label": "设置SNAT",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.aggregated.nic",
+        "resource": "baremetal2.instance",
+        "authKey": "add.aggregated.nic",
+        "i18nKey": "add.aggregated.nic",
+        "name": "添加聚合网卡",
+        "label": "添加聚合网卡",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.aggregated.nic",
+        "resource": "baremetal2.instance",
+        "authKey": "remove.aggregated.nic",
+        "i18nKey": "remove.aggregated.nic",
+        "name": "移除聚合网卡",
+        "label": "移除聚合网卡",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

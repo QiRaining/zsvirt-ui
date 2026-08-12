@@ -1,0 +1,293 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "maxInstance",
+          "fbMemory",
+          "maximumResolution",
+          "frameRateLimit",
+          "manufacturer",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "maxInstance",
+          "fbMemory",
+          "maximumResolution",
+          "frameRateLimit",
+          "manufacturer",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "maxInstance",
+          "fbMemory",
+          "maximumResolution",
+          "frameRateLimit",
+          "manufacturer",
+          "state",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name",
+          "shareType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "maxInstance",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "maxInstance",
+            "defaultMessage": "Virtualization Ratio"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "fbMemory",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "fbMemory",
+            "defaultMessage": "Memory Size"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "maximumResolution",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "maximumResolution",
+            "defaultMessage": "Maximum Resolution"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "frameRateLimit",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "frameRateLimit",
+            "defaultMessage": "Maximum Frames"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "manufacturer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabledState",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vgpu.device.spec"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vgpu.device.spec"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "set.share.type"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "enable",
+        "resource": "vgpu.device.spec",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "vgpu.device.spec",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "vgpu.device.spec",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vgpu.device.spec",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../style/index.less";
+
+.@{prefix}-text {
+  &-string-child {
+    display: flex !important;
+  }
+
+  &:hover {
+    &-copy-icon {
+      display: inline-block;
+    }
+  }
+
+  &-copy-icon {
+    display: none;
+  }
+  .ant-typography-ellipsis-single-line {
+    white-space: nowrap;
+  }
+  .ant-typography-copy {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  &-icon {
+    display: flex;
+    align-items: center;
+  }
+}
+.baseSecretText {
+  display: flex;
+
+  .ant-typography {
+    flex: 1;
+  }
+
+  .hidden {
+    width: 30px;
+  }
+}
+
+.text {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: sub;
+}
+
+.icon-copy-password {
+  margin-left: 4px;
+  cursor: pointer;
+  vertical-align: baseline !important;
+  color: @color-600 !important;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.icon-after-password {
+  margin-left: 4px;
+  cursor: pointer;
+  vertical-align: baseline !important;
+  color: @color-600 !important;
+  flex-shrink: 0;
+}
+
+.icon-after-hidden-password {
+  margin-left: 4px;
+  cursor: pointer;
+  vertical-align: 0.125em !important;
+  color: @color-600 !important;
+  flex-shrink: 0;
+}
+
+.wrapper {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}

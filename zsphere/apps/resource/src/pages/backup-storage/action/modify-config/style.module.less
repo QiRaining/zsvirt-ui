@@ -1,0 +1,152 @@
+@import "../../../../theme.less";
+
+.card {
+  padding: 0px 12px;
+  margin-bottom: 20px;
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      width: 0;
+      flex: 1;
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+  }
+
+  :global {
+    .ant-col {
+      .ant-space-item {
+        margin-right: 4px !important;
+      }
+    }
+  }
+}
+.width-80 {
+  width: 80px !important;
+}
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-400 {
+  width: 400px !important;
+}
+
+.monNode {
+  margin-bottom: 0 !important;
+  :global {
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+      max-width: 400px;
+      .ant-row {
+        border-bottom: 1px solid @neutral-300;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px;
+      }
+    }
+    .ant-form-item-control-input-content {
+      height: 240px;
+    }
+  }
+  .noData {
+    text-align: center;
+    .icon {
+      background-color: @neutral-100;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-left: 170px;
+      margin-top: 50px;
+      :global {
+        .anticon {
+          width: 32px;
+          height: 32px;
+          color: @neutral-300;
+          margin-top: 12px;
+        }
+      }
+    }
+    span {
+      font-size: 12px;
+      color: @neutral-500;
+      display: inline-block;
+      margin-top: 8px;
+    }
+  }
+  .header {
+    color: @neutral-600;
+    :global {
+      .ant-col:not(:last-child) {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 2px;
+          height: 12px;
+          background-color: @neutral-300;
+        }
+      }
+    }
+  }
+  .content {
+    overflow-y: auto;
+    height: 204px;
+    .item {
+      color: @neutral-700;
+    }
+  }
+  .action {
+    span:first-child {
+      display: inline-block;
+      width: 32px;
+    }
+  }
+}
+.addBtn {
+  // margin-left: 160px;
+  // margin-bottom: 20px;
+  margin: 8px 0 20px 160px;
+  color: @color-600;
+  cursor: pointer;
+  span {
+    margin-left: 6px;
+  }
+  .errMsg {
+    margin-left: 8px !important;
+    font-size: 12px !important;
+    margin-top: 4px;
+    color: #ff4d4f !important;
+  }
+}
+
+.sshPort {
+  :global {
+    .ant-input {
+      width: 320px;
+    }
+  }
+}

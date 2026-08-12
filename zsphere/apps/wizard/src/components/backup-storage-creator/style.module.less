@@ -1,0 +1,219 @@
+@import "../../theme.less";
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-400 {
+  width: 400px !important;
+}
+
+.marginBottom12 {
+  margin-bottom: 12px !important;
+}
+
+.typeItem {
+  :global {
+    .ant-form-item {
+      display: inline-block;
+      margin-bottom: 0px !important;
+
+      &:first-child {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+.select-lun-width {
+  :global {
+    .ant-list {
+      width: 400px !important;
+
+      .ant-list-item {
+        padding: 6.5px 16px !important;
+
+        &:last-child {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+}
+
+.caption {
+  display: flex;
+  margin-top: 4px;
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+
+  :global {
+    .zstack-icon {
+      font-size: 16px;
+      margin-top: 2px;
+      margin-right: 6px;
+      vertical-align: text-top;
+    }
+  }
+}
+
+.lunCaption {
+  margin-bottom: 4px;
+}
+
+.checkbox {
+  margin-left: 168px;
+  margin-bottom: 18px;
+}
+
+.card {
+  padding: 0px 12px;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      width: 0;
+      flex: 1;
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+  }
+
+  .width-160 {
+    width: 160px !important;
+  }
+
+  .width-320 {
+    width: 320px !important;
+  }
+
+  .width-400 {
+    width: 400px !important;
+  }
+}
+
+.monNode {
+  margin-bottom: 0 !important;
+
+  :global {
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-bottom: none;
+      border-radius: 2px;
+      max-width: 400px;
+
+      .ant-row {
+        border-bottom: 1px solid @neutral-300;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 6px;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      max-height: 240px;
+      overflow-y: auto;
+    }
+  }
+
+  .header {
+    color: @neutral-600;
+
+    :global {
+      .ant-col:not(:last-child) {
+        border-right: 1px solid @neutral-300;
+      }
+    }
+  }
+
+  .content {
+    color: @neutral-700;
+  }
+
+  .action {
+    span {
+      cursor: pointer;
+
+      &:first-child {
+        display: inline-block;
+        width: 32px;
+      }
+    }
+  }
+}
+
+.addBtn {
+  margin: 14px 0 4px 0;
+  color: var(--color-600);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 4px;
+  }
+}
+
+.management-node-container {
+  padding-left: 12px;
+  border-left: 1px solid @neutral-300;
+  margin-bottom: 20px;
+}
+
+.width-235 {
+  width: 235px !important;
+}
+
+.width-240 {
+  width: 240px !important;
+}
+
+.test-connect {
+  padding: 4px 12px !important;
+  margin-left: 4px;
+}
+
+.error-field {
+  margin-top: 4px !important;
+  padding-left: 0 !important;
+}
+
+.monitorTable {
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #dbdde0;
+  margin-left: -12px;
+  min-width: 480px;
+  :global {
+    svg {
+      color: @neutral-600;
+    }
+  }
+}

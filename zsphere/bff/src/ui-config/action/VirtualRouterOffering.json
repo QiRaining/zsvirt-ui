@@ -1,0 +1,347 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "cpuNum",
+          "memorySize",
+          "shareType",
+          "architecture",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "cpuNum",
+          "memorySize",
+          "architecture",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.shared.resource",
+        "keys": [
+          "name"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisor.type",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpu.num",
+            "defaultMessage": "cpu"
+          },
+          "queryType": "",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "memorySize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory.size",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "share.type",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "virtual.router.offering"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "virtual.router.offering"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "edit",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "start",
+          "stop",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.virtual.router.offering",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "edit",
+          "start",
+          "stop",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "start",
+          "stop",
+          "set.share.type",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.virtual.router.offering",
+        "resource": "virtual.router.offering",
+        "authKey": "create.virtual.router.offering",
+        "i18nKey": "create.vrouterOffering",
+        "name": "创建路由器规格",
+        "label": "创建路由器规格",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "virtual.router.offering",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "virtual.router.offering",
+        "authKey": "start",
+        "i18nKey": "enable",
+        "name": "启动",
+        "label": "启动",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "virtual.router.offering",
+        "authKey": "stop",
+        "i18nKey": "disable",
+        "name": "停止",
+        "label": "停止",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "global.shared",
+        "resource": "virtual.router.offering",
+        "authKey": "global.shared",
+        "i18nKey": "globalShare",
+        "name": "全局共享",
+        "label": "全局共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "global.recall",
+        "resource": "virtual.router.offering",
+        "authKey": "global.recall",
+        "i18nKey": "globalRevoke",
+        "name": "全局召回",
+        "label": "全局召回",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "virtual.router.offering",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "virtual.router.offering",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "virtual.router.offering",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

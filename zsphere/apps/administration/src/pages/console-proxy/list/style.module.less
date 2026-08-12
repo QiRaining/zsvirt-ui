@@ -1,0 +1,32 @@
+@import "../../../theme.less";
+
+.container {
+  max-width: 1024px;
+
+  .space {
+    width: 100%;
+
+    :global {
+      .ant-space-item {
+        display: block !important;
+      }
+    }
+  }
+
+  .space-title {
+    color: @neutral-600;
+
+    .space-title-num {
+      font-weight: 500;
+    }
+  }
+
+  .card-extra-btn {
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

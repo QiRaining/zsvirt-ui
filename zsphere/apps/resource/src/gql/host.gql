@@ -1,0 +1,798 @@
+query hostCpuGHz($uuid: String!) {
+  host(uuid: $uuid) {
+    uuid
+    hostSystemInfo {
+      cpuGHz
+    }
+  }
+}
+
+fragment actionErrorFields on ActionError {
+  code
+  description
+  details
+}
+
+fragment hostFields on HostVO {
+  name
+  uuid
+  architecture
+  managementIp
+  callBackIp
+  hypervisorType
+  description
+  state
+  status
+  osDistribution
+  osRelease
+  osVersion
+  createDate
+  lastOpDate
+  cpuNum
+  availableCpuCapacity
+  sshPort
+  username
+  totalCpuCapacity
+  availableMemoryCapacity
+  totalMemoryCapacity
+  extraIps
+  connectedTime
+  hostNodeInfo {
+    nodeType
+  }
+  qemuState
+  ipmiAddress
+  ipmiPort
+  ipmiUsername
+  ipmiPassword
+  ipmiPowerStatus
+  iscsiInitiatorName
+  nqn
+  physicalNicList {
+    uuid
+    interfaceName
+    hostNetworkInterfaceServiceRef {
+      interfaceUuid
+      vlanId
+      serviceType
+    }
+  }
+  bondList {
+    uuid
+    bondingName
+    hostNetworkBondingServiceRef {
+      bondingUuid
+      vlanId
+      serviceType
+    }
+  }
+  bondRelatedVSwitch {
+    uuid
+    allSlavesActive
+    bondingName
+    hostUuid
+    slaves {
+      uuid
+      interfaceName
+      state
+      speed
+    }
+    mode
+    xmitHashPolicy
+    bondingType
+  }
+}
+
+fragment actionSendRespFields on ActionSendResp {
+  success
+  error
+}
+
+query hostList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $topNumber: Int
+  $fields: [String!]
+  $type: HostQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $primaryStorageUuid: String
+) {
+  hostList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    topNumber: $topNumber
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...hostFields
+      hostUsage {
+        cpuUsed
+        memoryUsed
+        storageUsed
+      }
+      cluster {
+        name
+        uuid
+        clusterKVMCpuModel
+        resourceConfigValue {
+          vmVideoType
+          haVmHaLevel
+          vmVmHaAcrossClusters
+          vmEmulateHyperV
+          kvmAutoSetVmNicMultiqueue
+        }
+      }
+      zone {
+        name
+        uuid
+      }
+      owner {
+        name
+        uuid
+      }
+      tag {
+        ownerUuid
+        uuid
+        name
+        color
+      }
+      hostIommu {
+        state
+        status
+      }
+      hostSystemInfo {
+        cpuModelName
+        hostCpuModelName
+        ept
+        eptUuid
+        systemSerialNumber
+        systemProductName
+        cpuGHz
+        cpuProcessorNum
+        cpuSocketCoreThread {
+          sockets
+          coresPerSocket
+          threadsPerCore
+        } #
+      }
+      localStorageHostDiskCapacity(primaryStorageUuid: $primaryStorageUuid) {
+        availableCapacity
+        availablePhysicalCapacity
+        totalCapacity
+        totalPhysicalCapacity
+      }
+      globalConifg {
+        memoryOverProvisioning
+        overProvisioningTotalMemory
+        overProvisioningAvailableMemory
+        reservedMemory
+        availableCpuMemoryCapacity
+        availableCpu
+        availableMemory
+        managedCpuNum
+        totalCpu
+        totalMemory
+      }
+      hostZWatchInfo {
+        cpuAllIdleUtilization
+        memoryFreeInPercent
+        cpuAllUsedUtilization
+        memoryUsedInPercent
+        memoryFreeBytes
+      }
+      relatedVmCount
+      relatedVolumeCount
+    }
+    total
+  }
+}
+
+query countHostList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $topNumber: Int
+  $fields: [String!]
+  $type: HostQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  countHostList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    topNumber: $topNumber
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+  }
+}
+
+query queryHostForZSVCreateInstance(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $topNumber: Int
+  $fields: [String!]
+  $type: HostQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  hostList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    topNumber: $topNumber
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      name
+      uuid
+      architecture
+      hypervisorType
+      state
+      status
+      hostNodeInfo {
+        nodeType
+      }
+      cluster {
+        name
+        uuid
+        clusterKVMCpuModel
+        resourceConfigValue {
+          vmVideoType
+          haVmHaLevel
+          vmVmHaAcrossClusters
+          vmEmulateHyperV
+          kvmAutoSetVmNicMultiqueue
+        }
+      }
+      hostSystemInfo {
+        hostCpuModelName
+        cpuGHz
+      }
+      globalConifg {
+        memoryOverProvisioning
+        overProvisioningTotalMemory
+        overProvisioningAvailableMemory
+        reservedMemory
+        availableCpuMemoryCapacity
+        availableCpu
+        availableMemory
+        managedCpuNum
+        totalCpu
+        totalMemory
+      }
+    }
+    total
+  }
+}
+
+query host($uuid: String!) {
+  host(uuid: $uuid) {
+    ...hostFields
+    cluster {
+      name
+      state
+      clusterKVMCpuModel
+      uuid
+      resourceConfigValue {
+        vmVideoType
+        haVmHaLevel
+        vmVmHaAcrossClusters
+        vmEmulateHyperV
+        kvmAutoSetVmNicMultiqueue
+      }
+    }
+    zone {
+      name
+      uuid
+    }
+    owner {
+      name
+      uuid
+    }
+    tag {
+      ownerUuid
+      uuid
+      name
+      color
+    }
+    hostTopology
+    hostIommu {
+      state
+      status
+    }
+    hostSystemInfo {
+      cpuModelName
+      hostCpuModelName
+      ept
+      eptUuid
+      ipmiAddress
+      systemSerialNumber
+      systemProductName
+      cpuGHz
+      cpuProcessorNum
+      cpuSocketCoreThread {
+        sockets
+        coresPerSocket
+        threadsPerCore
+      } #
+    }
+    localStorageHostDiskCapacity {
+      availableCapacity
+      availablePhysicalCapacity
+      totalCapacity
+      totalPhysicalCapacity
+    }
+    globalConifg {
+      memoryOverProvisioning
+      overProvisioningTotalMemory
+      overProvisioningAvailableMemory
+      reservedMemory
+      availableCpuMemoryCapacity
+      availableCpu
+      availableMemory
+      managedCpuNum
+      totalCpu
+      totalMemory
+    }
+    hostZWatchInfo {
+      cpuAllIdleUtilization
+      memoryFreeInPercent
+      cpuAllUsedUtilization
+      memoryUsedInPercent
+      memoryFreeBytes
+    }
+    relatedVmCount
+    relatedVolumeCount
+    hostGroup {
+      uuid
+      name
+    }
+  }
+}
+query hostSummary($conditions: [Condition!]) {
+  hostSummary(conditions: $conditions) {
+    total
+    connected
+    disconnected
+    connecting
+  }
+}
+
+query getHostRelatedSummary($uuid: String!) {
+  getHostRelatedSummary(uuid: $uuid) {
+    vm
+    scsiLun
+    nvmeLun
+    physicalNic
+    gpu
+    vGpu
+    usb
+    pci
+    pciPassthrough
+    memory
+    cpu
+    power
+    storageAdapter
+  }
+}
+
+query getHostPowerControlRelatedSummary($uuids: [String!]!) {
+  getHostPowerControlRelatedSummary(uuids: $uuids) {
+    vm
+    vpcRouter
+    volume
+    loadbalance
+    cephLocalStorage
+  }
+}
+
+mutation enableHosts($input: EnableHostInput!) {
+  enableHosts(input: $input) {
+    actionId
+  }
+}
+
+mutation disableHosts($input: DisableHostInput!) {
+  disableHosts(input: $input) {
+    actionId
+  }
+}
+
+mutation reconnectHosts($input: ReconnectHostInput!) {
+  reconnectHosts(input: $input) {
+    actionId
+  }
+}
+
+mutation maintenanceHosts($input: MaintenanceHostInput!) {
+  maintenanceHosts(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteHosts($input: DeleteHostInput!) {
+  deleteHosts(input: $input) {
+    actionId
+  }
+}
+
+query hostMetricData(
+  $uuid: String!
+  $startTime: Float!
+  $endTime: Float!
+  $period: Float!
+  $metricNames: [String!]!
+) {
+  hostMetricData(
+    uuid: $uuid
+    startTime: $startTime
+    endTime: $endTime
+    period: $period
+    metricNames: $metricNames
+  ) {
+    time
+    value
+  }
+}
+
+query hostHardwareInfo($uuid: String!) {
+  hostHardwareInfo(uuid: $uuid) {
+    uuid
+    manufacturer
+    productName
+    serialNumber
+    systemUuid
+    uptime
+    ipmiAddress
+    bmcVersion
+    biosVendor
+    biosVersion
+    biosReleaseDate
+  }
+}
+
+query hostSlotInfo($uuid: String!) {
+  hostSlotInfo(uuid: $uuid) {
+    uuid
+    memorySlotsMaximum
+  }
+}
+
+fragment hostHardwareStatusFields on HardWareStatus {
+  normal
+  error
+  unknown
+  total
+}
+
+query hostHardwareStatusSummary($uuid: String!) {
+  hostHardwareStatusSummary(uuid: $uuid) {
+    cpu {
+      ...hostHardwareStatusFields
+    }
+    memory {
+      ...hostHardwareStatusFields
+    }
+    fan {
+      ...hostHardwareStatusFields
+    }
+    power {
+      noElectric
+      ...hostHardwareStatusFields
+    }
+    disk {
+      rebuild
+      offline
+      ...hostHardwareStatusFields
+    }
+    temperatureSensor {
+      ...hostHardwareStatusFields
+    }
+  }
+}
+
+mutation addKvmHost($input: AddKVMHostInput!) {
+  addKvmHost(input: $input) {
+    actionId
+  }
+}
+
+mutation addXDragonHost($input: AddXDragonHostInput!) {
+  addXDragonHost(input: $input) {
+    actionId
+  }
+}
+
+mutation addKVMHostFromConfigFile($input: AddKVMHostFromConfigFileInput!) {
+  addKVMHostFromConfigFile(input: $input) {
+    actionId
+  }
+}
+
+mutation addKVMHostFromScan($input: AddKVMHostFromScanInput!) {
+  addKVMHostFromScan(input: $input) {
+    actionId
+  }
+}
+
+mutation closeHostIommu($input: CloseHostIommuInput!) {
+  closeHostIommu(input: $input) {
+    actionId
+  }
+}
+
+mutation openHostIommu($input: OpenHostIommuInput!) {
+  openHostIommu(input: $input) {
+    actionId
+  }
+}
+
+mutation updateHost($input: UpdateHostInput!) {
+  updateHost(input: $input) {
+    actionId
+  }
+}
+
+mutation updateKVMHost($input: UpdateKVMHostInput!) {
+  updateKVMHost(input: $input) {
+    actionId
+  }
+}
+
+mutation setHostEptSupport($input: SetHostEptSupportInput!) {
+  setHostEptSupport(input: $input) {
+    actionId
+  }
+}
+
+query physicalNicList(
+  $extraConditions: [Condition!]
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: PhysicalNicQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  physicalNicList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+  ) {
+    list {
+      uuid
+      name
+      description
+      interfaceName
+      interfaceType
+      interfaceModel
+      interfaceFactory
+      carrierActive
+      slaveActive
+      ipAddresses
+      offloadStatus
+      speed
+      readyState
+      state
+      hostUuid
+      gateway
+      bondingUuid
+      bond {
+        uuid
+        bondingName
+      }
+      lLDPMode {
+        mode
+        uuid
+      }
+      pciDeviceAddress
+      mac
+      pciDevice {
+        name
+        uuid
+        type
+        pciDeviceAddress
+        vendorId
+        deviceId
+        subvendorId
+        subdeviceId
+        status
+        state
+        virtStatus
+        physicalNicDeviceMaxPartNum
+        vmCount
+        mdevSpecRefs {
+          mdevSpecUuid
+          pciDeviceUuid
+        }
+
+        vfAvailableNum {
+          vfAvailableNum
+          vfTotalNum
+        }
+      }
+      host {
+        name
+        uuid
+        status
+        cluster {
+          uuid
+          name
+        }
+      }
+      hostNetworkInterfaceServiceRef {
+        interfaceUuid
+        vlanId
+        serviceType
+        serviceTypes
+      }
+      createDate
+      vSwitch {
+        uuid
+        name
+      }
+    }
+    total
+  }
+}
+
+mutation updateHostPowerStatus($input: UpdateHostPowerStatusInput!) {
+  updateHostPowerStatus(input: $input) {
+    actionId
+  }
+}
+
+mutation updateHostIPMI($input: UpdateHostIPMIInput!) {
+  updateHostIPMI(input: $input) {
+    actionId
+  }
+}
+
+query hostCount(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $topNumber: Int
+  $fields: [String!]
+  $type: HostQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  hostList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    topNumber: $topNumber
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+  }
+}
+
+query physicalNicLLDPDevice($interfaceUuid: String!, $hostId: String!, $lldpUuid: String) {
+  physicalNicLLDPDevice(hostId: $hostId, interfaceUuid: $interfaceUuid, lldpUuid: $lldpUuid) {
+    lldpUuid
+    chassisId
+    timeToLive
+    managementAddress
+    systemName
+    systemDescription
+    systemCapabilities
+    portId
+    portDescription
+    vlanId
+    aggregationPortId
+    mtu
+    createDate
+    lastOpDate
+  }
+}
+
+query physicalNicCount($hostUuid: String!) {
+  physicalNicCount(hostUuid: $hostUuid) {
+    up
+    down
+  }
+}
+
+query queryHostForZSVPrimarystorageDetail(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $topNumber: Int
+  $fields: [String!]
+  $type: HostQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  hostList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    topNumber: $topNumber
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      name
+      uuid
+      status
+      localStorageHostCapacity {
+        hostUuid
+        primaryStorageUuid
+        availableCapacity
+        totalCapacity
+        overProvisioningPrimaryStorage
+        availablePhysicalCapacity
+        reservedCapacity
+        reservedPhysicalCapacity
+        totalPhysicalCapacity
+        systemUsedCapacity
+        volumeSnapshotSize
+        imageCacheSize
+        volumeSize
+        vmTemplateVolumeCacheSize
+      }
+    }
+    total
+  }
+}
+
+query queryHostSystemInfo($uuid: String!) {
+  queryHostSystemInfo(uuid: $uuid) {
+    cpuModelName
+    hostCpuModelName
+    ept
+    eptUuid
+    ipmiAddress
+    systemSerialNumber
+    systemProductName
+    cpuGHz
+    cpuProcessorNum
+    cpuSocketCoreThread {
+      sockets
+      coresPerSocket
+      threadsPerCore
+    }
+  }
+}

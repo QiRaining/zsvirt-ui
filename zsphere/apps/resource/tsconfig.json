@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@domain/*": ["src/domain/*"],
+      "@engine/*": ["src/engine/*"],
+      "@zstack/virtualization-resource/src/pages/*": ["src/pages/*"],
+      "@zstack/virtualization-resource/src/layouts/*": ["src/layouts/*"],
+      "@zstack/virtualization-resource/src/gql/*": ["src/gql/*"],
+      "@zstack/virtualization-resource/src/utils/*": ["src/utils/*"],
+      "@zstack/virtualization-resource/src/components/*": ["src/components/*"],
+      "@zstack/virtualization-resource/src/store/*": ["src/store/*"],
+      "@zstack/virtualization-resource/src/assets/*": ["src/assets/*"]
+    }
+  },
+  "include": ["src"]
+}

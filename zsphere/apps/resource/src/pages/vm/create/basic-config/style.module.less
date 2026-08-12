@@ -1,0 +1,43 @@
+@import "../../../../theme.less";
+
+.card {
+  padding: 0px 12px;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      width: 200px;
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+  }
+}
+
+.baseFormItem {
+  width: 400px !important;
+  input {
+    text-align: center;
+  }
+}
+.baseFormItem-160 {
+  width: 160px !important;
+  input {
+    text-align: center;
+  }
+}

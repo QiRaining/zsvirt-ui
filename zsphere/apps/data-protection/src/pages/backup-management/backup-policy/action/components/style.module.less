@@ -1,0 +1,569 @@
+@import "../../../../../theme.less";
+
+.modalSelect {
+  width: 100% !important;
+  max-width: 400px !important;
+
+  :global {
+    .ant-table-content {
+      max-height: 240px;
+      overflow: auto;
+
+      .ant-table-cell:has(.ant-select) {
+        padding: 4px 12px !important;
+      }
+    }
+
+    .ant-table-wrapper {
+      margin-bottom: 8px;
+
+      + .zstack-virtualization-modal-select-add {
+        padding: 0 !important;
+        height: 22px !important;
+
+        .ant-btn {
+          padding: 0 !important;
+          height: 22px !important;
+        }
+      }
+    }
+  }
+
+  table {
+    table-layout: fixed !important;
+  }
+}
+
+.remoteBackupStorage {
+  display: flex;
+  align-items: center;
+
+  > :first-child {
+    min-width: 0;
+  }
+
+  .bar {
+    flex-shrink: 0;
+    width: 1px;
+    height: 12px;
+    margin: 0 8px;
+    background-color: @neutral-300;
+  }
+
+  .capacity {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: @neutral-600;
+  }
+}
+
+.retentionPolicy {
+  flex-direction: column !important;
+  gap: 4px !important;
+
+  :global {
+    .ant-input-number {
+      width: 80px;
+    }
+
+    .ant-input-number-disabled {
+      background-color: @neutral-100 !important;
+
+      &:hover {
+        border-color: @neutral-400 !important;
+      }
+    }
+  }
+
+  > div {
+    height: auto !important;
+    min-height: 22px;
+    align-items: flex-start !important;
+    line-height: 32px;
+
+    > button {
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    > label {
+      white-space: normal;
+      line-height: 32px;
+    }
+  }
+
+  .inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.formWrapper {
+  padding: 24px 24px 40px;
+}
+
+.section {
+  padding-left: 12px;
+
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    color: @neutral-700;
+    margin: 20px 0 12px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 12px;
+      background-color: @color-400;
+      margin: auto 0;
+      top: 0;
+      bottom: 0;
+      left: -12px;
+    }
+  }
+
+  &:first-child .sectionTitle {
+    margin-top: 0;
+  }
+
+  .sectionField {
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+    padding: 16px;
+    margin-left: -12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sectionBody {
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+    padding: 20px;
+    margin-left: -12px;
+    max-height: 480px;
+    overflow: auto;
+  }
+}
+
+.nameAndDesc {
+  margin-bottom: 12px;
+
+  :global {
+    .ant-input,
+    .zstack-textarea-wrap {
+      width: 400px !important;
+    }
+  }
+}
+
+.localBackupStorage:global(.ant-form-item) {
+  .modalSelect:not(:has(:global(.ant-list))) {
+    padding-top: 5px;
+  }
+
+  :global {
+    .zstack-virtualization-modal-select-add {
+      padding: 0 !important;
+      height: 22px !important;
+
+      .ant-btn {
+        padding: 0 !important;
+        height: 22px !important;
+      }
+    }
+
+    .ant-list {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.localBackupStorageDescription {
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+  margin-top: 4px;
+}
+
+.radioGroupDescription:global(.ant-form-item) {
+  margin-top: -12px !important;
+  line-height: 20px !important;
+
+  :global {
+    .zstack-form-item-label-container {
+      min-height: auto !important;
+    }
+
+    .ant-form-item-control {
+      .ant-form-item-control-input {
+        min-height: auto !important;
+
+        .ant-form-item-control-input-content {
+          font-size: 12px !important;
+          color: @neutral-500 !important;
+        }
+      }
+    }
+  }
+}
+
+.stepsWrapper {
+  padding-top: 6px;
+  height: 62px;
+  background-color: @neutral-100;
+}
+
+.btn:global(.ant-btn) {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 24px;
+  border-top: 1px solid @neutral-300;
+}
+
+.tab:global(.ant-tabs) {
+  padding: 24px 24px 40px;
+
+  :global {
+    .ant-tabs-nav {
+      &::before {
+        display: none;
+      }
+
+      .ant-tabs-nav-wrap {
+        overflow: visible;
+
+        .ant-tabs-nav-list {
+          margin-left: 12px;
+          margin-bottom: 12px;
+          gap: 20px;
+
+          .ant-tabs-ink-bar {
+            border-radius: 1px;
+            bottom: -13px;
+          }
+
+          .ant-tabs-tab {
+            padding: 0;
+            margin: 0 !important;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 12px;
+            background-color: @color-400;
+            margin: auto 0;
+            top: 0;
+            bottom: 0;
+            left: -12px;
+          }
+        }
+      }
+    }
+
+    .ant-tabs-content {
+      display: block;
+      border: 1px solid @neutral-300;
+      border-radius: 2px;
+      max-height: 480px;
+      overflow: auto;
+    }
+
+    .ant-tabs-tabpane {
+      padding: 20px;
+    }
+  }
+}
+
+.field {
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  .fieldTitle + & {
+    padding-left: 11px;
+    border-left: 1px solid @neutral-300;
+
+    :global {
+      .zstack-form-item-label-container {
+        margin-right: -12px;
+      }
+    }
+  }
+}
+
+.periodType {
+  :global {
+    .ant-form-item-control-input-content {
+      max-width: 400px;
+      display: flex;
+      gap: 4px;
+
+      .ant-select {
+        width: 192px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.periodOptionWrapper {
+  &:global(.ant-form-item) {
+    margin-top: -8px;
+  }
+
+  :global {
+    .zstack-form-item-label-container-required {
+      display: none;
+    }
+  }
+
+  .periodOptionGroup:global(.ant-checkbox-group) {
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    :global {
+      .ant-checkbox-group-item {
+        margin: 0;
+      }
+
+      .ant-checkbox-wrapper {
+        display: block;
+        position: relative;
+        width: 52px;
+        height: 32px;
+        border: 1px solid @neutral-400;
+        border-radius: 2px;
+        transition: all 300ms;
+
+        &:hover {
+          border-color: @color-600;
+          color: @color-600;
+        }
+
+        &.ant-checkbox-wrapper-checked {
+          border-color: @color-600;
+          color: @color-600;
+        }
+
+        .ant-checkbox {
+          display: block;
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: @color-600;
+            width: 20px;
+            height: 20px;
+            transform: skewX(45deg);
+            top: 0;
+            right: -10px;
+            opacity: 0;
+          }
+
+          &.ant-checkbox-checked::before {
+            opacity: 1;
+          }
+
+          &::after {
+            display: none;
+          }
+
+          input {
+            display: none;
+          }
+
+          .ant-checkbox-inner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: auto;
+            width: 11px;
+            height: 11px;
+            border: none;
+            background-color: transparent;
+            transition: none;
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+
+        .ant-checkbox + span {
+          display: flex;
+          position: absolute;
+          padding: 0;
+          inset: 0;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    &.periodOptionSmall {
+      max-width: 320px;
+
+      :global {
+        .ant-checkbox-wrapper {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.chainLength {
+  margin-top: 4px;
+}
+
+.chainLengthDescription {
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+  margin-top: 4px;
+
+  .chainLengthBtn:global(.ant-btn.ant-btn-link) {
+    padding: 0;
+    height: auto;
+    font-size: 12px;
+  }
+}
+
+.executeTimeWrapper:global(
+  .zstack-form-item.ant-form-item.zstack-form-item-zsv
+) {
+  margin-bottom: 8px;
+
+  .trash {
+    color: @neutral-600;
+    margin-left: 8px;
+  }
+}
+
+.addBtn:global(.ant-btn) {
+  height: 22px;
+  padding: 0;
+}
+
+.periodTypeDescription:global(.ant-form-item) {
+  margin-top: -8px !important;
+  line-height: 20px !important;
+
+  :global {
+    .zstack-form-item-label-container {
+      min-height: auto !important;
+    }
+
+    .ant-form-item-control {
+      .ant-form-item-control-input {
+        min-height: auto !important;
+
+        .ant-form-item-control-input-content {
+          font-size: 12px !important;
+          color: @neutral-500 !important;
+        }
+      }
+    }
+  }
+}
+
+.syncRemoteOff:global(.ant-form-item) {
+  display: none;
+}
+
+.syncRemote:global(.ant-form-item.zstack-form-item.zstack-form-item-zsv):has(
+    + .syncRemoteOff:last-child
+  ) {
+  margin-bottom: 0;
+}
+
+.chainIllustration:global(.ant-modal.zstack-modal) {
+  :global {
+    .ant-modal-body {
+      padding: 24px 24px 40px !important;
+    }
+  }
+}
+
+.chainLegend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .chainLegendItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: @neutral-600;
+
+    .legendIcon {
+      width: 8px;
+      height: 8px;
+      border: 1px solid @info-500;
+
+      &.fullBackupIcon {
+        background-color: @info-200;
+      }
+
+      &.incrementalBackupIcon {
+        border-style: dashed;
+        background-color: @info-50;
+      }
+
+      &.recoveryPointIcon {
+        background-color: @info-100;
+        border-radius: 999px;
+      }
+    }
+  }
+}
+
+.illustration {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: @neutral-700;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.actionTitle {
+  display: grid;
+  place-content: center;
+}
+
+.trashIcon {
+  display: grid;
+  place-content: center;
+  color: @neutral-600;
+  cursor: pointer;
+}

@@ -1,0 +1,65 @@
+@import url("../../../theme.less");
+
+.dropdown {
+  height: 200px;
+  overflow: hidden;
+  padding: 4px 0;
+
+  :global {
+    .ant-select-tree-switcher {
+      display: grid;
+      place-content: center;
+    }
+  }
+}
+
+.tree {
+  width: 320px !important;
+  margin: 0 !important;
+
+  .nodeTitle {
+    flex-grow: 1 !important;
+  }
+
+  :global {
+    .ant-tree-indent-unit::before {
+      display: none !important;
+    }
+    .ant-tree-indent-unit::before {
+      display: none !important;
+    }
+    .ant-tree-treenode.ant-tree-treenode.ant-tree-treenode {
+      padding-left: 16px !important;
+      &:hover {
+        background: none !important;
+        background-color: @neutral-100 !important;
+      }
+    }
+    .anticon {
+      margin-left: 4px;
+    }
+    .ant-tree-list-scrollbar.ant-tree-list-scrollbar-show {
+      display: block !important;
+      .ant-tree-list-scrollbar-thumb {
+        background: none !important;
+        background-color: @neutral-300 !important;
+      }
+    }
+    // switcher 图标旋转动画
+    .ant-tree-switcher {
+      .zstack-icon {
+        transition: transform 0.3s ease;
+      }
+    }
+    .ant-tree-switcher_close {
+      .zstack-icon {
+        transform: rotate(-90deg);
+      }
+    }
+    .ant-tree-switcher_open {
+      .zstack-icon {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

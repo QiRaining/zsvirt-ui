@@ -1,0 +1,29 @@
+.customTextWrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  :global {
+    .text {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: calc(100% - 16px - 4px);
+
+      > span:first-child {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .ant-typography-copy {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .icon-after-password,
+    .icon-after-hidden-password {
+      margin-left: 4px;
+    }
+  }
+}

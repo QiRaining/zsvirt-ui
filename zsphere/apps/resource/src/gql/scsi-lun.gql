@@ -1,0 +1,141 @@
+fragment scsiLunFields on ScsiLun {
+  uuid
+  name
+  wwid
+  wwn
+  vendor
+  model
+  serial
+  type
+  path
+  state
+  source
+  size
+  createDate
+  lastOpDate
+  scsiLunHostRefs {
+    hostUuid
+    scsiLunUuid
+  }
+  scsiLunVmInstanceRefs {
+    vmInstanceUuid
+  }
+}
+
+query scsiLunList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ScsiLunQueryType
+) {
+  scsiLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+  ) {
+    total
+    list {
+      ...scsiLunFields
+    }
+  }
+}
+
+query scsiLunListForZSVInstanceOverView(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ScsiLunQueryType
+) {
+  scsiLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+  ) {
+    total
+    list {
+      uuid
+      name
+      wwid
+      wwn
+      vendor
+      model
+      serial
+      type
+      path
+      state
+      source
+      size
+      createDate
+      lastOpDate
+      scsiLunVmInstanceRefs {
+        vmInstanceUuid
+        createDate
+        lastOpDate
+        deviceId
+      }
+    }
+  }
+}
+
+query scsiLunCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ScsiLunQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  scsiLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+query lunDeviceMultiPathList($conditions: [Condition!]) {
+  lunDeviceMultiPathList(conditions: $conditions) {
+    list {
+      uuid
+      disk
+      state
+      status
+      target
+    }
+    total
+  }
+}
+
+mutation attachScsiLunToVmInstances($input: AttachScsiLunToVmInstanceInput!) {
+  attachScsiLunToVmInstances(input: $input) {
+    actionId
+  }
+}
+
+mutation detachScsiLunFromVmInstances($input: DetachScsiLunFromVmInstanceInput!) {
+  detachScsiLunFromVmInstances(input: $input) {
+    actionId
+  }
+}
+
+mutation checkScsiLunClusterStatus($input: CheckScsiLunClusterStatusInput!) {
+  checkScsiLunClusterStatus(input: $input) {
+    actionId
+  }
+}

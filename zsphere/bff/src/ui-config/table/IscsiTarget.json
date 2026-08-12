@@ -1,0 +1,51 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.storage.adapter",
+        "keys": [
+          "iscsiServerAddress",
+          "iqn"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "iscsiServerAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "iscsi.server",
+            "defaultMessage": "iSCSI Server"
+          },
+          "queryType": "",
+          "resource": "iscsi.target"
+        }
+      },
+      {
+        "accessorKey": "iqn",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "iscsi.target.name",
+            "defaultMessage": "Target Name"
+          },
+          "queryType": "input",
+          "resource": "iscsi.target"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

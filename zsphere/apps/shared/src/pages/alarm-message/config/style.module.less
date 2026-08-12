@@ -1,0 +1,44 @@
+@import "../../../theme.less";
+
+.icon-message {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff3f46;
+  margin-right: 7px;
+  flex-shrink: 0;
+}
+
+.icon-readed {
+  background: @neutral-400;
+}
+
+.null-text {
+  color: @neutral-500;
+}
+
+.detail-wrap {
+  .detail-name {
+    span {
+      color: @color-600;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .mainNavColor {
+    color: @neutral-700;
+  }
+
+  .detail-header-resourcename {
+    color: @neutral-600;
+    font-size: 14px;
+  }
+
+  :global {
+    .ant-divider-horizontal {
+      margin: 20px 0;
+    }
+  }
+}

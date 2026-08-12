@@ -1,0 +1,38 @@
+{
+  "name": "@zstack/zsphere-platform-store",
+  "version": "1.0.0",
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --outDir lib -d"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@zstack/zsphere-types": "workspace:*",
+    "lodash-es": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "typescript": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

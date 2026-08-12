@@ -1,0 +1,37 @@
+@import "../../../theme.less";
+.add-modal-footer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  .add-modal-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .test-ok,
+  .test-not-ok {
+    border: 0;
+    background: transparent;
+    padding-right: 24px;
+  }
+  .test-ok {
+    color: @color-600;
+    cursor: pointer;
+  }
+  .test-not-ok {
+    color: @neutral-500;
+    cursor: text;
+  }
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.delete-modal {
+  :global {
+    .zstack-modal-zsv-action-body {
+      padding-top: 0;
+    }
+  }
+}

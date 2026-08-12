@@ -1,0 +1,476 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "hctl",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "size",
+          "wwn",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "select.primary.storage.create",
+        "keys": [
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "hctl",
+          "type",
+          "path"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "healthState",
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "sub.multipath",
+        "keys": [
+          "disk",
+          "state",
+          "status",
+          "target"
+        ]
+      },
+      {
+        "view": "sub.storage.adapter",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      },
+      {
+        "view": "sub.vm-instance",
+        "keys": [
+          "name",
+          "vendor",
+          "model",
+          "size",
+          "wwn",
+          "wwid",
+          "vm-instance.count",
+          "type",
+          "source"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "healthState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "healthState",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "vendor",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendor",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "wwn",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "input",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "wwid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwid",
+            "defaultMessage": "WWID"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "hctl",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hctl",
+            "defaultMessage": "HCTL"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "vm-instance.count",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "mounted.vm.count",
+            "defaultMessage": "Attached VMs"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "source",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "source",
+            "defaultMessage": "Source"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "path",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "path",
+            "defaultMessage": "Path"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "disk",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "healthState",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "multipath.status",
+            "defaultMessage": "Path Status"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      },
+      {
+        "accessorKey": "target",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "lunDevice.target",
+            "defaultMessage": "Target"
+          },
+          "queryType": "",
+          "resource": "scsi.lun"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "host.scsi.lun.attach.vm",
+          "host.scsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.host/row"
+      },
+      {
+        "view": "sub.host/toolbar"
+      },
+      {
+        "view": "sub.multipath/toolbar"
+      },
+      {
+        "view": "sub.storage.adapter/row"
+      },
+      {
+        "view": "sub.storage.adapter/toolbar"
+      },
+      {
+        "view": "sub.vm-instance/row",
+        "activeKeys": [
+          "vm.scsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "sub.vm-instance/toolbar",
+        "extraKeys": [
+          "vm.scsi.lun.attach.vm",
+          "vm.scsi.lun.detach.vm"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "host.scsi.lun.attach.vm",
+        "resource": "host",
+        "authKey": "host.scsi.lun.attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.scsi.lun.detach.vm",
+        "resource": "host",
+        "authKey": "host.scsi.lun.detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.scsi.lun.attach.vm",
+        "resource": "vm",
+        "authKey": "vm.scsi.lun.attach.vm",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.scsi.lun.detach.vm",
+        "resource": "vm",
+        "authKey": "vm.scsi.lun.detach.vm",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

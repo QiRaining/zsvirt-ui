@@ -1,0 +1,97 @@
+query gpuDeviceList(
+  $extraConditions: [Condition!]
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: String = "gpu"
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  pciDeviceList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+  ) {
+    list {
+      name
+      uuid
+      type
+      status
+      state
+      virtStatus
+      passThroughState
+      host {
+        name
+        uuid
+      }
+      hostUuid
+      shareType
+      vendorId
+      vendor
+      deviceId
+      subvendorId
+      pciDeviceAddress
+      subdeviceId
+      physicalNicDeviceMaxPartNum
+      canDirectRestore {
+        canDirectRestore
+        vmUuidList
+      }
+      pciDeviceSpec {
+        name
+        uuid
+      }
+      vmInstanceUuid
+      vmInstance {
+        uuid
+        name
+      }
+      templatedVmInstance {
+        uuid
+        name
+      }
+      hostNetworkInterface {
+        carrierActive
+        interfaceName
+        hostUuid
+        offloadStatus
+        speed
+        uuid
+      }
+      mdevSpecRefs {
+        mdevSpecUuid
+        pciDeviceUuid
+      }
+      vfAvailableNum {
+        vfAvailableNum
+        vfTotalNum
+      }
+      createDate
+    }
+    total
+  }
+}
+
+mutation generateSriovPciDevices($input: GenerateSriovPciDeviceInput!) {
+  generateSriovPciDevices(input: $input) {
+    actionId
+  }
+}
+
+mutation unGenerateSriovPciDevice($input: UnGenerateSriovPciDeviceInput!) {
+  unGenerateSriovPciDevice(input: $input) {
+    actionId
+  }
+}
+
+mutation updatePciDevice($input: UpdatePciDeviceInput!) {
+  updatePciDevice(input: $input) {
+    success
+    error
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "platform",
+          "description",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "platform",
+          "description",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vm.spec"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vm.spec"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "vm.spec.platform",
+            "defaultMessage": "Target VM OS"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.spec"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "vm.spec"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vm.spec"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "virtualization.edit.name.desc"
+        ],
+        "activeKeys": [
+          "virtualization.edit.config",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.edit.name.desc",
+          "virtualization.edit.config",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "virtualization.create.vm.spec",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create.vm.spec",
+        "resource": "vm.spec",
+        "authKey": "virtualization.create.vm.spec",
+        "i18nKey": "create.vm.spec",
+        "name": "新建虚拟机规范",
+        "label": "新建虚拟机规范",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.name.desc",
+        "resource": "vm.spec",
+        "authKey": "virtualization.edit.name.desc",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.config",
+        "resource": "vm.spec",
+        "authKey": "virtualization.edit.config",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": "virtualization.edit.config-divider"
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "vm.spec",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

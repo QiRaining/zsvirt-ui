@@ -1,0 +1,310 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.manage",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.manage",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.manage",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "avaliableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "manage.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "manage.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.manage/header",
+        "activeKeys": [
+          "edit",
+          "add.ip.range",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.manage/row",
+        "activeKeys": [
+          "edit",
+          "add.ip.range",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.manage/toolbar",
+        "extraKeys": [
+          "create.manage.network",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.manage/row"
+      },
+      {
+        "view": "sub.manage/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.network",
+        "resource": "manage.network",
+        "authKey": "create.network",
+        "i18nKey": "create.network",
+        "name": "创建网络",
+        "label": "创建网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.manage.network",
+        "resource": "manage.network",
+        "authKey": "create.manage.network",
+        "i18nKey": "create.manageNetwork",
+        "name": "创建管理网络",
+        "label": "创建管理网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "manage.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ip.range",
+        "resource": "manage.network",
+        "authKey": "add.ip.range",
+        "i18nKey": "add.networkRange",
+        "name": "添加网络段",
+        "label": "添加网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dns",
+        "resource": "manage.network",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.mode",
+        "resource": "manage.network",
+        "authKey": "set.share.mode",
+        "i18nKey": "set.shareType",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default.network",
+        "resource": "manage.network",
+        "authKey": "set.default.network",
+        "i18nKey": "set.defaultNetwork",
+        "name": "设为默认网络",
+        "label": "设为默认网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "manage.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

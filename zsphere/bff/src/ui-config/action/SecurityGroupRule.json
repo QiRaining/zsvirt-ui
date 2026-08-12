@@ -1,0 +1,350 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "priority",
+          "action",
+          "protocol",
+          "portRange",
+          "src",
+          "description",
+          "state",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "main.out",
+        "keys": [
+          "priority",
+          "action",
+          "protocol",
+          "portRange",
+          "dst",
+          "description",
+          "state",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "priority",
+          "action",
+          "protocol",
+          "portRange",
+          "src",
+          "state",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "select.out",
+        "keys": [
+          "priority",
+          "action",
+          "protocol",
+          "portRange",
+          "dst",
+          "state",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "protocol",
+          "portRange",
+          "ipVersion"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "priority",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "priority",
+            "defaultMessage": "Priority"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "action",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "strategy",
+            "defaultMessage": "Policy"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "protocol",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "protocol",
+            "defaultMessage": "Protocol"
+          },
+          "queryType": "multipleFilter",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "portRange",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "portRange",
+            "defaultMessage": "Port Range"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "src",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "securityGroup.rule.field.authorized.src",
+            "defaultMessage": "Source"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "dst",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "securityGroup.rule.field.authorized.dst",
+            "defaultMessage": "Destination"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "securityGroup.rule.description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabled.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "security.group.rule"
+        }
+      },
+      {
+        "accessorKey": "ipVersion",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ipVersionType",
+            "defaultMessage": "IP Address Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "security.group.rule"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.out/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "modify.rule",
+          "deleteRule"
+        ]
+      },
+      {
+        "view": "main.out/toolbar",
+        "extraKeys": [
+          "addRule",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "adjust.priority",
+          "deleteRule"
+        ]
+      },
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "modify.rule",
+          "deleteRule"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "addRule",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "adjust.priority",
+          "deleteRule"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "deleteRule"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "addRule",
+          "deleteRule"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "addRule",
+        "resource": "security.group.rule",
+        "authKey": "addRule",
+        "i18nKey": "add.rule",
+        "name": "添加规则",
+        "label": "添加规则",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "security.group.rule",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "security.group.rule",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "adjust.priority",
+        "resource": "security.group.rule",
+        "authKey": "adjust.priority",
+        "i18nKey": "adjust.priority",
+        "name": "调整优先级",
+        "label": "调整优先级",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.rule",
+        "resource": "security.group.rule",
+        "authKey": "modify.rule",
+        "i18nKey": "modify.rule",
+        "name": "修改规则",
+        "label": "修改规则",
+        "icon": "",
+        "dividerKey": "modify.rule-divider"
+      },
+      {
+        "key": "deleteRule",
+        "resource": "security.group.rule",
+        "authKey": "deleteRule",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

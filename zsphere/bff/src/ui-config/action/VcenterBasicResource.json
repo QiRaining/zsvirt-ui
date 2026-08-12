@@ -1,0 +1,255 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "domainName",
+          "userName",
+          "https",
+          "state",
+          "status"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "domainName",
+          "https",
+          "state",
+          "status"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "domainName",
+          "userName",
+          "https",
+          "state",
+          "status"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "domainName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "domain",
+            "defaultMessage": "Domain"
+          },
+          "queryType": "",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "userName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "user.name",
+            "defaultMessage": "Username"
+          },
+          "queryType": "",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "https",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "https.or.http",
+            "defaultMessage": "HTTPS/HTTP"
+          },
+          "queryType": "",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.basic.resource"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.basic.resource"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "sync.vCenter",
+          "delete.vCenter"
+        ],
+        "activeKeys": [
+          "edit.vCenter"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "sync.vCenter",
+          "delete.vCenter"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.vCenter",
+          "sync.vCenter",
+          "delete.vCenter"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit.vCenter",
+        "resource": "vcenter.basic.resource",
+        "authKey": "edit.vCenter",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.vCenter",
+        "resource": "vcenter.basic.resource",
+        "authKey": "add.vCenter",
+        "i18nKey": "add.vCenter",
+        "name": "添加vCenter",
+        "label": "添加vCenter",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.vCenter",
+        "resource": "vcenter.basic.resource",
+        "authKey": "sync.vCenter",
+        "i18nKey": "sync.vCenter",
+        "name": "同步数据",
+        "label": "同步数据",
+        "icon": "swap",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.vCenter",
+        "resource": "vcenter.basic.resource",
+        "authKey": "delete.vCenter",
+        "i18nKey": "delete.vCenter",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

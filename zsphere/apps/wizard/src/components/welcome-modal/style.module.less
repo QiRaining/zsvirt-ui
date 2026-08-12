@@ -1,0 +1,140 @@
+@import "../../theme.less";
+
+.init-way {
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+
+  .tip {
+    font-weight: 400;
+    color: @neutral-700;
+  }
+
+  .way {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 12px;
+    color: @neutral-700;
+    margin-top: 12px;
+    height: 134px;
+
+    .item-not-selected {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      border-radius: 2px;
+      height: 134px;
+      border: 1px solid @neutral-400;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .item-selected {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      border-radius: 2px;
+      height: 134px;
+      background-color: @color-50;
+      border: 1px solid @color-600;
+      position: relative;
+    }
+
+    .selected-indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .triangle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        color: @color-600;
+        fill: @color-600;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        color: white;
+        z-index: 1;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .icon-title {
+      display: flex;
+      flex-direction: row;
+
+      .iconself-checked {
+        background-color: @color-600;
+        border-radius: 4px;
+        height: 36px;
+        width: 36px;
+        position: relative;
+        color: @neutral-0;
+        justify-content: center;
+        padding: 10px;
+        vertical-align: unset !important;
+      }
+
+      .iconself-uncheck {
+        background-color: @color-50;
+        border-radius: 4px;
+        height: 36px;
+        width: 36px;
+        position: relative;
+        color: @color-600;
+        justify-content: center;
+        padding: 10px;
+        vertical-align: unset !important;
+      }
+
+      .title {
+        margin-left: 8px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+    }
+
+    .description {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 400;
+      height: 40px;
+      color: @neutral-600;
+      line-height: 20px;
+    }
+
+    .descriptionText {
+      line-clamp: 3;
+    }
+
+    .icon-checked {
+      color: white;
+      position: absolute;
+    }
+
+    .icon-uncheck {
+      color: white;
+      position: absolute;
+      color: @color-600;
+      fill: @color-600;
+    }
+  }
+}

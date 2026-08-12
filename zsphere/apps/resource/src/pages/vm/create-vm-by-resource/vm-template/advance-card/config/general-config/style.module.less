@@ -1,0 +1,57 @@
+@import "../../../../../../../theme.less";
+
+.userData {
+  width: 320px !important;
+}
+
+.addVmSpecBtn {
+  padding-left: 0 !important;
+  display: flex !important;
+  align-items: center;
+
+  svg {
+    margin-right: 4px;
+  }
+}
+
+.vmSpecList {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 36px;
+  border: 1px solid var(--neutral-300);
+  border-radius: 2px;
+  font-size: 14px;
+  color: var(--neutral-700);
+
+  .vmSpecName {
+    padding-left: 12px;
+    flex-grow: 1;
+    min-width: 0;
+    margin-right: 4px;
+  }
+
+  .vmSpecAction {
+    width: 68px;
+    color: var(--neutral-600);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}
+
+.description {
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: -8px;
+  }
+}
+
+.optionDisabled {
+  color: @neutral-500 !important;
+}

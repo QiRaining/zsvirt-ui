@@ -1,0 +1,110 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "status",
+          "type",
+          "value",
+          "lastUpdateTime"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "status",
+          "value"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "temperature.sensor"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "temperature.sensor"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "temperature.sensor"
+        }
+      },
+      {
+        "accessorKey": "value",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.read.value",
+            "defaultMessage": "Current Read Value"
+          },
+          "queryType": "",
+          "resource": "temperature.sensor"
+        }
+      },
+      {
+        "accessorKey": "lastUpdateTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "last.update.time",
+            "defaultMessage": "Last Updated"
+          },
+          "queryType": "",
+          "resource": "temperature.sensor"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

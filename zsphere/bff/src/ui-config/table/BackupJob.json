@@ -1,0 +1,326 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "lastJobResult",
+          "jobType",
+          "resourceNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "state",
+          "jobType",
+          "resourceNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "state",
+          "lastJobResult",
+          "jobType",
+          "resourceNum",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "lastJobResult",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "last.backup.job.result",
+            "defaultMessage": "Last Backup Result"
+          },
+          "queryType": "",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "jobType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.object",
+            "defaultMessage": "Backup Object"
+          },
+          "queryType": "multipleFilter",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "resourceNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.resource",
+            "defaultMessage": "Backup Resources"
+          },
+          "queryType": "",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "backup.job"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "backup.job"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "triggerNow",
+          "editNameDesc",
+          "editBasicConfig",
+          "editBackupPolicy",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "triggerNow",
+          "editNameDesc",
+          "editBasicConfig",
+          "editBackupPolicy",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "backup.job",
+        "authKey": "create",
+        "i18nKey": "create.backup.policy",
+        "name": "新建备份计划",
+        "label": "新建备份计划",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "backup.job",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "backup.job",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "triggerNow",
+        "resource": "backup.job",
+        "authKey": "triggerNow",
+        "i18nKey": "backup.now",
+        "name": "立即备份",
+        "label": "立即备份",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editNameDesc",
+        "resource": "backup.job",
+        "authKey": "editNameDesc",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editBasicConfig",
+        "resource": "backup.job",
+        "authKey": "editBasicConfig",
+        "i18nKey": "edit.basic.config",
+        "name": "修改基础配置",
+        "label": "修改基础配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editBackupPolicy",
+        "resource": "backup.job",
+        "authKey": "editBackupPolicy",
+        "i18nKey": "edit.backup.policy",
+        "name": "修改备份策略",
+        "label": "修改备份策略",
+        "icon": "",
+        "dividerKey": "editBackupPolicy-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "backup.job",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

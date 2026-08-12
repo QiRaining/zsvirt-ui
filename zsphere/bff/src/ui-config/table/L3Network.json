@@ -1,0 +1,894 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main.vcenter",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.add-port-group",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.auto.scaling",
+        "keys": [
+          "name",
+          "networkType",
+          "hypervisorType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.eip-network",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.flat",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "dhcp.service",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.flow",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection.public",
+        "keys": [
+          "name",
+          "networkType",
+          "hypervisorType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection.subnetwork",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection.vpc",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.load.balancer",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.manage",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ospf",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.port-forwarding",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.port-mirror",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.public",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "dhcp.service",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.security-group",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vcenter",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "cidr",
+          "vCenter",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vip-network",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.vpc",
+        "keys": [
+          "name",
+          "vpcVRouter",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "dhcp.service",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.flat",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.flow",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.l2-network",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.manage",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.public",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.security-group",
+        "keys": [
+          "name",
+          "networkType",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.alarm",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2-network",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpc",
+        "keys": [
+          "name",
+          "avaliableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "vpcVRouter",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vpc.vrouter",
+            "defaultMessage": "VPC vRouter"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "avaliableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "dhcp.service",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "dhcp.service",
+            "defaultMessage": "DHCP Service"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "singleFilter",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "l3.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "l3.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.vcenter/header",
+        "activeKeys": [
+          "add.ip.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vcenter/row",
+        "activeKeys": [
+          "add.ip.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.vcenter/toolbar",
+        "extraKeys": [
+          "create.network"
+        ],
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.flat.shared-resource/row"
+      },
+      {
+        "view": "sub.flat.shared-resource/toolbar"
+      },
+      {
+        "view": "sub.flat/row"
+      },
+      {
+        "view": "sub.flat/toolbar"
+      },
+      {
+        "view": "sub.flow/row"
+      },
+      {
+        "view": "sub.flow/toolbar"
+      },
+      {
+        "view": "sub.l2-network/row",
+        "activeKeys": [
+          "add.ipv4.range",
+          "add.ipv6.range",
+          "add.dns",
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2-network/toolbar",
+        "activeKeys": [
+          "set.share.mode",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.manage/row"
+      },
+      {
+        "view": "sub.manage/toolbar"
+      },
+      {
+        "view": "sub.public.shared-resource/row",
+        "activeKeys": [
+          "set.share.mode"
+        ]
+      },
+      {
+        "view": "sub.public.shared-resource/toolbar",
+        "activeKeys": [
+          "set.share.mode"
+        ]
+      },
+      {
+        "view": "sub.public/row",
+        "activeKeys": [
+          "set.default.network",
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.public/toolbar",
+        "activeKeys": [
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.security-group/row",
+        "activeKeys": [
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.security-group/toolbar",
+        "extraKeys": [
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network"
+        ]
+      },
+      {
+        "view": "sub.virtualization.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2-network/row"
+      },
+      {
+        "view": "sub.virtualization.l2-network/toolbar"
+      },
+      {
+        "view": "sub.virtualization.zone/row"
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar"
+      },
+      {
+        "view": "sub.vpc.shared-resource/row",
+        "activeKeys": [
+          "set.share.mode"
+        ]
+      },
+      {
+        "view": "sub.vpc.shared-resource/toolbar",
+        "activeKeys": [
+          "set.share.mode"
+        ]
+      },
+      {
+        "view": "sub.vpc/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/toolbar",
+        "activeKeys": [
+          "attach.security.gourp.to.l3.network",
+          "detach.security.gourp.to.l3.network",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.network",
+        "resource": "l3.network",
+        "authKey": "create.network",
+        "i18nKey": "create.network",
+        "name": "创建网络",
+        "label": "创建网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "l3.network",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.vpc.network",
+        "resource": "l3.network",
+        "authKey": "create.vpc.network",
+        "i18nKey": "create.vpcNetwork",
+        "name": "创建VPC网络",
+        "label": "创建VPC网络",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv4.range",
+        "resource": "l3.network",
+        "authKey": "add.ipv4.range",
+        "i18nKey": "add.Ipv4NetworkRange",
+        "name": "添加IPv4网络段",
+        "label": "添加IPv4网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ipv6.range",
+        "resource": "l3.network",
+        "authKey": "add.ipv6.range",
+        "i18nKey": "add.Ipv6NetworkRange",
+        "name": "添加IPv6网络段",
+        "label": "添加IPv6网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.ip.range",
+        "resource": "l3.network",
+        "authKey": "add.ip.range",
+        "i18nKey": "add.networkRange",
+        "name": "添加网络段",
+        "label": "添加网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.dns",
+        "resource": "l3.network",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.mode",
+        "resource": "l3.network",
+        "authKey": "set.share.mode",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.vpc.router",
+        "resource": "l3.network",
+        "authKey": "attach.vpc.router",
+        "i18nKey": "attach.vpcRouter",
+        "name": "加载VPC路由器",
+        "label": "加载VPC路由器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vpc.router",
+        "resource": "l3.network",
+        "authKey": "detach.vpc.router",
+        "i18nKey": "detach.vpcRouter",
+        "name": "卸载VPC路由器",
+        "label": "卸载VPC路由器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default.network",
+        "resource": "l3.network",
+        "authKey": "set.default.network",
+        "i18nKey": "set.defaultNetwork",
+        "name": "设为默认网络",
+        "label": "设为默认网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.security.gourp.to.l3.network",
+        "resource": "l3.network",
+        "authKey": "attach.security.gourp.to.l3.network",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.security.gourp.to.l3.network",
+        "resource": "l3.network",
+        "authKey": "detach.security.gourp.to.l3.network",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "l3.network",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "l3.network",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "l3.network",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

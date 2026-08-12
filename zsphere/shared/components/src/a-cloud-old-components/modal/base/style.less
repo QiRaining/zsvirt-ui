@@ -1,0 +1,45 @@
+@import "../../../style/vars.less";
+
+.@{prefix}-modal-base {
+  .ant-modal-close-x {
+    .zstack-icon {
+      margin-right: 12px;
+    }
+  }
+
+  .ant-modal-title {
+    font-weight: 400 !important;
+  }
+  .modal-title {
+    font-weight: 400 !important;
+    width: 100%;
+    display: flex;
+
+    .action-title {
+      white-space: nowrap;
+    }
+
+    .resource-name {
+      display: flex;
+      flex-grow: 1;
+      min-width: 0;
+
+      .ant-divider-vertical {
+        height: unset !important;
+        top: unset;
+        margin-top: 5px;
+        margin-bottom: 3px;
+      }
+
+      .text {
+        .ant-typography {
+          color: @neutral-600 !important;
+        }
+        flex: 1;
+        font-size: 14px;
+        font-weight: 400;
+        max-width: 100%;
+      }
+    }
+  }
+}

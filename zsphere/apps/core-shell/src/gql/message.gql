@@ -1,0 +1,6 @@
+subscription listenZWatch($sessionId: String!) {
+  listenZWatch(sessionId: $sessionId) {
+    sessionId
+    payload
+  }
+}

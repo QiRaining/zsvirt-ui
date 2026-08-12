@@ -1,0 +1,170 @@
+query ZSVBackupStorageList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $type: ZSVBackupStorageQueryType
+) {
+  ZSVBackupStorageList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    type: $type
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      state
+      status
+      type
+      url
+      description
+      hostname
+      username
+      sshPort
+      totalCapacity
+      availableCapacity
+      attachedZoneUuids
+      attachedZoneRefUuids
+      createDate
+      lastOpDate
+      backupJobCount
+      backupStorageType
+    }
+    total
+  }
+}
+
+query ZSVBackupStorageSystemTagsList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+) {
+  ZSVBackupStorageSystemTagsList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+  ) {
+    list {
+      createDate
+      inherent
+      lastOpDate
+      resourceType
+      resourceUuid
+      tag
+      type
+      uuid
+    }
+    total
+  }
+}
+
+
+query getFreeHardDiskInfoList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getFreeHardDiskInfoList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      name
+      type
+      size
+      withPartition
+      physicalSector
+      logicalSector
+      partitionTable
+      multipathDeviceName
+    }
+  }
+}
+
+
+
+mutation deleteZSVBackupStorage($input: DeleteZSVBackupStorageInput!) {
+  deleteZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation reconnectZSVBackupStorage($input: ReconnectZSVBackupStorageInput!) {
+  reconnectZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation changeZSVBackupStorageState($input: ChangeZSVBackupStorageStateInput!) {
+  changeZSVBackupStorageState(input: $input) {
+    actionId
+  }
+}
+
+# 修改名称简介
+mutation updateZSVBackupStorage($input: UpdateZSVBackupStorageInput!) {
+  updateZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+# 更新密码
+mutation UpdateZSVBackupStoragePassword($input: UpdateZSVBackupStoragePasswordInput!) {
+  UpdateZSVBackupStoragePassword(input: $input) {
+    actionId
+  }
+}
+
+# 更新配置
+mutation updateZSVBackupStorageConfig($input: UpdateZSVBackupStorageConfigInput!) {
+  updateZSVBackupStorageConfig(input: $input) {
+    actionId
+  }
+}
+
+mutation reclaimSpaceFromZSVBackupStorage($input: ReclaimSpaceFromZSVBackupStorageInput!) {
+  reclaimSpaceFromZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+mutation scanDataZSVBackupStorage($input: ScanDataZSVBackupStorageInput!) {
+  scanDataZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+# create backup storage
+mutation createZSVBackupStorage($input: CreateZSVBackupStorageInput!) {
+  createZSVBackupStorage(input: $input) {
+    actionId
+  }
+}
+
+
+query haveRemoteBackupStorage {
+  haveRemoteBackupStorage
+}
+
+
+query getBackupStorageOfBackupJobSummary($backupStorageUuids: [String!]!) {
+  getLocalBackupStorageOfBackupJobSummary(backupStorageUuids: $backupStorageUuids) {
+    total
+  }
+}

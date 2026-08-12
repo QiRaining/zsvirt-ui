@@ -1,0 +1,26 @@
+query consoleProxyAgentList($conditions: [Condition!], $start: Int, $limit: Int) {
+  consoleProxyAgentList(conditions: $conditions, start: $start, limit: $limit, replyWithCount: true) {
+    list {
+      uuid
+      consoleProxyOverriddenIp
+      consoleProxyPort
+      managementIp
+      type
+      state
+      status
+      createDate
+    }
+    total
+  }
+}
+mutation reconnectConsoleProxy($input: ReconnectConsoleProxyInput!) {
+  reconnectConsoleProxy(input: $input) {
+    error
+  }
+}
+
+mutation updateConsoleProxy($input: UpdateConsoleProxyInput!) {
+  updateConsoleProxy(input: $input) {
+    error
+  }
+}

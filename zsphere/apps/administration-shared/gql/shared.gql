@@ -1,0 +1,83 @@
+query ownerList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: OwnerQueryType!
+) {
+  ownerList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+  ) {
+    ... on AccountOwnerQueryResp {
+      list {
+        uuid
+        name
+        createDate
+        volumeNum
+        vmNum
+        type
+      }
+      total
+    }
+    ... on ProjectOwnerQueryResp {
+      list {
+        uuid
+        name
+        volumeNum
+        vmNum
+        linkedAccountUuid
+        admin
+        createDate
+      }
+      total
+    }
+    ... on AccountGroupOwnerQueryResp {
+      list {
+        uuid
+        name
+      }
+      total
+    }
+  }
+}
+
+mutation shareResource($input: ShareResourceInput!) {
+  shareResource(input: $input) {
+    actionId
+  }
+}
+
+mutation revokeResourceSharing($input: RevokeResourceSharingInput!) {
+  revokeResourceSharing(input: $input) {
+    actionId
+  }
+}
+
+query shareTypeList($uuids: [String!]!) {
+  shareTypeList(uuids: $uuids)
+}
+
+query resourceShareList($uuids: [String!]!) {
+  resourceShareList(uuids: $uuids) {
+    resourceUuid
+    shareType
+  }
+}
+
+mutation updateResourceSharingGroup($input: UpdateResourceSharingGroupInput!) {
+  updateResourceSharingGroup(input: $input) {
+    actionId
+  }
+}
+
+query zsvSharedResourceList($input: QuerySharedResourceInput!) {
+  zsvSharedResourceList(input: $input) {
+    value
+    type
+  }
+}

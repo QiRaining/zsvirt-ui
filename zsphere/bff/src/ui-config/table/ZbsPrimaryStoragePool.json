@@ -1,0 +1,112 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "virtualCapacityAllocationRatio",
+          "capacity.usage",
+          "securityPolicy",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "virtualCapacityAllocationRatio",
+          "capacity.usage",
+          "securityPolicy",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zbs.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "virtualCapacityAllocationRatio",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualCapacityAllocationRatio",
+            "defaultMessage": "Virtual Capacity Allocation Rate"
+          },
+          "queryType": "",
+          "resource": "zbs.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "capacity.usage",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.capacity.usage",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "zbs.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "securityPolicy",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "securityPolicy",
+            "defaultMessage": "Data Security Type"
+          },
+          "queryType": "",
+          "resource": "zbs.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "virtualization.createdate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zbs.primary.storage.pool"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

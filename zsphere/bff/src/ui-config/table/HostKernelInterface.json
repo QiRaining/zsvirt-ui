@@ -1,0 +1,186 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "ipAddress",
+          "l3network",
+          "l2network",
+          "service",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.zskernel.name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "host.kernel.interface"
+        }
+      },
+      {
+        "accessorKey": "ipAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.zskernel.ipAddress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "host.kernel.interface"
+        }
+      },
+      {
+        "accessorKey": "l3network",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.zskernel.l3network",
+            "defaultMessage": "Distributed Port Group"
+          },
+          "queryType": "",
+          "resource": "host.kernel.interface"
+        }
+      },
+      {
+        "accessorKey": "l2network",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.zskernel.l2network",
+            "defaultMessage": "Distributed Switch"
+          },
+          "queryType": "",
+          "resource": "host.kernel.interface"
+        }
+      },
+      {
+        "accessorKey": "service",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "virtualization.zskernel.service",
+            "defaultMessage": "Service"
+          },
+          "queryType": "multipleFilter",
+          "resource": "host.kernel.interface"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "virtualization.zskernel.createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "host.kernel.interface"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "virtualization.zskernel.edit.config"
+        ],
+        "activeKeys": [
+          "virtualization.zskernel.edit.nameAndDescription",
+          "virtualization.zskernel.delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.zskernel.edit.config",
+          "virtualization.zskernel.edit.nameAndDescription",
+          "virtualization.zskernel.delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "virtualization.zskernel.create",
+          "virtualization.zskernel.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.zskernel.create",
+        "resource": "host.kernel.interface",
+        "authKey": "virtualization.zskernel.create",
+        "i18nKey": "virtualization.zskernel.create",
+        "name": "新建ZSKernel适配器",
+        "label": "新建ZSKernel适配器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.zskernel.edit.config",
+        "resource": "host.kernel.interface",
+        "authKey": "virtualization.zskernel.edit.config",
+        "i18nKey": "virtualization.zskernel.edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.zskernel.edit.nameAndDescription",
+        "resource": "host.kernel.interface",
+        "authKey": "virtualization.zskernel.edit.nameAndDescription",
+        "i18nKey": "virtualization.zskernel.edit.nameAndDescription",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": "virtualization.zskernel.edit.nameAndDescription-divider"
+      },
+      {
+        "key": "virtualization.zskernel.delete",
+        "resource": "host.kernel.interface",
+        "authKey": "virtualization.zskernel.delete",
+        "i18nKey": "virtualization.zskernel.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

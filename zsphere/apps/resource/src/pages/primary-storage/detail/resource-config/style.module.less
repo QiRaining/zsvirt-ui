@@ -1,0 +1,32 @@
+@import url("../../../../theme.less");
+
+.resource-config-panel {
+  width: 616px;
+  flex-grow: 1;
+
+  .resource-config-title-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    .resource-config-name {
+      font-size: 14px;
+      color: @neutral-700;
+    }
+
+    .resource-config-action {
+      > * {
+        margin-left: 12px;
+      }
+
+      .edit {
+        cursor: pointer;
+        color: @neutral-600;
+
+        &:hover {
+          color: @color-600;
+        }
+      }
+    }
+  }
+}

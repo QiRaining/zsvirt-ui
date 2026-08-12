@@ -1,0 +1,408 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "host",
+          "iProduct",
+          "state",
+          "usbVersion",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "name",
+          "host",
+          "attachType",
+          "iManufacturer",
+          "iProduct",
+          "state",
+          "usbVersion",
+          "vmInstance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "iManufacturer",
+          "iProduct",
+          "state",
+          "usbVersion",
+          "vmInstance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "name",
+          "host",
+          "attachType",
+          "iManufacturer",
+          "iProduct",
+          "state",
+          "usbVersion",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "devicename",
+            "defaultMessage": "Device Name"
+          },
+          "queryType": "input",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "attachType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "attach.type",
+            "defaultMessage": "Attach Mode"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "iManufacturer",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manu.facturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "iProduct",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "usbVersion",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "usb.version",
+            "defaultMessage": "USB Version"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "vmInstance",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "usb"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.usb.rename",
+          "cluster.usb.start",
+          "cluster.usb.stop",
+          "cluster.usb.attach.vm",
+          "cluster.usb.detach.vm"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "cluster.usb.start",
+          "cluster.usb.stop"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "host.usb.rename",
+          "host.usb.start",
+          "host.usb.stop",
+          "set.shareType",
+          "host.usb.attach.vm",
+          "host.usb.detach.vm"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "host.usb.start",
+          "host.usb.stop"
+        ],
+        "activeKeys": [
+          "set.shareType"
+        ]
+      },
+      {
+        "view": "sub.vm/row",
+        "activeKeys": [
+          "vm.detach.usb"
+        ]
+      },
+      {
+        "view": "sub.vm/toolbar",
+        "extraKeys": [
+          "vm.attach.usb",
+          "vm.detach.usb"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "cluster.usb.rename",
+        "resource": "cluster",
+        "authKey": "cluster.usb.rename",
+        "i18nKey": "update.usb",
+        "name": "修改设备名",
+        "label": "修改设备名",
+        "icon": "",
+        "dividerKey": "cluster.usb.rename-divider"
+      },
+      {
+        "key": "cluster.usb.start",
+        "resource": "cluster",
+        "authKey": "cluster.usb.start",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.usb.stop",
+        "resource": "cluster",
+        "authKey": "cluster.usb.stop",
+        "i18nKey": "disbale",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.usb.attach.vm",
+        "resource": "cluster",
+        "authKey": "cluster.usb.attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.usb.detach.vm",
+        "resource": "cluster",
+        "authKey": "cluster.usb.detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.usb.rename",
+        "resource": "host",
+        "authKey": "host.usb.rename",
+        "i18nKey": "update.usb",
+        "name": "修改设备名",
+        "label": "修改设备名",
+        "icon": "",
+        "dividerKey": "host.usb.rename-divider"
+      },
+      {
+        "key": "host.usb.start",
+        "resource": "host",
+        "authKey": "host.usb.start",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.usb.stop",
+        "resource": "host",
+        "authKey": "host.usb.stop",
+        "i18nKey": "disbale",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.shareType",
+        "resource": "host",
+        "authKey": "set.shareType",
+        "i18nKey": "set.share.type",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.usb.attach.vm",
+        "resource": "host",
+        "authKey": "host.usb.attach.vm",
+        "i18nKey": "attach.vm",
+        "name": "加载云主机",
+        "label": "加载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.usb.detach.vm",
+        "resource": "host",
+        "authKey": "host.usb.detach.vm",
+        "i18nKey": "detach.vm",
+        "name": "卸载云主机",
+        "label": "卸载云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.attach.usb",
+        "resource": "vm",
+        "authKey": "vm.attach.usb",
+        "i18nKey": "vm.attach.usb.in.sub",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.detach.usb",
+        "resource": "vm",
+        "authKey": "vm.detach.usb",
+        "i18nKey": "vm.detach.usb.in.sub",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

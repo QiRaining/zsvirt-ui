@@ -1,0 +1,204 @@
+@import "../../theme.less";
+
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: @neutral-0;
+  padding: 20px;
+
+  .title {
+    color: @neutral-800;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      flex-basis: 40%;
+      text-align: center;
+
+      .icon {
+        display: inline-block;
+
+        :global {
+          .zstack-icon {
+            background: @neutral-100;
+            padding: 14px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: @neutral-600;
+          }
+        }
+      }
+
+      .label {
+        display: inline-block;
+        vertical-align: top;
+        line-height: 30px;
+
+        .name {
+          font-size: 14px;
+          color: @neutral-600;
+        }
+
+        .count {
+          font-size: 24px;
+          color: @neutral-800;
+        }
+
+        .textCount {
+          font-size: 38px;
+          color: @neutral-700;
+          cursor: text;
+          font-weight: 300;
+          padding: 8px 0;
+          margin-bottom: 2px;
+        }
+
+        .linkCount {
+          a {
+            font-size: 38px;
+            color: @neutral-700;
+            cursor: pointer;
+          }
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+
+          span {
+            font-size: 38px;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex-basis: 60%;
+      padding-left: 12px;
+
+      .state-row {
+        width: 100%;
+        padding: 0 12px;
+        font-size: 14px;
+        color: @neutral-600;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid @neutral-300;
+        }
+
+        .count {
+          float: right;
+          color: @neutral-700;
+        }
+
+        :global {
+          .zstack-state {
+            width: 100px;
+          }
+        }
+
+        .textCount {
+          display: inline-block;
+          width: calc(100% - 108px);
+          vertical-align: bottom;
+          margin-left: 8px;
+          text-align: right;
+          color: @neutral-700;
+
+          :global {
+            .ant-typography-ellipsis-single-line {
+              position: relative;
+              z-index: 11;
+              width: 100%;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .linkCount {
+          float: right;
+
+          a {
+            font-size: 14px;
+            color: @neutral-800;
+            cursor: pointer;
+          }
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Container Queries: widget 宽度 <320px 时纵向堆叠，字号缩小
+@container (max-width: 320px) {
+  .container {
+    padding: 12px;
+
+    .title {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .content {
+      flex-direction: column;
+      align-items: stretch;
+
+      .left {
+        flex-basis: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        .label {
+          .textCount,
+          .linkCount a,
+          .linkCount span {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .right {
+        flex-basis: auto;
+        padding-left: 0;
+
+        .state-row {
+          height: 32px;
+          line-height: 32px;
+          font-size: 12px;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}

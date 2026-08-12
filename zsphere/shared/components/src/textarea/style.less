@@ -1,0 +1,29 @@
+@import "../style/vars.less";
+
+textarea::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: @neutral-400;
+}
+
+.@{prefix}-textarea-wrap {
+  display: block !important;
+  position: relative !important;
+  .ant-input-textarea {
+    width: 100%;
+  }
+  > span {
+    display: block;
+    margin-top: 4px;
+    margin-left: 0 !important;
+    color: @neutral-500;
+    font-size: 12px;
+    position: static !important;
+    left: 100%;
+    bottom: 0;
+  }
+}

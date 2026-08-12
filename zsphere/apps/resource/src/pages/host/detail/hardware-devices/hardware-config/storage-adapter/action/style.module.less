@@ -1,0 +1,41 @@
+.modal:global(.ant-modal.zstack-modal) {
+  .alert {
+    margin-left: -24px;
+    margin-bottom: 8px;
+
+    :global {
+      .ant-alert-message {
+        font-size: 16px !important;
+        line-height: 22px !important;
+        color: var(--neutral-800) !important;
+      }
+    }
+  }
+
+  .description {
+    font-size: 14px;
+    color: var(--neutral-600);
+    margin-bottom: 12px;
+  }
+
+  :global {
+    .ant-modal-body {
+      overflow: visible !important;
+    }
+
+    .ant-modal-content {
+      padding: 20px !important;
+      padding-left: 44px !important;
+    }
+
+    .zstack-modal-zsv-action-body {
+      padding: 0 !important;
+    }
+
+    .ant-modal-footer {
+      margin-top: 20px !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+  }
+}

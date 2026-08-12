@@ -1,0 +1,72 @@
+@import "../../../../../../../theme.less";
+
+.width-200 {
+  width: 200px !important;
+}
+
+.l3network {
+  :global {
+    .ant-table-content {
+      height: 320px;
+    }
+  }
+}
+
+.l3-name {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sortableList {
+  border: 1px @neutral-400 solid;
+  border-radius: 2px;
+  max-height: 240px;
+  overflow-y: auto;
+
+  :global {
+    .sortable-item-container {
+      background: none !important;
+      margin-bottom: 0 !important;
+      border-bottom: 1px solid @neutral-400;
+    }
+
+    .sortable-item-container:last-child {
+      border-bottom: none;
+    }
+  }
+
+  + :global(.zstack-virtualization-modal-select-add) {
+    padding-bottom: 0 !important;
+    height: auto;
+  }
+}
+
+.card {
+  margin-bottom: 12px;
+
+  :global {
+    .zstack-form-item-label-container {
+      width: 147px !important;
+    }
+
+    .zstack-form-item-input-description {
+      margin-left: 155px !important;
+    }
+  }
+}
+
+.ipAvailabilityInfo {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;
+
+  :global {
+    .zstack-icon {
+      height: 20px;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+  }
+}

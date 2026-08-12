@@ -1,0 +1,25 @@
+@import "../../../../theme.less";
+
+.switchDescription {
+  margin-top: 3px;
+  line-height: 20px;
+  font-size: 12px;
+  color: @neutral-500;
+}
+
+.editConfig {
+  padding: 0 !important;
+}
+
+.backupPolicyModal {
+  :global {
+    .zstack-modal-form-body {
+      max-height: none;
+    }
+  }
+}
+
+.modalForm {
+  max-height: calc(80vh - 173px);
+  overflow: auto;
+}

@@ -1,0 +1,602 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "custom",
+        "keys": [
+          "name",
+          "vlan",
+          "availableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "vSwitch",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "availableCapacity",
+          "cidr",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization",
+        "keys": [
+          "name",
+          "vlan",
+          "availableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.hostKernelInterface",
+        "keys": [
+          "name",
+          "availableCapacity",
+          "ipv4Cidr",
+          "vSwitch",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2-network",
+        "keys": [
+          "name",
+          "vlan",
+          "availableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "vSwitch",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "vlan",
+          "availableCapacity",
+          "ipv4Cidr",
+          "ipv6Cidr",
+          "vSwitch",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource",
+        "keys": [
+          "name",
+          "vlan",
+          "toPublic",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource.by.userGroup",
+        "keys": [
+          "name",
+          "vlan",
+          "toPublic",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "vlan",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.vlan",
+            "defaultMessage": "VLAN ID"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "networkType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "networkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "ipam",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ip.address.manegement",
+            "defaultMessage": "IP Address Management"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4AddressUsage",
+            "defaultMessage": "IPv4 Address Utilization"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cidr",
+            "defaultMessage": "CIDR"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "ipv4Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv4Cidr",
+            "defaultMessage": "IPv4 CIDR"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "ipv6Cidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipv6Cidr",
+            "defaultMessage": "IPv6 CIDR"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "vSwitch",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.zskernel.l2network",
+            "defaultMessage": "Distributed Switch"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "dhcp.service",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "dhcp.service",
+            "defaultMessage": "DHCP Service"
+          },
+          "queryType": "multipleFilter",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "ip.allocation.strategy",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ip.allocation.strategy",
+            "defaultMessage": "IP Allocation Policy"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "singleFilter",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "toPublic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "flat.network"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "flat.network"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.alarm/row"
+      },
+      {
+        "view": "sub.alarm/toolbar"
+      },
+      {
+        "view": "sub.flat.shared-resource/directory"
+      },
+      {
+        "view": "sub.flat.shared-resource/header"
+      },
+      {
+        "view": "sub.virtualization.l2-network/row",
+        "activeKeys": [
+          "virtualization.add.ipv4.range",
+          "virtualization.add.ipv6.ipRange",
+          "virtualization.add.dns",
+          "virtualization.create.hostKernelInterface",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.l2-network/toolbar",
+        "extraKeys": [
+          "virtualization.create"
+        ],
+        "activeKeys": [
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "virtualization.add.ipv4.range",
+          "virtualization.add.ipv6.ipRange",
+          "virtualization.add.dns",
+          "virtualization.create.hostKernelInterface",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "virtualization.create"
+        ],
+        "activeKeys": [
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/row",
+        "activeKeys": [
+          "virtualization.add.ipv4.range",
+          "virtualization.add.ipv6.ipRange",
+          "virtualization.add.dns",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "cancel.share",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/toolbar",
+        "extraKeys": [
+          "share.resource",
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "virtualization.detail.disableIPAM/header",
+        "activeKeys": [
+          "virtualization.add.dns",
+          "virtualization.create.hostKernelInterface",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "cancel.share",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.detail/header",
+        "activeKeys": [
+          "virtualization.add.ipv4.range",
+          "virtualization.add.ipv6.ipRange",
+          "virtualization.add.dns",
+          "virtualization.create.hostKernelInterface",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.network.resource/directory",
+        "activeKeys": [
+          "virtualization.add.ipv4.range",
+          "virtualization.add.ipv6.ipRange",
+          "virtualization.add.dns",
+          "virtualization.create.hostKernelInterface",
+          "virtualization.edit.name.and.description",
+          "virtualization.edit.config",
+          "virtualization.set.resource.attribute",
+          "virtualization.set.shareType",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create",
+        "resource": "flat.network",
+        "authKey": "virtualization.create",
+        "i18nKey": "newCreate",
+        "name": "新建分布式端口组",
+        "label": "新建分布式端口组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.ipv4.range",
+        "resource": "flat.network",
+        "authKey": "virtualization.add.ipv4.range",
+        "i18nKey": "add.Ipv4NetworkRange",
+        "name": "添加IPV4网络段",
+        "label": "添加IPV4网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.ipv6.ipRange",
+        "resource": "flat.network",
+        "authKey": "virtualization.add.ipv6.ipRange",
+        "i18nKey": "add.ipv6NetworkRange",
+        "name": "添加IPv6网络段",
+        "label": "添加IPv6网络段",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.add.dns",
+        "resource": "flat.network",
+        "authKey": "virtualization.add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.hostKernelInterface",
+        "resource": "flat.network",
+        "authKey": "virtualization.create.hostKernelInterface",
+        "i18nKey": "virtualization.create.hostKernelInterface",
+        "name": "创建ZSKernel适配器",
+        "label": "创建ZSKernel适配器",
+        "icon": "",
+        "dividerKey": "virtualization.create.hostKernelInterface-divider"
+      },
+      {
+        "key": "virtualization.edit.name.and.description",
+        "resource": "flat.network",
+        "authKey": "virtualization.edit.name.and.description",
+        "i18nKey": "edit.name.and.description",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.config",
+        "resource": "flat.network",
+        "authKey": "virtualization.edit.config",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.set.resource.attribute",
+        "resource": "flat.network",
+        "authKey": "virtualization.set.resource.attribute",
+        "i18nKey": "set.resource.attribute",
+        "name": "设置自定义属性",
+        "label": "设置自定义属性",
+        "icon": "",
+        "dividerKey": "virtualization.set.resource.attribute-divider"
+      },
+      {
+        "key": "virtualization.set.shareType",
+        "resource": "flat.network",
+        "authKey": "virtualization.set.shareType",
+        "i18nKey": "set.shareType",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "virtualization.set.shareType-divider"
+      },
+      {
+        "key": "share.resource",
+        "resource": "flat.network",
+        "authKey": "share.resource",
+        "i18nKey": "share.resource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "flat.network",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "flat.network",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

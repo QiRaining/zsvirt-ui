@@ -1,0 +1,22 @@
+@import "../../../../theme.less";
+
+.container {
+  width: 70%;
+  .toolbar {
+    font-size: 14px;
+    color: @neutral-800;
+    margin-bottom: 12px;
+
+    .action {
+      color: @neutral-600;
+      float: right;
+      cursor: pointer;
+
+      :global {
+        .anticon {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+fragment alarmHistoriesFields on AlarmHistories {
+  uuid
+  accountUuid
+  alarmName
+  alarmZhName
+  alarmStatus
+  alarmUuid
+  subscriptionUuid
+  comparisonOperator
+  context
+  dataUuid
+  emergencyLevel
+  labels
+  error
+  metricName
+  metricValue
+  name
+  namespace
+  period
+  readStatus
+  resource {
+    tagType
+    tags {
+      name
+      color
+      uuid
+    }
+  }
+  resourceUuid
+  resourceName
+  canLink
+  resourceType
+  threshold
+  createTime
+  times
+  type
+  firstTime
+  ackData {
+    ackPeriod
+    ackDate
+    resumeAlert
+    operatorAccountUuid
+    owner {
+      uuid
+      name
+    }
+  }
+  operatorAccountUuid
+  operatorAccount {
+    uuid
+    name
+  }
+}
+
+query getAlarmHistoriesList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getAlarmHistoriesList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    unreadCount
+    list {
+      ...alarmHistoriesFields
+    }
+  }
+}
+
+query getAlarmHistories($uuid: String!) {
+  getAlarmHistories(uuid: $uuid) {
+    ...alarmHistoriesFields
+  }
+}
+query getAlarmSummary {
+  getAlarmSummary {
+    emergent
+    important
+    normal
+  }
+}
+
+mutation updateAllAlarmHistoriesAsRead($input: UpdateAllAlarmHistoriesAsReadInput!) {
+  updateAllAlarmHistoriesAsRead(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAlarmDataAsRead($input: UpdateAlarmDataInput!) {
+  updateAlarmDataAsRead(input: $input) {
+    success
+  }
+}
+
+mutation updateEventDataAsRead($input: UpdateEventDataInput!) {
+  updateEventDataAsRead(input: $input) {
+    success
+  }
+}
+
+mutation updateThirdpartyAlertsAsRead($input: UpdateThirdpartyAlertsInput!) {
+  updateThirdpartyAlertsAsRead(input: $input) {
+    success
+  }
+}
+
+mutation updateThirdpartyAlertsAsReadWithAction($input: UpdateThirdpartyAlertsWithActionInput!) {
+  updateThirdpartyAlertsAsReadWithAction(input: $input) {
+    actionId
+  }
+}
+
+mutation ackAlarmData($input: AckAlarmDataInput!) {
+  ackAlarmData(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAlertDataAck($input: UpdateAlertDataAckInput!) {
+  updateAlertDataAck(input: $input) {
+    actionId
+  }
+}
+
+fragment thirdPartyAlertsFields on ThirdPartyAlerts {
+  uuid
+  alertTime
+  alertLevel
+  createDate
+  dataSource
+  message
+  metric
+  product
+  readStatus
+  service
+  sourceText
+  thirdpartyPlatformUuid
+  thirdpartyPlatform {
+    lastSyncDate
+    uuid
+    name
+  }
+}
+
+query thirdPartyAlertsList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: ThirdPartyAlertsQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  thirdPartyAlertsList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...thirdPartyAlertsFields
+    }
+    total
+    unreadCount
+  }
+}
+
+query getThirdPartyAlarmSummary($zceXUuid: String!) {
+  getThirdPartyAlarmSummary(zceXUuid: $zceXUuid) {
+    emergent
+    important
+    normal
+  }
+}
+
+query getThirdPartyAlert($uuid: String!) {
+  thirdPartyAlert(uuid: $uuid) {
+    ...thirdPartyAlertsFields
+  }
+}
+
+query alarmHistogramList(
+  $intervalHours: Int!
+  $startTime: Float!
+  $endTime: Float!
+  $tableName: String
+) {
+  getAlarmHistogram(
+    intervalHours: $intervalHours
+    startTime: $startTime
+    endTime: $endTime
+    tableName: $tableName
+  ) {
+    list {
+      count
+      time
+      emergencyLevel
+    }
+  }
+}
+
+query getCountByNamespace(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  getCountByNamespace(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      count
+      namespace
+    }
+  }
+}
+
+mutation updateSingleAlarmHistoryAsRead($input: UpdateSingleAlarmHistoryAsReadInput!) {
+  updateSingleAlarmHistoryAsRead(input: $input) {
+    actionId
+  }
+}

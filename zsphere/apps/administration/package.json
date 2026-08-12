@@ -1,0 +1,71 @@
+{
+  "name": "zsv-administration",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "build:rsdoctor": "RSDOCTOR=true rsbuild build",
+    "dev": "rsbuild dev",
+    "dev:rsdoctor": "RSDOCTOR=true rsbuild dev",
+    "preview": "rsbuild preview",
+    "test": "vitest run --config vitest.config.ts",
+    "format": "oxfmt --write src/",
+    "lint": "pnpm run lint:ox",
+    "lint:ox": "oxlint -c ../../../../../.oxlintrc.json src",
+    "lint:ox:fix": "oxlint -c ../../../../../.oxlintrc.json src --fix",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../../../../.oxlintrc.json src --format json > ./lint_report/oxlint.json"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@hookform/resolvers": "catalog:",
+    "@xyflow/react": "^12.8.6",
+    "@zstack/auth": "workspace:*",
+    "@zstack/design": "workspace:*",
+    "@zstack/form": "workspace:*",
+    "@zstack/hooks": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/utils": "workspace:*",
+    "@zstack/zsphere-components": "workspace:*",
+    "@zstack/zsphere-config": "workspace:*",
+    "@zstack/zsphere-constant": "workspace:*",
+    "@zstack/zsphere-design-biz": "workspace:*",
+    "@zstack/zsphere-engine": "workspace:*",
+    "@zstack/zsphere-hooks": "workspace:*",
+    "@zstack/zsphere-illustration": "workspace:*",
+    "@zstack/zsphere-mf-hub": "workspace:*",
+    "@zstack/zsphere-mf-runtime-plugin": "workspace:*",
+    "@zstack/zsphere-platform-store": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "@zstack/zsphere-utils": "workspace:*",
+    "ahooks": "catalog:",
+    "antd": "catalog:",
+    "classnames": "catalog:",
+    "crypto-js": "^4.0.0",
+    "dayjs": "catalog:",
+    "graphql": "catalog:",
+    "graphql-tag": "catalog:",
+    "jszip": "3.10.1",
+    "lodash-es": "catalog:",
+    "qrcode.react": "1.0.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-intl": "catalog:",
+    "react-markdown": "catalog:",
+    "react-router": "catalog:",
+    "zod": "catalog:",
+    "zsv-resource": "workspace:*",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

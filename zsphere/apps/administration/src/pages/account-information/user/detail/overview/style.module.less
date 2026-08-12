@@ -1,0 +1,27 @@
+@import "../../../../../theme.less";
+
+.edit-icon {
+  float: right;
+}
+
+.progress-bar {
+  width: 100%;
+  :global {
+    .zstack-progress-bar .ant-progress-text {
+      color: @neutral-700 !important;
+    }
+  }
+}
+
+.roleList {
+  display: flex;
+  align-items: center;
+
+  .extraInfo {
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    background: @neutral-300;
+    margin: 0 8px;
+  }
+}

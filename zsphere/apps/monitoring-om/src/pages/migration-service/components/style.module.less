@@ -1,0 +1,336 @@
+@import "../../../theme.module.less";
+
+.guide {
+  background: @neutral-100;
+  border-radius: 2px;
+  padding: 12px 16px;
+
+  .step-flow-guide {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 16px;
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .step-text {
+        font-size: 12px;
+        color: @neutral-700;
+        white-space: nowrap;
+      }
+    }
+
+    .step-connector {
+      width: 40px;
+      height: 1px;
+      background: @neutral-400;
+      margin: 0 8px;
+      flex-shrink: 0;
+    }
+  }
+
+  .prerequisites {
+    .prerequisites-title {
+      font-size: 12px;
+      color: @neutral-700;
+      margin-bottom: 8px;
+    }
+
+    .prerequisites-list {
+      .prerequisite-item {
+        font-size: 12px;
+        color: @neutral-500;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .guide-flowchart {
+    overflow-x: auto;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    svg {
+      display: block;
+    }
+  }
+
+  .architecture-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .flowchart-flow-title {
+    font-size: 14px;
+    color: @neutral-700;
+  }
+
+  .flowchart-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .architecture-flow-scroll {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+
+    svg {
+      width: 100%;
+      min-width: 1112px;
+      max-width: none;
+      height: auto;
+    }
+  }
+
+  .flowchart-section {
+    background: @neutral-0;
+    border: 1px dashed @neutral-400;
+    border-radius: 2px;
+  }
+
+  .flowchart-separator {
+    width: 100%;
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+.step-card {
+  border: 1px solid @neutral-300;
+  border-radius: 2px;
+  padding: 16px 24px;
+  margin-bottom: 12px;
+
+  .step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .step-icon {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    background-color: @neutral-200;
+  }
+
+  .step-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .step-title {
+    font-size: 14px;
+    color: @neutral-800;
+    margin-bottom: 4px;
+  }
+
+  .step-description {
+    font-size: 13px;
+    color: @neutral-500;
+    margin-bottom: 12px;
+    line-height: 20px;
+  }
+
+  .step-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .task-with-status {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .task-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .task-status-label {
+        font-size: 13px;
+        color: @neutral-700;
+      }
+
+      .task-status-value {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .action-link {
+    padding: 0;
+  }
+
+  .step-meta {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .step-number {
+      font-size: 13px;
+      color: @neutral-500;
+      white-space: nowrap;
+    }
+  }
+
+  .rect {
+    width: 1px;
+    height: 14px;
+    background: @neutral-300;
+  }
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.overview-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview-left-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  button:first-child {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.overview-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  button {
+    width: 52px !important;
+  }
+}
+
+.info-section {
+  background: var(--color-bg-container, #fff);
+  border-radius: 4px;
+}
+
+.info-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border, #f0f0f0);
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "▾";
+    margin-right: 8px;
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+
+.info-list {
+  padding: 0;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-secondary, #f5f5f5);
+  font-size: 13px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.info-label {
+  width: 120px;
+  color: var(--color-text-secondary, #666);
+  flex-shrink: 0;
+}
+
+.info-value {
+  flex: 1;
+  color: var(--color-text, #333);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upgrade-tasks {
+  background: var(--color-bg-container, #fff);
+  border-radius: 4px;
+}
+
+.upgrade-task-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border-secondary, #f5f5f5);
+  font-size: 13px;
+  gap: 24px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.task-version {
+  color: var(--color-text, #333);
+  min-width: 160px;
+}
+
+.task-status-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-secondary, #666);
+}

@@ -1,0 +1,39 @@
+@import "../../../theme.less";
+
+.edit {
+  cursor: pointer;
+
+  &:hover {
+    color: @color-600;
+  }
+}
+
+.action-link {
+  cursor: pointer;
+  text-align: right;
+  padding-left: 10px;
+  color: var(--neutral-600);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.configLit {
+  max-width: 1024px;
+
+  .config {
+    margin-bottom: 20px;
+
+    .configTitle {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: @neutral-700;
+    }
+  }
+
+  :global {
+    .highlighted-item {
+      background-color: @normal-50;
+    }
+  }
+}

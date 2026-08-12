@@ -1,0 +1,195 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "mdsAddr",
+          "mdsNodeIp",
+          "connection.status",
+          "ssh.port",
+          "ssh.user.name",
+          "create.date"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "mdsAddr",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.mds.ip",
+            "defaultMessage": "MDS IP"
+          },
+          "queryType": "input",
+          "resource": "zbs.mds"
+        }
+      },
+      {
+        "accessorKey": "mdsNodeIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.mds.node.manage.ip",
+            "defaultMessage": "MDS Node Management IP"
+          },
+          "queryType": "",
+          "resource": "zbs.mds"
+        }
+      },
+      {
+        "accessorKey": "connection.status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "virtualization.connectStatus",
+            "defaultMessage": "Connection Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zbs.mds"
+        }
+      },
+      {
+        "accessorKey": "ssh.port",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sshPort",
+            "defaultMessage": "SSH Port"
+          },
+          "queryType": "",
+          "resource": "zbs.mds"
+        }
+      },
+      {
+        "accessorKey": "ssh.user.name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.ssh.user.name",
+            "defaultMessage": "SSH Username"
+          },
+          "queryType": "",
+          "resource": "zbs.mds"
+        }
+      },
+      {
+        "accessorKey": "create.date",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "virtualization.create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zbs.mds"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "modify.ssh.info",
+          "delete.mdsNode"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "add.mdsNode",
+          "delete.mdsNode"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.mdsNode",
+        "resource": "zbs.mds",
+        "authKey": "add.mdsNode",
+        "i18nKey": "add.mdsNode",
+        "name": "添加MDS节点",
+        "label": "添加MDS节点",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.ssh.port",
+        "resource": "zbs.mds",
+        "authKey": "modify.ssh.port",
+        "i18nKey": "virtualization.modify.ssh.port",
+        "name": "修改SSH端口",
+        "label": "修改SSH端口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.ssh.username",
+        "resource": "zbs.mds",
+        "authKey": "modify.ssh.username",
+        "i18nKey": "virtualization.modify.ssh.username",
+        "name": "修改SSH用户名",
+        "label": "修改SSH用户名",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.sshPassword",
+        "resource": "zbs.mds",
+        "authKey": "change.sshPassword",
+        "i18nKey": "virtualization.change.sshPassword",
+        "name": "修改SSH密码",
+        "label": "修改SSH密码",
+        "icon": "",
+        "dividerKey": "change.sshPassword-divider"
+      },
+      {
+        "key": "modify.ssh.info",
+        "resource": "zbs.mds",
+        "authKey": "modify.ssh.info",
+        "i18nKey": "modify.ssh.info",
+        "name": "修改SSH信息",
+        "label": "修改SSH信息",
+        "icon": "",
+        "dividerKey": "modify.ssh.info-divider"
+      },
+      {
+        "key": "delete.mdsNode",
+        "resource": "zbs.mds",
+        "authKey": "delete.mdsNode",
+        "i18nKey": "virtualization.delete.mdsNode",
+        "name": "删除MDS节点",
+        "label": "删除MDS节点",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

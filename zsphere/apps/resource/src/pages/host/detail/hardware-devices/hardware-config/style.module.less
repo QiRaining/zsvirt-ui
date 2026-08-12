@@ -1,0 +1,260 @@
+@import "../../../../../theme.less";
+
+.title {
+  font-size: 14px;
+  color: @neutral-800;
+  margin-bottom: 12px;
+}
+
+.panelTitle {
+  font-size: 16px;
+  line-height: 24px;
+  color: @neutral-800;
+  font-weight: 500;
+  margin-bottom: 12px;
+  .refreshBtn {
+    margin-left: 8px;
+    color: @neutral-700;
+    cursor: pointer;
+    &:hover {
+      color: @color-600;
+    }
+  }
+}
+
+.panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 960px;
+  min-height: 132px;
+  margin-bottom: 12px;
+  .panelSide {
+    width: 32px;
+    background-color: @neutral-700;
+    border-radius: 4px 0px 0px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .panelName {
+      color: @neutral-0;
+      transform: rotate(-90deg);
+      word-break: keep-all;
+      text-align: center;
+      flex: 0 0 100px;
+    }
+  }
+  .panelMain {
+    flex: 1;
+    padding: 8px 12px;
+    background-color: @neutral-200;
+    border-radius: 0px 4px 4px 0px;
+  }
+  & + .panel {
+    margin-bottom: 24px;
+  }
+}
+
+.diskWrapper:nth-of-type(n + 5) {
+  margin-top: 4px;
+}
+
+.soltInfo {
+  display: inline-block;
+  margin-left: 8px;
+  color: @neutral-600;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.diskItem {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+  padding: 8px 12px 8px 10px;
+  background-color: @neutral-0;
+  border-left: 4px solid @neutral-0;
+  border-radius: 2px;
+  cursor: pointer;
+  .diskName {
+    color: @neutral-800;
+    font-size: 14px;
+    line-height: 22px;
+    .diskIcon {
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+  }
+  &.Connected {
+    border-color: @positive-500;
+    .diskIcon {
+      color: @positive-500;
+    }
+  }
+  &.LostConnect {
+    border-color: @danger-500;
+    .diskIcon {
+      color: @danger-500;
+    }
+    .lightSwitch {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  &.Disconnected {
+    border-color: @neutral-400;
+    .diskIcon {
+      color: @neutral-500;
+    }
+    .lightSwitch {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  &.Rebuilding {
+    border-color: @info-500;
+    .diskIcon {
+      color: @info-500;
+    }
+    .lightSwitch {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  &.Unkown {
+    padding: 8px 11px 8px 13px;
+    border: 1px dashed @neutral-400;
+    background: transparent;
+    cursor: default;
+    .diskIcon {
+      color: @neutral-400;
+    }
+    .lightSwitch {
+      display: none;
+    }
+  }
+}
+
+.lightSwitch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: @color-600;
+  cursor: pointer;
+  &.lightOn {
+    color: @color-700;
+  }
+}
+
+.slotWrapper {
+  height: 100%;
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @neutral-300;
+  border-radius: 2px;
+}
+
+.networkPort {
+  color: @neutral-200;
+}
+
+.slotItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 36px;
+  padding: 8px 6px 8px 0;
+  background-color: @neutral-0;
+  border-left: 4px solid @neutral-0;
+  border-radius: 2px;
+  cursor: pointer;
+  &.Connected {
+    border-color: @positive-500;
+    color: @positive-500;
+  }
+  &.LostConnect {
+    border-color: @danger-500;
+    color: @danger-500;
+  }
+  &.Disconnected {
+    border-color: @neutral-400;
+    color: @neutral-500;
+  }
+  &.Unkown {
+    padding-right: 9px;
+    border: 1px dashed @neutral-400;
+    color: @neutral-400;
+    background: transparent;
+    cursor: default;
+  }
+}
+
+.powerItem {
+  transform: rotate(-90deg);
+}
+
+.usbItem {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: @neutral-300;
+  border-radius: 2px;
+  height: 16px;
+  padding: 4px 16px;
+  color: @neutral-200;
+  & + .usbItem {
+    margin-top: 4px;
+  }
+}
+
+.tooltipWrapper {
+  width: 296px;
+  color: @neutral-0;
+  font-size: 12px;
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .dot {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: @neutral-500;
+      &.Connected {
+        background-color: @positive-500;
+      }
+      &.Disconnected {
+        background-color: @neutral-500;
+      }
+      &.LostConnect {
+        background-color: @danger-500;
+      }
+      &.Rebuilding {
+        background-color: @info-500;
+      }
+    }
+  }
+  .tooltipTitle {
+    font-size: 14px;
+  }
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: @neutral-600;
+    margin: 8px 0;
+  }
+  .field + .field {
+    margin-top: 4px;
+  }
+}

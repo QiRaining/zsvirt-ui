@@ -1,0 +1,25 @@
+query queryWidgetResourceStateCount(
+  $conditions: [Condition!]
+  $type: String!
+  $hypervisorType: String
+) {
+  queryWidgetResourceStateCount(
+    conditions: $conditions
+    type: $type
+    hypervisorType: $hypervisorType
+  ) {
+    total
+    other
+    running
+    stopped
+    connected
+    disconnected
+    ready
+    attached
+    notAttached
+    notInstantiated
+    idle
+    enabled
+    disabled
+  }
+}

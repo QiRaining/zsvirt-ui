@@ -1,0 +1,65 @@
+@import "../../../theme.less";
+
+.tip {
+  font-size: 12px;
+  font-weight: 400;
+  color: @neutral-500;
+  line-height: 20px;
+}
+
+.selection {
+  padding: 5px 12px;
+}
+
+.selectionHeader {
+  padding: 4px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.mt12 {
+  margin-top: 12px;
+}
+
+.dropdown {
+  max-height: 280px;
+  overflow-y: scroll;
+}
+
+.accountSelector {
+  :global {
+    .zstack-tag {
+      margin: 2px !important;
+    }
+    .ant-select-multiple .ant-select-selector {
+      padding: 2px 10px;
+    }
+  }
+}
+
+.shareTypeModal {
+  :global {
+    .ant-modal-body {
+      max-height: calc(80vh - 92px) !important;
+      .zstack-modal-form-body {
+        > div {
+          > .ant-from {
+            .zstack-form-item-zsv:last-child {
+              margin-bottom: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.error-field {
+  margin-top: -8px;
+  padding-left: 168px;
+}

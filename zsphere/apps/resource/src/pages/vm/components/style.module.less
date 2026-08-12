@@ -1,0 +1,81 @@
+@import "../../../theme.less";
+
+.emptyResource {
+  color: @neutral-500;
+}
+
+.nodeItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  span {
+    display: inline-block;
+    width: 32px;
+    padding-right: 4px;
+  }
+}
+
+.dropdownContainer {
+  min-width: 260px !important;
+  padding: 0;
+  z-index: 2000 !important;
+  :global {
+    .ant-tree-switcher {
+      margin-right: 2px;
+    }
+    .ant-tree-node-content-wrapper {
+      padding: 0;
+    }
+    .ant-tree-checkbox {
+      margin-right: 10px;
+    }
+    .ant-tree-indent-unit.ant-tree-indent-unit-start.ant-tree-indent-unit-end {
+      width: 27px;
+    }
+  }
+}
+
+.selectDropdownRender {
+  min-width: 260px;
+  width: 260px;
+  height: 400px;
+  .switcherIcon {
+    position: relative;
+    top: 2px;
+  }
+  .selectHeader {
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    .selectTotal {
+      color: #4a4c4f;
+    }
+    .selectClear {
+      color: @color-600;
+      cursor: pointer;
+    }
+  }
+
+  .divider {
+    margin: 0;
+  }
+}
+
+.treeContainer {
+  padding: 8px 0 0;
+  overflow-y: auto;
+  height: 366px;
+  :global {
+    .ant-tree {
+      padding-bottom: 4px;
+      .ant-tree-treenode {
+        padding: 0 12px 6px 8px;
+      }
+    }
+    .ant-tree-treenode:hover {
+      background-color: #f5f7fa;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@import url("../../../../theme.less");
+
+.container {
+  height: 100%;
+
+  .headerAlert {
+    margin-bottom: 12px;
+  }
+}
+
+.action-link {
+  cursor: pointer;
+  text-align: right;
+  color: @info-600;
+  padding-left: 10px;
+}
+
+.capacity {
+  padding: 16px 22px 16px 6px;
+  :global {
+    .ant-col {
+      position: relative;
+    }
+  }
+  p {
+    margin: 0 0 4px 0;
+    padding-left: 16px;
+    font-size: 14px;
+    color: @neutral-700;
+  }
+
+  .capacity-item {
+    display: flex;
+  }
+
+  .capacity-title {
+    color: @neutral-600;
+    font-size: 14px;
+    text-align: right;
+    padding-right: 16px;
+    flex: 1;
+  }
+
+  .capacity-value {
+    color: @neutral-700;
+    font-size: 14px;
+    flex: 1;
+
+    :global {
+      .zstack-icon {
+        cursor: pointer;
+        color: @neutral-400;
+        margin-left: 4px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+
+  .capacity-no-data {
+    color: @neutral-600 !important;
+  }
+
+  .capacity-top {
+    line-height: 22px;
+    color: @neutral-600;
+    margin-bottom: 12px;
+
+    :global {
+      .zstack-icon {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .capacity-used {
+    font-size: 18px;
+    color: @neutral-700;
+  }
+
+  .capacity-border {
+    height: 64px;
+    position: absolute;
+    border-left: solid 1px @neutral-300;
+    top: 12px;
+    right: 0;
+  }
+}
+
+.fetch-time {
+  color: @neutral-600;
+  font-size: 12px;
+  margin-left: 8px;
+  position: relative;
+  top: -1px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.lightText {
+  float: right;
+  width: auto;
+}
+
+.neutral-300 {
+  color: @neutral-300;
+}

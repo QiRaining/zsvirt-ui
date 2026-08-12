@@ -1,0 +1,31 @@
+query storageAdapterList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  storageAdapterList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      state
+      model
+      type
+      transport
+      identifier
+      speed
+      target
+      device
+      hostUuid
+    }
+    total
+  }
+}

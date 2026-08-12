@@ -1,0 +1,64 @@
+@import "../style/vars.less";
+
+.taskDotBasic {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+  :hover {
+    border-radius: 2px;
+  }
+}
+
+.taskDotSuccess {
+  background-color: @positive-400;
+  &:hover {
+    background-color: @positive-500;
+  }
+  &.checked {
+    background-color: @positive-600;
+  }
+}
+
+.taskDotRunning {
+  background-color: @info-400;
+  &:hover {
+    background-color: @info-500;
+  }
+  &.checked {
+    background-color: @info-600;
+  }
+}
+
+.taskDotFailed {
+  background-color: @danger-400;
+  &:hover {
+    background-color: @danger-500;
+  }
+  &.checked {
+    background-color: @danger-600;
+  }
+}
+
+.taskDotCanceled .taskDotCanceling {
+  background-color: @neutral-400;
+  &:hover {
+    background-color: @neutral-500;
+  }
+  &.checked {
+    background-color: @neutral-600;
+  }
+}
+
+.taskDotException {
+  background-color: @alert-400;
+  &:hover {
+    background-color: @alert-500;
+  }
+  &.checked {
+    background-color: @alert-600;
+  }
+}

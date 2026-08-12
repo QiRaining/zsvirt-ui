@@ -1,0 +1,103 @@
+@import "../../../../../theme.less";
+
+.card {
+  padding: 0px 12px;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      width: 56px;
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+  }
+}
+
+.card {
+  .tab {
+    :global {
+      .ant-tabs-nav-list {
+        margin-left: 0px !important;
+      }
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+
+    .icon {
+      height: 22px;
+      margin-left: 4px;
+      vertical-align: middle;
+      padding-top: 2px;
+    }
+  }
+
+  .rect {
+    margin-top: 5px;
+    width: 4px;
+    height: 12px;
+    background: @color-400;
+  }
+
+  .text {
+    height: 22px;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    // color: @neutral-700; //需要替换
+    line-height: 22px;
+  }
+
+  .icon {
+    height: 22px;
+    margin-left: 4px;
+    vertical-align: middle;
+    padding-top: 2px;
+  }
+
+  .baseFormItem {
+    width: 400px;
+  }
+}
+
+.form {
+  .zstack-form-item-input-description {
+    top: -6px !important;
+  }
+}

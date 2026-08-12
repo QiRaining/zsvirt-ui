@@ -1,0 +1,94 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "virtualization.dir",
+        "keys": [
+          "name"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "name"
+          },
+          "queryType": "",
+          "resource": "vm.dir.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "virtualization.create.sub.directory",
+          "virtualization.create.vm",
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/header",
+        "activeKeys": [
+          "virtualization.create.sub.directory",
+          "virtualization.create.vm",
+          "edit",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create.sub.directory",
+        "resource": "vm.dir.group",
+        "authKey": "virtualization.create.sub.directory",
+        "i18nKey": "create.sub.directory",
+        "name": "新建子分组",
+        "label": "新建子分组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.vm",
+        "resource": "vm.dir.group",
+        "authKey": "virtualization.create.vm",
+        "i18nKey": "create.vm",
+        "name": "新建虚拟机",
+        "label": "新建虚拟机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vm.dir.group",
+        "authKey": "edit",
+        "i18nKey": "edit.name",
+        "name": "编辑名称",
+        "label": "编辑名称",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vm.dir.group",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+# 组件文档目录
+
+此目录用于存放各个组件的详细文档。
+
+每个组件应有一个对应的文档文件，命名格式：`{component-name}.md`
+
+例如：
+- `dialog-weak.md` - DialogWeak 组件文档
+- `username.md` - Username 组件文档

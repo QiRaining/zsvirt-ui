@@ -1,0 +1,195 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "uuid",
+          "name",
+          "wwid",
+          "vendor",
+          "model",
+          "wwn",
+          "hctl",
+          "type",
+          "size",
+          "path"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "uuid"
+          },
+          "queryType": "input",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "wwid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "wwid",
+            "defaultMessage": "WWID"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "vendor",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vendor",
+            "defaultMessage": "Vendor"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "model",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "block.device.model",
+            "defaultMessage": "Model"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "wwn",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "wwn",
+            "defaultMessage": "WWN"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "hctl",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hctl",
+            "defaultMessage": "HCTL"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      },
+      {
+        "accessorKey": "path",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "path",
+            "defaultMessage": "Path"
+          },
+          "queryType": "",
+          "resource": "shared.block.candidate"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * CSS Cascade Layers 声明
+ *
+ * 在所有 CSS 之前加载，确保层级优先级正确。
+ * 顺序（低 → 高）：antd < legacy < theme < base < components < utilities < overrides
+ *
+ * antd 和 antd-overwrite 现在可以安全地放在 @layer 中，
+ * 因为 tailwind.css 中的 preflight 覆盖已中和了与 antd 冲突的规则
+ * （padding: 0 / border: 0 solid / border-radius: 0 等）。
+ */
+@layer antd, legacy, theme, base, components, utilities, overrides;

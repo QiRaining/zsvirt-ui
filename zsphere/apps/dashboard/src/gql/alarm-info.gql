@@ -1,0 +1,18 @@
+query queryWidgetAlarmInfo($conditions: [Condition!]) {
+  queryWidgetAlarmInfo(conditions: $conditions) {
+    emergentCount
+    importantCount
+    normalCount
+    top5ResourceList {
+      uuid
+      namespace
+      resourceInfo {
+        resourceName
+        resourceType
+        state
+      }
+      emergent
+      important
+    }
+  }
+}

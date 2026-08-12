@@ -1,0 +1,439 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "speed",
+          "ipv4",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.bond.in.vswitch",
+        "keys": [
+          "host",
+          "bondCompose",
+          "speed"
+        ]
+      },
+      {
+        "view": "sub.bond.not.in.vswitch",
+        "keys": [
+          "host",
+          "name",
+          "bondCompose",
+          "type",
+          "xmitHashPolicy"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "speed",
+          "vswitch",
+          "ipv4",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.physicalNetwork",
+        "keys": [
+          "name"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "speed",
+          "ipv4",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "uuid"
+          },
+          "queryType": "input",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualization.host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "input",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "bondCompose",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bond.compose",
+            "defaultMessage": "Bond Components"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "bond.type",
+            "defaultMessage": "Bond Mode"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "speed",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "speed",
+            "defaultMessage": "Speed"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "vswitch",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "virtualization.l2",
+            "defaultMessage": "Distributed Switch"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "ipv4",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "ipv4.address",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      },
+      {
+        "accessorKey": "xmitHashPolicy",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "hash.policy",
+            "defaultMessage": "Hash strategy"
+          },
+          "queryType": "",
+          "resource": "bond"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.bond.in.vswitch/row",
+        "activeKeys": [
+          "add.physical.nic",
+          "remove.physical.nic",
+          "remove.host.from.bond"
+        ]
+      },
+      {
+        "view": "sub.bond.in.vswitch/toolbar"
+      },
+      {
+        "view": "sub.bond.not.in.vswitch/row",
+        "activeKeys": [
+          "add.host.to.bond"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization.bond/header",
+        "extraKeys": [
+          "edit.description"
+        ],
+        "activeKeys": [
+          "addNic",
+          "removeNic"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization/header",
+        "extraKeys": [
+          "edit.description"
+        ],
+        "activeKeys": [
+          "addNic",
+          "removeNic",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization/row",
+        "activeKeys": [
+          "edit.description",
+          "addNic",
+          "removeNic",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.host.virtualization/toolbar",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.physicalNetwork/row"
+      },
+      {
+        "view": "sub.physicalNetwork/toolbar"
+      },
+      {
+        "view": "sub.virtualization.host/header"
+      },
+      {
+        "view": "sub.virtualization.host/row",
+        "activeKeys": [
+          "edit.description"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "bond",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.description",
+        "resource": "bond",
+        "authKey": "edit.description",
+        "i18nKey": "edit.description",
+        "name": "编辑简介",
+        "label": "编辑简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify",
+        "resource": "bond",
+        "authKey": "modify",
+        "i18nKey": "update.bond",
+        "name": "修改聚合口",
+        "label": "修改聚合口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create",
+        "resource": "bond",
+        "authKey": "create",
+        "i18nKey": "add.bond",
+        "name": "添加聚合口",
+        "label": "添加聚合口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "addNic",
+        "resource": "bond",
+        "authKey": "addNic",
+        "i18nKey": "add.networkInterface",
+        "name": "添加物理网口",
+        "label": "添加物理网口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "removeNic",
+        "resource": "bond",
+        "authKey": "removeNic",
+        "i18nKey": "remove.networkInterface",
+        "name": "移出物理网口",
+        "label": "移出物理网口",
+        "icon": "",
+        "dividerKey": "removeNic-divider"
+      },
+      {
+        "key": "set.physicalNetwork.type",
+        "resource": "bond",
+        "authKey": "set.physicalNetwork.type",
+        "i18nKey": "set.physicalNetwork.type",
+        "name": "设置物理网络类型",
+        "label": "设置物理网络类型",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.physical.nic",
+        "resource": "bond",
+        "authKey": "add.physical.nic",
+        "i18nKey": "add.physical.nic",
+        "name": "添加物理网口",
+        "label": "添加物理网口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.physical.nic",
+        "resource": "bond",
+        "authKey": "remove.physical.nic",
+        "i18nKey": "remove.physical.nic",
+        "name": "移除物理网口",
+        "label": "移除物理网口",
+        "icon": "",
+        "dividerKey": "remove.physical.nic-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "bond",
+        "authKey": "delete",
+        "i18nKey": "delete.bond",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.host.from.bond",
+        "resource": "bond",
+        "authKey": "remove.host.from.bond",
+        "i18nKey": "virtualization.remove.host.from.vswitch",
+        "name": "解除主机上行链路",
+        "label": "解除主机上行链路",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.host.to.bond",
+        "resource": "bond",
+        "authKey": "add.host.to.bond",
+        "i18nKey": "add.to.bond",
+        "name": "加入上行链路",
+        "label": "加入上行链路",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

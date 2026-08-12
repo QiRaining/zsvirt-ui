@@ -1,0 +1,46 @@
+@import "../../../../theme.less";
+
+.container {
+  .headerAlert {
+    margin-bottom: 12px;
+  }
+}
+
+.panel {
+  & > .zstack-field-horizontal-left > .zstack-field-horizontal-left-label {
+    width: 100%;
+  }
+
+  &-left {
+    padding-top: 8px;
+  }
+
+  &-right {
+    padding: 8px 12px 0;
+    overflow: hidden;
+    background-color: #f5f7fa;
+  }
+
+  :global {
+    .zstack-field-vertical {
+      width: 100%;
+    }
+
+    .zstack-field-horizontal {
+      margin-bottom: 8px;
+    }
+
+    .zstack-field-horizontal .zstack-field-horizontal-left-label {
+      color: #707275;
+    }
+    .zstack-field-horizontal .zstack-field-horizontal-value {
+      color: #181a1d;
+    }
+  }
+}
+
+.empty {
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

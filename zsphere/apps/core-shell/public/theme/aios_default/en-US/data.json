@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack AIOS",
+  "favicon": "/theme/default/en-US/favicon.ico",
+  "loginTitle": "Welcome to ZStack AIOS",
+  "loginLogo": "/theme/default/en-US/logo.svg",
+  "bannerLogo": "/theme/default/en-US/logo-bar.svg",
+  "bannerTitle": "ZStack AIOS",
+  "bannerFontSize": "14px",
+  "overviewTitle": "Real-Time Monitor",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

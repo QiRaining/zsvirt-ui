@@ -1,0 +1,94 @@
+fragment uplinkGroupFields on UplinkGroup {
+  uuid
+  name
+  l2NetworkUuid
+  hostUuid
+  host {
+    uuid
+    name
+  }
+  interfaceUuid
+  physicalNic {
+    uuid
+    interfaceName
+    speed
+    mac
+    state
+    gateway
+    host {
+      uuid
+      status
+    }
+    ipAddresses
+  }
+  bondingUuid
+  bond {
+    uuid
+    bondingName
+    speed
+    mac
+    gateway
+    ipAddresses
+    slaves {
+      uuid
+      interfaceName
+      state
+      speed
+      host {
+        uuid
+        status
+      }
+    }
+  }
+}
+
+query uplinkGroupList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: UplinkGroupQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  uplinkGroupList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...uplinkGroupFields
+    }
+  }
+}
+
+query countUplinkGroupList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $type: UplinkGroupQueryType
+  $limit: Int
+  $fields: [String!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  uplinkGroupList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    type: $type
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+  }
+}

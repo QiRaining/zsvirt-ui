@@ -1,0 +1,102 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "diskPartition",
+          "mountPoint",
+          "capacity.usage",
+          "used.quantity",
+          "totalQuantity"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "diskPartition",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.diskPartition",
+            "defaultMessage": "Disk Partition"
+          },
+          "queryType": "",
+          "resource": "storage.used"
+        }
+      },
+      {
+        "accessorKey": "mountPoint",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.mountPoin",
+            "defaultMessage": "Mount Point"
+          },
+          "queryType": "",
+          "resource": "storage.used"
+        }
+      },
+      {
+        "accessorKey": "capacity.usage",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity.usage",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "storage.used"
+        }
+      },
+      {
+        "accessorKey": "used.quantity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "used.quantity",
+            "defaultMessage": "Used"
+          },
+          "queryType": "",
+          "resource": "storage.used"
+        }
+      },
+      {
+        "accessorKey": "totalQuantity",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "totalQuantity",
+            "defaultMessage": "Total"
+          },
+          "queryType": "",
+          "resource": "storage.used"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

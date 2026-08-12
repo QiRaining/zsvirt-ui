@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabs {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #181a1d;
+}
+
+.tagWrapper {
+  span.tag {
+    font-size: 12px !important;
+    line-height: 22px !important;
+  }
+  :global {
+    .ant-tag {
+      display: block !important;
+    }
+  }
+}

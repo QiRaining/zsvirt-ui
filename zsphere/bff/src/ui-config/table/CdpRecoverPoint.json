@@ -1,0 +1,59 @@
+{
+  "fields": {
+    "viewMap": [],
+    "fields": [
+      {
+        "accessorKey": "ts",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "time.range",
+            "defaultMessage": "Time Point"
+          },
+          "queryType": "",
+          "resource": "cdp.recover.point"
+        }
+      },
+      {
+        "accessorKey": "totalSize",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "dataSize",
+            "defaultMessage": "Data Size"
+          },
+          "queryType": "",
+          "resource": "cdp.recover.point"
+        }
+      },
+      {
+        "accessorKey": "protectedRecoveryPointsInfo",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "lock.recovery.point",
+            "defaultMessage": "Locked Recovery Point"
+          },
+          "queryType": "",
+          "resource": "cdp.recover.point"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

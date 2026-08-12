@@ -1,0 +1,29 @@
+@import "../../../theme.less";
+
+.revertModal {
+  :global {
+    .zstack-form-item-input-description.zstack-form-item-input-description-zsv {
+      margin-bottom: 4px;
+    }
+
+    .ant-modal-body .zstack-modal-form-body {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.table {
+  border: 1px solid @neutral-300;
+  margin-left: -12px;
+  margin-bottom: 8px;
+}
+
+.conflictShow {
+  :global {
+    .ant-modal-body {
+      .zstack-modal-form-body {
+        max-height: 100% !important;
+      }
+    }
+  }
+}

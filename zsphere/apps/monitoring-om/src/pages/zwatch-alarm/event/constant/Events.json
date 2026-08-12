@@ -1,0 +1,186 @@
+{
+  "ZStack/VM": {
+    "VmCrash": {
+      "labelNames": [],
+      "tags": [],
+      "name": "VmCrash",
+      "namespace": "ZStack/VM"
+    },
+    "VMHAStarted": {
+      "labelNames": ["DestinationHostUuid"],
+      "tags": [],
+      "name": "VMHAStarted",
+      "namespace": "ZStack/VM"
+    },
+    "VMStateChangedOnHost": {
+      "labelNames": ["OldState", "NewState"],
+      "tags": [],
+      "name": "VMStateChangedOnHost",
+      "namespace": "ZStack/VM"
+    },
+    "VMStateInShutdown": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "VMStateInShutdown",
+      "namespace": "ZStack/VM"
+    },
+    "VmAbnormalLifeCycleDetected": {
+      "labelNames": [],
+      "tags": [],
+      "name": "VmAbnormalLifeCycleDetected",
+      "namespace": "ZStack/VM"
+    },
+    "VMInternalIpDuplicate": {
+      "labelNames": [],
+      "tags": [],
+      "name": "VMInternalIpDuplicate",
+      "namespace": "ZStack/VM"
+    },
+    "VMInternalIpChanged": {
+      "labelNames": [],
+      "tags": [],
+      "name": "VMInternalIpChanged",
+      "namespace": "ZStack/VM"
+    },
+    "VMInternalIpRangeConflict": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "VMInternalIpRangeConflict",
+      "namespace": "ZStack/VM"
+    }
+  },
+  "ZStack/BackupStorage": {
+    "BackupStorageDisconnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "BackupStorageDisconnected",
+      "namespace": "ZStack/BackupStorage"
+    },
+    "BackupStorageConnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "BackupStorageConnected",
+      "namespace": "ZStack/BackupStorage"
+    }
+  },
+  "ZStack/MN": {
+    "ManagementNodeLeft": {
+      "labelNames": [],
+      "tags": [],
+      "name": "ManagementNodeLeft",
+      "namespace": "ZStack/MN"
+    },
+    "ManagementNodeJoin": {
+      "labelNames": [],
+      "tags": [],
+      "name": "ManagementNodeJoin",
+      "namespace": "ZStack/MN"
+    }
+  },
+  "ZStack/Host": {
+    "HostPhysicalFanStatusAbnormal": {
+      "name": "HostPhysicalFanStatusAbnormal",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalPowerSupplyStatusAbnormal": {
+      "name": "HostPhysicalPowerSupplyStatusAbnormal",
+      "namespace": "ZStack/Host"
+    },
+    "HostUnknownVMDetected": {
+      "labelNames": ["UnknownVMIdentity"],
+      "tags": ["noLabels"],
+      "name": "HostUnknownVMDetected",
+      "namespace": "ZStack/Host"
+    },
+    "HostDisconnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "HostDisconnected",
+      "namespace": "ZStack/Host"
+    },
+    "HostConnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "HostDisconnected",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalNicStatusUp": {
+      "labelNames": [],
+      "tags": [],
+      "name": "HostPhysicalNicStatusUp",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalNicStatusDown": {
+      "labelNames": [],
+      "tags": [],
+      "name": "HostPhysicalNicStatusDown",
+      "namespace": "ZStack/Host"
+    },
+    "FaultMountPointOnHost": {
+      "labelNames": [],
+      "tags": ["noLabels"],
+      "name": "FaultMountPointOnHost",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalGpuRemoveTriggered": {
+      "labelNames": [],
+      "tags": ["noLabels"],
+      "name": "HostPhysicalGpuRemoveTriggered",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalVGpuStatusAbnormal": {
+      "labelNames": [],
+      "tags": ["noLabels"],
+      "name": "HostPhysicalVGpuStatusAbnormal",
+      "namespace": "ZStack/Host"
+    },
+    "HostPhysicalGpuStatusAbnormal": {
+      "labelNames": [],
+      "tags": ["noLabels"],
+      "name": "HostPhysicalGpuStatusAbnormal",
+      "namespace": "ZStack/Host"
+    }
+  },
+  "ZStack/PrimaryStorage": {
+    "PrimaryStorageHostDisconnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "PrimaryStorageHostDisconnected",
+      "namespace": "ZStack/PrimaryStorage"
+    },
+    "PrimaryStorageDisconnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "PrimaryStorageDisconnected",
+      "namespace": "ZStack/PrimaryStorage"
+    },
+    "PrimaryStorageConnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "PrimaryStorageConnected",
+      "namespace": "ZStack/PrimaryStorage"
+    }
+  },
+  "ZStack/Scheduler": {
+    "JobGroupFailure": {
+      "labelNames": [],
+      "tags": [],
+      "name": "JobGroupFailure",
+      "namespace": "ZStack/Scheduler"
+    }
+  },
+  "ZStack/DisasterRecoveryStorage": {
+    "BackupStorageDisconnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "BackupStorageDisconnected",
+      "namespace": "ZStack/DisasterRecoveryStorage"
+    },
+    "BackupStorageConnected": {
+      "labelNames": ["Error"],
+      "tags": ["noLabels"],
+      "name": "BackupStorageConnected",
+      "namespace": "ZStack/DisasterRecoveryStorage"
+    }
+  }
+}

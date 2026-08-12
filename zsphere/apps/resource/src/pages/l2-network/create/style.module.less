@@ -1,0 +1,243 @@
+@import "../../../theme.less";
+
+.card {
+  padding: 0px 12px;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      width: 0;
+      flex: 1;
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700; //需要替换
+      line-height: 22px;
+    }
+  }
+
+  .baseFormItem {
+    width: 320px;
+  }
+}
+
+.tab {
+  flex: 1;
+  padding-left: 8px !important;
+
+  .content {
+    padding: 20px !important;
+    border: 1px solid @neutral-300 !important;
+  }
+
+  :global {
+    .ant-tabs-nav {
+      &::before {
+        border: none !important;
+      }
+    }
+
+    .ant-tabs-content-holder {
+      padding: 20px !important;
+      border: 1px solid @neutral-300 !important;
+      border-radius: 2px;
+      margin-left: -12px;
+      max-height: 400px;
+      overflow: auto;
+    }
+
+    .ant-tabs-nav-list {
+      margin-left: 0px !important;
+    }
+
+    .ant-tabs-tab-btn {
+      display: flex;
+    }
+
+    .ant-table-thead {
+      .ant-table-cell {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  .icon {
+    margin: 0 0 0 4px;
+  }
+}
+
+.ip-container {
+  padding-left: 12px;
+  border-left: 1px solid @neutral-300;
+  margin-bottom: 20px;
+}
+
+.dhcpTooltip {
+  margin-left: 156px;
+  margin-top: -16px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: @neutral-500;
+
+  :global {
+    .zstack-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.cluster-name {
+  :global {
+    .ant-col.ant-form-item-control {
+      width: 0;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rect {
+  margin-top: 18px;
+  width: 4px;
+  height: 12px;
+  background: @info-400;
+}
+
+.text {
+  height: 22px;
+  font-size: 14px;
+  font-weight: 400;
+  // color: @neutral-700; //需要替换
+  line-height: 22px;
+}
+
+.nic-title {
+  display: inline-flex;
+  width: 100%;
+
+  .nic-name {
+    display: flex;
+    flex: 1;
+    color: @neutral-700;
+  }
+
+  .nic-description {
+    flex: 1;
+    text-align: right;
+    color: @neutral-600 !important;
+    padding-right: 30px;
+    font-size: 12px;
+  }
+
+  .neutral-300 {
+    color: @neutral-300;
+  }
+}
+
+.nic-select-option {
+  display: flex;
+  width: 100%;
+
+  div:first-child {
+    flex: 1;
+    color: @neutral-700;
+    font-size: 14px;
+  }
+
+  div:last-child {
+    flex: 1;
+    color: @neutral-600;
+    font-size: 12px;
+    text-align: right;
+  }
+}
+
+.selectDropdownRender {
+  .selectHeader {
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    .selectTotal {
+      color: #4a4c4f;
+    }
+
+    .selectClear {
+      color: @color-600;
+      cursor: pointer;
+    }
+  }
+}
+
+.stateSize {
+  font-size: 14px;
+  color: @neutral-700;
+}
+
+.modalSelect {
+  :global {
+    .treeTitleContainer-titlePart {
+      display: flex !important;
+      align-items: center;
+      gap: 4px;
+      color: @neutral-700;
+    }
+
+    .treeTitleContainer-titlePart-title {
+      flex-grow: 1;
+    }
+
+    .ant-tree-switcher_open {
+      display: flex;
+      align-items: center;
+      padding-left: 4px;
+    }
+
+    .ant-tree-treenode-switcher-open {
+      padding: 4px 0;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .ant-empty {
+      display: block !important;
+    }
+  }
+}
+
+// :global {
+//     .treeTitleContainer-titlePart {
+//       display: flex !important;
+//       align-items: center;
+//       gap: 4px;
+//       color: @neutral-700;
+//     }
+
+//     .treeTitleContainer-titlePart-title {
+//       flex-grow: 1;
+//     }
+//   }

@@ -1,0 +1,98 @@
+@import "../../../theme.less";
+
+.alert {
+  color: @alert-500;
+}
+
+.card {
+  padding: 0px 12px;
+
+  .baseFormItem {
+    width: 400px;
+  }
+}
+
+.w-80 {
+  width: 80px !important;
+}
+
+.consistency-check-content {
+  padding: 40px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .iconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 172px;
+
+    .icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 16px;
+
+      .bgIcon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+      }
+
+      .rotateIcon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        animation: rotate 2s linear infinite;
+      }
+    }
+  }
+
+  .statusText {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 28px;
+    color: @neutral-700;
+  }
+
+  .statusDescription {
+    font-size: 12px;
+    line-height: 20px;
+    color: #96989b;
+    margin-top: 8px;
+
+    .link {
+      padding: 0 4px;
+      font-size: 12px;
+    }
+  }
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.run-location-select {
+  :global {
+    .ant-modal-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

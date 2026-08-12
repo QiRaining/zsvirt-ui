@@ -1,0 +1,194 @@
+fragment BaremetalChassisFields on BaremetalChassis {
+  uuid
+  name
+  description
+  ipmiAddress
+  ipmiPort
+  ipmiUsername
+  ipmiPassword
+  zoneUuid
+  clusterUuid
+  cluster {
+    uuid
+    name
+  }
+  pxeServerUuid
+  state
+  status
+  powerStatus
+  hardwareInfos {
+    uuid
+    type
+    content
+    chassisUuid
+    createDate
+    lastOpDate
+  }
+  baremetalInstance {
+    uuid
+    name
+    state
+  }
+  zone {
+    uuid
+    name
+  }
+  createDate
+  lastOpDate
+}
+
+query baremetalChassisList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalChassisList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...BaremetalChassisFields
+    }
+  }
+}
+
+query baremetalChassisDiskInfoList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalChassisDiskInfoList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      name
+      size
+    }
+  }
+}
+
+query baremetalChassisDiskCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalChassisDiskInfoList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}
+
+query baremetalChassisNicInfoList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalChassisNicInfoList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      devname
+      mac
+      speed
+      pxe
+      ip
+    }
+  }
+}
+
+query baremetalChassisNicCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalChassisNicInfoList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+  }
+}
+
+mutation createBaremetalChassis($input: CreateBaremetalChassisInput!) {
+  createBaremetalChassis(input: $input) {
+    actionId
+  }
+}
+
+mutation batchCreateBaremetalChassis($input: BatchCreateBaremetalChassisInput!) {
+  batchCreateBaremetalChassis(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteBaremetalChassis($input: DeleteBaremetalChassisInput!) {
+  deleteBaremetalChassis(input: $input) {
+    actionId
+  }
+}
+
+mutation updateBaremetalChassis($input: UpdateBaremetalChassisInput!) {
+  updateBaremetalChassis(input: $input) {
+    actionId
+  }
+}
+
+mutation inspectBaremetalChassis($input: InspectBaremetalChassisInput!) {
+  inspectBaremetalChassis(input: $input) {
+    actionId
+  }
+}
+
+mutation checkBaremetalChassisConfigFile($baremetalChassisInfo: String!) {
+  checkBaremetalChassisConfigFile(baremetalChassisInfo: $baremetalChassisInfo) {
+    success
+    error
+  }
+}

@@ -1,0 +1,18 @@
+fragment powerSupplyFields on PowerSupply {
+  id
+  name
+  state
+  manufacturer
+  model
+  ratedPower
+  currentPower
+}
+
+query powerSupplyList($hostUuid: String!) {
+  powerSupplyList(hostUuid: $hostUuid) {
+    list {
+      ...powerSupplyFields
+    }
+    total
+  }
+}

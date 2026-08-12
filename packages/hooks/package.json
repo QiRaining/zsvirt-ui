@@ -1,0 +1,70 @@
+{
+  "name": "@zstack/hooks",
+  "version": "2.3.0",
+  "description": "ZStack-UI React Hooks",
+  "author": "ZStack UI Team",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "module": "./dist/hooks.es.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/hooks.es.js"
+    },
+    "./src/*": "./src/*"
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint:ox": "oxlint -c ../../.oxlintrc.json src",
+    "lint:ox:fix": "oxlint -c ../../.oxlintrc.json src --fix",
+    "lint": "pnpm run lint:ox",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../.oxlintrc.json src --format json > ./lint_report/oxlint.json",
+    "type-check": "pnpm tsgo --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@fingerprintjs/fingerprintjs": "^5.2.0",
+    "@zstack/alova-instance": "workspace:*",
+    "@zstack/utils": "workspace:*",
+    "alova": "catalog:",
+    "crypto-js": "^4.2.0",
+    "dayjs": "1.11.10",
+    "graphql": "16.10.0",
+    "immer": "catalog:",
+    "lodash-es": "4.18.1",
+    "moment-timezone": "^0.5.46",
+    "react-router": "catalog:",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependencies": {
+    "@apollo/client": "3.11.8",
+    "@types/react": "catalog:",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  }
+}

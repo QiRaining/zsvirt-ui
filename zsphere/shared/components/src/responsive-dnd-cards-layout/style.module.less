@@ -1,0 +1,154 @@
+@import "../style/vars.less";
+
+.container {
+  &:first-child {
+    min-height: 100%;
+  }
+
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: auto;
+  grid-auto-rows: 1fr;
+
+  .colContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .dragContainer {
+      flex-shrink: 0;
+      margin-bottom: 12px;
+
+      + .emptyContainer {
+        margin-top: -12px;
+      }
+    }
+
+    .emptyContainer {
+      position: relative;
+      flex-grow: 1;
+
+      &.canDropEmpty {
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          border-bottom: 2px dashed @color-400;
+          top: 5px;
+          left: 0;
+        }
+
+        &:first-child::before {
+          top: -7px;
+        }
+      }
+
+      &.isOverEmpty::before {
+        border-bottom: 2px solid @color-600;
+      }
+    }
+  }
+}
+
+.singleColumnContainer {
+  max-width: 1024px;
+  margin-bottom: 12px;
+}
+
+.dragContainer {
+  position: relative;
+
+  &.isDragging {
+    .innerDragContainer {
+      opacity: 0.5;
+    }
+  }
+
+  &.canDropTop::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px dashed @color-400;
+    top: -7px;
+    left: 0;
+  }
+
+  &.canDropBottom::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px dashed @color-400;
+    bottom: -7px;
+    left: 0;
+  }
+
+  &.isOverTop,
+  &.isOverBottom {
+    z-index: 1;
+  }
+
+  &.isOverTop::before {
+    border-bottom: 2px solid @color-600;
+  }
+
+  &.isOverBottom::after {
+    border-bottom: 2px solid @color-600;
+  }
+
+  .dropContainer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+    &.dropTop {
+      top: -16px;
+      bottom: 50%;
+    }
+
+    &.dropBottom {
+      top: 50%;
+      bottom: -16px;
+    }
+  }
+}
+
+.innerDragContainer {
+  :global {
+    .zstack-card-title-action {
+      .ant-space {
+        vertical-align: text-bottom;
+      }
+    }
+  }
+
+  .dragHandle {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 38px;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 22px;
+    color: @neutral-400;
+  }
+}
+
+.dragLayer {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dragLayerInner {
+  position: relative;
+  box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.1);
+}

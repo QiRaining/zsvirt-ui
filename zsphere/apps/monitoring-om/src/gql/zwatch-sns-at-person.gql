@@ -1,0 +1,77 @@
+query querySNSFeiShuAtPersonList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  querySNSFeiShuAtPersonList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      userId
+      remark
+      endpointUuid
+      createDate
+      lastOpDate
+    }
+    total
+  }
+}
+
+query querySNSDingTalkAtPersonList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  querySNSDingTalkAtPersonList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      phoneNumber
+      remark
+      endpointUuid
+      createDate
+      lastOpDate
+    }
+    total
+  }
+}
+
+query querySNSWeComAtPersonList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  querySNSWeComAtPersonList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      uuid
+      userId
+      remark
+      endpointUuid
+      createDate
+      lastOpDate
+    }
+    total
+  }
+}

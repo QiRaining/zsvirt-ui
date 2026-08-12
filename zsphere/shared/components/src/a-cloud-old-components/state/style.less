@@ -1,0 +1,58 @@
+@import "../../style/vars.less";
+
+.@{prefix}-state {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  :global {
+    .zstack-icon {
+      line-height: 22px;
+    }
+  }
+
+  &-tag {
+    color: @neutral-100;
+  }
+
+  svg {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    &.@{prefix}-state-spin {
+      animation: ~"@{prefix}-state-rotate 3s linear infinite";
+    }
+  }
+
+  &-prefix-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  &-name.has-icon-prefix {
+    margin-left: 4px;
+  }
+
+  &-name.has-dot-prefix {
+    margin-left: 8px;
+  }
+
+  &-name.has-icon-suffix {
+    margin-right: 4px;
+  }
+
+  &-name.has-dot-suffix {
+    margin-right: 8px;
+  }
+}
+
+@keyframes ~"@{prefix}-state-rotate" {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

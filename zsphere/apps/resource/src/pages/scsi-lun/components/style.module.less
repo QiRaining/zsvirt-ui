@@ -1,0 +1,26 @@
+@import "../../../theme.less";
+
+.themeColorBtn {
+  color: @color-600 !important;
+  cursor: pointer;
+}
+
+.customDrawerWrapper {
+  :global {
+    .ant-drawer-close {
+      padding-top: 13px !important;
+    }
+  }
+}
+
+.detail {
+  :global {
+    .ant-space-item {
+      display: block !important;
+
+      &:empty {
+        display: none !important;
+      }
+    }
+  }
+}

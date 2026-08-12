@@ -1,0 +1,332 @@
+@import "../../theme.less";
+
+.info {
+  color: @color-600;
+}
+
+.warning {
+  color: @neutral-700;
+}
+
+.error {
+  color: @neutral-0;
+}
+
+.closeBtn {
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.prevBtn,
+.nextBtn {
+  cursor: pointer;
+}
+
+.prevBtn {
+  margin-right: 3px;
+}
+
+.nextBtn {
+  margin-left: 3px;
+}
+
+// 右侧操作区（关闭、翻页），绝对定位到右侧
+.rightActions {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+.licenseBanner {
+  position: relative;
+
+  :global {
+    .ant-alert {
+      display: flex;
+      align-items: center;
+      // Override base strong-* padding-left:48px since showIcon={false}
+      padding-left: 28px !important;
+    }
+
+    // Reset absolute positioning from base alert styles
+    .ant-alert-icon {
+      position: static;
+    }
+
+    .ant-alert-close-icon {
+      position: static;
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ant-alert-action {
+      order: -1;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    // AntRow wrapping message + extraAction: let flex:1 push close icon right
+    .ant-alert-message .ant-row {
+      justify-content: flex-start;
+    }
+
+    // Center the message content within the flex:1 wrapper
+    .zstack-alert-message-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.alertSwitch {
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 100%;
+}
+
+.globalAlertWarning {
+  height: 48px;
+  padding: 0 28px !important;
+  background-color: #ffca66 !important;
+  border: unset;
+
+  // Alert inner wrapper: icon + children 水平居中 + 垂直居中
+  > div:first-child {
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+  }
+
+  // children wrapper: 不撑满，跟 icon 一起自然居中
+  > div:first-child > div {
+    flex: none !important;
+  }
+
+  // Alert icon: 重置 translate-y-0.5，覆盖 Tailwind v3 transform 和 v4 translate
+  > div:first-child > svg {
+    transform: none !important;
+    translate: none !important;
+    --tw-translate-y: 0 !important;
+  }
+
+  :global {
+    .ant-alert-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .anticon svg {
+      fill: @neutral-700 !important;
+    }
+
+    .ant-alert-message {
+      .warning();
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1;
+
+      // AntRow wrapping message + extraAction (close icon)
+      .ant-row {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.globalAlertError {
+  height: 48px;
+  padding: 0 28px !important;
+  background-color: @danger-500 !important;
+  border: unset;
+
+  // Alert inner wrapper: icon + children 水平居中 + 垂直居中
+  > div:first-child {
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+  }
+
+  // children wrapper: 不撑满，跟 icon 一起自然居中
+  > div:first-child > div {
+    flex: none !important;
+  }
+
+  // Alert icon: 重置 translate-y-0.5
+  > div:first-child > svg {
+    transform: none !important;
+    translate: none !important;
+    --tw-translate-y: 0 !important;
+  }
+
+  :global {
+    .ant-alert-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .anticon svg {
+      fill: @neutral-0 !important;
+    }
+
+    .ant-alert-message {
+      .error();
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1;
+
+      // AntRow wrapping message + extraAction (close icon)
+      .ant-row {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.globalAlertInfo {
+  height: 48px;
+  padding: 0 28px !important;
+  background-color: @color-100 !important;
+  border: unset;
+
+  // Alert inner wrapper: icon + children 水平居中 + 垂直居中
+  > div:first-child {
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 1;
+  }
+
+  // children wrapper: 不撑满，跟 icon 一起自然居中
+  > div:first-child > div {
+    flex: none !important;
+  }
+
+  // Alert icon: 重置 translate-y-0.5
+  > div:first-child > svg {
+    transform: none !important;
+    translate: none !important;
+    --tw-translate-y: 0 !important;
+  }
+
+  :global {
+    .ant-alert-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+    }
+
+    .anticon svg {
+      fill: @color-600 !important;
+    }
+
+    .ant-alert-message {
+      .info();
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex: 1;
+
+      // AntRow wrapping message + extraAction (close icon)
+      .ant-row {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 按钮在红色背景上: 半透明白底 + 白色文字
+.alertBtnOnError {
+  margin-left: 8px;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: @neutral-0 !important;
+  border: 1px dashed rgba(255, 255, 255, 0.4) !important;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.35) !important;
+    color: @neutral-0 !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+  }
+}
+
+// 按钮在黄色背景上: 深色文字 + 深色边框
+.alertBtnOnWarning {
+  margin-left: 8px;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  color: @neutral-700 !important;
+  border: 1px dashed rgba(0, 0, 0, 0.2) !important;
+  font-weight: 600;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    color: @neutral-800 !important;
+    border-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+// 按钮在蓝色背景上: 主题色文字 + 主题色边框
+.alertBtnOnInfo {
+  margin-left: 8px;
+  flex-shrink: 0;
+  background-color: transparent !important;
+  color: @color-600 !important;
+  border: 1px dashed @color-400 !important;
+  font-weight: 600;
+
+  &:hover {
+    background-color: @color-50 !important;
+    color: @color-700 !important;
+    border-color: @color-600 !important;
+  }
+
+  &:active {
+    background-color: @color-100 !important;
+  }
+}
+
+.certMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .certMessageIcon {
+    margin-right: 8px;
+  }
+
+  .certMessageGuide {
+    margin-left: 4px;
+  }
+}

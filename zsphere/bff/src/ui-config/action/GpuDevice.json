@@ -1,0 +1,484 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "pciDeviceSpec",
+          "pciDeviceAddress",
+          "type",
+          "subdeviceId",
+          "enabledState",
+          "readyStatus",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "pciDeviceSpec",
+          "pciDeviceAddress",
+          "type",
+          "subdeviceId",
+          "enabledState",
+          "readyStatus",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "deviceName",
+          "pciDeviceSpec",
+          "pciDeviceAddress",
+          "type",
+          "host",
+          "enabledState",
+          "readyStatus",
+          "virtStatus",
+          "vmInstance",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "deviceName",
+          "pciDeviceSpec",
+          "pciDeviceAddress",
+          "type",
+          "enabledState",
+          "readyStatus",
+          "virtStatus",
+          "vmInstance",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "name",
+          "pciDeviceSpec",
+          "pciDeviceAddress",
+          "type",
+          "subdeviceId",
+          "enabledState",
+          "readyStatus",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "deviceName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Device Name"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "pciDeviceSpec",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Specification Info"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "pciDeviceAddress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Device Address"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "subdeviceId",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Subdevice ID"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "enabledState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Enabled State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "readyStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Ready Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "virtStatus",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Virtualization Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "vmInstance",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "gpu.device"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "gpu.device"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.gpu.enable",
+          "cluster.gpu.disable",
+          "cluster.gpu.set.share.type",
+          "cluster.gpu.generate",
+          "cluster.gpu.ungenerate"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "cluster.gpu.enable",
+          "cluster.gpu.disable"
+        ],
+        "activeKeys": [
+          "cluster.gpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "host.gpu.enable",
+          "host.gpu.disable",
+          "host.gpu.set.share.type",
+          "host.gpu.generate",
+          "host.gpu.ungenerate"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "host.gpu.enable",
+          "host.gpu.disable"
+        ],
+        "activeKeys": [
+          "host.gpu.set.share.type"
+        ]
+      },
+      {
+        "view": "sub.vm/row",
+        "activeKeys": [
+          "dettach.gpu.device"
+        ]
+      },
+      {
+        "view": "sub.vm/toolbar",
+        "extraKeys": [
+          "attach.gpu.device",
+          "dettach.gpu.device"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "cluster.gpu.enable",
+        "resource": "cluster",
+        "authKey": "cluster.gpu.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.gpu.disable",
+        "resource": "cluster",
+        "authKey": "cluster.gpu.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.gpu.set.share.type",
+        "resource": "cluster",
+        "authKey": "cluster.gpu.set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "cluster.gpu.set.share.type-divider"
+      },
+      {
+        "key": "cluster.gpu.generate",
+        "resource": "cluster",
+        "authKey": "cluster.gpu.generate",
+        "i18nKey": "virtual.generate",
+        "name": "虚拟化切割",
+        "label": "虚拟化切割",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.gpu.ungenerate",
+        "resource": "cluster",
+        "authKey": "cluster.gpu.ungenerate",
+        "i18nKey": "virtual.ungenerate",
+        "name": "虚拟化还原",
+        "label": "虚拟化还原",
+        "icon": "",
+        "dividerKey": "cluster.gpu.ungenerate-divider"
+      },
+      {
+        "key": "host.gpu.enable",
+        "resource": "host",
+        "authKey": "host.gpu.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.gpu.disable",
+        "resource": "host",
+        "authKey": "host.gpu.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.gpu.set.share.type",
+        "resource": "host",
+        "authKey": "host.gpu.set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "host.gpu.set.share.type-divider"
+      },
+      {
+        "key": "host.gpu.generate",
+        "resource": "host",
+        "authKey": "host.gpu.generate",
+        "i18nKey": "virtual.generate",
+        "name": "虚拟化切割",
+        "label": "虚拟化切割",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.gpu.ungenerate",
+        "resource": "host",
+        "authKey": "host.gpu.ungenerate",
+        "i18nKey": "virtual.ungenerate",
+        "name": "虚拟化还原",
+        "label": "虚拟化还原",
+        "icon": "",
+        "dividerKey": "host.gpu.ungenerate-divider"
+      },
+      {
+        "key": "attach.gpu.device",
+        "resource": "vm",
+        "authKey": "attach.gpu.device",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "dettach.gpu.device",
+        "resource": "vm",
+        "authKey": "dettach.gpu.device",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

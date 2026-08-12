@@ -1,0 +1,227 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "hostname",
+          "port",
+          "logType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "hostname",
+          "port",
+          "logType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "log.server"
+        }
+      },
+      {
+        "accessorKey": "hostname",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hostname",
+            "defaultMessage": "Backup Storage IP"
+          },
+          "queryType": "",
+          "resource": "log.server"
+        }
+      },
+      {
+        "accessorKey": "port",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "",
+          "resource": "log.server"
+        }
+      },
+      {
+        "accessorKey": "logType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "logType",
+            "defaultMessage": "Log Type"
+          },
+          "queryType": "",
+          "resource": "log.server"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "log.server"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/header",
+        "extraKeys": [
+          "edit",
+          "test"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "edit",
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "create.logServer"
+        ],
+        "activeKeys": [
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.logServer"
+        ],
+        "activeKeys": [
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "edit",
+          "test",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "log.server",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.logServer",
+        "resource": "log.server",
+        "authKey": "create.logServer",
+        "i18nKey": "add.logServer",
+        "name": "添加日志服务器",
+        "label": "添加日志服务器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "test",
+        "resource": "log.server",
+        "authKey": "test",
+        "i18nKey": "test.connect",
+        "name": "测试连接",
+        "label": "测试连接",
+        "icon": "link",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "log.server",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

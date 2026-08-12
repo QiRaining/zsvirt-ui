@@ -1,0 +1,168 @@
+@import "../../theme.less";
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.commonCard() {
+  margin-bottom: 12px;
+  border-radius: 2px;
+  background-color: @neutral-0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  .commonCard;
+  padding: 24px 24px 4px;
+}
+
+.cardWithTitle {
+  :global {
+    .ant-card-head {
+      padding: 0 20px;
+      border-bottom: 1px solid @neutral-300;
+    }
+    .ant-card-head-title {
+      padding: 12px 0;
+      color: @neutral-800;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .ant-card-body {
+      padding: 20px 24px;
+    }
+  }
+}
+
+.customParam {
+  .header {
+    width: calc(100% - 14px);
+    margin-bottom: 8px;
+    margin-left: 0 !important;
+    margin-top: 5px;
+    padding: 0 20px;
+    color: @neutral-600;
+    :global {
+      .ant-col {
+        padding-left: 0 !important;
+        padding-right: 20px !important;
+      }
+    }
+
+    .required {
+      margin-left: 4px;
+      color: @danger-500;
+    }
+  }
+
+  .collectList {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 8px 20px;
+    background-color: @neutral-100;
+    width: 100%;
+
+    .left {
+      width: calc(100% - 24px);
+
+      .item {
+        margin-left: 0 !important;
+        :global {
+          .ant-col-8 {
+            padding-left: 0 !important;
+            padding-right: 20px !important;
+          }
+        }
+      }
+
+      :global {
+        .zstack-form-item.ant-form-item {
+          margin-bottom: 0;
+        }
+
+        .ant-tag {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    .right {
+      display: inline-block;
+      margin-left: 8px;
+      margin-top: 5px;
+      cursor: pointer;
+
+      :global {
+        .anticon {
+          color: @neutral-600;
+          transition: color 0.3s;
+          position: relative;
+          height: 16px;
+
+          &:hover {
+            color: @color-700;
+          }
+        }
+      }
+    }
+  }
+
+  .addBtn {
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    line-height: 32px;
+    cursor: pointer;
+    color: @color-600;
+
+    :global {
+      .anticon {
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
+
+    &:hover {
+      color: @color-700;
+    }
+  }
+
+  .disabledAddBtn {
+    display: inline-flex;
+    align-items: center;
+    line-height: 32px;
+    cursor: not-allowed;
+    color: @neutral-500;
+
+    :global {
+      .anticon {
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
+
+    &:hover {
+      color: @neutral-400;
+    }
+  }
+
+  .buttonContainer {
+    margin-top: 8px;
+    padding: 0 20px;
+  }
+}

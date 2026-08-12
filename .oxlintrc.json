@@ -1,0 +1,245 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "react-perf",
+    "typescript",
+    "import",
+    "unicorn",
+    "promise",
+    "jsx-a11y",
+    "jest",
+    "vitest",
+    "node"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "ignorePatterns": [
+    ".agents/**",
+    ".claude/**",
+    ".codex/**",
+    ".nx/**",
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/coverage-e2e/**",
+    "**/lint_report/**",
+    "**/*.d.ts",
+    "**/*.tsbuildinfo",
+    "**/*.html",
+    "**/public/vendor/**",
+    "**/public/mockServiceWorker.js",
+    "**/src/api/generated/**",
+    "**/src/api/zstack/**",
+    "**/src/generated/**",
+    "packages/products/zsv/bff/**",
+    "packages/products/zsv/apps/novnc/src/pages/vmwarevnc/utils/jquery.js"
+  ],
+  "settings": {
+    "react": {
+      "version": "18.3.1",
+      "linkComponents": [
+        { "name": "Link", "linkAttribute": ["to", "href"] },
+        { "name": "NavLink", "linkAttribute": "to" }
+      ]
+    },
+    "jsx-a11y": {
+      "components": {
+        "Button": "button",
+        "Link": "a"
+      }
+    }
+  },
+  "rules": {
+    // React
+    "react/jsx-key": "warn",
+    "react/jsx-no-duplicate-props": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/button-has-type": "warn",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-props-no-spread-multi": "warn",
+    "react/jsx-no-constructed-context-values": "warn",
+    "react/jsx-no-target-blank": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/self-closing-comp": "warn",
+    "react/style-prop-object": "error",
+    "react/no-unknown-property": "warn",
+
+    // A11y
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-role": "warn",
+    "jsx-a11y/heading-has-content": "warn",
+    "jsx-a11y/iframe-has-title": "warn",
+    "jsx-a11y/no-redundant-roles": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+
+    // Import quality
+    "import/no-cycle": "warn",
+    "import/no-self-import": "error",
+    "import/no-empty-named-blocks": "warn",
+    "no-duplicate-imports": ["warn", { "allowSeparateTypeImports": true }],
+
+    // TypeScript
+    "typescript/consistent-type-imports": "warn",
+    "typescript/no-unnecessary-type-assertion": "warn",
+    "typescript/no-unnecessary-type-arguments": "warn",
+    "typescript/no-import-type-side-effects": "warn",
+    "typescript/prefer-ts-expect-error": "warn",
+    "typescript/ban-ts-comment": "warn",
+
+    // Code quality
+    "curly": "warn",
+    "eqeqeq": ["warn", "always", { "null": "ignore" }],
+    "no-alert": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "no-debugger": "error",
+    "no-eval": "error",
+    "no-var": "error",
+    "no-else-return": "warn",
+    "prefer-const": "warn",
+    "prefer-template": "warn",
+    "require-await": "warn",
+
+    // Promise
+    "promise/no-callback-in-promise": "warn",
+    "promise/valid-params": "warn",
+
+    // Performance / modern JavaScript
+    "unicorn/prefer-array-flat-map": "warn",
+    "unicorn/prefer-includes": "warn",
+    "unicorn/prefer-array-some": "warn",
+    "unicorn/no-useless-promise-resolve-reject": "warn",
+    "unicorn/no-useless-undefined": "warn",
+    "unicorn/require-post-message-target-origin": "warn"
+  },
+  "overrides": [
+    {
+      "files": [
+        "packages/products/zsv/**/*.ts",
+        "packages/products/zsv/**/*.tsx",
+        "packages/products/zsv/**/*.js",
+        "packages/products/zsv/**/*.jsx"
+      ],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@zstack/components",
+                "message": "ZSV 禁止使用已弃用的 @zstack/components，请使用 @zstack/design 或 @zstack/zsphere-*。"
+              },
+              {
+                "name": "@zstack/design-biz-cloud",
+                "message": "ZSV 禁止使用 Cloud 业务组件，请使用 @zstack/zsphere-design-biz。"
+              }
+            ],
+            "patterns": [
+              {
+                "group": ["@zstack/cloud-*"],
+                "message": "ZSV 禁止导入 Cloud 产品专属包，请使用 @zstack/zsphere-* 或通用包。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "packages/products/*/bff/**/*.ts",
+        "packages/products/*/bff/**/*.js",
+        "**/bff/**/*.ts",
+        "**/bff/**/*.js"
+      ],
+      "env": {
+        "browser": false,
+        "node": true,
+        "jest": true
+      },
+      "rules": {
+        "no-console": "off",
+        "require-await": "off",
+        "typescript/no-explicit-any": "off",
+        "no-shadow-restricted-names": "off",
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "antd",
+                "message": "BFF 不应导入前端 UI 库。"
+              },
+              {
+                "name": "@zstack/components",
+                "message": "BFF 不应导入前端组件库。"
+              },
+              {
+                "name": "@zstack/design",
+                "message": "BFF 不应导入前端设计系统。"
+              },
+              {
+                "name": "@zstack/design-biz-cloud",
+                "message": "BFF 不应导入 Cloud 前端业务组件。"
+              }
+            ],
+            "patterns": [
+              {
+                "group": [
+                  "@zstack/cloud-*",
+                  "@zstack/zsphere-components",
+                  "@zstack/zsphere-design-biz"
+                ],
+                "message": "BFF 不应导入前端产品组件包。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.test.ts",
+        "*.test.tsx",
+        "*.spec.ts",
+        "*.spec.tsx",
+        "**/__test__/**",
+        "**/__tests__/**"
+      ],
+      "env": {
+        "jest": true,
+        "vitest": true
+      },
+      "rules": {
+        "typescript/no-explicit-any": "off",
+        "no-console": "off",
+        "require-await": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.config.js",
+        "**/*.config.ts",
+        "**/*.config.mjs",
+        "**/*.config.cjs",
+        "**/scripts/**/*.js",
+        "**/scripts/**/*.ts",
+        "**/ci/**/*.js",
+        "**/ci/**/*.ts"
+      ],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}

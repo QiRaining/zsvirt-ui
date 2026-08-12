@@ -1,0 +1,73 @@
+@import "~@/theme.less";
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.modalBody {
+  padding: 24px 24px 20px;
+  max-height: 600px;
+  overflow: auto;
+
+  :global {
+    .zstack-table-list {
+      .zstack-table {
+        .ant-table {
+          .ant-table-content {
+            max-height: 548px !important;
+            overflow-y: auto !important;
+          }
+        }
+      }
+    }
+
+    .ant-table-cell-fix-left {
+      display: flex;
+      justify-content: center;
+    }
+
+    .ant-table-content {
+      colgroup {
+        col:first-of-type {
+          width: 40px !important;
+        }
+      }
+
+      thead {
+        tr {
+          th:first-of-type {
+            height: 36px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modalcontent {
+  :global {
+    .ant-btn {
+      background-color: transparent;
+
+      &:hover {
+        background-color: @neutral-100;
+      }
+    }
+
+    .ant-btn-primary {
+      background-color: @color-600 !important;
+
+      &:hover {
+        background-color: @color-700 !important;
+      }
+    }
+  }
+}

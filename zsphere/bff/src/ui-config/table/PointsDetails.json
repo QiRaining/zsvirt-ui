@@ -1,0 +1,85 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "associated.resource.name",
+          "type",
+          "activation.time",
+          "expire.time"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "associated.resource.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "associated.resource.name",
+            "defaultMessage": "Associated Resource Name"
+          },
+          "queryType": "",
+          "resource": "points.details"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "points.details"
+        }
+      },
+      {
+        "accessorKey": "activation.time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "activation.time",
+            "defaultMessage": "Activation Time"
+          },
+          "queryType": "",
+          "resource": "points.details"
+        }
+      },
+      {
+        "accessorKey": "expire.time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "expire.time",
+            "defaultMessage": "Expires on"
+          },
+          "queryType": "",
+          "resource": "points.details"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

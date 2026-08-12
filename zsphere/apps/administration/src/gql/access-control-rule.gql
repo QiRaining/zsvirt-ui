@@ -1,0 +1,42 @@
+fragment accessControlRuleFields on AccessControlRule {
+  uuid
+  name
+  description
+  rule
+  strategy
+  isValid
+  createDate
+  lastOpDate
+}
+
+query accessControlRuleList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: AccessControlRuleQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  accessControlRuleList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...accessControlRuleFields
+    }
+  }
+}
+
+query accessControlRule($uuid: String!) {
+  accessControlRule(uuid: $uuid) {
+    ...accessControlRuleFields
+  }
+}

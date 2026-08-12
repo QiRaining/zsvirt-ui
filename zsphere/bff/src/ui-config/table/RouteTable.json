@@ -1,0 +1,189 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "routeEntries",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "route.table"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "route.table"
+        }
+      },
+      {
+        "accessorKey": "routeEntries",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "route.entries.count",
+            "defaultMessage": "Route Entries"
+          },
+          "queryType": "",
+          "resource": "route.table"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "route.table"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "route.table.route.entry.add",
+          "route.table.attach.vpc.vrouter",
+          "route.table.detach.vpc.vrouter",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "route.table.route.entry.add",
+          "route.table.attach.vpc.vrouter",
+          "route.table.detach.vpc.vrouter",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "route.table.create"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "route.table.create",
+        "resource": "route.table",
+        "authKey": "route.table.create",
+        "i18nKey": "create.routeTable",
+        "name": "创建路由表",
+        "label": "创建路由表",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "route.table",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "route.table.route.entry.add",
+        "resource": "route.table",
+        "authKey": "route.table.route.entry.add",
+        "i18nKey": "add.routeTable.routeEntry",
+        "name": "添加路由条目",
+        "label": "添加路由条目",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "route.table.attach.vpc.vrouter",
+        "resource": "route.table",
+        "authKey": "route.table.attach.vpc.vrouter",
+        "i18nKey": "attach.vpcVrouter",
+        "name": "添加VPC路由器",
+        "label": "添加VPC路由器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "route.table.detach.vpc.vrouter",
+        "resource": "route.table",
+        "authKey": "route.table.detach.vpc.vrouter",
+        "i18nKey": "detach.vpcVrouter",
+        "name": "卸载VPC路由器",
+        "label": "卸载VPC路由器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "route.table",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

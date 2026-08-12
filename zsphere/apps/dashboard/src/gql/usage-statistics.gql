@@ -1,0 +1,34 @@
+query getZSVUsageStatisticsData(
+  $tableName: String!
+  $metricName: String
+  $zoneKey: String
+  $zoneUuid: String
+  $resourceKey: String!
+  $monitorItem: String!
+  $accountUuid: String
+  $currentIdentity: String
+  $hypervisorType: String
+  $uuid: String
+)
+{
+  getZSVUsageStatisticsData(
+    tableName: $tableName
+    metricName: $metricName
+    zoneKey: $zoneKey
+    zoneUuid: $zoneUuid
+    resourceKey: $resourceKey
+    monitorItem: $monitorItem
+    accountUuid: $accountUuid
+    currentIdentity: $currentIdentity
+    hypervisorType: $hypervisorType
+    uuid: $uuid
+  )
+  {
+    capacityData {
+      totalCapacity
+      usedCapacity
+      availableCapacity
+      usedPercent
+    }
+  }
+}

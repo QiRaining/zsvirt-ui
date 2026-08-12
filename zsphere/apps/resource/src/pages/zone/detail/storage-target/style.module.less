@@ -1,0 +1,40 @@
+@import url("../../../../theme.less");
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.leftContent {
+  flex: 1 1;
+  padding: 20px 24px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > :last-child {
+    flex-grow: 1;
+  }
+}
+
+.rightContent {
+  flex: 1;
+  min-width: 100px;
+  border-left: 2px solid @neutral-300;
+
+  :global {
+    .ant-tabs .ant-tabs-nav:before {
+      width: calc(100% + 24px) !important;
+    }
+
+    .ant-tabs-content-holder {
+      overflow: auto;
+      flex: 1;
+    }
+
+    .ant-tabs-content {
+      height: auto !important;
+      min-height: 100%;
+    }
+  }
+}

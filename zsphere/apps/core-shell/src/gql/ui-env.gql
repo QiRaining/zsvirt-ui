@@ -1,0 +1,14 @@
+query getUIEnv {
+  UIEnv {
+    isOpenPlatform
+  }
+}
+
+
+query getBootStrapInfo {
+  isBootstrap {
+    isBootstrap
+  }
+}
+
+

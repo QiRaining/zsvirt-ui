@@ -1,0 +1,58 @@
+fragment iscsiLunFields on IscsiLun {
+  uuid
+  name
+  wwid
+  wwn
+  vendor
+  model
+  serial
+  type
+  path
+  state
+  source
+  size
+  iscsiTargetUuid
+  hctl
+  createDate
+  lastOpDate
+  scsiLunHostRefs {
+    hostUuid
+  }
+  scsiLunVmInstanceRefs {
+    vmInstanceUuid
+  }
+}
+
+query iscsiLunList($conditions: [Condition!], $start: Int, $limit: Int, $extraConditions: [Condition!], $type: String, $sortBy: String, $sortDirection: SortDirectionValidValues) {
+  iscsiLunList(start: $start, limit: $limit, replyWithCount: true, conditions: $conditions, extraConditions: $extraConditions, type: $type, sortBy: $sortBy, sortDirection: $sortDirection) {
+    total
+    list {
+      ...iscsiLunFields
+    }
+  }
+}
+
+
+query iscsiLunCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  iscsiLunList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}

@@ -1,0 +1,87 @@
+@import "../../../theme.less";
+
+.card {
+  margin-bottom: 12px !important;
+  :global {
+    .ant-card-head {
+      background-color: @neutral-100;
+      border: none;
+      padding: 0 12px;
+      min-height: auto;
+    }
+    .ant-card-head-title {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 22px;
+      color: @neutral-700;
+      padding: 8px 0;
+      font-weight: 400;
+    }
+    .ant-card-body {
+      padding: 20px;
+    }
+  }
+}
+
+.code-card {
+  margin-bottom: 12px !important;
+  :global {
+    .ant-card-head {
+      background-color: @neutral-100;
+      border: none;
+      padding: 0 12px;
+      min-height: auto;
+    }
+    .ant-card-head-title {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 22px;
+      color: @neutral-700;
+      padding: 8px 0;
+      font-weight: 400;
+    }
+    .ant-card-body {
+      padding: 12px;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 12px;
+  margin-top: 20px;
+  color: @neutral-700;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.failedReason {
+  line-height: 22px;
+  color: @danger-600;
+}
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.main {
+  padding: 24px;
+}
+
+.toolbar {
+  margin: 12px 0;
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}

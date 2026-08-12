@@ -1,0 +1,769 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.backup.storage",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.cdp.task",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.primary.storage",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm.instance",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "namespace",
+          "metricName",
+          "emergencyLevel",
+          "state",
+          "status",
+          "topicNum",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "namespace",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceType",
+            "defaultMessage": "Resource Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "metricName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "alarmEntry",
+            "defaultMessage": "Metric Item"
+          },
+          "queryType": "",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "emergencyLevel",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "alarmLevel",
+            "defaultMessage": "Severity"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "alarmStatus",
+            "defaultMessage": "Alarm Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "topicNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "notifyObjectCount",
+            "defaultMessage": "Endpoints"
+          },
+          "queryType": "",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "zwatch.alarm.resource"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zwatch.alarm.resource"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/header",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "create.reource.alarm",
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.reource.alarm",
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.backup.storage/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.backup.storage/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.baremetal.instance/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.baremetal.instance/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.cdp.task/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.cdp.task/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.l3.network/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.l3.network/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.vip-network/row",
+        "activeKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "sub.vip-network/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization/toolbar",
+        "extraKeys": [
+          "create.reource.alarm",
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.vm.instance/row",
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.vm.instance/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable.zsv",
+          "disable.zsv",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.vpc.vrouter/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub.vpc.vrouter/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.reource.alarm"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.endpoint.to.resource.alarm",
+          "remove.endpoint.from.resource.alarm",
+          "delete.resource.alarm"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.reource.alarm",
+          "enable",
+          "disable",
+          "delete.resource.alarm"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.reource.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "create.reource.alarm",
+        "i18nKey": "create.resourceAlarm",
+        "name": "创建资源报警器",
+        "label": "创建资源报警器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable.zsv",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "enable.zsv",
+        "i18nKey": "enable.zsv",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable.zsv",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "disable.zsv",
+        "i18nKey": "disable.zsv",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable.zsv-divider"
+      },
+      {
+        "key": "disable",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.zsv",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "edit.zsv",
+        "i18nKey": "virtualization.edit.name.and.description",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "editConfig",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "editConfig",
+        "i18nKey": "editConfig",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "add.alarm",
+        "i18nKey": "add.alarm",
+        "name": "添加报警器",
+        "label": "添加报警器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "remove.alarm",
+        "i18nKey": "remove.alarm",
+        "name": "移除报警器",
+        "label": "移除报警器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.endpoint.to.resource.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "add.endpoint.to.resource.alarm",
+        "i18nKey": "add.endpoint",
+        "name": "添加通知对象",
+        "label": "添加通知对象",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.endpoint.from.resource.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "remove.endpoint.from.resource.alarm",
+        "i18nKey": "remove.endpoint",
+        "name": "移除通知对象",
+        "label": "移除通知对象",
+        "icon": "",
+        "dividerKey": "remove.endpoint.from.resource.alarm-divider"
+      },
+      {
+        "key": "delete.resource.alarm",
+        "resource": "zwatch.alarm.resource",
+        "authKey": "delete.resource.alarm",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

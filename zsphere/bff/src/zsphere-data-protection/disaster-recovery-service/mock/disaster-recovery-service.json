@@ -1,0 +1,97 @@
+{
+  "status": "not-installed",
+  "version": "1.0.0",
+  "managementAddress": "https://zlr-10-7-21-88.example.local",
+  "licenseSummary": "1,000 VM / 365 days",
+  "target": {
+    "clusterName": "Cluster-Production-A",
+    "hostName": "host-10-7-21-32",
+    "storageName": "primary-storage-zlr-system",
+    "managementNetwork": "mgmt-network-192.0.2.0/24",
+    "spec": "Standard"
+  },
+  "platformContext": {
+    "platformType": "ZSphere",
+    "managementNodeAddress": "https://zsphere-mn-01.example.local",
+    "managementNodeUuid": "mn-3f4c8d0a-7c21-4b9f-8d62-91a6f2c1e018",
+    "siteId": "site-local-001",
+    "suggestedSiteName": "Shanghai-Primary-Site",
+    "certificateFingerprint": "75:3A:2B:99:4F:62:DA:18:00:6C:6E:92:27:D7:9E:AB",
+    "bootstrapTokenState": "VALID",
+    "entrySource": "ZSphere Service Entry"
+  },
+  "selfChecks": [
+    {
+      "code": "service",
+      "status": "passed"
+    },
+    {
+      "code": "database",
+      "status": "passed"
+    },
+    {
+      "code": "platform",
+      "status": "passed"
+    },
+    {
+      "code": "version",
+      "status": "passed"
+    },
+    {
+      "code": "certificate",
+      "status": "warning"
+    },
+    {
+      "code": "sso",
+      "status": "warning"
+    },
+    {
+      "code": "time",
+      "status": "passed"
+    },
+    {
+      "code": "license",
+      "status": "warning"
+    },
+    {
+      "code": "network",
+      "status": "passed"
+    },
+    {
+      "code": "placeholder-datastore",
+      "status": "warning"
+    },
+    {
+      "code": "replication-agent",
+      "status": "warning"
+    }
+  ],
+  "blockers": [
+    {
+      "code": "running-task",
+      "count": 2
+    },
+    {
+      "code": "protection-group",
+      "count": 3
+    },
+    {
+      "code": "recovery-plan",
+      "count": 1
+    }
+  ],
+  "taskLogs": [
+    {
+      "id": "log-context",
+      "code": "context-detected",
+      "status": "success",
+      "createdAt": "2026-06-02 18:20:00"
+    },
+    {
+      "id": "log-package",
+      "code": "package-required",
+      "status": "warning",
+      "createdAt": "2026-06-02 18:21:04"
+    }
+  ]
+}

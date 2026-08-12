@@ -1,0 +1,25 @@
+query pointsDetailsList(
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $licenseKey: String
+) {
+  pointsDetailsList(
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+    licenseKey: $licenseKey
+  ) {
+    list {
+      uuid
+      resourceName
+      type
+      activationTime
+      expireTime
+    }
+    total
+  }
+}

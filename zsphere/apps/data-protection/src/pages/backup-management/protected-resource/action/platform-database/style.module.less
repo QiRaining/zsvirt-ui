@@ -1,0 +1,32 @@
+@import "../../../../../theme.less";
+
+.listWrap {
+  border-radius: 4px;
+  padding: 0 24px;
+  height: 300px;
+  white-space: pre-line;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.formWrap {
+  padding: 24px 24px 40px 24px;
+
+  .formItem {
+    margin: 24px;
+  }
+}
+
+.modalDb {
+  :global {
+    .ant-modal-footer {
+      .ant-btn:first-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.extra {
+  margin-left: 24px;
+}

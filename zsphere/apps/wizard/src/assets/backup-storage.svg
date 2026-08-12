@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 512 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>添加镜像存储</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图，请下载SVG格式" transform="translate(-221.000000, -964.000000)">
+            <g id="添加镜像存储" transform="translate(221.000000, 964.000000)">
+                <rect id="矩形备份-11" fill="#E6F6FF" x="0" y="0" width="512" height="290" rx="2"></rect>
+                <g id="编组-3" transform="translate(12.000000, 182.000000)">
+                    <rect id="🎨-按钮背景色备份-209" fill="#CEEFFF" x="0" y="0" width="488" height="96" rx="2"></rect>
+                    <g id="编组" transform="translate(8.000000, 34.000000)">
+                        <rect id="🎨-按钮背景色备份-213" fill="#E6F6FF" x="0" y="0" width="232" height="52" rx="2"></rect>
+                        <g id="编组-7备份-12" transform="translate(88.000000, 8.000000)">
+                            <rect id="🎨-按钮背景色备份-190" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="64" height="36" rx="2"></rect>
+                            <text id="端口" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                                <tspan x="20" y="21">端口</tspan>
+                            </text>
+                        </g>
+                        <g id="编组-7备份-16" transform="translate(160.000000, 8.000000)">
+                            <rect id="🎨-按钮背景色备份-190" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="64" height="36" rx="2"></rect>
+                            <text id="端口" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                                <tspan x="20" y="21">端口</tspan>
+                            </text>
+                        </g>
+                        <text id="分布式端口组" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                            <tspan x="8" y="29">分布式端口组</tspan>
+                        </text>
+                    </g>
+                    <g id="编组-2" transform="translate(248.000000, 34.000000)">
+                        <rect id="🎨-按钮背景色备份-215" fill="#E6F6FF" x="0" y="0" width="232" height="52" rx="2"></rect>
+                        <g id="编组-7备份-17" transform="translate(88.000000, 8.000000)">
+                            <rect id="🎨-按钮背景色备份-190" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="64" height="36" rx="2"></rect>
+                            <text id="端口" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                                <tspan x="20" y="21">端口</tspan>
+                            </text>
+                        </g>
+                        <g id="编组-7备份-18" transform="translate(160.000000, 8.000000)">
+                            <rect id="🎨-按钮背景色备份-190" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="64" height="36" rx="2"></rect>
+                            <text id="端口" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                                <tspan x="20" y="21">端口</tspan>
+                            </text>
+                        </g>
+                        <text id="分布式端口组备份" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                            <tspan x="8" y="29">分布式端口组</tspan>
+                        </text>
+                    </g>
+                    <text id="分布式交换机备份-13" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                        <tspan x="208" y="21">分布式交换机</tspan>
+                    </text>
+                </g>
+                <path id="直线-2" d="M173.5,65.5 L182.5,70 L173.5,74.5 L173.5,70.5 L159.5,70.5 L159.5,69.5 L173.5,69.5 L173.5,65.5 Z" fill="#98D7FE" fill-rule="nonzero"></path>
+                <path id="直线-2备份-4" d="M228,159.5 L232.5,168.5 L228.499,168.5 L228.5,182.5 L227.5,182.5 L227.499,168.5 L223.5,168.5 L228,159.5 Z" fill="#98D7FE" fill-rule="nonzero"></path>
+                <path id="直线-2备份" d="M343.5,65.5 L352.5,70 L343.5,74.5 L343.5,70.5 L329.5,70.5 L329.5,69.5 L343.5,69.5 L343.5,65.5 Z" transform="translate(341.000000, 70.000000) scale(-1, 1) translate(-341.000000, -70.000000) " fill="#98D7FE" fill-rule="nonzero"></path>
+                <path id="直线-2备份-2" d="M173.5,121.5 L182.5,126 L173.5,130.5 L173.5,126.5 L159.5,126.5 L159.5,125.5 L173.5,125.5 L173.5,121.5 Z" fill="#98D7FE" fill-rule="nonzero"></path>
+                <path id="直线-2备份-5" d="M284,159.5 L288.5,168.5 L284.499,168.5 L284.5,182.5 L283.5,182.5 L283.499,168.5 L279.5,168.5 L284,159.5 Z" fill="#98D7FE" fill-rule="nonzero"></path>
+                <path id="直线-2备份-3" d="M343.5,121.5 L352.5,126 L343.5,130.5 L343.5,126.5 L329.5,126.5 L329.5,125.5 L343.5,125.5 L343.5,121.5 Z" transform="translate(341.000000, 126.000000) scale(-1, 1) translate(-341.000000, -126.000000) " fill="#98D7FE" fill-rule="nonzero"></path>
+                <text id="数据中心" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                    <tspan x="232" y="21">数据中心</tspan>
+                </text>
+                <rect id="🎨-按钮背景色备份-178" fill="#CEEFFF" x="12" y="36" width="148" height="124" rx="2"></rect>
+                <rect id="🎨-按钮背景色备份-180" fill="#CEEFFF" x="182" y="36" width="148" height="124" rx="2"></rect>
+                <text id="Text备份-21" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                    <tspan x="62" y="101">数据存储</tspan>
+                </text>
+                <text id="集群备份-10" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                    <tspan x="244" y="57">集群</tspan>
+                </text>
+                <text id="存-储" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="18" fill="#3EA1FA">
+                    <tspan x="165" y="93">存</tspan>
+                    <tspan x="165" y="111">储</tspan>
+                </text>
+                <text id="加载" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#3EA1FA">
+                    <tspan x="244" y="174">加载</tspan>
+                </text>
+                <text id="加-载" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="18" fill="#3EA1FA">
+                    <tspan x="335" y="93">加</tspan>
+                    <tspan x="335" y="111">载</tspan>
+                </text>
+                <g id="编组-11" transform="translate(190.000000, 72.000000)">
+                    <rect id="🎨-按钮背景色备份-181" fill="#E6F6FF" x="0" y="0" width="132" height="80" rx="2"></rect>
+                    <g id="编组-8" transform="translate(70.000000, 36.000000)">
+                        <rect id="🎨-按钮背景色备份-191" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="54" height="36" rx="2"></rect>
+                        <text id="虚拟机" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                            <tspan x="9" y="21">虚拟机</tspan>
+                        </text>
+                    </g>
+                    <g id="编组-10" transform="translate(8.000000, 36.000000)">
+                        <rect id="🎨-按钮背景色备份-192" fill="#FFFFFF" opacity="0.8" x="0" y="0" width="54" height="36" rx="2"></rect>
+                        <text id="虚拟机备份" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                            <tspan x="9" y="21">虚拟机</tspan>
+                        </text>
+                    </g>
+                    <text id="主机备份-10" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                        <tspan x="54" y="21">主机</tspan>
+                    </text>
+                </g>
+                <path d="M510,0 C511.104569,-2.02906125e-16 512,0.8954305 512,2 L512,288 C512,289.104569 511.104569,290 510,290 L2,290 C0.8954305,290 1.3527075e-16,289.104569 0,288 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 L510,0 Z M502,32 L350,32 C348.895431,32 348,32.8954305 348,34 L348,162 C348,163.104569 348.895431,164 350,164 L502,164 C503.104569,164 504,163.104569 504,162 L504,34 C504,32.8954305 503.104569,32 502,32 Z" id="形状结合" fill="#000000" opacity="0.03"></path>
+                <rect id="🎨-按钮背景色备份-211" fill="#FFFFFF" opacity="0.6" x="348" y="32" width="156" height="132" rx="2"></rect>
+                <rect id="🎨-按钮背景色备份-211" fill="#CEEFFF" x="352" y="36" width="148" height="124" rx="2"></rect>
+                <rect id="🎨-按钮背景色备份-212" fill="#E6F6FF" x="360" y="72" width="132" height="80" rx="2"></rect>
+                <text id="镜像备份-22" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                    <tspan x="414" y="115">镜像</tspan>
+                </text>
+                <text id="镜像存储备份-13" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" line-spacing="20" fill="#4A4C4F">
+                    <tspan x="402" y="57">镜像存储</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

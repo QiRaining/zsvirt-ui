@@ -1,0 +1,111 @@
+@import "../../style/vars.less";
+
+.@{prefix}-search-box {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 12px;
+  &-left-part {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &-input-wrap {
+      padding: 0 8px;
+      flex: 1 0 240px;
+      display: flex;
+      align-items: center;
+      .ant-input {
+        padding: 0;
+        flex: 1;
+      }
+    }
+    > .ant-input {
+      flex: 1 0 240px;
+      padding: 0 8px;
+    }
+  }
+  &-right-part {
+    flex: 0 0 auto;
+    .@{prefix}-icon-trash {
+      cursor: pointer;
+      color: @neutral-400;
+    }
+    .divider {
+      border-color: @neutral-400;
+    }
+    .@{prefix}-icon-search {
+      cursor: pointer;
+      color: @neutral-700;
+    }
+  }
+  .ant-dropdown {
+    top: 36px !important;
+  }
+}
+
+.@{prefix}-search-dropdown {
+  background: #ffffff;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  width: 240px;
+  max-width: 400px;
+  &-small {
+    width: 120px;
+  }
+  &-input {
+    padding: 12px;
+    border-bottom: 1px solid @neutral-300;
+  }
+  &-menu {
+    max-height: 320px;
+    overflow: auto;
+    padding: 8px 0;
+    &-item {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 32px;
+      padding: 4px 12px;
+      cursor: pointer;
+
+      .ant-checkbox + span {
+        width: 100%;
+      }
+
+      .@{prefix}-tag {
+        max-width: calc(100% - 40px);
+        display: inline-block;
+      }
+
+      &:hover {
+        background-color: @neutral-100;
+      }
+      &-selected {
+        background-color: @color-50;
+        .anticon {
+          color: @color-600;
+        }
+      }
+    }
+  }
+  &-input + &-menu {
+    max-height: 224px;
+  }
+  &-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid @neutral-300;
+    &-btn {
+      cursor: pointer;
+      padding: 9px 12px;
+      line-height: 22px;
+      font-size: 14px;
+    }
+    &-btn-ok {
+      color: @color-600;
+    }
+  }
+}

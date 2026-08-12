@@ -1,0 +1,681 @@
+@import "../../theme.less";
+
+.license {
+  height: 100%;
+  background-color: @neutral-0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  flex: 1;
+  min-width: 0;
+
+  :global {
+    .ant-tabs.ant-tabs-top > .ant-tabs-nav {
+      //margin-left: 24px;
+    }
+
+    .ant-tabs-tabpane {
+      min-height: 100%;
+      padding: 20px 24px;
+      background-color: @neutral-100;
+    }
+  }
+
+  .description {
+    margin-top: 12px;
+    color: @neutral-600;
+    font-weight: 400;
+  }
+
+  .header {
+    display: "flex";
+    flex-direction: column;
+
+    .main {
+      margin: 20px 24px 0;
+      color: @neutral-800;
+      height: 28px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #181a1d;
+      line-height: 28px;
+    }
+
+    .sub {
+      margin-top: 8px;
+      margin-left: 24px;
+
+      font-size: 16px;
+    }
+  }
+
+  .tabs {
+    width: 100%;
+    height: calc(100% - 52px);
+
+    overflow-x: hidden;
+
+    .currentLicenseTab {
+      min-width: max-content;
+      display: flex;
+      flex-direction: column;
+      min-height: fit-content !important;
+
+      > :nth-child(2) {
+        flex-grow: 1;
+      }
+
+      &:global(.ant-tabs-tabpane-hidden) {
+        display: none;
+      }
+    }
+
+    .licenseRecordTab {
+      display: flex;
+      flex-direction: column;
+      min-height: fit-content !important;
+      min-width: 0;
+
+      > :first-child {
+        flex-grow: 1;
+      }
+
+      &:global(.ant-tabs-tabpane-hidden) {
+        display: none;
+      }
+    }
+
+    .alert-cpu {
+      margin-top: 12px;
+    }
+
+    .banner-left {
+      position: relative;
+      height: 300px;
+      margin-top: 12px;
+
+      .license-svg {
+        position: relative;
+        z-index: 1;
+
+        path:first-child {
+          fill: @neutral-100;
+        }
+
+        path:last-child {
+          fill: @alert-400;
+        }
+      }
+
+      .banner-left-card {
+        top: -65px;
+        padding: 28px;
+        padding-top: 32px;
+        width: 384px;
+        position: relative;
+        height: 300px;
+        background-color: @neutral-0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+
+        .logo {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          background-color: @alert-200;
+          border-radius: 999em;
+          justify-content: center;
+        }
+
+        .title {
+          color: @neutral-800;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          height: 28px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .ant-tag-inactive {
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-expired-in-one-day {
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .status-content {
+          margin-top: 20px;
+          background-color: @neutral-100;
+          width: 352px;
+          height: 88px;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .banner-left-card-withoutUK {
+        top: -65px;
+        padding: 28px;
+        padding-top: 22px;
+        width: 384px;
+        position: relative;
+        height: 280px;
+        background-color: @neutral-0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+
+        .logo {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          background-color: @alert-200;
+          border-radius: 999em;
+          justify-content: center;
+        }
+
+        .title {
+          color: @neutral-800;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          height: 28px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .ant-tag-valid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12x;
+          background-color: @positive-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-invalid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-inactive {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-expired-in-one-day {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-willinvalid {
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .status-content {
+          margin-top: 20px;
+          background-color: @neutral-100;
+          width: 352px;
+          height: 88px;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .banner-left-card-ukeyReady {
+        top: -65px;
+        padding: 28px;
+        padding-top: 45px;
+        width: 384px;
+        position: relative;
+        height: 327px;
+        background-color: @neutral-0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+
+        .logo {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          background-color: @alert-200;
+          border-radius: 999em;
+          justify-content: center;
+        }
+
+        .title {
+          color: @neutral-800;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          height: 28px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .ant-tag-valid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12x;
+          background-color: @positive-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-invalid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-inactive {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-expired-in-one-day {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-willinvalid {
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .status-content {
+          margin-top: 20px;
+          background-color: @neutral-100;
+          width: 352px;
+          height: 88px;
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .help {
+      font-size: 14px;
+      color: @neutral-600;
+      font-weight: 400;
+      margin-top: 24px;
+    }
+
+    .help-ukeyReady {
+      font-size: 14px;
+      color: @neutral-600;
+      font-weight: 400;
+      margin-top: 52px;
+    }
+
+    .help-withoutUK {
+      font-size: 14px;
+      color: @neutral-600;
+      font-weight: 400;
+      //margin-top: 47px;
+    }
+
+    :global {
+      .ant-tabs-content {
+        display: grid;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .dividing-title {
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: @neutral-800;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 500;
+
+    .badge {
+      margin-left: 4px;
+      height: 16px;
+      margin-top: -4px;
+      color: @neutral-300;
+
+      :global {
+        .ant-badge-count {
+          box-shadow: unset !important;
+        }
+      }
+    }
+  }
+
+  .valid,
+  .not-valid,
+  .activated,
+  .expired,
+  .notactive,
+  .warning {
+    padding: 2px 9px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
+  .valid,
+  .activated {
+    background-color: @positive-500;
+    color: @neutral-0;
+  }
+
+  .not-valid,
+  .expired {
+    background-color: @danger-500;
+    color: @neutral-0;
+  }
+
+  .notactive {
+    background-color: @neutral-100;
+    color: @neutral-800;
+  }
+
+  .valid,
+  .not-valid {
+    margin-right: 4px;
+  }
+
+  .warning {
+    background-color: @alert-500;
+    color: @neutral-0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .no-access {
+    cursor: not-allowed;
+    color: @neutral-400;
+  }
+
+  .card-container {
+    height: unset;
+    min-height: 45vh;
+    width: 1200px;
+
+    .card-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .card {
+        position: relative;
+        height: 292px;
+        width: 386px;
+        padding: 16px;
+        background-color: @neutral-0;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+        margin-bottom: 20px;
+
+        .ant-tag-valid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @positive-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-invalid {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-inactive {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @danger-500;
+          color: @neutral-0;
+          border-radius: 2px;
+          border: unset;
+        }
+
+        .ant-tag-expired-in-one-day {
+          //margin-left: 4px;
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .ant-tag-willinvalid {
+          font-weight: 400;
+          font-size: 12px;
+          background-color: @alert-500;
+          color: @neutral-0;
+          border: unset;
+          border-radius: 2px;
+        }
+
+        .header {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          height: 24px;
+
+          .left {
+            display: flex;
+            align-items: center;
+
+            .logo {
+              width: 24px;
+              height: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .title {
+              color: @neutral-800;
+              font-size: 16px;
+              font-weight: 500;
+              margin: -6px 8px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              // max-width: 140px;
+              white-space: nowrap;
+            }
+
+            .status {
+              font-size: 14px;
+              margin: 0 2px;
+            }
+          }
+
+          .right {
+            position: absolute;
+            right: 0;
+
+            .delete-icon {
+              display: none;
+              color: @neutral-500;
+              cursor: pointer;
+            }
+
+            .delete-icon:hover {
+              color: @neutral-800;
+              display: block;
+            }
+          }
+        }
+
+        :global {
+          .zstack-field-horizontal-left {
+            width: 135px;
+          }
+
+          .zstack-field-horizontal-value {
+            width: 142px;
+            overflow: visible;
+          }
+
+          .ant-progress-text {
+            color: @neutral-600;
+          }
+        }
+
+        .content {
+          margin-top: 12px;
+          height: 40px;
+          width: 352px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 20px;
+          color: @neutral-600;
+        }
+
+        .regular {
+          background-color: @neutral-100;
+          width: 354px;
+          height: 156px;
+          padding: 4px 16px 16px 16px;
+          display: flex;
+          flex-direction: column;
+          font-size: 14px;
+          color: @neutral-600;
+
+          :global {
+            .zstack-field-horizontal {
+              margin-bottom: 0px;
+              font-size: 14px;
+              height: 22px;
+              margin-top: 12px;
+
+              .ant-progress-outer {
+                width: unset;
+
+                .ant-progress-inner {
+                  width: 80px;
+                  background-color: @neutral-300;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .card-unset {
+        position: relative;
+        height: 292px;
+        width: 386px;
+        background-color: unset;
+        margin-bottom: 20px;
+      }
+
+      .card:hover {
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.12);
+
+        .right {
+          .delete-icon {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 95px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: @neutral-600;
+
+    .terms {
+      color: @color-600;
+      cursor: pointer;
+    }
+  }
+
+  .spin-content {
+    height: 30vh;
+    text-align: center;
+    margin-top: 15vh;
+  }
+}

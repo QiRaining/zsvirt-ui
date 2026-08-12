@@ -1,0 +1,87 @@
+fragment userGroupFields on UserGroup {
+  uuid
+  name
+  groupUserCount
+  description
+  role {
+    uuid
+    name
+    type
+  }
+  createDate
+}
+
+query userGroupList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: UserGroupQueryType
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  userGroupList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...userGroupFields
+    }
+    total
+  }
+}
+
+# 创建用户组
+mutation createUserGroup($input: CreateUserGroupInput!) {
+  createUserGroup(input: $input) {
+    actionId
+  }
+}
+
+# 添加用户
+mutation addUsers($input: AddUsersInput!) {
+  addUsers(input: $input) {
+    actionId
+  }
+}
+
+# 删除用户
+mutation deleteUserGroup($input: DeleteUserGroupInput!) {
+  deleteUserGroup(input: $input) {
+    actionId
+  }
+}
+
+# 更新用户组配置
+mutation updateUserGroupConfig($input: UpdateUserGroupConfigInput!) {
+  updateUserGroupConfig(input: $input) {
+    actionId
+  }
+}
+
+# 绑定角色
+mutation bindRoles($input: BindRolesInput!) {
+  bindRoles(input: $input) {
+    actionId
+  }
+}
+
+# 共享资源
+mutation shareResources($input: ShareResourcesInput!) {
+  shareResources(input: $input) {
+    actionId
+  }
+}
+
+# 移除用户
+mutation removeUsers($input: RemoveUsersInput!) {
+  removeUsers(input: $input) {
+    actionId
+  }
+}

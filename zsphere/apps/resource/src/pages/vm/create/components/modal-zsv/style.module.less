@@ -1,0 +1,105 @@
+@import "../../../../../theme.less";
+
+:global {
+  .zsv-modal-title-icon {
+    margin-left: 4px;
+    cursor: pointer;
+    vertical-align: bottom;
+    color: @neutral-300;
+
+    &:hover {
+      color: @color-600;
+    }
+  }
+
+  .zsv-zsv-modal-form {
+    //
+    .ant-modal-title {
+      font-weight: unset !important;
+    }
+  }
+
+  .zsv-modal-form {
+    max-height: 678px;
+
+    .ant-modal-close-x {
+      svg {
+        vertical-align: middle !important;
+      }
+    }
+
+    &-body {
+      //
+      padding: 24px;
+      max-height: 66vh;
+      overflow-y: auto;
+
+      &-alert-container {
+        padding: 24px 24px 0 24px;
+      }
+    }
+
+    .ant-modal-body {
+      max-height: calc(80vh - 108px);
+      min-height: 92px; // 200 - 60 - 48
+      overflow: auto;
+      padding: 0px !important;
+    }
+
+    @media screen and (max-height: 600px) {
+      .ant-modal-body {
+        max-height: 372px; // 600 * 0.8 - 108px
+      }
+    }
+
+    .ant-modal-header {
+      .ant-modal-title {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        overflow: hidden;
+      }
+    }
+
+    .modal-title {
+      font-weight: 400 !important;
+      width: 100%;
+      display: flex !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+
+      .action-title {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .resource-name {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        min-width: 0;
+
+        .ant-divider-vertical {
+          height: 1em !important;
+          top: unset;
+          margin: 0 8px;
+          flex-shrink: 0;
+          border-inline-start: 1px solid @neutral-300;
+        }
+
+        .text {
+          .ant-typography {
+            color: @neutral-600 !important;
+          }
+
+          flex: 1;
+          font-size: 14px;
+          font-weight: 400;
+          max-width: 100% !important;
+          margin-right: 24px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

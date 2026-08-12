@@ -1,0 +1,64 @@
+@import "../../../../theme.less";
+
+.zstack-virtualization-modal-tree-select {
+  &-select-disabled-input {
+    background-color: @neutral-100 !important;
+    cursor: not-allowed !important;
+
+    &:hover {
+      border: 1px solid @neutral-400 !important;
+    }
+
+    .ant-btn {
+      background-color: @neutral-200 !important;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: @neutral-200 !important;
+      }
+    }
+  }
+
+  &-select-input {
+    border: 1px solid @neutral-400;
+    border-radius: 2px;
+    display: flex;
+    cursor: pointer;
+    height: 32px;
+
+    &:hover {
+      border-color: @color-600;
+    }
+
+    .ant-btn {
+      background-color: @neutral-200;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px;
+
+      &:hover {
+        background-color: @neutral-300;
+      }
+    }
+
+    &-spin {
+      position: relative;
+      height: 32px;
+      padding-top: 4px;
+      top: 0;
+    }
+
+    &-value {
+      width: calc(100% - 40px);
+      padding: 4px 12px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    &-value-title {
+      width: 100%;
+    }
+  }
+}

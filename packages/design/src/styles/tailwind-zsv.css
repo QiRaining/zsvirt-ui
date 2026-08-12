@@ -1,0 +1,433 @@
+/*
+ * Tailwind CSS v4 配置 — ZSV 预设
+ *
+ * 与 tailwind.css（Cloud 预设）的区别：
+ *   - 使用自定义 preflight（preflight.css）替代 Tailwind 默认 preflight
+ *   - 默认 preflight 的 padding:0 / border:0 solid / border-radius:0 等
+ *     会破坏 Ant Design 组件，自定义版本移除了这些冲突规则
+ *
+ * 组装方式（模块化导入）：
+ *   tailwindcss/theme.css   — Tailwind 默认主题
+ *   preflight.css           — 自定义 CSS Reset（antd 兼容）
+ *   tailwindcss/utilities   — Tailwind utility classes
+ *
+ * 层级顺序（低 → 高）：antd < legacy < theme < base < components < utilities < overrides
+ *
+ * 等 ZSV 完成 antd → @zstack/design 迁移后，可切换回 tailwind.css。
+ */
+@layer antd, legacy, theme, base, components, utilities, overrides;
+@import "tailwindcss/theme.css" layer(theme);
+@import "./preflight.css" layer(base);
+@import "tailwindcss/utilities.css";
+
+@source "../**/*.{ts,tsx}";
+
+/* shadcn/ui 暗色模式支持 */
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+ * 基础变量定义 - 默认兜底值（中性色表）
+ * 这些会被 core-shell 默认主题在运行时覆盖
+ * ============================================ */
+@layer base {
+  :root {
+    /* ============================================
+     * 原始变量名 - 兼容旧代码
+     * ============================================ */
+
+    /* 主题色 (会被动态覆盖) - 默认中性色 */
+    --color-50: #f5f7fa;
+    --color-100: #ebeef2;
+    --color-200: #d8dce3;
+    --color-300: #c0c6d0;
+    --color-400: #a8b0bd;
+    --color-500: #8c96a5;
+    --color-600: #6f7a8c;
+    --color-700: #555f73;
+    --color-800: #3c4559;
+    --color-900: #242c40;
+
+    /* 中性色 */
+    --neutral-0: #ffffff;
+    --neutral-100: #f5f7fa;
+    --neutral-200: #f0f2f5;
+    --neutral-300: #dbdde0;
+    --neutral-400: #c8cacd;
+    --neutral-500: #96989b;
+    --neutral-600: #707275;
+    --neutral-700: #4a4c4f;
+    --neutral-800: #181a1d;
+    --neutral-900: #000000;
+
+    /* 成功色 */
+    --positive-50: #ecfedf;
+    --positive-100: #dffcc6;
+    --positive-200: #c9f7ae;
+    --positive-400: #8be374;
+    --positive-500: #57d344;
+    --positive-600: #3ab333;
+
+    /* 信息色 */
+    --info-50: #e6f6ff;
+    --info-100: #ceefff;
+    --info-200: #98d7fe;
+    --info-400: #3ea1fa;
+    --info-500: #0076f7;
+    --info-600: #005bd4;
+
+    /* 警告色 */
+    --alert-50: #fff8e5;
+    --alert-100: #fff1cc;
+    --alert-200: #ffe199;
+    --alert-400: #ffb53f;
+    --alert-500: #ff9000;
+    --alert-600: #db7200;
+
+    /* 危险色 */
+    --danger-50: #fff2ea;
+    --danger-100: #ffe4d8;
+    --danger-200: #ffc3b2;
+    --danger-400: #ff766f;
+    --danger-500: #f93940;
+    --danger-600: #db2e43;
+
+    /* 等待色 */
+    --pending-50: #f9ecfe;
+    --pending-100: #f4dafd;
+    --pending-200: #e6b5fc;
+    --pending-400: #bb71ee;
+    --pending-500: #9a45e4;
+    --pending-600: #7a35c3;
+
+    /* Teal */
+    --teal-50: #e5fef9;
+    --teal-100: #ccfdf4;
+    --teal-200: #9afdf2;
+    --teal-300: #67f6f2;
+    --teal-400: #3fe5ee;
+    --teal-500: #01c8e6;
+    --teal-600: #039bc2;
+    --teal-700: #0276a4;
+    --teal-800: #015484;
+    --teal-900: #003d6d;
+
+    /* Yellow Green */
+    --yellow-green-50: #f9fed2;
+    --yellow-green-100: #f3fcb0;
+    --yellow-green-200: #eaf683;
+    --yellow-green-300: #dcef5d;
+    --yellow-green-400: #c8e037;
+    --yellow-green-500: #a9c800;
+    --yellow-green-600: #89a601;
+    --yellow-green-700: #6d8700;
+    --yellow-green-800: #526600;
+    --yellow-green-900: #3c4d00;
+
+    /* AI 颜色 */
+    --color-ai-100: #f1f8ff;
+    --color-ai-200: #e6f2ff;
+
+    /* AI 主题色 (会被动态覆盖) - 用于 Tailwind theme-ai-* 类名 */
+    --color-theme-ai-100: #f1f8ff;
+    --color-theme-ai-200: #e6f2ff;
+
+    /* ============================================
+     * Sidebar 变量 - 使用项目主题色
+     * ============================================ */
+    --sidebar: var(--neutral-0);
+    --sidebar-foreground: var(--neutral-700);
+    --sidebar-primary: var(--color-600);
+    --sidebar-primary-foreground: var(--neutral-0);
+    --sidebar-accent: var(--color-50);
+    --sidebar-accent-foreground: var(--color-600);
+    --sidebar-border: var(--neutral-300);
+    --sidebar-ring: var(--color-500);
+
+    /* ============================================
+     * Tailwind 变量名 - 用于 bg-theme-500 等类名
+     * 默认值与上面保持一致，运行时由 core-shell 默认主题覆盖
+     * ============================================ */
+
+    /* 主题色 */
+    --color-theme-50: #f5f7fa;
+    --color-theme-100: #ebeef2;
+    --color-theme-200: #d8dce3;
+    --color-theme-300: #c0c6d0;
+    --color-theme-400: #a8b0bd;
+    --color-theme-500: #8c96a5;
+    --color-theme-600: #6f7a8c;
+    --color-theme-700: #555f73;
+    --color-theme-800: #3c4559;
+    --color-theme-900: #242c40;
+
+    /* 中性色 */
+    --color-neutral-0: #ffffff;
+    --color-neutral-100: #f5f7fa;
+    --color-neutral-200: #f0f2f5;
+    --color-neutral-300: #dbdde0;
+    --color-neutral-400: #c8cacd;
+    --color-neutral-500: #96989b;
+    --color-neutral-600: #707275;
+    --color-neutral-700: #4a4c4f;
+    --color-neutral-800: #181a1d;
+    --color-neutral-900: #000000;
+
+    /* 危险色 */
+    --color-danger-50: #fff2ea;
+    --color-danger-100: #ffe4d8;
+    --color-danger-200: #ffc3b2;
+    --color-danger-400: #ff766f;
+    --color-danger-500: #f93940;
+    --color-danger-600: #db2e43;
+
+    /* 信息色 */
+    --color-info-50: #e6f6ff;
+    --color-info-100: #ceefff;
+    --color-info-200: #98d7fe;
+    --color-info-400: #3ea1fa;
+    --color-info-500: #0076f7;
+    --color-info-600: #005bd4;
+
+    /* 警告色 */
+    --color-alert-50: #fff8e5;
+    --color-alert-100: #fff1cc;
+    --color-alert-200: #ffe199;
+    --color-alert-400: #ffb53f;
+    --color-alert-500: #ff9000;
+    --color-alert-600: #db7200;
+
+    /* 成功色 */
+    --color-positive-50: #ecfedf;
+    --color-positive-100: #dffcc6;
+    --color-positive-200: #c9f7ae;
+    --color-positive-400: #8be374;
+    --color-positive-500: #57d344;
+    --color-positive-600: #3ab333;
+
+    /* 等待色 */
+    --color-pending-50: #f9ecfe;
+    --color-pending-100: #f4dafd;
+    --color-pending-200: #e6b5fc;
+    --color-pending-400: #bb71ee;
+    --color-pending-500: #9a45e4;
+    --color-pending-600: #7a35c3;
+
+    /* Teal */
+    --color-teal-50: #e5fef9;
+    --color-teal-100: #ccfdf4;
+    --color-teal-200: #9afdf2;
+    --color-teal-300: #67f6f2;
+    --color-teal-400: #3fe5ee;
+    --color-teal-500: #01c8e6;
+    --color-teal-600: #039bc2;
+    --color-teal-700: #0276a4;
+    --color-teal-800: #015484;
+    --color-teal-900: #003d6d;
+
+    /* Yellow Green */
+    --color-yellow-green-50: #f9fed2;
+    --color-yellow-green-100: #f3fcb0;
+    --color-yellow-green-200: #eaf683;
+    --color-yellow-green-300: #dcef5d;
+    --color-yellow-green-400: #c8e037;
+    --color-yellow-green-500: #a9c800;
+    --color-yellow-green-600: #89a601;
+    --color-yellow-green-700: #6d8700;
+    --color-yellow-green-800: #526600;
+    --color-yellow-green-900: #3c4d00;
+
+    /* 兼容旧写法 bg-color-500 */
+    --color-color-50: #f5f7fa;
+    --color-color-100: #ebeef2;
+    --color-color-200: #d8dce3;
+    --color-color-300: #c0c6d0;
+    --color-color-400: #a8b0bd;
+    --color-color-500: #8c96a5;
+    --color-color-600: #6f7a8c;
+    --color-color-700: #555f73;
+    --color-color-800: #3c4559;
+    --color-color-900: #242c40;
+  }
+}
+
+/* ============================================
+ * Tailwind 主题配置
+ * @theme 中必须使用硬编码值，因为 Tailwind 在编译时需要解析这些值来生成 utility classes
+ * 运行时动态主题通过 JS 修改同名 CSS 变量实现
+ * 参考: https://tailwindcss.com/docs/theme
+ * ============================================ */
+@theme {
+  /* 主题色 - 默认值，运行时可被 core-shell 默认主题覆盖 */
+  --color-theme-50: #f5f7fa;
+  --color-theme-100: #ebeef2;
+  --color-theme-200: #d8dce3;
+  --color-theme-300: #c0c6d0;
+  --color-theme-400: #a8b0bd;
+  --color-theme-500: #8c96a5;
+  --color-theme-600: #6f7a8c;
+  --color-theme-700: #555f73;
+  --color-theme-800: #3c4559;
+  --color-theme-900: #242c40;
+
+  /* AI 主题色 - 用于 AI Store 等页面的渐变背景 */
+  --color-theme-ai-100: #f1f8ff;
+  --color-theme-ai-200: #e6f2ff;
+
+  /* 中性色 */
+  --color-neutral-0: #ffffff;
+  --color-neutral-100: #f5f7fa;
+  --color-neutral-200: #f0f2f5;
+  --color-neutral-300: #dbdde0;
+  --color-neutral-400: #c8cacd;
+  --color-neutral-500: #96989b;
+  --color-neutral-600: #707275;
+  --color-neutral-700: #4a4c4f;
+  --color-neutral-800: #181a1d;
+  --color-neutral-900: #000000;
+
+  /* 危险色 */
+  --color-danger-50: #fff2ea;
+  --color-danger-100: #ffe4d8;
+  --color-danger-200: #ffc3b2;
+  --color-danger-400: #ff766f;
+  --color-danger-500: #f93940;
+  --color-danger-600: #db2e43;
+
+  /* 信息色 */
+  --color-info-50: #e6f6ff;
+  --color-info-100: #ceefff;
+  --color-info-200: #98d7fe;
+  --color-info-400: #3ea1fa;
+  --color-info-500: #0076f7;
+  --color-info-600: #005bd4;
+
+  /* 警告色 */
+  --color-alert-50: #fff8e5;
+  --color-alert-100: #fff1cc;
+  --color-alert-200: #ffe199;
+  --color-alert-400: #ffb53f;
+  --color-alert-500: #ff9000;
+  --color-alert-600: #db7200;
+
+  /* 成功色 */
+  --color-positive-50: #ecfedf;
+  --color-positive-100: #dffcc6;
+  --color-positive-200: #c9f7ae;
+  --color-positive-400: #8be374;
+  --color-positive-500: #57d344;
+  --color-positive-600: #3ab333;
+
+  /* 等待色 */
+  --color-pending-50: #f9ecfe;
+  --color-pending-100: #f4dafd;
+  --color-pending-200: #e6b5fc;
+  --color-pending-400: #bb71ee;
+  --color-pending-500: #9a45e4;
+  --color-pending-600: #7a35c3;
+
+  /* Teal */
+  --color-teal-50: #e5fef9;
+  --color-teal-100: #ccfdf4;
+  --color-teal-200: #9afdf2;
+  --color-teal-300: #67f6f2;
+  --color-teal-400: #3fe5ee;
+  --color-teal-500: #01c8e6;
+  --color-teal-600: #039bc2;
+  --color-teal-700: #0276a4;
+  --color-teal-800: #015484;
+  --color-teal-900: #003d6d;
+
+  /* Yellow Green */
+  --color-yellow-green-50: #f9fed2;
+  --color-yellow-green-100: #f3fcb0;
+  --color-yellow-green-200: #eaf683;
+  --color-yellow-green-300: #dcef5d;
+  --color-yellow-green-400: #c8e037;
+  --color-yellow-green-500: #a9c800;
+  --color-yellow-green-600: #89a601;
+  --color-yellow-green-700: #6d8700;
+  --color-yellow-green-800: #526600;
+  --color-yellow-green-900: #3c4d00;
+
+  /* Sidebar 颜色 */
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #4a4c4f;
+  --color-sidebar-primary: #6f7a8c;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #f5f7fa;
+  --color-sidebar-accent-foreground: #6f7a8c;
+  --color-sidebar-border: #dbdde0;
+  --color-sidebar-ring: #8c96a5;
+
+  /* 阴影 */
+  --shadow-light: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+  --shadow-deep: 0 12px 20px 0 rgba(0, 0, 0, 0.12);
+
+  /* ============================================
+   * Spacing 尺寸系统
+   * 基于 4px (0.25rem) 步长
+   * ============================================ */
+  --spacing: 0.25rem;
+
+  /* 特殊步长定义 */
+  --spacing-px: 1px;
+  --spacing-0_5: 2px;
+  --spacing-1_5: 6px;
+  --spacing-1_75: 7px;
+  --spacing-2_5: 10px;
+  --spacing-3_5: 14px;
+  --spacing-4_5: 18px;
+  --spacing-5_5: 22px;
+  --spacing-7_5: 30px;
+  --spacing-15: 60px;
+
+  /* ============================================
+   * Border Radius 圆角系统
+   * ============================================ */
+  --radius-px: 1px;
+  --radius-xs: 2px;
+}
+
+/* ============================================
+ * 自定义 Utilities
+ * ============================================ */
+@utility scrollbar-none {
+  /* 隐藏滚动条但保留滚动功能 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+}
+
+@utility scroll-fade {
+  /*
+   * 滚动渐变提示：边缘淡出效果，暗示可以滚动
+   * 使用 mask-image 在两侧创建 24px 的渐变区域
+   */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 24px,
+    black calc(100% - 24px),
+    transparent
+  );
+}
+
+@utility scroll-fade-right {
+  /* 只在右侧显示渐变提示 */
+  mask-image: linear-gradient(to right, black calc(100% - 32px), transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black calc(100% - 32px),
+    transparent
+  );
+}

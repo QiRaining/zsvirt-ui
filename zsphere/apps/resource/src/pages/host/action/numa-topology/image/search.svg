@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>插图元素</title>
+    <defs>
+        <path d="M2.12701014,0.102485862 L38.9738959,14.0508411 C39.7895566,14.3596087 40.2043336,15.2696962 39.9003264,16.0835785 C39.7601135,16.4589535 39.4816258,16.7658357 39.1216981,16.9415951 L24.2189873,24.2188657 L16.9418083,39.1217638 C16.5607345,39.9021629 15.6173684,40.2221776 14.8347411,39.8365366 C14.4737813,39.658673 14.1934973,39.3501598 14.0510907,38.9739598 L0.10291077,2.12661068 C-0.20585294,1.3109398 0.203618226,0.403258255 1.01749022,0.0992472118 C1.37471322,-0.0341886816 1.76900208,-0.0330377662 2.12701014,0.102485862 Z" id="path-1"></path>
+    </defs>
+    <g id="pnuma拓扑图" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="插图元素" transform="translate(-56.000000, -30.000000)">
+            <g id="编组-3" transform="translate(56.000000, 30.000000)">
+                <g id="编组-2" transform="translate(4.000000, 3.000000)">
+                    <g id="编组">
+                        <circle id="椭圆形" fill="#DBDDE0" cx="16.5" cy="16.5" r="16.5"></circle>
+                        <circle id="椭圆形" fill="#C8CACD" cx="16.5" cy="16.5" r="11.6470588"></circle>
+                        <circle id="椭圆形" fill="#FFFFFF" cx="16.0147059" cy="16.0147059" r="7.27941176"></circle>
+                    </g>
+                    <g id="蒙版" transform="translate(16.000000, 16.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="路径" fill="#3EA1FA" xlink:href="#path-1"></use>
+                        <polygon id="矩形" fill="#0076F7" mask="url(#mask-2)" points="-40.8365321 23.0257545 -8.90608449 -8.9050946 45.1389416 45.1403767 13.2083768 77.0713429"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

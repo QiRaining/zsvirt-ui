@@ -1,0 +1,133 @@
+@import "../../../../theme.less";
+
+.btn {
+  margin: 0;
+  padding: 0 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  height: auto !important;
+  color: @color-600 !important;
+  cursor: pointer !important;
+
+  &:hover {
+    color: @color-700 !important;
+  }
+
+  &[disabled] {
+    color: @color-600 !important;
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+    pointer-events: auto !important;
+
+    &:hover {
+      color: @color-600 !important;
+    }
+  }
+}
+
+:global {
+  .ant-btn-link[disabled] {
+    color: @color-600 !important;
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+    pointer-events: auto !important;
+  }
+}
+
+.drsWrapper {
+  display: flex;
+  flex-direction: column;
+  :global {
+    .ant-alert-message {
+      h3 {
+        color: @neutral-800 !important;
+      }
+    }
+
+    .ant-btn {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+      gap: 4px; // 确保 icon 和文字之间的间距
+
+      > .anticon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        margin: 0 !important;
+        vertical-align: middle;
+        flex-shrink: 0;
+      }
+
+      > .anticon > svg {
+        display: block;
+        margin: 0;
+        vertical-align: 0;
+        line-height: 0;
+      }
+
+      // 确保按钮内容垂直居中
+      > span:not(.anticon) {
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+      }
+    }
+  }
+
+  .icon {
+    display: block;
+    translate: 0 1px; // 居中
+
+    :global {
+      .zstack-icon {
+        cursor: pointer;
+        color: @neutral-400 !important;
+      }
+
+      .zstack-icon:hover {
+        color: @color-600 !important;
+      }
+    }
+  }
+
+  .draggable-card {
+    :global {
+      .ant-card-head {
+        padding-right: 12px !important;
+      }
+    }
+  }
+  .space {
+    width: 100%;
+    :global {
+      .ant-space-item {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+
+  :global {
+    .zstack-field-horizontal {
+      width: 50%;
+    }
+
+    .zstack-field-horizontal:nth-child(odd) {
+      border-right: 1px solid @neutral-300;
+    }
+
+    .zstack-field-horizontal:nth-child(7) {
+      border-bottom: 0;
+    }
+  }
+}
+
+.tabContainer {
+  font-size: 14px;
+}

@@ -1,0 +1,204 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "ip",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "ip",
+          "strategy",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization",
+        "keys": [
+          "name",
+          "ip",
+          "strategy",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "access.control.rule"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "access.control.rule"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipAdress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "",
+          "resource": "access.control.rule"
+        }
+      },
+      {
+        "accessorKey": "strategy",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "access.control.rule"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "access.control.rule"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/header",
+        "extraKeys": [
+          "edit"
+        ],
+        "activeKeys": [
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "edit",
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "virtualization.add.accessControlRule",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization/row"
+      },
+      {
+        "view": "sub.virtualization/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.add.accessControlRule",
+        "resource": "access.control.rule",
+        "authKey": "virtualization.add.accessControlRule",
+        "i18nKey": "virtualization.add.accessControlRule",
+        "name": "添加IP黑白名单",
+        "label": "添加IP黑白名单",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "access.control.rule",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "access.control.rule",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": "modify.config-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "access.control.rule",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

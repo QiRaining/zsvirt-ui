@@ -1,0 +1,479 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "confirmState",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "main.unread",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "confirmState",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "sub.global.alert",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "alarmTimes",
+          "time"
+        ]
+      },
+      {
+        "view": "sub.monitor.group",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "confirmState",
+          "alarmType",
+          "alarmTimes",
+          "time",
+          "confirmer",
+          "ackPeriod",
+          "ackDate"
+        ]
+      },
+      {
+        "view": "virtualization.global.list",
+        "keys": [
+          "alarmMessage",
+          "resourceName",
+          "emergencyLevel",
+          "confirmState",
+          "alarmTimes",
+          "time",
+          "confirmer"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "dataUuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "messageUuid",
+            "defaultMessage": "Message UUID"
+          },
+          "queryType": "input",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "resourceUuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "resourceUuid",
+            "defaultMessage": "Resource UUID"
+          },
+          "queryType": "input",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "alarmMessage",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "messageContent",
+            "defaultMessage": "Alarm Name"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "resourceName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "alarm.message.resource",
+            "defaultMessage": "Resource"
+          },
+          "queryType": "input",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "triggerAction",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "triggerAction",
+            "defaultMessage": "Trigger Action"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "emergencyLevel",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "emergencyLevel",
+            "defaultMessage": "Severity"
+          },
+          "queryType": "multipleFilter",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "confirmState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "alarm.message.confirm.state",
+            "defaultMessage": "Acknowledged"
+          },
+          "queryType": "multipleFilter",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "alarmType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "messageType",
+            "defaultMessage": "Message Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "alarmTimes",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "alarmTimes",
+            "defaultMessage": "Alarm Times"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "lastAlarmTime",
+            "defaultMessage": "Last Alarm Time"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "confirmer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "confirmer",
+            "defaultMessage": "Acknowledged by"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "ackPeriod",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "silencePeriod",
+            "defaultMessage": "Muted for"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      },
+      {
+        "accessorKey": "ackDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "ack.start.time",
+            "defaultMessage": "Muted Since"
+          },
+          "queryType": "",
+          "resource": "alarm.platform.message"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.unread/row",
+        "activeKeys": [
+          "mark.as.readed.single",
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "main.unread/toolbar",
+        "extraKeys": [
+          "mark.as.readed.single"
+        ],
+        "activeKeys": [
+          "all.mark.read",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "mark.as.readed.single",
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "mark.as.readed.single",
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "mark.as.readed.single"
+        ],
+        "activeKeys": [
+          "all.mark.read",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.global.alert",
+        "activeKeys": [
+          "all.mark.read",
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.global.alert/row",
+        "activeKeys": [
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/row",
+        "activeKeys": [
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/toolbar",
+        "extraKeys": [
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization/row",
+        "activeKeys": [
+          "mark.as.readed.single",
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub.virtualization/toolbar",
+        "extraKeys": [
+          "mark.as.readed.single",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "handle.message",
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "recover.alarm"
+        ]
+      },
+      {
+        "view": "virtualization.global.list/row",
+        "activeKeys": [
+          "mark.as.readed.single",
+          "handle.message",
+          "recover.alarm"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "mark.as.readed.single",
+        "resource": "alarm.platform.message",
+        "authKey": "mark.as.readed.single",
+        "i18nKey": "alarm.message.mark.as.confirmed",
+        "name": "确认",
+        "label": "确认",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "all.mark.read",
+        "resource": "alarm.platform.message",
+        "authKey": "all.mark.read",
+        "i18nKey": "all.markRead",
+        "name": "全部确认",
+        "label": "全部确认",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "handle.message",
+        "resource": "alarm.platform.message",
+        "authKey": "handle.message",
+        "i18nKey": "handle.message",
+        "name": "设置沉默周期",
+        "label": "设置沉默周期",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover.alarm",
+        "resource": "alarm.platform.message",
+        "authKey": "recover.alarm",
+        "i18nKey": "recover.alarm",
+        "name": "恢复报警",
+        "label": "恢复报警",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

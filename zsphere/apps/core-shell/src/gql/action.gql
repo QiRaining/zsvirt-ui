@@ -1,0 +1,14 @@
+subscription listenActionResp($sessionId: String!) {
+  listenActionResp(sessionId: $sessionId) {
+    sessionId
+    actionId
+    state
+    type
+    listenerType
+    id
+    fields
+    inventory
+    error
+    listenerType
+  }
+}

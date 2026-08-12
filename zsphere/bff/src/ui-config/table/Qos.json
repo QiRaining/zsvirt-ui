@@ -1,0 +1,123 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "port",
+          "vip.qos.outbound.bandwidth",
+          "vip.qos.inbound.bandwidth"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "port",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "input",
+          "resource": "qos"
+        }
+      },
+      {
+        "accessorKey": "vip.qos.outbound.bandwidth",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "networkOutboundBandwidth",
+            "defaultMessage": "Upstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "qos"
+        }
+      },
+      {
+        "accessorKey": "vip.qos.inbound.bandwidth",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "networkInboundBandwidth",
+            "defaultMessage": "Downstream Bandwidth"
+          },
+          "queryType": "",
+          "resource": "qos"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "delete.qos"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "delete.qos"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.qos",
+          "delete.qos"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.qos",
+        "resource": "vip",
+        "authKey": "create.qos",
+        "i18nKey": "create.qos",
+        "name": "添加QoS",
+        "label": "添加QoS",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.qos",
+        "resource": "vip",
+        "authKey": "delete.qos",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

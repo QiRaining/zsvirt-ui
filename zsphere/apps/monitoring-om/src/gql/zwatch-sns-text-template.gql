@@ -1,0 +1,84 @@
+fragment snsTextTemplateFields on SNSTextTemplate {
+  uuid
+  name
+  description
+  subject
+  recoverySubject
+  type
+  applicationPlatformType
+  sign
+  recoveryTemplate
+  template
+  alarmTemplateCode
+  eventTemplate
+  eventTemplateCode
+  defaultTemplate
+  createDate
+  lastOpDate
+}
+
+query snsTextTemplateList(
+  $conditions: [Condition!],
+  $extraConditions: [Condition!],
+  $start: Int,
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  snsTextTemplateList(
+    conditions: $conditions,
+    extraConditions: $extraConditions,
+    start: $start,
+    limit: $limit,
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...snsTextTemplateFields
+    }
+    total
+  }
+}
+
+mutation createAliyunSmsSNSTextTemplate($input: CreateAliyunSmsSNSTextTemplateInput!) {
+  createAliyunSmsSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation createSNSTextTemplate($input: CreateSNSTextTemplateInput!) {
+  createSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteSNSTextTemplate($input: DeleteSNSTextTemplateInput!) {
+  deleteSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation updateSNSTextTemplate($input: UpdateSNSTextTemplateInput!) {
+  updateSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAliyunSmsSNSTextTemplate($input: UpdateAliyunSmsSNSTextTemplateInput!) {
+  updateAliyunSmsSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation cancelDefaultSNSTextTemplate($input: CancelDefaultSNSTextTemplateInput!) {
+  cancelDefaultSNSTextTemplate(input: $input) {
+    actionId
+  }
+}
+
+mutation setDefaultSNSTextTemplate($input: SetDefaultSNSTextTemplateInput!) {
+  setDefaultSNSTextTemplate(input: $input) {
+    actionId
+  }
+}

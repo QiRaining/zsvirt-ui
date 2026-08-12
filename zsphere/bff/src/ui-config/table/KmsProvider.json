@@ -1,0 +1,203 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "UUID",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "kms.provider"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "kms.provider"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "kms.provider"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "common.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "kms.provider"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "kms.provider"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "set.default"
+        ],
+        "activeKeys": [
+          "edit.config",
+          "backup",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "set.default",
+          "edit.config",
+          "backup",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create"
+        ],
+        "activeKeys": [
+          "restore",
+          "update.data.encryption.key"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "kms.provider",
+        "authKey": "create",
+        "i18nKey": "create.kms.provider",
+        "name": "添加密钥提供程序",
+        "label": "添加密钥提供程序",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.default",
+        "resource": "kms.provider",
+        "authKey": "set.default",
+        "i18nKey": "set.defaults",
+        "name": "设为默认",
+        "label": "设为默认",
+        "icon": "",
+        "dividerKey": "set.default-divider"
+      },
+      {
+        "key": "edit.config",
+        "resource": "kms.provider",
+        "authKey": "edit.config",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup",
+        "resource": "kms.provider",
+        "authKey": "backup",
+        "i18nKey": "backup",
+        "name": "备份",
+        "label": "备份",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "restore",
+        "resource": "kms.provider",
+        "authKey": "restore",
+        "i18nKey": "restore",
+        "name": "还原",
+        "label": "还原",
+        "icon": "repeat",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.data.encryption.key",
+        "resource": "kms.provider",
+        "authKey": "update.data.encryption.key",
+        "i18nKey": "update.data.encryption.key",
+        "name": "更新密钥",
+        "label": "更新密钥",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "kms.provider",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

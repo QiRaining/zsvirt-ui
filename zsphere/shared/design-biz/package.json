@@ -1,0 +1,75 @@
+{
+  "name": "@zstack/zsphere-design-biz",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@chenglou/pretext": "0.0.8",
+    "@hookform/resolvers": "catalog:",
+    "@zstack/auth": "workspace:*",
+    "@zstack/design": "workspace:*",
+    "@zstack/hooks": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/utils": "workspace:*",
+    "@zstack/zsphere-constant": "workspace:*",
+    "@zstack/zsphere-illustration": "workspace:*",
+    "@zstack/zsphere-platform-store": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "boneyard-js": "^1.8.1",
+    "class-variance-authority": "0.7.0",
+    "hash.js": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-intl": "catalog:",
+    "react-router": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@rsbuild/plugin-react": "catalog:",
+    "@rslib/core": "catalog:",
+    "@tailwindcss/postcss": "catalog:",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "jsdom": "^26.0.0",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.2.1",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "5.8.2",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

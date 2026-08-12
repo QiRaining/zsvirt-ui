@@ -1,0 +1,94 @@
+@import "../../../../theme.less";
+
+.content {
+  display: flex;
+
+  .sortOrder {
+    padding-right: 8px;
+
+    > div {
+      width: 20px;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 8px;
+      color: @neutral-700;
+      text-align: center;
+    }
+  }
+}
+
+.sortSelectWrap {
+  &:hover {
+    background: @neutral-100;
+  }
+
+  .sortSelectContent {
+    width: 312px;
+    height: 40px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+
+    .dragHandle,
+    .dragHandlePlaceholder {
+      width: 36px;
+      min-width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .select {
+      flex: 1;
+      width: 0 !important;
+    }
+
+    .delete {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.addWrapper {
+  margin-left: 122px;
+  margin-top: -10px;
+
+  .add {
+    font-size: 14px;
+    color: #005bd4;
+  }
+
+  .redTip {
+    font-size: 14px;
+    color: red;
+  }
+
+  .once {
+    font-size: 14px;
+  }
+}
+
+.text-after-icon {
+  color: @neutral-400 !important;
+  cursor: move;
+}
+
+.sortableHelper {
+  z-index: 10000;
+}
+
+.sortableList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sortableContainer {
+  overflow: auto;
+}

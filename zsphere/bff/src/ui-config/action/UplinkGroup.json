@@ -1,0 +1,111 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "host",
+          "network.port",
+          "speed"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "host",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "uplink.group"
+        }
+      },
+      {
+        "accessorKey": "network.port",
+        "size": 400,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network.port",
+            "defaultMessage": "Port"
+          },
+          "queryType": "",
+          "resource": "uplink.group"
+        }
+      },
+      {
+        "accessorKey": "speed",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "speed",
+            "defaultMessage": "Speed"
+          },
+          "queryType": "",
+          "resource": "uplink.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "addNic",
+          "removeNic",
+          "remove.host.from.bond"
+        ]
+      },
+      {
+        "view": "main/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "addNic",
+        "resource": "uplink.group",
+        "authKey": "addNic",
+        "i18nKey": "add.networkInterface",
+        "name": "添加物理网口",
+        "label": "添加物理网口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "removeNic",
+        "resource": "uplink.group",
+        "authKey": "removeNic",
+        "i18nKey": "remove.networkInterface",
+        "name": "移出物理网口",
+        "label": "移出物理网口",
+        "icon": "",
+        "dividerKey": "removeNic-divider"
+      },
+      {
+        "key": "remove.host.from.bond",
+        "resource": "uplink.group",
+        "authKey": "remove.host.from.bond",
+        "i18nKey": "virtualization.remove.host.from.vswitch",
+        "name": "解除主机上行链路",
+        "label": "解除主机上行链路",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

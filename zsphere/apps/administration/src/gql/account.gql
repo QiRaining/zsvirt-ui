@@ -1,0 +1,104 @@
+fragment accountFields on AccountVO {
+  uuid
+  name
+  description
+  type
+  state
+  accountQuotaInfo {
+    volumeNum
+    usages {
+      name
+      total
+      used
+    }
+  }
+  vmNum
+  volumeNum
+
+  role {
+    uuid
+    name
+    type
+  }
+  roleFromAccountGroup {
+    uuid
+    name
+    type
+  }
+  createDate
+  lastOpDate
+}
+
+query accountList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: AccountQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  accountList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...accountFields
+    }
+    total
+  }
+}
+
+query twoFactorAuthenticationList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+) {
+  twoFactorAuthenticationList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+  ) {
+    list {
+      secret
+    }
+  }
+}
+
+mutation createAccount($input: CreateAccountInput!) {
+  createAccount(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteAccounts($input: DeleteAccountInput!) {
+  deleteAccounts(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAccount($input: UpdateAccountInput!) {
+  updateAccount(input: $input) {
+    actionId
+  }
+}
+
+mutation updateAccountQuota($input: UpdateAccountQuotaInput!) {
+  updateAccountQuota(input: $input) {
+    actionId
+  }
+}
+
+mutation changeAccountType($input: ChangeAccountTypeInput!) {
+  changeAccountType(input: $input) {
+    actionId
+  }
+}

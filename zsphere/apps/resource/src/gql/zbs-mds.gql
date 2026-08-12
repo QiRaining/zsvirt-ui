@@ -1,0 +1,26 @@
+query mdsList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  mdsList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      externalAddr
+      createDate
+      addr
+      status
+      port
+      username
+    }
+    total
+  }
+}

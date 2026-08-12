@@ -1,0 +1,92 @@
+query queryResourceAttributeKey(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryResourceAttributeKeyList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      description
+      resourceTypes
+      constraints {
+        id
+        parameter
+      }
+      createDate
+    }
+  }
+}
+
+query queryResourceAttributeConstraint(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryResourceAttributeConstraintList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      id
+      keyUuid
+      type
+      parameter
+      resourceCount
+      createDate
+    }
+  }
+}
+
+query queryResourceAttributeValue(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $type: String
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryResourceAttributeValueList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      keyUuid
+      value
+      resourceUuid
+      resourceName
+      resourceType
+      createDate
+    }
+  }
+}

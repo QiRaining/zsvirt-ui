@@ -1,0 +1,83 @@
+@import "../../../theme.less";
+
+.contentCard {
+  width: 100%;
+  background: @neutral-0;
+  border-radius: 2px;
+  border: 1px solid @neutral-300;
+  padding: 12px 0;
+
+  .titleWrapper {
+    margin: 0 16px;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: @neutral-800;
+    margin-bottom: 12px;
+  }
+
+  .textWrapperMixin() {
+    .textWrapper {
+      width: 200px;
+
+      .text {
+        font-size: 14px;
+        font-weight: 400;
+        color: @neutral-600;
+        line-height: 22px;
+        margin-right: 5px;
+        /** -5px 是右margin，-16px 是右侧的 icon 宽度 */
+        max-width: calc(200px - 5px - 16px);
+      }
+    }
+  }
+
+  .resultcontent {
+    .textWrapperMixin();
+    padding: 12px 16px 0;
+
+    :global {
+      .zstack-icon {
+        color: @neutral-400;
+      }
+    }
+  }
+
+  .content {
+    padding: 6px 16px;
+    display: flex;
+
+    .textWrapperMixin();
+
+    :global {
+      .zstack-icon {
+        color: @neutral-400;
+      }
+    }
+  }
+
+  .dividerDashed {
+    width: 100%;
+    border-bottom: 1px dashed @neutral-300;
+    margin-bottom: 6px;
+  }
+
+  .dividerSolid {
+    width: 100%;
+    border-bottom: 1px solid @neutral-300;
+    margin-top: 10px;
+  }
+
+  :global {
+    .zstack-field-horizontal {
+      line-height: unset;
+
+      .zstack-field-horizontal-left {
+        width: 160px;
+      }
+    }
+  }
+}

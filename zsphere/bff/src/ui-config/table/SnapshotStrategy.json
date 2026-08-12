@@ -1,0 +1,279 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "period",
+          "snapshotCount",
+          "vmCount",
+          "nextExecuteTime",
+          "owner",
+          "startTime",
+          "endTime"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableStatus",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "period",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "scheduled.snapshot.period",
+            "defaultMessage": "Scheduled Snapshot Cycle"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "snapshotCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "kept.snapshot.count",
+            "defaultMessage": "Retained Snapshots"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "vmCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "attached.vm.count",
+            "defaultMessage": "Associated VMs"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "nextExecuteTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "next.execute.time",
+            "defaultMessage": "Next Execution Time"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "startTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      },
+      {
+        "accessorKey": "endTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "endTime",
+            "defaultMessage": "End Time"
+          },
+          "queryType": "",
+          "resource": "snapshot.strategy"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "virtualization.enable",
+          "virtualization.disable",
+          "virtualization.editNameDescription",
+          "virtualization.edit",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.enable",
+          "virtualization.disable",
+          "virtualization.editNameDescription",
+          "virtualization.edit",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "virtualization.create"
+        ],
+        "activeKeys": [
+          "virtualization.enable",
+          "virtualization.disable",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.create",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.create",
+        "i18nKey": "create.snapshot.strategy",
+        "name": "新建快照策略",
+        "label": "新建快照策略",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.enable",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.enable",
+        "i18nKey": "enable.zsv",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.disable",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.disable",
+        "i18nKey": "disable.zsv",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.editNameDescription",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.editNameDescription",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.edit",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "snapshot.strategy",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete.zsv",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

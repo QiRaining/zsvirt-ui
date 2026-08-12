@@ -1,0 +1,80 @@
+@import "../../../theme.less";
+
+.formStep {
+  padding: 20px 24px 30px;
+  background-color: @neutral-0;
+}
+
+.formItem {
+  margin-bottom: 0 !important;
+}
+
+.split {
+  margin: 0 8px;
+  color: @neutral-700;
+}
+
+.noMarginBottom {
+  margin-bottom: 0 !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-160 {
+  width: 160px !important;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.marginLeft20 {
+  margin-left: 20px;
+}
+
+.provision {
+  .width-160;
+}
+
+.flex {
+  display: flex;
+
+  .split {
+    line-height: 28px;
+    color: @neutral-700;
+  }
+
+  .gray {
+    color: @neutral-600;
+  }
+}
+
+.tooltip-icon {
+  margin-left: -20px;
+  line-height: 22px;
+  font-size: 16px;
+  color: @neutral-300;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: @color-600;
+  }
+}
+
+:global {
+  .ant-alert-message {
+    div {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: @neutral-900 !important;
+      }
+    }
+  }
+}

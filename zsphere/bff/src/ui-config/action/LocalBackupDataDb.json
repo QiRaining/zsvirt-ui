@@ -1,0 +1,428 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "version",
+          "size",
+          "backupStorageName",
+          "isRemoteSynced",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.local",
+        "keys": [
+          "name",
+          "version",
+          "size",
+          "backstorage",
+          "isRemoteSynced",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.managementNode",
+        "keys": [
+          "name",
+          "managementNode.ip",
+          "version",
+          "size",
+          "backup.url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.remote",
+        "keys": [
+          "name",
+          "version",
+          "size",
+          "backstorage",
+          "isLocalSynced",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.local",
+        "keys": [
+          "name",
+          "version",
+          "size",
+          "isRemoteSynced",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.remote",
+        "keys": [
+          "name",
+          "version",
+          "size",
+          "isLocalSynced",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "managementNode.ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "managementNode.ip",
+            "defaultMessage": "MN IP"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "version",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "version",
+            "defaultMessage": "Version"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "backstorage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "backstorage",
+            "defaultMessage": "Backup Storage"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "backupStorageName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "local.backup.server",
+            "defaultMessage": "Local Backup Storage"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "backup.url",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "backup.url",
+            "defaultMessage": "Backup Storage Path"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "isRemoteSynced",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sync.to.remote",
+            "defaultMessage": "Sync to Remote"
+          },
+          "queryType": "multipleFilter",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "isLocalSynced",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sync.to.local",
+            "defaultMessage": "Sync to Local"
+          },
+          "queryType": "multipleFilter",
+          "resource": "local.backup.data.db"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "local.backup.data.db"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.local/row",
+        "activeKeys": [
+          "cover.revert",
+          "export",
+          "sync.to.remote.backupStorage",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main.local/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main.managementNode/row",
+        "activeKeys": [
+          "cover.revert",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main.managementNode/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main.remote/row",
+        "activeKeys": [
+          "cover.revert",
+          "export",
+          "sync.to.local.backupStorage",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main.remote/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "recover",
+          "scan",
+          "export",
+          "sync.db.to.remote",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "sub.local/row",
+        "activeKeys": [
+          "recover",
+          "export",
+          "sync.db.to.remote",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "sub.local/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "sub.remote/row",
+        "activeKeys": [
+          "recover",
+          "export",
+          "delete.db"
+        ]
+      },
+      {
+        "view": "sub.remote/toolbar",
+        "extraKeys": [
+          "scan",
+          "delete.db"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "cover.revert",
+        "resource": "local.backup.data.db",
+        "authKey": "cover.revert",
+        "i18nKey": "cover.revert",
+        "name": "覆盖恢复",
+        "label": "覆盖恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "local.backup.data.db",
+        "authKey": "recover",
+        "i18nKey": "restore",
+        "name": "还原",
+        "label": "还原",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "scan",
+        "resource": "local.backup.data.db",
+        "authKey": "scan",
+        "i18nKey": "scan.database.backup",
+        "name": "扫描数据库备份",
+        "label": "扫描数据库备份",
+        "icon": "restore",
+        "dividerKey": 0
+      },
+      {
+        "key": "export",
+        "resource": "local.backup.data.db",
+        "authKey": "export",
+        "i18nKey": "export",
+        "name": "导出",
+        "label": "导出",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.db.to.remote",
+        "resource": "local.backup.data.db",
+        "authKey": "sync.db.to.remote",
+        "i18nKey": "sync.to.remote",
+        "name": "同步到远端",
+        "label": "同步到远端",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.to.local.backupStorage",
+        "resource": "local.backup.data.db",
+        "authKey": "sync.to.local.backupStorage",
+        "i18nKey": "sync.to.local.backupStorage",
+        "name": "同步到本地备份存储",
+        "label": "同步到本地备份存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.to.remote.backupStorage",
+        "resource": "local.backup.data.db",
+        "authKey": "sync.to.remote.backupStorage",
+        "i18nKey": "sync.to.remote.backupStorage",
+        "name": "同步到异地备份存储",
+        "label": "同步到异地备份存储",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.db",
+        "resource": "local.backup.data.db",
+        "authKey": "delete.db",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

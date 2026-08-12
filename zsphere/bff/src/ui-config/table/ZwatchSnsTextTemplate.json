@@ -1,0 +1,282 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "applicationPlatformType",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "applicationPlatformType",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "applicationPlatformType",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "applicationPlatformType",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "applicationPlatformType",
+          "type",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zwatch.sns.text.template"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zwatch.sns.text.template"
+        }
+      },
+      {
+        "accessorKey": "applicationPlatformType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "zwatch.sns.text.template"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "alarm.type",
+            "defaultMessage": "Alarm Type"
+          },
+          "queryType": "",
+          "resource": "zwatch.sns.text.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "input",
+          "resource": "zwatch.sns.text.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "edit.zsv",
+          "editConfig",
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "create.sns.text.template"
+        ],
+        "activeKeys": [
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "editConfig",
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.sns.text.template"
+        ],
+        "activeKeys": [
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "edit.zsv",
+          "editConfig",
+          "make.default",
+          "unset.default.template",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.sns.text.template"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.sns.text.template",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "create.sns.text.template",
+        "i18nKey": "create.messageTemplate",
+        "name": "新建消息模板",
+        "label": "新建消息模板",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.zsv",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "edit.zsv",
+        "i18nKey": "virtualization.edit.name.and.description",
+        "name": "编辑名称和简介",
+        "label": "编辑名称和简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editConfig",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "editConfig",
+        "i18nKey": "editConfig",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "make.default",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "make.default",
+        "i18nKey": "set.default",
+        "name": "设置为默认",
+        "label": "设置为默认",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "unset.default.template",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "unset.default.template",
+        "i18nKey": "cancel.default",
+        "name": "取消默认",
+        "label": "取消默认",
+        "icon": "",
+        "dividerKey": "unset.default.template-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "zwatch.sns.text.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

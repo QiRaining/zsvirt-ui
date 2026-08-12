@@ -1,0 +1,474 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "hypervisorType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.system",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "hypervisorType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "state",
+          "useFor",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.create.port.forwarding",
+        "keys": [
+          "name",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.eip",
+        "keys": [
+          "name",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.ipsec-connection",
+        "keys": [
+          "name",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.load.balancer",
+        "keys": [
+          "name",
+          "ip",
+          "gateway",
+          "netmask.prefixlen",
+          "state",
+          "ipVersion",
+          "useFor",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "gateway",
+          "state",
+          "ipVersion",
+          "useFor",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "gateway",
+          "state",
+          "ipVersion",
+          "useFor",
+          "hypervisorType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpc",
+        "keys": [
+          "name",
+          "l3.network.type",
+          "ip",
+          "gateway",
+          "state",
+          "ipVersion",
+          "useFor",
+          "hypervisorType",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "l3.network.type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "l3.network.type",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ip.address",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "gateway",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "gateway",
+            "defaultMessage": "Gateway"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "netmask.prefixlen",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "netmask.prefix.length",
+            "defaultMessage": "Netmask/Prefix Length"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "ipVersion",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ip.version",
+            "defaultMessage": "IP Address Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "useFor",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "network.services",
+            "defaultMessage": "Network Service"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisor.type",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "vip"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vip"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.system/header",
+        "activeKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "main.system/row",
+        "extraKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "main.system/toolbar",
+        "activeKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "remove"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vip"
+        ],
+        "activeKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.vpc/row",
+        "extraKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "sub.vpc/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "remove"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "remove"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vip",
+        "resource": "vip",
+        "authKey": "create.vip",
+        "i18nKey": "create.vip",
+        "name": "创建虚拟IP",
+        "label": "创建虚拟IP",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vip",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove",
+        "resource": "vip",
+        "authKey": "remove",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "vip",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "vip",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

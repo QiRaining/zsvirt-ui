@@ -1,0 +1,300 @@
+@import "../../theme.less";
+
+// critical.less - 关键样式
+.outContainer {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  min-width: 500px;
+  min-height: 600px;
+  overflow: auto;
+  height: 100%;
+  width: calc(100% - 720px);
+  background: @neutral-0;
+  background-size: cover;
+  position: relative;
+  flex-grow: 1;
+}
+
+.loginContainer {
+  margin: 30vh auto 80px;
+  width: 400px;
+  border-radius: 2px;
+  background-color: @neutral-0;
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  align-items: center;
+  height: 80px;
+  // width: 100%;
+
+  .logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    object-position: left center;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.companyInfo {
+  width: 320px;
+  position: absolute;
+  height: calc(100% + 24px);
+  left: 40px;
+  top: -12px;
+  border-radius: 2px;
+  background-color: @color-600;
+
+  .logoContainer {
+    margin-top: 72px;
+    margin-left: 38px;
+    margin-right: 38px;
+    display: flex;
+    flex-flow: column;
+
+    .imageBox {
+      height: 28px;
+      max-width: 240px;
+      margin-bottom: 12px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+      }
+    }
+
+    .logoTitle {
+      font-weight: bold;
+      line-height: 22px;
+      color: @neutral-0;
+    }
+  }
+
+  .cube {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: @color-700;
+    width: 120px;
+    height: 30%;
+    border-radius: 2px;
+  }
+
+  .dot {
+    width: 234px;
+    height: 122px;
+    position: absolute;
+    left: 40px;
+    bottom: 20%;
+    background-image: url("../../assets/images/login-dot.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.login {
+  max-width: 440px;
+
+  .selectItem {
+    font-size: 14px;
+  }
+
+  .password {
+    :global {
+      .ant-input-password-icon {
+        color: @neutral-400;
+
+        &:hover {
+          color: @neutral-700;
+        }
+      }
+    }
+  }
+
+  .inputPrefixIcon {
+    color: @neutral-400;
+  }
+
+  .welcomeTitle {
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: bold;
+    color: @neutral-800;
+    margin-bottom: 40px;
+  }
+
+  .zsvWelcomeTitle {
+    line-height: 32px;
+    font-size: 24px;
+    color: @neutral-800;
+  }
+
+  .zsvWelcomeContent {
+    line-height: 32px;
+    margin-top: 12px;
+    font-size: 24px;
+    color: @neutral-800;
+    margin-bottom: 24px !important;
+  }
+
+  .tab {
+    :global {
+      .ant-tabs-tab {
+        margin-right: 32px;
+      }
+
+      .ant-tabs-tab-btn {
+        font-weight: 400 !important;
+      }
+
+      .ant-form-item-control-input {
+        min-height: 26px; // 22 + 4
+      }
+    }
+  }
+
+  .captcha {
+    width: 100%;
+
+    .imgContainer {
+      border: 1px solid @neutral-400;
+      cursor: pointer;
+      height: 40px;
+      display: flex;
+    }
+
+    :global {
+      .ant-space-item:first-child {
+        flex: 1;
+      }
+    }
+  }
+
+  .loginBtn {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 4px;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  :global {
+    .ant-tabs .ant-tabs-nav:before {
+      border-bottom: 0;
+    }
+
+    .ant-tabs .ant-tabs-nav .ant-tabs-nav-wrap .ant-tabs-nav-list {
+      margin-left: 0;
+    }
+
+    .ant-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+      font-weight: bold;
+    }
+
+    .ant-tabs-tab {
+      padding: 0 0 4px 0;
+    }
+
+    .ant-tabs-tab + .ant-tabs-tab {
+      margin-left: 0;
+    }
+
+    .ant-form-item + .ant-form-item {
+      margin-bottom: 20px;
+    }
+
+    .ant-form-item:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    .ant-tabs-tab-btn:active,
+    .ant-tabs-tab-remove:active,
+    .ant-tabs-tab-btn:focus,
+    .ant-tabs-tab-remove:focus {
+      color: @color-600;
+    }
+
+    .ant-input-lg {
+      font-size: 14px;
+    }
+  }
+
+  .third-party-login {
+    margin-top: 20px;
+    text-align: center;
+
+    a {
+      color: @neutral-600;
+
+      &:hover {
+        color: @color-600;
+      }
+    }
+  }
+}
+
+.pictureContainer {
+  width: 720px;
+  max-width: 720px;
+  min-width: 0px;
+  flex-shrink: 0;
+  background-color: @color-600;
+  overflow: hidden;
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .picture {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+
+    svg {
+      color: @color-800;
+    }
+
+    .bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: @color-800;
+    }
+  }
+}
+
+.footer {
+  width: 400px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+  margin-bottom: 24px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: @neutral-500;
+}

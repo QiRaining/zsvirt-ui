@@ -1,0 +1,17 @@
+{
+  "v2v.conversion.host||action||add.v2vconversionhost": "hidden",
+  "v2v.conversion.host||action||change.cacheLocation": "hidden",
+  "v2v.conversion.host||action||delete": "hidden",
+  "v2v.conversion.host||action||disable": "hidden",
+  "v2v.conversion.host||action||edit": "hidden",
+  "v2v.conversion.host||action||enable": "hidden",
+  "v2v.conversion.host||action||set.network.outbound.band.width": "hidden",
+  "v2v.conversion.host||view||detail": "hidden",
+  "v2v.conversion.host||view||list": "hidden",
+  "v2v.migration||action||create.v2v.migration.job": "hidden",
+  "v2v.migration||action||delete": "hidden",
+  "v2v.migration||action||edit": "hidden",
+  "v2v.migration||action||restart": "hidden",
+  "v2v.migration||view||detail": "hidden",
+  "v2v.migration||view||list": "hidden"
+}

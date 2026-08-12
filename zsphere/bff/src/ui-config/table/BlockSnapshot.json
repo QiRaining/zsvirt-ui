@@ -1,0 +1,158 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "size",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "block.snapshot.name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "block.snapshot"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "block.snapshot.size",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "block.snapshot"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "block.snapshot.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "block.snapshot"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "block.snapshot.status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "block.snapshot"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "block.snapshot.createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "block.snapshot"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "recover",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "block.snapshot",
+        "authKey": "create",
+        "i18nKey": "block.snapshot.create",
+        "name": "创建",
+        "label": "创建",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "block.snapshot",
+        "authKey": "edit",
+        "i18nKey": "block.snapshot.edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "block.snapshot",
+        "authKey": "recover",
+        "i18nKey": "block.snapshot.recover",
+        "name": "恢复",
+        "label": "恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "block.snapshot",
+        "authKey": "delete",
+        "i18nKey": "block.snapshot.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

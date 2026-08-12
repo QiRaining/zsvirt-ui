@@ -1,0 +1,1139 @@
+[
+  {
+    "key": "virtualization.dashboard",
+    "menuKey": "dashboard",
+    "name": {
+      "id": "virtualization.dashboard",
+      "name": "主页"
+    },
+    "path": "/virtualization-dashboard",
+    "icon": "menu-home"
+  },
+  {
+    "key": "virtualization.wizard",
+    "menuKey": "wizard",
+    "name": {
+      "id": "virtualization.wizard",
+      "name": "向导"
+    },
+    "path": "/virtualization-wizard",
+    "icon": "wizard"
+  },
+  {
+    "key": "virtualization.resource",
+    "menuKey": "resource",
+    "name": {
+      "id": "virtualization.resource",
+      "name": "资源清单"
+    },
+    "icon": "menu-inventory",
+    "path": "/virtualization-resource",
+    "children": [
+      {
+        "key": "virtualization.cluster.host",
+        "menuKey": "cluster.host",
+        "name": {
+          "id": "virtualization.host.vm",
+          "name": "主机与虚拟机"
+        },
+        "icon": "monitor",
+        "path": "/virtualization-resource/root-node/detail?uuid=-2&leftnav=virtualization.cluster.host",
+        "children": [
+          {
+            "key": "virtualization.root.node.for.cluster.host",
+            "menuKey": "root.node",
+            "name": {
+              "id": "virtualization.root.node",
+              "name": "根节点"
+            },
+            "path": "/virtualization-resource/root-node?leftnav=virtualization.cluster.host",
+            "resourceType": [
+              "RootNode"
+            ]
+          },
+          {
+            "key": "virtualization.vm",
+            "menuKey": "vm",
+            "name": {
+              "id": "virtualization.vm",
+              "name": "虚拟机"
+            },
+            "path": "/virtualization-resource/vm?leftnav=virtualization.cluster.host",
+            "namespace": "ZStack/VM",
+            "resourceType": [
+              "VmInstanceVO"
+            ]
+          },
+          {
+            "key": "virtualization.cluster",
+            "menuKey": "cluster",
+            "name": {
+              "id": "virtualization.cluster",
+              "name": "集群"
+            },
+            "icon": "server-1",
+            "path": "/virtualization-resource/cluster?leftnav=virtualization.cluster.host",
+            "resourceType": [
+              "ClusterVO"
+            ]
+          },
+          {
+            "key": "virtualization.host",
+            "menuKey": "host",
+            "name": {
+              "id": "virtualization.host",
+              "name": "主机"
+            },
+            "icon": "disk-2",
+            "path": "/virtualization-resource/host?leftnav=virtualization.cluster.host",
+            "namespace": "ZStack/Host",
+            "resourceType": [
+              "HostEO",
+              "HostVO",
+              "XDragonHostVO",
+              "KVMHostVO"
+            ]
+          },
+          {
+            "key": "virtualization.zone",
+            "menuKey": "zone",
+            "name": {
+              "id": "virtualization.zone",
+              "name": "数据中心"
+            },
+            "icon": "building",
+            "path": "/virtualization-resource/zone?leftnav=virtualization.cluster.host",
+            "resourceType": [
+              "ZoneVO"
+            ]
+          },
+          {
+            "key": "virtual.directory",
+            "menuKey": "vm.dir.group",
+            "name": {
+              "id": "virtual.directory",
+              "name": "虚拟机分组"
+            },
+            "icon": "folder",
+            "path": "/virtualization-resource/directory?leftnav=virtualization.cluster.host",
+            "resourceType": [
+              "DirectoryVO"
+            ]
+          },
+          {
+            "key": "virtualization.vm.spec",
+            "menuKey": "vm.spec",
+            "name": {
+              "id": "vm.spec",
+              "name": "虚拟机规范"
+            },
+            "icon": "editor",
+            "path": "/virtualization-resource/vm-spec?leftnav=virtualization.cluster.host"
+          },
+          {
+            "key": "virtualization.kms.provider",
+            "menuKey": "kms.provider",
+            "name": {
+              "id": "kms.provider",
+              "name": "密钥提供程序"
+            },
+            "path": "/virtualization-resource/kms-provider?leftnav=virtualization.cluster.host"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.template.vm",
+        "menuKey": "template.vm",
+        "name": {
+          "id": "virtualization.image.storage.and.template",
+          "name": "镜像与模板"
+        },
+        "icon": "cd",
+        "path": "/virtualization-resource/root-node/detail?uuid=-2&leftnav=virtualization.template.vm",
+        "children": [
+          {
+            "key": "virtualization.root.node.for.template.vm",
+            "menuKey": "root.node",
+            "name": {
+              "id": "virtualization.root.node",
+              "name": "根节点"
+            },
+            "path": "/virtualization-resource/root-node?leftnav=virtualization.template.vm",
+            "resourceType": [
+              "RootNode"
+            ]
+          },
+          {
+            "key": "virtualization.backup.storage",
+            "menuKey": "backup.storage",
+            "name": {
+              "id": "virtualization.backup.storage",
+              "name": "镜像存储"
+            },
+            "icon": "server",
+            "path": "/virtualization-resource/backup-storage?leftnav=virtualization.template.vm",
+            "namespace": "ZStack/BackupStorage",
+            "resourceType": [
+              "BackupStorageVO",
+              "ImageStoreBackupStorageVO",
+              "SftpBackupStorageVO",
+              "CephBackupStorageVO"
+            ]
+          },
+          {
+            "key": "virtualization.image",
+            "menuKey": "image",
+            "name": {
+              "id": "virtualization.image",
+              "name": "镜像"
+            },
+            "path": "/virtualization-resource/image?leftnav=virtualization.template.vm",
+            "namespace": "ZStack/Image",
+            "resourceType": [
+              "ImageVO"
+            ]
+          },
+          {
+            "key": "virtualization.vm.template",
+            "menuKey": "vm.template",
+            "name": {
+              "id": "virtualization.vm.template",
+              "name": "虚拟机模版"
+            },
+            "icon": "file-paste",
+            "path": "/virtualization-resource/vm-template?leftnav=virtualization.template.vm",
+            "resourceType": [
+              "TemplatedVmInstanceVO"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "virtualization.data.storage",
+        "menuKey": "data.storage",
+        "name": {
+          "id": "virtualization.data.storage",
+          "name": "数据存储"
+        },
+        "icon": "storage",
+        "path": "/virtualization-resource/root-node/detail?uuid=-2&leftnav=virtualization.data.storage",
+        "children": [
+          {
+            "key": "virtualization.root.node.for.data.storage",
+            "menuKey": "root.node",
+            "name": {
+              "id": "virtualization.root.node",
+              "name": "根节点"
+            },
+            "path": "/virtualization-resource/root-node?leftnav=virtualization.data.storage",
+            "resourceType": [
+              "RootNode"
+            ]
+          },
+          {
+            "key": "virtualization.primary.storage",
+            "menuKey": "primary.storage",
+            "name": {
+              "id": "virtualization.primary-storage",
+              "name": "数据存储"
+            },
+            "path": "/virtualization-resource/primary-storage?leftnav=virtualization.data.storage",
+            "namespace": "ZStack/PrimaryStorage",
+            "resourceType": [
+              "PrimaryStorageVO",
+              "CephPrimaryStorageVO",
+              "SharedBlockGroupVO"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "virtualization.network",
+        "menuKey": "network",
+        "name": {
+          "id": "virtualization.network.resource",
+          "name": "网络资源"
+        },
+        "icon": "globe",
+        "path": "/virtualization-resource/root-node/detail?uuid=-2&leftnav=virtualization.network",
+        "children": [
+          {
+            "key": "virtualization.root.node.for.network",
+            "menuKey": "root.node",
+            "name": {
+              "id": "virtualization.root.node",
+              "name": "根节点"
+            },
+            "path": "/virtualization-resource/root-node?leftnav=virtualization.network",
+            "resourceType": [
+              "RootNode"
+            ]
+          },
+          {
+            "key": "virtualization.l2.network",
+            "menuKey": "l2.network",
+            "name": {
+              "id": "virtualization.l2.network",
+              "name": "分布式交换机"
+            },
+            "icon": "server-4",
+            "path": "/virtualization-resource/l2-network?leftnav=virtualization.network",
+            "resourceType": [
+              "L2NetworkVO",
+              "L2VlanNetworkVO",
+              "VxlanNetworkVO",
+              "L2VirtualSwitchNetworkVO"
+            ]
+          },
+          {
+            "key": "virtualization.l3.network",
+            "menuKey": "flat.network",
+            "name": {
+              "id": "virtualization.l3.network",
+              "name": "分布式端口组"
+            },
+            "icon": "d-portgroup",
+            "path": "/virtualization-resource/l3-network?leftnav=virtualization.network",
+            "namespace": "ZStack/L3Network",
+            "resourceType": [
+              "L3NetworkVO",
+              "FlatL3NetworkVO"
+            ]
+          },
+          {
+            "key": "virtualization.security.group",
+            "menuKey": "security.group",
+            "name": {
+              "id": "virtualization.security.group",
+              "name": "安全组"
+            },
+            "icon": "shield",
+            "path": "/virtualization-resource/security-group?leftnav=virtualization.network",
+            "resourceType": [
+              "SecurityGroupVO"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "virtualization.bare.metal",
+        "menuKey": "bare.metal",
+        "name": {
+          "id": "virtualization.bare.metal",
+          "name": "裸金属管理"
+        },
+        "icon": "server-2",
+        "path": "/virtualization-resource/root-node/detail?uuid=-1&leftnav=virtualization.bare.metal",
+        "children": [
+          {
+            "key": "virtualization.bm.cluster",
+            "menuKey": "baremetal.cluster",
+            "name": {
+              "id": "virtualization.bm.cluster",
+              "name": "裸金属集群"
+            },
+            "path": "/virtualization-resource/baremetal-cluster?leftnav=virtualization.bare.metal",
+            "resourceType": [
+              "BaremetalClusterVO"
+            ]
+          },
+          {
+            "key": "virtualization.bm.chassis",
+            "menuKey": "baremetal.chassis",
+            "name": {
+              "id": "virtualization.bm.chassis",
+              "name": "裸金属设备"
+            },
+            "path": "/virtualization-resource/baremetal-chassis?leftnav=virtualization.bare.metal",
+            "resourceType": [
+              "BaremetalChassisVO"
+            ]
+          },
+          {
+            "key": "virtualization.bm.instance",
+            "menuKey": "baremetal.instance",
+            "name": {
+              "id": "virtualization.bm.instance",
+              "name": "裸金属主机"
+            },
+            "path": "/virtualization-resource/baremetal-instance?leftnav=virtualization.bare.metal",
+            "resourceType": [
+              "BaremetalInstanceVO"
+            ]
+          },
+          {
+            "key": "virtualization.bm.template",
+            "menuKey": "pre.config.template",
+            "name": {
+              "id": "virtualization.custom.config.baremetal.template",
+              "name": "裸金属模版"
+            },
+            "path": "/virtualization-resource/baremetal-template?leftnav=virtualization.bare.metal",
+            "resourceType": [
+              "PreconfigurationTemplateVO"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "virtualization.reliability",
+    "menuKey": "reliability",
+    "name": {
+      "id": "virtualization.reliability.service",
+      "name": "可靠服务"
+    },
+    "icon": "menu-reliable-service",
+    "path": "/virtualization-reliability/mn-monitoring",
+    "children": [
+      {
+        "key": "virtualization.platform.reliability",
+        "menuKey": "platform.reliability",
+        "name": {
+          "id": "virtualization.platform.reliability",
+          "name": "平台可靠"
+        },
+        "icon": "server-1",
+        "children": [
+          {
+            "key": "virtualization.mn.monitoring",
+            "menuKey": "mn.monitoring",
+            "name": {
+              "id": "mn.monitoring",
+              "name": "管理节点监控"
+            },
+            "path": "/virtualization-reliability/mn-monitoring",
+            "icon": "node-2"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.business.reliability",
+        "menuKey": "business.reliability",
+        "name": {
+          "id": "virtualization.business.reliability",
+          "name": "业务可靠"
+        },
+        "icon": "default-app",
+        "children": [
+          {
+            "key": "virtualization.dynamic.resource.dispatch.strategy",
+            "menuKey": "dynamic.resource.ispatch.strategy",
+            "name": {
+              "id": "virtualization.dynamic.resource.dispatch.strategy",
+              "name": "动态资源调度策略"
+            },
+            "path": "/virtualization-reliability/dynamic-resource-dispatch-strategy",
+            "icon": "dispatch"
+          },
+          {
+            "key": "virtualization.virtualMachine.scheduling.rule",
+            "menuKey": "virtualMachine.scheduling.rule",
+            "name": {
+              "id": "virtualization.virtualMachine.scheduling.rule",
+              "name": "虚拟机调度策略"
+            },
+            "icon": "deploy",
+            "path": "/virtualization-reliability/vm-scheduling-rule",
+            "tabs": [
+              {
+                "key": "virtualization.vm.scheduling.rule",
+                "menuKey": "vm.scheduling.rule",
+                "path": "/virtualization-reliability/vm-scheduling-rule/vm-scheduling-rule",
+                "resourceType": [
+                  "AffinityGroupVO"
+                ],
+                "name": {
+                  "id": "virtualization.vm.scheduling.rule",
+                  "name": "虚拟机调度策略"
+                }
+              },
+              {
+                "key": "virtualization.vmGroup",
+                "menuKey": "vm.group",
+                "path": "/virtualization-reliability/vm-scheduling-rule/vm-group",
+                "resourceType": [
+                  "VmSchedulingRuleGroupVO"
+                ],
+                "name": {
+                  "id": "vmGroup",
+                  "name": "虚拟机调度组"
+                }
+              },
+              {
+                "key": "virtualization.hostGroup",
+                "menuKey": "host.group",
+                "path": "/virtualization-reliability/vm-scheduling-rule/host-group",
+                "resourceType": [
+                  "HostSchedulingRuleGroupVO"
+                ],
+                "name": {
+                  "id": "hostGroup",
+                  "name": "主机调度组"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.ha.strategic",
+            "menuKey": "ha.strategic",
+            "name": {
+              "id": "virtualization.ha.strategic",
+              "name": "高可用策略"
+            },
+            "path": "/virtualization-reliability/ha-strategic",
+            "icon": "hastrategic-zsv"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "virtualization.data.protection",
+    "menuKey": "data.protection",
+    "name": {
+      "id": "virtualization.data.protection",
+      "name": "数据保护"
+    },
+    "icon": "menu-data-protection",
+    "path": "/virtualization-data-protection/snapshot",
+    "children": [
+      {
+        "key": "virtualization.snapshot.management",
+        "menuKey": "snapshot.management",
+        "name": {
+          "id": "virtualization.snapshot.management",
+          "name": "快照管理"
+        },
+        "icon": "camera",
+        "children": [
+          {
+            "key": "virtualization.snapshot",
+            "menuKey": "snapshot",
+            "name": {
+              "id": "virtualization.snapshot",
+              "name": "快照"
+            },
+            "path": "/virtualization-data-protection/snapshot",
+            "icon": "camera"
+          },
+          {
+            "key": "virtualization.snapshot.strategy",
+            "menuKey": "snapshot.strategy",
+            "name": {
+              "id": "virtualization.snapshot.strategy",
+              "name": "快照策略"
+            },
+            "path": "/virtualization-data-protection/snapshot/strategy",
+            "icon": "bill"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.backup.management",
+        "menuKey": "backup.management",
+        "name": {
+          "id": "virtualization.backup.management",
+          "name": "备份管理"
+        },
+        "children": [
+          {
+            "key": "virtualization.protected.resource",
+            "menuKey": "protected.resource",
+            "name": {
+              "id": "virtualization.protected.resource.title",
+              "name": "已保护资源"
+            },
+            "path": "/virtualization-data-protection/backup-management/protected-resource",
+            "icon": "layers",
+            "tabs": [
+              {
+                "key": "virtualization.protected.resource.vm",
+                "menuKey": "zsv.backup.data",
+                "path": "/virtualization-data-protection/backup-management/protected-resource/vm",
+                "resourceType": [
+                  "ZSVBackupDataVO"
+                ],
+                "name": {
+                  "id": "virtualization.vm",
+                  "name": "虚拟机"
+                }
+              },
+              {
+                "key": "virtualization.protected.resource.database",
+                "menuKey": "local.backup.data.db",
+                "path": "/virtualization-data-protection/backup-management/protected-resource/database",
+                "resourceType": [
+                  "BackupDatabaseVO"
+                ],
+                "name": {
+                  "id": "virtualization.platform.database",
+                  "name": "平台数据库"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.backup.policy",
+            "menuKey": "backup.job",
+            "name": {
+              "id": "virtualization.backup.policy",
+              "name": "备份计划"
+            },
+            "namespace": "ZStack/Scheduler",
+            "path": "/virtualization-data-protection/backup-management/backup-policy",
+            "icon": "backup"
+          },
+          {
+            "key": "virtualization.disaster.recovery.storage",
+            "menuKey": "zsv.backup.storage",
+            "name": {
+              "id": "virtualization.disaster.recovery.storage",
+              "name": "备份存储"
+            },
+            "namespace": "ZStack/DisasterRecoveryStorage",
+            "path": "/virtualization-data-protection/backup-management/disaster-recovery-storage",
+            "icon": "slot"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "virtualization.monitoring.om",
+    "menuKey": "monitoring.om",
+    "name": {
+      "id": "virtualization.monitoring.om",
+      "name": "运维管理"
+    },
+    "icon": "menu-O&M",
+    "path": "/virtualization-monitoring-om/alarm-message",
+    "children": [
+      {
+        "key": "virtualization.alarm.center",
+        "menuKey": "alarm.center",
+        "name": {
+          "id": "virtualization.alarm.service",
+          "name": "报警服务"
+        },
+        "children": [
+          {
+            "key": "virtualization.alarm.message",
+            "menuKey": "alarm.message",
+            "name": {
+              "id": "virtualization.menu.alarm-message",
+              "name": "报警消息"
+            },
+            "path": "/virtualization-monitoring-om/alarm-message",
+            "icon": "bell",
+            "tabs": [
+              {
+                "key": "virtualization.zwatch.alarm.platform.message",
+                "menuKey": "alarm.platform.message",
+                "path": "/virtualization-monitoring-om/alarm-message/platform-alarm-message",
+                "resourceType": [
+                  "AlarmVO"
+                ],
+                "name": {
+                  "id": "platformAlarmMessage",
+                  "name": "平台报警消息"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.zwatch.alarm",
+            "menuKey": "zwatch.alarm",
+            "name": {
+              "id": "virtualization.menu.alarm",
+              "name": "报警器"
+            },
+            "path": "/virtualization-monitoring-om/zwatch-alarm",
+            "icon": "alarm",
+            "tabs": [
+              {
+                "key": "virtualization.zwatch.alarm.resource",
+                "menuKey": "zwatch.alarm.resource",
+                "path": "/virtualization-monitoring-om/zwatch-alarm/resource",
+                "resourceType": [
+                  "AlarmVO"
+                ],
+                "name": {
+                  "id": "resourceAlarm",
+                  "name": "资源报警器"
+                }
+              },
+              {
+                "key": "virtualization.zwatch.alarm.event",
+                "menuKey": "zwatch.alarm.event",
+                "path": "/virtualization-monitoring-om/zwatch-alarm/event",
+                "resourceType": [
+                  "EventSubscriptionVO"
+                ],
+                "name": {
+                  "id": "eventZwacthAlarm",
+                  "name": "事件报警器"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.monitor.template",
+            "menuKey": "monitor.template",
+            "name": {
+              "id": "virtualization.monitor.template",
+              "name": "消息模板"
+            },
+            "path": "/virtualization-monitoring-om/zwatch-sns-text-template",
+            "resourceType": [
+              "SNSTextTemplateVO"
+            ],
+            "icon": "file-text"
+          },
+          {
+            "key": "virtualization.zwatch.endpoint",
+            "menuKey": "zwatch.endpoint",
+            "name": {
+              "id": "virtualization.nofity.object",
+              "name": "通知对象"
+            },
+            "path": "/virtualization-monitoring-om/zwatch-endpoint",
+            "resourceType": [
+              "SNSApplicationEndpointVO"
+            ],
+            "icon": "mail-receive"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.task.event",
+        "menuKey": "task.event",
+        "name": {
+          "id": "virtualization.task.and.event",
+          "name": "任务事件"
+        },
+        "children": [
+          {
+            "key": "virtualization.task",
+            "menuKey": "task",
+            "name": {
+              "id": "virtualization.task",
+              "name": "任务"
+            },
+            "path": "/virtualization-monitoring-om/operation-log",
+            "icon": "history",
+            "tabs": [
+              {
+                "key": "virtualization.operation.tasks",
+                "menuKey": "operation.log",
+                "path": "/virtualization-monitoring-om/operation-log/operation-tasks",
+                "resourceType": [
+                  "operationLogVO"
+                ],
+                "name": {
+                  "id": "operation.tasks",
+                  "name": "操作任务"
+                }
+              },
+              {
+                "key": "virtualization.ha.task",
+                "menuKey": "migrate.log",
+                "path": "/virtualization-monitoring-om/operation-log/ha-tasks",
+                "resourceType": [
+                  "VMSchedHistoryVO"
+                ],
+                "name": {
+                  "id": "ha.tasks",
+                  "name": "高可用任务"
+                }
+              },
+              {
+                "key": "virtualization.scheduling.task",
+                "menuKey": "scheduling.task",
+                "path": "/virtualization-monitoring-om/operation-log/scheduling-task",
+                "resourceType": [
+                  "DRSVmMigrationActivityVO"
+                ],
+                "name": {
+                  "id": "scheduling.task",
+                  "name": "调度任务"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.auditing",
+            "menuKey": "auditing",
+            "name": {
+              "id": "virtualization.auditing",
+              "name": "事件"
+            },
+            "path": "/virtualization-monitoring-om/auditing",
+            "icon": "audit"
+          },
+          {
+            "key": "virtualization.log.collect",
+            "menuKey": "log.collect",
+            "name": {
+              "id": "log.collect",
+              "name": "日志收集"
+            },
+            "path": "/virtualization-monitoring-om/log-collect",
+            "icon": "book"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.om.center",
+        "menuKey": "om.center",
+        "name": {
+          "id": "virtualization.tag.and.attribute",
+          "name": "标签与属性"
+        },
+        "children": [
+          {
+            "key": "virtualization.tag.management",
+            "menuKey": "tag",
+            "name": {
+              "id": "virtualization.tag",
+              "name": "标签"
+            },
+            "path": "/virtualization-monitoring-om/tag-management",
+            "resourceType": [
+              "TagPatternVO"
+            ],
+            "icon": "pricetag"
+          },
+          {
+            "key": "virtualization.resource.attribute",
+            "menuKey": "resource.attribute.key",
+            "name": {
+              "id": "virtualization.resource.attribute",
+              "name": "自定义属性"
+            },
+            "path": "/virtualization-monitoring-om/resource-attribute",
+            "icon": "pricetags"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.migration.management",
+        "menuKey": "migration.management",
+        "name": {
+          "id": "virtualization.migration.management",
+          "name": "迁移管理"
+        },
+        "children": [
+          {
+            "key": "virtualization.migration.service",
+            "menuKey": "migration.service",
+            "name": {
+              "id": "virtualization.migration.service",
+              "name": "迁移服务"
+            },
+            "path": "/virtualization-monitoring-om/migration-service",
+            "resourceType": [
+              "MigrationServiceVO",
+              "GatewayVmInstanceVO"
+            ],
+            "icon": "dispatch"
+          },
+          {
+            "key": "virtualization.zmigrate.resource",
+            "menuKey": "zmigrate.resource",
+            "name": {
+              "id": "virtualization.zmigrate.resource",
+              "name": "迁移资源"
+            },
+            "path": "/zmigrate/migrate-resource",
+            "icon": "migration-service"
+          },
+          {
+            "key": "virtualization.zmigrate.task",
+            "menuKey": "zmigrate.task",
+            "name": {
+              "id": "virtualization.zmigrate.task",
+              "name": "迁移任务"
+            },
+            "path": "/zmigrate/migrate-task",
+            "icon": "migration-resource"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.automation.om",
+        "menuKey": "automation.om",
+        "name": {
+          "id": "virtualization.automation.om",
+          "name": "自动化运维"
+        },
+        "children": [
+          {
+            "key": "virtualization.script.library",
+            "menuKey": "script.library",
+            "name": {
+              "id": "virtualization.script.library",
+              "name": "脚本库"
+            },
+            "path": "/virtualization-monitoring-om/script-library",
+            "icon": "file-code"
+          },
+          {
+            "key": "virtualization.xml.hook",
+            "menuKey": "xml.hook",
+            "name": {
+              "id": "virtualization.xml.hook",
+              "name": "XML Hook"
+            },
+            "path": "/virtualization-monitoring-om/xml-hook",
+            "resourceType": [
+              "XmlHook"
+            ],
+            "icon": "xml-hook"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "virtualization.administration",
+    "menuKey": "administration",
+    "name": {
+      "id": "virtualization.administration",
+      "name": "系统管理"
+    },
+    "icon": "menu-system-settings",
+    "path": "/virtualization-administration",
+    "children": [
+      {
+        "key": "virtualization.identity.and.accessManagement",
+        "menuKey": "identity.and.accessManagement",
+        "name": {
+          "id": "virtualization.identity.and.accessManagement",
+          "name": "身份与访问管理"
+        },
+        "icon": "application-center",
+        "visible": true,
+        "children": [
+          {
+            "key": "virtualization.user.management",
+            "menuKey": "user.management",
+            "name": {
+              "id": "virtualization.user.management",
+              "name": "用户管理"
+            },
+            "path": "/virtualization-administration/account-information",
+            "icon": "person-circle",
+            "tabs": [
+              {
+                "key": "virtualization.user",
+                "menuKey": "account.information",
+                "path": "/virtualization-administration/account-information/user",
+                "resourceType": [
+                  "AccountVO"
+                ],
+                "name": {
+                  "id": "virtualization.user",
+                  "name": "用户"
+                }
+              },
+              {
+                "key": "virtualization.userGroup",
+                "menuKey": "zsv.user.group",
+                "path": "/virtualization-administration/account-information/user-group",
+                "resourceType": [
+                  "AccountGroupVO"
+                ],
+                "name": {
+                  "id": "virtualization.userGroup",
+                  "name": "用户组"
+                }
+              }
+            ]
+          },
+          {
+            "key": "virtualization.role",
+            "menuKey": "zsv.role",
+            "name": {
+              "id": "virtualization.role",
+              "name": "角色"
+            },
+            "resourceType": [
+              "RoleVO"
+            ],
+            "path": "/virtualization-administration/role",
+            "icon": "authority"
+          },
+          {
+            "key": "virtualization.account.third.party.auth",
+            "menuKey": "account.third.party.auth",
+            "name": {
+              "id": "virtualization.account.third.party.auth",
+              "name": "第三方认证"
+            },
+            "path": "/virtualization-administration/account-third-party-auth",
+            "icon": "bookmark"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.security.setting",
+        "menuKey": "security.setting",
+        "name": {
+          "id": "virtualization.platform.security",
+          "name": "平台安全"
+        },
+        "icon": "application-center",
+        "visible": false,
+        "children": [
+          {
+            "key": "virtualization.ip-blocklist.allowlist",
+            "menuKey": "access.control.rule",
+            "name": {
+              "id": "virtualization.ip-blocklist.allowlist",
+              "name": "IP 黑白名单"
+            },
+            "path": "/virtualization-administration/access-control-rule",
+            "icon": "file-ban"
+          },
+          {
+            "key": "virtualization.certificate.management",
+            "menuKey": "https.certificate",
+            "name": {
+              "id": "virtualization.certificate.management",
+              "name": "证书管理"
+            },
+            "path": "/virtualization-administration/certificate-management",
+            "icon": "certificate"
+          },
+          {
+            "key": "virtualization.login.policy",
+            "menuKey": "login.policy",
+            "name": {
+              "id": "virtualization.login.policy",
+              "name": "安全设置"
+            },
+            "path": "/virtualization-administration/login-policy",
+            "icon": "file-login"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.system.setting",
+        "menuKey": "system.setting",
+        "name": {
+          "id": "virtualization.platform.setting",
+          "name": "平台设置"
+        },
+        "icon": "application-center",
+        "visible": false,
+        "children": [
+          {
+            "key": "virtualization.accesskey.management",
+            "menuKey": "accesskey.management.local",
+            "name": {
+              "id": "virtualization.accesskey.management",
+              "name": "AccessKey 管理"
+            },
+            "path": "/virtualization-administration/accesskey-management",
+            "icon": "key"
+          },
+          {
+            "key": "virtualization.console.proxy",
+            "menuKey": "console.proxy",
+            "name": {
+              "id": "virtualization.console.proxy",
+              "name": "控制台代理"
+            },
+            "path": "/virtualization-administration/console-proxy",
+            "icon": "console-2"
+          },
+          {
+            "key": "virtualization.snmp.management",
+            "menuKey": "snmp",
+            "name": {
+              "id": "virtualization.snmp.management",
+              "name": "SNMP管理"
+            },
+            "path": "/virtualization-administration/snmp-management",
+            "icon": "snmp"
+          },
+          {
+            "key": "virtualization.time.server",
+            "menuKey": "time.server",
+            "name": {
+              "id": "virtualization.time.server",
+              "name": "时间管理"
+            },
+            "path": "/virtualization-administration/time-server",
+            "icon": "clock"
+          },
+          {
+            "key": "virtualization.log.server",
+            "menuKey": "log.server",
+            "name": {
+              "id": "virtualization.log.server",
+              "name": "日志服务器"
+            },
+            "path": "/virtualization-administration/log-server",
+            "icon": "printer"
+          },
+          {
+            "key": "virtualization.telemetry",
+            "menuKey": "telemetry",
+            "name": {
+              "id": "virtualization.telemetry",
+              "name": "体验升级计划"
+            },
+            "path": "/virtualization-administration/telemetry",
+            "icon": "analysis"
+          },
+          {
+            "key": "virtualization.email.server",
+            "menuKey": "email.server",
+            "name": {
+              "id": "virtualization.email.server",
+              "name": "邮箱服务器"
+            },
+            "path": "/virtualization-administration/email-server",
+            "icon": "email"
+          },
+          {
+            "key": "virtualization.system.parameter",
+            "menuKey": "system.parameter",
+            "name": {
+              "id": "virtualization.system.parameter",
+              "name": "系统参数"
+            },
+            "path": "/virtualization-administration/system-parameter",
+            "icon": "options"
+          }
+        ]
+      },
+      {
+        "key": "virtualization.menu.license.management",
+        "menuKey": "menu.license.management",
+        "name": {
+          "id": "virtualization.menu.license.management",
+          "name": "许可管理"
+        },
+        "icon": "application-center",
+        "visible": false,
+        "children": [
+          {
+            "key": "virtualization.license.management",
+            "menuKey": "license.management",
+            "name": {
+              "id": "virtualization.menu.license",
+              "name": "许可证"
+            },
+            "namespace": "ZStack/License",
+            "path": "/virtualization-administration/license-management",
+            "icon": "award"
+          }
+        ]
+      }
+    ]
+  }
+]

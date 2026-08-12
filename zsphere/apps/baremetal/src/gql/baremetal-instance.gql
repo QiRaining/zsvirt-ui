@@ -1,0 +1,138 @@
+fragment baremetalInstanceFields on BaremetalInstance {
+  name
+  description
+  uuid
+  state
+  status
+  platform
+  chassisUuid
+  cluster {
+    uuid
+    name
+  }
+  managementIp
+  port
+  hardwareInfo {
+    cpuNum
+    cpuModel
+    memory
+  }
+  tag {
+    ownerUuid
+    name
+    uuid
+    color
+  }
+  owner {
+    uuid
+    name
+  }
+  image {
+    uuid
+    name
+  }
+  baremetalPxeServer {
+    uuid
+    attachedClusterUuids
+  }
+  baremetalChassis {
+    name
+    uuid
+  }
+  zone {
+    uuid
+    name
+  }
+  createDate
+}
+
+query baremetalInstanceList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalInstanceList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      ...baremetalInstanceFields
+    }
+    total
+  }
+}
+
+query baremetalInstance($uuid: String!) {
+  baremetalInstance(uuid: $uuid) {
+    ...baremetalInstanceFields
+  }
+}
+
+query baremetalDiskList($conditions: [Condition!], $start: Int, $limit: Int) {
+  baremetalDiskList(conditions: $conditions, start: $start, limit: $limit, replyWithCount: true) {
+    list {
+      name
+      size
+    }
+    total
+  }
+}
+
+query baremetalInstanceCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: String
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  baremetalInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+query baremetalNicList($conditions: [Condition!], $start: Int, $limit: Int) {
+  baremetalNicList(conditions: $conditions, start: $start, limit: $limit, replyWithCount: true) {
+    list {
+      uuid
+      ip
+      mac
+      netmask
+      pxe
+      gateway
+      l3Network {
+        name
+        uuid
+        networkType
+      }
+      createDate
+    }
+    total
+  }
+}
+
+query getBaremetalInstanceConfigSummary($uuid: String!, $chassisUuid: String!) {
+  getBaremetalInstanceConfigSummary(uuid: $uuid, chassisUuid: $chassisUuid) {
+    disk
+    nic
+  }
+}

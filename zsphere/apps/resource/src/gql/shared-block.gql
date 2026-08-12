@@ -1,0 +1,97 @@
+fragment actionErrorFields on ActionError {
+  code
+  description
+  details
+}
+
+fragment actionSendRespFields on ActionSendResp {
+  success
+  error
+}
+
+fragment sharedBlockFields on SharedBlock {
+  uuid
+  description
+  diskUuid
+  name
+  sharedBlockGroupUuid
+  type
+  state
+  status
+  source
+  createDate
+  lastOpDate
+  sharedBlockCapacity {
+    availableCapacity
+    totalCapacity
+  }
+  primaryStorageCapacity {
+    primaryStorageUuids
+    reservedPhysicalCapacity
+  }
+}
+
+fragment candidateSharedBlockFields on CandidateSharedBlock {
+  uuid
+  name
+  wwid
+  wwn
+  vendor
+  hctl
+  model
+  serial
+  type
+  path
+  state
+  size
+  source
+  createDate
+  lastOpDate
+}
+
+query sharedBlockList(
+  $start: Int
+  $limit: Int
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  sharedBlockList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+    list {
+      ...sharedBlockFields
+    }
+  }
+}
+
+query candidateSharedBlockList($start: Int, $limit: Int, $conditions: [Condition!]) {
+  candidateSharedBlockList(start: $start, limit: $limit, conditions: $conditions) {
+    total
+    list {
+      ...candidateSharedBlockFields
+      source
+      transport
+    }
+  }
+}
+
+# mutation refreshSharedblockDeviceCapacity ($input: RefreshSharedblockDeviceCapacityInput!) {
+#   refreshSharedblockDeviceCapacity (input: $input){
+#     success
+#   }
+# }
+
+# mutation addSharedBlockToSharedBlockGroup ($input: AddSharedBlockToSharedBlockGroupInput!) {
+#   addSharedBlockToSharedBlockGroup (input: $input){
+#     success
+#   }
+# }

@@ -1,0 +1,1272 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "size",
+          "actualSize",
+          "primary-storage",
+          "state",
+          "status",
+          "backupTaskType",
+          "backup.status",
+          "vm-instance",
+          "isShareable",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "size",
+          "primary-storage",
+          "vm-instance",
+          "isShareable",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "size",
+          "actualSize",
+          "primary-storage",
+          "state",
+          "status",
+          "isShareable",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "size",
+          "primary-storage",
+          "state",
+          "status",
+          "vm-instance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account",
+        "keys": [
+          "name",
+          "size",
+          "vm-instance",
+          "isShareable",
+          "installPath",
+          "lastOpDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary-storage",
+        "keys": [
+          "name",
+          "size",
+          "actualSize",
+          "vm-instance",
+          "isShareable",
+          "installPath",
+          "uuid",
+          "lastOpDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle",
+        "keys": [
+          "name",
+          "size",
+          "actualSize",
+          "isShareable",
+          "zone",
+          "installPath",
+          "uuid",
+          "lastOpDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "backupDataCount",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "backupDataCount",
+            "defaultMessage": "Backups"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "tag",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "tag",
+            "defaultMessage": "Tag"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "actualSize",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.occupation",
+            "defaultMessage": "Storage Usage"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "primary-storage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "primary.storage",
+            "defaultMessage": "Data Storage"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "backupTaskType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backupTaskType",
+            "defaultMessage": "Backup Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "backup.status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.state",
+            "defaultMessage": "Backup State"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "vm-instance",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "isShareable",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "share.volume",
+            "defaultMessage": "Shared Disk"
+          },
+          "queryType": "multipleFilter",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "backup.task.status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "backup.task.status",
+            "defaultMessage": "Backup Job State"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "zone",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "zone",
+            "defaultMessage": "Data Center"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "lastDetachTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "lastDetachTime",
+            "defaultMessage": "Detach Time"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "installPath",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "installPath",
+            "defaultMessage": "Installation Path"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "volume"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "lastOpDate",
+            "defaultMessage": "Last Operation Time"
+          },
+          "queryType": "",
+          "resource": "volume"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.notinstantiated/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "volume.attach",
+          "tag",
+          "attach.tag",
+          "detach.tag",
+          "volume.set.qos",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.notinstantiated/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "volume.attach",
+          "tag",
+          "attach.tag",
+          "detach.tag",
+          "volume.set.qos",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.notinstantiated/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "volume.attach",
+          "tag",
+          "attach.tag",
+          "detach.tag",
+          "volume.set.qos",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.recycle/header",
+        "extraKeys": [
+          "edit",
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main.recycle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main.recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "volume.attach",
+          "volume.detach",
+          "migrate",
+          "volume.migrate",
+          "volume.storage.migrate",
+          "change.owner",
+          "resize.data.volume",
+          "tag",
+          "attach.tag",
+          "detach.tag",
+          "backup",
+          "create.backup.volume",
+          "volume.bind.backup.task",
+          "volume.create.image",
+          "volume.create.snapshot",
+          "volume.set.qos",
+          "volume.flatten",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "volume.attach",
+          "volume.detach",
+          "migrate",
+          "volume.migrate",
+          "volume.storage.migrate",
+          "change.owner",
+          "resize.data.volume",
+          "tag",
+          "attach.tag",
+          "detach.tag",
+          "backup",
+          "create.backup.volume",
+          "volume.bind.backup.task",
+          "volume.create.image",
+          "volume.create.snapshot",
+          "volume.set.qos",
+          "volume.flatten",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.volume",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "volume.attach",
+          "change.owner",
+          "tag",
+          "attach.tag",
+          "backup",
+          "volume.bind.backup.task",
+          "volume.set.qos",
+          "delete"
+        ]
+      },
+      {
+        "view": "recycle/header",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ],
+        "activeKeys": [
+          "edit"
+        ]
+      },
+      {
+        "view": "recycle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "recycle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.account/row",
+        "activeKeys": [
+          "create.volume",
+          "enable",
+          "disable",
+          "volume.attach",
+          "volume.detach",
+          "volume.migrate",
+          "volume.storage.migrate",
+          "change.owner",
+          "resize.data.volume"
+        ]
+      },
+      {
+        "view": "sub.account/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "volume.attach",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.backup.job/row",
+        "activeKeys": [
+          "backup.job.detach.volume",
+          "backup.task.enable",
+          "backup.task.disable"
+        ]
+      },
+      {
+        "view": "sub.backup.job/toolbar",
+        "extraKeys": [
+          "backup.job.attach.volume",
+          "backup.job.detach.volume",
+          "backup.task.enable",
+          "backup.task.disable"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance/row",
+        "activeKeys": [
+          "baremetal2Instance.detach.volume",
+          "resize.baremetal2.instance.data.volume",
+          "volume.create.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.instance/toolbar",
+        "extraKeys": [
+          "baremetal2Instance.create.volume"
+        ],
+        "activeKeys": [
+          "baremetal2Instance.attach.volume",
+          "baremetal2Instance.detach.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.primary-storage/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "volume.attach",
+          "volume.detach",
+          "volume.storage.migrate",
+          "resize.data.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.primary-storage/toolbar",
+        "extraKeys": [
+          "create.volume"
+        ],
+        "activeKeys": [
+          "enable",
+          "disable",
+          "volume.attach",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.project/row",
+        "activeKeys": [
+          "create.volume",
+          "enable",
+          "disable",
+          "volume.attach",
+          "volume.detach",
+          "volume.migrate",
+          "volume.storage.migrate",
+          "change.owner",
+          "resize.data.volume"
+        ]
+      },
+      {
+        "view": "sub.project/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "volume.attach",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.tag/row",
+        "activeKeys": [
+          "detach.resource.tag"
+        ]
+      },
+      {
+        "view": "sub.tag/toolbar",
+        "extraKeys": [
+          "detach.resource.tag"
+        ]
+      },
+      {
+        "view": "sub.vCenter/row",
+        "activeKeys": [
+          "create.volume",
+          "volume.attach",
+          "volume.detach",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vCenter/toolbar",
+        "activeKeys": [
+          "create.volume",
+          "volume.attach",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account/row",
+        "activeKeys": [
+          "move.to.recycle.bin"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account/toolbar",
+        "extraKeys": [
+          "move.to.recycle.bin"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary-storage/row",
+        "activeKeys": [
+          "move.to.recycle.bin"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary-storage/toolbar",
+        "extraKeys": [
+          "move.to.recycle.bin"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.vm-instance.detached/row",
+        "activeKeys": [
+          "detached.volume.attach.vm"
+        ]
+      },
+      {
+        "view": "sub.vm-instance.detached/toolbar",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vm-instance/row",
+        "activeKeys": [
+          "vm.detach.volume",
+          "resize.data.volume",
+          "volume.create.image",
+          "set.root.volume",
+          "volume.set.qos",
+          "volume.flatten",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vm-instance/toolbar",
+        "extraKeys": [
+          "vm.create.volume"
+        ],
+        "activeKeys": [
+          "vm.attach.volume",
+          "vm.detach.volume",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volume.tag/row",
+        "activeKeys": [
+          "detach.resource.tag"
+        ]
+      },
+      {
+        "view": "sub.volume.tag/toolbar",
+        "extraKeys": [
+          "attach.resource.tag",
+          "detach.resource.tag"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "extraKeys": [
+          "create.volume"
+        ],
+        "activeKeys": [
+          "volume.attach",
+          "volume.detach",
+          "resize.data.volume",
+          "volume.create.image",
+          "volume.set.qos"
+        ]
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "volume",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.volume",
+        "resource": "volume",
+        "authKey": "create.volume",
+        "i18nKey": "create.volume",
+        "name": "创建云盘",
+        "label": "创建云盘",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.create.volume",
+        "resource": "volume",
+        "authKey": "vm.create.volume",
+        "i18nKey": "create.volume",
+        "name": "创建云盘",
+        "label": "创建云盘",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "baremetal2Instance.create.volume",
+        "resource": "volume",
+        "authKey": "baremetal2Instance.create.volume",
+        "i18nKey": "create.volume",
+        "name": "创建云盘",
+        "label": "创建云盘",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "volume",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "volume",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.attach.volume",
+        "resource": "volume",
+        "authKey": "vm.attach.volume",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "vm.detach.volume",
+        "resource": "volume",
+        "authKey": "vm.detach.volume",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "baremetal2Instance.attach.volume",
+        "resource": "volume",
+        "authKey": "baremetal2Instance.attach.volume",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "baremetal2Instance.detach.volume",
+        "resource": "volume",
+        "authKey": "baremetal2Instance.detach.volume",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "volume.attach",
+        "resource": "volume",
+        "authKey": "volume.attach",
+        "i18nKey": "attach.instance",
+        "name": "加载实例",
+        "label": "加载实例",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "volume.detach",
+        "resource": "volume",
+        "authKey": "volume.detach",
+        "i18nKey": "detach.instance",
+        "name": "卸载实例",
+        "label": "卸载实例",
+        "icon": "",
+        "dividerKey": "volume.detach-divider"
+      },
+      {
+        "key": "migrate",
+        "resource": "volume",
+        "authKey": "migrate",
+        "i18nKey": "migrate",
+        "name": "迁移",
+        "label": "迁移",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "volume.migrate",
+            "resource": "volume",
+            "authKey": "volume.migrate",
+            "i18nKey": "volume.migrate.change.host",
+            "name": "更改物理机",
+            "label": "更改物理机",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "volume.storage.migrate",
+            "resource": "volume",
+            "authKey": "volume.storage.migrate",
+            "i18nKey": "volume.migrate.change.primaryStorage",
+            "name": "更改主存储",
+            "label": "更改主存储",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "change.owner",
+        "resource": "volume",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "resize.data.volume",
+        "resource": "volume",
+        "authKey": "resize.data.volume",
+        "i18nKey": "resize.volume",
+        "name": "云盘扩容",
+        "label": "云盘扩容",
+        "icon": "",
+        "dividerKey": "resize.data.volume-divider"
+      },
+      {
+        "key": "resize.baremetal2.instance.data.volume",
+        "resource": "volume",
+        "authKey": "resize.baremetal2.instance.data.volume",
+        "i18nKey": "resize.volume",
+        "name": "云盘扩容",
+        "label": "云盘扩容",
+        "icon": "",
+        "dividerKey": "resize.baremetal2.instance.data.volume-divider"
+      },
+      {
+        "key": "tag",
+        "resource": "volume",
+        "authKey": "tag",
+        "i18nKey": "tag",
+        "name": "标签",
+        "label": "标签",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "attach.tag",
+            "resource": "volume",
+            "authKey": "attach.tag",
+            "i18nKey": "bind.tag",
+            "name": "绑定标签",
+            "label": "绑定标签",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "detach.tag",
+            "resource": "volume",
+            "authKey": "detach.tag",
+            "i18nKey": "unbind.tag",
+            "name": "解绑标签",
+            "label": "解绑标签",
+            "icon": "",
+            "dividerKey": 0
+          }
+        ]
+      },
+      {
+        "key": "backup",
+        "resource": "volume",
+        "authKey": "backup",
+        "i18nKey": "backup",
+        "name": "备份",
+        "label": "备份",
+        "icon": "",
+        "dividerKey": 0,
+        "hasChildren": 2,
+        "children": [
+          {
+            "key": "create.backup.volume",
+            "resource": "volume",
+            "authKey": "create.backup.volume",
+            "i18nKey": "create.volumeBackup",
+            "name": "创建备份",
+            "label": "创建备份",
+            "icon": "",
+            "dividerKey": 0
+          },
+          {
+            "key": "volume.bind.backup.task",
+            "resource": "volume",
+            "authKey": "volume.bind.backup.task",
+            "i18nKey": "bind.backup.task",
+            "name": "绑定备份任务",
+            "label": "绑定备份任务",
+            "icon": "",
+            "dividerKey": "volume.bind.backup.task-divider"
+          }
+        ]
+      },
+      {
+        "key": "volume.create.image",
+        "resource": "volume",
+        "authKey": "volume.create.image",
+        "i18nKey": "create.volumeImage",
+        "name": "创建云盘镜像",
+        "label": "创建云盘镜像",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "volume.create.snapshot",
+        "resource": "volume",
+        "authKey": "volume.create.snapshot",
+        "i18nKey": "create.volumeSnapshot",
+        "name": "创建云盘快照",
+        "label": "创建云盘快照",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.root.volume",
+        "resource": "volume",
+        "authKey": "set.root.volume",
+        "i18nKey": "set.root.volume",
+        "name": "设置为根云盘",
+        "label": "设置为根云盘",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "volume.set.qos",
+        "resource": "volume",
+        "authKey": "volume.set.qos",
+        "i18nKey": "set.volumeQos",
+        "name": "设置云盘QoS",
+        "label": "设置云盘QoS",
+        "icon": "",
+        "dividerKey": "volume.set.qos-divider"
+      },
+      {
+        "key": "volume.flatten",
+        "resource": "volume",
+        "authKey": "volume.flatten",
+        "i18nKey": "volume.flatten",
+        "name": "扁平合并",
+        "label": "扁平合并",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "volume",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "move.to.recycle.bin",
+        "resource": "volume",
+        "authKey": "move.to.recycle.bin",
+        "i18nKey": "move.to.recycle.bin",
+        "name": "移至回收站",
+        "label": "移至回收站",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "volume",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "undo",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "volume",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.resource.tag",
+        "resource": "volume",
+        "authKey": "attach.resource.tag",
+        "i18nKey": "bind",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.resource.tag",
+        "resource": "volume",
+        "authKey": "detach.resource.tag",
+        "i18nKey": "unbind",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.job.attach.volume",
+        "resource": "volume",
+        "authKey": "backup.job.attach.volume",
+        "i18nKey": "bind",
+        "name": "绑定",
+        "label": "绑定",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.job.detach.volume",
+        "resource": "volume",
+        "authKey": "backup.job.detach.volume",
+        "i18nKey": "unbind",
+        "name": "解绑",
+        "label": "解绑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detached.volume.attach.vm",
+        "resource": "volume",
+        "authKey": "detached.volume.attach.vm",
+        "i18nKey": "attach.to.current.vm",
+        "name": "加载到当前云主机",
+        "label": "加载到当前云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.task.enable",
+        "resource": "volume",
+        "authKey": "backup.task.enable",
+        "i18nKey": "backup.task.enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.task.disable",
+        "resource": "volume",
+        "authKey": "backup.task.disable",
+        "i18nKey": "backup.task.disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

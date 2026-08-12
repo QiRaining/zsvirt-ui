@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "printWidth": 80,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "insertFinalNewline": true,
+  "objectWrap": "preserve",
+  "quoteProps": "as-needed",
+  "sortPackageJson": true,
+  "sortTailwindcss": {
+    "enabled": true,
+    "functions": ["cn", "cva", "clsx"]
+  },
+  "sortImports": { "enabled": true },
+  "ignorePatterns": [
+    ".agents/**",
+    ".claude/**",
+    ".codex/**",
+    ".nx/**",
+    "pnpm-lock.yaml",
+    "package-lock.json",
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/lint_report/**",
+    "**/*.tsbuildinfo",
+    "**/*.html",
+    "**/public/mockServiceWorker.js",
+    "**/src/api/generated/**",
+    "**/src/api/zstack/**",
+    "**/src/generated/**",
+    "zsphere/bff/**",
+    "zsphere/apps/novnc/src/pages/vmwarevnc/utils/jquery.js"
+  ],
+  "overrides": [
+    {
+      "files": ["**/bff/**"],
+      "options": {
+        "arrowParens": "avoid",
+        "printWidth": 100,
+        "semi": false,
+        "singleQuote": true,
+        "sortPackageJson": false,
+        "sortImports": { "enabled": false },
+        "sortTailwindcss": { "enabled": false },
+        "trailingComma": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../node_modules/oxfmt/configuration_schema.json",
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "ignorePatterns": [
+    "src/api/zstack/**/*",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "coverage-e2e/**",
+    "lint_report/**",
+    "jest_html_reporters.html",
+    "pnpm-lock.yaml"
+  ],
+  "insertFinalNewline": true,
+  "objectWrap": "preserve",
+  "printWidth": 100,
+  "quoteProps": "as-needed",
+  "semi": false,
+  "singleQuote": true,
+  "sortImports": { "enabled": false },
+  "sortPackageJson": false,
+  "sortTailwindcss": { "enabled": false },
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false
+}

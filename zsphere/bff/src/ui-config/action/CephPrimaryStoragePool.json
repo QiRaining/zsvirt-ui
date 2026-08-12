@@ -1,0 +1,369 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": [
+          "poolName",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.alarm",
+        "keys": [
+          "poolName",
+          "primaryStorage",
+          "virtualCapacityAllocationRatio",
+          "capacityUtilization",
+          "securityPolicy",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "poolName",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "capacityUtilization",
+          "usedCapacity",
+          "availableCapacity",
+          "securityPolicy",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "poolName",
+          "primaryStorage",
+          "virtualCapacityAllocationRatio",
+          "capacityUtilization",
+          "securityPolicy",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.primary.storage",
+        "keys": [
+          "poolName",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "capacityUtilization",
+          "securityPolicy",
+          "type",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage",
+        "keys": [
+          "poolName",
+          "aliasName",
+          "virtualCapacityAllocationRatio",
+          "capacityUtilization",
+          "securityPolicy",
+          "type",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "poolName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "primaryStorage",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "primaryStorage",
+            "defaultMessage": "Data Storage"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "aliasName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "displayName",
+            "defaultMessage": "Display Name"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "virtualCapacityAllocationRatio",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualCapacityAllocationRatio",
+            "defaultMessage": "Virtual Capacity Allocation Rate"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "capacityUtilization",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacityUtilization",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "usedCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "usedCapacity",
+            "defaultMessage": "Capacity Used"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "availableCapacity",
+            "defaultMessage": "Physical Available"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "securityPolicy",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "securityPolicy",
+            "defaultMessage": "Data Security Type"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ceph.primary.storage.pool"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "ceph.primary.storage.pool"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.in.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.in.alarm",
+          "detach.in.alarm"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/row",
+        "activeKeys": [
+          "set.displayName",
+          "delete.dataVolumePool"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/toolbar",
+        "extraKeys": [
+          "add.pool",
+          "delete.dataVolumePool"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/row",
+        "activeKeys": [
+          "set.displayName",
+          "virtualization.delete.pool"
+        ]
+      },
+      {
+        "view": "sub.virtualization.primary.storage/toolbar",
+        "extraKeys": [
+          "virtualization.add.storagePool",
+          "virtualization.delete.pool"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.add.storagePool",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "virtualization.add.storagePool",
+        "i18nKey": "virtualization.add.storagePool",
+        "name": "添加存储池",
+        "label": "添加存储池",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.pool",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "add.pool",
+        "i18nKey": "add.storagePool",
+        "name": "添加存储池",
+        "label": "添加存储池",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.displayName",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "set.displayName",
+        "i18nKey": "set.displayName",
+        "name": "设置显示名",
+        "label": "设置显示名",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.dataVolumePool",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "delete.dataVolumePool",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete.pool",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "virtualization.delete.pool",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.in.alarm",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "attach.in.alarm",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.alarm",
+        "resource": "ceph.primary.storage.pool",
+        "authKey": "detach.in.alarm",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

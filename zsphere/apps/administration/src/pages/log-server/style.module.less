@@ -1,0 +1,49 @@
+@import "../../theme.less";
+
+.container {
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  height: calc(100% - 73px);
+  position: relative;
+  .body-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .main {
+      padding: 20px 24px;
+      flex: 1;
+      overflow: auto;
+      :global {
+        .active-row {
+          background-color: var(--neutral-100);
+          .ant-table-cell {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+    .detail-drawer {
+      width: auto !important;
+      :global {
+        .ant-drawer-mask {
+          display: none !important;
+        }
+        .ant-drawer-content-wrapper {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+}
+
+.cloumn-name {
+  cursor: pointer;
+  color: var(--color-600) !important;
+  &:hover,
+  &:focus {
+    color: var(--color-500);
+  }
+}

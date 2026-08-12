@@ -1,0 +1,121 @@
+query getVirtualizationZoneRelatedSummary($uuid: String!) {
+  getVirtualizationZoneRelatedSummary(uuid: $uuid) {
+    virInstanceCount
+    virPrimaryStorageCount
+    virClusterCount
+    virHostCount
+    virImageStoreCount
+    virL2NetworkCount
+    virL3NetworkCount
+  }
+}
+
+fragment zoneFields on Zone {
+  uuid
+  name
+  description
+  state
+  isDefault
+  createDate
+  lastOpDate
+}
+
+fragment errorFields on ActionError {
+  code
+}
+
+query zone($uuid: String!) {
+  zone(uuid: $uuid) {
+    clusterCount
+    hostCount
+    primaryStorageCount
+    l2NetworkCount
+    vmInstanceCount
+    volumeCount
+    backupStorageCount
+    ...zoneFields
+  }
+}
+
+query zoneRelatedSummary($uuid: String!) {
+  zoneRelatedSummary(uuid: $uuid) {
+    clusterTotal
+    l2NetworkTotal
+    primaryStorageTotal
+    backupStorageTotal
+    baremetalClusterTotal
+    baremetal2ClusterTotal
+  }
+}
+
+query zoneList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  zoneList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      clusterCount
+      hostCount
+      primaryStorageCount
+      l2NetworkCount
+      vmInstanceCount
+      volumeCount
+      backupStorageCount
+      ...zoneFields
+    }
+  }
+}
+
+mutation createZone($input: CreateZoneInput!) {
+  createZone(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteZone($input: DeleteZoneInput!) {
+  deleteZone(input: $input) {
+    actionId
+  }
+}
+
+mutation changeZoneState($input: ChangeZoneStateInput!) {
+  changeZoneState(input: $input) {
+    actionId
+  }
+}
+
+mutation updateZone($input: UpdateZoneInput!) {
+  updateZone(input: $input) {
+    actionId
+  }
+}
+mutation attachBackupStorageToZone($input: AttachBackupStorageToZoneInput!) {
+  attachBackupStorageToZone(input: $input) {
+    actionId
+  }
+}
+
+mutation detachBackupStorageFromZone($input: DetachBackupStorageFromZoneInput!) {
+  detachBackupStorageFromZone(input: $input) {
+    actionId
+  }
+}
+
+mutation validatePassword($input: ValidatePasswordInput!) {
+  validatePassword(input: $input) {
+    actionId
+  }
+}

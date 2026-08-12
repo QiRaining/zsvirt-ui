@@ -1,0 +1,103 @@
+@import "../../../theme.module.less";
+
+.width-80 {
+  width: 80px;
+}
+
+.width-160 {
+  width: 160px;
+}
+
+.width-240 {
+  width: 240px;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 24px;
+}
+
+.colorSwatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #d9d9d9;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.colorPickerWrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+.colorPickerTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.2s;
+  &:hover {
+    border-color: #4096ff;
+  }
+}
+.colorPreview {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.colorHex {
+  font-size: 13px;
+  color: #595959;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.colorArrow {
+  font-size: 12px;
+  color: #8c8c8c;
+  transition: transform 0.2s;
+}
+.colorArrowOpen {
+  transform: rotate(180deg);
+}
+.colorPickerPanel {
+  margin-top: 4px;
+}
+
+.steps {
+  display: none !important;
+}
+
+.modal {
+  :global {
+    .zstack-table-list {
+      .zstack-table {
+        .ant-table {
+          .ant-table-content {
+            height: 320px !important;
+            overflow-y: auto !important;
+          }
+        }
+      }
+    }
+  }
+}

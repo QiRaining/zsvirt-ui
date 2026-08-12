@@ -1,0 +1,39 @@
+.zoneSelectWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: -8px;
+
+  .zoneSelect {
+    max-width: 480px;
+  }
+
+  .zoneSelectDropdown {
+    right: 0 !important;
+    left: auto !important;
+    max-width: 480px;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .zoneIcon {
+      font-size: 16px;
+    }
+  }
+
+  :global {
+    .ant-select-selector {
+      padding-left: 3px !important;
+    }
+
+    .ant-select-arrow {
+      right: 8px !important;
+    }
+
+    .ant-select-item-option-state {
+      margin-left: 6px;
+    }
+  }
+}

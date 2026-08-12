@@ -1,0 +1,222 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "footer",
+        "keys": [
+          "messageContent",
+          "alertLevel",
+          "confirmState",
+          "dataSource",
+          "alertTime"
+        ]
+      },
+      {
+        "view": "main",
+        "keys": [
+          "messageContent",
+          "alertLevel",
+          "confirmState",
+          "dataSource",
+          "alertTime"
+        ]
+      },
+      {
+        "view": "main.unread",
+        "keys": [
+          "messageContent",
+          "alertLevel",
+          "confirmState",
+          "dataSource",
+          "alertTime"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "messageContent",
+          "alertLevel",
+          "dataSource",
+          "alertTime"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "messageContent",
+          "alertLevel",
+          "dataSource",
+          "alertTime"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "",
+          "resource": "third.party.alert"
+        }
+      },
+      {
+        "accessorKey": "messageContent",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "message.content",
+            "defaultMessage": "Alarm Name"
+          },
+          "queryType": "",
+          "resource": "third.party.alert"
+        }
+      },
+      {
+        "accessorKey": "alertLevel",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "emagency.level",
+            "defaultMessage": "Severity"
+          },
+          "queryType": "multipleFilter",
+          "resource": "third.party.alert"
+        }
+      },
+      {
+        "accessorKey": "confirmState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "alarm.message.confirm.state",
+            "defaultMessage": "Acknowledged"
+          },
+          "queryType": "multipleFilter",
+          "resource": "third.party.alert"
+        }
+      },
+      {
+        "accessorKey": "dataSource",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "product.type",
+            "defaultMessage": "Product Type"
+          },
+          "queryType": "",
+          "resource": "third.party.alert"
+        }
+      },
+      {
+        "accessorKey": "alertTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "message.time",
+            "defaultMessage": "Message Time"
+          },
+          "queryType": "",
+          "resource": "third.party.alert"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "footer/row",
+        "activeKeys": [
+          "virtualization.mark.as.readed.single"
+        ]
+      },
+      {
+        "view": "main.unread/row",
+        "activeKeys": [
+          "virtualization.mark.as.readed.single"
+        ]
+      },
+      {
+        "view": "main.unread/toolbar",
+        "extraKeys": [
+          "virtualization.mark.as.readed.single",
+          "mark.all.as.read"
+        ]
+      },
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "virtualization.mark.as.readed.single"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.mark.as.readed.single"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "virtualization.mark.as.readed.single",
+          "mark.all.as.read"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "virtualization.mark.as.readed.single",
+        "resource": "third.party.alert",
+        "authKey": "virtualization.mark.as.readed.single",
+        "i18nKey": "alarm.message.mark.as.confirmed",
+        "name": "确认",
+        "label": "确认",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "mark.all.as.read",
+        "resource": "third.party.alert",
+        "authKey": "mark.all.as.read",
+        "i18nKey": "mark.all.as.read",
+        "name": "全部确认",
+        "label": "全部确认",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

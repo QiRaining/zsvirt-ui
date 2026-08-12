@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack",
+  "favicon": "/public/theme/default/zh-TW/favicon.ico",
+  "loginTitle": "歡迎使用ZStack雲平臺",
+  "loginLogo": "/public/theme/default/zh-TW/logo.svg",
+  "bannerLogo": "/public/theme/default/zh-TW/logo-bar.svg",
+  "bannerTitle": "ZStack雲平臺",
+  "bannerFontSize": "14px",
+  "overviewTitle": "ZStack即時監控",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

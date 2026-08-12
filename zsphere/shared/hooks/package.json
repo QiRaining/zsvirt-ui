@@ -1,0 +1,79 @@
+{
+  "name": "@zstack/zsphere-hooks",
+  "version": "2.2.0",
+  "description": "ZStack-UI React Hooks",
+  "author": "ZStack UI Team",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "module": "dist/hooks.js",
+  "types": "dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": {
+        "default": "./dist/hooks.js"
+      }
+    },
+    "./src/*": "./src/*"
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint:ox:fix": "oxlint -c ../../../../../.oxlintrc.json src --fix",
+    "lint": "pnpm run lint:ox",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../../../../.oxlintrc.json src --format json > ./lint_report/oxlint.json",
+    "type-check": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@apollo/client": "catalog:",
+    "@fingerprintjs/fingerprintjs": "^5.2.0",
+    "@zstack/alova-instance": "workspace:*",
+    "@zstack/hooks": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/zsphere-platform-store": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "@zstack/zsphere-utils": "workspace:*",
+    "ahooks": "catalog:",
+    "antd": "catalog:",
+    "crypto-js": "^4.2.0",
+    "dayjs": "catalog:",
+    "graphql": "16.10.0",
+    "hash.js": "^1.1.7",
+    "immer": "catalog:",
+    "lodash-es": "catalog:",
+    "react-intl": "catalog:",
+    "react-router": "catalog:",
+    "rxjs": "7.8.2",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "vite": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

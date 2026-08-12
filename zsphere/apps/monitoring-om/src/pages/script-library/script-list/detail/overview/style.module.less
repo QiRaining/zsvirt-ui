@@ -1,0 +1,36 @@
+@import "../../../../../theme.less";
+
+.custom-params-card {
+  :global {
+    .ant-row {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 8px 20px;
+      margin-bottom: 4px;
+      &:first-child {
+        padding-top: 0;
+        color: @neutral-600;
+        margin-bottom: 0;
+      }
+      &:not(:first-child) {
+        color: @neutral-700;
+        background-color: @neutral-100;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.script-content {
+  :global {
+    .ant-card-body {
+      padding: 0;
+    }
+    .zstack-code-editor-form-item-editor {
+      width: 100% !important;
+      border: none;
+    }
+  }
+}

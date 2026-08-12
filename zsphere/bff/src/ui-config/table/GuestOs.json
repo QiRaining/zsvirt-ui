@@ -1,0 +1,85 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "bits",
+          "cpuMemHotAdd",
+          "guestOsType"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "guest.os"
+        }
+      },
+      {
+        "accessorKey": "bits",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "os.bits",
+            "defaultMessage": "Bits"
+          },
+          "queryType": "",
+          "resource": "guest.os"
+        }
+      },
+      {
+        "accessorKey": "cpuMemHotAdd",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "cpu.mem.hot.add",
+            "defaultMessage": "CPU/Memory Hot Plug"
+          },
+          "queryType": "multipleFilter",
+          "resource": "guest.os"
+        }
+      },
+      {
+        "accessorKey": "guestOsType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "guestOsType",
+            "defaultMessage": "OS"
+          },
+          "queryType": "multipleFilter",
+          "resource": "guest.os"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

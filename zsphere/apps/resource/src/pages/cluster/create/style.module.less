@@ -1,0 +1,34 @@
+@import "../../../theme.less";
+
+.create-modal {
+  height: 678px;
+  // ZSV-11397: Fix transparent bottom when using fixed height with @zstack/design Dialog
+  // The Dialog component uses flex layout, but DialogScrollArea needs flex:1 to fill available space
+  display: flex;
+  flex-direction: column;
+
+  // Make DialogScrollArea (the scrollable content area) expand to fill remaining space
+  // DialogScrollArea renders as a div with class "overflow-auto max-h-[calc(80vh-110px)]"
+  :global {
+    .overflow-auto {
+      flex: 1;
+      // Override the max-height constraint when we have a fixed height container
+      max-height: unset !important;
+    }
+  }
+}
+
+.form {
+  height: 100%;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 12px !important;
+    }
+  }
+}
+
+.baseFormItem {
+  width: 400px;
+  height: 32px;
+}

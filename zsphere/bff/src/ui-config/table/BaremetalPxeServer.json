@@ -1,0 +1,342 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "dhcpInterface",
+          "dhcpRangeBegin",
+          "dhcpRangeEnd",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetal.cluster",
+        "keys": [
+          "name",
+          "dhcpInterface",
+          "dhcpRangeBegin",
+          "dhcpRangeEnd",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster",
+        "keys": [
+          "name",
+          "dhcpInterface",
+          "dhcpRangeBegin",
+          "dhcpRangeEnd",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "uuid"
+          },
+          "queryType": "input",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "hostname",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "baremetal.pxeservice.hostname",
+            "defaultMessage": "Deployment Server IP"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "dhcpInterface",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "dhcp.Interface",
+            "defaultMessage": "DHCP-Snooped NIC"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "dhcpRangeBegin",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "dhcp.range.begin",
+            "defaultMessage": "DHCP Start IP"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "dhcpRangeEnd",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "dhcp.range.end",
+            "defaultMessage": "DHCP End IP"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal.pxe.server"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "edit",
+          "reconnect",
+          "attach.baremetalcluster",
+          "detach.baremetalcluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "start",
+          "stop",
+          "reconnect",
+          "attach.baremetalcluster",
+          "detach.baremetalcluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "creat.baremetalpxeservice",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnect",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/row",
+        "activeKeys": [
+          "detach.in.baremetal.cluster"
+        ]
+      },
+      {
+        "view": "sub.baremetal.cluster/toolbar",
+        "extraKeys": [
+          "attach.in.baremetal.cluster",
+          "detach.in.baremetal.cluster"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "baremetal.pxe.server",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "creat.baremetalpxeservice",
+        "resource": "baremetal.pxe.server",
+        "authKey": "creat.baremetalpxeservice",
+        "i18nKey": "creat.baremetalpxeservice",
+        "name": "创建部署服务器",
+        "label": "创建部署服务器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "baremetal.pxe.server",
+        "authKey": "start",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "baremetal.pxe.server",
+        "authKey": "stop",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect",
+        "resource": "baremetal.pxe.server",
+        "authKey": "reconnect",
+        "i18nKey": "reconnect",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": "reconnect-divider"
+      },
+      {
+        "key": "attach.baremetalcluster",
+        "resource": "baremetal.pxe.server",
+        "authKey": "attach.baremetalcluster",
+        "i18nKey": "attach.baremetalCluster",
+        "name": "加载裸金属集群",
+        "label": "加载裸金属集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.baremetalcluster",
+        "resource": "baremetal.pxe.server",
+        "authKey": "detach.baremetalcluster",
+        "i18nKey": "detach.baremetalCluster",
+        "name": "卸载裸金属集群",
+        "label": "卸载裸金属集群",
+        "icon": "",
+        "dividerKey": "detach.baremetalcluster-divider"
+      },
+      {
+        "key": "attach.in.baremetal.cluster",
+        "resource": "baremetal.pxe.server",
+        "authKey": "attach.in.baremetal.cluster",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.baremetal.cluster",
+        "resource": "baremetal.pxe.server",
+        "authKey": "detach.in.baremetal.cluster",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "baremetal.pxe.server",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

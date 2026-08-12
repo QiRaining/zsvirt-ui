@@ -1,0 +1,346 @@
+@import "../../../../theme.less";
+
+.tree {
+  height: 100%;
+
+  .empty {
+    margin-top: 40px !important;
+  }
+
+  :global {
+    .ant-tree {
+      .ant-tree-list {
+        .ant-tree-list-holder {
+          & > div {
+            overflow: hidden !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-list-scrollbar {
+      margin-right: 1px;
+
+      &.ant-tree-list-scrollbar-show {
+        display: block !important;
+
+        .ant-tree-list-scrollbar-thumb {
+          background: none !important;
+          background-color: @neutral-300 !important;
+        }
+      }
+    }
+
+    .ant-tree-node {
+      padding: 0 0 0 4px !important;
+    }
+
+    .ant-tree {
+      .ant-tree-switcher {
+        background-color: initial;
+        color: inherit !important;
+        margin: 8px 4px 8px 0px;
+        line-height: 16px;
+        width: 16px;
+      }
+
+      .ant-tree-list-holder-inner:not(:has(.ant-tree-indent-unit)) {
+        .ant-tree-switcher-noop {
+          display: none;
+        }
+      }
+
+      .ant-tree-treenode {
+        height: 32px;
+        padding: 0px 12px 0 8px;
+        font-size: 14px;
+        border-left: 4px solid transparent;
+        color: @neutral-700;
+        transition: background-color 0.3s;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          background-color: @neutral-100;
+          background: @neutral-100;
+        }
+
+        //修改选中态
+        &-selected {
+          background-color: @color-50 !important;
+          border-left-color: @color-400;
+          color: @color-600;
+
+          &:hover::before,
+          &::before {
+            background-color: @color-50 !important;
+            background: @color-50 !important;
+          }
+
+          &::after {
+            width: max-content;
+          }
+        }
+
+        .ant-typography {
+          color: inherit !important;
+        }
+
+        .ant-tree-node-content-wrapper,
+        .ant-tree-node-content-wrapper-normal {
+          margin-top: 4px;
+          padding: 0px;
+          overflow: hidden;
+          color: inherit !important;
+
+          &:hover {
+            background-color: unset !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-title {
+      width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    //展开按钮
+    .ant-tree-switcher-noop {
+      &::before {
+        right: 16px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .ant-tree-indent-unit::before {
+      height: 0px;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      bottom: -4px;
+
+      content: "";
+      display: unset;
+    }
+
+    .ant-tree-treenode {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -4px;
+
+          height: 32px;
+          content: "";
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-end:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-leaf-last {
+      .ant-tree-indent {
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 18px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:first-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-switcher-open {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode:last-child {
+      > .ant-tree-indent {
+        > .ant-tree-indent-unit::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -17px;
+          height: 17px;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.treeTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .titlePart {
+    max-width: 100%;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+
+    .title {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-left: 4px;
+      margin-right: unset;
+      width: auto;
+      flex: 1 1 auto;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    > div:first-child:empty + .title {
+      margin-left: 0;
+    }
+
+    .spin {
+      margin-left: 4px;
+      font-size: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: @color-600;
+      color: @neutral-0;
+      padding: 0 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      height: 20px;
+      line-height: 20px;
+      min-width: fit-content;
+      text-align: center;
+      margin-bottom: 3px;
+    }
+
+    .num {
+      margin-left: 4px;
+      white-space: nowrap;
+    }
+  }
+
+  &:hover {
+    background-color: unset;
+    background: unset;
+  }
+
+  &:hover .treeNodeAction {
+    visibility: visible;
+  }
+
+  .treeNodeAction {
+    flex: none;
+    visibility: hidden;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeRootAction {
+    flex: none;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .treeNodechecked {
+    margin-right: 0px;
+  }
+}

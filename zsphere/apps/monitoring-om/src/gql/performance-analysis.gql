@@ -1,0 +1,216 @@
+query vmInstancePerformances(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $startTime: String
+  $endTime: String
+  $thresholdNum: String
+  $thresholdSymbol: PerformanceThresholdSymbolType
+  $thresholdMetric: VmInstancePerformanceMetricType
+  $metrics: [VmInstancePerformanceMetricType!]!
+  $exportMetrics: [VmInstanceExportMetric!]
+  $type: PerformanceType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstancePerformances(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    startTime: $startTime
+    endTime: $endTime
+    thresholdNum: $thresholdNum
+    thresholdSymbol: $thresholdSymbol
+    thresholdMetric: $thresholdMetric
+    metrics: $metrics
+    exportMetrics: $exportMetrics
+    replyWithCount: true
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      uuid
+      CPUAverageUsedUtilization
+      MemoryUsedInPercent
+      DiskAllReadBytes
+      DiskAllWriteBytes
+      DiskAllReadOps
+      DiskAllWriteOps
+      NetworkAllInBytes
+      NetworkAllOutBytes
+      NetworkAllInPackets
+      NetworkAllOutPackets
+      NetworkAllInErrors
+      NetworkAllOutErrors
+      state
+      defaultL3NetworkUuid
+      cpuNum
+      memorySize
+      vmNics {
+        uuid
+        l3NetworkUuid
+        usedIps {
+          uuid
+          ip
+        }
+      }
+      allVolumes {
+        uuid
+        name
+        primaryStorageUuid
+        size
+        actualSize
+      }
+      owner {
+        name
+        uuid
+        type
+      }
+    }
+    total
+  }
+}
+
+query hostPerformances(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $startTime: String
+  $endTime: String
+  $thresholdNum: String
+  $thresholdSymbol: PerformanceThresholdSymbolType
+  $thresholdMetric: HostPerformanceMetricType
+  $metrics: [HostPerformanceMetricType!]!
+  $type: PerformanceType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  hostPerformances(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    startTime: $startTime
+    endTime: $endTime
+    thresholdNum: $thresholdNum
+    thresholdSymbol: $thresholdSymbol
+    thresholdMetric: $thresholdMetric
+    metrics: $metrics
+    replyWithCount: true
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      uuid
+      cpuNum
+      totalMemoryCapacity
+      CPUAllUsedUtilization
+      MemoryUsedInPercent
+      DiskAllReadBytes
+      DiskAllWriteBytes
+      DiskAllReadOps
+      DiskAllWriteOps
+      DiskAllUsedCapacityInPercent
+      DiskAllUsedCapacityInBytes
+      NetworkAllInBytes
+      NetworkAllOutBytes
+      NetworkAllInPackets
+      NetworkAllOutPackets
+      NetworkAllInErrors
+      NetworkAllOutErrors
+    }
+    total
+  }
+}
+
+query backupStoragePerformances(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $startTime: String
+  $endTime: String
+  $thresholdNum: String
+  $thresholdSymbol: PerformanceThresholdSymbolType
+  $thresholdMetric: BackupStoragePerformanceMetricType
+  $metrics: [BackupStoragePerformanceMetricType!]!
+  $type: PerformanceType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  backupStoragePerformances(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    startTime: $startTime
+    endTime: $endTime
+    thresholdNum: $thresholdNum
+    thresholdSymbol: $thresholdSymbol
+    thresholdMetric: $thresholdMetric
+    metrics: $metrics
+    replyWithCount: true
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      uuid
+      AvailableCapacityInBytes
+      UsedCapacityInPercent
+      totalCapacity
+    }
+    total
+  }
+}
+
+query l3NetworkPerformances(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $startTime: String
+  $endTime: String
+  $thresholdNum: String
+  $thresholdSymbol: PerformanceThresholdSymbolType
+  $thresholdMetric: L3NetworkPerformanceMetricType
+  $metrics: [L3NetworkPerformanceMetricType!]!
+  $type: PerformanceType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l3NetworkPerformances(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    startTime: $startTime
+    endTime: $endTime
+    thresholdNum: $thresholdNum
+    thresholdSymbol: $thresholdSymbol
+    thresholdMetric: $thresholdMetric
+    metrics: $metrics
+    replyWithCount: true
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      name
+      uuid
+      UsedIPCount
+      UsedIPInPercent
+      AvailableIPCount
+      AvailableIPInPercent
+    }
+    total
+  }
+}

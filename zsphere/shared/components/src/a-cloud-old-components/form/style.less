@@ -1,0 +1,206 @@
+@import "../../style/vars.less";
+
+.@{prefix}-form-item {
+  &.ant-form-item {
+    margin-bottom: 20px;
+  }
+
+  &.ant-form-item.@{prefix}-form-item-zsv {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ant-form-item-extra {
+    font-size: 12px;
+    color: @neutral-500;
+  }
+
+  &.@{prefix}-form-item-hide-required-message
+    > .ant-form-item-control
+    > .ant-form-item-explain {
+    display: none;
+  }
+
+  &.@{prefix}-form-item-text {
+    > .ant-form-item-label-left .@{prefix}-form-item-label-container,
+    .ant-form-item-control > .ant-form-item-control-input {
+      min-height: 22px;
+    }
+  }
+
+  &.@{prefix}-form-item-mini {
+    height: 22px;
+
+    .@{prefix}-form-item-label-container,
+    .ant-form-item-control > .ant-form-item-control-input {
+      height: 22px;
+      min-height: 22px;
+      font-feature-settings: unset !important;
+    }
+  }
+
+  &.@{prefix}-form-item-with-border {
+    display: flex;
+    border-right: solid 1px var(--neutral-300);
+    border-left: solid 1px var(--neutral-300);
+    padding: 8px 12px;
+    margin-bottom: unset !important;
+  }
+
+  &.@{prefix}-form-item-with-border:first-child {
+    border-top: solid 1px var(--neutral-300);
+    border-bottom: solid 1px var(--neutral-300);
+  }
+
+  &.@{prefix}-form-item-with-border:not(:first-child) {
+    border-bottom: solid 1px var(--neutral-300);
+  }
+
+  > .ant-form-item-row > .ant-form-item-control {
+    > .ant-form-item-control-input {
+      > .ant-form-item-control-input-content {
+        font-feature-settings: unset !important;
+        color: @neutral-700 !important;
+        font-weight: 400 !important;
+      }
+    }
+  }
+
+  > .ant-form-item-label-left {
+    margin-right: 8px;
+    white-space: normal;
+
+    > .ant-form-item-no-colon {
+      height: auto;
+
+      &:after {
+        margin: 0;
+      }
+    }
+  }
+
+  &-label-container {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 32px;
+    color: @neutral-600;
+
+    &-content {
+      flex: 0 1 auto;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    &-label {
+      color: @neutral-600 !important;
+    }
+
+    &-text {
+      display: block;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+
+      .zstack-text-string-child {
+        display: block !important;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .ant-typography-ellipsis-single-line {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    &-tooltip-target {
+      display: block;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      pointer-events: auto;
+      width: 100%;
+    }
+
+    &-icon {
+      display: inline-flex;
+      flex: none;
+      align-items: center;
+      margin-left: 4px;
+      line-height: 22px;
+      vertical-align: bottom;
+      font-size: 16px;
+      color: @neutral-300;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: @color-600;
+      }
+    }
+
+    &::before {
+      content: unset !important;
+    }
+
+    &-required {
+      flex: none;
+      margin-left: 4px;
+      color: @danger-500;
+    }
+
+    &-colon {
+      flex: none;
+      margin-left: 2px;
+    }
+  }
+
+  &-input-description-zsv {
+    top: -8px !important;
+  }
+
+  &-input-description {
+    position: relative;
+    top: -16px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    color: @neutral-500;
+    margin-bottom: 12px !important;
+  }
+
+  // 确保错误提示有足够的上边距和下边距，特别是在有 description 的情况下
+  .ant-form-item-explain-error {
+    font-size: 12px;
+    line-height: 20px;
+    color: @danger-500;
+    margin-top: 0;
+    margin-bottom: 12px;
+    min-height: 20px;
+  }
+
+  &-select-params {
+    display: flex;
+    align-items: flex-start;
+
+    &-icon {
+      cursor: pointer;
+      height: 32px;
+      line-height: 32px;
+      margin-left: 8px;
+      color: #c8cacd;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #4a4c4f;
+      }
+    }
+  }
+}

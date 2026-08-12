@@ -1,0 +1,33 @@
+@import url("../../../../theme.less");
+
+.data-center-topo-card {
+  :global {
+    .g6-component-tooltip {
+      border: none;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  .graph {
+    position: relative;
+
+    :global {
+      .g6-grid-container {
+        z-index: auto !important;
+        top: 0px !important;
+        left: 0px !important;
+        height: 100% !important;
+      }
+
+      canvas {
+        position: relative;
+      }
+    }
+  }
+}
+
+:global(.anticon).capacityIcon {
+  display: flex;
+  align-items: center;
+}

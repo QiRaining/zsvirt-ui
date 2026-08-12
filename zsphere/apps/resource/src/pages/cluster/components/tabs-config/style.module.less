@@ -1,0 +1,103 @@
+@import "../../../../theme.less";
+
+.header {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: @neutral-100;
+  border-bottom: 1px solid @neutral-300;
+
+  .title {
+    color: @neutral-700;
+  }
+
+  .left {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 11px;
+    width: 320px;
+    border-right: 1px solid @neutral-300;
+    // overflow-y: auto;
+    height: 100%;
+  }
+
+  .right {
+    display: flex;
+    padding: 7px 11px;
+    flex: 1;
+    height: 100%;
+  }
+}
+
+.tabs-container {
+  height: 320px;
+  border: 1px solid @neutral-300;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+  .tab {
+    height: 100%;
+    border: 0 1px 1px solid @neutral-300;
+
+    :global {
+      .ant-tabs-nav {
+        width: 160px;
+        border-right: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-ink-bar {
+        left: 0 !important;
+        width: 4px;
+        color: @color-300 !important;
+        background: @color-300 !important;
+      }
+
+      .ant-tabs-nav-list {
+        margin: 0px !important;
+      }
+
+      .ant-tabs-tab {
+        width: 100%;
+        height: 36px;
+        margin: 0px !important;
+        padding: 7px 12px !important;
+        border-bottom: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-tab-btn {
+        width: 100%;
+        height: 22px;
+        text-align: left;
+        white-space: nowrap; /* 防止内容换行 */
+        overflow: hidden; /* 隐藏溢出内容 */
+        text-overflow: ellipsis;
+
+        .ant-typography-ellipsis-single-line {
+          color: @neutral-700;
+        }
+      }
+
+      .ant-tabs-tabpane {
+        width: unset;
+      }
+
+      .ant-tabs-tab-active {
+        background-color: @color-50 !important;
+      }
+
+      .ant-tabs-content-holder {
+        overflow: auto !important;
+        border-left: 1px solid @neutral-300;
+      }
+    }
+  }
+}
+
+.tabPane {
+  padding: 20px;
+}

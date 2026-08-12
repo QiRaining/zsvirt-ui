@@ -1,0 +1,571 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "state",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.role",
+        "keys": [
+          "name",
+          "state",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth",
+        "keys": [
+          "name",
+          "state",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.sub.userGroup",
+        "keys": [
+          "name",
+          "state",
+          "type",
+          "subAccountSource",
+          "vmNum",
+          "volumeNum",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "subAccountSource",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "subAccountSource",
+            "defaultMessage": "Source"
+          },
+          "queryType": "multipleFilter",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "vmNum",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vm.num",
+            "defaultMessage": "VMs"
+          },
+          "queryType": "",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "volumeNum",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "volume.num",
+            "defaultMessage": "Disks"
+          },
+          "queryType": "",
+          "resource": "account.information"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "input",
+          "resource": "account.information"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "editor.password",
+          "modify.price.table",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "editor.password",
+          "modify.price.table",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.account"
+        ],
+        "activeKeys": [
+          "modify.price.table",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.billings.price.table/row",
+        "activeKeys": [
+          "modify.price.table"
+        ]
+      },
+      {
+        "view": "sub.billings.price.table/toolbar",
+        "extraKeys": [
+          "bind.to.price.table",
+          "modify.price.table"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "create.account",
+          "modify.price.table",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "modify.price.table",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "enable",
+          "disabled",
+          "modify.config",
+          "virtualization.edit.password",
+          "change.to.administrator.user",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "enable",
+          "disabled",
+          "modify.config",
+          "virtualization.edit.password",
+          "change.to.administrator.user",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "virtualization.new.user",
+          "enable",
+          "disabled"
+        ],
+        "activeKeys": [
+          "change.to.administrator.user",
+          "bind.role",
+          "join.user.group",
+          "share.resource",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.role/row",
+        "activeKeys": [
+          "enable",
+          "disabled",
+          "modify.config",
+          "virtualization.edit.password",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth/row",
+        "activeKeys": [
+          "enable",
+          "disabled",
+          "modify.config",
+          "virtualization.edit.password",
+          "recall",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.shareAuth/toolbar",
+        "extraKeys": [
+          "shared",
+          "recall"
+        ]
+      },
+      {
+        "view": "virtualization.sub.userGroup/row",
+        "activeKeys": [
+          "enable",
+          "disabled",
+          "modify.config",
+          "virtualization.edit.password",
+          "remove.user",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.sub.userGroup/toolbar",
+        "extraKeys": [
+          "add.user",
+          "remove.user"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.account",
+        "resource": "account.information",
+        "authKey": "create.account",
+        "i18nKey": "create.subAccount",
+        "name": "创建子账户",
+        "label": "创建子账户",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "account.information",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editor.password",
+        "resource": "account.information",
+        "authKey": "editor.password",
+        "i18nKey": "change.password",
+        "name": "修改密码",
+        "label": "修改密码",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "bind.to.price.table",
+        "resource": "account.information",
+        "authKey": "bind.to.price.table",
+        "i18nKey": "bind.accountInformation",
+        "name": "绑定子账户",
+        "label": "绑定子账户",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.price.table",
+        "resource": "account.information",
+        "authKey": "modify.price.table",
+        "i18nKey": "change.pricingList",
+        "name": "更换计费价目",
+        "label": "更换计费价目",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "account.information",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.new.user",
+        "resource": "account.information",
+        "authKey": "virtualization.new.user",
+        "i18nKey": "virtualization.new.user",
+        "name": "新建用户",
+        "label": "新建用户",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "account.information",
+        "authKey": "enable",
+        "i18nKey": "enable.zsv",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disabled",
+        "resource": "account.information",
+        "authKey": "disabled",
+        "i18nKey": "disabled.zsv",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disabled-divider"
+      },
+      {
+        "key": "virtualization.edit.user.info",
+        "resource": "account.information",
+        "authKey": "virtualization.edit.user.info",
+        "i18nKey": "virtualization.edit.user.info",
+        "name": "编辑用户信息",
+        "label": "编辑用户信息",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "account.information",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.password",
+        "resource": "account.information",
+        "authKey": "virtualization.edit.password",
+        "i18nKey": "virtualization.edit.password",
+        "name": "修改密码",
+        "label": "修改密码",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.to.administrator.user",
+        "resource": "account.information",
+        "authKey": "change.to.administrator.user",
+        "i18nKey": "change.to.administrator.user",
+        "name": "变更为管理员用户",
+        "label": "变更为管理员用户",
+        "icon": "",
+        "dividerKey": "change.to.administrator.user-divider"
+      },
+      {
+        "key": "bind.role",
+        "resource": "account.information",
+        "authKey": "bind.role",
+        "i18nKey": "bind.role",
+        "name": "绑定角色",
+        "label": "绑定角色",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "join.user.group",
+        "resource": "account.information",
+        "authKey": "join.user.group",
+        "i18nKey": "join.user.group",
+        "name": "加入用户组",
+        "label": "加入用户组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "share.resource",
+        "resource": "account.information",
+        "authKey": "share.resource",
+        "i18nKey": "share.resource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": "share.resource-divider"
+      },
+      {
+        "key": "add.user",
+        "resource": "account.information",
+        "authKey": "add.user",
+        "i18nKey": "add.user",
+        "name": "添加用户",
+        "label": "添加用户",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.user",
+        "resource": "account.information",
+        "authKey": "remove.user",
+        "i18nKey": "remove.user",
+        "name": "移除用户",
+        "label": "移除用户",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "shared",
+        "resource": "account.information",
+        "authKey": "shared",
+        "i18nKey": "shared",
+        "name": "共享",
+        "label": "共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recall",
+        "resource": "account.information",
+        "authKey": "recall",
+        "i18nKey": "recall",
+        "name": "召回",
+        "label": "召回",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "account.information",
+        "authKey": "virtualization.delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "snapshotName",
+          "volumeName",
+          "size",
+          "format",
+          "type",
+          "installPath",
+          "uuid"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "snapshotName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "snapshotName",
+            "defaultMessage": "Snapshot Name"
+          },
+          "queryType": "input",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "volumeName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "volumeName",
+            "defaultMessage": "Disk Name"
+          },
+          "queryType": "",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "format",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "snapshotFormat",
+            "defaultMessage": "Snapshot Format"
+          },
+          "queryType": "multipleFilter",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "installPath",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "installPath",
+            "defaultMessage": "Installation Path"
+          },
+          "queryType": "",
+          "resource": "snapshot.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "snapshot.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

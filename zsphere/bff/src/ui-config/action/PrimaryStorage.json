@@ -1,0 +1,838 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "custom",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "clusters",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.cluster",
+        "keys": [
+          "name",
+          "type",
+          "primaryStorageUsage",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.create.instance",
+        "keys": [
+          "name",
+          "status",
+          "type",
+          "availablePhysicalCapacity",
+          "totalCapacity"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-storage",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme.target",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "virtualCapacityAllocationRatio",
+          "clusters",
+          "url",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zone",
+        "keys": [
+          "name",
+          "state",
+          "status",
+          "type",
+          "primaryStorageUsage",
+          "url",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "availableCapacity",
+            "defaultMessage": "Physical Available"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "availablePhysicalCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "availablePhysicalCapacity",
+            "defaultMessage": "Available Physical Capacity"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "totalCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "totalCapacity",
+            "defaultMessage": "Total Capacity"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "capacityUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "virtualCapacityUtilization",
+            "defaultMessage": "Virtual Capacity Utilization"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "primaryStorageUsage",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "primaryStorage.usage",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "virtualCapacityAllocationRatio",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualCapacityAllocationRatio",
+            "defaultMessage": "Virtual Capacity Allocation Rate"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "clusters",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.cluster",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "url",
+            "defaultMessage": "URL"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "primary.storage"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "detach.in.cluster"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "attach.in.cluster",
+          "detach.in.cluster"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/row",
+        "activeKeys": [
+          "register.vm",
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.modify.advanced.config",
+          "virtualization.set.resource.attribute",
+          "consistency.check",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.cluster/toolbar",
+        "extraKeys": [
+          "add.data.storage",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-storage/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.set.resource.attribute",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.fiber-channel-storage/toolbar",
+        "extraKeys": [
+          "add.data.storage",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.set.resource.attribute",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server/toolbar",
+        "extraKeys": [
+          "add.data.storage",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme.target/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.set.resource.attribute",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.nvme.target/toolbar",
+        "extraKeys": [
+          "add.data.storage",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/header"
+      },
+      {
+        "view": "sub.virtualization.zone/row",
+        "activeKeys": [
+          "register.vm",
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.modify.advanced.config",
+          "virtualization.set.resource.attribute",
+          "consistency.check",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone/toolbar",
+        "extraKeys": [
+          "add.data.storage",
+          "start",
+          "stop"
+        ],
+        "activeKeys": [
+          "reconnection",
+          "maintenance",
+          "virtualization.set.resource.attribute",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.zone/row",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.zone/toolbar",
+        "activeKeys": [
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "register.vm",
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.modify.advanced.config",
+          "virtualization.set.resource.attribute",
+          "consistency.check",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/header"
+      },
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "register.vm",
+          "start",
+          "stop",
+          "reconnection",
+          "maintenance",
+          "edit.name.description",
+          "virtualization.modify.advanced.config",
+          "virtualization.set.resource.attribute",
+          "consistency.check",
+          "virtualization.primarystorage.attach.to.cluster",
+          "virtualization.detach.from.cluster",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.data.storage",
+        "resource": "primary.storage",
+        "authKey": "add.data.storage",
+        "i18nKey": "add.data.storage",
+        "name": "添加数据存储",
+        "label": "添加数据存储",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "register.vm",
+        "resource": "primary.storage",
+        "authKey": "register.vm",
+        "i18nKey": "register.vm",
+        "name": "注册虚拟机",
+        "label": "注册虚拟机",
+        "icon": "",
+        "dividerKey": "register.vm-divider"
+      },
+      {
+        "key": "start",
+        "resource": "primary.storage",
+        "authKey": "start",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "primary.storage",
+        "authKey": "stop",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnection",
+        "resource": "primary.storage",
+        "authKey": "reconnection",
+        "i18nKey": "reconnection",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "maintenance",
+        "resource": "primary.storage",
+        "authKey": "maintenance",
+        "i18nKey": "enter.maintenanceMode",
+        "name": "进入维护模式",
+        "label": "进入维护模式",
+        "icon": "",
+        "dividerKey": "maintenance-divider"
+      },
+      {
+        "key": "set.ceph.token",
+        "resource": "primary.storage",
+        "authKey": "set.ceph.token",
+        "i18nKey": "set.ceph.access.token",
+        "name": "设置Ceph企业版访问令牌",
+        "label": "设置Ceph企业版访问令牌",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.name.description",
+        "resource": "primary.storage",
+        "authKey": "edit.name.description",
+        "i18nKey": "edit.name.description",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.modify.advanced.config",
+        "resource": "primary.storage",
+        "authKey": "virtualization.modify.advanced.config",
+        "i18nKey": "virtualization.modify.advanced.config",
+        "name": "修改高级设置",
+        "label": "修改高级设置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.set.resource.attribute",
+        "resource": "primary.storage",
+        "authKey": "virtualization.set.resource.attribute",
+        "i18nKey": "set.resource.attribute",
+        "name": "设置自定义属性",
+        "label": "设置自定义属性",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "consistency.check",
+        "resource": "primary.storage",
+        "authKey": "consistency.check",
+        "i18nKey": "consistency.check",
+        "name": "一致性检查",
+        "label": "一致性检查",
+        "icon": "",
+        "dividerKey": "consistency.check-divider"
+      },
+      {
+        "key": "virtualization.primarystorage.attach.to.cluster",
+        "resource": "primary.storage",
+        "authKey": "virtualization.primarystorage.attach.to.cluster",
+        "i18nKey": "attach.cluster",
+        "name": "加载集群",
+        "label": "加载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.detach.from.cluster",
+        "resource": "primary.storage",
+        "authKey": "virtualization.detach.from.cluster",
+        "i18nKey": "detach.cluster",
+        "name": "卸载集群",
+        "label": "卸载集群",
+        "icon": "",
+        "dividerKey": "virtualization.detach.from.cluster-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "primary.storage",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.in.cluster",
+        "resource": "primary.storage",
+        "authKey": "attach.in.cluster",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.cluster",
+        "resource": "primary.storage",
+        "authKey": "detach.in.cluster",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "primary.storage",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "primary.storage",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

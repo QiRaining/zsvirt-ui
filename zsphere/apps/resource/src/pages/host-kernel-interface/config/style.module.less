@@ -1,0 +1,33 @@
+@import url("../../../theme.less");
+
+.nameColumn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  > :first-child {
+    min-width: 0;
+  }
+  .defaultTag {
+    border: 1px solid @neutral-300 !important;
+  }
+}
+
+.serviceTagListWrapper {
+  :global {
+    .ant-typography {
+      margin-bottom: 0;
+    }
+  }
+  > :not([class$="item-list-show"]) {
+    align-items: center;
+    .serviceTagList {
+      > div {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+.emptyText {
+  color: @neutral-500;
+}

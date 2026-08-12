@@ -1,0 +1,37 @@
+@import "../../../../../theme.less";
+
+.itemField {
+  display: flex;
+  justify-content: space-between;
+
+  .link {
+    font-size: 14px;
+    font-weight: 400;
+    color: @color-600;
+    line-height: 22px;
+    cursor: pointer;
+  }
+}
+
+.modal-base-content {
+  padding: 24px;
+
+  .title {
+    margin: 0px 0 12px 0;
+  }
+
+  .api-list {
+    max-height: 62vh;
+    overflow-y: auto;
+
+    :global {
+      .ant-row .ant-col .ant-checkbox-wrapper {
+        width: 100%;
+
+        & > span:last-of-type:not(.ant-checkbox) {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

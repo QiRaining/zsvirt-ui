@@ -1,0 +1,387 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "pciDeviceAddress",
+          "name",
+          "passthroughState",
+          "type",
+          "VMInstance",
+          "manufacturer"
+        ]
+      },
+      {
+        "view": "main.passthrough",
+        "keys": [
+          "pciDeviceAddress",
+          "name",
+          "passthroughState",
+          "type",
+          "VMInstance",
+          "manufacturer"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "pciDeviceAddress",
+          "name",
+          "host",
+          "passthroughState",
+          "type",
+          "manufacturer"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "host",
+          "type",
+          "state",
+          "status",
+          "VMInstance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "pciDeviceAddress",
+          "name",
+          "type",
+          "state",
+          "status",
+          "VMInstance",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "pciDeviceAddress",
+          "name",
+          "host",
+          "type",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "pciDeviceAddress",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "pcie.address",
+            "defaultMessage": "PCIe Address"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device.name",
+            "defaultMessage": "Device Name"
+          },
+          "queryType": "input",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "passthroughState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "passthrough.state",
+            "defaultMessage": "Passthrough Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enabledState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "readyStatus",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "VMInstance",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "associated.object",
+            "defaultMessage": "Associated Objects"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "manufacturer",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "pci.device"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.passthrough/row",
+        "activeKeys": [
+          "virtualization.toggle.passthrough"
+        ]
+      },
+      {
+        "view": "main.passthrough/toolbar",
+        "extraKeys": [
+          "virtualization.toggle.passthrough"
+        ]
+      },
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "virtualization.toggle.passthrough"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "virtualization.toggle.passthrough"
+        ]
+      },
+      {
+        "view": "sub.cluster/row",
+        "activeKeys": [
+          "cluster.pcidevice.enable",
+          "cluster.pcidevice.disable"
+        ]
+      },
+      {
+        "view": "sub.cluster/toolbar",
+        "extraKeys": [
+          "cluster.pcidevice.enable",
+          "cluster.pcidevice.disable"
+        ]
+      },
+      {
+        "view": "sub.host/row",
+        "activeKeys": [
+          "host.pcidevice.enable",
+          "host.pcidevice.disable"
+        ]
+      },
+      {
+        "view": "sub.host/toolbar",
+        "extraKeys": [
+          "host.pcidevice.enable",
+          "host.pcidevice.disable"
+        ]
+      },
+      {
+        "view": "sub.vm/row",
+        "activeKeys": [
+          "attach.pci.device",
+          "detach.pci.device"
+        ]
+      },
+      {
+        "view": "sub.vm/toolbar",
+        "extraKeys": [
+          "attach.pci.device",
+          "detach.pci.device"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "cluster.pcidevice.enable",
+        "resource": "cluster",
+        "authKey": "cluster.pcidevice.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cluster.pcidevice.disable",
+        "resource": "cluster",
+        "authKey": "cluster.pcidevice.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": "cluster.pcidevice.disable-divider"
+      },
+      {
+        "key": "host.pcidevice.enable",
+        "resource": "host",
+        "authKey": "host.pcidevice.enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "host.pcidevice.disable",
+        "resource": "host",
+        "authKey": "host.pcidevice.disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "",
+        "dividerKey": "host.pcidevice.disable-divider"
+      },
+      {
+        "key": "attach.pci.device",
+        "resource": "vm",
+        "authKey": "attach.pci.device",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.pci.device",
+        "resource": "vm",
+        "authKey": "detach.pci.device",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.toggle.passthrough",
+        "resource": "host",
+        "authKey": "virtualization.toggle.passthrough",
+        "i18nKey": "toggle.passthrough",
+        "name": "直通切换",
+        "label": "直通切换",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

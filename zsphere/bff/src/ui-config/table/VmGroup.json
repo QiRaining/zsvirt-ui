@@ -1,0 +1,241 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vmCount",
+          "vmSchedulingRuleCount",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "vmCount",
+          "vmSchedulingRuleCount",
+          "vmSchedulingRuleType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "vmCount",
+          "vmSchedulingRuleCount",
+          "vmSchedulingRuleType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vm.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vm.group"
+        }
+      },
+      {
+        "accessorKey": "vmCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vmCount",
+            "defaultMessage": "VMs"
+          },
+          "queryType": "",
+          "resource": "vm.group"
+        }
+      },
+      {
+        "accessorKey": "vmSchedulingRuleCount",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "associatedSchedulingRule",
+            "defaultMessage": "Associated Scheduling Policy"
+          },
+          "queryType": "",
+          "resource": "vm.group"
+        }
+      },
+      {
+        "accessorKey": "vmSchedulingRuleType",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "associatedSchedulingRuleType",
+            "defaultMessage": "Associated Scheduling Policy Type"
+          },
+          "queryType": "",
+          "resource": "vm.group"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vm.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "add.vm",
+          "remove.vm",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "add.vm",
+          "remove.vm",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vm.group",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "extraKeys": [
+          "edit"
+        ],
+        "activeKeys": [
+          "add.vm",
+          "remove.vm",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "edit",
+          "add.vm",
+          "remove.vm",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.vm.group",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vm.group",
+        "resource": "vm.group",
+        "authKey": "create.vm.group",
+        "i18nKey": "create.vmGroup",
+        "name": "创建云主机调度组",
+        "label": "创建云主机调度组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vm.group",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.vm",
+        "resource": "vm.group",
+        "authKey": "add.vm",
+        "i18nKey": "add.vm",
+        "name": "添加云主机",
+        "label": "添加云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.vm",
+        "resource": "vm.group",
+        "authKey": "remove.vm",
+        "i18nKey": "remove.vm",
+        "name": "移除云主机",
+        "label": "移除云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vm.group",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

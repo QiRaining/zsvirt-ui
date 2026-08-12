@@ -1,0 +1,148 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "slotNumber",
+          "state",
+          "serialNumber",
+          "manufacturer",
+          "type",
+          "size",
+          "clockSpeed"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "slotNumber",
+          "state",
+          "serialNumber",
+          "manufacturer",
+          "type",
+          "size",
+          "clockSpeed"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "slotNumber",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "slotNumber",
+            "defaultMessage": "Slot Number"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "serialNumber",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "serial.number",
+            "defaultMessage": "Serial Number"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "manufacturer",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      },
+      {
+        "accessorKey": "clockSpeed",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "speed",
+            "defaultMessage": "Speed"
+          },
+          "queryType": "",
+          "resource": "memory"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

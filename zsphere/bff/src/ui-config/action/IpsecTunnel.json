@@ -1,0 +1,266 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vipRef.ip",
+          "peerAddress",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "vipRef.ip",
+          "peerAddress",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "vipRef.ip",
+          "peerAddress",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vpc",
+        "keys": [
+          "name",
+          "vipRef.ip",
+          "peerAddress",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "vipRef.ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "local.public.network.ip",
+            "defaultMessage": "Local Public IP"
+          },
+          "queryType": "input",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "peerAddress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "remote.public.network.ip",
+            "defaultMessage": "Remote Public IP"
+          },
+          "queryType": "input",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ipsec.tunnel"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "ipsec.tunnel"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "reconnect",
+          "change.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "reconnect",
+          "change.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "ipsec.tunnel.create",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/row",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vpc/toolbar"
+      },
+      {
+        "view": "sub/row",
+        "extraKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "ipsec.tunnel.create",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "ipsec.tunnel.create",
+        "resource": "ipsec.tunnel",
+        "authKey": "ipsec.tunnel.create",
+        "i18nKey": "create.ipsecTunnel",
+        "name": "创建IPsec隧道",
+        "label": "创建IPsec隧道",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "ipsec.tunnel",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect",
+        "resource": "ipsec.tunnel",
+        "authKey": "reconnect",
+        "i18nKey": "reconnection",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.config",
+        "resource": "ipsec.tunnel",
+        "authKey": "change.config",
+        "i18nKey": "change.configuration",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "ipsec.tunnel",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

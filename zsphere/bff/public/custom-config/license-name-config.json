@@ -1,0 +1,106 @@
+{
+  "Trial": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "TrialExt": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "Prepaid": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "Paid": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "Enterprise": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "ZStack": {
+    "zh-CN": "企业版",
+    "en-US": "Enterprise"
+  },
+  "Standard": {
+    "zh-CN": "标准版",
+    "en-US": "Standard"
+  },
+  "Basic": {
+    "zh-CN": "基础版",
+    "en-US": "Basic"
+  },
+  "XinChuang": {
+    "zh-CN": "信创版",
+    "en-US": "Xinchuang"
+  },
+  "gpu-ui": {
+    "zh-CN": "GPU服务",
+    "en-US": "GPU Service"
+  },
+  "sriov-ui": {
+    "zh-CN": "SR-IOV网卡服务",
+    "en-US": "SR-IOV"
+  },
+  "billing-ui": {
+    "zh-CN": "计费管理服务",
+    "en-US": "Billing Management"
+  },
+  "cloud-formation-ui": {
+    "zh-CN": "资源编排服务",
+    "en-US": "CloudFormation"
+  },
+  "auto-scaling-ui": {
+    "zh-CN": "弹性伸缩服务",
+    "en-US": "Auto-Scaling Service"
+  },
+  "smart-nic-ui": {
+    "zh-CN": "智能网卡服务",
+    "en-US": "Smart NIC Service"
+  },
+  "security-element-ui": {
+    "zh-CN": "SE设备",
+    "en-US": "SE Device"
+  },
+  "v2v": {
+    "zh-CN": "迁移服务",
+    "en-US": "Migration Service"
+  },
+  "vmware": {
+    "zh-CN": "VMware管理",
+    "en-US": "VMware Management"
+  },
+  "project-management": {
+    "zh-CN": "租户管理",
+    "en-US": "Tenant Management"
+  },
+  "elastic-baremetal": {
+    "zh-CN": "弹性裸金属管理",
+    "en-US": "Elastic Baremetal Management"
+  },
+  "disaster-recovery": {
+    "zh-CN": "灾备服务",
+    "en-US": "Backup Service"
+  },
+  "cdp": {
+    "zh-CN": "持续数据保护 CDP",
+    "en-US": "Continuous Data Protection (CDP) "
+  },
+  "hybrid": {
+    "zh-CN": "阿里云混合云管理",
+    "en-US": "Alibaba Cloud Hybrid Cloud Management"
+  },
+  "arm64": {
+    "zh-CN": "ARM64服务器管理",
+    "en-US": "ARM64 Management"
+  },
+  "crypto-compliance": {
+    "zh-CN": "密评合规",
+    "en-US": "Cryptography Security Compliance"
+  },
+  "baremetal": {
+    "zh-CN": "裸金属管理",
+    "en-US": "Baremetal Management"
+  }
+}

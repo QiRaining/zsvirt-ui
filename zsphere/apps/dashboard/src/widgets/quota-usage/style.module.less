@@ -1,0 +1,58 @@
+@import "../../theme.less";
+
+.container {
+  overflow: hidden;
+  height: 100%;
+  background: @neutral-0;
+  padding: 20px;
+  .title {
+    color: @neutral-800;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .quotaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    .quotaItem {
+      width: 50%;
+      margin-bottom: 24px;
+      .quotaItemTitle {
+        color: @neutral-700;
+        margin-bottom: 4px;
+        .icon {
+          display: inline-block;
+          vertical-align: middle;
+          width: 24px;
+          color: @neutral-700;
+        }
+      }
+      .quotaItemUsage {
+        margin-bottom: 4px;
+        margin-left: 24px;
+        color: @neutral-800;
+      }
+      .quotaItemBar {
+        max-width: 80%;
+        margin-left: 24px;
+      }
+    }
+  }
+}
+
+.barContainer {
+  flex-grow: 1;
+  height: 8px;
+  background: @neutral-200;
+  // background: repeating-linear-gradient(90deg, @neutral-200, @neutral-200 2px, transparent 2px, transparent 4px);
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+  .barItem {
+    min-width: 8px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "ts",
+          "totalSize",
+          "desc"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "ts",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cdpTime",
+            "defaultMessage": "CDP Time"
+          },
+          "queryType": "",
+          "resource": "cdp.data.protected.recovery.points"
+        }
+      },
+      {
+        "accessorKey": "totalSize",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "dataSize",
+            "defaultMessage": "Data Size"
+          },
+          "queryType": "",
+          "resource": "cdp.data.protected.recovery.points"
+        }
+      },
+      {
+        "accessorKey": "desc",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "protectedRecoveryPoint.description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "cdp.data.protected.recovery.points"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "revert",
+          "retrieve.files",
+          "set.protection"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "revert",
+        "resource": "cdp.data.protected.recovery.points",
+        "authKey": "revert",
+        "i18nKey": "revert",
+        "name": "恢复",
+        "label": "恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "retrieve.files",
+        "resource": "cdp.data.protected.recovery.points",
+        "authKey": "retrieve.files",
+        "i18nKey": "retrieve.files",
+        "name": "找回文件",
+        "label": "找回文件",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.protection",
+        "resource": "cdp.data.protected.recovery.points",
+        "authKey": "set.protection",
+        "i18nKey": "unlock.protection",
+        "name": "解锁恢复点",
+        "label": "解锁恢复点",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../../theme.less";
+
+.card {
+  padding-left: 12px;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    margin-bottom: 12px;
+    margin-left: -12px;
+
+    .rect {
+      margin-top: 5px;
+      width: 4px;
+      height: 12px;
+      background: @color-400;
+    }
+
+    .text {
+      height: 22px;
+      margin-left: 8px;
+      font-size: 14px;
+      font-weight: 400;
+      color: @neutral-700;
+      line-height: 22px;
+    }
+  }
+
+  .width-120 {
+    width: 120px !important;
+  }
+
+  .width-160 {
+    width: 160px !important;
+  }
+
+  .width-200 {
+    width: 200px !important;
+  }
+
+  .width-240 {
+    width: 240px !important;
+  }
+
+  .width-320 {
+    width: 320px !important;
+  }
+}

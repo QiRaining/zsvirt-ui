@@ -1,0 +1,63 @@
+@import "../../theme.module.less";
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+}
+
+.empty-card {
+  position: relative;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+
+  :global {
+    .ant-empty {
+      margin: 0 !important;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  :global {
+    .ant-space-item {
+      display: inline-block;
+    }
+  }
+  .container {
+    max-width: 1024px;
+    flex: 1;
+
+    .alert {
+      padding: 6px 12px 6px 36px !important;
+      min-height: 36px !important;
+    }
+
+    .card {
+      :global {
+        .ant-card-head {
+          padding: 0 12px !important;
+        }
+      }
+
+      .textItem {
+        display: flex;
+
+        & > span {
+          overflow: hidden;
+          flex: 1;
+        }
+
+        .btn {
+          flex: none;
+          font-size: 14px;
+          color: @color-600;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

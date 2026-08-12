@@ -1,0 +1,54 @@
+@import "../../../theme.module.less";
+
+.container {
+  height: 65vh;
+  overflow-y: scroll;
+  :global {
+    .ant-timeline-item-content {
+      :hover {
+        background-color: @neutral-100;
+      }
+    }
+    .ant-timeline-item-last .ant-timeline-item-content {
+      min-height: 22px;
+    }
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 20px;
+  :global {
+    .ant-badge-count {
+      font-size: 14px;
+      color: @neutral-800;
+      border: solid 1px @neutral-300;
+      background-color: @neutral-0;
+    }
+  }
+}
+
+.prefix-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.width-160 {
+  width: 160px;
+}
+
+.width-200 {
+  width: 200px;
+}
+
+.width-120 {
+  width: 120px;
+}
+
+.width-320 {
+  width: 320px;
+}

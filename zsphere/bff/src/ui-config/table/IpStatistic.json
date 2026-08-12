@@ -1,0 +1,177 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "ipv4Adress",
+          "ipv6Adress",
+          "resourceTypes",
+          "vmInstanceName"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "ipv4Adress",
+          "ipv6Adress",
+          "resourceTypes",
+          "vmInstanceName"
+        ]
+      },
+      {
+        "view": "sub.network.hp",
+        "keys": [
+          "ipv4Adress",
+          "resourceTypes",
+          "vmInstanceName"
+        ]
+      },
+      {
+        "view": "virtualization.sub",
+        "keys": [
+          "ip",
+          "ipVersion",
+          "nic",
+          "mac.address",
+          "resourceTypes",
+          "vmInstanceName"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipAddress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "ipVersion",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ipVersionType",
+            "defaultMessage": "IP Address Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "nic",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "nic",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "mac.address",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "macAddress",
+            "defaultMessage": "MAC Address"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "ipv4Adress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv4Adress",
+            "defaultMessage": "IPv4 Address"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "ipv6Adress",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "ipv6Adress",
+            "defaultMessage": "IPv6 Address"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "resourceTypes",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      },
+      {
+        "accessorKey": "vmInstanceName",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "relationResource",
+            "defaultMessage": "Associated Resources"
+          },
+          "queryType": "",
+          "resource": "ip.statistic"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,38 @@
+fragment trashFields on Trash {
+  uuid
+  createDate
+  resourceUuid
+  trashId
+  installPath
+  size
+  storageType
+  trashType
+}
+
+query trashList(
+  $conditions: [Condition!],
+  $type: TrashQueryType!,
+  $start: Int,
+  $limit: Int
+) {
+  trashList(
+    conditions: $conditions,
+    type: $type,
+    start: $start,
+    limit: $limit
+  ) {
+    list {
+      ...trashFields
+    }
+    total
+  }
+}
+
+# mutation cleanUpTrashList($input: CleanUpInput!) {
+#   cleanUpTrashList(input: $input) {
+#     result
+#     error {
+#       code
+#     }
+#   }
+# }

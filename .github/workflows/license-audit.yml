@@ -1,0 +1,46 @@
+name: GPLv3 direct dependency license audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: license-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: GPL-3.0-only compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install the locked dependency graph
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Check direct dependency licenses
+        run: pnpm security:audit:licenses
+
+      - name: Regenerate the committed inventory
+        run: pnpm security:report:licenses
+
+      - name: Check that the inventory is current
+        run: git diff --exit-code -- security/direct-dependency-licenses.md

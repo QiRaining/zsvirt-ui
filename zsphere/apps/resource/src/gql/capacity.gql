@@ -1,0 +1,66 @@
+query hostCpuMemoryCapacity(
+  $zoneUuids: [String!]
+  $clusterUuids: [String!]
+  $hostUuids: [String!]
+) {
+  hostCpuMemoryCapacity(zoneUuids: $zoneUuids, clusterUuids: $clusterUuids, hostUuids: $hostUuids) {
+    hostUuids
+    totalMemory
+    reservedMemory
+    reservedPhysicalMemory
+    overProvisioningTotalMemory
+    overProvisioningAvailableMemory
+    overProvisioningMemory
+    availableMemory
+    totalPhysicalMemory
+    availablePhysicalMemory
+    availableCpu
+    totalCpu
+    cpuNum
+    cpuSockets
+    totalCpuGHz
+    timestamp
+    CPUAllUsedUtilization
+    MemoryUsedInPercent
+    MemoryFreeBytes
+    MemoryUsedBytes
+  }
+}
+
+query primaryStorageCapacity($zoneUuids: [String!], $primaryStorageUuids: [String!]) {
+  primaryStorageCapacity(zoneUuids: $zoneUuids, primaryStorageUuids: $primaryStorageUuids) {
+    primaryStorageUuids
+    availableCapacity
+    reservedCapacity
+    totalCapacity
+    overProvisioningPrimaryStorage
+    availablePhysicalCapacity
+    reservedPhysicalCapacity
+    totalPhysicalCapacity
+    systemUsedCapacity
+    volumeSnapshotSize
+    imageCacheSize
+    volumeSize
+    vmTemplateVolumeCacheSize
+    timestamp
+  }
+}
+
+query localStorageHostCapacity($hostUuid: String!, $primaryStorageUuid: String) {
+  localStorageHostCapacity(hostUuid: $hostUuid, primaryStorageUuid: $primaryStorageUuid) {
+    hostUuid
+    primaryStorageUuid
+    availableCapacity
+    totalCapacity
+    overProvisioningPrimaryStorage
+    availablePhysicalCapacity
+    reservedCapacity
+    reservedPhysicalCapacity
+    totalPhysicalCapacity
+    systemUsedCapacity
+    volumeSnapshotSize
+    imageCacheSize
+    volumeSize
+    vmTemplateVolumeCacheSize
+  }
+}

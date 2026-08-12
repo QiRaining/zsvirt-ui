@@ -1,0 +1,127 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "serialNumber",
+          "state",
+          "type",
+          "manufacturer",
+          "rpm",
+          "currentTemperature"
+        ]
+      },
+      {
+        "view": "sub.host",
+        "keys": [
+          "serialNumber",
+          "state",
+          "rpm"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "serialNumber",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "device",
+            "defaultMessage": "Device"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "common.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      },
+      {
+        "accessorKey": "manufacturer",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "manufacturer",
+            "defaultMessage": "Manufacturer"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      },
+      {
+        "accessorKey": "rpm",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "rotateSpeed",
+            "defaultMessage": "Current Rotation Speed"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      },
+      {
+        "accessorKey": "currentTemperature",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.temperature",
+            "defaultMessage": "Current Temperature"
+          },
+          "queryType": "",
+          "resource": "fan"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

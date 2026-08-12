@@ -1,0 +1,29 @@
+query resourceConfigList(
+  $conditions: [Condition!],
+  $extraConditions: [Condition!]
+) {
+  resourceConfigList(
+    conditions: $conditions,
+    extraConditions: $extraConditions
+  ) {
+    list {
+      resourceType
+      resourceUuid
+      uuid
+      globalConfigValue
+      dependentResourceType
+      value
+      name
+      category
+    }
+  }
+}
+
+mutation updateResourceConfigAction($name: String!, $category: String!, $resourceUuid: String!, $value: String!) {
+  updateResourceConfigAction(name: $name, category: $category, resourceUuid: $resourceUuid, value: $value) {
+    resourceType
+    resourceUuid
+    uuid
+    value
+  }
+}

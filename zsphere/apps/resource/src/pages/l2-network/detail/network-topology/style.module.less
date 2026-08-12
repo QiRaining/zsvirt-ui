@@ -1,0 +1,37 @@
+@import url("../../../../theme.less");
+
+.tooltip {
+  font-size: 12px;
+  line-height: 20px;
+
+  &-title {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 4px;
+  }
+
+  &-item {
+    margin-bottom: 4px;
+
+    &-left {
+      display: inline-block;
+      width: 120px;
+    }
+
+    &-right {
+      display: inline-block;
+      min-width: 100px;
+
+      &-weak {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &-link {
+    cursor: pointer;
+    color: @neutral-0 !important;
+    transition: all ease 0.3s;
+    text-decoration: underline;
+  }
+}

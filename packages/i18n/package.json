@@ -1,0 +1,51 @@
+{
+  "name": "@zstack/i18n",
+  "version": "1.0.0",
+  "description": "Internationalization resources for ZStack UI",
+  "keywords": [
+    "cloud",
+    "cmp",
+    "i18n",
+    "internationalization",
+    "localization",
+    "typescript",
+    "zsphere",
+    "zstack"
+  ],
+  "license": "GPL-3.0-only",
+  "author": "ZStack",
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./zstack/cloud/locale/de-DE.json": "./src/zstack/cloud/locale/de-DE.json",
+    "./zstack/cloud/locale/en-US.json": "./src/zstack/cloud/locale/en-US.json",
+    "./zstack/cloud/locale/fr-FR.json": "./src/zstack/cloud/locale/fr-FR.json",
+    "./zstack/cloud/locale/id-ID.json": "./src/zstack/cloud/locale/id-ID.json",
+    "./zstack/cloud/locale/ja-JP.json": "./src/zstack/cloud/locale/ja-JP.json",
+    "./zstack/cloud/locale/ko-KR.json": "./src/zstack/cloud/locale/ko-KR.json",
+    "./zstack/cloud/locale/ru-RU.json": "./src/zstack/cloud/locale/ru-RU.json",
+    "./zstack/cloud/locale/th-TH.json": "./src/zstack/cloud/locale/th-TH.json",
+    "./zstack/cloud/locale/zh-CN.json": "./src/zstack/cloud/locale/zh-CN.json",
+    "./zstack/cloud/locale/zh-TW.json": "./src/zstack/cloud/locale/zh-TW.json",
+    "./zstack/zsphere/locale/zh-CN.json": "./src/zstack/zsphere/locale/zh-CN.json",
+    "./zstack/cmp/locale/zh-CN.json": "./src/zstack/cmp/locale/zh-CN.json",
+    "./zstack/zmigrate/locale/zh-CN.json": "./src/zstack/zmigrate/locale/zh-CN.json",
+    "./zstack/zmigrate/locale/en-US.json": "./src/zstack/zmigrate/locale/en-US.json",
+    "./zstack/zlr/locale/zh-CN.json": "./src/zstack/zlr/locale/zh-CN.json",
+    "./zstack/zlr/locale/en-US.json": "./src/zstack/zlr/locale/en-US.json"
+  },
+  "scripts": {
+    "extract:untranslated": "bun run scripts/extract-untranslated.ts"
+  }
+}

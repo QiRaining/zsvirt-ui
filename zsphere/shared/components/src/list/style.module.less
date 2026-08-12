@@ -1,0 +1,142 @@
+@import "../style/vars.less";
+
+.@{prefix}-field-list {
+  padding: 0px;
+
+  &-bordered {
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+  }
+
+  &-table {
+    :global {
+      .zstack-field-horizontal-value {
+        border-left: 1px solid @neutral-300;
+        padding-left: 32px !important;
+      }
+    }
+
+    > :first-child {
+      :global {
+        .ant-typography {
+          color: @neutral-600 !important;
+        }
+      }
+    }
+
+    :global {
+      .zstack-field-horizontal-left {
+        .ant-typography {
+          color: @neutral-700;
+        }
+      }
+    }
+  }
+
+  :global {
+    .zstack-field-horizontal {
+      border-bottom: 1px solid @neutral-300;
+      margin: 0;
+    }
+
+    .zstack-field-horizontal-left {
+      padding: 7px 0 7px 32px;
+    }
+
+    .zstack-field-horizontal-value {
+      padding: 7px 12px 7px 0;
+    }
+  }
+
+  & > :last-child {
+    border-bottom: none;
+  }
+
+  &-item-container {
+    border-bottom: 1px solid @neutral-300;
+
+    :global {
+      .zstack-field-horizontal-left {
+        .ant-typography {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  &-title {
+    cursor: pointer;
+    display: flex;
+    padding-left: 12px;
+    align-items: center;
+
+    :global {
+      .zstack-icon {
+        color: @neutral-600;
+      }
+
+      .zstack-field-horizontal {
+        width: 0;
+        flex: 1;
+        padding-left: 0;
+        border-bottom: none;
+
+        img {
+          margin-right: 4px;
+        }
+
+        &-left-label {
+          img {
+            margin-right: 4px;
+          }
+
+          &-icon span {
+            color: @neutral-400;
+          }
+        }
+
+        &-left {
+          width: calc(50% - 14px) !important;
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+
+  &-title-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-title-arrow-icon {
+    color: @neutral-600;
+  }
+
+  &-children {
+    border-top: 1px solid @neutral-300;
+    background-color: @neutral-100;
+    padding: 4px 0 4px;
+
+    :global {
+      .zstack-field-horizontal {
+        padding: 4px 12px 4px 52px;
+        border-bottom: none;
+
+        &:hover {
+          background-color: @neutral-200;
+        }
+
+        .zstack-field-horizontal-left,
+        .zstack-field-horizontal-value {
+          padding: 0;
+        }
+
+        .zstack-field-horizontal-left {
+          width: calc(50% - 20px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.host-group",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host-group",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.vm-group",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm-group",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      },
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "type",
+          "state",
+          "excuteState",
+          "vmGroup",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "name"
+          },
+          "queryType": "input",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "excuteState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "excuteState",
+            "defaultMessage": "Execution Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "vmGroup",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vmGroup",
+            "defaultMessage": "VM Scheduling Group"
+          },
+          "queryType": "",
+          "resource": "vm.scheduling.rule"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vm.scheduling.rule"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.excuteMode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.excuteMode",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vmSchedulingRule",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.host-group/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.excuteMode"
+        ]
+      },
+      {
+        "view": "sub.host-group/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host-group/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.host-group/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "sub.virtualization.vm-group/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.vm-group/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "sub.vm-group/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.excuteMode"
+        ]
+      },
+      {
+        "view": "sub.vm-group/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "virtualization.main/header",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "modify.config"
+        ],
+        "activeKeys": [
+          "edit",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "modify.config",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.vmSchedulingRule",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vmSchedulingRule",
+        "resource": "vm.scheduling.rule",
+        "authKey": "create.vmSchedulingRule",
+        "i18nKey": "create.vmSchedulingRule",
+        "name": "创建云主机调度策略",
+        "label": "创建云主机调度策略",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vm.scheduling.rule",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "vm.scheduling.rule",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "vm.scheduling.rule",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "vm.scheduling.rule",
+        "authKey": "modify.config",
+        "i18nKey": " virtualization.modifyConfig",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.excuteMode",
+        "resource": "vm.scheduling.rule",
+        "authKey": "modify.excuteMode",
+        "i18nKey": "modify.excuteMode",
+        "name": "修改执行机制",
+        "label": "修改执行机制",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vm.scheduling.rule",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

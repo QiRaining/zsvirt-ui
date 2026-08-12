@@ -1,0 +1,178 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "managementIp",
+          "consoleProxyOverriddenIp",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.vm",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "managementIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "managementIp",
+            "defaultMessage": "Management IP"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      },
+      {
+        "accessorKey": "consoleProxyOverriddenIp",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "console.proxy.overriddenIp",
+            "defaultMessage": "Console Proxy Address"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "console.proxy"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "reconnect.consoleproxy",
+          "update.consoleproxy"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "reconnect.consoleproxy",
+          "update.consoleproxy"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "reconnect.consoleproxy"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "reconnect.consoleproxy",
+        "resource": "console.proxy",
+        "authKey": "reconnect.consoleproxy",
+        "i18nKey": "reconnect.consoleproxy",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.consoleproxy",
+        "resource": "console.proxy",
+        "authKey": "update.consoleproxy",
+        "i18nKey": "set.consoleproxy.adress",
+        "name": "设置控制台代理地址",
+        "label": "设置控制台代理地址",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack",
+  "favicon": "/public/theme/default/ja-JP/favicon.ico",
+  "loginTitle": "ZStackクラウドプラットフォームへようこそ",
+  "loginLogo": "/public/theme/default/ja-JP/logo.svg",
+  "bannerLogo": "/public/theme/default/ja-JP/logo-bar.svg",
+  "bannerTitle": "ZStackクラウドプラットフォーム",
+  "bannerFontSize": "14px",
+  "overviewTitle": "ZStackリアルタイム・モニタリング",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

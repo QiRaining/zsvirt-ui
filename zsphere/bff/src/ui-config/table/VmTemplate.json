@@ -1,0 +1,372 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "cpuNum",
+          "mem",
+          "size",
+          "architecture",
+          "shareType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "cpuNum",
+          "mem",
+          "size",
+          "architecture",
+          "shareType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource",
+        "keys": [
+          "name",
+          "cpuNum",
+          "mem",
+          "shareType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource.by.userGroup",
+        "keys": [
+          "name",
+          "cpuNum",
+          "mem",
+          "shareType",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "cpuNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpu",
+            "defaultMessage": "CPU"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "mem",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memory",
+            "defaultMessage": "Memory"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "storage.size",
+            "defaultMessage": "Occupied Storage"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "virtualization.cpu.architecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "group",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "group",
+            "defaultMessage": "Group"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "shareType",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vm.template"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/directory",
+        "activeKeys": [
+          "create.instance",
+          "transform.to.instance",
+          "edit",
+          "edit.config",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "create.instance",
+          "transform.to.instance",
+          "edit",
+          "edit.config",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "create.instance",
+          "transform.to.instance",
+          "edit",
+          "edit.config",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "activeKeys": [
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/row",
+        "activeKeys": [
+          "create.instance",
+          "transform.to.instance",
+          "edit",
+          "edit.config",
+          "set.share.type",
+          "change.owner",
+          "delete",
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/toolbar",
+        "extraKeys": [
+          "share.resource",
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "create.instance",
+          "transform.to.instance",
+          "edit",
+          "edit.config",
+          "set.share.type",
+          "change.owner",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.instance",
+        "resource": "vm.template",
+        "authKey": "create.instance",
+        "i18nKey": "create.instance",
+        "name": "新建虚拟机",
+        "label": "新建虚拟机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "transform.to.instance",
+        "resource": "vm.template",
+        "authKey": "transform.to.instance",
+        "i18nKey": "transform.to.instance",
+        "name": "转换为虚拟机",
+        "label": "转换为虚拟机",
+        "icon": "",
+        "dividerKey": "transform.to.instance-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "vm.template",
+        "authKey": "edit",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.config",
+        "resource": "vm.template",
+        "authKey": "edit.config",
+        "i18nKey": "edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "vm.template",
+        "authKey": "set.share.type",
+        "i18nKey": "set.share.type",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.owner",
+        "resource": "vm.template",
+        "authKey": "change.owner",
+        "i18nKey": "change.owner",
+        "name": "更改所有者",
+        "label": "更改所有者",
+        "icon": "",
+        "dividerKey": "change.owner-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "vm.template",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "share.resource",
+        "resource": "vm.template",
+        "authKey": "share.resource",
+        "i18nKey": "share.resource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vm.template",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

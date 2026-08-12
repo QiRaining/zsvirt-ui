@@ -1,0 +1,1142 @@
+fragment vmInstanceFields on VmInstance {
+  uuid
+  name
+  healthStatus
+  architecture
+  crashStrategy
+  type
+  metric {
+    time
+    value
+  }
+  toolsState
+  vnuma
+  hypervisorType
+  cpuNum
+  memorySize
+  createDate
+  lastOpDate
+  description
+  state
+  clusterUuid
+  rootVolumeUuid
+  attachedShareableVolumeUuidList
+  platform
+  guestOsType
+  guestToolsState {
+    osType
+    platform
+    qgaState
+    version
+    zwatchState
+    vmInstanceUuid
+  }
+  defaultL3NetworkUuid
+  imageUuid
+  lastHostUuid
+  hostUuid
+  backupStatus
+  backupTaskStatus
+  reservedMemorySize
+  defaultL3Network {
+    name
+    uuid
+    ipVersion
+    networkType
+  }
+  backupTaskType
+  owner {
+    uuid
+    name
+    type
+    linkedAccountUuid
+  }
+  cluster {
+    name
+    state
+    uuid
+  }
+  host {
+    uuid
+    name
+    state
+    status
+    managementIp
+    cpuNum
+    clusterUuid
+  }
+  lastHost {
+    uuid
+    name
+    state
+    managementIp
+    clusterUuid
+  }
+  sshKeyPairNum
+  image {
+    name
+    uuid
+    status
+  }
+  primaryStorage {
+    name
+    uuid
+    type
+    state
+    availableCapacity
+    defaultProtocol
+  }
+  tag {
+    ownerUuid
+    name
+    uuid
+    color
+  }
+  vmNics {
+    type
+    uuid
+    mac
+    ip
+    deviceId
+    usedIps {
+      uuid
+      ip
+      ipVersion
+      l3NetworkUuid
+    }
+    l3NetworkUuid
+    l3Network {
+      ... on L3Network {
+        name
+        uuid
+        l2NetworkUuid
+        l2Network {
+          uuid
+          vSwitchType
+        }
+        networkServices {
+          networkServiceType
+        }
+      }
+    }
+  }
+  eip {
+    uuid
+    name
+    vipIp
+  }
+  toolsInfo {
+    lowVersion
+    version
+  }
+  allVolumes {
+    uuid
+    name
+    deviceId
+    lastAttachDate
+    primaryStorageUuid
+    size
+    actualSize
+    isShareable
+    type
+    installPath
+    primaryStorage {
+      type
+      uuid
+      name
+      defaultProtocol
+    }
+  }
+  gpuDeviceSpec {
+    name
+    isVirtual
+    type
+    uuid
+    deviceType
+  }
+  systemTag {
+    cpuCores
+    cpuSockets
+    haStickStragedy
+    sshkey
+    bootOrder
+    bootOrderOnce
+    consolePassword
+    vmConsoleMode
+    vmPriority
+    GuestTools
+    bootMode
+    RDPEnable
+    usbRedirect
+    qemuga
+    antiSpoofing
+    VDIMonitorNumber
+    userdata
+    clockTrack
+    timeTrack
+    isoList {
+      uuid
+      index
+    }
+    vmCpuPinningList {
+      vCPU
+      pCPU
+    }
+    staticIp {
+      l3NetworkUuid
+      ip
+    }
+    vmDriver
+    hostname
+    qxlMemory {
+      ram
+      vram
+      vgamem
+    }
+    vmMachineType
+  }
+  vmCdRoms {
+    uuid
+    isoUuid
+  }
+  zoneUuid
+  zone {
+    uuid
+    name
+  }
+  relatedResource {
+    backupData
+  }
+  # cdpTaskStatus
+  exportInfo {
+    uuid
+    name
+    exportUrl
+    createDate
+    size
+  }
+  vmGroup {
+    uuid
+    name
+    vmSchedulingRuleCount
+    associatedVmSchedulingRuleList {
+      uuid
+      name
+      rule
+      mode
+      hostGroup {
+        uuid
+        name
+      }
+    }
+    vmCount
+  }
+  schedulingState
+  group {
+    groupName
+    uuid
+  }
+  qemuState
+  haveScsiLun
+  lastBackupJobResult {
+    id
+    fireInstanceId
+    success
+    resultDump
+  }
+  localBackupCount
+  localBackupCapacity
+  backupJob {
+    uuid
+    jobData
+    state
+    schedulerJobGroupJobRefs {
+      schedulerJobGroupUuid
+      priority
+    }
+    schedulerJobGroup {
+      uuid
+      name
+    }
+  }
+  shareType
+  userGroup {
+    uuid
+    name
+  }
+  lastOpDate
+  tpmList {
+    uuid
+    vmInstanceUuid
+  }
+  vmHa {
+    haLevel
+  }
+}
+
+query vmInstance($uuid: String!) {
+  vmInstance(uuid: $uuid) {
+    volumeAttributeUserConfig
+    emulatorPin
+    sshKeyPairs {
+      uuid
+      name
+    }
+    securityGroup {
+      name
+      uuid
+    }
+    cpuModeInfo {
+      value
+      dependentResourceType
+    }
+    hasTopology
+    vmCdRoms {
+      uuid
+      isoUuid
+    }
+    consoleAddress
+    bootOrder {
+      orders
+    }
+    toolsInfo {
+      lowVersion
+      features {
+        pvpanic
+        pvpanic_host_enable
+        pvpanic_guest_tools_enable
+        pvpanic_guest_kernel_supported
+      }
+      status
+      version
+    }
+    allVolumes {
+      uuid
+      name
+      deviceId
+      lastAttachDate
+      primaryStorageUuid
+      size
+      actualSize
+      isShareable
+      type
+      installPath
+      relatedResource {
+        backupData
+      }
+      backupTaskType
+      primaryStorage {
+        type
+        uuid
+        name
+        defaultProtocol
+      }
+    }
+    snapshotSchedulerJob {
+      uuid
+      name
+      schedulerJobGroup {
+        uuid
+        name
+      }
+    }
+    uptime
+    ...vmInstanceFields
+  }
+}
+
+query templatedVmInstance($uuid: String!) {
+  templatedVmInstance(uuid: $uuid) {
+    volumeAttributeUserConfig
+    emulatorPin
+    sshKeyPairs {
+      uuid
+      name
+    }
+    securityGroup {
+      name
+      uuid
+    }
+    cpuModeInfo {
+      value
+      dependentResourceType
+    }
+    hasTopology
+    vmCdRoms {
+      uuid
+      isoUuid
+    }
+    consoleAddress
+    bootOrder {
+      orders
+    }
+    toolsInfo {
+      lowVersion
+      features {
+        pvpanic
+        pvpanic_host_enable
+        pvpanic_guest_tools_enable
+        pvpanic_guest_kernel_supported
+      }
+      status
+      version
+    }
+    allVolumes {
+      uuid
+      name
+      deviceId
+      lastAttachDate
+      primaryStorageUuid
+      size
+      actualSize
+      isShareable
+      type
+      installPath
+      relatedResource {
+        backupData
+      }
+      backupTaskType
+      primaryStorage {
+        type
+        uuid
+        name
+        defaultProtocol
+      }
+    }
+    snapshotSchedulerJob {
+      uuid
+      name
+    }
+    uptime
+    isTemplate
+    tpmList {
+      uuid
+      vmInstanceUuid
+    }
+    ...vmInstanceFields
+  }
+}
+
+query getRequestConsoleAccess($uuid: String!) {
+  getRequestConsoleAccess(uuid: $uuid) {
+    hostname
+    port
+    token
+  }
+}
+query ovfFile($ovf: String!) {
+  ovfFile(ovf: $ovf) {
+    disks {
+      fileName
+    }
+    cpuNum
+    memorySize
+  }
+}
+
+query vmInstanceList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      vmUsage {
+        cpuUsed
+        memoryUsed
+        storageUsed
+      }
+      cpuModeInfo {
+        value
+        dependentResourceType
+      }
+      snapshotSchedulerJob {
+        uuid
+      }
+      ...vmInstanceFields
+    }
+  }
+}
+query templatedVmInstanceList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      vmUsage {
+        cpuUsed
+        memoryUsed
+        storageUsed
+      }
+      cpuModeInfo {
+        value
+        dependentResourceType
+      }
+      isTemplate
+      ...vmInstanceFields
+    }
+  }
+}
+
+query ovfExportList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  ovfExportList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      exportUrl
+      md5Sum
+      createDate
+      size
+      format
+      vmInstance {
+        name
+        uuid
+        state
+        owner {
+          uuid
+          name
+          type
+          linkedAccountUuid
+        }
+        guestOsType
+        cpuNum
+        memorySize
+        defaultL3NetworkUuid
+        tag {
+          ownerUuid
+          name
+          uuid
+          color
+        }
+        vmNics {
+          type
+          uuid
+          mac
+          ip
+          usedIps {
+            uuid
+            ip
+            ipVersion
+            l3NetworkUuid
+          }
+          l3NetworkUuid
+          l3Network {
+            ... on L3Network {
+              name
+              uuid
+              l2NetworkUuid
+              l2Network {
+                uuid
+                vSwitchType
+              }
+            }
+          }
+        }
+        allVolumes {
+          uuid
+          name
+          deviceId
+          lastAttachDate
+          primaryStorageUuid
+          size
+          actualSize
+          isShareable
+          type
+          installPath
+          primaryStorage {
+            type
+            uuid
+            name
+            defaultProtocol
+          }
+        }
+        zone {
+          uuid
+          name
+        }
+      }
+      backupStorage {
+        name
+        uuid
+      }
+    }
+  }
+}
+
+query backupPolicyVmInstanceSelectList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      rootVolumeUuid
+      state
+      cpuNum
+      memorySize
+      architecture
+      platform
+      defaultL3NetworkUuid
+      vmNics {
+        uuid
+        l3NetworkUuid
+        usedIps {
+          uuid
+          ip
+          ipVersion
+        }
+      }
+      owner {
+        uuid
+        name
+      }
+      group {
+        uuid
+        groupName
+      }
+      host {
+        uuid
+        managementIp
+      }
+      cluster {
+        uuid
+        name
+      }
+      vmHa {
+        haLevel
+      }
+      zoneUuid
+      createDate
+    }
+  }
+}
+
+query getFlattenVmInstanceOccupyCapacity($input: GetFlattenVmInstanceOccupyCapacityInput!) {
+  getFlattenVmInstanceOccupyCapacity(input: $input) {
+    list {
+      uuid
+      name
+      type
+      actualSize
+    }
+    error
+    success
+  }
+}
+
+query backupTaskStatus(
+  $isVm: Boolean!
+  $rootVolumeUuids: [String!]!
+  $dataVolumeUuids: [String!]!
+) {
+  backupTaskStatus(
+    isVm: $isVm
+    rootVolumeUuids: $rootVolumeUuids
+    dataVolumeUuids: $dataVolumeUuids
+  ) {
+    progress
+    isTaskRunning
+    backupTaskStatusData {
+      targetResourceUuid
+      longJobUuids
+    }
+  }
+}
+
+query queryVmStorageUsedCapacity(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  queryCapacityManagementListVMDiskInfo(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    list {
+      used
+    }
+  }
+}
+
+mutation attachDataVolumeToVm($input: AttachDataVolumeToVmInput!) {
+  attachDataVolumeToVm(input: $input) {
+    actionId
+  }
+}
+
+mutation detachDataVolumeFromVm($input: DetachDataVolumeFromVmInput!) {
+  detachDataVolumeFromVm(input: $input) {
+    actionId
+  }
+}
+
+mutation attachIsoToVmInstance($input: AttachIsoToVmInstanceInput!) {
+  attachIsoToVmInstance(input: $input) {
+    actionId
+  }
+}
+
+mutation attachGuestToolsIsoToVm($input: AttachGuestToolsIsoToVmInput!) {
+  attachGuestToolsIsoToVm(input: $input) {
+    actionId
+  }
+}
+
+mutation detachIsoFromVmInstance($input: DetachIsoFromVmInstanceInput!) {
+  detachIsoFromVmInstance(input: $input) {
+    actionId
+  }
+}
+
+mutation cloneVmInstance($input: CloneVmInstanceInput!) {
+  cloneVmInstance(input: $input) {
+    actionId
+  }
+}
+
+mutation migrateVm($input: MigrateVmInput!) {
+  migrateVm(input: $input) {
+    actionId
+  }
+}
+
+mutation localStorageMigrateVolume($input: LocalStorageMigrateVolumeInput!) {
+  localStorageMigrateVolume(input: $input) {
+    actionId
+  }
+}
+
+mutation setVmSshKey($input: SetVmSshKeyInput!) {
+  setVmSshKey(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteVmSshKey($input: DeleteVmSshKeyInput!) {
+  deleteVmSshKey(input: $input) {
+    actionId
+  }
+}
+
+mutation setHaStickStragedy($vmInstanceUuid: String!) {
+  setHaStickStragedy(vmInstanceUuid: $vmInstanceUuid) {
+    success
+  }
+}
+
+mutation removeHaStickStragedy($vmInstanceUuid: String!, $clusterUuid: String!) {
+  removeHaStickStragedy(input: { vmInstanceUuid: $vmInstanceUuid, clusterUuid: $clusterUuid }) {
+    success
+  }
+}
+
+mutation updateVmPriority($uuid: String!, $priority: String!) {
+  updateVmPriority(input: { uuid: $uuid, priority: $priority }) {
+    error {
+      code
+    }
+  }
+}
+
+mutation setVmConsoleMode($uuid: String!, $mode: String!) {
+  setVmConsoleMode(input: { uuid: $uuid, mode: $mode }) {
+    error {
+      code
+    }
+  }
+}
+
+mutation setVmConsolePassword($input: SetVmConsolePasswordInput!) {
+  setVmConsolePassword(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteVmConsolePassword($input: DeleteVmConsolePasswordInput!) {
+  deleteVmConsolePassword(input: $input) {
+    actionId
+  }
+}
+
+mutation changeVmInstanceState($input: ChangeVmInstanceStateInput!) {
+  changeVmInstanceState(input: $input) {
+    success
+    error
+  }
+}
+
+# mutation setVmHalevel($uuid: String!, $level: String!) {
+#   setVmInstanceHaLevel(input: { uuid: $uuid, level: $level }) {
+#     error {
+#       code
+#     }
+#   }
+# }
+mutation setVmHalevel($input: [SetVmInstanceHaLevelInput!]!) {
+  setVmInstanceHaLevel(input: $input) {
+    error {
+      code
+    }
+  }
+}
+
+# mutation DELETE_VM($uuids: [String!]!, $deleteVolume: Boolean!) {
+#   deleteVmInstance(uuids: $uuids, deleteVolume: $deleteVolume) {
+#     error {
+#       code
+#       description
+#       details
+#     }
+#   }
+# }
+
+mutation deleteVmInstance($uuids: [String!]!, $deleteVolume: Boolean!) {
+  deleteVmInstance(uuids: $uuids, deleteVolume: $deleteVolume) {
+    error {
+      code
+      description
+      details
+    }
+  }
+}
+
+# query GET_STORAGE_MIGRATE_DEPENDS($uuid: String!) {
+#   storageMigrateVmInstancedepends(uuid: $uuid) {
+#     isAttachedScsiLunDevice
+#     hasUnavailableUsbDevice
+#     hasPeripheralAttached
+#     uuid
+#   }
+# }
+
+query getStorageMigrateVmInstancedepends($uuid: String!) {
+  storageMigrateVmInstancedepends(uuid: $uuid) {
+    isAttachedScsiLunDevice
+    hasUnavailableUsbDevice
+    hasPeripheralAttached
+    uuid
+  }
+}
+
+mutation setVmInstanceDefaultCdRom($input: SetVmInstanceDefaultCdRomInput!) {
+  setVmInstanceDefaultCdRom(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteCdRoms($input: DeleteCdRomInput!) {
+  deleteCdRoms(input: $input) {
+    actionId
+  }
+}
+
+mutation startVmFromHost($input: StartVmInstanceFromHostInput!) {
+  startVmFromHost(input: $input) {
+    actionId
+  }
+}
+mutation reimageVmInstance($input: ReimageVmInstanceInput!) {
+  reimageVmInstance(input: $input) {
+    actionId
+  }
+}
+
+mutation createInstanceFromOvf($input: CreateInstanceFromOvfInput!) {
+  createInstanceFromOvf(input: $input) {
+    actionId
+    jobResult
+  }
+}
+mutation createVolumeSnapshot($volumeUuid: ID!, $name: String!, $description: String) {
+  createVolumeSnapshot(input: { volumeUuid: $volumeUuid, name: $name, description: $description }) {
+    success
+  }
+}
+
+mutation createVolumeSnapshotGroup($rootVolumeUuid: ID!, $name: String!, $description: String) {
+  createVolumeSnapshotGroup(
+    input: { rootVolumeUuid: $rootVolumeUuid, name: $name, description: $description }
+  ) {
+    success
+  }
+}
+
+query getMaxPCpuNum($uuidList: [String!]!, $type: GetMaxPCpuNumForVmCreateType!) {
+  getMaxPCpuNum(type: $type, uuidList: $uuidList)
+}
+
+query getCdromConfigForVmCreate {
+  getCdromConfigForVmCreate {
+    maximumCdRomNum
+    vmDefaultCdRomNum
+  }
+}
+
+query getVmMetricDataList(
+  $uuid: String!
+  $startTime: Float!
+  $endTime: Float!
+  $period: Float!
+  $metricNames: [String!]!
+  $namespace: String
+) {
+  vmMetricDataList(
+    uuid: $uuid
+    startTime: $startTime
+    endTime: $endTime
+    period: $period
+    metricNames: $metricNames
+    namespace: $namespace
+  ) {
+    time
+    value
+  }
+}
+
+query getCpuMemoryCapacity($uuid: String!) {
+  getCpuMemoryCapacity(uuid: $uuid) {
+    availableCpu
+    availableMemory
+  }
+}
+
+query getMemorySnapshotByVm($uuid: String!) {
+  getMemorySnapshotByVm(uuid: $uuid) {
+    isMemorySnapshot
+  }
+}
+
+query getQuota($uuid: String!) {
+  getQuota(uuid: $uuid) {
+    name
+    used
+    total
+  }
+}
+query getHostNUMANode(
+  $uuid: String!
+  $uuidType: String
+  $withCPUUsedUtilization: Boolean!
+  $startTime: String!
+  $endTime: String!
+  $isAverage: Boolean
+) {
+  getHostNUMANode(
+    uuid: $uuid
+    uuidType: $uuidType
+    withCPUUsedUtilization: $withCPUUsedUtilization
+    startTime: $startTime
+    endTime: $endTime
+    isAverage: $isAverage
+  ) {
+    numaNodeList {
+      cpus
+      numaNode
+    }
+    pCPUUsedList {
+      cpuNum
+      value
+    }
+  }
+}
+
+query resourceConfigList($conditions: [Condition!]) {
+  resourceConfigList(conditions: $conditions) {
+    list {
+      uuid
+      globalConfigValue
+      value
+    }
+  }
+}
+
+query getHostResourceAllocation(
+  $uuid: String!
+  $uuidType: String
+  $vcpu: Int!
+  $strategy: String
+  $scene: String
+) {
+  getHostResourceAllocation(
+    uuid: $uuid
+    uuidType: $uuidType
+    vcpu: $vcpu
+    strategy: $strategy
+    scene: $scene
+  ) {
+    vCPUPin {
+      vCPU
+      pCPU
+    }
+  }
+}
+query getNUMATopology($hostUuid: String, $vmUuid: String, $sortByVmNode: Boolean) {
+  getNUMATopology(hostUuid: $hostUuid, vmUuid: $vmUuid, sortByVmNode: $sortByVmNode) {
+    vmName
+    vmUuid
+    vmTopology {
+      CPUsID
+      nodeID
+      memSize
+      phyNodeID
+      memSize
+    }
+    hostTopology {
+      node
+      cpus
+      VMsUuid
+      free
+      size
+    }
+  }
+}
+query getResourceCpuMode($uuid: String!) {
+  getResourceCpuMode(uuid: $uuid) {
+    cpuMode
+  }
+}
+query getCustomCpuMode {
+  getCustomCpuMode {
+    list
+  }
+}
+query queryGlobalConfigCpuMode {
+  queryGlobalConfigCpuMode {
+    cpuMode
+  }
+}
+
+query queryVmUsage($uuid: String!) {
+  vmUsage(uuid: $uuid) {
+    cpuUsed
+    memoryUsed
+    storageUsed
+  }
+}
+
+query queryScreenshot($uuid: String!) {
+  screenshot(uuid: $uuid) {
+    imageData
+  }
+}
+
+query instanceCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: VmQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vmInstanceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+query ovfExportCount(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  ovfExportList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    count: true
+  ) {
+    total
+  }
+}
+
+mutation changeSchedulerState($input: ChangeSchedulerStateActionInput!) {
+  changeSchedulerState(input: $input) {
+    actionId
+  }
+}

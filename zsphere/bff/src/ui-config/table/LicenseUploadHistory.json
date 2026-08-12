@@ -1,0 +1,153 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "uploadDate",
+          "license",
+          "source",
+          "authProps",
+          "authQuota",
+          "expired",
+          "issuedDate",
+          "expiredDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uploadDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "uploadDate",
+            "defaultMessage": "Upload Time"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "license",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "license",
+            "defaultMessage": "Licenses"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "source",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authWay",
+            "defaultMessage": "Authorization Method"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "authProps",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authProps",
+            "defaultMessage": "Authorized Item"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "authQuota",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "authQuota",
+            "defaultMessage": "Authorized Quota"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "expired",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "licenseState",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "issuedDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "issuedDate",
+            "defaultMessage": "Issued on"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      },
+      {
+        "accessorKey": "expiredDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "expiredDate",
+            "defaultMessage": "Expires on"
+          },
+          "queryType": "",
+          "resource": "license.upload.history"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

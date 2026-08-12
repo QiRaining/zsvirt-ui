@@ -1,0 +1,46 @@
+{
+  "name": "@zstack/zsphere-config",
+  "version": "0.0.3",
+  "description": "ZStack UI 配置库",
+  "author": "ZSphere Dev Team",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "menu": "node src/menu-converter.js",
+    "build": "pnpm menu && pnpm build:esm && pnpm copy:types",
+    "build:esm": "rspack build --config rspack.config.js",
+    "copy:types": "tsc -p tsconfig.json --declaration --emitDeclarationOnly --outDir dist --skipLibCheck",
+    "build:dev": "rspack build --config rspack.config.js --watch",
+    "test": "node src/test-menu-converter.js"
+  },
+  "dependencies": {
+    "@zstack/zsphere-types": "workspace:*",
+    "classnames": "catalog:",
+    "lodash-es": "catalog:"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^2.0.0",
+    "@rspack/core": "^2.0.0",
+    "@types/classnames": "^2.3.4",
+    "@types/lodash-es": "^4.17.12",
+    "typescript": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

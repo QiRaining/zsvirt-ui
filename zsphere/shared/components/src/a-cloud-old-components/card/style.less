@@ -1,0 +1,100 @@
+@import "../../style/vars.less";
+
+.@{prefix}-card {
+  border-color: @neutral-300 !important;
+
+  &-btn {
+    cursor: pointer;
+  }
+
+  .ant-card-head {
+    min-height: auto;
+    margin-bottom: 0;
+    padding: 0 20px;
+    background-color: @neutral-100;
+    border: none;
+    .ant-card-head-title {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 22px;
+      color: @neutral-800;
+      padding: 8px 0;
+    }
+    .ant-card-extra {
+      padding: 0;
+    }
+  }
+  &-subtitle {
+    color: @neutral-600;
+    font-size: 12px;
+  }
+
+  .ant-card-body {
+    padding: 20px;
+
+    > .zstack-field-horizontal:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.@{prefix}-zsv-card {
+  .ant-card-head {
+    .ant-card-head-title {
+      font-weight: 400;
+      color: @neutral-700;
+    }
+    .ant-card-extra {
+      color: @neutral-600;
+    }
+    .@{prefix}-card-btn {
+      color: @neutral-600;
+    }
+  }
+}
+
+.@{prefix}-card-collapsed .ant-card-body {
+  display: none;
+}
+
+.@{prefix}-card-draggable {
+  .ant-card-head {
+    padding: 0 40px 0 12px;
+    color: @neutral-700;
+  }
+  .ant-card-body {
+    padding: 0;
+  }
+}
+
+.@{prefix}-card-is-list .ant-card-body {
+  padding: 0;
+}
+
+.@{prefix}-card-title-action {
+  display: inline-block;
+  .zstack-icon {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.@{prefix}-card-title-action-item:hover {
+  cursor: pointer;
+  color: @color-600;
+
+  .zstack-icon {
+    color: @color-600 !important;
+  }
+}
+
+.@{prefix}-card-title-action-item-disabled {
+  cursor: not-allowed;
+  color: @neutral-500;
+  opacity: 0.5;
+
+  .zstack-icon {
+    cursor: not-allowed;
+  }
+}

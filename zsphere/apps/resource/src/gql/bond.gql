@@ -1,0 +1,110 @@
+fragment BondFields on Bond {
+  uuid
+  allSlavesActive
+  name
+  bondingName
+  hostUuid
+  ipAddresses
+  slaves {
+    uuid
+    interfaceName
+    state
+    speed
+    host {
+      uuid
+      status
+    }
+  }
+  host {
+    uuid
+    name
+  }
+  speed
+  gateway
+  description
+  mac
+  miiStatus
+  miimon
+  mode
+  xmitHashPolicy
+  lastOpDate
+  createDate
+  bondingType
+  hostNetworkBondingServiceRef {
+    bondingUuid
+    vlanId
+    serviceType
+    serviceTypes
+  }
+  vSwitch {
+    uuid
+    name
+  }
+}
+
+query countbondList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $type: String
+  $limit: Int
+  $fields: [String!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  bondList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    type: $type
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+  }
+}
+
+query bondList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: String
+  $fields: [String!]
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  bondList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    fields: $fields
+    limit: $limit
+    type: $type
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      ...BondFields
+    }
+    total
+  }
+}
+
+query bondResouceCount($hostUuid: String!) {
+  bondResouceCount(hostUuid: $hostUuid) {
+    nic
+    bond
+  }
+}
+
+query getBondReleatedResource($bondingName: String!) {
+  bondReleatedResource(bondingName: $bondingName) {
+    host
+    vm
+  }
+}

@@ -1,0 +1,88 @@
+fragment emailServerSettingFields on EmailServerSetting {
+  uuid
+  name
+  state
+  type
+  description
+  createDate
+  toPublic
+  shareType
+}
+
+query emailServerSettingList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $type: String
+  $sortDirection: SortDirectionValidValues
+) {
+  emailServerSettingList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...emailServerSettingFields
+      owner {
+        name
+        uuid
+      }
+      emailPlat {
+        password
+        username
+        smtpPort
+        smtpServer
+      }
+    }
+  }
+}
+
+mutation enableEmailServerSettings($input: EnableEmailServerInput!) {
+  enableEmailServerSettings(input: $input) {
+    actionId
+  }
+}
+
+mutation disableEmailServerSettings($input: DisableEmailServerInput!) {
+  disableEmailServerSettings(input: $input) {
+    actionId
+  }
+}
+
+mutation createSNSEmailServer($input: CreateSNSEmailPlatformInput!) {
+  createSNSEmailServer(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteSNSEmailServer($input: DeleteSNSEmailPlatformInput!) {
+  deleteSNSEmailServer(input: $input) {
+    actionId
+  }
+}
+
+mutation updateSNSEmailServer($input: UpdateSNSEmailPlatformInput!) {
+  updateSNSEmailServer(input: $input) {
+    actionId
+  }
+}
+
+mutation validateSNSEmailServer($input: ValidateSNSEmailPlatformInput!) {
+  validateSNSEmailServer(input: $input) {
+    actionId
+  }
+}
+
+mutation changeResourceOwner($input: ChangeResourceOwnerInput!) {
+  changeResourceOwner(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/.pnpm/@types", "./node_modules/@types", "./src/types"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@test/*": ["src/__test__/*"]
+    }
+  },
+  "include": ["src", "src/types/chokidar.d.ts"]
+}

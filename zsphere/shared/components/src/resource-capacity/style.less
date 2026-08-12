@@ -1,0 +1,92 @@
+@import "../style/vars.less";
+
+.modal {
+  :global {
+    .ant-modal-footer > button:first-child {
+      visibility: hidden;
+    }
+  }
+
+  .modal-modalBody {
+    padding: 24px;
+    max-height: 612px;
+    overflow-y: auto;
+    .ant-space-item {
+      display: block;
+    }
+  }
+}
+
+.card {
+  .card-content {
+    padding-left: 12px;
+  }
+
+  + .card {
+    margin-top: 20px;
+  }
+
+  .card-titleBar {
+    margin-bottom: 8px;
+
+    .card-titleBar-title {
+      font-size: 14px;
+      font-weight: 400;
+      font-family:
+        PingFangSC-Regular,
+        PingFang SC;
+      line-height: 22px;
+      color: @neutral-700;
+
+      .card-titleBar-title-rect {
+        width: 4px;
+        height: 12px;
+        background-color: @color-400;
+      }
+    }
+  }
+
+  .card-formula {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+
+  .card-formula-label {
+    color: @neutral-600;
+  }
+
+  .card-formula-value {
+    color: @neutral-700;
+  }
+
+  .card-example {
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+    background-color: @neutral-0;
+    padding: 16px;
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%;
+
+    .card-example-capacity {
+      margin-top: 6px;
+    }
+
+    .card-example-line {
+      height: 5px;
+      border-left: 1px solid @neutral-400;
+      border-right: 1px solid @neutral-400;
+      border-bottom: 1px solid @neutral-400;
+      border-radius: 1px;
+      margin-top: 4px;
+    }
+
+    .card-example-lineName {
+      color: @neutral-600;
+      text-align: center;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+  }
+}

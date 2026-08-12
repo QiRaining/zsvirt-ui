@@ -1,0 +1,507 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "usedCapacity",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "usedCapacity",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.alarm",
+        "keys": [
+          "name",
+          "type",
+          "availableCapacity",
+          "totalCapacity",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virutalization.alarm",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "usedCapacity",
+          "state",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virutalization.zone",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "usedCapacity",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "zone",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "zone",
+            "defaultMessage": "Data Center"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "url",
+            "defaultMessage": "URL"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "availableCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "availableCapacity",
+            "defaultMessage": "Physical Available"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "totalCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "totalCapacity",
+            "defaultMessage": "Total Capacity"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "usedCapacity",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "capacityUtilization",
+            "defaultMessage": "Storage Utilization"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "backup.storage"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "backup.storage"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnect",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnect",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.backup.storage",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnect",
+          "data.clean",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm/row",
+        "activeKeys": [
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.alarm/toolbar",
+        "extraKeys": [
+          "attach.alarm",
+          "detach.alarm"
+        ]
+      },
+      {
+        "view": "sub.virutalization.alarm/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnect",
+          "virtualization.edit.nameandDescription",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virutalization.alarm/toolbar",
+        "extraKeys": [
+          "add.backup.storage",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnect",
+          "data.clean",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virutalization.zone/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "reconnect",
+          "virtualization.edit.nameandDescription",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virutalization.zone/toolbar",
+        "extraKeys": [
+          "add.backup.storage",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "reconnect",
+          "data.clean",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir.template.image/directory",
+        "activeKeys": [
+          "add.image",
+          "enable",
+          "disable",
+          "reconnect",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "modify.advance.settings",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.template.image.main/header",
+        "activeKeys": [
+          "add.image",
+          "enable",
+          "disable",
+          "reconnect",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "modify.advance.settings",
+          "data.clean",
+          "update.password",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.backup.storage",
+        "resource": "backup.storage",
+        "authKey": "add.backup.storage",
+        "i18nKey": "add.backupStorage",
+        "name": "添加镜像服务器",
+        "label": "添加镜像服务器",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.image",
+        "resource": "backup.storage",
+        "authKey": "add.image",
+        "i18nKey": "add.image",
+        "name": "添加镜像",
+        "label": "添加镜像",
+        "icon": "",
+        "dividerKey": "add.image-divider"
+      },
+      {
+        "key": "enable",
+        "resource": "backup.storage",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "backup.storage",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect",
+        "resource": "backup.storage",
+        "authKey": "reconnect",
+        "i18nKey": "reconnect",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": "reconnect-divider"
+      },
+      {
+        "key": "virtualization.edit.nameandDescription",
+        "resource": "backup.storage",
+        "authKey": "virtualization.edit.nameandDescription",
+        "i18nKey": "virtualization.edit.nameandDescription",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "backup.storage",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.advance.settings",
+        "resource": "backup.storage",
+        "authKey": "modify.advance.settings",
+        "i18nKey": "modify.advance.settings",
+        "name": "修改高级设置",
+        "label": "修改高级设置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "data.clean",
+        "resource": "backup.storage",
+        "authKey": "data.clean",
+        "i18nKey": "data.clean",
+        "name": "数据清理",
+        "label": "数据清理",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.password",
+        "resource": "backup.storage",
+        "authKey": "update.password",
+        "i18nKey": "update.password",
+        "name": "更新密码",
+        "label": "更新密码",
+        "icon": "",
+        "dividerKey": "update.password-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "backup.storage",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.alarm",
+        "resource": "backup.storage",
+        "authKey": "attach.alarm",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.alarm",
+        "resource": "backup.storage",
+        "authKey": "detach.alarm",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

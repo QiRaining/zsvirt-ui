@@ -1,0 +1,352 @@
+@import "../../../../theme.less";
+
+.modalContainer {
+  .tree-body-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid @neutral-300;
+    max-height: 320px;
+    overflow-y: auto;
+    border-radius: 2px;
+
+    .spin {
+      top: 50%;
+    }
+
+    :global {
+      .ant-spin-nested-loading {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+
+        .ant-spin-container {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+      }
+    }
+  }
+}
+
+.tree {
+  & > div {
+    height: 100%;
+  }
+
+  :global {
+    .ant-tree {
+      .ant-tree-list {
+        .ant-tree-list-holder {
+          & > div {
+            overflow: hidden !important;
+          }
+        }
+      }
+    }
+
+    .ant-tree-list-scrollbar {
+      margin-right: 1px;
+
+      &.ant-tree-list-scrollbar-show {
+        display: block !important;
+
+        .ant-tree-list-scrollbar-thumb {
+          background: none !important;
+          background-color: @neutral-300 !important;
+        }
+      }
+    }
+
+    .ant-tree-node {
+      padding: 0 0 0 4px !important;
+    }
+
+    .ant-tree {
+      .ant-tree-switcher {
+        background-color: initial;
+        color: inherit !important;
+        margin: 8px 4px 8px 0px;
+        line-height: 16px;
+        width: 16px;
+      }
+
+      .ant-tree-checkbox {
+        margin-top: 0px !important;
+      }
+
+      .ant-tree-treenode {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 32px;
+        padding: 0px 12px 0 8px;
+        font-size: 14px;
+        border-left: 4px solid transparent;
+        color: @neutral-700;
+        transition: background-color 0.3s;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          background-color: @neutral-100;
+          background: @neutral-100;
+        }
+
+        //修改选中态
+        &-selected {
+          background-color: @neutral-100 !important;
+          border-left-color: @neutral-100;
+          color: @neutral-700;
+
+          &:hover::before,
+          &::before {
+            background-color: @neutral-100 !important;
+            background: @neutral-100 !important;
+          }
+
+          &::after {
+            width: max-content;
+          }
+        }
+
+        .ant-typography {
+          color: inherit !important;
+        }
+
+        .ant-tree-node-content-wrapper,
+        .ant-tree-node-content-wrapper-normal {
+          padding: 0px;
+          flex: 1;
+          overflow: hidden;
+          color: inherit !important;
+
+          &:hover {
+            background-color: unset !important;
+          }
+        }
+
+        .ant-tree-node-selected {
+          background-color: @neutral-100 !important;
+        }
+      }
+    }
+
+    .ant-tree-title {
+      width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .ant-tree-switcher-noop {
+      &::before {
+        right: 16px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .ant-tree-indent-unit::before {
+      height: 0px;
+      position: absolute;
+      top: 0;
+      right: 16px;
+      bottom: -4px;
+      content: "";
+      display: unset;
+    }
+
+    .ant-tree-treenode {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -4px;
+          height: 32px;
+          content: "";
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-end:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit-start {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-leaf-last {
+      .ant-tree-indent {
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 18px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:first-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode-switcher-open {
+      .ant-tree-indent {
+        .ant-tree-indent-unit {
+          width: 12px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            content: "";
+          }
+        }
+
+        .ant-tree-indent-unit:last-child {
+          &::before {
+            position: absolute;
+            top: 0;
+            right: 16px;
+            bottom: -17px;
+            height: 32px;
+            content: "";
+          }
+        }
+      }
+    }
+
+    .ant-tree-treenode:last-child {
+      > .ant-tree-indent {
+        > .ant-tree-indent-unit::before {
+          position: absolute;
+          top: 0;
+          right: 16px;
+          bottom: -17px;
+          height: 17px;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.chassisNode {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.chassisMetaWrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.chassisName {
+  flex: 1;
+  min-width: 0;
+  color: @neutral-700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chassisMeta {
+  flex: none;
+  color: @neutral-600;
+  font-size: 14px;
+}
+
+.chassisMetaDivider {
+  flex: none;
+  color: @neutral-300;
+  font-size: 14px;
+}
+
+.noResultContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  color: @neutral-500;
+}
+
+.noResultIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: @neutral-100;
+  margin-bottom: 8px;
+}
+
+.noResultText {
+  margin: 0;
+  font-size: 14px;
+  color: @neutral-500;
+}

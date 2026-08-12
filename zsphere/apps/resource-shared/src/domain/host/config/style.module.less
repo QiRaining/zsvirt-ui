@@ -1,0 +1,34 @@
+@import "../../../theme.less";
+
+.header {
+  border-bottom: solid 1px @neutral-300;
+  margin-bottom: 24px;
+}
+
+.summary {
+  padding: 12px;
+}
+
+.main {
+  padding: 24px;
+}
+
+.webshell-enabled {
+  color: @color-600 !important;
+  cursor: pointer;
+
+  &:hover {
+    color: @color-500 !important;
+  }
+}
+
+.webshell-disabled {
+  color: @neutral-500 !important;
+  cursor: not-allowed;
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

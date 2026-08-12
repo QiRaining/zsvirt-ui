@@ -1,0 +1,52 @@
+@import "../../../../../../theme.less";
+
+.cpuNum {
+  width: 120px !important;
+
+  input {
+    text-align: center;
+  }
+}
+
+.selectSlot {
+  color: @neutral-500;
+  user-select: none;
+  cursor: pointer;
+  font-size: 12px;
+  border-top: 1px solid @neutral-400;
+}
+
+.hotAdd {
+  & + :global(.zstack-form-item-input-description-zsv) {
+    top: -12px !important;
+  }
+}
+
+.cpuBindField {
+  :global(.ant-form-item-control-input):has(.cpuBindList) {
+    padding-top: 5px;
+    align-items: start;
+  }
+
+  .cpuBindList {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    .cpuBindItem {
+      color: @neutral-700;
+      background-color: @neutral-200;
+      font-size: 14px;
+      line-height: 22px;
+      padding: 0 8px;
+      border-radius: 2px;
+    }
+
+    .editIcon {
+      cursor: pointer;
+      margin-left: 6px;
+    }
+  }
+}

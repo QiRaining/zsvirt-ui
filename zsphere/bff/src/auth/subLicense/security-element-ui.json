@@ -1,0 +1,11 @@
+{
+  "host||block||se": "hidden",
+  "se||action||se.attach": "hidden",
+  "se||action||se.attachvm": "hidden",
+  "se||action||se.create": "hidden",
+  "se||action||se.delete": "hidden",
+  "se||action||se.detach": "hidden",
+  "se||action||se.detachvm": "hidden",
+  "se||block||host": "hidden",
+  "vm||block||se": "hidden"
+}

@@ -1,0 +1,35 @@
+@import "../../../theme.less";
+
+.toolbar {
+  margin-bottom: 12px;
+}
+.drawer {
+  :global {
+    .ant-drawer-close {
+      padding: 12px;
+    }
+  }
+}
+
+.title {
+  color: @neutral-600;
+  .divider {
+    height: 18px;
+    background-color: @neutral-400;
+  }
+}
+
+.lldpTitle {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: @neutral-600;
+}
+
+.lldp_draggable_card {
+  :global {
+    .ant-card-head {
+      padding: 0 12px 0 12px !important;
+    }
+  }
+}

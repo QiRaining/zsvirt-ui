@@ -1,0 +1,107 @@
+@import "../../../theme.less";
+
+.container {
+  padding: 24px;
+}
+
+.toolbar {
+  margin: 0 0 12px 0;
+
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.width-160 {
+  width: 160px;
+}
+
+.selectAll {
+  padding: 12px 0;
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  :global {
+    .zstack-progress {
+      width: 80%;
+    }
+    .ant-progress {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      margin-left: 12px;
+    }
+    .ant-progress-text {
+      width: unset;
+    }
+  }
+}
+
+.operationName {
+  cursor: pointer;
+  color: @color-500;
+  &:hover {
+    color: @color-600;
+  }
+}
+
+.tableListWrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  :global {
+    .ant-table-thead .ant-table-cell {
+      line-height: 18px !important;
+    }
+
+    .ant-table-column-sorters {
+      padding: 8px !important;
+    }
+
+    .ant-spin-nested-loading {
+      height: 100%;
+
+      .ant-spin-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .zstack-table {
+          flex: 1;
+
+          .ant-table-wrapper {
+            height: 100%;
+
+            .ant-spin-nested-loading {
+              height: 100%;
+
+              .ant-spin-container {
+                height: 100%;
+
+                .ant-table {
+                  height: 100%;
+
+                  .ant-table-container {
+                    height: 100%;
+
+                    .ant-table-content {
+                      height: 100%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

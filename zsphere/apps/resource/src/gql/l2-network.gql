@@ -1,0 +1,133 @@
+query queryL2Network(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: L2NetworkQueryType
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l2NetworkList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    list {
+      uuid
+      name
+      l3networkNum
+      physicalInterface
+      description
+      type
+      createDate
+      lastOpDate
+      vni
+      vlan
+      attachedClusterUuids
+      attachedHostRefs {
+        hostUuid
+      }
+      isUplinkBondingExist
+      enableSRIOV
+      shareType
+      vSwitchType
+      clusters {
+        name
+        uuid
+      }
+      owner {
+        name
+        uuid
+        type
+      }
+      zone {
+        name
+        uuid
+      }
+      vxlanPool {
+        vlan
+        uuid
+        name
+      }
+      systemTags {
+        bondingMode
+        xmitHashPolicy
+      }
+      isDefault
+      portGroups {
+        vlanId
+        virtualNetworkId
+      }
+    }
+    total
+  }
+}
+
+query physicalInterfaceList($clusterUuid: String!, $networkAccelerationMode: String!) {
+  physicalInterfaceList(
+    clusterUuid: $clusterUuid
+    networkAccelerationMode: $networkAccelerationMode
+  ) {
+    list {
+      name
+      uuid
+    }
+    total
+  }
+}
+
+query physicalInterfaceListByClusterList($clusterUuids: [String!]!) {
+  physicalInterfaceListByClusterList(clusterUuids: $clusterUuids)
+}
+
+mutation DELETE_L2_NETWORKS($input: DeleteL2NetworkActionInput!) {
+  deleteL2Networks(input: $input) {
+    actionId
+  }
+}
+
+mutation CREATE_L2_NETWORK($input: CreateL2NetworkActionInput!) {
+  createL2Network(input: $input) {
+    actionId
+  }
+}
+
+mutation updateL2Network($input: UpdateL2NetworkActionInput!) {
+  updateL2Network(input: $input) {
+    actionId
+  }
+}
+
+mutation setL2NetworkSrIov($input: SetL2NetworkSrIovActionInput!) {
+  setL2NetworkSrIov(input: $input) {
+    actionId
+  }
+}
+
+query l2NetworkCount(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: L2NetworkQueryType
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  l2NetworkList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    replyWithCount: true
+  ) {
+    total
+  }
+}

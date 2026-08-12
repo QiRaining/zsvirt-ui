@@ -1,0 +1,114 @@
+@import "../../style/vars.less";
+
+.@{prefix}-list-collect {
+  font-size: 14px;
+
+  .icon() {
+    color: @neutral-600;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @color-700;
+    }
+
+    .anticon {
+      vertical-align: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+
+    &-left {
+      // display: flex;
+      margin-right: 8px;
+      // line-height: 32px;
+    }
+
+    &-delete {
+      .icon;
+
+      position: relative;
+      top: 8px;
+      height: 16px;
+    }
+
+    &-delete-disabled {
+      &:hover {
+        color: @neutral-300;
+      }
+
+      .anticon {
+        cursor: not-allowed;
+      }
+    }
+
+    &-normal {
+      justify-content: flex-start;
+      margin-bottom: 8px;
+    }
+
+    &-block {
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid @neutral-300;
+
+      &:last-of-type {
+        margin-bottom: 12px;
+      }
+    }
+
+    &-new {
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding: 12px 20px 0;
+      background-color: @neutral-100;
+
+      .zstack-form-item {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &-add {
+    .icon;
+
+    display: inline-flex;
+    align-items: center;
+    line-height: 32px;
+    cursor: pointer;
+    color: @color-600;
+
+    &:hover {
+      color: @color-500;
+    }
+
+    .anticon {
+      margin-right: 4px;
+    }
+
+    &-disabled {
+      color: @color-600;
+      opacity: 0.5;
+
+      &:hover,
+      .anticon:hover {
+        color: @color-600;
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &-dec {
+    position: relative;
+    top: -3px;
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 22px;
+    color: @neutral-500;
+  }
+}

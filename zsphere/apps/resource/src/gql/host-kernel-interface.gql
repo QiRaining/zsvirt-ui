@@ -1,0 +1,63 @@
+fragment hostKernelInterfaceFields on HostKernelInterface {
+  uuid
+  name
+  description
+  usedIps {
+    uuid
+    ip
+    netmask
+  }
+  trafficTypes
+  l3Network {
+    uuid
+    name
+    mtu
+    ipRanges {
+      uuid
+      ipVersion
+      ipRangeType
+      networkCidr
+      gateway
+      startIp
+      endIp
+    }
+    vSwitch {
+      uuid
+      name
+    }
+  }
+  createDate
+  isDefault
+}
+
+query hostKernelInterface($uuid: String!) {
+  hostKernelInterface(uuid: $uuid) {
+    ...hostKernelInterfaceFields
+  }
+}
+
+query hostKernelInterfaceList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: HostKernelInterfaceQueryType
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  hostKernelInterfaceList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...hostKernelInterfaceFields
+    }
+  }
+}

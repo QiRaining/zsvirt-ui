@@ -1,0 +1,105 @@
+@import "../../../theme.less";
+
+.tree-contanier {
+  height: 100%;
+  width: 100% !important;
+  position: relative;
+
+  .description {
+    color: @neutral-600;
+
+    .split {
+      color: @neutral-300;
+      margin: 0 8px;
+    }
+
+    .edit-icon {
+      color: @neutral-700;
+
+      &:hover {
+        color: @color-600;
+      }
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+
+  .card-content {
+    padding: 12px;
+    height: 100%;
+
+    .action-list {
+      max-height: 480px;
+      overflow-y: auto;
+    }
+
+    .check-title {
+      display: flex;
+      margin-bottom: 12px;
+      margin-top: 0px !important;
+
+      .icon {
+        margin-right: 4px;
+      }
+
+      .action-name {
+        color: @neutral-800;
+
+        .action-value {
+          color: @neutral-600;
+        }
+      }
+    }
+
+    .item {
+      color: @neutral-700;
+    }
+
+    .sub-action {
+      border-top: 1px dashed #dbdde0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      .sub-action-title {
+        font-size: 14px;
+        color: @neutral-600;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  :global {
+    .ant-tree .ant-tree-list .ant-tree-list-holder-inner {
+      .ant-tree-checkbox {
+        margin: 4px 4px 0 0 !important;
+      }
+
+      .ant-tree-switcher {
+        .anticon-file svg {
+          display: none;
+          /* 隐藏原始SVG */
+        }
+
+        .anticon-file::after {
+          content: "";
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          background-image: url("../../assets/images/file.webp?inline");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        .ant-col {
+          color: @neutral-700;
+        }
+      }
+    }
+  }
+}
+
+.empty-contanier {
+  margin: 40px 8px !important;
+}

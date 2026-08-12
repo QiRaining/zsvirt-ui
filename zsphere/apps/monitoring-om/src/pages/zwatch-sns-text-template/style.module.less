@@ -1,0 +1,53 @@
+@import "../../theme.module.less";
+
+.toolbar {
+  margin: 12px 0;
+
+  .searchBar {
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}
+
+.cloumn-name-container {
+  display: flex;
+  width: 100%;
+
+  .cloumn-name {
+    cursor: pointer;
+    color: @color-600 !important;
+
+    &:hover,
+    &:focus {
+      color: @color-500;
+    }
+  }
+}
+
+.txt-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid @neutral-400;
+  border-radius: 10px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 8px;
+  margin-left: 8px;
+  cursor: text;
+  color: @neutral-700;
+  background-color: transparent;
+}

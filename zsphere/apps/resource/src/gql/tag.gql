@@ -1,0 +1,147 @@
+fragment tagFields on Tag {
+  uuid
+  name
+  color
+  type
+  createDate
+  value
+  lastOpDate
+  description
+}
+
+query queryTagList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: TagQueryType
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+  $resourceType: String
+  $resourceConditions: [Condition!]
+) {
+  tagList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    resourceType: $resourceType
+    resourceConditions: $resourceConditions
+  ) {
+    total
+    list {
+      ...tagFields
+      owner {
+        uuid
+        type
+        name
+      }
+      resourceCount
+    }
+  }
+}
+
+query getNoTagResource($resourceType: String, $resourceConditions: [Condition!]) {
+  noTagResource(resourceType: $resourceType, resourceConditions: $resourceConditions) {
+    resourceType
+    count
+  }
+}
+
+query queryTagListByResource(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $resourceType: String
+  $resourceConditions: [Condition!]
+) {
+  tagListByResource(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    resourceType: $resourceType
+    resourceConditions: $resourceConditions
+  ) {
+    total
+    list {
+      ...tagFields
+      owner {
+        uuid
+        type
+        name
+      }
+      resourceCount
+    }
+  }
+}
+
+query getTagRelatedSummary($uuid: String!) {
+  getTagRelatedSummary(uuid: $uuid) {
+    vm
+    volume
+    host
+    baremetalInstance
+    baremetal2Instance
+    monitorGroup
+    monitorTemplate
+  }
+}
+
+query handleTagList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $type: String
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  handleTagList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    type: $type
+    start: $start
+    limit: $limit
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...tagFields
+      owner {
+        name
+      }
+      resourceCount
+    }
+  }
+}
+
+mutation attachTag($input: AttachTagInput!) {
+  attachTag(input: $input) {
+    actionId
+  }
+}
+
+mutation detachTag($input: DetachTagInput!) {
+  detachTag(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteTag($input: [DeleteTagInput!]!) {
+  deleteTag(input: $input) {
+    error {
+      code
+    }
+  }
+}
+
+mutation createTag($input: CreateTagInput!) {
+  createTag(input: $input) {
+    error {
+      code
+    }
+  }
+}

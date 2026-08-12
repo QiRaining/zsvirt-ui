@@ -1,0 +1,250 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "originVm",
+          "targetVm",
+          "originPlatform",
+          "state",
+          "executeTime",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "originVm",
+          "targetVm",
+          "originPlatform",
+          "state",
+          "executeTime",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "originVm",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "originVm",
+            "defaultMessage": "Source VM"
+          },
+          "queryType": "",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "targetVm",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "targetVm",
+            "defaultMessage": "Destination VM"
+          },
+          "queryType": "",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "originPlatform",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "originPlatform",
+            "defaultMessage": "Source Platform"
+          },
+          "queryType": "",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "jobState",
+            "defaultMessage": "Job Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "executeTime",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "executeTime",
+            "defaultMessage": "Duration"
+          },
+          "queryType": "",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "v2v.migration"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "v2v.migration"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "restart",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "restart",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.v2v.migration.job"
+        ],
+        "activeKeys": [
+          "restart",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "restart",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "restart",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "v2v.migration",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "restart",
+        "resource": "v2v.migration",
+        "authKey": "restart",
+        "i18nKey": "restart",
+        "name": "重启",
+        "label": "重启",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "v2v.migration",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.v2v.migration.job",
+        "resource": "v2v.migration",
+        "authKey": "create.v2v.migration.job",
+        "i18nKey": "create.v2vMigration",
+        "name": "创建迁移任务",
+        "label": "创建迁移任务",
+        "icon": "plus",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

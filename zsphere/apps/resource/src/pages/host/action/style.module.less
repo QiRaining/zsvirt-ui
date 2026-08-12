@@ -1,0 +1,254 @@
+@import "../../../theme.less";
+
+.main {
+  padding: 24px;
+}
+
+.width-320 {
+  width: 320px !important;
+}
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-240 {
+  width: 240px !important;
+}
+
+.editor-password-form {
+  :global {
+    .ant-input-suffix {
+      color: @neutral-400 !important;
+    }
+  }
+}
+
+.textColor {
+  color: @neutral-700;
+  font-weight: 500;
+}
+
+.bind-tag-container {
+  :global {
+    .zstack-table-list-toolbar {
+      margin-top: -18px;
+    }
+  }
+}
+
+.commonCard() {
+  margin-bottom: 12px;
+  border-radius: 2px;
+  background-color: @neutral-0;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  .commonCard;
+
+  .card-container {
+    padding: 24px 24px 4px;
+  }
+}
+
+.card-title {
+  width: 100%;
+  height: 48px;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: @neutral-0;
+  color: @neutral-800;
+  border-radius: 2px 2px 0 0;
+  border-bottom: 1px solid @neutral-300;
+}
+
+.card-title + .card-title {
+  width: calc(100% - 200px);
+  border-left: 1px solid @neutral-300;
+}
+
+.host-list {
+  display: inline-block;
+  width: 200px;
+  height: 656px;
+  padding: 12px;
+  overflow: scroll;
+
+  .host-name {
+    padding: 5px 12px;
+    height: 32px;
+    width: 176px;
+    cursor: pointer;
+
+    .host-name-alert {
+      width: calc(100% - 20px);
+      display: inline-block;
+    }
+  }
+
+  .host-name + .host-name {
+    margin-top: 4px;
+  }
+
+  .selected {
+    color: @neutral-800;
+    background-color: @neutral-100;
+  }
+}
+
+.displaynone {
+  display: none;
+}
+
+.host-config {
+  width: calc(100% - 200px);
+  display: inline-block;
+  height: 656px;
+  border-left: 1px solid @neutral-300;
+}
+
+.powerControl {
+  margin-bottom: 20px;
+
+  .selectedCount {
+    margin-bottom: 8px;
+  }
+
+  :global {
+    .zstack-modal-action-resource {
+      margin-bottom: 8px !important;
+      border: 1px solid var(--neutral-300);
+      background-color: transparent;
+    }
+  }
+
+  .hTitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: @neutral-600;
+    line-height: 22px;
+    margin: 20px 0 8px 0;
+  }
+
+  .divider {
+    margin: 12px 0 12px 0;
+  }
+
+  .extra {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #96989b;
+    line-height: 20px;
+    margin-left: 24px;
+  }
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 0px !important;
+    }
+
+    .ant-form-item-control-input {
+      min-height: 1px;
+    }
+  }
+
+  .formContent {
+    display: flex;
+    align-items: center;
+
+    :global {
+      .zstack-form-item-label-container-icon {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .acceptRisk {
+    :global {
+      .ant-form-item-explain-error {
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.confirmModal {
+  :global {
+    .ant-modal-header {
+      border-bottom: none;
+      padding-bottom: 0px !important;
+      padding-top: 20px !important;
+    }
+
+    .zstack-modal-confirm-container {
+      padding-top: 0px !important;
+    }
+    .zstack-zsv-modal-confirm-container {
+      padding-top: 0px !important;
+    }
+    .zstack-modal-confirm-body {
+      font-size: 14px;
+      font-weight: 400;
+      color: #4a4c4f;
+      line-height: 22px;
+    }
+
+    .ant-form-item-control-input {
+      min-height: auto !important;
+    }
+
+    .ant-form-item-control-input-content .ant-checkbox-wrapper {
+      color: @neutral-700 !important;
+    }
+
+    .ant-form.ant-form-horizontal {
+      margin-top: 14px !important;
+    }
+  }
+}
+
+.powerControlConfirmTitle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: @neutral-700 !important;
+
+  .icon {
+    margin-right: 8px;
+  }
+}
+
+.alert {
+  font-weight: 500;
+  color: @neutral-700;
+}
+
+.hasHostNotInEnteringMaintenanceMode {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.selectedHostStateMsg {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: @neutral-600;
+}
+
+.modalFormPower {
+  :global {
+    #modal-ok {
+      background-color: @danger-600 !important;
+    }
+  }
+}

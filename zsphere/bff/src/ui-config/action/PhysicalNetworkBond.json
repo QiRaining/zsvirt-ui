@@ -1,0 +1,143 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "vlanId",
+          "host",
+          "physicalNetworkType",
+          "managementIp",
+          "cluster"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "physical.network.bond"
+        }
+      },
+      {
+        "accessorKey": "vlanId",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vlanId",
+            "defaultMessage": "vlanId"
+          },
+          "queryType": "input",
+          "resource": "physical.network.bond"
+        }
+      },
+      {
+        "accessorKey": "host",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "host",
+            "defaultMessage": "Host"
+          },
+          "queryType": "",
+          "resource": "physical.network.bond"
+        }
+      },
+      {
+        "accessorKey": "physicalNetworkType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physicalNetworkType",
+            "defaultMessage": "Network Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "physical.network.bond"
+        }
+      },
+      {
+        "accessorKey": "managementIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "host.ip",
+            "defaultMessage": "Host IP"
+          },
+          "queryType": "",
+          "resource": "physical.network.bond"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cluster",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "physical.network.bond"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "modify.physicalNetwork.type"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "modify.physicalNetwork.type"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "modify.physicalNetwork.type",
+        "resource": "physical.network",
+        "authKey": "modify.physicalNetwork.type",
+        "i18nKey": "modify.physicalNetwork.type",
+        "name": "修改物理网络类型",
+        "label": "修改物理网络类型",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

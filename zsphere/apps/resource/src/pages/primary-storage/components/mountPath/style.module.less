@@ -1,0 +1,23 @@
+@import "../../../../theme.less";
+
+.caption {
+  display: flex;
+  margin-top: 4px;
+  align-items: flex-start;
+  gap: 4px;
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  color: @neutral-500;
+
+  :global {
+    .zstack-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

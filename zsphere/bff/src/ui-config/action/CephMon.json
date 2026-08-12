@@ -1,0 +1,389 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": []
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "uuid",
+          "monAddr",
+          "hostname",
+          "sshUsername",
+          "sshPort",
+          "monPort",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.backup.storage",
+        "keys": [
+          "monAddr",
+          "hostname",
+          "sshUsername",
+          "sshPort",
+          "monPort",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.primary.storage",
+        "keys": [
+          "monAddr",
+          "hostname",
+          "sshUsername",
+          "sshPort",
+          "monPort",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage",
+        "keys": [
+          "monAddr",
+          "hostname",
+          "sshUsername",
+          "sshPort",
+          "monPort",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "monAddr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "mon.ip",
+            "defaultMessage": "Mon IP"
+          },
+          "queryType": "input",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "hostname",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "monNodeManegementIP",
+            "defaultMessage": "Monitoring Node IP"
+          },
+          "queryType": "",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "sshUsername",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sshUsername",
+            "defaultMessage": "SSH Username"
+          },
+          "queryType": "",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "sshPort",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sshPort",
+            "defaultMessage": "SSH Port"
+          },
+          "queryType": "",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "monPort",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "monPort",
+            "defaultMessage": "Mon Port"
+          },
+          "queryType": "",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "connectStatus",
+            "defaultMessage": "Connection Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "ceph.mon"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "ceph.mon"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row"
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.backup.storage/row",
+        "activeKeys": [
+          "backup.storage.modify.ssh.username",
+          "backup.storage.modify.ssh.password",
+          "backup.storage.modify.ssh.port",
+          "backup.storage.modify.mon.port",
+          "backup.storage.delete.ceph.mon"
+        ]
+      },
+      {
+        "view": "sub.backup.storage/toolbar",
+        "extraKeys": [
+          "backup.storage.add.ceph.mon",
+          "backup.storage.delete.ceph.mon"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/row",
+        "activeKeys": [
+          "primary.storage.modify.ssh.username",
+          "primary.storage.modify.ssh.password",
+          "primary.storage.modify.ssh.port",
+          "primary.storage.modify.mon.port",
+          "primary.storage.delete.ceph.mon"
+        ]
+      },
+      {
+        "view": "sub.primary.storage/toolbar",
+        "extraKeys": [
+          "primary.storage.add.ceph.mon",
+          "primary.storage.delete.ceph.mon"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage/row",
+        "activeKeys": [
+          "backup.storage.modify.ssh.username",
+          "backup.storage.modify.ssh.password",
+          "backup.storage.modify.ssh.port",
+          "backup.storage.modify.mon.port",
+          "backup.storage.delete.ceph.mon"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage/toolbar",
+        "extraKeys": [
+          "primary.storage.add.ceph.mon",
+          "backup.storage.delete.ceph.mon"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "primary.storage.add.ceph.mon",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.add.ceph.mon",
+        "i18nKey": "add.monNode",
+        "name": "添加监控节点",
+        "label": "添加监控节点",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "primary.storage.modify.ssh.username",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.modify.ssh.username",
+        "i18nKey": "change.sshUsername",
+        "name": "修改SSH用户名",
+        "label": "修改SSH用户名",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "primary.storage.modify.ssh.password",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.modify.ssh.password",
+        "i18nKey": "change.sshPassword",
+        "name": "修改SSH密码",
+        "label": "修改SSH密码",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "primary.storage.modify.ssh.port",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.modify.ssh.port",
+        "i18nKey": "change.sshPort",
+        "name": "修改SSH端口",
+        "label": "修改SSH端口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "primary.storage.modify.mon.port",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.modify.mon.port",
+        "i18nKey": "change.monPort",
+        "name": "修改Mon端口",
+        "label": "修改Mon端口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "primary.storage.delete.ceph.mon",
+        "resource": "primary.storage",
+        "authKey": "primary.storage.delete.ceph.mon",
+        "i18nKey": "delete.monNode",
+        "name": "删除监控节点",
+        "label": "删除监控节点",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.add.ceph.mon",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.add.ceph.mon",
+        "i18nKey": "add.monNode",
+        "name": "添加监控节点",
+        "label": "添加监控节点",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.modify.ssh.username",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.modify.ssh.username",
+        "i18nKey": "change.sshUsername",
+        "name": "修改SSH用户名",
+        "label": "修改SSH用户名",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.modify.ssh.password",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.modify.ssh.password",
+        "i18nKey": "change.sshPassword",
+        "name": "修改SSH密码",
+        "label": "修改SSH密码",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.modify.ssh.port",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.modify.ssh.port",
+        "i18nKey": "change.sshPort",
+        "name": "修改SSH端口",
+        "label": "修改SSH端口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.modify.mon.port",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.modify.mon.port",
+        "i18nKey": "change.monPort",
+        "name": "修改Mon端口",
+        "label": "修改Mon端口",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "backup.storage.delete.ceph.mon",
+        "resource": "backup.storage",
+        "authKey": "backup.storage.delete.ceph.mon",
+        "i18nKey": "delete.monNode",
+        "name": "删除监控节点",
+        "label": "删除监控节点",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "ceph.mon",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "actionDescrition",
+          "migration.status",
+          "job.object",
+          "cluster.which.belongs",
+          "pre.host",
+          "target.host",
+          "trigger.reason",
+          "startTime",
+          "end.time"
+        ]
+      },
+      {
+        "view": "sub.cluster",
+        "keys": [
+          "actionDescrition",
+          "migration.status",
+          "job.object",
+          "pre.host",
+          "target.host",
+          "trigger.reason",
+          "startTime",
+          "end.time"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "actionDescrition",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "actionDescrition",
+            "defaultMessage": "Action Description"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "migration.status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "migration.status",
+            "defaultMessage": "Migration Status"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "job.object",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "migration.object",
+            "defaultMessage": "Migration Object"
+          },
+          "queryType": "input",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "cluster.which.belongs",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "cluster.which.belongs",
+            "defaultMessage": "Cluster"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "pre.host",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "pre.host",
+            "defaultMessage": "Pre Host"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "target.host",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "target.host",
+            "defaultMessage": "Destination Host"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "trigger.reason",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "trigger.reason",
+            "defaultMessage": "Trigger Reason"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "startTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "end.time",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "end.time",
+            "defaultMessage": "End Time"
+          },
+          "queryType": "",
+          "resource": "scheduling.task"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "virtualization.UUID",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "scheduling.task"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,78 @@
+fragment kmsProviderFields on KmsProvider {
+  uuid
+  name
+  description
+  type
+  isDefault
+  backupStatus
+  connectionStatus
+  trustState
+  ipAddress
+  port
+  passwordProtected
+  localCertificateExpireDate
+  peerCertificateExpireDate
+  createDate
+}
+
+query kmsProvider($uuid: String!) {
+  kmsProvider(uuid: $uuid) {
+    ...kmsProviderFields
+  }
+}
+
+query kmsProviderList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $type: String
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  kmsProviderList(
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    conditions: $conditions
+    type: $type
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      ...kmsProviderFields
+    }
+  }
+}
+
+mutation updateKmsProvider($input: UpdateKmsProviderInput!) {
+  updateKmsProvider(input: $input) {
+    actionId
+  }
+}
+
+mutation setDefaultKmsProvider($input: SetDefaultKmsProviderInput!) {
+  setDefaultKmsProvider(input: $input) {
+    actionId
+  }
+}
+
+mutation trustKmsProvider($input: TrustKmsProviderInput!) {
+  trustKmsProvider(input: $input) {
+    actionId
+  }
+}
+
+mutation backupKmsProvider($input: BackupKmsProviderInput!) {
+  backupKmsProvider(input: $input) {
+    actionId
+  }
+}
+
+mutation recoverKmsProvider($input: RecoverKmsProviderInput!) {
+  recoverKmsProvider(input: $input) {
+    actionId
+  }
+}

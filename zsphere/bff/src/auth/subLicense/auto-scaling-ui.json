@@ -1,0 +1,12 @@
+{
+  "auto.scaling.group||action||bind.affinityGroup": "hidden",
+  "auto.scaling.group||action||change.image": "hidden",
+  "auto.scaling.group||action||create": "hidden",
+  "auto.scaling.group||action||delete": "hidden",
+  "auto.scaling.group||action||disabled": "hidden",
+  "auto.scaling.group||action||edit": "hidden",
+  "auto.scaling.group||action||enable": "hidden",
+  "auto.scaling.group||action||unbind.affinityGroup": "hidden",
+  "auto.scaling.group||view||detail": "hidden",
+  "auto.scaling.group||view||list": "hidden"
+}

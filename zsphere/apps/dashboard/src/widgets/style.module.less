@@ -1,0 +1,103 @@
+@import "../theme.less";
+
+.widgetOptionContainer {
+  .widgetOptionItemContainer {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid @neutral-300;
+    border-radius: 2px;
+    margin-bottom: 4px;
+    &.widgetOptionItemContainerActive {
+      border-color: @color-600;
+      box-shadow: 0 0 0 2px @color-50;
+      :global {
+        .ant-radio-inner {
+          border-color: @color-600;
+          &::after {
+            background-color: @color-600;
+          }
+        }
+      }
+    }
+    &.widgetOptionItemContainerDisable {
+      background: @neutral-100;
+      .widgetTop {
+        .widgetInfo {
+          .widgetInfoLabel,
+          .widgetInfoDesc {
+            :global {
+              .ant-typography {
+                color: @neutral-500;
+              }
+            }
+          }
+        }
+      }
+    }
+    .widgetTop {
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      cursor: pointer;
+      .widgetThumbnail {
+        width: 80px;
+        border: 1px solid @neutral-300;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .widgetInfo {
+        width: calc(100% - 80px - 20px);
+        flex: 1;
+        padding: 4px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .widgetInfoLabel {
+          color: @neutral-800;
+          font-weight: 500;
+        }
+        .widgetInfoDesc {
+          font-size: 12px;
+          :global {
+            .ant-typography {
+              color: @neutral-600;
+            }
+          }
+        }
+      }
+      .widgetRadio {
+        width: 20px;
+        display: flex;
+        justify-content: flex-end;
+        label {
+          margin-right: 0;
+        }
+      }
+    }
+    .widgetContent {
+      border-top: 1px solid @neutral-300;
+      margin-top: 12px;
+      padding-top: 12px;
+      :global {
+        .zstack-form-item.ant-form-item {
+          margin-bottom: 12px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .ant-form-item-control {
+            .ant-form-item-control-input {
+              width: 320px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

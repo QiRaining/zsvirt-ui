@@ -1,0 +1,61 @@
+{
+  "name": "zsv-wizard",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "build:rsdoctor": "RSDOCTOR=true rsbuild build",
+    "dev": "rsbuild dev",
+    "dev:rsdoctor": "RSDOCTOR=true rsbuild dev",
+    "preview": "rsbuild preview",
+    "format": "oxfmt --write src/",
+    "lint": "pnpm run lint:ox",
+    "lint:ox": "oxlint -c ../../../../../.oxlintrc.json src",
+    "lint:ox:fix": "oxlint -c ../../../../../.oxlintrc.json src --fix",
+    "lint:json": "pnpm run lint:json:ox",
+    "lint:json:ox": "mkdir -p ./lint_report && oxlint -c ../../../../../.oxlintrc.json src --format json > ./lint_report/oxlint.json"
+  },
+  "dependencies": {
+    "@antv/g6": "3.8.1",
+    "@apollo/client": "catalog:",
+    "@zstack/alova-instance": "workspace:*",
+    "@zstack/design": "workspace:*",
+    "@zstack/hooks": "workspace:*",
+    "@zstack/icon": "workspace:*",
+    "@zstack/zsphere-components": "workspace:*",
+    "@zstack/zsphere-config": "workspace:*",
+    "@zstack/zsphere-constant": "workspace:*",
+    "@zstack/zsphere-design-biz": "workspace:*",
+    "@zstack/zsphere-engine": "workspace:*",
+    "@zstack/zsphere-hooks": "workspace:*",
+    "@zstack/zsphere-mf-hub": "workspace:*",
+    "@zstack/zsphere-mf-runtime-plugin": "workspace:*",
+    "@zstack/zsphere-platform-store": "workspace:*",
+    "@zstack/zsphere-types": "workspace:*",
+    "@zstack/zsphere-utils": "workspace:*",
+    "ahooks": "catalog:",
+    "alova": "catalog:",
+    "antd": "catalog:",
+    "classnames": "catalog:",
+    "dayjs": "catalog:",
+    "graphql": "catalog:",
+    "graphql-tag": "catalog:",
+    "immer": "catalog:",
+    "lodash-es": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-inlinesvg": "^1.2.0",
+    "react-intl": "catalog:",
+    "react-markdown": "catalog:",
+    "react-router": "catalog:",
+    "single-spa": "catalog:",
+    "zustand": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.notify.person",
+        "keys": [
+          "phoneNumber",
+          "remark",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "phoneNumber",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "phoneNumber",
+            "defaultMessage": "Phone Number"
+          },
+          "queryType": "input",
+          "resource": "sns.dingtalk.at.person"
+        }
+      },
+      {
+        "accessorKey": "remark",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "remarks",
+            "defaultMessage": "Remark"
+          },
+          "queryType": "input",
+          "resource": "sns.dingtalk.at.person"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "sns.dingtalk.at.person"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.notify.person/row",
+        "activeKeys": [
+          "update.notify.person",
+          "delete.notify.person"
+        ]
+      },
+      {
+        "view": "sub.notify.person/toolbar",
+        "extraKeys": [
+          "add.notify.person",
+          "delete.notify.person"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.notify.person",
+        "resource": "sns.dingtalk.at.person",
+        "authKey": "add.notify.person",
+        "i18nKey": "add.notify.person",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.notify.person",
+        "resource": "sns.dingtalk.at.person",
+        "authKey": "update.notify.person",
+        "i18nKey": "update.notify.person",
+        "name": "修改",
+        "label": "修改",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.notify.person",
+        "resource": "sns.dingtalk.at.person",
+        "authKey": "delete.notify.person",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

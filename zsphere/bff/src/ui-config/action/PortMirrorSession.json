@@ -1,0 +1,239 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "srcVm",
+          "srcVmNic",
+          "srcVmNicState",
+          "dstVm",
+          "dstVmNic",
+          "dstVmNicState",
+          "type",
+          "status",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": []
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "srcVm",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "sourcePortVm",
+            "defaultMessage": "Source VM"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "srcVmNic",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "sourceVmNic",
+            "defaultMessage": "Source NIC"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "srcVmNicState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "srcVmNicState",
+            "defaultMessage": "Source NIC Status"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "dstVm",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "targetPortVm",
+            "defaultMessage": "Destination VM"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "dstVmNic",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "targetVmNic",
+            "defaultMessage": "Destination NIC"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "dstVmNicState",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "dstVmNicState",
+            "defaultMessage": "Destination NIC Status"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "type",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "session.connect.state",
+            "defaultMessage": "Session Connection Status"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "port.mirror.session"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.port.mirror.session",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.port.mirror.session",
+        "resource": "port.mirror.session",
+        "authKey": "add.port.mirror.session",
+        "i18nKey": "add.session",
+        "name": "添加会话",
+        "label": "添加会话",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "port.mirror.session",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+mutation updateVmCustomSpecification($input: UpdateVmCustomSpecificationInput!) {
+  updateVmCustomSpecification(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteVmCustomSpecification($input: DeleteVmCustomSpecificationInput!) {
+  deleteVmCustomSpecification(input: $input) {
+    actionId
+  }
+}
+
+mutation createVmCustomSpecification($input: CreateVmCustomSpecificationInput!) {
+  createVmCustomSpecification(input: $input) {
+    actionId
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "themeMode": "light",
+  "themeColor": "blue",
+  "browserTitle": "ZStack",
+  "favicon": "/public/theme/default/th-TH/favicon.ico",
+  "loginTitle": "ยินดีต้อนรับสู่ ZStack Cloud",
+  "loginLogo": "/public/theme/default/th-TH/logo.svg",
+  "bannerLogo": "/public/theme/default/th-TH/logo-bar.svg",
+  "bannerTitle": "ZStack คลาวด์",
+  "bannerFontSize": "14px",
+  "overviewTitle": "การตรวจสอบแบบเรียลไทม์",
+  "overviewMode": "classicalBlue",
+  "overviewMonitorType": "externalMonitor"
+}

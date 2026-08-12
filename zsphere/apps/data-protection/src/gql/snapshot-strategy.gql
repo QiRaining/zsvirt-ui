@@ -1,0 +1,53 @@
+query snapshotStrategyList(
+  $conditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $extraConditions: [Condition!] = []
+  $sortBy: String
+  $sortDirection: SortDirectionValidValues
+) {
+  snapshotStrategyList(
+    start: $start
+    limit: $limit
+    conditions: $conditions
+    extraConditions: $extraConditions
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      uuid
+      name
+      description
+      state
+      jobsUuid
+      jobs {
+        uuid
+        name
+        jobData
+        targetResourceUuid
+        schedulerJobGroupUuids
+        lastOpDate
+        createDate
+      }
+      jobData
+      triggersUuid
+      triggers {
+        uuid
+        name
+        cron
+        startTime
+        stopTime
+        lastOpDate
+        createDate
+      }
+      owner {
+        uuid
+        name
+        type
+      }
+      lastOpDate
+      createDate
+    }
+  }
+}

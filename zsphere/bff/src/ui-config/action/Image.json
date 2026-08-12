@@ -1,0 +1,793 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "platform",
+          "guestOsType",
+          "state",
+          "status",
+          "shareType",
+          "size",
+          "architecture",
+          "mediaType",
+          "format",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "status",
+          "size",
+          "mediaType",
+          "format",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization",
+        "keys": [
+          "name",
+          "status",
+          "size",
+          "mediaType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.cdrom",
+        "keys": [
+          "name",
+          "status",
+          "size",
+          "mediaType",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.diskimage",
+        "keys": [
+          "name",
+          "status",
+          "size",
+          "mediaType",
+          "format",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "platform",
+          "guestOsType",
+          "state",
+          "status",
+          "size",
+          "mediaType",
+          "format",
+          "backupStorage",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account.shared",
+        "keys": [
+          "name",
+          "status",
+          "size",
+          "mediaType",
+          "format",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage",
+        "keys": [
+          "name",
+          "status",
+          "shareType",
+          "size",
+          "mediaType",
+          "format",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage.detail.exported",
+        "keys": [
+          "name",
+          "shareType",
+          "size",
+          "mediaType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone",
+        "keys": [
+          "name",
+          "shareType",
+          "size",
+          "mediaType",
+          "uuid",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.detail.exported",
+        "keys": [
+          "name",
+          "shareType",
+          "size",
+          "mediaType",
+          "format",
+          "backupStorage",
+          "zone",
+          "uuid",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle",
+        "keys": [
+          "name",
+          "shareType",
+          "size",
+          "mediaType",
+          "format",
+          "zone",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource",
+        "keys": [
+          "name",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource.by.userGroup",
+        "keys": [
+          "name",
+          "shareType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platform",
+            "defaultMessage": "Platform"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "guestOsType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "guestOsType",
+            "defaultMessage": "OS"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "status",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "shareMode",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "architecture",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "cpuArchitecture",
+            "defaultMessage": "CPU Architecture"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "mediaType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageType",
+            "defaultMessage": "Image Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "format",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "imageFormat",
+            "defaultMessage": "Image Format"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "backupStorage",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "backupStorage",
+            "defaultMessage": "Image Storage"
+          },
+          "queryType": "input",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "baremetal2Image",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "support.baremetal2Image",
+            "defaultMessage": "Support Elastic Baremetal"
+          },
+          "queryType": "multipleFilter",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "zone",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "zone",
+            "defaultMessage": "Data Center"
+          },
+          "queryType": "",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "image"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "image"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "export.image",
+          "sync.image",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "export.image",
+          "sync.image",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.image"
+        ],
+        "activeKeys": [
+          "export.image",
+          "sync.image",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account.shared/row",
+        "activeKeys": [
+          "virtualization.create.vm"
+        ]
+      },
+      {
+        "view": "sub.virtualization.account.shared/toolbar",
+        "extraKeys": [
+          "delete"
+        ],
+        "activeKeys": [
+          "add.image"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage.detail.exported/row",
+        "activeKeys": [
+          "download",
+          "copy.url",
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage.detail.exported/toolbar",
+        "extraKeys": [
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage/row",
+        "activeKeys": [
+          "virtualization.create.vm",
+          "export.image",
+          "sync.image",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.backup-storage/toolbar",
+        "extraKeys": [
+          "add.image"
+        ],
+        "activeKeys": [
+          "sync.image",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.detail.exported/row",
+        "activeKeys": [
+          "download",
+          "copy.url",
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.detail.exported/toolbar",
+        "extraKeys": [
+          "delete.exported"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle/row",
+        "activeKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.virtualization.zone.recyle/toolbar",
+        "extraKeys": [
+          "recover",
+          "expunge"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/row",
+        "activeKeys": [
+          "virtualization.create.vm",
+          "export.image",
+          "sync.image",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "set.share.type",
+          "cancel.share",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.zsv.shared.resource/toolbar",
+        "extraKeys": [
+          "share.resource",
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "export.image",
+          "sync.image",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.image"
+        ],
+        "activeKeys": [
+          "sync.image",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.account.shared.dir.template.image/directory",
+        "activeKeys": [
+          "virtualization.create.vm"
+        ]
+      },
+      {
+        "view": "virtualization.account.shared.dir.template.image/header",
+        "activeKeys": [
+          "virtualization.create.vm"
+        ]
+      },
+      {
+        "view": "virtualization.dir.template.image/directory",
+        "activeKeys": [
+          "virtualization.create.vm",
+          "export.image",
+          "sync.image",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.template.image.main/header",
+        "activeKeys": [
+          "virtualization.create.vm",
+          "export.image",
+          "sync.image",
+          "virtualization.edit.nameandDescription",
+          "modify.config",
+          "storage.migrate",
+          "set.share.type",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.image",
+        "resource": "image",
+        "authKey": "add.image",
+        "i18nKey": "add.image",
+        "name": "添加镜像",
+        "label": "添加镜像",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.create.vm",
+        "resource": "image",
+        "authKey": "virtualization.create.vm",
+        "i18nKey": "virtualization.create.vm",
+        "name": "创建虚拟机",
+        "label": "创建虚拟机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "export.image",
+        "resource": "image",
+        "authKey": "export.image",
+        "i18nKey": "export.image",
+        "name": "导出",
+        "label": "导出",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "sync.image",
+        "resource": "image",
+        "authKey": "sync.image",
+        "i18nKey": "sync.image",
+        "name": "同步镜像",
+        "label": "同步镜像",
+        "icon": "",
+        "dividerKey": "sync.image-divider"
+      },
+      {
+        "key": "virtualization.edit.nameandDescription",
+        "resource": "image",
+        "authKey": "virtualization.edit.nameandDescription",
+        "i18nKey": "virtualization.edit.nameandDescription",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.config",
+        "resource": "image",
+        "authKey": "modify.config",
+        "i18nKey": "modify.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "storage.migrate",
+        "resource": "image",
+        "authKey": "storage.migrate",
+        "i18nKey": "image.migrate.changeBackupStorage",
+        "name": "更改镜像服务器",
+        "label": "更改镜像服务器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "image",
+        "authKey": "set.share.type",
+        "i18nKey": "set.shareMode",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": "set.share.type-divider"
+      },
+      {
+        "key": "share.resource",
+        "resource": "image",
+        "authKey": "share.resource",
+        "i18nKey": "share.resource",
+        "name": "共享资源",
+        "label": "共享资源",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "image",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "image",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "recover",
+        "resource": "image",
+        "authKey": "recover",
+        "i18nKey": "recover",
+        "name": "还原",
+        "label": "还原",
+        "icon": "undo",
+        "dividerKey": 0
+      },
+      {
+        "key": "expunge",
+        "resource": "image",
+        "authKey": "expunge",
+        "i18nKey": "expunge",
+        "name": "彻底删除",
+        "label": "彻底删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "download",
+        "resource": "image",
+        "authKey": "download",
+        "i18nKey": "download",
+        "name": "下载",
+        "label": "下载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "copy.url",
+        "resource": "image",
+        "authKey": "copy.url",
+        "i18nKey": "copy.url",
+        "name": "复制URL",
+        "label": "复制URL",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete.exported",
+        "resource": "image",
+        "authKey": "delete.exported",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+/*
+ * ZSV 全局样式
+ *
+ * antd + antd-overwrite 包裹在 @layer antd / @layer legacy / @layer overrides 中，
+ * 利用 CSS Cascade Layers 控制优先级。
+ *
+ * 之所以可以这样做，是因为 tailwind.css 中的 preflight 覆盖已中和了
+ * Tailwind CSS v4 默认 preflight 中与 antd 冲突的规则：
+ *   padding: 0 / border: 0 solid / border-radius: 0 / background-color: transparent
+ *
+ * 层级顺序（低 → 高）：antd < legacy < theme < base < components < utilities < overrides
+ * 这确保 antd 覆盖样式 > antd 原始样式，Tailwind utilities > 所有。
+ */
+@import "@zstack/zsphere-components/dist/style/vars.less";
+
+/* antd 原始样式 - 放在最低优先级层 */
+@layer antd {
+  @import "~antd/dist/antd.less";
+}
+
+/* 旧组件库样式 (@zstack/zsphere-components) */
+@layer legacy {
+  @import "@zstack/zsphere-components/dist/style/index.less";
+}
+
+/* antd 覆盖样式 - 放在最高优先级层 */
+@layer overrides {
+  @import "@zstack/zsphere-components/dist/style/antd-overwrite.less";
+
+  /* action message 显示在 Dialog 之上 */
+  //暂时先这么做，之后会更换掉antd的组件
+  .ant-message {
+    z-index: 1200 !important;
+  }
+}
+
+/* 应用级通用样式 */
+@import "./common.less";
+
+#root {
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}

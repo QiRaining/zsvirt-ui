@@ -1,0 +1,91 @@
+@import "../../../../theme.less";
+
+.share-resource-card {
+  .tabs-container {
+    height: 240px;
+    border: 1px solid @neutral-300;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+
+    .tab {
+      height: 240px;
+      border: 0 1px 1px solid @neutral-300;
+
+      :global {
+        .ant-tabs-nav {
+          width: 200px;
+          border-right: 1px solid @neutral-300;
+        }
+
+        .ant-tabs-ink-bar {
+          left: 0 !important;
+          width: 4px;
+          color: @color-300 !important;
+          background: @color-300 !important;
+        }
+
+        .ant-tabs-nav-list {
+          margin: 0px !important;
+        }
+
+        .ant-tabs-tab {
+          width: 100%;
+          height: 36px;
+          margin: 0px !important;
+          padding: 7px 12px !important;
+          border-bottom: 1px solid @neutral-300;
+        }
+
+        .ant-tabs-tab-btn {
+          width: 100%;
+          height: 22px;
+          text-align: left;
+          white-space: nowrap;
+          /* 防止内容换行 */
+          overflow: hidden;
+          /* 隐藏溢出内容 */
+          text-overflow: ellipsis;
+        }
+
+        .ant-tabs-tabpane {
+          width: 100%;
+          min-width: 0;
+        }
+
+        .ant-tabs-tab-active {
+          background-color: @color-50 !important;
+        }
+
+        .ant-tabs-content-holder {
+          overflow: hidden auto !important;
+          border-left: 1px solid @neutral-300;
+          min-width: 0;
+        }
+
+        .ant-tabs-content {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    }
+  }
+
+  > div {
+    padding-left: 0 !important;
+  }
+}
+
+.tabPane {
+  padding: 20px !important;
+}
+
+.info-icon {
+  margin-left: 4px;
+  color: @neutral-300 !important;
+  cursor: pointer;
+
+  &:hover {
+    color: @color-600 !important;
+  }
+}

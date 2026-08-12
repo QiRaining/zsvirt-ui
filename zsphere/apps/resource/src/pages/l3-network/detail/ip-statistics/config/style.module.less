@@ -1,0 +1,21 @@
+@import "../../../../../theme.less";
+
+.null-text {
+  color: @neutral-500;
+}
+
+.serviceTagListWrapper {
+  :global {
+    .ant-typography {
+      margin-bottom: 0;
+    }
+  }
+  > :not([class$="item-list-show"]) {
+    align-items: center;
+    .serviceTagList {
+      > div {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}

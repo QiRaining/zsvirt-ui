@@ -1,0 +1,297 @@
+@import "../../../../theme.less";
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 12px;
+}
+
+.banner-left {
+  position: relative;
+
+  .license-svg {
+    position: relative;
+    //top: 24.5px;
+    z-index: 1;
+
+    path:first-child {
+      fill: @neutral-100;
+    }
+
+    path:last-child {
+      fill: @alert-400;
+    }
+  }
+
+  .divider {
+    margin: 20px 0;
+  }
+
+  .banner-left-card {
+    //top: -65px;
+    padding: 24px 20px;
+    position: relative;
+    height: 100%;
+    background-color: @neutral-0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid @neutral-300;
+    border-radius: 4px;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background-color: @neutral-200;
+      border-radius: 999em;
+      justify-content: center;
+    }
+
+    .title {
+      color: @neutral-800;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      height: 28px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-tag-inactive {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @danger-500;
+      color: @neutral-0;
+      border-radius: 2px;
+      border: unset;
+    }
+
+    .ant-tag-expired-in-one-day {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @alert-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .status-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .banner-left-card-withoutUK {
+    //  top: -65px;
+    padding: 24px 20px;
+    position: relative;
+    height: 100%;
+    background-color: @neutral-0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid @neutral-300;
+    border-radius: 4px;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background-color: @neutral-200;
+      border-radius: 999em;
+      justify-content: center;
+    }
+
+    .title {
+      color: @neutral-800;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      height: 28px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-tag-valid {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12x;
+      background-color: @positive-500;
+      color: @neutral-0;
+      border-radius: 2px;
+      border: unset;
+    }
+
+    .ant-tag-invalid {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @danger-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .ant-tag-inactive {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @danger-500;
+      color: @neutral-0;
+      border-radius: 2px;
+      border: unset;
+    }
+
+    .ant-tag-expired-in-one-day {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @alert-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .ant-tag-willinvalid {
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @alert-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .status-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .banner-left-card-ukeyReady {
+    // top: -65px;
+    padding: 24px 20px;
+    position: relative;
+    height: 100%;
+    background-color: @neutral-0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid @neutral-300;
+    border-radius: 4px;
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      background-color: @neutral-200;
+      border-radius: 999em;
+      justify-content: center;
+    }
+
+    .title {
+      color: @neutral-800;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      height: 28px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ant-tag-valid {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12x;
+      background-color: @positive-500;
+      color: @neutral-0;
+      border-radius: 2px;
+      border: unset;
+    }
+
+    .ant-tag-invalid {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @danger-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .ant-tag-inactive {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @danger-500;
+      color: @neutral-0;
+      border-radius: 2px;
+      border: unset;
+    }
+
+    .ant-tag-expired-in-one-day {
+      //margin-left: 4px;
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @alert-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .ant-tag-willinvalid {
+      font-weight: 400;
+      font-size: 12px;
+      background-color: @alert-500;
+      color: @neutral-0;
+      border: unset;
+      border-radius: 2px;
+    }
+
+    .status-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.no-access {
+  cursor: not-allowed;
+  color: @neutral-400;
+}
+
+.help {
+  font-size: 14px;
+  color: @neutral-600;
+  font-weight: 400;
+  margin-top: 24px;
+}
+
+.help-ukeyReady {
+  font-size: 14px;
+  color: @neutral-600;
+  font-weight: 400;
+  margin-top: 52px;
+}
+
+.help-withoutUK {
+  font-size: 14px;
+  color: @neutral-600;
+  font-weight: 400;
+  //margin-top: 47px;
+}

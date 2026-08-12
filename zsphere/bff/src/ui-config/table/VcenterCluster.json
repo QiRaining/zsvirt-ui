@@ -1,0 +1,198 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.vCenter",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "hostNum",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "vtepCidr",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "vtepCidr",
+            "defaultMessage": "VTEP CIDR"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "vCenter",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vCenter",
+            "defaultMessage": "vCenter"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "baremetalChassisNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "baremetalChassisNum",
+            "defaultMessage": "Bare Metal Chassis"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "hostNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "hostCount",
+            "defaultMessage": "Hosts"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "cpuUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "cpuUtilization",
+            "defaultMessage": "CPU Utilization"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "memoryUsedRate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "memoryUtilization",
+            "defaultMessage": " Memory Utilization"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enableState",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vcenter.cluster"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.cluster"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

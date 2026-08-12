@@ -1,0 +1,169 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "schedType",
+          "success",
+          "vm",
+          "owner",
+          "preHost",
+          "destHost",
+          "createDate",
+          "lastOpDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "schedType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "schedHistory.log.type",
+            "defaultMessage": "Log Type"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "success",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "task.result",
+            "defaultMessage": "Task Result"
+          },
+          "queryType": "singleFilter",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "vm",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm.name",
+            "defaultMessage": "VM Name"
+          },
+          "queryType": "input",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "vm.owner",
+            "defaultMessage": "VM Owner"
+          },
+          "queryType": "input",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "operation.status",
+            "defaultMessage": "Operation Status"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "preHost",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "pre.host",
+            "defaultMessage": "Pre Host"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "destHost",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "target.host",
+            "defaultMessage": "Destination Host"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "last.opeartion.date",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "schedule.log"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

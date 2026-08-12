@@ -1,0 +1,149 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "platform",
+          "scriptType",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "vmscript"
+        }
+      },
+      {
+        "accessorKey": "platform",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "platformType",
+            "defaultMessage": "Platform Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "vmscript"
+        }
+      },
+      {
+        "accessorKey": "scriptType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "scriptType",
+            "defaultMessage": "Script Type"
+          },
+          "queryType": "",
+          "resource": "vmscript"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createdate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vmscript"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "addScript",
+          "delete"
+        ],
+        "activeKeys": [
+          "edit",
+          "editScript",
+          "execScript"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "addScript",
+        "resource": "vmscript",
+        "authKey": "addScript",
+        "i18nKey": "addScript",
+        "name": "创建脚本",
+        "label": "创建脚本",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vmscript",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "editScript",
+        "resource": "vmscript",
+        "authKey": "editScript",
+        "i18nKey": "editScript",
+        "name": "修改脚本",
+        "label": "修改脚本",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "execScript",
+        "resource": "vmscript",
+        "authKey": "execScript",
+        "i18nKey": "execScript",
+        "name": "执行脚本",
+        "label": "执行脚本",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vmscript",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

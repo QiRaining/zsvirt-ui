@@ -1,0 +1,103 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "select",
+        "keys": [
+          "dns",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "dns",
+          "ipVersion"
+        ]
+      },
+      {
+        "view": "sub.share",
+        "keys": [
+          "dns",
+          "ipVersion"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "dns",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "dns",
+            "defaultMessage": "DNS"
+          },
+          "queryType": "",
+          "resource": "dns"
+        }
+      },
+      {
+        "accessorKey": "ipVersion",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ip.version",
+            "defaultMessage": "IP Address Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "dns"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "sub.share/row"
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.dns",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.dns",
+        "resource": "dns",
+        "authKey": "add.dns",
+        "i18nKey": "add.dns",
+        "name": "添加DNS",
+        "label": "添加DNS",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "dns",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

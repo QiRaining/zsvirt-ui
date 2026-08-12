@@ -1,0 +1,228 @@
+@import "../../../theme.less";
+
+.executeTimeItem {
+  :global {
+    .zstack-form-item-label-container-required {
+      display: none;
+    }
+  }
+}
+
+.nameAndDesc {
+  :global {
+    .ant-form-item-explain-error {
+      max-width: 320px;
+    }
+  }
+}
+
+.periodType {
+  :global {
+    .ant-form-item-control-input-content {
+      max-width: 320px;
+      display: flex;
+      gap: 4px;
+
+      .ant-select {
+        width: 120px;
+        flex-shrink: 0;
+      }
+
+      .ant-select:has(+ .ant-select) {
+        width: 80px;
+      }
+
+      .ant-select + .ant-select {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.periodOptionWrapper {
+  &:global(.ant-form-item) {
+    margin-top: -8px;
+  }
+
+  :global {
+    .zstack-form-item-label-container-required {
+      display: none;
+    }
+  }
+
+  .periodOptionGroup:global(.ant-checkbox-group) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    :global {
+      .ant-checkbox-group-item {
+        margin: 0;
+      }
+
+      .ant-checkbox-wrapper {
+        display: block;
+        position: relative;
+        width: 52px;
+        height: 32px;
+        border: 1px solid @neutral-400;
+        border-radius: 2px;
+        transition: all 300ms;
+
+        &:hover {
+          border-color: @color-600;
+          color: @color-600;
+        }
+
+        &.ant-checkbox-wrapper-checked {
+          border-color: @color-600;
+          color: @color-600;
+        }
+
+        .ant-checkbox {
+          display: block;
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+
+          &::before {
+            content: "";
+            position: absolute;
+            background-color: @color-600;
+            width: 20px;
+            height: 20px;
+            transform: skewX(45deg);
+            top: 0;
+            right: -10px;
+            opacity: 0;
+          }
+
+          &.ant-checkbox-checked::before {
+            opacity: 1;
+          }
+
+          &::after {
+            display: none;
+          }
+
+          input {
+            display: none;
+          }
+
+          .ant-checkbox-inner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: auto;
+            width: 11px;
+            height: 11px;
+            border: none;
+            background-color: transparent;
+            transition: none;
+
+            &::after {
+              display: none;
+            }
+          }
+        }
+
+        .ant-checkbox + span {
+          display: flex;
+          position: absolute;
+          padding: 0;
+          inset: 0;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    &.periodOptionSmall {
+      max-width: 320px;
+
+      :global {
+        .ant-checkbox-wrapper {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+.timePicker {
+  :global {
+    .ant-picker-ranges {
+      padding: 8px;
+      line-height: 22px;
+
+      .ant-picker-ok .ant-btn-sm {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.snapshotCount {
+  width: 80px !important;
+}
+
+.snapshotCountDesc:global(.ant-form-item) {
+  margin-top: -8px;
+  line-height: 20px;
+  font-size: 12px;
+
+  &&&&& :global(.ant-form-item-control-input-content) {
+    color: @neutral-600 !important;
+  }
+
+  :global {
+    .ant-form-item-control-input,
+    .zstack-form-item-label-container {
+      min-height: 0;
+    }
+  }
+}
+
+.selectVm {
+  :global {
+    .zstack-virtualization-modal-select-alert {
+      margin-bottom: 20px !important;
+    }
+  }
+}
+
+.formModal {
+  :global {
+    .action-title {
+      max-width: calc(100% - 20px);
+    }
+  }
+
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .titleName {
+      min-width: 0;
+      margin-left: 1px;
+      padding-left: 8px;
+      position: relative;
+      line-height: 22px;
+      font-size: 14px;
+      color: @neutral-600;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 14px;
+        width: 1px;
+        left: -1px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background-color: @neutral-300;
+      }
+    }
+  }
+}

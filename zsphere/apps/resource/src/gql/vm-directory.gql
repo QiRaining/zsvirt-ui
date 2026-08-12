@@ -1,0 +1,93 @@
+query vmDirectoryGroupList($conditions: [Condition!], $type: DirectoryQueryType) {
+  vmDirectoryGroupList(conditions: $conditions, type: $type) {
+    list {
+      key
+      title
+      level
+      name
+      parentUuid
+      groupName
+      vmCount
+      uuid
+      createDate
+      zoneUuid
+    }
+  }
+}
+
+query vmDirectoryGroupByUuid($conditions: [Condition!]) {
+  vmDirectoryGroupByUuid(conditions: $conditions) {
+    list {
+      key
+      title
+      level
+      name
+      parentUuid
+      zoneUuid
+      uuid
+      groupName
+      vmCount
+    }
+  }
+}
+
+query vmSubDirGroupList($conditions: [Condition!], $type: DirectoryQueryType) {
+  vmSubDirGroupList(conditions: $conditions, type: $type) {
+    list {
+      key
+      title
+      level
+      parentUuid
+      groupName
+      vmCount
+    }
+  }
+}
+
+query vmDirectoryClusterList($conditions: [Condition!], $type: DirectoryQueryType) {
+  vmDirectoryClusterList(conditions: $conditions, type: $type) {
+    vmCount
+    expandedKeys
+    key
+    title
+    level
+    children {
+      key
+      title
+      vmCount
+      level
+      children {
+        key
+        title
+        vmCount
+        level
+      }
+    }
+  }
+}
+
+
+mutation addGroup($input: AddGroupInput!) {
+  addGroup(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteGroup($input: DeleteGroupInput!) {
+  deleteGroup(input: $input) {
+    actionId
+  }
+}
+
+mutation updateGroup($input: UpdateGroupInput!) {
+  updateGroup(input: $input) {
+    actionId
+  }
+}
+
+
+query vmGroupCount($conditions: [Condition!], $type: DirectoryQueryType) {
+  vmGroupCount(conditions: $conditions, type: $type) {
+    total
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "snapshotType",
+          "size",
+          "memoryInFormation",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "size",
+          "memoryInFormation",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.volume",
+        "keys": [
+          "name",
+          "size",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "snapshotType",
+          "size",
+          "memoryInFormation",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "snapshotType",
+          "size",
+          "memoryInFormation",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.vm",
+        "keys": [
+          "name",
+          "size",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.volume",
+        "keys": [
+          "name",
+          "size",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 280,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "snapshot"
+        }
+      },
+      {
+        "accessorKey": "snapshotType",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "snapshotType",
+            "defaultMessage": "Snapshot Type"
+          },
+          "queryType": "multipleFilter",
+          "resource": "snapshot"
+        }
+      },
+      {
+        "accessorKey": "size",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "capacity",
+            "defaultMessage": "Capacity"
+          },
+          "queryType": "",
+          "resource": "snapshot"
+        }
+      },
+      {
+        "accessorKey": "memoryInFormation",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "memoryInFormation",
+            "defaultMessage": "Memory Snapshot"
+          },
+          "queryType": "multipleFilter",
+          "resource": "snapshot"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "snapshot"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/header",
+        "extraKeys": [
+          "create.vm",
+          "revert"
+        ],
+        "activeKeys": [
+          "edit.name.description",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "create.vm",
+          "edit.name.description",
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "create.snapshot",
+          "start",
+          "stop"
+        ]
+      },
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "create.vm",
+          "edit.name.description",
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.snapshot",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal/header",
+        "extraKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetalGroup/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetalSingle/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.group/header",
+        "extraKeys": [
+          "revert"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.group/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.single/header",
+        "extraKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.single/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization/toolbar",
+        "extraKeys": [
+          "create.snapshot"
+        ]
+      },
+      {
+        "view": "sub.vm/header",
+        "extraKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vmGroup/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.vmSingle/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volume/header",
+        "extraKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volumeGroup/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.volumeSingle/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "revert",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "create.snapshot",
+          "delete"
+        ]
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "create.vm",
+          "edit.name.description",
+          "revert",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.snapshot",
+        "resource": "snapshot",
+        "authKey": "create.snapshot",
+        "i18nKey": "create.snapshot",
+        "name": "创建快照",
+        "label": "创建快照",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.vm",
+        "resource": "snapshot",
+        "authKey": "create.vm",
+        "i18nKey": "create.vm",
+        "name": "创建云主机",
+        "label": "创建云主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.name.description",
+        "resource": "snapshot",
+        "authKey": "edit.name.description",
+        "i18nKey": "edit.name.description",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "revert",
+        "resource": "snapshot",
+        "authKey": "revert",
+        "i18nKey": "revert",
+        "name": "恢复",
+        "label": "恢复",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "snapshot",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "start",
+        "resource": "snapshot",
+        "authKey": "start",
+        "i18nKey": "start",
+        "name": "启动",
+        "label": "启动",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "stop",
+        "resource": "snapshot",
+        "authKey": "stop",
+        "i18nKey": "stop",
+        "name": "停止",
+        "label": "停止",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetal.chassis.add",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetalpxeservice.baremetal",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.baremetalpxeservice.create",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.l2.network.attach",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.l2network.detach",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": []
+      },
+      {
+        "view": "sub.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.l2.network",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.pxe.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.zone",
+        "keys": [
+          "name",
+          "hypervisorType",
+          "baremetalChassisNum",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal.cluster"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "baremetal.cluster"
+        }
+      },
+      {
+        "accessorKey": "hypervisorType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "hypervisorType",
+            "defaultMessage": "Hypervisor"
+          },
+          "queryType": "",
+          "resource": "baremetal.cluster"
+        }
+      },
+      {
+        "accessorKey": "baremetalChassisNum",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "baremetalChassisCount",
+            "defaultMessage": "Bare Metal Chassis"
+          },
+          "queryType": "",
+          "resource": "baremetal.cluster"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal.cluster"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "add.baremetal.chassis",
+          "add.baremetal.instance",
+          "edit",
+          "create.l2Network",
+          "attach.l2network",
+          "detach.l2network",
+          "config.pxeServer",
+          "reconnect.pxe.server",
+          "detach.pxe.server",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "add.baremetal.chassis",
+          "edit",
+          "create.l2Network",
+          "attach.l2network",
+          "detach.l2network",
+          "config.pxeServer",
+          "reconnect.pxe.server",
+          "detach.pxe.server",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.baremetal.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.l2.network/row",
+        "activeKeys": [
+          "detach.in.l2network"
+        ]
+      },
+      {
+        "view": "sub.l2.network/toolbar",
+        "extraKeys": [
+          "attach.in.l2network",
+          "detach.in.l2network"
+        ]
+      },
+      {
+        "view": "sub.pxe.server/row",
+        "activeKeys": [
+          "detach.in.pxe.server"
+        ]
+      },
+      {
+        "view": "sub.pxe.server/toolbar",
+        "extraKeys": [
+          "attach.in.pxe.server",
+          "detach.in.pxe.server"
+        ]
+      },
+      {
+        "view": "sub.virtualization.iscsi.server/toolbar"
+      },
+      {
+        "view": "sub.zone/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "create.l2Network",
+          "attach.l2network",
+          "detach.l2network",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.zone/toolbar",
+        "extraKeys": [
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      },
+      {
+        "view": "virtualization.dir/directory",
+        "activeKeys": [
+          "add.baremetal.chassis",
+          "add.baremetal.instance",
+          "edit",
+          "create.l2Network",
+          "attach.l2network",
+          "detach.l2network",
+          "config.pxeServer",
+          "reconnect.pxe.server",
+          "detach.pxe.server",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.baremetal.chassis",
+        "resource": "baremetal.cluster",
+        "authKey": "add.baremetal.chassis",
+        "i18nKey": "add.baremetal.chassis",
+        "name": "添加裸金属设备",
+        "label": "添加裸金属设备",
+        "icon": "",
+        "dividerKey": "add.baremetal.chassis-divider"
+      },
+      {
+        "key": "add.baremetal.instance",
+        "resource": "baremetal.cluster",
+        "authKey": "add.baremetal.instance",
+        "i18nKey": "add.baremetal.instance",
+        "name": "新建裸金属主机",
+        "label": "新建裸金属主机",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "create.baremetal.cluster",
+        "resource": "baremetal.cluster",
+        "authKey": "create.baremetal.cluster",
+        "i18nKey": "create.baremetal.cluster",
+        "name": "创建裸金属集群",
+        "label": "创建裸金属集群",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "baremetal.cluster",
+        "authKey": "edit",
+        "i18nKey": "edit.name.and.desc",
+        "name": "编辑名称简介",
+        "label": "编辑名称简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "baremetal.cluster",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "baremetal.cluster",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "create.l2Network",
+        "resource": "baremetal.cluster",
+        "authKey": "create.l2Network",
+        "i18nKey": "create.l2Network",
+        "name": "新建分布式交换机",
+        "label": "新建分布式交换机",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.l2network",
+        "resource": "baremetal.cluster",
+        "authKey": "attach.l2network",
+        "i18nKey": "attach.l2Network",
+        "name": "加载二层网络",
+        "label": "加载二层网络",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.l2network",
+        "resource": "baremetal.cluster",
+        "authKey": "detach.l2network",
+        "i18nKey": "detach.l2Network",
+        "name": "卸载二层网络",
+        "label": "卸载二层网络",
+        "icon": "",
+        "dividerKey": "detach.l2network-divider"
+      },
+      {
+        "key": "config.pxeServer",
+        "resource": "baremetal.cluster",
+        "authKey": "config.pxeServer",
+        "i18nKey": "config.pxeServer",
+        "name": "配置部署服务器",
+        "label": "配置部署服务器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect.pxe.server",
+        "resource": "baremetal.cluster",
+        "authKey": "reconnect.pxe.server",
+        "i18nKey": "reconnect.pxe.server",
+        "name": "重连部署服务器",
+        "label": "重连部署服务器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.pxe.server",
+        "resource": "baremetal.cluster",
+        "authKey": "detach.pxe.server",
+        "i18nKey": "detach.pxeServer",
+        "name": "卸载部署服务器",
+        "label": "卸载部署服务器",
+        "icon": "",
+        "dividerKey": "detach.pxe.server-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "baremetal.cluster",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.in.pxe.server",
+        "resource": "baremetal.cluster",
+        "authKey": "attach.in.pxe.server",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.pxe.server",
+        "resource": "baremetal.cluster",
+        "authKey": "detach.in.pxe.server",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.in.l2network",
+        "resource": "baremetal.cluster",
+        "authKey": "attach.in.l2network",
+        "i18nKey": "attach",
+        "name": "加载",
+        "label": "加载",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.in.l2network",
+        "resource": "baremetal.cluster",
+        "authKey": "detach.in.l2network",
+        "i18nKey": "detach",
+        "name": "卸载",
+        "label": "卸载",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

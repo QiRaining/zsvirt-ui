@@ -1,0 +1,254 @@
+@import "../../theme.less";
+
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: @neutral-0;
+  padding: 20px;
+
+  :global {
+    span.ant-typography-ellipsis-single-line {
+      position: relative;
+      z-index: 11;
+      color: @neutral-800;
+    }
+  }
+}
+
+.header {
+  height: 24px;
+  & > span {
+    display: inline-block;
+    width: calc(100% - 16px);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .jumpToContainer {
+    display: inline-block;
+    cursor: pointer;
+
+    a {
+      color: @neutral-400;
+    }
+
+    &:hover {
+      a {
+        color: @neutral-700;
+      }
+    }
+  }
+}
+
+.box {
+  width: 100%;
+
+  .chartEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .percent {
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .chartTotal {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .chart {
+      display: inline-flex;
+
+      :global {
+        .ant-progress-text {
+          display: none;
+        }
+
+        // .ant-progress-circle-trail {
+        //   stroke-width: 25;
+        // }
+        // .ant-progress-circle-path {
+        //   stroke-width: 25;
+        // }
+      }
+    }
+
+    .percent {
+      font-size: 20px;
+      margin-left: 12px;
+      display: inline-flex;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+  }
+
+  .capacity {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 8px;
+    font-size: 14px;
+    color: @neutral-600;
+    width: 100%;
+
+    .label {
+      width: 33%;
+      margin-right: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .count {
+      width: 66%;
+      text-align: right;
+      white-space: nowrap;
+      overflow: hidden;
+      color: @neutral-800;
+    }
+  }
+}
+
+.actualUsedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.actualUsedCard {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  .leftChart {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rightCapacity {
+    flex-basis: 60%;
+    padding-left: 12px;
+
+    .capacity {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 8px;
+      font-size: 14px;
+      color: @neutral-600;
+      width: 100%;
+
+      .label {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .count {
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+        color: @neutral-800;
+      }
+    }
+
+    .rightPercent {
+      width: 100%;
+      border-bottom: 1px solid @neutral-300;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      line-height: 28px;
+    }
+  }
+}
+
+.allocationCard {
+  :global {
+    .capacity-row-with-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & > .ant-col:nth-child(1) {
+        padding-right: 5% !important;
+      }
+      & > .ant-col:nth-child(2) {
+        padding-left: 5% !important;
+      }
+    }
+    .capacity-title {
+      font-size: 14px;
+      line-height: 22px;
+      color: @neutral-800;
+      font-weight: 400;
+      margin-bottom: 29px;
+      :global {
+        .zstack-icon {
+          vertical-align: text-bottom;
+        }
+      }
+    }
+
+    .capacity-name {
+      font-size: 24px;
+      line-height: 38px;
+      color: @neutral-700;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .capacity-progress .capacity-progress-item-inner {
+      cursor: default;
+    }
+
+    .capacity-legend {
+      font-size: 14px;
+      line-height: 22px;
+      row-gap: 12px !important;
+
+      & > .ant-col-24 > .ant-row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .capacity-legend-label {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .capacity-legend-value {
+        color: @neutral-700;
+        font-weight: 400;
+        text-align: right;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.cardIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background-color: @neutral-100;
+  margin: 0 auto;
+}

@@ -1,0 +1,4 @@
+@import "../../../../../packages/design/src/styles/tailwind.css";
+@import "./zsv-theme.css";
+
+@source "../**/*.{ts,tsx}";

@@ -1,0 +1,129 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "domain",
+          "rule.count"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "domain",
+        "size": 400,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "domain",
+            "defaultMessage": "Domain"
+          },
+          "queryType": "input",
+          "resource": "forwarding.strategy"
+        }
+      },
+      {
+        "accessorKey": "rule.count",
+        "size": 400,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ruleNum",
+            "defaultMessage": "Rules"
+          },
+          "queryType": "",
+          "resource": "forwarding.strategy"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "uuid"
+          },
+          "queryType": "input",
+          "resource": "forwarding.strategy"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "URL",
+            "defaultMessage": "URL"
+          },
+          "queryType": "input",
+          "resource": "forwarding.strategy"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "add.rule",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.acl",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.acl",
+        "resource": "load.balancer",
+        "authKey": "add.acl",
+        "i18nKey": "add.forwarding.rule",
+        "name": "添加转发规则",
+        "label": "添加转发规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.rule",
+        "resource": "load.balancer",
+        "authKey": "add.rule",
+        "i18nKey": "add.rule",
+        "name": "添加规则",
+        "label": "添加规则",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "load.balancer",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

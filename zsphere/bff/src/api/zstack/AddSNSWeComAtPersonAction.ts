@@ -1,0 +1,64 @@
+import { Injectable } from "@nestjs/common";
+
+import { ActionAdvance } from "./base/action-advance";
+import { ActionInfo } from "./base/types";
+import { SNSWeComAtPersonInventory } from "./types";
+
+@Injectable()
+export class AddSNSWeComAtPersonAction extends ActionAdvance {
+  async call(
+    params: AddSNSWeComAtPersonActionParam,
+    _info: ActionInfo = {},
+    needRecord = true,
+  ): Promise<AddSNSWeComAtPersonResult> {
+    const { actionId, sessionId, apiId, apiRecord } = await this.preAction(
+      _info,
+      needRecord,
+      AddSNSWeComAtPersonAction.name,
+      params,
+    );
+    const httpRequestPromise = this.zsHttpService.post(
+      `/sns/application-endpoints/we-com/at-persons`,
+      {
+        params: params,
+        systemTags: params.systemTags,
+      },
+      {
+        ..._info,
+        apiId,
+        actionId,
+        sessionId,
+      },
+    );
+    return this.postAction<AddSNSWeComAtPersonResult>(
+      {
+        ..._info,
+        apiId,
+        actionId,
+        sessionId,
+      },
+      httpRequestPromise,
+      needRecord,
+      apiRecord,
+    );
+  }
+}
+
+export interface AddSNSWeComAtPersonActionParam {
+  userId: string;
+  endpointUuid: string;
+  remark?: string;
+  resourceUuid?: string;
+  tagUuids?: any[];
+  systemTags?: any[];
+  userTags?: any[];
+  sessionId?: string;
+  accessKeyId?: string;
+  accessKeySecret?: string;
+  requestIp?: string;
+  timeout?: number;
+}
+
+export interface AddSNSWeComAtPersonResult {
+  inventory?: SNSWeComAtPersonInventory;
+}

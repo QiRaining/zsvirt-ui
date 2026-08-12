@@ -1,0 +1,63 @@
+query logServerList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $type: String
+  $sortDirection: SortDirectionValidValues
+) {
+  logServerList(
+    conditions: $conditions
+    extraConditions: $extraConditions
+    start: $start
+    limit: $limit
+    type: $type
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+  ) {
+    total
+    list {
+      id
+      uuid
+      name
+      description
+      category
+      type
+      level
+      configuration
+      port
+      hostname
+      facility
+      logType
+      labelValue
+      createDate
+      lastOpDate
+    }
+  }
+}
+
+mutation createLogServer($input: CreateLogServerInput!) {
+  createLogServer(input: $input) {
+    actionId
+  }
+}
+
+mutation deleteLogServer($input: DeleteLogServerInput!) {
+  deleteLogServer(input: $input) {
+    actionId
+  }
+}
+
+mutation updateLogServer($input: UpdateLogServerInput!) {
+  updateLogServer(input: $input) {
+    actionId
+  }
+}
+
+mutation testLogServer($input: TestLogServerInput!) {
+  testLogServer(input: $input) {
+    actionId
+  }
+}

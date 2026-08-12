@@ -1,0 +1,187 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "task",
+          "vmName",
+          "logType",
+          "taskResult",
+          "reason",
+          "vmOwner",
+          "preHost",
+          "targetHost",
+          "createDate",
+          "lastOpDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "task",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Task Description"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "vmName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm.name",
+            "defaultMessage": "VM Name"
+          },
+          "queryType": "input",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "logType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "log.type",
+            "defaultMessage": "Log Type"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "taskResult",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "taskResult",
+            "defaultMessage": "Task Result"
+          },
+          "queryType": "multipleSelect",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "reason",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "detail.info",
+            "defaultMessage": "Detailed Information"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "vmOwner",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "vm.owner",
+            "defaultMessage": "VM Owner"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "preHost",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "pre.host",
+            "defaultMessage": "Pre Host"
+          },
+          "queryType": "input",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "targetHost",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "target.host",
+            "defaultMessage": "Destination Host"
+          },
+          "queryType": "input",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      },
+      {
+        "accessorKey": "lastOpDate",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "finishTime",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "migrate.log"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

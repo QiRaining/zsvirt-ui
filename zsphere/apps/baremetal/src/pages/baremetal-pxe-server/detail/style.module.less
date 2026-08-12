@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabs {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  :global {
+    .ant-tabs-content {
+      height: 100%;
+    }
+  }
+}

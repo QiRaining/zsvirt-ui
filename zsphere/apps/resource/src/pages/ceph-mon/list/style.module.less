@@ -1,0 +1,86 @@
+@import "../../../theme.less";
+
+.container {
+  padding: 24px;
+}
+
+.toolbar {
+  margin: 12px 0;
+
+  .searchContainer {
+    margin-top: 12px;
+  }
+}
+
+.selectAll {
+  padding: 12px 0;
+
+  :global {
+    .ant-checkbox-wrapper {
+      margin-right: 10px;
+    }
+  }
+}
+
+.cardList {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    :global {
+      .ant-card-head {
+        padding: 0 12px;
+
+        .ant-checkbox {
+          margin-right: 8px;
+        }
+      }
+
+      .ant-card-body {
+        padding: 0;
+      }
+    }
+
+    .mainInfo {
+      display: flex;
+      justify-content: space-around;
+
+      .field {
+        display: flex;
+        padding: 12px 0;
+        flex-direction: column;
+        text-align: center;
+
+        .label {
+          color: @neutral-600;
+        }
+
+        .value {
+          font-size: 20px;
+          color: @neutral-800;
+        }
+      }
+    }
+
+    .extraInfo {
+      .field {
+        display: flex;
+        height: 38px;
+        line-height: 38px;
+        border-top: 1px solid @neutral-300;
+
+        .label {
+          width: 100px;
+          padding-left: 12px;
+          color: @neutral-600;
+          background-color: @neutral-100;
+        }
+
+        .value {
+          padding-left: 12px;
+          color: @neutral-700;
+        }
+      }
+    }
+  }
+}

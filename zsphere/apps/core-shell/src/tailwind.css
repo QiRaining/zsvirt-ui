@@ -1,0 +1,23 @@
+/**
+ * ZSV Core Shell - Tailwind CSS v4 入口
+ *
+ * 使用 @zstack/design 的 ZSV 预设（tailwind-zsv.css），它包含：
+ *   - 模块化 Tailwind（theme + 自定义 preflight + utilities）
+ *   - 自定义 preflight 移除了 padding:0 / border:0 等与 antd 冲突的规则
+ *   - 完整的 design token（颜色、间距、圆角、阴影等）
+ *   - 自定义 utilities（scrollbar-none, scroll-fade 等）
+ *
+ * ZSV 主题扩展由 zsv-theme.css 提供（ZSV 特有的颜色、字体、组件样式）
+ *
+ * 层级顺序（低 → 高）：antd < legacy < theme < base < components < utilities < overrides
+ *
+ * 等 ZSV 完成 antd → @zstack/design 迁移后，可切换回 tailwind.css（Cloud 预设）。
+ */
+@import "../../../../packages/design/src/styles/tailwind-zsv.css";
+@import "../../../shared/design-biz/src/styles/zsv-theme.css";
+
+/* 扫描所有 ZSV 子应用的 TSX 源码 */
+@source "../src/**/*.{ts,tsx}";
+@source "../../../apps/*/src/**/*.{ts,tsx}";
+@source "../../../shared/*/src/**/*.{ts,tsx}";
+@source "../../../../packages/error-boundary/src/**/*.{ts,tsx}";

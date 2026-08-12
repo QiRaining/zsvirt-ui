@@ -1,0 +1,427 @@
+@import "../style/vars.less";
+
+.@{prefix}-upload-dragger {
+  width: 320px;
+
+  &-image-container {
+    .ant-upload.ant-upload-select-picture-card {
+      background-color: transparent;
+    }
+
+    .ant-upload-list-item-actions {
+      .zstack-icon {
+        color: @neutral-100;
+      }
+
+      &:hover {
+        .ant-upload-list-item-card-actions-btn {
+          background: transparent;
+        }
+      }
+    }
+
+    .ant-upload-list-item {
+      padding: 0 !important;
+
+      .ant-upload-list-item-info {
+        padding: 4px !important;
+
+        &:before {
+          left: -4px;
+          top: -4px;
+          width: calc(100% + 8px);
+          height: calc(100% + 8px);
+        }
+      }
+    }
+
+    &-small {
+      .ant-upload-list-picture-card,
+      .ant-upload-select-picture-card {
+        width: 120px !important;
+        height: 120px !important;
+      }
+
+      .ant-upload-list-item {
+        width: 120px !important;
+        height: 120px !important;
+      }
+    }
+
+    &-large {
+      .ant-upload-list-picture-card,
+      .ant-upload-select-picture-card {
+        width: 230px !important;
+        height: 120px !important;
+      }
+
+      .ant-upload-list-item {
+        width: 230px !important;
+        height: 120px !important;
+      }
+    }
+  }
+
+  &-add-image {
+    .zstack-icon {
+      font-size: 24px !important;
+      color: @color-500;
+    }
+
+    div {
+      color: @neutral-700;
+      margin-top: -4px;
+      font-size: 12px;
+    }
+  }
+
+  &-icon {
+    color: @color-600 !important;
+    font-size: 24px !important;
+  }
+
+  &-file-accept-message {
+    color: @neutral-500 !important;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  &-file-item-container {
+    margin-bottom: 8px;
+    max-height: 240px;
+    overflow-y: auto;
+    border: 1px solid @neutral-400;
+    border-radius: 2px;
+  }
+
+  &-file-item {
+    background: @neutral-0;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid @neutral-400 !important;
+    height: 36px;
+    font-size: 14px;
+    padding: 8px 12px;
+
+    &:hover {
+      background-color: @neutral-100;
+    }
+
+    &:first-child {
+      border-bottom: 1px solid @neutral-400 !important;
+    }
+
+    &:last-child {
+      border-bottom: unset !important;
+    }
+
+    &-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      color: @neutral-700;
+
+      &-attach-icon {
+        color: initial;
+      }
+
+      &-name {
+        color: @neutral-700;
+        padding: 0 20px 0 4px;
+        width: 100px;
+        flex: 1;
+
+        span {
+          color: @neutral-700;
+        }
+      }
+
+      &-check {
+        margin-right: 8px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: @neutral-700;
+
+        &:hover {
+          cursor: pointer;
+          color: @color-600;
+        }
+      }
+
+      &-trash-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: @neutral-700;
+
+        &:hover {
+          cursor: pointer;
+          color: @color-600;
+        }
+      }
+    }
+
+    &-line-error {
+      padding: 4px 0 0 20px;
+
+      span {
+        color: @danger-500;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+
+    &-line-info {
+      padding: 4px 0 0 20px;
+
+      span {
+        color: @neutral-600;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .ant-upload.ant-upload-drag {
+    .ant-upload-btn {
+      padding: 0;
+
+      .ant-upload-drag-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: @neutral-700;
+        font-size: 12px;
+        background: @neutral-0;
+      }
+    }
+  }
+
+  .ant-upload-list {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.@{prefix}-upload-dragger-single {
+  width: 320px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+
+  &-image-container {
+    border: 1px solid @neutral-400;
+
+    .ant-upload.ant-upload-select-picture-card {
+      background-color: transparent;
+    }
+
+    .ant-upload-list-item-actions {
+      .zstack-icon {
+        color: @neutral-100;
+      }
+
+      &:hover {
+        .ant-upload-list-item-card-actions-btn {
+          background: transparent;
+        }
+      }
+    }
+
+    .ant-upload-list-item {
+      padding: 0 !important;
+      border-radius: 2px;
+
+      .ant-upload-list-item-info {
+        padding: 4px !important;
+
+        &:before {
+          left: -4px;
+          top: -4px;
+          width: calc(100% + 8px);
+          height: calc(100% + 8px);
+        }
+      }
+    }
+
+    &-small {
+      .ant-upload-list-picture-card,
+      .ant-upload-select-picture-card {
+        width: 120px !important;
+        height: 120px !important;
+      }
+
+      .ant-upload-list-item {
+        width: 120px !important;
+        height: 120px !important;
+      }
+    }
+
+    &-large {
+      .ant-upload-list-picture-card,
+      .ant-upload-select-picture-card {
+        width: 230px !important;
+        height: 120px !important;
+      }
+
+      .ant-upload-list-item {
+        width: 230px !important;
+        height: 120px !important;
+      }
+    }
+  }
+
+  &-add-image {
+    .zstack-icon {
+      font-size: 24px !important;
+      color: @color-500;
+    }
+
+    div {
+      color: @neutral-700;
+      margin-top: -4px;
+      font-size: 12px;
+    }
+  }
+
+  &-icon {
+    color: @color-600 !important;
+    font-size: 24px !important;
+  }
+
+  &-file-accept-message {
+    color: @neutral-500 !important;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  &-file-item {
+    background: @neutral-0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 4px;
+    border: 1px solid @neutral-400;
+    width: 216px;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: @neutral-100;
+    }
+
+    &-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 190px;
+      color: @neutral-700;
+
+      &-attach-icon {
+        color: initial;
+      }
+
+      &-name {
+        color: @neutral-700;
+        padding: 0 20px 0 4px;
+        width: 100px;
+        flex: 1;
+
+        span {
+          color: @neutral-700;
+        }
+      }
+
+      &-check {
+        margin-right: 8px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: @neutral-700;
+
+        &:hover {
+          cursor: pointer;
+          color: @color-600;
+        }
+      }
+
+      &-trash-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: @neutral-700;
+
+        &:hover {
+          cursor: pointer;
+          color: @color-600;
+        }
+      }
+    }
+
+    &-line-error {
+      padding: 4px 0 0 20px;
+
+      span {
+        color: @danger-500;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+
+    &-line-info {
+      padding: 4px 0 0 20px;
+
+      span {
+        color: @neutral-600;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+  &-upload-button {
+    width: 100px;
+  }
+
+  &-upload-button {
+    display: block;
+    //margin-left: 4px;
+  }
+
+  .ant-upload.ant-upload-drag {
+    .ant-upload-btn {
+      padding: 0;
+
+      .ant-upload-drag-container {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: @neutral-700;
+        font-size: 12px;
+        background: @neutral-0;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .ant-upload-list {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.ant-form-item-has-error {
+  .ant-upload.ant-upload-drag {
+    border-color: @danger-500;
+  }
+}

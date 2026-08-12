@@ -1,0 +1,67 @@
+query vgpuDeviceList(
+  $conditions: [Condition!]
+  $extraConditions: [Condition!]
+  $start: Int
+  $limit: Int
+  $sortBy: String
+  $type: String
+  $sortDirection: SortDirectionValidValues
+) {
+  vgpuDeviceList(
+    conditions: $conditions
+    start: $start
+    limit: $limit
+    replyWithCount: true
+    sortBy: $sortBy
+    sortDirection: $sortDirection
+    extraConditions: $extraConditions
+    type: $type
+  ) {
+    list {
+      name
+      uuid
+      type
+      status
+      state
+      address
+      hostUuid
+      host {
+        name
+        uuid
+      }
+      parentUuid
+      parent {
+        name
+        uuid
+      }
+      specInfo {
+        name
+        uuid
+      }
+      vmInstanceUuid
+      vmInstance {
+        name
+        uuid
+      }
+      templatedVmInstance {
+        uuid
+        name
+      }
+      createDate
+      shareType
+    }
+    total
+  }
+}
+
+mutation generateMdevDevice($input: GenerateMdevDeviceInput!) {
+  generateMdevDevice(input: $input) {
+    actionId
+  }
+}
+
+mutation unGenerateMdevDevice($input: UnGenerateMdevDeviceInput!) {
+  unGenerateMdevDevice(input: $input) {
+    actionId
+  }
+}

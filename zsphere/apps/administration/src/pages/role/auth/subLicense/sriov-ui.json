@@ -1,0 +1,10 @@
+{
+  "cluster||action||cluster.phynic.sriov.generate": "hidden",
+  "cluster||action||cluster.phynic.sriov.ungenerate": "hidden",
+  "cluster||block||peripheral.device": "hidden",
+  "host||action||host.phynic.sriov.generate": "hidden",
+  "host||action||host.phynic.sriov.ungenerate": "hidden",
+  "host||block||physical.nic": "hidden",
+  "vm||action||set.nic.type": "hidden",
+  "vm||block||enable.sriov": "hidden"
+}

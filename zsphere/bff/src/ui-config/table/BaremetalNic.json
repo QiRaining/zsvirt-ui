@@ -1,0 +1,206 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "mac",
+          "pxe",
+          "network",
+          "ip",
+          "netmask",
+          "gateway",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "mac",
+          "pxe",
+          "network",
+          "ip",
+          "netmask",
+          "gateway",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal.chassis",
+        "keys": [
+          "name",
+          "mac",
+          "pxe",
+          "ip",
+          "internet.speed"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "mac",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "mac",
+            "defaultMessage": "MAC"
+          },
+          "queryType": "input",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "pxe",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "pxeNic",
+            "defaultMessage": "PXE Boot NIC"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "network",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "network",
+            "defaultMessage": "Network"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "ip",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ip",
+            "defaultMessage": "IP"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "internet.speed",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "networkSpeed",
+            "defaultMessage": "Network Speed"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "netmask",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "netmask",
+            "defaultMessage": "Netmask"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "gateway",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "gateway",
+            "defaultMessage": "Gateway"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal.nic"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "baremetal.nic"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

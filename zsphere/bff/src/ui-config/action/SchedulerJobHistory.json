@@ -1,0 +1,502 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "startExecutionTime",
+          "job.result",
+          "backup.method",
+          "resource.num",
+          "execute.time",
+          "endTime"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": []
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "startExecutionTime",
+          "job.result",
+          "backup.method",
+          "resource.num",
+          "execute.time",
+          "endTime"
+        ]
+      },
+      {
+        "view": "sub.database",
+        "keys": [
+          "startExecutionTime",
+          "job.result",
+          "backup.method",
+          "resource.num",
+          "execute.time",
+          "endTime"
+        ]
+      },
+      {
+        "view": "sub.overview",
+        "keys": [
+          "startExecutionTime",
+          "job.result",
+          "backup.method",
+          "resource.num",
+          "backupCapacity",
+          "schedulerName",
+          "jobType",
+          "duration"
+        ]
+      },
+      {
+        "view": "sub.overview.detail",
+        "keys": [
+          "job.result",
+          "backup.method",
+          "backupCapacity",
+          "execute.time",
+          "endTime",
+          "backup.data",
+          "resource.name",
+          "startTime"
+        ]
+      },
+      {
+        "view": "sub.scheduler.job.group",
+        "keys": [
+          "startExecutionTime",
+          "job.result",
+          "backup.method",
+          "resource.num",
+          "backupCapacity",
+          "execute.time",
+          "endTime"
+        ]
+      },
+      {
+        "view": "sub.scheduler.job.history.detail",
+        "keys": [
+          "job.result",
+          "execute.time",
+          "endTime",
+          "backup.resource.name",
+          "startTime"
+        ]
+      },
+      {
+        "view": "sub.virtualization.snapshot-strategy",
+        "keys": [
+          "operationName",
+          "startTime",
+          "process.status",
+          "resource.count",
+          "duration",
+          "execution.endTime"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "startExecutionTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "execute.time",
+            "defaultMessage": "Execution Time"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "job.result",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.task.result",
+            "defaultMessage": "Backup Job Result"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "backup.method",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "backup.method",
+            "defaultMessage": "Backup Mode"
+          },
+          "queryType": "singleFilter",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "resource.num",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.resource",
+            "defaultMessage": "Backup Resources"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "backupCapacity",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.total.capacity",
+            "defaultMessage": "Total Backup Size"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "execute.time",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.consumed.time",
+            "defaultMessage": "Time Consumed"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "endTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "backup.finish.time",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "scheduler.job.history.name",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "schedulerName",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "backup.data",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backupData",
+            "defaultMessage": "Backup Data"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "resource.name",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resourceName",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "backup.resource.name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backupResourceName",
+            "defaultMessage": "Backup Resource Name"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "jobType",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "backup.object",
+            "defaultMessage": "Backup Object"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "operationName",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "operation.name",
+            "defaultMessage": "Task Description"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "startTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "execution.startTime",
+            "defaultMessage": "Start Time"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "process.status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "process.status",
+            "defaultMessage": "Result"
+          },
+          "queryType": "multipleFilter",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "resource.count",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "resource.count",
+            "defaultMessage": "Resources"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "duration",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "timeConsumingTask",
+            "defaultMessage": "Time Consumed"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      },
+      {
+        "accessorKey": "execution.endTime",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "execution.endTime",
+            "defaultMessage": "Completion Time"
+          },
+          "queryType": "",
+          "resource": "scheduler.job.history"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "extraKeys": [
+          "history.detail"
+        ]
+      },
+      {
+        "view": "main/toolbar"
+      },
+      {
+        "view": "sub.database/row"
+      },
+      {
+        "view": "sub.database/toolbar"
+      },
+      {
+        "view": "sub.overview/row"
+      },
+      {
+        "view": "sub.overview/toolbar"
+      },
+      {
+        "view": "sub.scheduled.job/row",
+        "extraKeys": [
+          "scheduled.job.history.detail"
+        ]
+      },
+      {
+        "view": "sub.scheduled.job/toolbar"
+      },
+      {
+        "view": "sub.scheduler.job.group/row",
+        "extraKeys": [
+          "backup.job.history.detail"
+        ]
+      },
+      {
+        "view": "sub.scheduler.job.group/toolbar"
+      },
+      {
+        "view": "sub.virtualization.snapshot-strategy/row"
+      },
+      {
+        "view": "sub.virtualization.snapshot-strategy/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "backup.job.history.detail",
+        "resource": "scheduler.job.history",
+        "authKey": "backup.job.history.detail",
+        "i18nKey": "view.backup.detail",
+        "name": "查看备份详情",
+        "label": "查看备份详情",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "database.backup.history.detail",
+        "resource": "database.backup",
+        "authKey": "database.backup.history.detail",
+        "i18nKey": "detail",
+        "name": "详情",
+        "label": "详情",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "scheduled.job.history.detail",
+        "resource": "scheduled.job",
+        "authKey": "scheduled.job.history.detail",
+        "i18nKey": "detail",
+        "name": "详情",
+        "label": "详情",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "history.detail",
+        "resource": "scheduler.job.history",
+        "authKey": "history.detail",
+        "i18nKey": "view.detail",
+        "name": "查看详情",
+        "label": "查看详情",
+        "icon": "file-text",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

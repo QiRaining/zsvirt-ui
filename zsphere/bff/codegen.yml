@@ -1,0 +1,19 @@
+# https://www.the-guild.dev/graphql/codegen/plugins/typescript/typescript
+schema: src/schema.gql
+generates:
+  ../shared/types/graphql.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      skipTypename: true # 不自动添加 __typename
+      declarationKind: interface # 导出为interface
+      namingConvention: keep # 不转换Enum名称
+      maybeValue: T # 不使用Maybe类型
+  ../shared/types/src/enum.ts:
+    plugins:
+      - typescript
+    config:
+      onlyEnums: true # 仅输出常量
+      namingConvention: keep

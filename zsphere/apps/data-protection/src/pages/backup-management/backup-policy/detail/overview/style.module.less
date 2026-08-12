@@ -1,0 +1,22 @@
+.extra {
+  :global {
+    .zstack-action-btn-container {
+      margin: 0 !important;
+    }
+  }
+}
+
+.backupStrategyList {
+  > div:not(:global(.zstack-field-horizontal))
+    > div:first-child
+    > div:first-child {
+    align-self: flex-start;
+    margin-top: 7px;
+  }
+
+  :global {
+    .zstack-field-horizontal-value {
+      padding-right: 12px !important;
+    }
+  }
+}

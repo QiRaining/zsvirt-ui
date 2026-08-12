@@ -1,0 +1,46 @@
+fragment monsFields on CephMon {
+  uuid
+  name
+  createDate
+  lastOpDate
+  backupStorageUuid
+  hostname
+  monAddr
+  monPort
+  monUuid
+  primaryStorageUuid
+  sshPort
+  sshPassword
+  sshUsername
+  status
+}
+
+query monsList($conditions: [Condition!], $type: CephMonType, $start: Int, $limit: Int) {
+  monsList(conditions: $conditions, type: $type, start: $start, limit: $limit) {
+    list {
+      ...monsFields
+    }
+    total
+  }
+}
+
+mutation updateMons($input: UpdateMonsInput!) {
+  updateMons(input: $input) {
+    success
+    error
+  }
+}
+
+mutation deleteMonsList($input: DeleteMonsInput!) {
+  deleteMonsList(input: $input) {
+    success
+    error
+  }
+}
+
+mutation addMons($input: AddMonsInput!) {
+  addMons(input: $input) {
+    success
+    error
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../../../theme.less";
+
+.content {
+  height: 320px;
+  width: 754px;
+  overflow: hidden;
+  border: 1px solid @neutral-300;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  border-radius: 2px;
+
+  .tab {
+    height: 320px;
+
+    :global {
+      .ant-tabs-nav {
+        width: 160px !important;
+        height: 320px;
+        border-right: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-tab {
+        width: 200px;
+        height: 36px;
+        padding: 0px !important;
+        margin: 0px !important;
+        float: left;
+        border-bottom: 1px solid @neutral-300;
+      }
+
+      .ant-tabs-tab-btn {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: left !important;
+        margin-left: 16px;
+      }
+
+      .ant-tabs-tab-active {
+        background-color: @color-50 !important;
+      }
+
+      .ant-tabs-content-holder {
+        overflow-y: auto !important;
+      }
+
+      .ant-tabs-ink-bar {
+        left: 0 !important;
+        width: 4px !important;
+        color: @color-400 !important;
+        background: @color-400 !important;
+      }
+      .ant-tabs-nav-list {
+        margin-left: 0 !important;
+      }
+    }
+  }
+
+  .tabPane-config {
+    padding: 20px 2px 20px 20px !important;
+  }
+}
+
+.tabLabel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: -16px;
+  padding-left: 16px;
+}
+
+.tabLabelError {
+  color: #f4454c;
+  background-color: #feeef0;
+}

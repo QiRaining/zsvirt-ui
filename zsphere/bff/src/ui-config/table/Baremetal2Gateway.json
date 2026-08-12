@@ -1,0 +1,299 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "managementIp",
+          "state",
+          "status",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "managementIp",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "managementIp",
+          "state",
+          "status",
+          "cluster",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.cluster",
+        "keys": [
+          "name",
+          "managementIp",
+          "state",
+          "status",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "managementIp",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "ip.adress",
+            "defaultMessage": "IP Address"
+          },
+          "queryType": "input",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "enable.state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "status",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "ready.state",
+            "defaultMessage": "Status"
+          },
+          "queryType": "multipleFilter",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "cluster",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "elastic.baremetal.cluster",
+            "defaultMessage": "Elastic Baremetal Cluster"
+          },
+          "queryType": "",
+          "resource": "baremetal2.gateway"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "baremetal2.gateway"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "edit",
+          "reconnect",
+          "update.password",
+          "update.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disable",
+          "reconnect",
+          "update.password",
+          "update.cluster",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.gateway",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.baremetal2.cluster/row"
+      },
+      {
+        "view": "sub.baremetal2.cluster/toolbar"
+      },
+      {
+        "view": "sub.provision.network/row"
+      },
+      {
+        "view": "sub.provision.network/toolbar"
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "edit",
+        "resource": "baremetal2.gateway",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.gateway",
+        "resource": "baremetal2.gateway",
+        "authKey": "add.gateway",
+        "i18nKey": "add.gateway",
+        "name": "添加网关节点",
+        "label": "添加网关节点",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "baremetal2.gateway",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "baremetal2.gateway",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "reconnect",
+        "resource": "baremetal2.gateway",
+        "authKey": "reconnect",
+        "i18nKey": "reconnect",
+        "name": "重连",
+        "label": "重连",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.password",
+        "resource": "baremetal2.gateway",
+        "authKey": "update.password",
+        "i18nKey": "change.password",
+        "name": "修改密码",
+        "label": "修改密码",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "update.cluster",
+        "resource": "baremetal2.gateway",
+        "authKey": "update.cluster",
+        "i18nKey": "update.baremetal2Cluster",
+        "name": "更改弹性裸金属集群",
+        "label": "更改弹性裸金属集群",
+        "icon": "",
+        "dividerKey": "update.cluster-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "baremetal2.gateway",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

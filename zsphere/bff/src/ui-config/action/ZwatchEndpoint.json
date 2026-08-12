@@ -1,0 +1,595 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select.virtualization",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.event",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub.virtualization.resource",
+        "keys": [
+          "name",
+          "type",
+          "url",
+          "state",
+          "owner",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "endpointType",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "url",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "endpointAddress",
+            "defaultMessage": "Address"
+          },
+          "queryType": "",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "owner",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "owner",
+            "defaultMessage": "Owner"
+          },
+          "queryType": "input",
+          "resource": "zwatch.endpoint"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zwatch.endpoint"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main.virtualization/header",
+        "extraKeys": [
+          "enable",
+          "disable"
+        ]
+      },
+      {
+        "view": "main.virtualization/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.alarm",
+          "remove.alarm",
+          "test.message",
+          "send.testMsg",
+          "delete"
+        ]
+      },
+      {
+        "view": "main.virtualization/toolbar",
+        "extraKeys": [
+          "create.zwatchEndpoint",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.alarm",
+          "remove.alarm",
+          "test.message",
+          "send.testMsg",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.alarm",
+          "remove.alarm",
+          "test.message",
+          "send.testMsg",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.zwatchEndpoint",
+          "enable",
+          "disable"
+        ],
+        "activeKeys": [
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.alarm.event/row",
+        "activeKeys": [
+          "remove.in.alarm.event"
+        ]
+      },
+      {
+        "view": "sub.alarm.event/toolbar",
+        "extraKeys": [
+          "add.in.alarm.event",
+          "remove.in.alarm.event"
+        ]
+      },
+      {
+        "view": "sub.alarm.resource/row",
+        "activeKeys": [
+          "remove.in.alarm.resource"
+        ]
+      },
+      {
+        "view": "sub.alarm.resource/toolbar",
+        "extraKeys": [
+          "add.in.alarm.resource",
+          "remove.in.alarm.resource"
+        ]
+      },
+      {
+        "view": "sub.alarm.third.party/row",
+        "activeKeys": [
+          "remove.in.alarm.third.party"
+        ]
+      },
+      {
+        "view": "sub.alarm.third.party/toolbar",
+        "extraKeys": [
+          "add.in.alarm.third.party",
+          "remove.in.alarm.third.party"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/row",
+        "activeKeys": [
+          "remove.in.monitor.group"
+        ]
+      },
+      {
+        "view": "sub.monitor.group/toolbar",
+        "extraKeys": [
+          "add.in.monitor.group",
+          "remove.in.monitor.group"
+        ]
+      },
+      {
+        "view": "sub.virtualization.event/row",
+        "activeKeys": [
+          "edit.zsv",
+          "editConfig",
+          "remove.endpoint.in.event.row",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.event/toolbar",
+        "extraKeys": [
+          "add.in.alarm.event",
+          "remove.in.alarm.event"
+        ]
+      },
+      {
+        "view": "sub.virtualization.resource/row",
+        "activeKeys": [
+          "edit.zsv",
+          "editConfig",
+          "remove.endpoint.in.resource.row",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization.resource/toolbar",
+        "extraKeys": [
+          "add.in.alarm.resource",
+          "remove.in.alarm.resource"
+        ]
+      },
+      {
+        "view": "sub.virtualization/row",
+        "activeKeys": [
+          "enable",
+          "disable",
+          "edit.zsv",
+          "editConfig",
+          "add.alarm",
+          "remove.alarm",
+          "test.message",
+          "send.testMsg",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.virtualization/toolbar",
+        "extraKeys": [
+          "create.zwatchEndpoint",
+          "enable",
+          "disable",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.zwatchEndpoint",
+        "resource": "zwatch.endpoint",
+        "authKey": "create.zwatchEndpoint",
+        "i18nKey": "create.zwatchEndpoint",
+        "name": "新建通知对象",
+        "label": "新建通知对象",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "zwatch.endpoint",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disable",
+        "resource": "zwatch.endpoint",
+        "authKey": "disable",
+        "i18nKey": "disable",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": "disable-divider"
+      },
+      {
+        "key": "edit",
+        "resource": "zwatch.endpoint",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit.zsv",
+        "resource": "zwatch.endpoint",
+        "authKey": "edit.zsv",
+        "i18nKey": "virtualization.edit.name.and.description",
+        "name": "编辑名称和简介",
+        "label": "编辑名称和简介",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "editConfig",
+        "resource": "zwatch.endpoint",
+        "authKey": "editConfig",
+        "i18nKey": "editConfig",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.alarm",
+        "resource": "zwatch.endpoint",
+        "authKey": "add.alarm",
+        "i18nKey": "add.alarm",
+        "name": "添加报警器",
+        "label": "添加报警器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.alarm",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.alarm",
+        "i18nKey": "remove.alarm",
+        "name": "移除报警器",
+        "label": "移除报警器",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.endpoint.in.resource.row",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.endpoint.in.resource.row",
+        "i18nKey": "remove.endpoint",
+        "name": "移除通知对象",
+        "label": "移除通知对象",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.endpoint.in.event.row",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.endpoint.in.event.row",
+        "i18nKey": "remove.endpoint",
+        "name": "移除通知对象",
+        "label": "移除通知对象",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "test.message",
+        "resource": "zwatch.endpoint",
+        "authKey": "test.message",
+        "i18nKey": "test.message",
+        "name": "测试短信",
+        "label": "测试短信",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "send.testMsg",
+        "resource": "zwatch.endpoint",
+        "authKey": "send.testMsg",
+        "i18nKey": "send.testMsg",
+        "name": "发送测试消息",
+        "label": "发送测试消息",
+        "icon": "",
+        "dividerKey": "send.testMsg-divider"
+      },
+      {
+        "key": "delete",
+        "resource": "zwatch.endpoint",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.in.alarm.resource",
+        "resource": "zwatch.endpoint",
+        "authKey": "add.in.alarm.resource",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.in.alarm.resource",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.in.alarm.resource",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.in.alarm.event",
+        "resource": "zwatch.endpoint",
+        "authKey": "add.in.alarm.event",
+        "i18nKey": "add",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.in.alarm.event",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.in.alarm.event",
+        "i18nKey": "remove",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.in.alarm.third.party",
+        "resource": "zwatch.endpoint",
+        "authKey": "add.in.alarm.third.party",
+        "i18nKey": "add.zwatchEndpoint",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.in.alarm.third.party",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.in.alarm.third.party",
+        "i18nKey": "remove.zwatchEndpoint",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "add.in.monitor.group",
+        "resource": "zwatch.endpoint",
+        "authKey": "add.in.monitor.group",
+        "i18nKey": "add.zwatchEndpoint",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.in.monitor.group",
+        "resource": "zwatch.endpoint",
+        "authKey": "remove.in.monitor.group",
+        "i18nKey": "remove.zwatchEndpoint",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

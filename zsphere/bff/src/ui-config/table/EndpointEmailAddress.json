@@ -1,0 +1,121 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "emailAddress",
+          "createDate"
+        ]
+      },
+      {
+        "view": "main.virtualization",
+        "keys": [
+          "emailAddress",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "emailAddress",
+        "size": 400,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "address",
+            "defaultMessage": "Address"
+          },
+          "queryType": "input",
+          "resource": "endpoint.email.address"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 400,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "endpoint.email.address"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header"
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "modify.endpoint.address",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.endpoint.address",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "modify.endpoint.address",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.endpoint.address",
+          "delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.endpoint.address",
+        "resource": "endpoint.email.address",
+        "authKey": "add.endpoint.address",
+        "i18nKey": "",
+        "name": "新增",
+        "label": "新增",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "modify.endpoint.address",
+        "resource": "endpoint.email.address",
+        "authKey": "modify.endpoint.address",
+        "i18nKey": "",
+        "name": "修改",
+        "label": "修改",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "endpoint.email.address",
+        "authKey": "delete",
+        "i18nKey": "",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

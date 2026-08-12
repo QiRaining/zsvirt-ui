@@ -1,0 +1,166 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "virtualization.main",
+        "keys": [
+          "name",
+          "user.count",
+          "user.group.count",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "zsv.role"
+        }
+      },
+      {
+        "accessorKey": "user.count",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "user.count",
+            "defaultMessage": "Users"
+          },
+          "queryType": "",
+          "resource": "zsv.role"
+        }
+      },
+      {
+        "accessorKey": "user.group.count",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "user.group.count",
+            "defaultMessage": "User Groups"
+          },
+          "queryType": "",
+          "resource": "zsv.role"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "zsv.role"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "zsv.role"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "virtualization.main/header",
+        "activeKeys": [
+          "virtualization.edit.config",
+          "clone.role",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/row",
+        "activeKeys": [
+          "virtualization.edit.config",
+          "clone.role",
+          "virtualization.delete"
+        ]
+      },
+      {
+        "view": "virtualization.main/toolbar",
+        "extraKeys": [
+          "create.role",
+          "virtualization.delete"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.role",
+        "resource": "zsv.role",
+        "authKey": "create.role",
+        "i18nKey": "create.role",
+        "name": "新建角色",
+        "label": "新建角色",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "virtualization.edit.config",
+        "resource": "zsv.role",
+        "authKey": "virtualization.edit.config",
+        "i18nKey": "virtualization.edit.config",
+        "name": "修改配置",
+        "label": "修改配置",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "clone.role",
+        "resource": "zsv.role",
+        "authKey": "clone.role",
+        "i18nKey": "clone.role",
+        "name": "克隆角色",
+        "label": "克隆角色",
+        "icon": "",
+        "dividerKey": "clone.role-divider"
+      },
+      {
+        "key": "virtualization.delete",
+        "resource": "zsv.role",
+        "authKey": "virtualization.delete",
+        "i18nKey": "virtualization.delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

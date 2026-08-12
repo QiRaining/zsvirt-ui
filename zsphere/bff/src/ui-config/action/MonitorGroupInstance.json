@@ -1,0 +1,171 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "instance.type",
+          "health.state"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "instance.type",
+          "health.state"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "instance.type",
+          "health.state"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "",
+          "resource": "monitor.group.instance"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "default",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "monitor.group.instance"
+        }
+      },
+      {
+        "accessorKey": "instance.type",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "resourceType",
+            "defaultMessage": "Resource Type"
+          },
+          "queryType": "",
+          "resource": "monitor.group.instance"
+        }
+      },
+      {
+        "accessorKey": "health.state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "healthState",
+            "defaultMessage": "Health Status"
+          },
+          "queryType": "",
+          "resource": "monitor.group.instance"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "createDate",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "monitor.group.instance"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "add.monitor.group.instance",
+          "remove.monitor.group.instance"
+        ]
+      },
+      {
+        "view": "main/row",
+        "extraKeys": [
+          "remove.monitor.group.instance"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "add.monitor.group.instance",
+          "remove.monitor.group.instance"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "extraKeys": [
+          "remove.monitor.group.instance"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "extraKeys": [
+          "add.monitor.group.instance",
+          "remove.monitor.group.instance"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "add.monitor.group.instance",
+        "resource": "monitor.group.instance",
+        "authKey": "add.monitor.group.instance",
+        "i18nKey": "add.monitorGroupInstance",
+        "name": "添加",
+        "label": "添加",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "remove.monitor.group.instance",
+        "resource": "monitor.group.instance",
+        "authKey": "remove.monitor.group.instance",
+        "i18nKey": "remove.monitorGroupInstance",
+        "name": "移除",
+        "label": "移除",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

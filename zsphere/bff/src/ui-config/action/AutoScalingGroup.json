@@ -1,0 +1,316 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "minResourceSize",
+          "maxResourceSize",
+          "healthyVm.total",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "minResourceSize",
+          "maxResourceSize",
+          "healthyVm.total",
+          "state",
+          "createDate"
+        ]
+      },
+      {
+        "view": "sub",
+        "keys": [
+          "name",
+          "minResourceSize",
+          "maxResourceSize",
+          "healthyVm.total",
+          "state",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "copyable",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "description",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "description",
+            "defaultMessage": "Description"
+          },
+          "queryType": "",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "minResourceSize",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "min.vm.number",
+            "defaultMessage": "Minimum Virtual Machines"
+          },
+          "queryType": "",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "maxResourceSize",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "max.vm.number",
+            "defaultMessage": "Maximum Virtual Machines"
+          },
+          "queryType": "",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "healthyVm.total",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "current.healthy.vm.number.current.total",
+            "defaultMessage": "Healthy Virtual Machines/Virtual Machines"
+          },
+          "queryType": "",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "state",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "state",
+            "defaultMessage": "State"
+          },
+          "queryType": "multipleFilter",
+          "resource": "auto.scaling.group"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "auto.scaling.group"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "extraKeys": [
+          "enable",
+          "disabled"
+        ],
+        "activeKeys": [
+          "edit",
+          "attach.vm.group",
+          "detach.vm.group",
+          "change.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "enable",
+          "disabled",
+          "attach.vm.group",
+          "detach.vm.group",
+          "change.image",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create",
+          "enable",
+          "disabled",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub/row"
+      },
+      {
+        "view": "sub/toolbar"
+      }
+    ],
+    "actions": [
+      {
+        "key": "create",
+        "resource": "auto.scaling.group",
+        "authKey": "create",
+        "i18nKey": "create.autoScalingGroup",
+        "name": "创建弹性伸缩组",
+        "label": "创建弹性伸缩组",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "auto.scaling.group",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "enable",
+        "resource": "auto.scaling.group",
+        "authKey": "enable",
+        "i18nKey": "enable",
+        "name": "启用",
+        "label": "启用",
+        "icon": "play-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "disabled",
+        "resource": "auto.scaling.group",
+        "authKey": "disabled",
+        "i18nKey": "disabled",
+        "name": "停用",
+        "label": "停用",
+        "icon": "stop-circle",
+        "dividerKey": 0
+      },
+      {
+        "key": "bind.affinityGroup",
+        "resource": "auto.scaling.group",
+        "authKey": "bind.affinityGroup",
+        "i18nKey": "bind.affinityGroup",
+        "name": "绑定亲和组",
+        "label": "绑定亲和组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "unbind.affinityGroup",
+        "resource": "auto.scaling.group",
+        "authKey": "unbind.affinityGroup",
+        "i18nKey": "unbind.affinityGroup",
+        "name": "解绑亲和组",
+        "label": "解绑亲和组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.vm.group",
+        "resource": "auto.scaling.group",
+        "authKey": "attach.vm.group",
+        "i18nKey": "attach.vm.group",
+        "name": "加入云主机调度组",
+        "label": "加入云主机调度组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vm.group",
+        "resource": "auto.scaling.group",
+        "authKey": "detach.vm.group",
+        "i18nKey": "detach.vm.group",
+        "name": "移除云主机调度组",
+        "label": "移除云主机调度组",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "change.image",
+        "resource": "auto.scaling.group",
+        "authKey": "change.image",
+        "i18nKey": "change.image",
+        "name": "修改镜像",
+        "label": "修改镜像",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "auto.scaling.group",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "trash",
+        "dividerKey": 0
+      }
+    ]
+  }
+}

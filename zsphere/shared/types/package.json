@@ -1,0 +1,29 @@
+{
+  "name": "@zstack/zsphere-types",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./graphql": {
+      "types": "./lib/graphql.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --outDir lib -d && cp graphql.d.ts lib/"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  },
+  "nx": {
+    "tags": [
+      "scope:zsv",
+      "product:zsv"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../../../theme.less";
+
+.width-80 {
+  width: 80px !important;
+}
+
+.width-120 {
+  width: 120px !important;
+}
+
+.item {
+  white-space: nowrap !important;
+}
+
+.section-config {
+  &-checkbox {
+    margin-bottom: 10px;
+  }
+
+  .label-container-required {
+    color: @danger-500;
+  }
+
+  :global {
+    .ant-form-item-control {
+      padding: 20px 20px 10px;
+      background-color: @neutral-100;
+    }
+
+    .zstack-form-item.ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.appoint-config-select {
+  align-items: center;
+
+  :global {
+    .ant-form-item-control {
+      padding: 0;
+    }
+  }
+}
+
+.unit-percent {
+  margin-left: 4px;
+  align-self: self-start;
+  position: relative;
+  top: 6px;
+}
+
+.modalSelectList {
+  max-height: 240px;
+  overflow: auto;
+}
+
+.container {
+  :global {
+    .ant-tabs-tabpane {
+      padding: 24px;
+    }
+
+    .ant-tabs {
+      overflow: unset;
+      overflow-x: unset;
+    }
+  }
+}
+
+.headerList {
+  border-bottom: 1px solid @neutral-300 !important;
+}
+
+.time-select {
+  :global {
+    .ant-select-selector {
+      .ant-select-selection-item {
+        color: unset;
+      }
+    }
+  }
+}

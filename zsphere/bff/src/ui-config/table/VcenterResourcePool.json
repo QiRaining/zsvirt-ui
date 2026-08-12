@@ -1,0 +1,152 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "sub.vCenter",
+        "keys": [
+          "name",
+          "type",
+          "vcenter.parentItem",
+          "vcenter.vmInResourcePool",
+          "vcenter.CPULimit",
+          "vcenter.memoryLimit",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "uuid"
+          },
+          "queryType": "input",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Type"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "vcenter.parentItem",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Parent"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "vcenter.vmInResourcePool",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "VM Instances (This Pool/Total)"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "vcenter.CPULimit",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "CPU Capacity Limit"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "vcenter.memoryLimit",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Memory Capacity Limit"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vcenter.resource.pool"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [],
+    "actions": []
+  }
+}

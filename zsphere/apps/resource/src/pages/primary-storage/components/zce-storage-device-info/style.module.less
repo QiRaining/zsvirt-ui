@@ -1,0 +1,43 @@
+@import "../../../../theme.less";
+
+.monNode {
+  margin-bottom: 0 !important;
+
+  :global {
+    .ant-form-item-control {
+      border: 1px solid @neutral-300;
+      border-bottom: none;
+      border-radius: 2px;
+      max-width: 400px;
+    }
+
+    .ant-form-item-control-input-content {
+      max-height: 240px;
+      overflow-y: auto;
+    }
+  }
+
+  .action {
+    span {
+      cursor: pointer;
+
+      &:first-child {
+        display: inline-block;
+        width: 32px;
+      }
+    }
+  }
+}
+
+.addBtn {
+  margin: 14px 0 4px 0;
+  color: var(--color-600);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 4px;
+  }
+}

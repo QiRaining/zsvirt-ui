@@ -1,0 +1,23 @@
+@import "../../theme.less";
+
+.width-320 {
+  width: 320px !important;
+}
+
+.desc {
+  display: flex;
+
+  svg {
+    margin: 2px 4px 0 0;
+    color: @alert-500;
+    flex-shrink: 0;
+  }
+
+  :global {
+    .ant-btn {
+      height: auto;
+      padding: 0px !important;
+      font-size: 12px !important;
+    }
+  }
+}

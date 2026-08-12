@@ -1,0 +1,287 @@
+{
+  "fields": {
+    "viewMap": [
+      {
+        "view": "main",
+        "keys": [
+          "name",
+          "type",
+          "vtepNum",
+          "shareType",
+          "createDate"
+        ]
+      },
+      {
+        "view": "select",
+        "keys": [
+          "name",
+          "type",
+          "vtepNum",
+          "createDate"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "accessorKey": "name",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "link",
+          "i18n": {
+            "id": "name",
+            "defaultMessage": "Name"
+          },
+          "queryType": "input",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "uuid",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "ellipsis",
+          "i18n": {
+            "id": "uuid",
+            "defaultMessage": "UUID"
+          },
+          "queryType": "input",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "type",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": true,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "sdn.type",
+            "defaultMessage": "SDN Type "
+          },
+          "queryType": "multipleFilter",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "vtepNum",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vtep.num",
+            "defaultMessage": "VTEPs"
+          },
+          "queryType": "",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "physicalInterface",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "physical.interface",
+            "defaultMessage": "NIC"
+          },
+          "queryType": "",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "vlan",
+        "size": 100,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "text",
+          "i18n": {
+            "id": "vlan",
+            "defaultMessage": "VLAN"
+          },
+          "queryType": "",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "shareType",
+        "size": 140,
+        "minSize": 80,
+        "enableSorting": false,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "constant",
+          "i18n": {
+            "id": "share.type",
+            "defaultMessage": "Sharing Mode"
+          },
+          "queryType": "",
+          "resource": "vxlan.pool"
+        }
+      },
+      {
+        "accessorKey": "createDate",
+        "size": 200,
+        "minSize": 80,
+        "enableSorting": true,
+        "enableColumnFilter": false,
+        "meta": {
+          "showType": "date",
+          "i18n": {
+            "id": "create.date",
+            "defaultMessage": "Creation Time"
+          },
+          "queryType": "",
+          "resource": "vxlan.pool"
+        }
+      }
+    ]
+  },
+  "actions": {
+    "viewMap": [
+      {
+        "view": "main/header",
+        "activeKeys": [
+          "edit",
+          "attach.vxlanpool",
+          "detach.vxlanpool",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/row",
+        "activeKeys": [
+          "edit",
+          "attach.vxlanpool",
+          "detach.vxlanpool",
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "main/toolbar",
+        "extraKeys": [
+          "create.vxlanpool"
+        ],
+        "activeKeys": [
+          "set.share.type",
+          "delete"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/row",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub.shared.resource/toolbar",
+        "extraKeys": [
+          "cancel.share"
+        ]
+      },
+      {
+        "view": "sub/row",
+        "activeKeys": [
+          "attach.vxlanpool",
+          "detach.vxlanpool"
+        ]
+      },
+      {
+        "view": "sub/toolbar",
+        "activeKeys": [
+          "attach.vxlanpool",
+          "detach.vxlanpool"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "key": "create.vxlanpool",
+        "resource": "vxlan.pool",
+        "authKey": "create.vxlanpool",
+        "i18nKey": "create.vxlanPool",
+        "name": "创建VXLAN Pool",
+        "label": "创建VXLAN Pool",
+        "icon": "plus",
+        "dividerKey": 0
+      },
+      {
+        "key": "edit",
+        "resource": "vxlan.pool",
+        "authKey": "edit",
+        "i18nKey": "edit",
+        "name": "编辑",
+        "label": "编辑",
+        "icon": "edit",
+        "dividerKey": 0
+      },
+      {
+        "key": "attach.vxlanpool",
+        "resource": "vxlan.pool",
+        "authKey": "attach.vxlanpool",
+        "i18nKey": "attach.cluster",
+        "name": "加载集群",
+        "label": "加载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "detach.vxlanpool",
+        "resource": "vxlan.pool",
+        "authKey": "detach.vxlanpool",
+        "i18nKey": "detach.cluster",
+        "name": "卸载集群",
+        "label": "卸载集群",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "set.share.type",
+        "resource": "vxlan.pool",
+        "authKey": "set.share.type",
+        "i18nKey": "set.share.type",
+        "name": "设置共享模式",
+        "label": "设置共享模式",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "delete",
+        "resource": "vxlan.pool",
+        "authKey": "delete",
+        "i18nKey": "delete",
+        "name": "删除",
+        "label": "删除",
+        "icon": "",
+        "dividerKey": 0
+      },
+      {
+        "key": "cancel.share",
+        "resource": "vxlan.pool",
+        "authKey": "cancel.share",
+        "i18nKey": "cancel.share",
+        "name": "取消共享",
+        "label": "取消共享",
+        "icon": "",
+        "dividerKey": 0
+      }
+    ]
+  }
+}
