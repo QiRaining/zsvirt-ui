@@ -1,22 +1,60 @@
-# 安全策略
+# Security Policy
 
-## 支持范围
+The ZSvirt project takes security reports seriously and appreciates responsible
+disclosure from researchers and users.
 
-安全修复仅应用于 `main` 的最新版本。仓库不维护旧版本兼容分支。
+## Supported version
 
-## 报告漏洞
+Security fixes apply to the latest revision of `main`. The project does not
+maintain compatibility branches for older revisions.
 
-请使用 GitHub 仓库 Security 页面中的 **Report a vulnerability** 私下提交报告，不要创建公开 Issue。
+## Reporting a vulnerability
 
-报告请包含：
+Do not disclose an unresolved vulnerability in a public issue, discussion,
+pull request, commit, or other public channel.
 
-- 受影响的提交或版本
-- 可复现步骤或最小复现代码
-- 实际影响和攻击前提
-- 已知的缓解方式（如有）
+Use the GitHub repository's **Security → Report a vulnerability** form when it
+is available. Otherwise, report suspected vulnerabilities privately to
+[zsvirt@zstack.io](mailto:zsvirt@zstack.io) with a subject such as
+`[Security] ZSvirt UI vulnerability report`.
 
-请勿在未经授权的系统上验证漏洞，也不要在报告中提交真实用户数据、访问令牌、私钥或其他秘密。
+Include as much of the following information as is safe and relevant:
 
-## 本地 Mock 环境
+- The affected component, branch, version, or commit.
+- The vulnerability type and potential impact.
+- Reproduction steps or a minimal proof of concept.
+- Required configuration, permissions, and preconditions.
+- Relevant logs or screenshots with secrets and personal data removed.
+- Any suggested mitigation or remediation.
+- Your preferred contact details and disclosure expectations.
 
-`pnpm start` 启动的 Mock BFF 会绕过真实认证并生成模拟数据，只允许用于受信任的本地开发环境，不应绑定公网地址或作为生产服务使用。
+Do not send live credentials, customer data, private keys, or other secrets.
+Use minimal test data and clearly mark any sensitive attachment. Do not test a
+suspected vulnerability against systems you are not authorized to access.
+
+## What to expect
+
+Maintainers will review the report, determine whether additional information is
+needed, and coordinate remediation and disclosure as appropriate. Investigation
+time varies with severity and complexity, so this policy does not promise a
+fixed response or release schedule.
+
+Please allow maintainers a reasonable opportunity to investigate and address
+the issue before any public disclosure. We will make a good-faith effort to keep
+the reporter informed when contact details are provided.
+
+## Scope
+
+This policy covers code and project-owned configuration in this repository.
+Issues in third-party services or dependencies may need to be reported to their
+respective maintainers, but reports that demonstrate a concrete impact on
+ZSvirt UI are welcome.
+
+## Local mock environment
+
+`pnpm start` launches a mock BFF that bypasses real authentication and generates
+test data. It is intended only for trusted local development and must not be
+bound to a public interface or used as a production service.
+
+For ordinary bugs and feature requests that do not have a security impact, use
+the project's public community channels instead.

@@ -1,36 +1,130 @@
-# 贡献指南
+# Contributing to ZSvirt UI
 
-感谢参与 ZSvirt UI。
+Thank you for helping improve ZSvirt UI. Contributions may include code,
+documentation, translations, bug reports, and design feedback.
 
-## 开发流程
+By participating, you agree to follow our
+[Code of Conduct](CODE_OF_CONDUCT.md). See [GOVERNANCE.md](GOVERNANCE.md) for
+project roles, responsibilities, and decision-making.
 
-1. 从最新 `main` 创建功能或修复分支。
-2. 按根目录 README 完成依赖安装和本地启动。
-3. 只提交与当前改动相关的文件，不提交凭据、内部地址、构建产物或本地配置。
-4. 提交 Pull Request 前至少运行受影响项目的构建和测试；跨项目改动应运行：
+## Before you start
+
+- Search existing issues and discussions before proposing duplicate work.
+- Keep each change focused. Separate unrelated fixes into different changes.
+- For a substantial feature or architecture change, discuss the approach with
+  maintainers before investing in a large implementation.
+- Never include credentials, private endpoints, customer information, or
+  proprietary data in an issue, commit, screenshot, or log.
+
+## Contributor License Agreement
+
+External contributors are required to complete the ZSvirt Contributor License
+Agreement (CLA) before their contributions can be merged. The CLA confirms that
+the contributor has the right to submit the contribution and grants the rights
+needed for the ZSvirt project to use, modify, reproduce, distribute, sublicense,
+and relicense it as part of project-maintained distributions.
+
+Contributors acting on behalf of an employer or another organization may need a
+Corporate CLA. A contribution that has not completed the required CLA check
+will not be merged.
+
+If the CLA check does not provide signing instructions, contact
+[zsvirt@zstack.io](mailto:zsvirt@zstack.io) before submitting a contribution.
+
+## Development setup
+
+Use Node.js 22.13 or later and pnpm 11.9.0, as pinned by the repository:
+
+```bash
+corepack enable
+corepack prepare pnpm@11.9.0 --activate
+pnpm install --frozen-lockfile
+pnpm start
+```
+
+The root start command enables local mock mode automatically. It uses SQLite
+and in-memory cache/pub-sub implementations, so no Redis, MySQL, internal
+network, or management service is required. See [README.md](README.md) for the
+repository layout, ports, environment configuration, and additional commands.
+
+## Making a change
+
+1. Fork the repository and create a branch from the latest `main`.
+2. Follow the existing structure and conventions in the area you change.
+3. Update user-facing or developer documentation when applicable.
+4. Keep generated files and dependency changes limited to what the change
+   requires.
+
+Use a clear branch name, for example:
+
+```text
+fix/resource-list-loading
+feature/virtual-machine-console
+docs/update-ui-setup
+```
+
+Use `pnpm show:projects` to find project names.
+
+## Validation
+
+Run checks in proportion to the change. Every pull request should at least run
+the affected project build and tests. Cross-workspace changes should run:
 
 ```bash
 pnpm build
-pnpm lint:all
 pnpm security:audit:licenses
 ```
 
-## 代码原则
+Run the relevant formatter and linter checks for files you modify. The complete
+repository commands are:
 
-- 优先修复根因，不吞掉错误。
-- 保持模块边界清晰，复用仓库已有依赖。
-- 删除过时实现，不增加兼容层或隐式 fallback。
-- 新配置必须有公开、安全的示例；任何秘密只能通过未提交的环境变量提供。
-- 影响启动、架构或安全边界的改动必须同步更新 README 或相关文档。
-
-## 提交与 Pull Request
-
-提交信息建议使用 Conventional Commits，例如：
-
-```text
-fix(bff): resolve public assets from the project root
-feat(resource): add virtual machine filter
-docs: clarify local mock startup
+```bash
+pnpm format:check
+pnpm lint:ox
+pnpm lint:all
 ```
 
-Pull Request 应说明目标、主要改动、验证命令和仍存在的限制。界面改动请附截图或录屏。
+When dependencies change, also run:
+
+```bash
+pnpm security:audit:cve
+pnpm security:audit:licenses
+pnpm security:report:licenses
+git diff --exit-code -- security/direct-dependency-licenses.md
+```
+
+Commands such as `pnpm format` and `pnpm lint:fix` modify files. Review their
+output before committing it.
+
+## Commit and review guidance
+
+- Write clear commit messages that explain the intent of the change.
+- Describe the problem, solution, validation, and any known limitations in the
+  pull request.
+- Include screenshots or recordings for visible UI changes, after removing any
+  sensitive information.
+- Call out configuration changes, breaking behavior, security impact, and new
+  dependencies explicitly.
+- Respond to review feedback with follow-up commits or a clear explanation.
+
+Use Conventional Commits, for example:
+
+```text
+fix(resource): resolve virtual machine list loading state
+docs: update local UI setup
+fix(bff): validate the configured listener port
+```
+
+## Dependency and license changes
+
+This repository is licensed under `GPL-3.0-only`. New dependencies must be
+compatible with the project license and must pass the committed direct
+dependency license audit. The inventory in
+`security/direct-dependency-licenses.md` covers direct workspace dependencies;
+it is not a complete software bill of materials or a substitute for required
+third-party notices.
+
+## Reporting security issues
+
+Do not open a public issue for a suspected vulnerability. Follow
+[SECURITY.md](SECURITY.md) instead.
